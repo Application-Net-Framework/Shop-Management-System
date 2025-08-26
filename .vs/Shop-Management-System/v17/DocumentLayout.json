@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Youtech BD\\OneDrive\\Desktop\\c#\\Shop-Management-System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6B39C161-9765-43C5-872B-48F73DE60CC8}|Login\\Login.csproj|c:\\users\\youtech bd\\onedrive\\desktop\\c#\\shop-management-system\\login\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6B39C161-9765-43C5-872B-48F73DE60CC8}|Login\\Login.csproj|solutionrelative:login\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Youtech BD\\OneDrive\\Desktop\\c#\\Shop-Management-System\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
@@ -19,12 +23,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Youtech BD\\OneDrive\\Desktop\\c#\\Shop-Management-System\\Login\\Form1.cs",
+              "RelativeDocumentMoniker": "Login\\Form1.cs",
+              "ToolTip": "C:\\Users\\Youtech BD\\OneDrive\\Desktop\\c#\\Shop-Management-System\\Login\\Form1.cs [Design]",
+              "RelativeToolTip": "Login\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T09:59:53.958Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\Youtech BD\\OneDrive\\Desktop\\c#\\Shop-Management-System\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
               "ToolTip": "C:\\Users\\Youtech BD\\OneDrive\\Desktop\\c#\\Shop-Management-System\\.gitignore",
               "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-08-26T09:41:33.506Z",
               "EditorCaption": ""

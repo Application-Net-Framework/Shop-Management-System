@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{29C66956-51E8-45AE-916D-C3C0F149642E}|Login\\Login.csproj|solutionrelative:login\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4859358E-3469-442C-9825-586A2D7FDF8C}|GlossayrShop\\GlossayrShop.csproj|c:\\users\\youtech bd\\onedrive\\desktop\\c#\\shop-management-system\\glossayrshopsln\\glossayrshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4859358E-3469-442C-9825-586A2D7FDF8C}|GlossayrShop\\GlossayrShop.csproj|C:\\Users\\Youtech BD\\OneDrive\\Desktop\\C#\\Shop-Management-System\\GlossayrShopsln\\glossayrshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4859358E-3469-442C-9825-586A2D7FDF8C}|GlossayrShop\\GlossayrShop.csproj|solutionrelative:glossayrshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -42,8 +42,7 @@
               "RelativeToolTip": "GlossayrShop\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T07:28:21.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T07:28:21.327Z"
             }
           ]
         }

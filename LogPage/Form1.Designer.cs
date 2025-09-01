@@ -70,7 +70,7 @@
             // 
             this.logBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logBtn.Location = new System.Drawing.Point(342, 205);
+            this.logBtn.Location = new System.Drawing.Point(77, 183);
             this.logBtn.Name = "logBtn";
             this.logBtn.Size = new System.Drawing.Size(104, 33);
             this.logBtn.TabIndex = 2;

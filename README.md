@@ -1,4 +1,3 @@
-siam siam siam suiam
 # Grocery Shop Management System
 
 This repository contains the source code for a comprehensive Grocery Shop Management System built with Windows Forms (.NET Framework) and Oracle Database.
@@ -117,6 +116,4 @@ The system streamlines and automates grocery shop operations, providing role-bas
 - [Improvement 1]
 - [Improvement 2]
 - [Improvement 3]
-
-## License
-This project is for educational purposes.
+gjklghlkjhiojkbjug

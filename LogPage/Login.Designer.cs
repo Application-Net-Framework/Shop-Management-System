@@ -70,7 +70,7 @@
             // 
             this.logBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logBtn.Location = new System.Drawing.Point(164, 202);
+            this.logBtn.Location = new System.Drawing.Point(239, 187);
             this.logBtn.Name = "logBtn";
             this.logBtn.Size = new System.Drawing.Size(104, 33);
             this.logBtn.TabIndex = 2;
@@ -93,6 +93,7 @@
             // fPassBtn
             // 
             this.fPassBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.fPassBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.fPassBtn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fPassBtn.Location = new System.Drawing.Point(209, 311);
             this.fPassBtn.Name = "fPassBtn";
@@ -123,7 +124,7 @@
             // messageTxt
             // 
             this.messageTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.messageTxt.Location = new System.Drawing.Point(293, 183);
+            this.messageTxt.Location = new System.Drawing.Point(570, 372);
             this.messageTxt.Name = "messageTxt";
             this.messageTxt.Size = new System.Drawing.Size(10, 20);
             this.messageTxt.TabIndex = 7;
@@ -142,7 +143,7 @@
             this.panel1.Controls.Add(this.uNameTxt);
             this.panel1.Controls.Add(this.logBtn);
             this.panel1.Controls.Add(this.passTxt);
-            this.panel1.Location = new System.Drawing.Point(225, 65);
+            this.panel1.Location = new System.Drawing.Point(326, 99);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(580, 392);
             this.panel1.TabIndex = 10;

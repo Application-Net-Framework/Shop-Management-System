@@ -96,6 +96,9 @@
     <Compile Include="SalesMan_Home.Designer.cs">
       <DependentUpon>SalesMan_Home.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Cashier_Home.resx">
+      <DependentUpon>Cashier_Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePassConfirm.resx">
       <DependentUpon>ChangePassConfirm.cs</DependentUpon>
     </EmbeddedResource>

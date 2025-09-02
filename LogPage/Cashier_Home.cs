@@ -16,5 +16,10 @@ namespace LogPage
         {
             InitializeComponent();
         }
+
+        private void posLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

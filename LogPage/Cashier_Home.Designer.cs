@@ -29,11 +29,193 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.sidePnl = new System.Windows.Forms.Panel();
+            this.headerPnl = new System.Windows.Forms.Panel();
+            this.mainPnl = new System.Windows.Forms.Panel();
+            this.logoutBtn = new System.Windows.Forms.Button();
+            this.profilebtn = new System.Windows.Forms.Button();
+            this.posBtn = new System.Windows.Forms.Button();
+            this.returnBtn = new System.Windows.Forms.Button();
+            this.stockBtn = new System.Windows.Forms.Button();
+            this.reportBtn = new System.Windows.Forms.Button();
+            this.homeBtn = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.sidePnl.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // sidePnl
+            // 
+            this.sidePnl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.Controls.Add(this.logoutBtn);
+            this.sidePnl.Controls.Add(this.profilebtn);
+            this.sidePnl.Controls.Add(this.posBtn);
+            this.sidePnl.Controls.Add(this.returnBtn);
+            this.sidePnl.Controls.Add(this.stockBtn);
+            this.sidePnl.Controls.Add(this.reportBtn);
+            this.sidePnl.Controls.Add(this.homeBtn);
+            this.sidePnl.Location = new System.Drawing.Point(0, 35);
+            this.sidePnl.Name = "sidePnl";
+            this.sidePnl.Size = new System.Drawing.Size(200, 419);
+            this.sidePnl.TabIndex = 0;
+            // 
+            // headerPnl
+            // 
+            this.headerPnl.BackColor = System.Drawing.Color.DimGray;
+            this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPnl.Location = new System.Drawing.Point(0, 0);
+            this.headerPnl.Name = "headerPnl";
+            this.headerPnl.Size = new System.Drawing.Size(800, 37);
+            this.headerPnl.TabIndex = 1;
+            // 
+            // mainPnl
+            // 
+            this.mainPnl.Location = new System.Drawing.Point(196, 35);
+            this.mainPnl.Name = "mainPnl";
+            this.mainPnl.Size = new System.Drawing.Size(604, 416);
+            this.mainPnl.TabIndex = 2;
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
+            this.logoutBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.Image = global::LogPage.Properties.Resources.logout;
+            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutBtn.Location = new System.Drawing.Point(31, 355);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(126, 37);
+            this.logoutBtn.TabIndex = 8;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = false;
+            // 
+            // profilebtn
+            // 
+            this.profilebtn.BackColor = System.Drawing.Color.DimGray;
+            this.profilebtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profilebtn.ForeColor = System.Drawing.Color.Transparent;
+            this.profilebtn.Image = global::LogPage.Properties.Resources.user;
+            this.profilebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.profilebtn.Location = new System.Drawing.Point(31, 312);
+            this.profilebtn.Name = "profilebtn";
+            this.profilebtn.Size = new System.Drawing.Size(126, 37);
+            this.profilebtn.TabIndex = 7;
+            this.profilebtn.Text = "Profile";
+            this.profilebtn.UseVisualStyleBackColor = false;
+            // 
+            // posBtn
+            // 
+            this.posBtn.BackColor = System.Drawing.Color.DimGray;
+            this.posBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.posBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.posBtn.Image = global::LogPage.Properties.Resources.pos1;
+            this.posBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.posBtn.Location = new System.Drawing.Point(31, 51);
+            this.posBtn.Name = "posBtn";
+            this.posBtn.Size = new System.Drawing.Size(126, 37);
+            this.posBtn.TabIndex = 5;
+            this.posBtn.Text = "POS";
+            this.posBtn.UseVisualStyleBackColor = false;
+            // 
+            // returnBtn
+            // 
+            this.returnBtn.BackColor = System.Drawing.Color.DimGray;
+            this.returnBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.returnBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.returnBtn.Image = global::LogPage.Properties.Resources.return_box;
+            this.returnBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.returnBtn.Location = new System.Drawing.Point(31, 94);
+            this.returnBtn.Name = "returnBtn";
+            this.returnBtn.Size = new System.Drawing.Size(126, 37);
+            this.returnBtn.TabIndex = 4;
+            this.returnBtn.Text = "Return";
+            this.returnBtn.UseVisualStyleBackColor = false;
+            // 
+            // stockBtn
+            // 
+            this.stockBtn.BackColor = System.Drawing.Color.DimGray;
+            this.stockBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.stockBtn.Image = global::LogPage.Properties.Resources.product;
+            this.stockBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.stockBtn.Location = new System.Drawing.Point(31, 137);
+            this.stockBtn.Name = "stockBtn";
+            this.stockBtn.Size = new System.Drawing.Size(126, 37);
+            this.stockBtn.TabIndex = 2;
+            this.stockBtn.Text = "Stock";
+            this.stockBtn.UseVisualStyleBackColor = false;
+            // 
+            // reportBtn
+            // 
+            this.reportBtn.BackColor = System.Drawing.Color.DimGray;
+            this.reportBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.reportBtn.Image = global::LogPage.Properties.Resources.report;
+            this.reportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reportBtn.Location = new System.Drawing.Point(31, 180);
+            this.reportBtn.Name = "reportBtn";
+            this.reportBtn.Size = new System.Drawing.Size(126, 37);
+            this.reportBtn.TabIndex = 1;
+            this.reportBtn.Text = "Report";
+            this.reportBtn.UseVisualStyleBackColor = false;
+            // 
+            // homeBtn
+            // 
+            this.homeBtn.BackColor = System.Drawing.Color.DimGray;
+            this.homeBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.homeBtn.Image = global::LogPage.Properties.Resources.home1;
+            this.homeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.homeBtn.Location = new System.Drawing.Point(31, 8);
+            this.homeBtn.Name = "homeBtn";
+            this.homeBtn.Size = new System.Drawing.Size(126, 37);
+            this.homeBtn.TabIndex = 0;
+            this.homeBtn.Text = "Home";
+            this.homeBtn.UseVisualStyleBackColor = false;
+            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // Cashier_Home
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.mainPnl);
+            this.Controls.Add(this.headerPnl);
+            this.Controls.Add(this.sidePnl);
+            this.Name = "Cashier_Home";
             this.Text = "Cashier_Home";
+            this.sidePnl.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel sidePnl;
+        private System.Windows.Forms.Panel headerPnl;
+        private System.Windows.Forms.Panel mainPnl;
+        private System.Windows.Forms.Button homeBtn;
+        private System.Windows.Forms.Button logoutBtn;
+        private System.Windows.Forms.Button profilebtn;
+        private System.Windows.Forms.Button posBtn;
+        private System.Windows.Forms.Button returnBtn;
+        private System.Windows.Forms.Button stockBtn;
+        private System.Windows.Forms.Button reportBtn;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imageList2;
     }
 }

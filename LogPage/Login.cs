@@ -11,8 +11,8 @@ using System.Windows.Forms;
 namespace LogPage
 {
     public partial class LogPage : Form
-    {   string userName = "arif.cashier";   
-        string pass = "12345";
+    {   string userName = "arif.manager";   
+        string pass = "123";
         public LogPage()
         {
             InitializeComponent();
@@ -23,35 +23,35 @@ namespace LogPage
             string uname = uNameTxt.Text.Trim();
             string Pass = passTxt.Text.Trim();
 
-            //if (Pass == pass && uname == userName && uname.EndsWith(".admin"))
-            if (Pass == pass && uname.EndsWith(".admin"))
+            if (Pass == pass && uname == userName && uname.EndsWith(".admin"))
+          
             {   MessageBox.Show("Login Successful as Admin!");
                 Admin_Home admin = new Admin_Home();
                 admin.Show();
                 this.Hide();
             }
-            //if (Pass == pass && uname == userName && uname.EndsWith(".manager"))
-            if (Pass == pass &&  uname.EndsWith(".manager"))
+            if (Pass == pass && uname == userName && uname.EndsWith(".manager"))
+            
             {   MessageBox.Show("Login Successful as Manager!");
                 Manager_Home manager = new Manager_Home();
                 manager.Show();
                 this.Hide();
             }
-            //if (Pass == pass && uname == userName && uname.EndsWith(".cashier"))
-            if (Pass == pass  && uname.EndsWith(".cashier"))
+            if (Pass == pass && uname == userName && uname.EndsWith(".cashier"))
+            
             {
                 MessageBox.Show("Login Successful as Cashier!");
                 Cashier_Home cashier = new Cashier_Home();
                 cashier.Show();
                 this.Hide();            }
-            //if (Pass == pass && uname == userName && uname.EndsWith(".salesman"))
-            if (Pass == pass && uname.EndsWith(".salesman"))
+            if (Pass == pass && uname == userName && uname.EndsWith(".salesman"))
+            
             {
                 MessageBox.Show("Login Successful as Salesman!");
                 SalesMan_Home sales = new SalesMan_Home();
                 sales.Show();
                 this.Hide();            }
-            else
+            if(Pass != pass && uname!= userName)
             {
                 MessageBox.Show("Invalid Credentials!");
             } }

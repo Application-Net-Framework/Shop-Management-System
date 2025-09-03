@@ -23,27 +23,29 @@ namespace LogPage
             string uname = uNameTxt.Text.Trim();
             string Pass = passTxt.Text.Trim();
 
-            if (Pass == pass && uname== userName&& uname.EndsWith(".admin"))
-            {
-                MessageBox.Show("Login Successful as Admin!");
+            //if (Pass == pass && uname == userName && uname.EndsWith(".admin"))
+            if (Pass == pass && uname.EndsWith(".admin"))
+            {   MessageBox.Show("Login Successful as Admin!");
                 Admin_Home admin = new Admin_Home();
                 admin.Show();
                 this.Hide();
             }
-            else if (Pass == pass && uname == userName && uname.EndsWith(".manager"))
-            {
-                MessageBox.Show("Login Successful as Manager!");
+            //if (Pass == pass && uname == userName && uname.EndsWith(".manager"))
+            if (Pass == pass &&  uname.EndsWith(".manager"))
+            {   MessageBox.Show("Login Successful as Manager!");
                 Manager_Home manager = new Manager_Home();
                 manager.Show();
                 this.Hide();
             }
-            else if (Pass == pass && uname == userName && uname.EndsWith(".cashier"))
+            //if (Pass == pass && uname == userName && uname.EndsWith(".cashier"))
+            if (Pass == pass  && uname.EndsWith(".cashier"))
             {
                 MessageBox.Show("Login Successful as Cashier!");
                 Cashier_Home cashier = new Cashier_Home();
                 cashier.Show();
                 this.Hide();            }
-            else if (Pass == pass && uname == userName && uname.EndsWith(".salesman"))
+            //if (Pass == pass && uname == userName && uname.EndsWith(".salesman"))
+            if (Pass == pass && uname.EndsWith(".salesman"))
             {
                 MessageBox.Show("Login Successful as Salesman!");
                 SalesMan_Home sales = new SalesMan_Home();

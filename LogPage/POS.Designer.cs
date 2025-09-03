@@ -119,7 +119,7 @@
             // cartPnl
             // 
             this.cartPnl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cartPnl.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.cartPnl.BackColor = System.Drawing.Color.SkyBlue;
             this.cartPnl.Controls.Add(this.button1);
             this.cartPnl.Controls.Add(this.label1);
             this.cartPnl.Location = new System.Drawing.Point(362, 53);

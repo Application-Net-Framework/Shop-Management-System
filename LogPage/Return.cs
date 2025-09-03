@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LogPage
 {
-    public partial class Returncs : Form
+    public partial class Return : Form
     {
-        public Returncs()
+        public Return()
         {
             InitializeComponent();
         }

@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.posLbl = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // posLbl
+            // 
+            this.posLbl.AutoSize = true;
+            this.posLbl.Location = new System.Drawing.Point(382, 219);
+            this.posLbl.Name = "posLbl";
+            this.posLbl.Size = new System.Drawing.Size(29, 13);
+            this.posLbl.TabIndex = 1;
+            this.posLbl.Text = "POS";
+            // 
+            // POS
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.posLbl);
+            this.Name = "POS";
             this.Text = "POS";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label posLbl;
     }
 }

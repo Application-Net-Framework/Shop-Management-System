@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.stockLbl = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // stockLbl
+            // 
+            this.stockLbl.AutoSize = true;
+            this.stockLbl.Location = new System.Drawing.Point(382, 219);
+            this.stockLbl.Name = "stockLbl";
+            this.stockLbl.Size = new System.Drawing.Size(35, 13);
+            this.stockLbl.TabIndex = 1;
+            this.stockLbl.Text = "Stock";
+            // 
+            // Stock
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.stockLbl);
+            this.Name = "Stock";
             this.Text = "Stock";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label stockLbl;
     }
 }

@@ -89,6 +89,7 @@
             this.logoutBtn.TabIndex = 8;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // profilebtn
             // 
@@ -103,6 +104,7 @@
             this.profilebtn.TabIndex = 7;
             this.profilebtn.Text = "Profile";
             this.profilebtn.UseVisualStyleBackColor = false;
+            this.profilebtn.Click += new System.EventHandler(this.profilebtn_Click);
             // 
             // posBtn
             // 
@@ -117,6 +119,7 @@
             this.posBtn.TabIndex = 5;
             this.posBtn.Text = "POS";
             this.posBtn.UseVisualStyleBackColor = false;
+            this.posBtn.Click += new System.EventHandler(this.posBtn_Click);
             // 
             // returnBtn
             // 
@@ -131,6 +134,7 @@
             this.returnBtn.TabIndex = 4;
             this.returnBtn.Text = "Return";
             this.returnBtn.UseVisualStyleBackColor = false;
+            this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
             // stockBtn
             // 
@@ -145,6 +149,7 @@
             this.stockBtn.TabIndex = 2;
             this.stockBtn.Text = "Stock";
             this.stockBtn.UseVisualStyleBackColor = false;
+            this.stockBtn.Click += new System.EventHandler(this.stockBtn_Click);
             // 
             // reportBtn
             // 
@@ -159,6 +164,7 @@
             this.reportBtn.TabIndex = 1;
             this.reportBtn.Text = "Report";
             this.reportBtn.UseVisualStyleBackColor = false;
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
             // 
             // homeBtn
             // 

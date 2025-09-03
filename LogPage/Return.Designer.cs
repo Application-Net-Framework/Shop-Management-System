@@ -1,6 +1,6 @@
 ﻿namespace LogPage
 {
-    partial class Returncs
+    partial class Return
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.returnLbl = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // returnLbl
+            // 
+            this.returnLbl.AutoSize = true;
+            this.returnLbl.Location = new System.Drawing.Point(382, 219);
+            this.returnLbl.Name = "returnLbl";
+            this.returnLbl.Size = new System.Drawing.Size(99, 13);
+            this.returnLbl.TabIndex = 1;
+            this.returnLbl.Text = "Return or Exchangr";
+            // 
+            // Return
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Returncs";
+            this.Controls.Add(this.returnLbl);
+            this.Name = "Return";
+            this.Text = "Return";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label returnLbl;
     }
 }

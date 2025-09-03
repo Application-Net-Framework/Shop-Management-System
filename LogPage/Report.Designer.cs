@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.reportLbl = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // reportLbl
+            // 
+            this.reportLbl.AutoSize = true;
+            this.reportLbl.Location = new System.Drawing.Point(365, 164);
+            this.reportLbl.Name = "reportLbl";
+            this.reportLbl.Size = new System.Drawing.Size(68, 13);
+            this.reportLbl.TabIndex = 1;
+            this.reportLbl.Text = "Daily Report ";
+            // 
+            // Report
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.reportLbl);
+            this.Name = "Report";
             this.Text = "Report";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label reportLbl;
     }
 }

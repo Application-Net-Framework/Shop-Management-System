@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace LogPage
 {
     public partial class LogPage : Form
-    {   string userName = "arif.manager";   
+    {   string userName = "arif.cashier";   
         string pass = "12345";
         public LogPage()
         {
@@ -23,14 +23,13 @@ namespace LogPage
             string uname = uNameTxt.Text.Trim();
             string Pass = passTxt.Text.Trim();
 
-            if (Pass == pass && uname == userName && uname.EndsWith(".admin"))
+            if (Pass == pass && uname== userName&& uname.EndsWith(".admin"))
             {
                 MessageBox.Show("Login Successful as Admin!");
                 Admin_Home admin = new Admin_Home();
                 admin.Show();
                 this.Hide();
             }
-           
             else if (Pass == pass && uname == userName && uname.EndsWith(".manager"))
             {
                 MessageBox.Show("Login Successful as Manager!");
@@ -38,30 +37,22 @@ namespace LogPage
                 manager.Show();
                 this.Hide();
             }
-            
             else if (Pass == pass && uname == userName && uname.EndsWith(".cashier"))
             {
                 MessageBox.Show("Login Successful as Cashier!");
                 Cashier_Home cashier = new Cashier_Home();
                 cashier.Show();
-                this.Hide();
-
-            }
-            
+                this.Hide();            }
             else if (Pass == pass && uname == userName && uname.EndsWith(".salesman"))
             {
                 MessageBox.Show("Login Successful as Salesman!");
                 SalesMan_Home sales = new SalesMan_Home();
                 sales.Show();
-                this.Hide();
-
-            }
+                this.Hide();            }
             else
             {
                 MessageBox.Show("Invalid Credentials!");
-            }
-
-        }
+            } }
 
         private void registerBtn_Click(object sender, EventArgs e)
         {

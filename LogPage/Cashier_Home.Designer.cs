@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.homeBtn = new System.Windows.Forms.Button();
             this.profileBtn = new System.Windows.Forms.Button();
             this.logOutBtn = new System.Windows.Forms.Button();
@@ -40,6 +38,8 @@
             this.sProductBtn = new System.Windows.Forms.Button();
             this.retOrExBtn = new System.Windows.Forms.Button();
             this.sReportBtn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,30 +60,14 @@
             this.panel1.Size = new System.Drawing.Size(198, 426);
             this.panel1.TabIndex = 1;
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.SystemColors.Window;
-            this.panel2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.panel2.Location = new System.Drawing.Point(204, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(593, 426);
-            this.panel2.TabIndex = 2;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // homeBtn
             // 
             this.homeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.homeBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.homeBtn.Location = new System.Drawing.Point(12, 19);
+            this.homeBtn.Location = new System.Drawing.Point(12, 3);
             this.homeBtn.Name = "homeBtn";
-            this.homeBtn.Size = new System.Drawing.Size(169, 41);
+            this.homeBtn.Size = new System.Drawing.Size(169, 54);
             this.homeBtn.TabIndex = 9;
             this.homeBtn.Text = "Home";
             this.homeBtn.UseVisualStyleBackColor = true;
@@ -129,9 +113,9 @@
             this.posBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.posBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.posBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.posBtn.Location = new System.Drawing.Point(12, 79);
+            this.posBtn.Location = new System.Drawing.Point(12, 63);
             this.posBtn.Name = "posBtn";
-            this.posBtn.Size = new System.Drawing.Size(169, 38);
+            this.posBtn.Size = new System.Drawing.Size(169, 54);
             this.posBtn.TabIndex = 3;
             this.posBtn.Text = "POS";
             this.posBtn.UseVisualStyleBackColor = true;
@@ -171,6 +155,22 @@
             this.sReportBtn.TabIndex = 4;
             this.sReportBtn.Text = "Report";
             this.sReportBtn.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.SystemColors.Window;
+            this.panel2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.panel2.Location = new System.Drawing.Point(204, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(593, 426);
+            this.panel2.TabIndex = 2;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Cashier_Home
             // 

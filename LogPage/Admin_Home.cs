@@ -16,5 +16,10 @@ namespace LogPage
         {
             InitializeComponent();
         }
+
+        private void Admin_Home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

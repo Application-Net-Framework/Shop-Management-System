@@ -126,6 +126,9 @@
     <Compile Include="Stock.Designer.cs">
       <DependentUpon>Stock.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin_Home.resx">
+      <DependentUpon>Admin_Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cashier_Home.resx">
       <DependentUpon>Cashier_Home.cs</DependentUpon>
     </EmbeddedResource>

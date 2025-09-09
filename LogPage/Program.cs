@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LogPage
+namespace App
 {
     internal static class Program
     {
@@ -18,7 +18,7 @@ namespace LogPage
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LogPage());
             //Application.Run(new SalesMan_Home());
-            Application.Run(new Login_Admin());
+            Application.Run(new LogPage());
         }
     }
 }

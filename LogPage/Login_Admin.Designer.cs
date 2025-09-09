@@ -1,4 +1,5 @@
-﻿namespace LogPage
+﻿namespace App
+
 {
     partial class Login_Admin
     {

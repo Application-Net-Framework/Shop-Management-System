@@ -1,4 +1,4 @@
-﻿namespace LogPage
+﻿namespace App
 {
     partial class Cashier_Home
     {
@@ -85,7 +85,7 @@
             // 
             // mainPnl
             // 
-            this.mainPnl.BackgroundImage = global::LogPage.Properties.Resources.delivery_concept_handsome_african_american_delivery_man_carrying_package_box_grocery_food_drink_from_store_isolated_grey_studio_background_copy_space;
+            this.mainPnl.BackgroundImage = global::App.Properties.Resources.delivery_concept_handsome_african_american_delivery_man_carrying_package_box_grocery_food_drink_from_store_isolated_grey_studio_background_copy_space;
             this.mainPnl.Controls.Add(this.label1);
             this.mainPnl.Location = new System.Drawing.Point(154, 35);
             this.mainPnl.Name = "mainPnl";
@@ -97,7 +97,7 @@
             this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
             this.logoutBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.logoutBtn.Image = global::LogPage.Properties.Resources.logout;
+            this.logoutBtn.Image = global::App.Properties.Resources.logout;
             this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutBtn.Location = new System.Drawing.Point(13, 355);
             this.logoutBtn.Name = "logoutBtn";
@@ -112,7 +112,7 @@
             this.profilebtn.BackColor = System.Drawing.Color.DimGray;
             this.profilebtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profilebtn.ForeColor = System.Drawing.Color.Transparent;
-            this.profilebtn.Image = global::LogPage.Properties.Resources.user;
+            this.profilebtn.Image = global::App.Properties.Resources.user;
             this.profilebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.profilebtn.Location = new System.Drawing.Point(13, 312);
             this.profilebtn.Name = "profilebtn";
@@ -127,7 +127,7 @@
             this.posBtn.BackColor = System.Drawing.Color.DimGray;
             this.posBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.posBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.posBtn.Image = global::LogPage.Properties.Resources.pos1;
+            this.posBtn.Image = global::App.Properties.Resources.pos1;
             this.posBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.posBtn.Location = new System.Drawing.Point(13, 51);
             this.posBtn.Name = "posBtn";
@@ -142,7 +142,7 @@
             this.returnBtn.BackColor = System.Drawing.Color.DimGray;
             this.returnBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.returnBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.returnBtn.Image = global::LogPage.Properties.Resources.return_box;
+            this.returnBtn.Image = global::App.Properties.Resources.return_box;
             this.returnBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.returnBtn.Location = new System.Drawing.Point(13, 94);
             this.returnBtn.Name = "returnBtn";
@@ -157,7 +157,7 @@
             this.stockBtn.BackColor = System.Drawing.Color.DimGray;
             this.stockBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stockBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.stockBtn.Image = global::LogPage.Properties.Resources.product;
+            this.stockBtn.Image = global::App.Properties.Resources.product;
             this.stockBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stockBtn.Location = new System.Drawing.Point(13, 137);
             this.stockBtn.Name = "stockBtn";
@@ -172,7 +172,7 @@
             this.reportBtn.BackColor = System.Drawing.Color.DimGray;
             this.reportBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.reportBtn.Image = global::LogPage.Properties.Resources.report;
+            this.reportBtn.Image = global::App.Properties.Resources.report;
             this.reportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.reportBtn.Location = new System.Drawing.Point(13, 180);
             this.reportBtn.Name = "reportBtn";
@@ -187,7 +187,7 @@
             this.homeBtn.BackColor = System.Drawing.Color.DimGray;
             this.homeBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.homeBtn.Image = global::LogPage.Properties.Resources.home1;
+            this.homeBtn.Image = global::App.Properties.Resources.home1;
             this.homeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeBtn.Location = new System.Drawing.Point(13, 8);
             this.homeBtn.Name = "homeBtn";

@@ -1,4 +1,4 @@
-﻿namespace LogPage
+﻿namespace App
 {
     partial class POS
     {

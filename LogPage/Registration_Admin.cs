@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LogPage
+namespace App
 {
     public partial class Registration_Admin : Form
     {
@@ -17,17 +17,21 @@ namespace LogPage
         {
             try
             {
-                string connectionString =@"Data Source=DESKTOP-HRPRSI4\\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;";
+                string connectionString = @"Data Source=DESKTOP-HRPRSI4\\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;";
 
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 string query = "INSERT INTO Registration(FullName, Email,PhoneNumber) VALUES ('Rafia','rafia@gmail.com',03893)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.ExecuteNonQuery();
-            }            catch (Exception ex)
+            }            
+            
+            catch (Exception )
+
             {
                 //MessageBox.Show("An error occurred: " + ex.Message);
             }
+           
         }
         public Registration_Admin()
         {

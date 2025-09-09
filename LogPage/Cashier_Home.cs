@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LogPage
+namespace App
 {
     public partial class Cashier_Home : Form
     {
@@ -17,8 +17,8 @@ namespace LogPage
 
      public Cashier_Home()
     {
-        InitializeComponent();
-    }
+            InitializeComponent();
+        }
     public void loadform(object Form)
     {
         if (this.mainPnl.Controls.Count > 0)

@@ -28,84 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lbluName = new System.Windows.Forms.Label();
+            this.lblPass = new System.Windows.Forms.Label();
+            this.txtuName = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnRegis = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lbluName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(111, 166);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "UserName:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lbluName.AutoSize = true;
+            this.lbluName.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluName.Location = new System.Drawing.Point(111, 166);
+            this.lbluName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbluName.Name = "lbluName";
+            this.lbluName.Size = new System.Drawing.Size(117, 27);
+            this.lbluName.TabIndex = 0;
+            this.lbluName.Text = "UserName:";
+            this.lbluName.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lblPass
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(111, 220);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 27);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password:";
+            this.lblPass.AutoSize = true;
+            this.lblPass.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPass.Location = new System.Drawing.Point(111, 220);
+            this.lblPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPass.Name = "lblPass";
+            this.lblPass.Size = new System.Drawing.Size(108, 27);
+            this.lblPass.TabIndex = 1;
+            this.lblPass.Text = "Password:";
             // 
-            // textBox1
+            // txtuName
             // 
-            this.textBox1.Location = new System.Drawing.Point(248, 159);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(373, 39);
-            this.textBox1.TabIndex = 2;
+            this.txtuName.Location = new System.Drawing.Point(248, 159);
+            this.txtuName.Name = "txtuName";
+            this.txtuName.Size = new System.Drawing.Size(373, 39);
+            this.txtuName.TabIndex = 2;
             // 
-            // textBox2
+            // txtPass
             // 
-            this.textBox2.Location = new System.Drawing.Point(248, 213);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(373, 39);
-            this.textBox2.TabIndex = 3;
+            this.txtPass.Location = new System.Drawing.Point(248, 213);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(373, 39);
+            this.txtPass.TabIndex = 3;
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.Location = new System.Drawing.Point(327, 291);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 48);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.Location = new System.Drawing.Point(327, 291);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(148, 48);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnRegis
             // 
-            this.button2.Location = new System.Drawing.Point(308, 356);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 48);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Registration";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnRegis.Location = new System.Drawing.Point(308, 356);
+            this.btnRegis.Name = "btnRegis";
+            this.btnRegis.Size = new System.Drawing.Size(178, 48);
+            this.btnRegis.TabIndex = 5;
+            this.btnRegis.Text = "Registration";
+            this.btnRegis.UseVisualStyleBackColor = true;
+            this.btnRegis.Click += new System.EventHandler(this.button2_Click);
             // 
             // Login_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 564);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnRegis);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.txtuName);
+            this.Controls.Add(this.lblPass);
+            this.Controls.Add(this.lbluName);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login_Admin";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -115,11 +115,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbluName;
+        private System.Windows.Forms.Label lblPass;
+        private System.Windows.Forms.TextBox txtuName;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnRegis;
     }
 }

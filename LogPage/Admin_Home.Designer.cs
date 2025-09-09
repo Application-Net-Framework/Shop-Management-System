@@ -42,7 +42,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1496, 579);
+            this.ClientSize = new System.Drawing.Size(1278, 515);
             this.Controls.Add(this.textBox1);
             this.Name = "Admin_Home";
             this.Text = "Admin_Home";

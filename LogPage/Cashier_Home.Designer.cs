@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.sidePnl = new System.Windows.Forms.Panel();
             this.headerPnl = new System.Windows.Forms.Panel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.mainPnl = new System.Windows.Forms.Panel();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.profilebtn = new System.Windows.Forms.Button();
@@ -39,9 +41,9 @@
             this.stockBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.sidePnl.SuspendLayout();
+            this.mainPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePnl
@@ -55,9 +57,9 @@
             this.sidePnl.Controls.Add(this.stockBtn);
             this.sidePnl.Controls.Add(this.reportBtn);
             this.sidePnl.Controls.Add(this.homeBtn);
-            this.sidePnl.Location = new System.Drawing.Point(0, 35);
+            this.sidePnl.Location = new System.Drawing.Point(-1, 35);
             this.sidePnl.Name = "sidePnl";
-            this.sidePnl.Size = new System.Drawing.Size(200, 419);
+            this.sidePnl.Size = new System.Drawing.Size(169, 419);
             this.sidePnl.TabIndex = 0;
             // 
             // headerPnl
@@ -66,14 +68,28 @@
             this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPnl.Location = new System.Drawing.Point(0, 0);
             this.headerPnl.Name = "headerPnl";
-            this.headerPnl.Size = new System.Drawing.Size(800, 37);
+            this.headerPnl.Size = new System.Drawing.Size(799, 37);
             this.headerPnl.TabIndex = 1;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // mainPnl
             // 
-            this.mainPnl.Location = new System.Drawing.Point(196, 35);
+            this.mainPnl.BackgroundImage = global::LogPage.Properties.Resources.delivery_concept_handsome_african_american_delivery_man_carrying_package_box_grocery_food_drink_from_store_isolated_grey_studio_background_copy_space;
+            this.mainPnl.Controls.Add(this.label1);
+            this.mainPnl.Location = new System.Drawing.Point(154, 35);
             this.mainPnl.Name = "mainPnl";
-            this.mainPnl.Size = new System.Drawing.Size(604, 416);
+            this.mainPnl.Size = new System.Drawing.Size(646, 416);
             this.mainPnl.TabIndex = 2;
             // 
             // logoutBtn
@@ -83,7 +99,7 @@
             this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
             this.logoutBtn.Image = global::LogPage.Properties.Resources.logout;
             this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutBtn.Location = new System.Drawing.Point(31, 355);
+            this.logoutBtn.Location = new System.Drawing.Point(13, 355);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(126, 37);
             this.logoutBtn.TabIndex = 8;
@@ -98,7 +114,7 @@
             this.profilebtn.ForeColor = System.Drawing.Color.Transparent;
             this.profilebtn.Image = global::LogPage.Properties.Resources.user;
             this.profilebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.profilebtn.Location = new System.Drawing.Point(31, 312);
+            this.profilebtn.Location = new System.Drawing.Point(13, 312);
             this.profilebtn.Name = "profilebtn";
             this.profilebtn.Size = new System.Drawing.Size(126, 37);
             this.profilebtn.TabIndex = 7;
@@ -113,7 +129,7 @@
             this.posBtn.ForeColor = System.Drawing.Color.Transparent;
             this.posBtn.Image = global::LogPage.Properties.Resources.pos1;
             this.posBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.posBtn.Location = new System.Drawing.Point(31, 51);
+            this.posBtn.Location = new System.Drawing.Point(13, 51);
             this.posBtn.Name = "posBtn";
             this.posBtn.Size = new System.Drawing.Size(126, 37);
             this.posBtn.TabIndex = 5;
@@ -128,7 +144,7 @@
             this.returnBtn.ForeColor = System.Drawing.Color.Transparent;
             this.returnBtn.Image = global::LogPage.Properties.Resources.return_box;
             this.returnBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.returnBtn.Location = new System.Drawing.Point(31, 94);
+            this.returnBtn.Location = new System.Drawing.Point(13, 94);
             this.returnBtn.Name = "returnBtn";
             this.returnBtn.Size = new System.Drawing.Size(126, 37);
             this.returnBtn.TabIndex = 4;
@@ -143,7 +159,7 @@
             this.stockBtn.ForeColor = System.Drawing.Color.Transparent;
             this.stockBtn.Image = global::LogPage.Properties.Resources.product;
             this.stockBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.stockBtn.Location = new System.Drawing.Point(31, 137);
+            this.stockBtn.Location = new System.Drawing.Point(13, 137);
             this.stockBtn.Name = "stockBtn";
             this.stockBtn.Size = new System.Drawing.Size(126, 37);
             this.stockBtn.TabIndex = 2;
@@ -158,7 +174,7 @@
             this.reportBtn.ForeColor = System.Drawing.Color.Transparent;
             this.reportBtn.Image = global::LogPage.Properties.Resources.report;
             this.reportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportBtn.Location = new System.Drawing.Point(31, 180);
+            this.reportBtn.Location = new System.Drawing.Point(13, 180);
             this.reportBtn.Name = "reportBtn";
             this.reportBtn.Size = new System.Drawing.Size(126, 37);
             this.reportBtn.TabIndex = 1;
@@ -173,7 +189,7 @@
             this.homeBtn.ForeColor = System.Drawing.Color.Transparent;
             this.homeBtn.Image = global::LogPage.Properties.Resources.home1;
             this.homeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.homeBtn.Location = new System.Drawing.Point(31, 8);
+            this.homeBtn.Location = new System.Drawing.Point(13, 8);
             this.homeBtn.Name = "homeBtn";
             this.homeBtn.Size = new System.Drawing.Size(126, 37);
             this.homeBtn.TabIndex = 0;
@@ -181,30 +197,30 @@
             this.homeBtn.UseVisualStyleBackColor = false;
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
             // 
-            // imageList1
+            // label1
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // imageList2
-            // 
-            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(135, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(360, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = " Welcome to Deshi Grocery Shop";
             // 
             // Cashier_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(799, 450);
             this.Controls.Add(this.mainPnl);
             this.Controls.Add(this.headerPnl);
             this.Controls.Add(this.sidePnl);
             this.Name = "Cashier_Home";
             this.Text = "Cashier_Home";
             this.sidePnl.ResumeLayout(false);
+            this.mainPnl.ResumeLayout(false);
+            this.mainPnl.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +239,6 @@
         private System.Windows.Forms.Button reportBtn;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageList2;
+        private System.Windows.Forms.Label label1;
     }
 }

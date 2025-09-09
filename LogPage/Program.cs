@@ -16,7 +16,8 @@ namespace LogPage
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogPage());
+            //Application.Run(new LogPage());
+            Application.Run(new SalesMan_Home());
         }
     }
 }

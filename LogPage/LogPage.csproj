@@ -82,6 +82,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_Admin.Designer.cs">
+      <DependentUpon>Login_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration_Admin.Designer.cs">
+      <DependentUpon>Registration_Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Report.cs">
       <SubType>Form</SubType>
@@ -147,6 +159,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login_Admin.resx">
+      <DependentUpon>Login_Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POS.resx">
       <DependentUpon>POS.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +180,9 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration_Admin.resx">
+      <DependentUpon>Registration_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report.resx">
       <DependentUpon>Report.cs</DependentUpon>

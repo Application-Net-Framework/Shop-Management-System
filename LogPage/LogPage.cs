@@ -80,7 +80,7 @@ namespace App
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            Register homeForm = new Register();
+            Registration homeForm = new Registration();
             homeForm.Show();
             this.Hide();
         }

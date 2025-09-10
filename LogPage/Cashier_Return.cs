@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class POS : Form
+    public partial class Cashier_Return : Form
     {
-        public POS()
+        public Cashier_Return()
         {
             InitializeComponent();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

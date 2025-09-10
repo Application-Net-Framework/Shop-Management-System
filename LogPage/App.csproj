@@ -94,25 +94,25 @@
     <Compile Include="Manager_Home.Designer.cs">
       <DependentUpon>Manager_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="POS.cs">
+    <Compile Include="Cashier_POS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POS.Designer.cs">
-      <DependentUpon>POS.cs</DependentUpon>
+    <Compile Include="Cashier_POS.Designer.cs">
+      <DependentUpon>Cashier_POS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profile.cs">
+    <Compile Include="Cashier_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profile.Designer.cs">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <Compile Include="Cashier_Profile.Designer.cs">
+      <DependentUpon>Cashier_Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Register.cs">
+    <Compile Include="Registration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="Registration_Admin.cs">
       <SubType>Form</SubType>
@@ -120,17 +120,17 @@
     <Compile Include="Registration_Admin.Designer.cs">
       <DependentUpon>Registration_Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report.cs">
+    <Compile Include="Cashier_Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report.Designer.cs">
-      <DependentUpon>Report.cs</DependentUpon>
+    <Compile Include="Cashier_Report.Designer.cs">
+      <DependentUpon>Cashier_Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="Return.cs">
+    <Compile Include="Cashier_Return.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Return.Designer.cs">
-      <DependentUpon>Return.cs</DependentUpon>
+    <Compile Include="Cashier_Return.Designer.cs">
+      <DependentUpon>Cashier_Return.cs</DependentUpon>
     </Compile>
     <Compile Include="SalesMan_Home.cs">
       <SubType>Form</SubType>
@@ -138,11 +138,11 @@
     <Compile Include="SalesMan_Home.Designer.cs">
       <DependentUpon>SalesMan_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock.cs">
+    <Compile Include="Cashier_Stock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock.Designer.cs">
-      <DependentUpon>Stock.cs</DependentUpon>
+    <Compile Include="Cashier_Stock.Designer.cs">
+      <DependentUpon>Cashier_Stock.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin_Home.resx">
       <DependentUpon>Admin_Home.cs</DependentUpon>
@@ -162,11 +162,11 @@
     <EmbeddedResource Include="Login_Admin.resx">
       <DependentUpon>Login_Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POS.resx">
-      <DependentUpon>POS.cs</DependentUpon>
+    <EmbeddedResource Include="Cashier_POS.resx">
+      <DependentUpon>Cashier_POS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profile.resx">
-      <DependentUpon>Profile.cs</DependentUpon>
+    <EmbeddedResource Include="Cashier_Profile.resx">
+      <DependentUpon>Cashier_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,23 +178,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registration_Admin.resx">
       <DependentUpon>Registration_Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report.resx">
-      <DependentUpon>Report.cs</DependentUpon>
+    <EmbeddedResource Include="Cashier_Report.resx">
+      <DependentUpon>Cashier_Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Return.resx">
-      <DependentUpon>Return.cs</DependentUpon>
+    <EmbeddedResource Include="Cashier_Return.resx">
+      <DependentUpon>Cashier_Return.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesMan_Home.resx">
       <DependentUpon>SalesMan_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stock.resx">
-      <DependentUpon>Stock.cs</DependentUpon>
+    <EmbeddedResource Include="Cashier_Stock.resx">
+      <DependentUpon>Cashier_Stock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

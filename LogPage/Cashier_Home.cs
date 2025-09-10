@@ -43,27 +43,27 @@ namespace App
 
         private void posBtn_Click(object sender, EventArgs e)
         {
-            loadform(new POS());
+            loadform(new Cashier_POS());
         }
 
         private void returnBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Return());
+            loadform(new Cashier_Return());
         }
 
         private void stockBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Stock());
+            loadform(new Cashier_Stock());
         }
 
         private void reportBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Report());
+            loadform(new Cashier_Report());
         }
 
         private void profilebtn_Click(object sender, EventArgs e)
         {
-            loadform(new Profile());
+            loadform(new Cashier_Profile());
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)

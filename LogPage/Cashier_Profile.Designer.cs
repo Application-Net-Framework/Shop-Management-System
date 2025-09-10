@@ -1,6 +1,6 @@
 ﻿namespace App
 {
-    partial class Profile
+    partial class Cashier_Profile
     {
         /// <summary>
         /// Required designer variable.

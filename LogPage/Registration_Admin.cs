@@ -80,9 +80,17 @@ namespace App
             }
 
             
-            if (!IsValidPhoneNumber(txtPNumber.Text))
+            if (!IsValidEmail(txtEmail.Text))
             {
-                MessageBox.Show("Phone number must contain exactly 5 digits. ", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid email address.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
+                return;
+            }
+
+            
+            if (!txtPNumber.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Phone number must contain digits only", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPNumber.Focus();
                 return;
             }
@@ -98,6 +106,7 @@ namespace App
                 MessageBox.Show("Please select at least one Qualification", "Required Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
 
             FName = txtFName.Text;
             email = txtEmail.Text;
@@ -126,17 +135,27 @@ namespace App
 
         private void txtPNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+            
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true; 
                 MessageBox.Show("Please enter digits only", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private bool IsValidPhoneNumber(string number)
+
+        
+        private bool IsValidEmail(string email)
         {
-            
-            return number.All(char.IsDigit) && number.Length ==5;
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+
+            }
         }
     }
 }

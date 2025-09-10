@@ -79,5 +79,11 @@ namespace App
         {
 
         }
+
+        private void salaryBtn_Click(object sender, EventArgs e)
+        {
+            loadform(new Cashier_Salary());
+
+        }
     }
 }

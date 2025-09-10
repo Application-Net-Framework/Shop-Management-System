@@ -64,6 +64,12 @@
     <Compile Include="Cashier_Home.Designer.cs">
       <DependentUpon>Cashier_Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cashier_Salary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cashier_Salary.Designer.cs">
+      <DependentUpon>Cashier_Salary.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePassConfirm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delivery-concept-handsome-african-american-delivery-man-carrying-package-box-grocery-food-drink-from-store-isolated-grey-studio-background-copy-space.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salary1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

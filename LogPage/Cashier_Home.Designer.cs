@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.sidePnl = new System.Windows.Forms.Panel();
-            this.headerPnl = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.mainPnl = new System.Windows.Forms.Panel();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.profilebtn = new System.Windows.Forms.Button();
             this.posBtn = new System.Windows.Forms.Button();
@@ -41,7 +37,12 @@
             this.stockBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
+            this.headerPnl = new System.Windows.Forms.Panel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.mainPnl = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.salaryBtn = new System.Windows.Forms.Button();
             this.sidePnl.SuspendLayout();
             this.mainPnl.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             // 
             this.sidePnl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.Controls.Add(this.salaryBtn);
             this.sidePnl.Controls.Add(this.logoutBtn);
             this.sidePnl.Controls.Add(this.profilebtn);
             this.sidePnl.Controls.Add(this.posBtn);
@@ -61,36 +63,6 @@
             this.sidePnl.Name = "sidePnl";
             this.sidePnl.Size = new System.Drawing.Size(169, 419);
             this.sidePnl.TabIndex = 0;
-            // 
-            // headerPnl
-            // 
-            this.headerPnl.BackColor = System.Drawing.Color.DimGray;
-            this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerPnl.Location = new System.Drawing.Point(0, 0);
-            this.headerPnl.Name = "headerPnl";
-            this.headerPnl.Size = new System.Drawing.Size(799, 37);
-            this.headerPnl.TabIndex = 1;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // imageList2
-            // 
-            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // mainPnl
-            // 
-            this.mainPnl.BackgroundImage = global::App.Properties.Resources.delivery_concept_handsome_african_american_delivery_man_carrying_package_box_grocery_food_drink_from_store_isolated_grey_studio_background_copy_space;
-            this.mainPnl.Controls.Add(this.label1);
-            this.mainPnl.Location = new System.Drawing.Point(154, 35);
-            this.mainPnl.Name = "mainPnl";
-            this.mainPnl.Size = new System.Drawing.Size(646, 416);
-            this.mainPnl.TabIndex = 2;
             // 
             // logoutBtn
             // 
@@ -197,6 +169,37 @@
             this.homeBtn.UseVisualStyleBackColor = false;
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
             // 
+            // headerPnl
+            // 
+            this.headerPnl.BackColor = System.Drawing.Color.DimGray;
+            this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPnl.Location = new System.Drawing.Point(0, 0);
+            this.headerPnl.Name = "headerPnl";
+            this.headerPnl.Size = new System.Drawing.Size(799, 37);
+            this.headerPnl.TabIndex = 1;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // mainPnl
+            // 
+            this.mainPnl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mainPnl.BackgroundImage = global::App.Properties.Resources.delivery_concept_handsome_african_american_delivery_man_carrying_package_box_grocery_food_drink_from_store_isolated_grey_studio_background_copy_space;
+            this.mainPnl.Controls.Add(this.label1);
+            this.mainPnl.Location = new System.Drawing.Point(174, 38);
+            this.mainPnl.Name = "mainPnl";
+            this.mainPnl.Size = new System.Drawing.Size(625, 416);
+            this.mainPnl.TabIndex = 2;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -206,6 +209,20 @@
             this.label1.Size = new System.Drawing.Size(360, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = " Welcome to Deshi Grocery Shop";
+            // 
+            // salaryBtn
+            // 
+            this.salaryBtn.BackColor = System.Drawing.Color.DimGray;
+            this.salaryBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salaryBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.salaryBtn.Image = global::App.Properties.Resources.report;
+            this.salaryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.salaryBtn.Location = new System.Drawing.Point(13, 223);
+            this.salaryBtn.Name = "salaryBtn";
+            this.salaryBtn.Size = new System.Drawing.Size(126, 37);
+            this.salaryBtn.TabIndex = 9;
+            this.salaryBtn.Text = "Salary";
+            this.salaryBtn.UseVisualStyleBackColor = false;
             // 
             // Cashier_Home
             // 
@@ -218,6 +235,7 @@
             this.Controls.Add(this.sidePnl);
             this.Name = "Cashier_Home";
             this.Text = "Cashier_Home";
+            this.Load += new System.EventHandler(this.Cashier_Home_Load);
             this.sidePnl.ResumeLayout(false);
             this.mainPnl.ResumeLayout(false);
             this.mainPnl.PerformLayout();
@@ -240,5 +258,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button salaryBtn;
     }
 }

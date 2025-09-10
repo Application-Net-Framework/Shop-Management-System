@@ -16,5 +16,15 @@ namespace App
         {
             InitializeComponent();
         }
+
+        private void reportLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void generateLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -74,5 +74,10 @@ namespace App
            
             this.Close();  
         }
+
+        private void Cashier_Home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

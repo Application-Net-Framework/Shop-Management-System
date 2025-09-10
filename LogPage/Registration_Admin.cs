@@ -13,6 +13,7 @@ namespace App
 {
     public partial class Registration_Admin : Form
     {
+        public string FName, email, pass;
         public void connect()
         {
             try
@@ -55,6 +56,10 @@ namespace App
 
         private void button2_Click(object sender, EventArgs e)
         {
+            FName= txtFName.Text;
+            email= txtEmail.Text;
+            pass=txtEPass.Text;
+            MessageBox.Show("Registration Successfully");
             connect();
             // Optionally, show a message on success
             // MessageBox.Show("Registration Successfully");

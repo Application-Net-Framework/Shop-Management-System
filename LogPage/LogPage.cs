@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,64 +13,115 @@ namespace App
 {
     public partial class LogPage : Form
     {
-
-        string userName = "arif.cashier";
-        
-        string pass = "12345";
         public LogPage()
         {
             InitializeComponent();
         }
+        // table Name:Login,column1:UserName,column2:Password   
 
         private void logBtn_Click(object sender, EventArgs e)
         {
-            string uname = uNameTxt.Text.Trim();
-            string Pass = passTxt.Text.Trim();
+            
+            string inputUsername = uNameTxt.Text.Trim();
+            string inputPassword = passTxt.Text.Trim();
 
-            //if (Pass == pass && uname== userName)
-            if (Pass == pass )
+            if (string.IsNullOrEmpty(inputUsername) || string.IsNullOrEmpty(inputPassword))
             {
-                if (uname.EndsWith(".admin"))
+                MessageBox.Show("Please enter both username and password.");
+                return;
+            }
+
+            
+            string connectionString = "Data Source=DESKTOP-ESC3M7E\\SQLEXPRESS;Initial Catalog=appdb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+
+            
+            string dbPassword = null;
+
+          
+            string sqlQuery = "SELECT Password FROM Login WHERE UserName = @username";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                    {
+                        
+                        command.Parameters.AddWithValue("@username", inputUsername);
+
+                        connection.Open();
+
+                        
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            
+                            dbPassword = result.ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                Console.WriteLine("DB Error: " + ex.Message);
+                MessageBox.Show("An error occurred while connecting to the database.");
+                return;
+            }
+
+            
+            if (inputPassword == dbPassword)
+            {
+               
+                if (inputUsername.EndsWith(".admin"))
                 {
                     MessageBox.Show("Login Successful as Admin!");
                     Admin_Home admin = new Admin_Home();
                     admin.Show();
                     this.Hide();
                 }
-                else if (uname.EndsWith(".manager"))
+                else if (inputUsername.EndsWith(".manager"))
                 {
                     MessageBox.Show("Login Successful as Manager!");
                     Manager_Home manager = new Manager_Home();
                     manager.Show();
                     this.Hide();
                 }
-                else if (uname.EndsWith(".cashier"))
+                else if (inputUsername.EndsWith(".cashier"))
                 {
-                    MessageBox.Show("Login Successful as Cashier!");
+                    MessageBox.Show("Login Successful as cashier!");
                     Cashier_Home cashier = new Cashier_Home();
                     cashier.Show();
                     this.Hide();
                 }
-                else if (uname.EndsWith(".salesman"))
+                else if (inputUsername.EndsWith(".salesman"))
                 {
-                    MessageBox.Show("Login Successful as Salesman!");
-                    SalesMan_Home sales = new SalesMan_Home();
-                    sales.Show();
+                    MessageBox.Show("Login Successful as SalesMan!");
+                    SalesMan_Home SalesMan = new SalesMan_Home();
+                    SalesMan.Show();
                     this.Hide();
                 }
+
+               
                 else
                 {
-                    MessageBox.Show("Invalid Username format. Must end with .admin / .manager / .cashier / .salesman");
+                    MessageBox.Show("Login Successful!");
+                    
                 }
             }
             else
             {
-                MessageBox.Show("Invalid Credentials!");
+             
+                MessageBox.Show("Invalid username or password!");
             }
-
         }
 
-        private void registerBtn_Click(object sender, EventArgs e)
+      
+    
+
+
+private void registerBtn_Click(object sender, EventArgs e)
         {
             Register homeForm = new Register();
             homeForm.Show();

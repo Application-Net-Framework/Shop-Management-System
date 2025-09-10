@@ -39,26 +39,25 @@
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblMStatus = new System.Windows.Forms.Label();
             this.lblQuali = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblEPass = new System.Windows.Forms.Label();
-            this.lblRPass = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtBirthDate = new System.Windows.Forms.TextBox();
-            this.txtGender = new System.Windows.Forms.TextBox();
-            this.txtMStatus = new System.Windows.Forms.TextBox();
-            this.txtQuali = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtEPass = new System.Windows.Forms.TextBox();
-            this.txtRPass = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.rdoFemale = new System.Windows.Forms.RadioButton();
+            this.rdoMale = new System.Windows.Forms.RadioButton();
+            this.chkBSc = new System.Windows.Forms.CheckBox();
+            this.chkMSc = new System.Windows.Forms.CheckBox();
+            this.chkPhD = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(676, 198);
+            this.btnNext.Location = new System.Drawing.Point(637, 392);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(178, 48);
+            this.btnNext.Size = new System.Drawing.Size(204, 61);
             this.btnNext.TabIndex = 11;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -165,61 +164,16 @@
             this.label8.Size = new System.Drawing.Size(0, 27);
             this.label8.TabIndex = 17;
             // 
-            // lblMStatus
-            // 
-            this.lblMStatus.AutoSize = true;
-            this.lblMStatus.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMStatus.Location = new System.Drawing.Point(99, 291);
-            this.lblMStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMStatus.Name = "lblMStatus";
-            this.lblMStatus.Size = new System.Drawing.Size(148, 27);
-            this.lblMStatus.TabIndex = 18;
-            this.lblMStatus.Text = "Marital Status:";
-            // 
             // lblQuali
             // 
             this.lblQuali.AutoSize = true;
             this.lblQuali.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuali.Location = new System.Drawing.Point(99, 336);
+            this.lblQuali.Location = new System.Drawing.Point(101, 305);
             this.lblQuali.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuali.Name = "lblQuali";
             this.lblQuali.Size = new System.Drawing.Size(136, 27);
             this.lblQuali.TabIndex = 19;
             this.lblQuali.Text = "Qualification:";
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(99, 380);
-            this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(94, 27);
-            this.lblAddress.TabIndex = 20;
-            this.lblAddress.Text = "Address:";
-            // 
-            // lblEPass
-            // 
-            this.lblEPass.AutoSize = true;
-            this.lblEPass.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEPass.Location = new System.Drawing.Point(99, 420);
-            this.lblEPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEPass.Name = "lblEPass";
-            this.lblEPass.Size = new System.Drawing.Size(163, 27);
-            this.lblEPass.TabIndex = 21;
-            this.lblEPass.Text = "Enter Password:";
-            // 
-            // lblRPass
-            // 
-            this.lblRPass.AutoSize = true;
-            this.lblRPass.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRPass.Location = new System.Drawing.Point(99, 460);
-            this.lblRPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRPass.Name = "lblRPass";
-            this.lblRPass.Size = new System.Drawing.Size(193, 27);
-            this.lblRPass.TabIndex = 22;
-            this.lblRPass.Text = "Re-Type Password:";
-            this.lblRPass.Click += new System.EventHandler(this.label13_Click);
             // 
             // txtEmail
             // 
@@ -228,73 +182,102 @@
             this.txtEmail.Size = new System.Drawing.Size(373, 26);
             this.txtEmail.TabIndex = 23;
             // 
-            // txtBirthDate
+            // dateTimePicker1
             // 
-            this.txtBirthDate.Location = new System.Drawing.Point(262, 209);
-            this.txtBirthDate.Name = "txtBirthDate";
-            this.txtBirthDate.Size = new System.Drawing.Size(373, 26);
-            this.txtBirthDate.TabIndex = 24;
+            this.dateTimePicker1.Location = new System.Drawing.Point(262, 210);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.TabIndex = 31;
             // 
-            // txtGender
+            // rdoFemale
             // 
-            this.txtGender.Location = new System.Drawing.Point(262, 252);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(373, 26);
-            this.txtGender.TabIndex = 25;
+            this.rdoFemale.AutoSize = true;
+            this.rdoFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoFemale.Location = new System.Drawing.Point(203, 1);
+            this.rdoFemale.Name = "rdoFemale";
+            this.rdoFemale.Size = new System.Drawing.Size(94, 26);
+            this.rdoFemale.TabIndex = 32;
+            this.rdoFemale.TabStop = true;
+            this.rdoFemale.Text = "Female";
+            this.rdoFemale.UseVisualStyleBackColor = true;
+            this.rdoFemale.CheckedChanged += new System.EventHandler(this.rdoFemale_CheckedChanged);
             // 
-            // txtMStatus
+            // rdoMale
             // 
-            this.txtMStatus.Location = new System.Drawing.Point(262, 291);
-            this.txtMStatus.Name = "txtMStatus";
-            this.txtMStatus.Size = new System.Drawing.Size(373, 26);
-            this.txtMStatus.TabIndex = 26;
+            this.rdoMale.AutoSize = true;
+            this.rdoMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoMale.Location = new System.Drawing.Point(8, 3);
+            this.rdoMale.Name = "rdoMale";
+            this.rdoMale.Size = new System.Drawing.Size(73, 26);
+            this.rdoMale.TabIndex = 33;
+            this.rdoMale.TabStop = true;
+            this.rdoMale.Text = "Male";
+            this.rdoMale.UseVisualStyleBackColor = true;
             // 
-            // txtQuali
+            // chkBSc
             // 
-            this.txtQuali.Location = new System.Drawing.Point(262, 336);
-            this.txtQuali.Name = "txtQuali";
-            this.txtQuali.Size = new System.Drawing.Size(373, 26);
-            this.txtQuali.TabIndex = 27;
+            this.chkBSc.AutoSize = true;
+            this.chkBSc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkBSc.Location = new System.Drawing.Point(3, 6);
+            this.chkBSc.Name = "chkBSc";
+            this.chkBSc.Size = new System.Drawing.Size(69, 26);
+            this.chkBSc.TabIndex = 36;
+            this.chkBSc.Text = "BSc";
+            this.chkBSc.UseVisualStyleBackColor = true;
+            this.chkBSc.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // txtAddress
+            // chkMSc
             // 
-            this.txtAddress.Location = new System.Drawing.Point(262, 380);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(373, 26);
-            this.txtAddress.TabIndex = 28;
+            this.chkMSc.AutoSize = true;
+            this.chkMSc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMSc.Location = new System.Drawing.Point(129, 2);
+            this.chkMSc.Name = "chkMSc";
+            this.chkMSc.Size = new System.Drawing.Size(71, 26);
+            this.chkMSc.TabIndex = 37;
+            this.chkMSc.Text = "MSc";
+            this.chkMSc.UseVisualStyleBackColor = true;
+            this.chkMSc.CheckedChanged += new System.EventHandler(this.chkMSc_CheckedChanged);
             // 
-            // txtEPass
+            // chkPhD
             // 
-            this.txtEPass.Location = new System.Drawing.Point(262, 422);
-            this.txtEPass.Name = "txtEPass";
-            this.txtEPass.Size = new System.Drawing.Size(373, 26);
-            this.txtEPass.TabIndex = 29;
+            this.chkPhD.AutoSize = true;
+            this.chkPhD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPhD.Location = new System.Drawing.Point(273, 3);
+            this.chkPhD.Name = "chkPhD";
+            this.chkPhD.Size = new System.Drawing.Size(71, 26);
+            this.chkPhD.TabIndex = 38;
+            this.chkPhD.Text = "PhD";
+            this.chkPhD.UseVisualStyleBackColor = true;
             // 
-            // txtRPass
+            // panel1
             // 
-            this.txtRPass.Location = new System.Drawing.Point(299, 462);
-            this.txtRPass.Name = "txtRPass";
-            this.txtRPass.Size = new System.Drawing.Size(373, 26);
-            this.txtRPass.TabIndex = 30;
+            this.panel1.Controls.Add(this.rdoMale);
+            this.panel1.Controls.Add(this.rdoFemale);
+            this.panel1.Location = new System.Drawing.Point(262, 252);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(373, 32);
+            this.panel1.TabIndex = 39;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.chkBSc);
+            this.panel2.Controls.Add(this.chkMSc);
+            this.panel2.Controls.Add(this.chkPhD);
+            this.panel2.Location = new System.Drawing.Point(262, 305);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(373, 32);
+            this.panel2.TabIndex = 40;
             // 
             // Registration_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 564);
-            this.Controls.Add(this.txtRPass);
-            this.Controls.Add(this.txtEPass);
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtQuali);
-            this.Controls.Add(this.txtMStatus);
-            this.Controls.Add(this.txtGender);
-            this.Controls.Add(this.txtBirthDate);
+            this.ClientSize = new System.Drawing.Size(878, 544);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblRPass);
-            this.Controls.Add(this.lblEPass);
-            this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblQuali);
-            this.Controls.Add(this.lblMStatus);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblBirthDate);
@@ -308,6 +291,10 @@
             this.Controls.Add(this.lalFName);
             this.Name = "Registration_Admin";
             this.Text = "Registration";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,18 +313,15 @@
         private System.Windows.Forms.Label lblBirthDate;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblMStatus;
         private System.Windows.Forms.Label lblQuali;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label lblEPass;
-        private System.Windows.Forms.Label lblRPass;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtBirthDate;
-        private System.Windows.Forms.TextBox txtGender;
-        private System.Windows.Forms.TextBox txtMStatus;
-        private System.Windows.Forms.TextBox txtQuali;
-        private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtEPass;
-        private System.Windows.Forms.TextBox txtRPass;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.RadioButton rdoFemale;
+        private System.Windows.Forms.RadioButton rdoMale;
+        private System.Windows.Forms.CheckBox chkBSc;
+        private System.Windows.Forms.CheckBox chkMSc;
+        private System.Windows.Forms.CheckBox chkPhD;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

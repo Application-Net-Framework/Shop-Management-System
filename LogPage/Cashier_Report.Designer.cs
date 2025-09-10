@@ -1,6 +1,6 @@
 ﻿namespace App
 {
-    partial class Report
+    partial class Cashier_Report
     {
         /// <summary>
         /// Required designer variable.

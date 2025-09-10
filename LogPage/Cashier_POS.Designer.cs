@@ -1,6 +1,6 @@
 ﻿namespace App
 {
-    partial class POS
+    partial class Cashier_POS
     {
         /// <summary>
         /// Required designer variable.

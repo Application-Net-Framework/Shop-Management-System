@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class Profile : Form
+    public partial class Cashier_Return : Form
     {
-        public Profile()
+        public Cashier_Return()
         {
             InitializeComponent();
         }

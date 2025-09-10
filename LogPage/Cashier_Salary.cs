@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class Report : Form
+    public partial class Cashier_Salary : Form
     {
-        public Report()
+        public Cashier_Salary()
         {
             InitializeComponent();
-        }
-
-        private void reportLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void generateLbl_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

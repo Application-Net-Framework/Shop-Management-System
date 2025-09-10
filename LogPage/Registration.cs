@@ -8,13 +8,50 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LogPage
+namespace App
 {
     public partial class Registration : Form
     {
         public Registration()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void securityQuesLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void empSerialLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            LogPage homeForm = new LogPage();
+            homeForm.Show();
+            this.Hide();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace App
 {
-    partial class Stock
+    partial class Cashier_Stock
     {
         /// <summary>
         /// Required designer variable.

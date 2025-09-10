@@ -1,6 +1,6 @@
 ﻿namespace App
 {
-    partial class Return
+    partial class Cashier_Profile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.returnLbl = new System.Windows.Forms.Label();
+            this.profileLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // returnLbl
+            // profileLbl
             // 
-            this.returnLbl.AutoSize = true;
-            this.returnLbl.Location = new System.Drawing.Point(382, 219);
-            this.returnLbl.Name = "returnLbl";
-            this.returnLbl.Size = new System.Drawing.Size(99, 13);
-            this.returnLbl.TabIndex = 1;
-            this.returnLbl.Text = "Return or Exchangr";
+            this.profileLbl.AutoSize = true;
+            this.profileLbl.Location = new System.Drawing.Point(345, 33);
+            this.profileLbl.Name = "profileLbl";
+            this.profileLbl.Size = new System.Drawing.Size(36, 13);
+            this.profileLbl.TabIndex = 0;
+            this.profileLbl.Text = "Profile";
             // 
-            // Return
+            // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.returnLbl);
-            this.Name = "Return";
-            this.Text = "Return";
+            this.Controls.Add(this.profileLbl);
+            this.Name = "Profile";
+            this.Text = "Profile";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -55,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label returnLbl;
+        private System.Windows.Forms.Label profileLbl;
     }
 }

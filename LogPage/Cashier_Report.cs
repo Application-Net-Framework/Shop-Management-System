@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class POS : Form
+    public partial class Cashier_Report : Form
     {
-        public POS()
+        public Cashier_Report()
         {
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void reportLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void generateLbl_Click(object sender, EventArgs e)
         {
 
         }

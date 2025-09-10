@@ -1,6 +1,6 @@
 ﻿namespace App
 {
-    partial class Profile
+    partial class Cashier_Salary
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.profileLbl = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // profileLbl
-            // 
-            this.profileLbl.AutoSize = true;
-            this.profileLbl.Location = new System.Drawing.Point(345, 33);
-            this.profileLbl.Name = "profileLbl";
-            this.profileLbl.Size = new System.Drawing.Size(36, 13);
-            this.profileLbl.TabIndex = 0;
-            this.profileLbl.Text = "Profile";
-            // 
-            // Profile
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.profileLbl);
-            this.Name = "Profile";
-            this.Text = "Profile";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            this.Text = "Cashier_Salary";
         }
 
         #endregion
-
-        private System.Windows.Forms.Label profileLbl;
     }
 }

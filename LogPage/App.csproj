@@ -138,23 +138,11 @@
     <Compile Include="Cashier_Report.Designer.cs">
       <DependentUpon>Cashier_Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="Return.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cashier_Return.Designer.cs">
-      <DependentUpon>Cashier_Return.cs</DependentUpon>
-    </Compile>
     <Compile Include="SalesMan_Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SalesMan_Home.Designer.cs">
       <DependentUpon>SalesMan_Home.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cashier_Stock.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cashier_Stock.Designer.cs">
-      <DependentUpon>Cashier_Stock.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin_Home.resx">
       <DependentUpon>Admin_Home.cs</DependentUpon>
@@ -207,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesMan_Home.resx">
       <DependentUpon>SalesMan_Home.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cashier_Stock.resx">
-      <DependentUpon>Cashier_Stock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

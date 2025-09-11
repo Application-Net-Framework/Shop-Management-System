@@ -48,12 +48,12 @@ namespace App
 
         private void returnBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Cashier_Return());
+            //loadform(new Cashier_Return());
         }
 
         private void stockBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Cashier_Stock());
+            //loadform(new Cashier_Stock());
         }
 
         private void reportBtn_Click(object sender, EventArgs e)

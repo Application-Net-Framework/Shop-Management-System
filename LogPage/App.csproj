@@ -70,6 +70,11 @@
     <Compile Include="Cashier_Home.Designer.cs">
       <DependentUpon>Cashier_Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cashier_Return.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cashier_Return.resx</DependentUpon>
+    </Compile>
     <Compile Include="Cashier_Salary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +197,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cashier_Return.resx">
       <DependentUpon>Cashier_Return.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cashier_Return.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesMan_Home.resx">
       <DependentUpon>SalesMan_Home.cs</DependentUpon>

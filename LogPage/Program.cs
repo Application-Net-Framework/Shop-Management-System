@@ -18,7 +18,7 @@ namespace App
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LogPage());
             //Application.Run(new SalesMan_Home());
-            //Application.Run(new Registration_Admin());
+            Application.Run(new Registration_Admin());
             //Application.Run(new Login_Admin());
         }
     }

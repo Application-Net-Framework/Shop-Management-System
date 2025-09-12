@@ -1,6 +1,6 @@
-﻿namespace App
+﻿namespace App.UI_Forms.Application_Starting_Logo
 {
-    partial class Manager_Home
+    partial class SplashForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Manager_Home
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Manager_Home";
-            this.Text = "Manager Dash Board";
-            this.ResumeLayout(false);
-
+            this.Text = "SplashForm";
         }
 
         #endregion

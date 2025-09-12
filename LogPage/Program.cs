@@ -17,13 +17,18 @@ namespace App
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Run Main Form
+            // Create and show splash screen
+     
+            
+            // Run only one main form
             Application.Run(new LogPage());
-            //Application.Run(new LogPage());
+            
+            // These will never be executed because Application.Run() is blocking
+            // Until the form is closed
             //Application.Run(new SalesMan_Home());
             //Application.Run(new Registration_Admin());
             //Application.Run(new Login_Admin());
-            Application.Run(new Manager_Home());
+            //Application.Run(new Manager_Home());
         }
     }
 }

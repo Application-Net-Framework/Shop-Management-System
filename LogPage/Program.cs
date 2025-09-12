@@ -16,10 +16,14 @@ namespace App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Run Main Form
+            Application.Run(new LogPage());
             //Application.Run(new LogPage());
             //Application.Run(new SalesMan_Home());
             Application.Run(new Registration_Admin());
             //Application.Run(new Login_Admin());
+            Application.Run(new Manager_Home());
         }
     }
 }

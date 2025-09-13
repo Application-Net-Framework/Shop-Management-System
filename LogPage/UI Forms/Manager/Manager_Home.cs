@@ -52,7 +52,10 @@ namespace App
 
         }
         bool dashboardExpnd = false;
-        
+        bool settingsExpnd = false;
+        bool memberExpnd = false;
+        bool productExpnd = false;
+
         private void dashboardtimer_Tick(object sender, EventArgs e)
         {
             if(dashboardExpnd == false)
@@ -74,10 +77,88 @@ namespace App
                 }
             }
         }
+        private void settingstime_Tick(object sender, EventArgs e)
+        {
+            if (settingsExpnd == false)
+            {
+                settingsContainer.Height += 10;
+                if (settingsContainer.Height >= 140)
+                {
+                    settingsExpnd = true;
+                    settingstime.Stop();
+                }
+            }
+            else
+            {
+                settingsContainer.Height -= 10;
+                if (settingsContainer.Height <= 40)
+                {
+                    settingsExpnd = false;
+                    settingstime.Stop();
+                }
+            }
+        }
+        private void membertimer_Tick(object sender, EventArgs e)
+        {
+            if (memberExpnd == false)
+            {
+                membersContainer.Height += 10;
+                if (membersContainer.Height >= 170)
+                {
+                    memberExpnd = true;
+                    membertimer.Stop();
+                }
+            }
+            else
+            {
+                membersContainer.Height -= 10;
+                if (membersContainer.Height <= 40)
+                {
+                    memberExpnd = false;
+                    membertimer.Stop();
+                }
+            }
+        }
+        private void producttimer_Tick(object sender, EventArgs e)
+        {
+            if (productExpnd == false)
+            {
+                productContainer.Height += 10;
+                if (productContainer.Height >= 140)
+                {
+                    productExpnd = true;
+                    producttimer.Stop();
+                }
+            }
+            else
+            {
+                productContainer.Height -= 10;
+                if (productContainer.Height <= 40)
+                {
+                    productExpnd = false;
+                    producttimer.Stop();
+                }
+            }
+        }
+
 
         private void dashbtn_Click(object sender, EventArgs e)
         {
             dashboardtimer.Start();
+        }
+        private void memberbtn_Click(object sender, EventArgs e)
+        {
+            membertimer.Start();
+        }
+
+        private void probtn_Click(object sender, EventArgs e)
+        {
+            producttimer.Start();
+        }
+
+        private void settingsbtn_Click(object sender, EventArgs e)
+        {
+            settingstime.Start();
         }
 
         private void settingsContainer_Paint(object sender, PaintEventArgs e)
@@ -125,10 +206,12 @@ namespace App
             }
         }
 
+
+
+
+
+
         // Add the settings timer event handler
-        private void settingstime_Tick(object sender, EventArgs e)
-        {
-            // This will be implemented if needed for settings animation
-        }
+
     }
 }

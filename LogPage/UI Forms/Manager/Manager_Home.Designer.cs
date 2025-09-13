@@ -56,20 +56,20 @@
             this.settingstime = new System.Windows.Forms.Timer(this.components);
             this.membersContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.memberbtn = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.probtn = new System.Windows.Forms.Button();
             this.productContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.toppnl = new System.Windows.Forms.Panel();
             this.minimizebtn = new System.Windows.Forms.Button();
             this.fullscreenbtn = new System.Windows.Forms.Button();
             this.crossbtn = new System.Windows.Forms.Button();
             this.pagetitle = new System.Windows.Forms.Label();
-            this.leftpnl = new System.Windows.Forms.Panel();
             this.membertimer = new System.Windows.Forms.Timer(this.components);
             this.producttimer = new System.Windows.Forms.Timer(this.components);
+            this.featureContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -88,6 +88,7 @@
             this.panel11.SuspendLayout();
             this.productContainer.SuspendLayout();
             this.toppnl.SuspendLayout();
+            this.featureContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // activitybtn
@@ -221,10 +222,10 @@
             this.dashbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashbtn.Image = ((System.Drawing.Image)(resources.GetObject("dashbtn.Image")));
             this.dashbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dashbtn.Location = new System.Drawing.Point(-22, -12);
+            this.dashbtn.Location = new System.Drawing.Point(-22, -16);
             this.dashbtn.Name = "dashbtn";
             this.dashbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.dashbtn.Size = new System.Drawing.Size(183, 67);
+            this.dashbtn.Size = new System.Drawing.Size(189, 71);
             this.dashbtn.TabIndex = 2;
             this.dashbtn.Text = "Dash Board";
             this.dashbtn.UseVisualStyleBackColor = false;
@@ -236,9 +237,10 @@
             this.dashboardContainer.Controls.Add(this.panel6);
             this.dashboardContainer.Controls.Add(this.panel1);
             this.dashboardContainer.Controls.Add(this.panel8);
-            this.dashboardContainer.Location = new System.Drawing.Point(465, 260);
+            this.dashboardContainer.Location = new System.Drawing.Point(0, 0);
+            this.dashboardContainer.Margin = new System.Windows.Forms.Padding(0);
             this.dashboardContainer.Name = "dashboardContainer";
-            this.dashboardContainer.Size = new System.Drawing.Size(161, 48);
+            this.dashboardContainer.Size = new System.Drawing.Size(161, 40);
             this.dashboardContainer.TabIndex = 9;
             // 
             // panel8
@@ -287,6 +289,7 @@
             this.settingsbtn.TabIndex = 2;
             this.settingsbtn.Text = "Settings";
             this.settingsbtn.UseVisualStyleBackColor = false;
+            this.settingsbtn.Click += new System.EventHandler(this.settingsbtn_Click);
             // 
             // panel10
             // 
@@ -327,10 +330,10 @@
             this.logoutbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutbtn.Image = ((System.Drawing.Image)(resources.GetObject("logoutbtn.Image")));
             this.logoutbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutbtn.Location = new System.Drawing.Point(-13, -11);
+            this.logoutbtn.Location = new System.Drawing.Point(-11, -11);
             this.logoutbtn.Name = "logoutbtn";
             this.logoutbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.logoutbtn.Size = new System.Drawing.Size(183, 66);
+            this.logoutbtn.Size = new System.Drawing.Size(182, 66);
             this.logoutbtn.TabIndex = 2;
             this.logoutbtn.Text = "Log Out";
             this.logoutbtn.UseVisualStyleBackColor = false;
@@ -346,15 +349,16 @@
             this.settingsContainer.Controls.Add(this.panel9);
             this.settingsContainer.Controls.Add(this.panel10);
             this.settingsContainer.Controls.Add(this.panel7);
-            this.settingsContainer.Location = new System.Drawing.Point(219, 100);
+            this.settingsContainer.Location = new System.Drawing.Point(0, 120);
+            this.settingsContainer.Margin = new System.Windows.Forms.Padding(0);
             this.settingsContainer.Name = "settingsContainer";
-            this.settingsContainer.Size = new System.Drawing.Size(163, 140);
+            this.settingsContainer.Size = new System.Drawing.Size(152, 40);
             this.settingsContainer.TabIndex = 15;
             this.settingsContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.settingsContainer_Paint);
             // 
             // settingstime
             // 
-            this.settingstime.Interval = 30;
+            this.settingstime.Interval = 10;
             this.settingstime.Tick += new System.EventHandler(this.settingstime_Tick);
             // 
             // membersContainer
@@ -364,33 +368,35 @@
             this.membersContainer.Controls.Add(this.panel3);
             this.membersContainer.Controls.Add(this.panel5);
             this.membersContainer.Controls.Add(this.panel12);
-            this.membersContainer.Location = new System.Drawing.Point(222, 260);
+            this.membersContainer.Location = new System.Drawing.Point(0, 40);
+            this.membersContainer.Margin = new System.Windows.Forms.Padding(0);
             this.membersContainer.Name = "membersContainer";
-            this.membersContainer.Size = new System.Drawing.Size(161, 173);
+            this.membersContainer.Size = new System.Drawing.Size(161, 40);
             this.membersContainer.TabIndex = 16;
             // 
             // panel13
             // 
-            this.panel13.Controls.Add(this.button3);
+            this.panel13.Controls.Add(this.memberbtn);
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Margin = new System.Windows.Forms.Padding(0);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(161, 43);
             this.panel13.TabIndex = 19;
             // 
-            // button3
+            // memberbtn
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(-13, -11);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(183, 66);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Members";
-            this.button3.UseVisualStyleBackColor = false;
+            this.memberbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.memberbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberbtn.Image = ((System.Drawing.Image)(resources.GetObject("memberbtn.Image")));
+            this.memberbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.memberbtn.Location = new System.Drawing.Point(-13, -11);
+            this.memberbtn.Name = "memberbtn";
+            this.memberbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.memberbtn.Size = new System.Drawing.Size(183, 66);
+            this.memberbtn.TabIndex = 2;
+            this.memberbtn.Text = "Members";
+            this.memberbtn.UseVisualStyleBackColor = false;
+            this.memberbtn.Click += new System.EventHandler(this.memberbtn_Click);
             // 
             // panel12
             // 
@@ -418,26 +424,27 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.button1);
+            this.panel11.Controls.Add(this.probtn);
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Margin = new System.Windows.Forms.Padding(0);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(161, 43);
             this.panel11.TabIndex = 17;
             // 
-            // button1
+            // probtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-13, -11);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(183, 66);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Products";
-            this.button1.UseVisualStyleBackColor = false;
+            this.probtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.probtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.probtn.Image = ((System.Drawing.Image)(resources.GetObject("probtn.Image")));
+            this.probtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.probtn.Location = new System.Drawing.Point(-13, -11);
+            this.probtn.Name = "probtn";
+            this.probtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.probtn.Size = new System.Drawing.Size(183, 66);
+            this.probtn.TabIndex = 2;
+            this.probtn.Text = "Products";
+            this.probtn.UseVisualStyleBackColor = false;
+            this.probtn.Click += new System.EventHandler(this.probtn_Click);
             // 
             // productContainer
             // 
@@ -445,9 +452,10 @@
             this.productContainer.Controls.Add(this.panel11);
             this.productContainer.Controls.Add(this.panel2);
             this.productContainer.Controls.Add(this.panel4);
-            this.productContainer.Location = new System.Drawing.Point(422, 55);
+            this.productContainer.Location = new System.Drawing.Point(0, 80);
+            this.productContainer.Margin = new System.Windows.Forms.Padding(0);
             this.productContainer.Name = "productContainer";
-            this.productContainer.Size = new System.Drawing.Size(165, 147);
+            this.productContainer.Size = new System.Drawing.Size(156, 40);
             this.productContainer.TabIndex = 18;
             // 
             // toppnl
@@ -461,14 +469,14 @@
             this.toppnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppnl.Location = new System.Drawing.Point(3, 3);
             this.toppnl.Name = "toppnl";
-            this.toppnl.Size = new System.Drawing.Size(684, 34);
+            this.toppnl.Size = new System.Drawing.Size(652, 34);
             this.toppnl.TabIndex = 19;
             this.toppnl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.toppnl_MouseDown);
             // 
             // minimizebtn
             // 
             this.minimizebtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.minimizebtn.Location = new System.Drawing.Point(591, 0);
+            this.minimizebtn.Location = new System.Drawing.Point(559, 0);
             this.minimizebtn.Name = "minimizebtn";
             this.minimizebtn.Size = new System.Drawing.Size(32, 34);
             this.minimizebtn.TabIndex = 21;
@@ -478,7 +486,7 @@
             // fullscreenbtn
             // 
             this.fullscreenbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.fullscreenbtn.Location = new System.Drawing.Point(623, 0);
+            this.fullscreenbtn.Location = new System.Drawing.Point(591, 0);
             this.fullscreenbtn.Name = "fullscreenbtn";
             this.fullscreenbtn.Size = new System.Drawing.Size(32, 34);
             this.fullscreenbtn.TabIndex = 22;
@@ -488,7 +496,7 @@
             // crossbtn
             // 
             this.crossbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.crossbtn.Location = new System.Drawing.Point(655, 0);
+            this.crossbtn.Location = new System.Drawing.Point(623, 0);
             this.crossbtn.Name = "crossbtn";
             this.crossbtn.Size = new System.Drawing.Size(29, 34);
             this.crossbtn.TabIndex = 21;
@@ -506,26 +514,36 @@
             this.pagetitle.TabIndex = 21;
             this.pagetitle.Text = "Welcome Manager";
             // 
-            // leftpnl
+            // membertimer
             // 
-            this.leftpnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.leftpnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.leftpnl.Location = new System.Drawing.Point(3, 37);
-            this.leftpnl.Name = "leftpnl";
-            this.leftpnl.Size = new System.Drawing.Size(150, 589);
-            this.leftpnl.TabIndex = 20;
+            this.membertimer.Interval = 10;
+            this.membertimer.Tick += new System.EventHandler(this.membertimer_Tick);
+            // 
+            // producttimer
+            // 
+            this.producttimer.Interval = 10;
+            this.producttimer.Tick += new System.EventHandler(this.producttimer_Tick);
+            // 
+            // featureContainer
+            // 
+            this.featureContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.featureContainer.Controls.Add(this.dashboardContainer);
+            this.featureContainer.Controls.Add(this.membersContainer);
+            this.featureContainer.Controls.Add(this.productContainer);
+            this.featureContainer.Controls.Add(this.settingsContainer);
+            this.featureContainer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.featureContainer.Location = new System.Drawing.Point(3, 37);
+            this.featureContainer.Name = "featureContainer";
+            this.featureContainer.Size = new System.Drawing.Size(150, 503);
+            this.featureContainer.TabIndex = 20;
             // 
             // Manager_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 629);
-            this.Controls.Add(this.leftpnl);
+            this.ClientSize = new System.Drawing.Size(658, 543);
+            this.Controls.Add(this.featureContainer);
             this.Controls.Add(this.toppnl);
-            this.Controls.Add(this.dashboardContainer);
-            this.Controls.Add(this.productContainer);
-            this.Controls.Add(this.membersContainer);
-            this.Controls.Add(this.settingsContainer);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Manager_Home";
@@ -551,6 +569,7 @@
             this.productContainer.ResumeLayout(false);
             this.toppnl.ResumeLayout(false);
             this.toppnl.PerformLayout();
+            this.featureContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -582,19 +601,19 @@
         private System.Windows.Forms.Timer settingstime;
         private System.Windows.Forms.FlowLayoutPanel membersContainer;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button probtn;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button memberbtn;
         private System.Windows.Forms.FlowLayoutPanel productContainer;
         private System.Windows.Forms.Panel toppnl;
-        private System.Windows.Forms.Panel leftpnl;
         private System.Windows.Forms.Timer membertimer;
         private System.Windows.Forms.Timer producttimer;
         private System.Windows.Forms.Label pagetitle;
         private System.Windows.Forms.Button crossbtn;
         private System.Windows.Forms.Button minimizebtn;
         private System.Windows.Forms.Button fullscreenbtn;
+        private System.Windows.Forms.FlowLayoutPanel featureContainer;
     }
 }

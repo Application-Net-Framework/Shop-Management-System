@@ -161,6 +161,9 @@
     <EmbeddedResource Include="UI Forms\Admin\Admin_Managed.resx">
       <DependentUpon>Admin_Managed.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Application Starting Logo\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Cashier\Cashier_Home.resx">
       <DependentUpon>Cashier_Home.cs</DependentUpon>
     </EmbeddedResource>

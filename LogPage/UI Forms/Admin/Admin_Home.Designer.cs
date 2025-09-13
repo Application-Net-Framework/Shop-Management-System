@@ -33,10 +33,11 @@
             // 
             // Admin_Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(657, 544);
+            this.ClientSize = new System.Drawing.Size(693, 464);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Admin_Home";
             this.Text = "Admin_Home";
             this.Load += new System.EventHandler(this.Admin_Home_Load);

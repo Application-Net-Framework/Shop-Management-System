@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.toppnl = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // toppnl
+            // 
+            this.toppnl.BackColor = System.Drawing.Color.White;
+            this.toppnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.toppnl.Location = new System.Drawing.Point(0, 0);
+            this.toppnl.Name = "toppnl";
+            this.toppnl.Size = new System.Drawing.Size(861, 35);
+            this.toppnl.TabIndex = 0;
             // 
             // Manager_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(861, 482);
+            this.Controls.Add(this.toppnl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Manager_Home";
             this.Text = "Manager Dash Board";
             this.ResumeLayout(false);
@@ -42,5 +54,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel toppnl;
     }
 }

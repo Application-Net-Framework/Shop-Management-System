@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.sidePnl = new System.Windows.Forms.Panel();
-            this.headerPnl = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.mainPnl = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.salaryBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.profilebtn = new System.Windows.Forms.Button();
@@ -43,6 +38,11 @@
             this.stockBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
+            this.headerPnl = new System.Windows.Forms.Panel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.mainPnl = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.sidePnl.SuspendLayout();
             this.mainPnl.SuspendLayout();
             this.SuspendLayout();
@@ -63,47 +63,6 @@
             this.sidePnl.Name = "sidePnl";
             this.sidePnl.Size = new System.Drawing.Size(169, 419);
             this.sidePnl.TabIndex = 0;
-            // 
-            // headerPnl
-            // 
-            this.headerPnl.BackColor = System.Drawing.Color.DimGray;
-            this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerPnl.Location = new System.Drawing.Point(0, 0);
-            this.headerPnl.Name = "headerPnl";
-            this.headerPnl.Size = new System.Drawing.Size(799, 37);
-            this.headerPnl.TabIndex = 1;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // imageList2
-            // 
-            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // mainPnl
-            // 
-            this.mainPnl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mainPnl.BackgroundImage = global::App.Properties.Resources.delivery_concept_handsome_african_american_delivery_man_carrying_package_box_grocery_food_drink_from_store_isolated_grey_studio_background_copy_space;
-            this.mainPnl.Controls.Add(this.label1);
-            this.mainPnl.Location = new System.Drawing.Point(174, 38);
-            this.mainPnl.Name = "mainPnl";
-            this.mainPnl.Size = new System.Drawing.Size(625, 416);
-            this.mainPnl.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(135, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(360, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = " Welcome to Deshi Grocery Shop";
             // 
             // salaryBtn
             // 
@@ -224,6 +183,47 @@
             this.homeBtn.Text = "Home";
             this.homeBtn.UseVisualStyleBackColor = false;
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
+            // 
+            // headerPnl
+            // 
+            this.headerPnl.BackColor = System.Drawing.Color.DimGray;
+            this.headerPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPnl.Location = new System.Drawing.Point(0, 0);
+            this.headerPnl.Name = "headerPnl";
+            this.headerPnl.Size = new System.Drawing.Size(799, 37);
+            this.headerPnl.TabIndex = 1;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // mainPnl
+            // 
+            this.mainPnl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mainPnl.BackgroundImage = global::App.Properties.Resources.delivery_concept_handsome_african_american_delivery_man_carrying_package_box_grocery_food_drink_from_store_isolated_grey_studio_background_copy_space;
+            this.mainPnl.Controls.Add(this.label1);
+            this.mainPnl.Location = new System.Drawing.Point(174, 38);
+            this.mainPnl.Name = "mainPnl";
+            this.mainPnl.Size = new System.Drawing.Size(625, 416);
+            this.mainPnl.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(135, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(360, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = " Welcome to Deshi Grocery Shop";
             // 
             // Cashier_Home
             // 

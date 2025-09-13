@@ -31,65 +31,65 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manager_Home));
             this.activitybtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnmember = new System.Windows.Forms.Panel();
+            this.pnsetting = new System.Windows.Forms.Panel();
             this.discountbtn = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnproduct = new System.Windows.Forms.Panel();
             this.staffbtn = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.stackpn = new System.Windows.Forms.Panel();
             this.productbtn = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.registerpn = new System.Windows.Forms.Panel();
             this.registerbtn = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.dashbordpn = new System.Windows.Forms.Panel();
             this.dashbtn = new System.Windows.Forms.Button();
             this.dashboardContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.reportpn = new System.Windows.Forms.Panel();
             this.reportbtn = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.settingspn = new System.Windows.Forms.Panel();
             this.settingsbtn = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.aboutpn = new System.Windows.Forms.Panel();
             this.aboutbtn = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.logoutpn = new System.Windows.Forms.Panel();
             this.logoutbtn = new System.Windows.Forms.Button();
             this.dashboardtimer = new System.Windows.Forms.Timer(this.components);
             this.settingsContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.settingstime = new System.Windows.Forms.Timer(this.components);
             this.membersContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.memberpn = new System.Windows.Forms.Panel();
             this.memberbtn = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.tarminationpn = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.productpn = new System.Windows.Forms.Panel();
             this.probtn = new System.Windows.Forms.Button();
             this.productContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.toppnl = new System.Windows.Forms.Panel();
+            this.menubtn = new System.Windows.Forms.Button();
             this.minimizebtn = new System.Windows.Forms.Button();
             this.fullscreenbtn = new System.Windows.Forms.Button();
             this.crossbtn = new System.Windows.Forms.Button();
             this.pagetitle = new System.Windows.Forms.Label();
             this.membertimer = new System.Windows.Forms.Timer(this.components);
             this.producttimer = new System.Windows.Forms.Timer(this.components);
-            this.menubtn = new System.Windows.Forms.Button();
             this.featureContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.featureContainertimer = new System.Windows.Forms.Timer(this.components);
+            this.pnmember.SuspendLayout();
+            this.pnsetting.SuspendLayout();
+            this.pnproduct.SuspendLayout();
+            this.stackpn.SuspendLayout();
+            this.registerpn.SuspendLayout();
+            this.dashbordpn.SuspendLayout();
             this.dashboardContainer.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.reportpn.SuspendLayout();
+            this.settingspn.SuspendLayout();
+            this.aboutpn.SuspendLayout();
+            this.logoutpn.SuspendLayout();
             this.settingsContainer.SuspendLayout();
             this.membersContainer.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.memberpn.SuspendLayout();
+            this.tarminationpn.SuspendLayout();
+            this.productpn.SuspendLayout();
             this.productContainer.SuspendLayout();
             this.toppnl.SuspendLayout();
-            this.featureContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // activitybtn
@@ -106,23 +106,23 @@
             this.activitybtn.Text = "Daily Activity";
             this.activitybtn.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // pnmember
             // 
-            this.panel1.Controls.Add(this.activitybtn);
-            this.panel1.Location = new System.Drawing.Point(0, 49);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(161, 43);
-            this.panel1.TabIndex = 3;
+            this.pnmember.Controls.Add(this.activitybtn);
+            this.pnmember.Location = new System.Drawing.Point(0, 49);
+            this.pnmember.Margin = new System.Windows.Forms.Padding(0);
+            this.pnmember.Name = "pnmember";
+            this.pnmember.Size = new System.Drawing.Size(161, 43);
+            this.pnmember.TabIndex = 3;
             // 
-            // panel2
+            // pnsetting
             // 
-            this.panel2.Controls.Add(this.discountbtn);
-            this.panel2.Location = new System.Drawing.Point(0, 43);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(161, 43);
-            this.panel2.TabIndex = 4;
+            this.pnsetting.Controls.Add(this.discountbtn);
+            this.pnsetting.Location = new System.Drawing.Point(0, 43);
+            this.pnsetting.Margin = new System.Windows.Forms.Padding(0);
+            this.pnsetting.Name = "pnsetting";
+            this.pnsetting.Size = new System.Drawing.Size(161, 43);
+            this.pnsetting.TabIndex = 4;
             // 
             // discountbtn
             // 
@@ -132,21 +132,21 @@
             this.discountbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.discountbtn.Location = new System.Drawing.Point(-23, -11);
             this.discountbtn.Name = "discountbtn";
-            this.discountbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.discountbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.discountbtn.Size = new System.Drawing.Size(210, 66);
             this.discountbtn.TabIndex = 2;
             this.discountbtn.Text = "Discount";
             this.discountbtn.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // pnproduct
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.panel3.Controls.Add(this.staffbtn);
-            this.panel3.Location = new System.Drawing.Point(0, 43);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(161, 43);
-            this.panel3.TabIndex = 5;
+            this.pnproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.pnproduct.Controls.Add(this.staffbtn);
+            this.pnproduct.Location = new System.Drawing.Point(0, 43);
+            this.pnproduct.Margin = new System.Windows.Forms.Padding(0);
+            this.pnproduct.Name = "pnproduct";
+            this.pnproduct.Size = new System.Drawing.Size(161, 43);
+            this.pnproduct.TabIndex = 5;
             // 
             // staffbtn
             // 
@@ -162,14 +162,14 @@
             this.staffbtn.Text = "Staff Info";
             this.staffbtn.UseVisualStyleBackColor = false;
             // 
-            // panel4
+            // stackpn
             // 
-            this.panel4.Controls.Add(this.productbtn);
-            this.panel4.Location = new System.Drawing.Point(0, 86);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(161, 43);
-            this.panel4.TabIndex = 6;
+            this.stackpn.Controls.Add(this.productbtn);
+            this.stackpn.Location = new System.Drawing.Point(0, 86);
+            this.stackpn.Margin = new System.Windows.Forms.Padding(0);
+            this.stackpn.Name = "stackpn";
+            this.stackpn.Size = new System.Drawing.Size(161, 43);
+            this.stackpn.TabIndex = 6;
             // 
             // productbtn
             // 
@@ -185,15 +185,15 @@
             this.productbtn.Text = "Stack Level";
             this.productbtn.UseVisualStyleBackColor = false;
             // 
-            // panel5
+            // registerpn
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.panel5.Controls.Add(this.registerbtn);
-            this.panel5.Location = new System.Drawing.Point(0, 86);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(161, 43);
-            this.panel5.TabIndex = 7;
+            this.registerpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.registerpn.Controls.Add(this.registerbtn);
+            this.registerpn.Location = new System.Drawing.Point(0, 86);
+            this.registerpn.Margin = new System.Windows.Forms.Padding(0);
+            this.registerpn.Name = "registerpn";
+            this.registerpn.Size = new System.Drawing.Size(161, 43);
+            this.registerpn.TabIndex = 7;
             // 
             // registerbtn
             // 
@@ -209,13 +209,13 @@
             this.registerbtn.Text = "Registers";
             this.registerbtn.UseVisualStyleBackColor = false;
             // 
-            // panel6
+            // dashbordpn
             // 
-            this.panel6.Controls.Add(this.dashbtn);
-            this.panel6.Location = new System.Drawing.Point(3, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(161, 43);
-            this.panel6.TabIndex = 8;
+            this.dashbordpn.Controls.Add(this.dashbtn);
+            this.dashbordpn.Location = new System.Drawing.Point(3, 3);
+            this.dashbordpn.Name = "dashbordpn";
+            this.dashbordpn.Size = new System.Drawing.Size(161, 43);
+            this.dashbordpn.TabIndex = 8;
             // 
             // dashbtn
             // 
@@ -225,32 +225,32 @@
             this.dashbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dashbtn.Location = new System.Drawing.Point(-22, -16);
             this.dashbtn.Name = "dashbtn";
-            this.dashbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.dashbtn.Size = new System.Drawing.Size(189, 71);
+            this.dashbtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.dashbtn.Size = new System.Drawing.Size(203, 71);
             this.dashbtn.TabIndex = 2;
-            this.dashbtn.Text = "Dash Board";
+            this.dashbtn.Text = "    Dash Board";
             this.dashbtn.UseVisualStyleBackColor = false;
             this.dashbtn.Click += new System.EventHandler(this.dashbtn_Click);
             // 
             // dashboardContainer
             // 
             this.dashboardContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(26)))));
-            this.dashboardContainer.Controls.Add(this.panel6);
-            this.dashboardContainer.Controls.Add(this.panel1);
-            this.dashboardContainer.Controls.Add(this.panel8);
-            this.dashboardContainer.Location = new System.Drawing.Point(3, 3);
+            this.dashboardContainer.Controls.Add(this.dashbordpn);
+            this.dashboardContainer.Controls.Add(this.pnmember);
+            this.dashboardContainer.Controls.Add(this.reportpn);
+            this.dashboardContainer.Location = new System.Drawing.Point(194, 76);
             this.dashboardContainer.Name = "dashboardContainer";
-            this.dashboardContainer.Size = new System.Drawing.Size(161, 40);
+            this.dashboardContainer.Size = new System.Drawing.Size(170, 135);
             this.dashboardContainer.TabIndex = 9;
             // 
-            // panel8
+            // reportpn
             // 
-            this.panel8.Controls.Add(this.reportbtn);
-            this.panel8.Location = new System.Drawing.Point(0, 92);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(161, 43);
-            this.panel8.TabIndex = 12;
+            this.reportpn.Controls.Add(this.reportbtn);
+            this.reportpn.Location = new System.Drawing.Point(0, 92);
+            this.reportpn.Margin = new System.Windows.Forms.Padding(0);
+            this.reportpn.Name = "reportpn";
+            this.reportpn.Size = new System.Drawing.Size(161, 43);
+            this.reportpn.TabIndex = 12;
             // 
             // reportbtn
             // 
@@ -266,15 +266,15 @@
             this.reportbtn.Text = "Report";
             this.reportbtn.UseVisualStyleBackColor = false;
             // 
-            // panel9
+            // settingspn
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.panel9.Controls.Add(this.settingsbtn);
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(161, 43);
-            this.panel9.TabIndex = 13;
+            this.settingspn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.settingspn.Controls.Add(this.settingsbtn);
+            this.settingspn.Location = new System.Drawing.Point(0, 0);
+            this.settingspn.Margin = new System.Windows.Forms.Padding(0);
+            this.settingspn.Name = "settingspn";
+            this.settingspn.Size = new System.Drawing.Size(161, 43);
+            this.settingspn.TabIndex = 13;
             // 
             // settingsbtn
             // 
@@ -284,21 +284,21 @@
             this.settingsbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.settingsbtn.Location = new System.Drawing.Point(-8, -9);
             this.settingsbtn.Name = "settingsbtn";
-            this.settingsbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.settingsbtn.Size = new System.Drawing.Size(194, 61);
+            this.settingsbtn.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.settingsbtn.Size = new System.Drawing.Size(190, 61);
             this.settingsbtn.TabIndex = 2;
             this.settingsbtn.Text = "Settings";
             this.settingsbtn.UseVisualStyleBackColor = false;
             this.settingsbtn.Click += new System.EventHandler(this.settingsbtn_Click);
             // 
-            // panel10
+            // aboutpn
             // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.panel10.Controls.Add(this.aboutbtn);
-            this.panel10.Location = new System.Drawing.Point(3, 46);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(161, 43);
-            this.panel10.TabIndex = 14;
+            this.aboutpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.aboutpn.Controls.Add(this.aboutbtn);
+            this.aboutpn.Location = new System.Drawing.Point(3, 46);
+            this.aboutpn.Name = "aboutpn";
+            this.aboutpn.Size = new System.Drawing.Size(161, 43);
+            this.aboutpn.TabIndex = 14;
             // 
             // aboutbtn
             // 
@@ -314,15 +314,15 @@
             this.aboutbtn.UseVisualStyleBackColor = false;
             this.aboutbtn.Click += new System.EventHandler(this.aboutbtn_Click);
             // 
-            // panel7
+            // logoutpn
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.panel7.Controls.Add(this.logoutbtn);
-            this.panel7.Location = new System.Drawing.Point(3, 95);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(3);
-            this.panel7.Size = new System.Drawing.Size(161, 43);
-            this.panel7.TabIndex = 4;
+            this.logoutpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.logoutpn.Controls.Add(this.logoutbtn);
+            this.logoutpn.Location = new System.Drawing.Point(3, 95);
+            this.logoutpn.Name = "logoutpn";
+            this.logoutpn.Padding = new System.Windows.Forms.Padding(3);
+            this.logoutpn.Size = new System.Drawing.Size(161, 43);
+            this.logoutpn.TabIndex = 4;
             // 
             // logoutbtn
             // 
@@ -346,12 +346,12 @@
             // settingsContainer
             // 
             this.settingsContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.settingsContainer.Controls.Add(this.panel9);
-            this.settingsContainer.Controls.Add(this.panel10);
-            this.settingsContainer.Controls.Add(this.panel7);
-            this.settingsContainer.Location = new System.Drawing.Point(3, 141);
+            this.settingsContainer.Controls.Add(this.settingspn);
+            this.settingsContainer.Controls.Add(this.aboutpn);
+            this.settingsContainer.Controls.Add(this.logoutpn);
+            this.settingsContainer.Location = new System.Drawing.Point(464, 278);
             this.settingsContainer.Name = "settingsContainer";
-            this.settingsContainer.Size = new System.Drawing.Size(152, 40);
+            this.settingsContainer.Size = new System.Drawing.Size(170, 134);
             this.settingsContainer.TabIndex = 15;
             this.settingsContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.settingsContainer_Paint);
             // 
@@ -363,23 +363,23 @@
             // membersContainer
             // 
             this.membersContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.membersContainer.Controls.Add(this.panel13);
-            this.membersContainer.Controls.Add(this.panel3);
-            this.membersContainer.Controls.Add(this.panel5);
-            this.membersContainer.Controls.Add(this.panel12);
-            this.membersContainer.Location = new System.Drawing.Point(3, 49);
+            this.membersContainer.Controls.Add(this.memberpn);
+            this.membersContainer.Controls.Add(this.pnproduct);
+            this.membersContainer.Controls.Add(this.registerpn);
+            this.membersContainer.Controls.Add(this.tarminationpn);
+            this.membersContainer.Location = new System.Drawing.Point(464, 82);
             this.membersContainer.Name = "membersContainer";
-            this.membersContainer.Size = new System.Drawing.Size(161, 40);
+            this.membersContainer.Size = new System.Drawing.Size(170, 129);
             this.membersContainer.TabIndex = 16;
             // 
-            // panel13
+            // memberpn
             // 
-            this.panel13.Controls.Add(this.memberbtn);
-            this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Margin = new System.Windows.Forms.Padding(0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(161, 43);
-            this.panel13.TabIndex = 19;
+            this.memberpn.Controls.Add(this.memberbtn);
+            this.memberpn.Location = new System.Drawing.Point(0, 0);
+            this.memberpn.Margin = new System.Windows.Forms.Padding(0);
+            this.memberpn.Name = "memberpn";
+            this.memberpn.Size = new System.Drawing.Size(161, 43);
+            this.memberpn.TabIndex = 19;
             // 
             // memberbtn
             // 
@@ -396,15 +396,15 @@
             this.memberbtn.UseVisualStyleBackColor = false;
             this.memberbtn.Click += new System.EventHandler(this.memberbtn_Click);
             // 
-            // panel12
+            // tarminationpn
             // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.panel12.Controls.Add(this.button2);
-            this.panel12.Location = new System.Drawing.Point(0, 129);
-            this.panel12.Margin = new System.Windows.Forms.Padding(0);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(161, 43);
-            this.panel12.TabIndex = 18;
+            this.tarminationpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.tarminationpn.Controls.Add(this.button2);
+            this.tarminationpn.Location = new System.Drawing.Point(0, 129);
+            this.tarminationpn.Margin = new System.Windows.Forms.Padding(0);
+            this.tarminationpn.Name = "tarminationpn";
+            this.tarminationpn.Size = new System.Drawing.Size(161, 43);
+            this.tarminationpn.TabIndex = 18;
             // 
             // button2
             // 
@@ -420,14 +420,14 @@
             this.button2.Text = "Termination";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // panel11
+            // productpn
             // 
-            this.panel11.Controls.Add(this.probtn);
-            this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Margin = new System.Windows.Forms.Padding(0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(161, 43);
-            this.panel11.TabIndex = 17;
+            this.productpn.Controls.Add(this.probtn);
+            this.productpn.Location = new System.Drawing.Point(0, 0);
+            this.productpn.Margin = new System.Windows.Forms.Padding(0);
+            this.productpn.Name = "productpn";
+            this.productpn.Size = new System.Drawing.Size(161, 43);
+            this.productpn.TabIndex = 17;
             // 
             // probtn
             // 
@@ -438,7 +438,7 @@
             this.probtn.Location = new System.Drawing.Point(-13, -11);
             this.probtn.Name = "probtn";
             this.probtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.probtn.Size = new System.Drawing.Size(199, 66);
+            this.probtn.Size = new System.Drawing.Size(200, 66);
             this.probtn.TabIndex = 2;
             this.probtn.Text = "Products";
             this.probtn.UseVisualStyleBackColor = false;
@@ -447,12 +447,12 @@
             // productContainer
             // 
             this.productContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.productContainer.Controls.Add(this.panel11);
-            this.productContainer.Controls.Add(this.panel2);
-            this.productContainer.Controls.Add(this.panel4);
-            this.productContainer.Location = new System.Drawing.Point(3, 95);
+            this.productContainer.Controls.Add(this.productpn);
+            this.productContainer.Controls.Add(this.pnsetting);
+            this.productContainer.Controls.Add(this.stackpn);
+            this.productContainer.Location = new System.Drawing.Point(194, 220);
             this.productContainer.Name = "productContainer";
-            this.productContainer.Size = new System.Drawing.Size(156, 40);
+            this.productContainer.Size = new System.Drawing.Size(170, 132);
             this.productContainer.TabIndex = 18;
             // 
             // toppnl
@@ -470,6 +470,16 @@
             this.toppnl.Size = new System.Drawing.Size(648, 34);
             this.toppnl.TabIndex = 19;
             this.toppnl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.toppnl_MouseDown);
+            // 
+            // menubtn
+            // 
+            this.menubtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menubtn.BackgroundImage")));
+            this.menubtn.Location = new System.Drawing.Point(6, -1);
+            this.menubtn.Name = "menubtn";
+            this.menubtn.Size = new System.Drawing.Size(44, 35);
+            this.menubtn.TabIndex = 21;
+            this.menubtn.UseVisualStyleBackColor = true;
+            this.menubtn.Click += new System.EventHandler(this.menubtn_Click);
             // 
             // minimizebtn
             // 
@@ -522,97 +532,92 @@
             this.producttimer.Interval = 10;
             this.producttimer.Tick += new System.EventHandler(this.producttimer_Tick);
             // 
-            // menubtn
-            // 
-            this.menubtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menubtn.BackgroundImage")));
-            this.menubtn.Location = new System.Drawing.Point(16, -1);
-            this.menubtn.Name = "menubtn";
-            this.menubtn.Size = new System.Drawing.Size(39, 35);
-            this.menubtn.TabIndex = 21;
-            this.menubtn.Text = "button1";
-            this.menubtn.UseVisualStyleBackColor = true;
-            // 
             // featureContainer
             // 
             this.featureContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.featureContainer.Controls.Add(this.dashboardContainer);
-            this.featureContainer.Controls.Add(this.membersContainer);
-            this.featureContainer.Controls.Add(this.productContainer);
-            this.featureContainer.Controls.Add(this.settingsContainer);
             this.featureContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.featureContainer.Location = new System.Drawing.Point(3, 37);
             this.featureContainer.Name = "featureContainer";
-            this.featureContainer.Size = new System.Drawing.Size(189, 512);
+            this.featureContainer.Size = new System.Drawing.Size(166, 512);
             this.featureContainer.TabIndex = 20;
+            this.featureContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.featureContainer_Paint);
+            // 
+            // featureContainertimer
+            // 
+            this.featureContainertimer.Interval = 10;
+            this.featureContainertimer.Tick += new System.EventHandler(this.featureContainertimer_Tick);
             // 
             // Manager_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 552);
+            this.Controls.Add(this.dashboardContainer);
+            this.Controls.Add(this.membersContainer);
             this.Controls.Add(this.featureContainer);
+            this.Controls.Add(this.productContainer);
             this.Controls.Add(this.toppnl);
+            this.Controls.Add(this.settingsContainer);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Manager_Home";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "Manager Dash Board";
             this.Load += new System.EventHandler(this.Manager_Home_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
+            this.pnmember.ResumeLayout(false);
+            this.pnsetting.ResumeLayout(false);
+            this.pnproduct.ResumeLayout(false);
+            this.stackpn.ResumeLayout(false);
+            this.registerpn.ResumeLayout(false);
+            this.dashbordpn.ResumeLayout(false);
             this.dashboardContainer.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
+            this.reportpn.ResumeLayout(false);
+            this.settingspn.ResumeLayout(false);
+            this.aboutpn.ResumeLayout(false);
+            this.logoutpn.ResumeLayout(false);
             this.settingsContainer.ResumeLayout(false);
             this.membersContainer.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
+            this.memberpn.ResumeLayout(false);
+            this.tarminationpn.ResumeLayout(false);
+            this.productpn.ResumeLayout(false);
             this.productContainer.ResumeLayout(false);
             this.toppnl.ResumeLayout(false);
             this.toppnl.PerformLayout();
-            this.featureContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button activitybtn;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnmember;
+        private System.Windows.Forms.Panel pnsetting;
         private System.Windows.Forms.Button discountbtn;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnproduct;
         private System.Windows.Forms.Button staffbtn;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel stackpn;
         private System.Windows.Forms.Button productbtn;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel registerpn;
         private System.Windows.Forms.Button registerbtn;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel dashbordpn;
         private System.Windows.Forms.Button dashbtn;
         private System.Windows.Forms.FlowLayoutPanel dashboardContainer;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel reportpn;
         private System.Windows.Forms.Button reportbtn;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel settingspn;
         private System.Windows.Forms.Button settingsbtn;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel aboutpn;
         private System.Windows.Forms.Button aboutbtn;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel logoutpn;
         private System.Windows.Forms.Button logoutbtn;
         private System.Windows.Forms.Timer dashboardtimer;
         private System.Windows.Forms.FlowLayoutPanel settingsContainer;
         private System.Windows.Forms.Timer settingstime;
         private System.Windows.Forms.FlowLayoutPanel membersContainer;
-        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel productpn;
         private System.Windows.Forms.Button probtn;
-        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel tarminationpn;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel memberpn;
         private System.Windows.Forms.Button memberbtn;
         private System.Windows.Forms.FlowLayoutPanel productContainer;
         private System.Windows.Forms.Panel toppnl;
@@ -624,5 +629,6 @@
         private System.Windows.Forms.Button fullscreenbtn;
         private System.Windows.Forms.Button menubtn;
         private System.Windows.Forms.FlowLayoutPanel featureContainer;
+        private System.Windows.Forms.Timer featureContainertimer;
     }
 }

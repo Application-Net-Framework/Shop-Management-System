@@ -55,12 +55,13 @@ namespace App
         bool settingsExpnd = false;
         bool memberExpnd = false;
         bool productExpnd = false;
+        bool featureExpnd = false;
 
         private void dashboardtimer_Tick(object sender, EventArgs e)
         {
             if(dashboardExpnd == false)
             {
-                dashboardContainer.Height += 10;
+                dashboardContainer.Height += 5;
                 if(dashboardContainer.Height >= 140)
                 {
                     dashboardExpnd = true;
@@ -69,8 +70,8 @@ namespace App
             }
             else
             {
-                dashboardContainer.Height -= 10;
-                if(dashboardContainer.Height <= 49)
+                dashboardContainer.Height -= 5;
+                if(dashboardContainer.Height <= 50)
                 {
                     dashboardExpnd = false;
                     dashboardtimer.Stop();
@@ -140,7 +141,38 @@ namespace App
                 }
             }
         }
-
+        private void featureContainertimer_Tick(object sender, EventArgs e)
+        {
+            if (featureExpnd == false)
+            {
+                featureContainer.Width += 5;
+                if (featureContainer.Width >= 165)
+                {
+                    featureExpnd = true;
+                    featureContainertimer.Stop();
+                }
+            }
+            else
+            {
+                featureContainer.Width -= 5;
+                if (featureContainer.Width <= 60)
+                {
+                    featureExpnd = false;
+                    featureContainertimer.Stop();
+                    
+                    // When menu is collapsed, close all other panels
+                    CloseAllPanels();
+                }
+            }
+        }
+        private void menubtn_Click(object sender, EventArgs e)
+        {
+            featureContainertimer.Start();
+        }
+        private void featureContainer_Paint(object sender, PaintEventArgs e)
+        {
+        
+        }
 
         // Helper method to close all panels
         private void CloseAllPanels()
@@ -176,6 +208,7 @@ namespace App
                 productExpnd = false;
                 producttimer.Stop();
             }
+          
         }
 
         private void dashbtn_Click(object sender, EventArgs e)
@@ -286,10 +319,6 @@ namespace App
                 fullscreenbtn.Text = "❐";
             }
         }
-
-
-
-
 
 
         // Add the settings timer event handler

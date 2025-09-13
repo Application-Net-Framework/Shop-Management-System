@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manager_Home));
-            this.featurepnl = new System.Windows.Forms.FlowLayoutPanel();
             this.activitybtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -63,7 +62,12 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.featurepnl.SuspendLayout();
+            this.toppnl = new System.Windows.Forms.Panel();
+            this.leftpnl = new System.Windows.Forms.Panel();
+            this.Settingstimer = new System.Windows.Forms.Timer(this.components);
+            this.membertimer = new System.Windows.Forms.Timer(this.components);
+            this.producttimer = new System.Windows.Forms.Timer(this.components);
+            this.pagetitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -81,17 +85,8 @@
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.toppnl.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // featurepnl
-            // 
-            this.featurepnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.featurepnl.Controls.Add(this.dashboardContainer);
-            this.featurepnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.featurepnl.Location = new System.Drawing.Point(3, 3);
-            this.featurepnl.Name = "featurepnl";
-            this.featurepnl.Size = new System.Drawing.Size(161, 623);
-            this.featurepnl.TabIndex = 1;
             // 
             // activitybtn
             // 
@@ -239,7 +234,7 @@
             this.dashboardContainer.Controls.Add(this.panel6);
             this.dashboardContainer.Controls.Add(this.panel1);
             this.dashboardContainer.Controls.Add(this.panel8);
-            this.dashboardContainer.Location = new System.Drawing.Point(3, 3);
+            this.dashboardContainer.Location = new System.Drawing.Point(448, 292);
             this.dashboardContainer.Name = "dashboardContainer";
             this.dashboardContainer.Size = new System.Drawing.Size(161, 48);
             this.dashboardContainer.TabIndex = 9;
@@ -349,7 +344,7 @@
             this.settingsContainer.Controls.Add(this.panel9);
             this.settingsContainer.Controls.Add(this.panel10);
             this.settingsContainer.Controls.Add(this.panel7);
-            this.settingsContainer.Location = new System.Drawing.Point(359, 87);
+            this.settingsContainer.Location = new System.Drawing.Point(219, 100);
             this.settingsContainer.Name = "settingsContainer";
             this.settingsContainer.Size = new System.Drawing.Size(163, 140);
             this.settingsContainer.TabIndex = 15;
@@ -447,27 +442,58 @@
             this.flowLayoutPanel1.Controls.Add(this.panel11);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(479, 274);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(422, 55);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(167, 134);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(165, 147);
             this.flowLayoutPanel1.TabIndex = 18;
+            // 
+            // toppnl
+            // 
+            this.toppnl.BackColor = System.Drawing.Color.White;
+            this.toppnl.Controls.Add(this.pagetitle);
+            this.toppnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.toppnl.Location = new System.Drawing.Point(3, 3);
+            this.toppnl.Name = "toppnl";
+            this.toppnl.Size = new System.Drawing.Size(684, 40);
+            this.toppnl.TabIndex = 19;
+            // 
+            // leftpnl
+            // 
+            this.leftpnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.leftpnl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.leftpnl.Location = new System.Drawing.Point(3, 43);
+            this.leftpnl.Name = "leftpnl";
+            this.leftpnl.Size = new System.Drawing.Size(150, 583);
+            this.leftpnl.TabIndex = 20;
+            // 
+            // pagetitle
+            // 
+            this.pagetitle.AutoSize = true;
+            this.pagetitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pagetitle.ForeColor = System.Drawing.Color.Black;
+            this.pagetitle.Location = new System.Drawing.Point(255, 10);
+            this.pagetitle.Name = "pagetitle";
+            this.pagetitle.Size = new System.Drawing.Size(154, 21);
+            this.pagetitle.TabIndex = 21;
+            this.pagetitle.Text = "Welcome Manager";
             // 
             // Manager_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 629);
+            this.ClientSize = new System.Drawing.Size(690, 629);
+            this.Controls.Add(this.leftpnl);
+            this.Controls.Add(this.toppnl);
+            this.Controls.Add(this.dashboardContainer);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.memberspnl);
             this.Controls.Add(this.settingsContainer);
-            this.Controls.Add(this.featurepnl);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Manager_Home";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "Manager Dash Board";
             this.Load += new System.EventHandler(this.Manager_Home_Load);
-            this.featurepnl.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -485,12 +511,13 @@
             this.panel12.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.toppnl.ResumeLayout(false);
+            this.toppnl.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel featurepnl;
         private System.Windows.Forms.Button activitybtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -523,5 +550,11 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel toppnl;
+        private System.Windows.Forms.Panel leftpnl;
+        private System.Windows.Forms.Timer Settingstimer;
+        private System.Windows.Forms.Timer membertimer;
+        private System.Windows.Forms.Timer producttimer;
+        private System.Windows.Forms.Label pagetitle;
     }
 }

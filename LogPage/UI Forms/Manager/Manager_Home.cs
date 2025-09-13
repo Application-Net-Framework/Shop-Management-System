@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using App.UI_Forms.Manager;
 
 namespace App
 {
@@ -22,6 +23,20 @@ namespace App
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
+        
+        About about;
+        DailyActivity dailyActivity;
+        Report report;
+        StackLevel stackLevel;
+        StaffInformation staffInformation;
+
+
+        // UI panel expansion states
+        bool dashboardExpnd = false;
+        bool settingsExpnd = false;
+        bool memberExpnd = false;
+        bool productExpnd = false;
+        bool featureExpnd = false;
 
         public Manager_Home()
         {
@@ -49,20 +64,16 @@ namespace App
 
         private void Manager_Home_Load(object sender, EventArgs e)
         {
-
+            // Initialize the UI when the manager home form loads
+            IsMdiContainer = true;  // Ensure this form can host MDI child forms
         }
-        bool dashboardExpnd = false;
-        bool settingsExpnd = false;
-        bool memberExpnd = false;
-        bool productExpnd = false;
-        bool featureExpnd = false;
 
         private void dashboardtimer_Tick(object sender, EventArgs e)
         {
             if(dashboardExpnd == false)
             {
                 dashboardContainer.Height += 5;
-                if(dashboardContainer.Height >= 140)
+                if(dashboardContainer.Height >= 145)
                 {
                     dashboardExpnd = true;
                     dashboardtimer.Stop();
@@ -71,19 +82,20 @@ namespace App
             else
             {
                 dashboardContainer.Height -= 5;
-                if(dashboardContainer.Height <= 50)
+                if(dashboardContainer.Height <= 45)
                 {
                     dashboardExpnd = false;
                     dashboardtimer.Stop();
                 }
             }
         }
+        
         private void settingstime_Tick(object sender, EventArgs e)
         {
             if (settingsExpnd == false)
             {
-                settingsContainer.Height += 10;
-                if (settingsContainer.Height >= 140)
+                settingsContainer.Height += 5;
+                if (settingsContainer.Height >= 145)
                 {
                     settingsExpnd = true;
                     settingstime.Stop();
@@ -91,20 +103,21 @@ namespace App
             }
             else
             {
-                settingsContainer.Height -= 10;
-                if (settingsContainer.Height <= 40)
+                settingsContainer.Height -= 5;
+                if (settingsContainer.Height <= 50)
                 {
                     settingsExpnd = false;
                     settingstime.Stop();
                 }
             }
         }
+        
         private void membertimer_Tick(object sender, EventArgs e)
         {
             if (memberExpnd == false)
             {
                 membersContainer.Height += 10;
-                if (membersContainer.Height >= 170)
+                if (membersContainer.Height >= 190)
                 {
                     memberExpnd = true;
                     membertimer.Stop();
@@ -113,19 +126,20 @@ namespace App
             else
             {
                 membersContainer.Height -= 10;
-                if (membersContainer.Height <= 40)
+                if (membersContainer.Height <= 50)
                 {
                     memberExpnd = false;
                     membertimer.Stop();
                 }
             }
         }
+        
         private void producttimer_Tick(object sender, EventArgs e)
         {
             if (productExpnd == false)
             {
-                productContainer.Height += 10;
-                if (productContainer.Height >= 140)
+                productContainer.Height += 5;
+                if (productContainer.Height >= 145)
                 {
                     productExpnd = true;
                     producttimer.Stop();
@@ -134,13 +148,14 @@ namespace App
             else
             {
                 productContainer.Height -= 10;
-                if (productContainer.Height <= 40)
+                if (productContainer.Height <= 50)
                 {
                     productExpnd = false;
                     producttimer.Stop();
                 }
             }
         }
+        
         private void featureContainertimer_Tick(object sender, EventArgs e)
         {
             if (featureExpnd == false)
@@ -165,13 +180,26 @@ namespace App
                 }
             }
         }
+        
         private void menubtn_Click(object sender, EventArgs e)
         {
             featureContainertimer.Start();
         }
+        
         private void featureContainer_Paint(object sender, PaintEventArgs e)
         {
-        
+            // Custom painting for the feature container if needed
+        }
+
+        private void settingsContainer_Paint(object sender, PaintEventArgs e)
+        {
+            // Custom painting for the settings container if needed
+        }
+
+        // For Designer compatibility
+        private void featureload_Paint(object sender, PaintEventArgs e)
+        {
+            // This empty handler is required by the Designer
         }
 
         // Helper method to close all panels
@@ -208,7 +236,6 @@ namespace App
                 productExpnd = false;
                 producttimer.Stop();
             }
-          
         }
 
         private void dashbtn_Click(object sender, EventArgs e)
@@ -275,23 +302,133 @@ namespace App
             settingstime.Start();
         }
 
-        private void settingsContainer_Paint(object sender, PaintEventArgs e)
+        private void reportbtn_Click(object sender, EventArgs e)
         {
+            if(report == null)
+            {
+                report = new Report();
+                report.FormClosed += Report_FormClosed;
+                report.MdiParent = this;
+                report.Dock = DockStyle.Fill;
+                report.Show();
+            }
+            else
+            {
+                report.Activate();
+            }
+        }
+        
+        private void Report_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            report = null;
+        }
 
+        private void logoutbtn_Click(object sender, EventArgs e)
+        {
+           
+        }
+       
+
+        private void discountbtn_Click(object sender, EventArgs e)
+        {
+            // If you have a Discount form, implement it like this:
+            // if(discount == null)
+            // {
+            //     discount = new Discount();
+            //     discount.FormClosed += Discount_FormClosed;
+            //     discount.MdiParent = this;
+            //     discount.Show();
+            // }
+            // else
+            // {
+            //     discount.Activate();
+            // }
+            
+            // For now, show a message since the form might not exist yet
+            MessageBox.Show("Discount functionality will be implemented in the future.", "Coming Soon", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void productbtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void staffbtn_Click(object sender, EventArgs e)
+        {
+            if(staffInformation == null)
+            {
+                staffInformation = new StaffInformation();
+                staffInformation.FormClosed += StaffInformation_FormClosed;
+                staffInformation.MdiParent = this;
+                staffInformation.Dock = DockStyle.Fill;
+                staffInformation.Show();
+            }
+            else
+            {
+                staffInformation.Activate();
+            }
+        }
+        
+        private void StaffInformation_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            staffInformation = null;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(about == null)
+            {
+                about = new About();
+                about.FormClosed += About_FormClosed;
+                about.MdiParent = this;
+                about.Dock = DockStyle.Fill;
+                about.Show();
+            }
+            else
+            {
+                about.Activate();
+            }
+        }
+        
+        private void About_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            about = null;
+        }
+
+        private void registerbtn_Click(object sender, EventArgs e)
+        {
+            if(stackLevel == null)
+            {
+                stackLevel = new StackLevel();
+                stackLevel.FormClosed += StackLevel_FormClosed;
+                stackLevel.MdiParent = this;
+                stackLevel.Dock = DockStyle.Fill;
+                stackLevel.Show();
+            }
+            else
+            {
+                stackLevel.Activate();
+            }
+        }
+        
+        private void StackLevel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            stackLevel = null;
         }
 
         private void aboutbtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        // Add the MouseDown event handler for the top panel
-        private void toppnl_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
+            if(about == null)
             {
-                ReleaseCapture();
-                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                about = new About();
+                about.FormClosed += About_FormClosed;
+                about.MdiParent = this;
+                about.Dock = DockStyle.Fill;
+                about.Show();
+            }
+            else
+            {
+                about.Activate();
             }
         }
 
@@ -320,8 +457,36 @@ namespace App
             }
         }
 
+        // Add the MouseDown event handler for the top panel
+        private void toppnl_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
 
-        // Add the settings timer event handler
+        private void activitybtn_Click(object sender, EventArgs e)
+        {
+            if(dailyActivity == null)
+            {
+                dailyActivity = new DailyActivity();
+                dailyActivity.FormClosed += DailyActivity_FormClosed;
+                dailyActivity.MdiParent = this;
+                dailyActivity.Dock = DockStyle.Fill;
+                dailyActivity.Show();
+            }
+            else
+            {
+                dailyActivity.Activate();
+            }
+        }
+
+        private void DailyActivity_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dailyActivity = null;
+        }
 
     }
 }

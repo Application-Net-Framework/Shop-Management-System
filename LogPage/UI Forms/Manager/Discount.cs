@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace App.UI_Forms.Manager
 {
-    public partial class LogOut : Form
+    public partial class Discount : Form
     {
-        public LogOut()
+        public Discount()
         {
             InitializeComponent();
         }

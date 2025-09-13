@@ -90,6 +90,7 @@
             this.productpn.SuspendLayout();
             this.productContainer.SuspendLayout();
             this.toppnl.SuspendLayout();
+            this.featureContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // activitybtn
@@ -105,6 +106,7 @@
             this.activitybtn.TabIndex = 2;
             this.activitybtn.Text = "Daily Activity";
             this.activitybtn.UseVisualStyleBackColor = false;
+            this.activitybtn.Click += new System.EventHandler(this.activitybtn_Click);
             // 
             // pnmember
             // 
@@ -118,7 +120,7 @@
             // pnsetting
             // 
             this.pnsetting.Controls.Add(this.discountbtn);
-            this.pnsetting.Location = new System.Drawing.Point(0, 43);
+            this.pnsetting.Location = new System.Drawing.Point(0, 54);
             this.pnsetting.Margin = new System.Windows.Forms.Padding(0);
             this.pnsetting.Name = "pnsetting";
             this.pnsetting.Size = new System.Drawing.Size(161, 43);
@@ -137,12 +139,13 @@
             this.discountbtn.TabIndex = 2;
             this.discountbtn.Text = "Discount";
             this.discountbtn.UseVisualStyleBackColor = false;
+            this.discountbtn.Click += new System.EventHandler(this.discountbtn_Click);
             // 
             // pnproduct
             // 
             this.pnproduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
             this.pnproduct.Controls.Add(this.staffbtn);
-            this.pnproduct.Location = new System.Drawing.Point(0, 43);
+            this.pnproduct.Location = new System.Drawing.Point(0, 54);
             this.pnproduct.Margin = new System.Windows.Forms.Padding(0);
             this.pnproduct.Name = "pnproduct";
             this.pnproduct.Size = new System.Drawing.Size(161, 43);
@@ -161,11 +164,12 @@
             this.staffbtn.TabIndex = 2;
             this.staffbtn.Text = "Staff Info";
             this.staffbtn.UseVisualStyleBackColor = false;
+            this.staffbtn.Click += new System.EventHandler(this.staffbtn_Click);
             // 
             // stackpn
             // 
             this.stackpn.Controls.Add(this.productbtn);
-            this.stackpn.Location = new System.Drawing.Point(0, 86);
+            this.stackpn.Location = new System.Drawing.Point(0, 97);
             this.stackpn.Margin = new System.Windows.Forms.Padding(0);
             this.stackpn.Name = "stackpn";
             this.stackpn.Size = new System.Drawing.Size(161, 43);
@@ -184,12 +188,13 @@
             this.productbtn.TabIndex = 2;
             this.productbtn.Text = "Stack Level";
             this.productbtn.UseVisualStyleBackColor = false;
+            this.productbtn.Click += new System.EventHandler(this.productbtn_Click);
             // 
             // registerpn
             // 
             this.registerpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
             this.registerpn.Controls.Add(this.registerbtn);
-            this.registerpn.Location = new System.Drawing.Point(0, 86);
+            this.registerpn.Location = new System.Drawing.Point(0, 97);
             this.registerpn.Margin = new System.Windows.Forms.Padding(0);
             this.registerpn.Name = "registerpn";
             this.registerpn.Size = new System.Drawing.Size(161, 43);
@@ -208,13 +213,14 @@
             this.registerbtn.TabIndex = 2;
             this.registerbtn.Text = "Registers";
             this.registerbtn.UseVisualStyleBackColor = false;
+            this.registerbtn.Click += new System.EventHandler(this.registerbtn_Click);
             // 
             // dashbordpn
             // 
             this.dashbordpn.Controls.Add(this.dashbtn);
             this.dashbordpn.Location = new System.Drawing.Point(3, 3);
             this.dashbordpn.Name = "dashbordpn";
-            this.dashbordpn.Size = new System.Drawing.Size(161, 43);
+            this.dashbordpn.Size = new System.Drawing.Size(167, 43);
             this.dashbordpn.TabIndex = 8;
             // 
             // dashbtn
@@ -223,10 +229,10 @@
             this.dashbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashbtn.Image = ((System.Drawing.Image)(resources.GetObject("dashbtn.Image")));
             this.dashbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dashbtn.Location = new System.Drawing.Point(-22, -16);
+            this.dashbtn.Location = new System.Drawing.Point(-16, -16);
             this.dashbtn.Name = "dashbtn";
             this.dashbtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.dashbtn.Size = new System.Drawing.Size(203, 71);
+            this.dashbtn.Size = new System.Drawing.Size(200, 71);
             this.dashbtn.TabIndex = 2;
             this.dashbtn.Text = "    Dash Board";
             this.dashbtn.UseVisualStyleBackColor = false;
@@ -238,9 +244,9 @@
             this.dashboardContainer.Controls.Add(this.dashbordpn);
             this.dashboardContainer.Controls.Add(this.pnmember);
             this.dashboardContainer.Controls.Add(this.reportpn);
-            this.dashboardContainer.Location = new System.Drawing.Point(194, 76);
+            this.dashboardContainer.Location = new System.Drawing.Point(3, 3);
             this.dashboardContainer.Name = "dashboardContainer";
-            this.dashboardContainer.Size = new System.Drawing.Size(170, 135);
+            this.dashboardContainer.Size = new System.Drawing.Size(170, 50);
             this.dashboardContainer.TabIndex = 9;
             // 
             // reportpn
@@ -265,6 +271,7 @@
             this.reportbtn.TabIndex = 2;
             this.reportbtn.Text = "Report";
             this.reportbtn.UseVisualStyleBackColor = false;
+            this.reportbtn.Click += new System.EventHandler(this.reportbtn_Click);
             // 
             // settingspn
             // 
@@ -273,7 +280,7 @@
             this.settingspn.Location = new System.Drawing.Point(0, 0);
             this.settingspn.Margin = new System.Windows.Forms.Padding(0);
             this.settingspn.Name = "settingspn";
-            this.settingspn.Size = new System.Drawing.Size(161, 43);
+            this.settingspn.Size = new System.Drawing.Size(170, 53);
             this.settingspn.TabIndex = 13;
             // 
             // settingsbtn
@@ -282,10 +289,10 @@
             this.settingsbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsbtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsbtn.Image")));
             this.settingsbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsbtn.Location = new System.Drawing.Point(-8, -9);
+            this.settingsbtn.Location = new System.Drawing.Point(-8, -15);
             this.settingsbtn.Name = "settingsbtn";
             this.settingsbtn.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.settingsbtn.Size = new System.Drawing.Size(190, 61);
+            this.settingsbtn.Size = new System.Drawing.Size(190, 77);
             this.settingsbtn.TabIndex = 2;
             this.settingsbtn.Text = "Settings";
             this.settingsbtn.UseVisualStyleBackColor = false;
@@ -295,7 +302,7 @@
             // 
             this.aboutpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.aboutpn.Controls.Add(this.aboutbtn);
-            this.aboutpn.Location = new System.Drawing.Point(3, 46);
+            this.aboutpn.Location = new System.Drawing.Point(3, 56);
             this.aboutpn.Name = "aboutpn";
             this.aboutpn.Size = new System.Drawing.Size(161, 43);
             this.aboutpn.TabIndex = 14;
@@ -318,7 +325,7 @@
             // 
             this.logoutpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
             this.logoutpn.Controls.Add(this.logoutbtn);
-            this.logoutpn.Location = new System.Drawing.Point(3, 95);
+            this.logoutpn.Location = new System.Drawing.Point(3, 105);
             this.logoutpn.Name = "logoutpn";
             this.logoutpn.Padding = new System.Windows.Forms.Padding(3);
             this.logoutpn.Size = new System.Drawing.Size(161, 43);
@@ -337,6 +344,7 @@
             this.logoutbtn.TabIndex = 2;
             this.logoutbtn.Text = "Log Out";
             this.logoutbtn.UseVisualStyleBackColor = false;
+            this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click);
             // 
             // dashboardtimer
             // 
@@ -349,9 +357,9 @@
             this.settingsContainer.Controls.Add(this.settingspn);
             this.settingsContainer.Controls.Add(this.aboutpn);
             this.settingsContainer.Controls.Add(this.logoutpn);
-            this.settingsContainer.Location = new System.Drawing.Point(464, 278);
+            this.settingsContainer.Location = new System.Drawing.Point(3, 171);
             this.settingsContainer.Name = "settingsContainer";
-            this.settingsContainer.Size = new System.Drawing.Size(170, 134);
+            this.settingsContainer.Size = new System.Drawing.Size(170, 50);
             this.settingsContainer.TabIndex = 15;
             this.settingsContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.settingsContainer_Paint);
             // 
@@ -367,9 +375,9 @@
             this.membersContainer.Controls.Add(this.pnproduct);
             this.membersContainer.Controls.Add(this.registerpn);
             this.membersContainer.Controls.Add(this.tarminationpn);
-            this.membersContainer.Location = new System.Drawing.Point(464, 82);
+            this.membersContainer.Location = new System.Drawing.Point(3, 59);
             this.membersContainer.Name = "membersContainer";
-            this.membersContainer.Size = new System.Drawing.Size(170, 129);
+            this.membersContainer.Size = new System.Drawing.Size(170, 50);
             this.membersContainer.TabIndex = 16;
             // 
             // memberpn
@@ -378,7 +386,7 @@
             this.memberpn.Location = new System.Drawing.Point(0, 0);
             this.memberpn.Margin = new System.Windows.Forms.Padding(0);
             this.memberpn.Name = "memberpn";
-            this.memberpn.Size = new System.Drawing.Size(161, 43);
+            this.memberpn.Size = new System.Drawing.Size(170, 54);
             this.memberpn.TabIndex = 19;
             // 
             // memberbtn
@@ -387,7 +395,7 @@
             this.memberbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memberbtn.Image = ((System.Drawing.Image)(resources.GetObject("memberbtn.Image")));
             this.memberbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.memberbtn.Location = new System.Drawing.Point(-13, -11);
+            this.memberbtn.Location = new System.Drawing.Point(-15, -4);
             this.memberbtn.Name = "memberbtn";
             this.memberbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.memberbtn.Size = new System.Drawing.Size(199, 66);
@@ -400,7 +408,7 @@
             // 
             this.tarminationpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
             this.tarminationpn.Controls.Add(this.button2);
-            this.tarminationpn.Location = new System.Drawing.Point(0, 129);
+            this.tarminationpn.Location = new System.Drawing.Point(0, 140);
             this.tarminationpn.Margin = new System.Windows.Forms.Padding(0);
             this.tarminationpn.Name = "tarminationpn";
             this.tarminationpn.Size = new System.Drawing.Size(161, 43);
@@ -419,6 +427,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Termination";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // productpn
             // 
@@ -426,7 +435,7 @@
             this.productpn.Location = new System.Drawing.Point(0, 0);
             this.productpn.Margin = new System.Windows.Forms.Padding(0);
             this.productpn.Name = "productpn";
-            this.productpn.Size = new System.Drawing.Size(161, 43);
+            this.productpn.Size = new System.Drawing.Size(170, 54);
             this.productpn.TabIndex = 17;
             // 
             // probtn
@@ -435,7 +444,7 @@
             this.probtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.probtn.Image = ((System.Drawing.Image)(resources.GetObject("probtn.Image")));
             this.probtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.probtn.Location = new System.Drawing.Point(-13, -11);
+            this.probtn.Location = new System.Drawing.Point(-13, -8);
             this.probtn.Name = "probtn";
             this.probtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.probtn.Size = new System.Drawing.Size(200, 66);
@@ -450,9 +459,9 @@
             this.productContainer.Controls.Add(this.productpn);
             this.productContainer.Controls.Add(this.pnsetting);
             this.productContainer.Controls.Add(this.stackpn);
-            this.productContainer.Location = new System.Drawing.Point(194, 220);
+            this.productContainer.Location = new System.Drawing.Point(3, 115);
             this.productContainer.Name = "productContainer";
-            this.productContainer.Size = new System.Drawing.Size(170, 132);
+            this.productContainer.Size = new System.Drawing.Size(170, 50);
             this.productContainer.TabIndex = 18;
             // 
             // toppnl
@@ -467,7 +476,7 @@
             this.toppnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppnl.Location = new System.Drawing.Point(3, 3);
             this.toppnl.Name = "toppnl";
-            this.toppnl.Size = new System.Drawing.Size(648, 34);
+            this.toppnl.Size = new System.Drawing.Size(940, 34);
             this.toppnl.TabIndex = 19;
             this.toppnl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.toppnl_MouseDown);
             // 
@@ -484,7 +493,7 @@
             // minimizebtn
             // 
             this.minimizebtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.minimizebtn.Location = new System.Drawing.Point(555, 0);
+            this.minimizebtn.Location = new System.Drawing.Point(847, 0);
             this.minimizebtn.Name = "minimizebtn";
             this.minimizebtn.Size = new System.Drawing.Size(32, 34);
             this.minimizebtn.TabIndex = 21;
@@ -494,7 +503,7 @@
             // fullscreenbtn
             // 
             this.fullscreenbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.fullscreenbtn.Location = new System.Drawing.Point(587, 0);
+            this.fullscreenbtn.Location = new System.Drawing.Point(879, 0);
             this.fullscreenbtn.Name = "fullscreenbtn";
             this.fullscreenbtn.Size = new System.Drawing.Size(32, 34);
             this.fullscreenbtn.TabIndex = 22;
@@ -504,7 +513,7 @@
             // crossbtn
             // 
             this.crossbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.crossbtn.Location = new System.Drawing.Point(619, 0);
+            this.crossbtn.Location = new System.Drawing.Point(911, 0);
             this.crossbtn.Name = "crossbtn";
             this.crossbtn.Size = new System.Drawing.Size(29, 34);
             this.crossbtn.TabIndex = 21;
@@ -516,7 +525,7 @@
             this.pagetitle.AutoSize = true;
             this.pagetitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pagetitle.ForeColor = System.Drawing.Color.Black;
-            this.pagetitle.Location = new System.Drawing.Point(255, 10);
+            this.pagetitle.Location = new System.Drawing.Point(441, 13);
             this.pagetitle.Name = "pagetitle";
             this.pagetitle.Size = new System.Drawing.Size(154, 21);
             this.pagetitle.TabIndex = 21;
@@ -535,10 +544,14 @@
             // featureContainer
             // 
             this.featureContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.featureContainer.Controls.Add(this.dashboardContainer);
+            this.featureContainer.Controls.Add(this.membersContainer);
+            this.featureContainer.Controls.Add(this.productContainer);
+            this.featureContainer.Controls.Add(this.settingsContainer);
             this.featureContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.featureContainer.Location = new System.Drawing.Point(3, 37);
             this.featureContainer.Name = "featureContainer";
-            this.featureContainer.Size = new System.Drawing.Size(166, 512);
+            this.featureContainer.Size = new System.Drawing.Size(178, 551);
             this.featureContainer.TabIndex = 20;
             this.featureContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.featureContainer_Paint);
             // 
@@ -551,13 +564,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 552);
-            this.Controls.Add(this.dashboardContainer);
-            this.Controls.Add(this.membersContainer);
+            this.ClientSize = new System.Drawing.Size(946, 591);
             this.Controls.Add(this.featureContainer);
-            this.Controls.Add(this.productContainer);
             this.Controls.Add(this.toppnl);
-            this.Controls.Add(this.settingsContainer);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Manager_Home";
@@ -583,6 +592,7 @@
             this.productContainer.ResumeLayout(false);
             this.toppnl.ResumeLayout(false);
             this.toppnl.PerformLayout();
+            this.featureContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

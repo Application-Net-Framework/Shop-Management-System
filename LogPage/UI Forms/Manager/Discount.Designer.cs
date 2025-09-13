@@ -1,6 +1,6 @@
 ﻿namespace App.UI_Forms.Manager
 {
-    partial class About
+    partial class Discount
     {
         /// <summary>
         /// Required designer variable.
@@ -35,21 +35,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(202, 221);
+            this.label1.Location = new System.Drawing.Point(181, 193);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 108);
+            this.label1.Size = new System.Drawing.Size(425, 108);
             this.label1.TabIndex = 1;
-            this.label1.Text = "About";
+            this.label1.Text = "Discount";
             // 
-            // About
+            // Discount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 550);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "About";
-            this.Text = "About";
+            this.Name = "Discount";
+            this.Text = "Discount";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -123,11 +123,11 @@
     <Compile Include="UI Forms\Manager\DailyActivity.Designer.cs">
       <DependentUpon>DailyActivity.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Manager\LogOut.cs">
+    <Compile Include="UI Forms\Manager\Discount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI Forms\Manager\LogOut.Designer.cs">
-      <DependentUpon>LogOut.cs</DependentUpon>
+    <Compile Include="UI Forms\Manager\Discount.Designer.cs">
+      <DependentUpon>Discount.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Manager\Manager_Home.cs">
       <SubType>Form</SubType>
@@ -231,8 +231,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI Forms\Manager\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\DailyActivity.resx">
+      <DependentUpon>DailyActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\Discount.resx">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\Manager_Home.resx">
       <DependentUpon>Manager_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\StackLevel.resx">
+      <DependentUpon>StackLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\StaffInformation.resx">
+      <DependentUpon>StaffInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Registration\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>

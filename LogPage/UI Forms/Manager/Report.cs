@@ -16,5 +16,10 @@ namespace App.UI_Forms.Manager
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

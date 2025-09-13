@@ -16,5 +16,10 @@ namespace App.UI_Forms.Manager
         {
             InitializeComponent();
         }
+
+        private void DailyActivity_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -54,5 +54,10 @@ namespace App
         {
 
         }
+
+        private void aboutbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

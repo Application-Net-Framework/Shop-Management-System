@@ -120,16 +120,16 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="activitybtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAIASURBVEhLtdYhchxBDAVQsYWhuYCZmZkvYBJmGmgWkirDAIOAgFSZ+QI+Rk6Xeh3Jpe3p2V2w
-        Ad8zI6n/l9TqXkdEHCLiKSJ+/wfgxT9eXiLiMSK+XhH48HqPX2l4T+OPKwAPPrz4xx9qLw/fvwRExG1E
-        fGuZfC7fpWhrf25EUv012ygbz7eIuJtI9FrszSxwUiQrIPBJ9ny54K7sTUClxGEI5TpxvQtHInop68dc
-        QGQQJCy+Tx8S8cQkUHGS/JOxSxHG50bEpl2CwOKHTKQEJEKkYondZ0VLEQs9ZVlTMTY8CX0jIHRIu7NQ
-        LeO7vWRPZCYj6AKVhHeQaQmrhNgQPiuSTr21SJCq+AnUMMhaEkVQImMozoo0IkJ1A2hPVcVeh9f+lQib
-        OBtOUNyuiL76rs0G39XKWoxwFlG1oWDDU3u8ETGCAguCxz60SrTKGiLVVi0UrxJ+wkuRmp4uImMtLKhG
-        LB8ifhV4VoL81dYjET2Wjcx8d8zXd7fPcfWuInxHF6SsajTPQexsWwFf7fE/kT5+e2gLj87EHtpQfFwT
-        enpt1H34caJNyQr6696ygd3uu1+GK+A9bEqcURM029M3Jmu2z9gYGoFy9b9+uLzPYOf3vvzx2hXJ7I2g
-        A6evnnsov7Ytq9oYUkSGFs4beQrin2auUyJOtgxldynEL//h+AuzjzdtyFvevQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAgBJREFUSEu1
+        1iFyHEEMBVCxhaG5gJmZmS9gEmYaaBaSKsMAg4CAVJn5Aj5GTpd6Hcml7enZXbAB3zMjqf+X1OpeR0Qc
+        IuIpIn7/B+DFP15eIuIxIr5eEfjweo9faXhP448rAA8+vPjHH2ovD9+/BETEbUR8a5l8Lt+laGt/bkRS
+        /TXbKBvPt4i4m0j0WuzNLHBSJCsg8En2fLngruxNQKXEYQjlOnG9C0cieinrx1xAZBAkLL5PHxLxxCRQ
+        cZL8k7FLEcbnRsSmXYLA4odMpAQkQqRiid1nRUsRCz1lWVMxNjwJfSMgdEi7s1At47u9ZE9kJiPoApWE
+        d5BpCauE2BA+K5JOvbVIkKr4CdQwyFoSRVAiYyjOijQiQnUDaE9VxV6H1/6VCJs4G05Q3K6IvvquzQbf
+        1cpajHAWUbWhYMNTe7wRMYICC4LHPrRKtMoaItVWLRSvEn7CS5Gani4iYy0sqEYsHyJ+FXhWgvzV1iMR
+        PZaNzHx3zNd3t89x9a4ifEcXpKxqNM9B7GxbAV/t8T+RPn57aAuPzsQe2lB8XBN6em3Uffhxok3JCvrr
+        3rKB3e67X4Yr4D1sSpxREzTb0zcma7bP2BgagXL1v364vM9g5/e+/PHaFcnsjaADp6+eeyi/ti2r2hhS
+        RIYWzht5CuKfZq5TIk62DGV3KcQv/+H4C7OPN23IW969AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="discountbtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -264,7 +264,7 @@
   <metadata name="settingstime.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>155, 17</value>
   </metadata>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAgBJREFUSEu1
         1iFyHEEMBVCxhaG5gJmZmS9gEmYaaBaSKsMAg4CAVJn5Aj5GTpd6Hcml7enZXbAB3zMjqf+X1OpeR0Qc
@@ -292,7 +292,7 @@
         RIYWzht5CuKfZq5TIk62DGV3KcQv/+H4C7OPN23IW969AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAgBJREFUSEu1
         1iFyHEEMBVCxhaG5gJmZmS9gEmYaaBaSKsMAg4CAVJn5Aj5GTpd6Hcml7enZXbAB3zMjqf+X1OpeR0Qc
@@ -306,13 +306,19 @@
         RIYWzht5CuKfZq5TIk62DGV3KcQv/+H4C7OPN23IW969AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="Settingstimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>274, 17</value>
+  <metadata name="toppnl.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pagetitle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="membertimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>398, 17</value>
+    <value>269, 16</value>
   </metadata>
   <metadata name="producttimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>525, 17</value>
+    <value>386, 18</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>110</value>
   </metadata>
 </root>

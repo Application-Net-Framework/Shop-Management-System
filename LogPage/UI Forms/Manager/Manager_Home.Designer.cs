@@ -54,20 +54,22 @@
             this.dashboardtimer = new System.Windows.Forms.Timer(this.components);
             this.settingsContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.settingstime = new System.Windows.Forms.Timer(this.components);
-            this.memberspnl = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.membersContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.productContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.toppnl = new System.Windows.Forms.Panel();
+            this.minimizebtn = new System.Windows.Forms.Button();
+            this.fullscreenbtn = new System.Windows.Forms.Button();
+            this.crossbtn = new System.Windows.Forms.Button();
+            this.pagetitle = new System.Windows.Forms.Label();
             this.leftpnl = new System.Windows.Forms.Panel();
-            this.Settingstimer = new System.Windows.Forms.Timer(this.components);
             this.membertimer = new System.Windows.Forms.Timer(this.components);
             this.producttimer = new System.Windows.Forms.Timer(this.components);
-            this.pagetitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -80,11 +82,11 @@
             this.panel10.SuspendLayout();
             this.panel7.SuspendLayout();
             this.settingsContainer.SuspendLayout();
-            this.memberspnl.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
+            this.membersContainer.SuspendLayout();
             this.panel13.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.productContainer.SuspendLayout();
             this.toppnl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -234,7 +236,7 @@
             this.dashboardContainer.Controls.Add(this.panel6);
             this.dashboardContainer.Controls.Add(this.panel1);
             this.dashboardContainer.Controls.Add(this.panel8);
-            this.dashboardContainer.Location = new System.Drawing.Point(448, 292);
+            this.dashboardContainer.Location = new System.Drawing.Point(465, 260);
             this.dashboardContainer.Name = "dashboardContainer";
             this.dashboardContainer.Size = new System.Drawing.Size(161, 48);
             this.dashboardContainer.TabIndex = 9;
@@ -353,41 +355,42 @@
             // settingstime
             // 
             this.settingstime.Interval = 30;
+            this.settingstime.Tick += new System.EventHandler(this.settingstime_Tick);
             // 
-            // memberspnl
+            // membersContainer
             // 
-            this.memberspnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.memberspnl.Controls.Add(this.panel13);
-            this.memberspnl.Controls.Add(this.panel3);
-            this.memberspnl.Controls.Add(this.panel5);
-            this.memberspnl.Controls.Add(this.panel12);
-            this.memberspnl.Location = new System.Drawing.Point(222, 260);
-            this.memberspnl.Name = "memberspnl";
-            this.memberspnl.Size = new System.Drawing.Size(161, 173);
-            this.memberspnl.TabIndex = 16;
+            this.membersContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.membersContainer.Controls.Add(this.panel13);
+            this.membersContainer.Controls.Add(this.panel3);
+            this.membersContainer.Controls.Add(this.panel5);
+            this.membersContainer.Controls.Add(this.panel12);
+            this.membersContainer.Location = new System.Drawing.Point(222, 260);
+            this.membersContainer.Name = "membersContainer";
+            this.membersContainer.Size = new System.Drawing.Size(161, 173);
+            this.membersContainer.TabIndex = 16;
             // 
-            // panel11
+            // panel13
             // 
-            this.panel11.Controls.Add(this.button1);
-            this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Margin = new System.Windows.Forms.Padding(0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(161, 43);
-            this.panel11.TabIndex = 17;
+            this.panel13.Controls.Add(this.button3);
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Margin = new System.Windows.Forms.Padding(0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(161, 43);
+            this.panel13.TabIndex = 19;
             // 
-            // button1
+            // button3
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-13, -11);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(183, 66);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Products";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(-13, -11);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(183, 66);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Members";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // panel12
             // 
@@ -413,58 +416,84 @@
             this.button2.Text = "Termination";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // panel13
+            // panel11
             // 
-            this.panel13.Controls.Add(this.button3);
-            this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Margin = new System.Windows.Forms.Padding(0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(161, 43);
-            this.panel13.TabIndex = 19;
+            this.panel11.Controls.Add(this.button1);
+            this.panel11.Location = new System.Drawing.Point(0, 0);
+            this.panel11.Margin = new System.Windows.Forms.Padding(0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(161, 43);
+            this.panel11.TabIndex = 17;
             // 
-            // button3
+            // button1
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(-13, -11);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(183, 66);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Members";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(-13, -11);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(183, 66);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Products";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // flowLayoutPanel1
+            // productContainer
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.flowLayoutPanel1.Controls.Add(this.panel11);
-            this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(422, 55);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(165, 147);
-            this.flowLayoutPanel1.TabIndex = 18;
+            this.productContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.productContainer.Controls.Add(this.panel11);
+            this.productContainer.Controls.Add(this.panel2);
+            this.productContainer.Controls.Add(this.panel4);
+            this.productContainer.Location = new System.Drawing.Point(422, 55);
+            this.productContainer.Name = "productContainer";
+            this.productContainer.Size = new System.Drawing.Size(165, 147);
+            this.productContainer.TabIndex = 18;
             // 
             // toppnl
             // 
             this.toppnl.BackColor = System.Drawing.Color.White;
+            this.toppnl.Controls.Add(this.minimizebtn);
+            this.toppnl.Controls.Add(this.fullscreenbtn);
+            this.toppnl.Controls.Add(this.crossbtn);
             this.toppnl.Controls.Add(this.pagetitle);
+            this.toppnl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.toppnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppnl.Location = new System.Drawing.Point(3, 3);
             this.toppnl.Name = "toppnl";
-            this.toppnl.Size = new System.Drawing.Size(684, 40);
+            this.toppnl.Size = new System.Drawing.Size(684, 34);
             this.toppnl.TabIndex = 19;
+            this.toppnl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.toppnl_MouseDown);
             // 
-            // leftpnl
+            // minimizebtn
             // 
-            this.leftpnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.leftpnl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.leftpnl.Location = new System.Drawing.Point(3, 43);
-            this.leftpnl.Name = "leftpnl";
-            this.leftpnl.Size = new System.Drawing.Size(150, 583);
-            this.leftpnl.TabIndex = 20;
+            this.minimizebtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.minimizebtn.Location = new System.Drawing.Point(591, 0);
+            this.minimizebtn.Name = "minimizebtn";
+            this.minimizebtn.Size = new System.Drawing.Size(32, 34);
+            this.minimizebtn.TabIndex = 21;
+            this.minimizebtn.Text = "button4";
+            this.minimizebtn.UseVisualStyleBackColor = true;
+            // 
+            // fullscreenbtn
+            // 
+            this.fullscreenbtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.fullscreenbtn.Location = new System.Drawing.Point(623, 0);
+            this.fullscreenbtn.Name = "fullscreenbtn";
+            this.fullscreenbtn.Size = new System.Drawing.Size(32, 34);
+            this.fullscreenbtn.TabIndex = 22;
+            this.fullscreenbtn.Text = "button4";
+            this.fullscreenbtn.UseVisualStyleBackColor = true;
+            // 
+            // crossbtn
+            // 
+            this.crossbtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.crossbtn.Location = new System.Drawing.Point(655, 0);
+            this.crossbtn.Name = "crossbtn";
+            this.crossbtn.Size = new System.Drawing.Size(29, 34);
+            this.crossbtn.TabIndex = 21;
+            this.crossbtn.Text = "button4";
+            this.crossbtn.UseVisualStyleBackColor = true;
             // 
             // pagetitle
             // 
@@ -477,6 +506,15 @@
             this.pagetitle.TabIndex = 21;
             this.pagetitle.Text = "Welcome Manager";
             // 
+            // leftpnl
+            // 
+            this.leftpnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.leftpnl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.leftpnl.Location = new System.Drawing.Point(3, 37);
+            this.leftpnl.Name = "leftpnl";
+            this.leftpnl.Size = new System.Drawing.Size(150, 589);
+            this.leftpnl.TabIndex = 20;
+            // 
             // Manager_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,8 +523,8 @@
             this.Controls.Add(this.leftpnl);
             this.Controls.Add(this.toppnl);
             this.Controls.Add(this.dashboardContainer);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.memberspnl);
+            this.Controls.Add(this.productContainer);
+            this.Controls.Add(this.membersContainer);
             this.Controls.Add(this.settingsContainer);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -506,11 +544,11 @@
             this.panel10.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.settingsContainer.ResumeLayout(false);
-            this.memberspnl.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
+            this.membersContainer.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.productContainer.ResumeLayout(false);
             this.toppnl.ResumeLayout(false);
             this.toppnl.PerformLayout();
             this.ResumeLayout(false);
@@ -542,19 +580,21 @@
         private System.Windows.Forms.Timer dashboardtimer;
         private System.Windows.Forms.FlowLayoutPanel settingsContainer;
         private System.Windows.Forms.Timer settingstime;
-        private System.Windows.Forms.FlowLayoutPanel memberspnl;
+        private System.Windows.Forms.FlowLayoutPanel membersContainer;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel productContainer;
         private System.Windows.Forms.Panel toppnl;
         private System.Windows.Forms.Panel leftpnl;
-        private System.Windows.Forms.Timer Settingstimer;
         private System.Windows.Forms.Timer membertimer;
         private System.Windows.Forms.Timer producttimer;
         private System.Windows.Forms.Label pagetitle;
+        private System.Windows.Forms.Button crossbtn;
+        private System.Windows.Forms.Button minimizebtn;
+        private System.Windows.Forms.Button fullscreenbtn;
     }
 }

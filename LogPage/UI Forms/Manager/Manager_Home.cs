@@ -142,22 +142,103 @@ namespace App
         }
 
 
+        // Helper method to close all panels
+        private void CloseAllPanels()
+        {
+            // Close dashboard if it's open
+            if (dashboardExpnd)
+            {
+                dashboardContainer.Height = 49;
+                dashboardExpnd = false;
+                dashboardtimer.Stop();
+            }
+            
+            // Close settings if it's open
+            if (settingsExpnd)
+            {
+                settingsContainer.Height = 40;
+                settingsExpnd = false;
+                settingstime.Stop();
+            }
+            
+            // Close members if it's open
+            if (memberExpnd)
+            {
+                membersContainer.Height = 40;
+                memberExpnd = false;
+                membertimer.Stop();
+            }
+            
+            // Close products if it's open
+            if (productExpnd)
+            {
+                productContainer.Height = 40;
+                productExpnd = false;
+                producttimer.Stop();
+            }
+        }
+
         private void dashbtn_Click(object sender, EventArgs e)
         {
+            // If dashboard is already open, just close it
+            if (dashboardExpnd)
+            {
+                dashboardtimer.Start();
+                return;
+            }
+            
+            // Close all panels first
+            CloseAllPanels();
+            
+            // Now open dashboard
             dashboardtimer.Start();
         }
+        
         private void memberbtn_Click(object sender, EventArgs e)
         {
+            // If members is already open, just close it
+            if (memberExpnd)
+            {
+                membertimer.Start();
+                return;
+            }
+            
+            // Close all panels first
+            CloseAllPanels();
+            
+            // Now open members
             membertimer.Start();
         }
 
         private void probtn_Click(object sender, EventArgs e)
         {
+            // If products is already open, just close it
+            if (productExpnd)
+            {
+                producttimer.Start();
+                return;
+            }
+            
+            // Close all panels first
+            CloseAllPanels();
+            
+            // Now open products
             producttimer.Start();
         }
 
         private void settingsbtn_Click(object sender, EventArgs e)
         {
+            // If settings is already open, just close it
+            if (settingsExpnd)
+            {
+                settingstime.Start();
+                return;
+            }
+            
+            // Close all panels first
+            CloseAllPanels();
+            
+            // Now open settings
             settingstime.Start();
         }
 

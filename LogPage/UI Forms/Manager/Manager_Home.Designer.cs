@@ -69,6 +69,7 @@
             this.pagetitle = new System.Windows.Forms.Label();
             this.membertimer = new System.Windows.Forms.Timer(this.components);
             this.producttimer = new System.Windows.Forms.Timer(this.components);
+            this.menubtn = new System.Windows.Forms.Button();
             this.featureContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -237,8 +238,7 @@
             this.dashboardContainer.Controls.Add(this.panel6);
             this.dashboardContainer.Controls.Add(this.panel1);
             this.dashboardContainer.Controls.Add(this.panel8);
-            this.dashboardContainer.Location = new System.Drawing.Point(0, 0);
-            this.dashboardContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.dashboardContainer.Location = new System.Drawing.Point(3, 3);
             this.dashboardContainer.Name = "dashboardContainer";
             this.dashboardContainer.Size = new System.Drawing.Size(161, 40);
             this.dashboardContainer.TabIndex = 9;
@@ -285,7 +285,7 @@
             this.settingsbtn.Location = new System.Drawing.Point(-8, -9);
             this.settingsbtn.Name = "settingsbtn";
             this.settingsbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.settingsbtn.Size = new System.Drawing.Size(178, 61);
+            this.settingsbtn.Size = new System.Drawing.Size(194, 61);
             this.settingsbtn.TabIndex = 2;
             this.settingsbtn.Text = "Settings";
             this.settingsbtn.UseVisualStyleBackColor = false;
@@ -349,8 +349,7 @@
             this.settingsContainer.Controls.Add(this.panel9);
             this.settingsContainer.Controls.Add(this.panel10);
             this.settingsContainer.Controls.Add(this.panel7);
-            this.settingsContainer.Location = new System.Drawing.Point(0, 120);
-            this.settingsContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.settingsContainer.Location = new System.Drawing.Point(3, 141);
             this.settingsContainer.Name = "settingsContainer";
             this.settingsContainer.Size = new System.Drawing.Size(152, 40);
             this.settingsContainer.TabIndex = 15;
@@ -368,8 +367,7 @@
             this.membersContainer.Controls.Add(this.panel3);
             this.membersContainer.Controls.Add(this.panel5);
             this.membersContainer.Controls.Add(this.panel12);
-            this.membersContainer.Location = new System.Drawing.Point(0, 40);
-            this.membersContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.membersContainer.Location = new System.Drawing.Point(3, 49);
             this.membersContainer.Name = "membersContainer";
             this.membersContainer.Size = new System.Drawing.Size(161, 40);
             this.membersContainer.TabIndex = 16;
@@ -392,7 +390,7 @@
             this.memberbtn.Location = new System.Drawing.Point(-13, -11);
             this.memberbtn.Name = "memberbtn";
             this.memberbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.memberbtn.Size = new System.Drawing.Size(183, 66);
+            this.memberbtn.Size = new System.Drawing.Size(199, 66);
             this.memberbtn.TabIndex = 2;
             this.memberbtn.Text = "Members";
             this.memberbtn.UseVisualStyleBackColor = false;
@@ -440,7 +438,7 @@
             this.probtn.Location = new System.Drawing.Point(-13, -11);
             this.probtn.Name = "probtn";
             this.probtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.probtn.Size = new System.Drawing.Size(183, 66);
+            this.probtn.Size = new System.Drawing.Size(199, 66);
             this.probtn.TabIndex = 2;
             this.probtn.Text = "Products";
             this.probtn.UseVisualStyleBackColor = false;
@@ -452,8 +450,7 @@
             this.productContainer.Controls.Add(this.panel11);
             this.productContainer.Controls.Add(this.panel2);
             this.productContainer.Controls.Add(this.panel4);
-            this.productContainer.Location = new System.Drawing.Point(0, 80);
-            this.productContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.productContainer.Location = new System.Drawing.Point(3, 95);
             this.productContainer.Name = "productContainer";
             this.productContainer.Size = new System.Drawing.Size(156, 40);
             this.productContainer.TabIndex = 18;
@@ -461,6 +458,7 @@
             // toppnl
             // 
             this.toppnl.BackColor = System.Drawing.Color.White;
+            this.toppnl.Controls.Add(this.menubtn);
             this.toppnl.Controls.Add(this.minimizebtn);
             this.toppnl.Controls.Add(this.fullscreenbtn);
             this.toppnl.Controls.Add(this.crossbtn);
@@ -469,14 +467,14 @@
             this.toppnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppnl.Location = new System.Drawing.Point(3, 3);
             this.toppnl.Name = "toppnl";
-            this.toppnl.Size = new System.Drawing.Size(652, 34);
+            this.toppnl.Size = new System.Drawing.Size(648, 34);
             this.toppnl.TabIndex = 19;
             this.toppnl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.toppnl_MouseDown);
             // 
             // minimizebtn
             // 
             this.minimizebtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.minimizebtn.Location = new System.Drawing.Point(559, 0);
+            this.minimizebtn.Location = new System.Drawing.Point(555, 0);
             this.minimizebtn.Name = "minimizebtn";
             this.minimizebtn.Size = new System.Drawing.Size(32, 34);
             this.minimizebtn.TabIndex = 21;
@@ -486,7 +484,7 @@
             // fullscreenbtn
             // 
             this.fullscreenbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.fullscreenbtn.Location = new System.Drawing.Point(591, 0);
+            this.fullscreenbtn.Location = new System.Drawing.Point(587, 0);
             this.fullscreenbtn.Name = "fullscreenbtn";
             this.fullscreenbtn.Size = new System.Drawing.Size(32, 34);
             this.fullscreenbtn.TabIndex = 22;
@@ -496,7 +494,7 @@
             // crossbtn
             // 
             this.crossbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.crossbtn.Location = new System.Drawing.Point(623, 0);
+            this.crossbtn.Location = new System.Drawing.Point(619, 0);
             this.crossbtn.Name = "crossbtn";
             this.crossbtn.Size = new System.Drawing.Size(29, 34);
             this.crossbtn.TabIndex = 21;
@@ -524,6 +522,16 @@
             this.producttimer.Interval = 10;
             this.producttimer.Tick += new System.EventHandler(this.producttimer_Tick);
             // 
+            // menubtn
+            // 
+            this.menubtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menubtn.BackgroundImage")));
+            this.menubtn.Location = new System.Drawing.Point(16, -1);
+            this.menubtn.Name = "menubtn";
+            this.menubtn.Size = new System.Drawing.Size(39, 35);
+            this.menubtn.TabIndex = 21;
+            this.menubtn.Text = "button1";
+            this.menubtn.UseVisualStyleBackColor = true;
+            // 
             // featureContainer
             // 
             this.featureContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
@@ -534,14 +542,14 @@
             this.featureContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.featureContainer.Location = new System.Drawing.Point(3, 37);
             this.featureContainer.Name = "featureContainer";
-            this.featureContainer.Size = new System.Drawing.Size(150, 503);
+            this.featureContainer.Size = new System.Drawing.Size(189, 512);
             this.featureContainer.TabIndex = 20;
             // 
             // Manager_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 543);
+            this.ClientSize = new System.Drawing.Size(654, 552);
             this.Controls.Add(this.featureContainer);
             this.Controls.Add(this.toppnl);
             this.ForeColor = System.Drawing.Color.White;
@@ -614,6 +622,7 @@
         private System.Windows.Forms.Button crossbtn;
         private System.Windows.Forms.Button minimizebtn;
         private System.Windows.Forms.Button fullscreenbtn;
+        private System.Windows.Forms.Button menubtn;
         private System.Windows.Forms.FlowLayoutPanel featureContainer;
     }
 }

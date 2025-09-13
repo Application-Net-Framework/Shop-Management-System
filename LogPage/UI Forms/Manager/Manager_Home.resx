@@ -290,6 +290,13 @@
   <metadata name="producttimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>386, 18</value>
   </metadata>
+  <data name="menubtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABUSURBVDhPtdChEcAwDENR75JhSjpMNu4ozpXmwy+DRwR0turZbyUhsKq7V9Jf+CWNFOJsA6Na
+        CKz8y/eo1kghzjYwqoXAyr98j2qNFOJsA6NaCKwDzsfoLrF5bcEAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>110</value>
   </metadata>

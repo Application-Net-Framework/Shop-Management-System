@@ -34,7 +34,7 @@ namespace App
             }
 
             // Run the login form after splash screen closes
-            Application.Run(loginForm);
+            //Application.Run(loginForm);
 
             // These will never be executed because Application.Run() is blocking
             // Until the form is closed
@@ -42,7 +42,7 @@ namespace App
             //Application.Run(new SalesMan_Home());
             //Application.Run(new Registration_Admin());
             //Application.Run(new Login_Admin());
-            //Application.Run(new Manager_Home());
+            Application.Run(new Manager_Home());
         }
     }
 }

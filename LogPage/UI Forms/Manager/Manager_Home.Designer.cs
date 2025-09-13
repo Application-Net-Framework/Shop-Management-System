@@ -564,6 +564,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(946, 591);
             this.Controls.Add(this.featureContainer);
             this.Controls.Add(this.toppnl);

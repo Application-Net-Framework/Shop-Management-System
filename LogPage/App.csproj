@@ -167,6 +167,12 @@
     <Compile Include="UI Forms\Manager\StaffInformation.Designer.cs">
       <DependentUpon>StaffInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Forms\Manager\TarminationEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Manager\TarminationEmployee.Designer.cs">
+      <DependentUpon>TarminationEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Forms\Registration\Registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\StaffInformation.resx">
       <DependentUpon>StaffInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\TarminationEmployee.resx">
+      <DependentUpon>TarminationEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Registration\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>

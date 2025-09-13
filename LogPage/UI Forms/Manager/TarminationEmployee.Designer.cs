@@ -1,6 +1,6 @@
 ﻿namespace App.UI_Forms.Manager
 {
-    partial class StaffInformation
+    partial class TarminationEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(230, 187);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 108);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Staffs";
-            // 
-            // StaffInformation
+            // TarminationEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(760, 550);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "StaffInformation";
-            this.Text = "StaffInformation";
+            this.Name = "TarminationEmployee";
+            this.Text = "TarminationEmployee";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
     }
 }

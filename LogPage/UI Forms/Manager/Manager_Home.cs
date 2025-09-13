@@ -29,6 +29,7 @@ namespace App
         Report report;
         StackLevel stackLevel;
         StaffInformation staffInformation;
+        TarminationEmployee tarminated;
 
 
         // UI panel expansion states
@@ -376,20 +377,24 @@ namespace App
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(about == null)
+            if(tarminated == null)
             {
-                about = new About();
-                about.FormClosed += About_FormClosed;
-                about.MdiParent = this;
-                about.Dock = DockStyle.Fill;
-                about.Show();
+                tarminated = new TarminationEmployee();
+                tarminated.FormClosed += TarminationEmployee_FormClosed;
+                tarminated.MdiParent = this;
+                tarminated.Dock = DockStyle.Fill;
+                tarminated.Show();
             }
             else
             {
-                about.Activate();
+                tarminated.Activate();
             }
         }
         
+        public void TarminationEmployee_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            tarminated = null;
+        }
         private void About_FormClosed(object sender, FormClosedEventArgs e)
         {
             about = null;

@@ -525,7 +525,7 @@
             this.pagetitle.AutoSize = true;
             this.pagetitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pagetitle.ForeColor = System.Drawing.Color.Black;
-            this.pagetitle.Location = new System.Drawing.Point(441, 13);
+            this.pagetitle.Location = new System.Drawing.Point(429, 4);
             this.pagetitle.Name = "pagetitle";
             this.pagetitle.Size = new System.Drawing.Size(154, 21);
             this.pagetitle.TabIndex = 21;

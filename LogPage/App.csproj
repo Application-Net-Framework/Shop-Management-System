@@ -58,11 +58,41 @@
     <Compile Include="UI Forms\Admin\Admin_Home.Designer.cs">
       <DependentUpon>Admin_Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Forms\Admin\Admin_Main_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Admin_Main_Home.Designer.cs">
+      <DependentUpon>Admin_Main_Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Forms\Admin\Admin_Managed.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI Forms\Admin\Admin_Managed.Designer.cs">
       <DependentUpon>Admin_Managed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Employees.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Admin\New_Managed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Admin\New_Managed.Designer.cs">
+      <DependentUpon>New_Managed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Sale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Sale.Designer.cs">
+      <DependentUpon>Sale.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Application Starting Logo\SplashForm.cs">
       <SubType>Form</SubType>
@@ -128,6 +158,12 @@
     </Compile>
     <Compile Include="UI Forms\Manager\Discount.Designer.cs">
       <DependentUpon>Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Manager\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Manager\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Manager\Manager_Home.cs">
       <SubType>Form</SubType>
@@ -200,8 +236,23 @@
     <EmbeddedResource Include="UI Forms\Admin\Admin_Home.resx">
       <DependentUpon>Admin_Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Admin\Admin_Main_Home.resx">
+      <DependentUpon>Admin_Main_Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Admin\Admin_Managed.resx">
       <DependentUpon>Admin_Managed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Admin\Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Admin\New_Managed.resx">
+      <DependentUpon>New_Managed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Admin\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Admin\Sale.resx">
+      <DependentUpon>Sale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Application Starting Logo\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
@@ -245,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\Discount.resx">
       <DependentUpon>Discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\Manager_Home.resx">
       <DependentUpon>Manager_Home.cs</DependentUpon>

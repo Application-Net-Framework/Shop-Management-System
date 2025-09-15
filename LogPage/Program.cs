@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using App.UI_Forms.Admin;
 using App.UI_Forms.Application_Starting_Logo;
 
 namespace App
@@ -42,7 +43,9 @@ namespace App
             //Application.Run(new SalesMan_Home());
             //Application.Run(new Registration_Admin());
             //Application.Run(new Login_Admin());
-            Application.Run(new Manager_Home());
+            //Application.Run(new Manager_Home());
+            //Application.Run(new New_Managed());
+            Application.Run(new Admin_Main_Home());
         }
     }
 }

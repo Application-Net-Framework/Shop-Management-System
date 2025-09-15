@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Main_Home));
             this.panelTop = new System.Windows.Forms.Panel();
+            this.btnCross = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnFullScreen = new System.Windows.Forms.Button();
+            this.btnMail = new System.Windows.Forms.Button();
+            this.btnInfo = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelSide = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnsales = new System.Windows.Forms.Button();
@@ -43,20 +48,25 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.memberbtn = new System.Windows.Forms.Button();
-            this.btnMail = new System.Windows.Forms.Button();
-            this.btnInfo = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.employees1 = new App.UI_Forms.Admin.Employees();
             this.home1 = new App.UI_Forms.Manager.Home();
+            this.reportpnl = new System.Windows.Forms.FlowLayoutPanel();
+            this.ReportTimer = new System.Windows.Forms.Timer(this.components);
             this.panelTop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelSide.SuspendLayout();
             this.panelMain.SuspendLayout();
+            this.reportpnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panelTop.Controls.Add(this.btnCross);
+            this.panelTop.Controls.Add(this.btnMinimize);
+            this.panelTop.Controls.Add(this.btnFullScreen);
             this.panelTop.Controls.Add(this.btnMail);
             this.panelTop.Controls.Add(this.btnInfo);
             this.panelTop.Controls.Add(this.btnMenu);
@@ -67,6 +77,87 @@
             this.panelTop.Size = new System.Drawing.Size(1093, 66);
             this.panelTop.TabIndex = 0;
             this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
+            // 
+            // btnCross
+            // 
+            this.btnCross.BackColor = System.Drawing.Color.White;
+            this.btnCross.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCross.FlatAppearance.BorderSize = 0;
+            this.btnCross.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCross.Location = new System.Drawing.Point(667, 13);
+            this.btnCross.Name = "btnCross";
+            this.btnCross.Size = new System.Drawing.Size(57, 40);
+            this.btnCross.TabIndex = 6;
+            this.btnCross.UseVisualStyleBackColor = false;
+            this.btnCross.Click += new System.EventHandler(this.btnCross_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.White;
+            this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Location = new System.Drawing.Point(595, 13);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(57, 40);
+            this.btnMinimize.TabIndex = 5;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnFullScreen
+            // 
+            this.btnFullScreen.BackColor = System.Drawing.Color.White;
+            this.btnFullScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFullScreen.FlatAppearance.BorderSize = 0;
+            this.btnFullScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFullScreen.Location = new System.Drawing.Point(518, 13);
+            this.btnFullScreen.Name = "btnFullScreen";
+            this.btnFullScreen.Size = new System.Drawing.Size(57, 40);
+            this.btnFullScreen.TabIndex = 4;
+            this.btnFullScreen.UseVisualStyleBackColor = false;
+            this.btnFullScreen.Click += new System.EventHandler(this.btnFullScreen_Click);
+            // 
+            // btnMail
+            // 
+            this.btnMail.BackColor = System.Drawing.Color.Transparent;
+            this.btnMail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMail.BackgroundImage")));
+            this.btnMail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMail.FlatAppearance.BorderSize = 0;
+            this.btnMail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMail.Location = new System.Drawing.Point(950, 12);
+            this.btnMail.Name = "btnMail";
+            this.btnMail.Size = new System.Drawing.Size(57, 40);
+            this.btnMail.TabIndex = 3;
+            this.btnMail.UseVisualStyleBackColor = false;
+            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.BackColor = System.Drawing.Color.Transparent;
+            this.btnInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInfo.BackgroundImage")));
+            this.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInfo.FlatAppearance.BorderSize = 0;
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo.Location = new System.Drawing.Point(1024, 12);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(57, 40);
+            this.btnInfo.TabIndex = 2;
+            this.btnInfo.UseVisualStyleBackColor = false;
+            this.btnInfo.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMenu.BackgroundImage")));
+            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Location = new System.Drawing.Point(182, 10);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(57, 40);
+            this.btnMenu.TabIndex = 1;
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // label1
             // 
@@ -94,8 +185,6 @@
             // panelSide
             // 
             this.panelSide.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.panelSide.Controls.Add(this.btnSetting);
-            this.panelSide.Controls.Add(this.btnReport);
             this.panelSide.Controls.Add(this.btnsales);
             this.panelSide.Controls.Add(this.btnProduct);
             this.panelSide.Controls.Add(this.btnEmployee);
@@ -107,35 +196,12 @@
             this.panelSide.TabIndex = 6;
             this.panelSide.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSide_Paint);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(391, 162);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(197, 40);
-            this.button4.TabIndex = 2;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // panelMain
-            // 
-            this.panelMain.Controls.Add(this.employees1);
-            this.panelMain.Controls.Add(this.home1);
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(239, 66);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(854, 519);
-            this.panelMain.TabIndex = 3;
-            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
             // btnSetting
             // 
             this.btnSetting.BackColor = System.Drawing.Color.Gray;
             this.btnSetting.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.Location = new System.Drawing.Point(4, 403);
+            this.btnSetting.Location = new System.Drawing.Point(4, 84);
             this.btnSetting.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
@@ -150,7 +216,7 @@
             this.btnReport.BackColor = System.Drawing.Color.Gray;
             this.btnReport.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(4, 324);
+            this.btnReport.Location = new System.Drawing.Point(4, 5);
             this.btnReport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnReport.Name = "btnReport";
             this.btnReport.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
@@ -209,6 +275,7 @@
             // 
             this.btnHome.BackColor = System.Drawing.Color.Gray;
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(4, 8);
             this.btnHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -250,51 +317,33 @@
             this.memberbtn.Text = "Members";
             this.memberbtn.UseVisualStyleBackColor = false;
             // 
-            // btnMail
+            // button4
             // 
-            this.btnMail.BackColor = System.Drawing.Color.Transparent;
-            this.btnMail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMail.BackgroundImage")));
-            this.btnMail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMail.FlatAppearance.BorderSize = 0;
-            this.btnMail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMail.Location = new System.Drawing.Point(950, 12);
-            this.btnMail.Name = "btnMail";
-            this.btnMail.Size = new System.Drawing.Size(57, 40);
-            this.btnMail.TabIndex = 3;
-            this.btnMail.UseVisualStyleBackColor = false;
-            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(391, 162);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(197, 40);
+            this.button4.TabIndex = 2;
+            this.button4.UseVisualStyleBackColor = false;
             // 
-            // btnInfo
+            // panelMain
             // 
-            this.btnInfo.BackColor = System.Drawing.Color.Transparent;
-            this.btnInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInfo.BackgroundImage")));
-            this.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInfo.FlatAppearance.BorderSize = 0;
-            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfo.Location = new System.Drawing.Point(1024, 12);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(57, 40);
-            this.btnInfo.TabIndex = 2;
-            this.btnInfo.UseVisualStyleBackColor = false;
-            this.btnInfo.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMenu.BackgroundImage")));
-            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Location = new System.Drawing.Point(182, 10);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(57, 40);
-            this.btnMenu.TabIndex = 1;
-            this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.panelMain.Controls.Add(this.reportpnl);
+            this.panelMain.Controls.Add(this.employees1);
+            this.panelMain.Controls.Add(this.home1);
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(239, 66);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(854, 519);
+            this.panelMain.TabIndex = 3;
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // employees1
             // 
-            this.employees1.Location = new System.Drawing.Point(0, 3);
+            this.employees1.Location = new System.Drawing.Point(0, 0);
             this.employees1.Name = "employees1";
             this.employees1.Size = new System.Drawing.Size(851, 516);
             this.employees1.TabIndex = 1;
@@ -305,6 +354,20 @@
             this.home1.Name = "home1";
             this.home1.Size = new System.Drawing.Size(806, 468);
             this.home1.TabIndex = 0;
+            // 
+            // reportpnl
+            // 
+            this.reportpnl.Controls.Add(this.btnReport);
+            this.reportpnl.Controls.Add(this.btnSetting);
+            this.reportpnl.Location = new System.Drawing.Point(371, 70);
+            this.reportpnl.Name = "reportpnl";
+            this.reportpnl.Size = new System.Drawing.Size(239, 95);
+            this.reportpnl.TabIndex = 2;
+            // 
+            // ReportTimer
+            // 
+            this.ReportTimer.Interval = 10;
+            this.ReportTimer.Tick += new System.EventHandler(this.ReportTimer_Tick);
             // 
             // Admin_Main_Home
             // 
@@ -318,7 +381,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin_Main_Home";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Admin_Main_Home";
             this.Load += new System.EventHandler(this.Admin_Main_Home_Load);
             this.panelTop.ResumeLayout(false);
@@ -326,6 +389,7 @@
             this.panel2.ResumeLayout(false);
             this.panelSide.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
+            this.reportpnl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -351,5 +415,10 @@
         private System.Windows.Forms.Panel panelMain;
         private Manager.Home home1;
         private Employees employees1;
+        private System.Windows.Forms.Button btnCross;
+        private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Button btnFullScreen;
+        private System.Windows.Forms.FlowLayoutPanel reportpnl;
+        private System.Windows.Forms.Timer ReportTimer;
     }
 }

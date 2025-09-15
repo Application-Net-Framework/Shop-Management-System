@@ -231,6 +231,17 @@
         Hn4BHNkvUP770T4AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btnHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABOUExURTIyMv///y4uLvX19ZCQkF5eXkRERFFRUcHBwZ2dne7u7igoKNPT066uroeHh7e3t+Li
+        4jo6OsjIyGdnZzQ0NP7+/tnZ2Xd3d6WlpX5+fsZArM8AAADSSURBVChTrdFJbsMwDAVQDqKkaPZAO73/
+        RQvZqW2k7qr5K4JPICgQ8K/Ae+PIf8Wb8VbYDM4++Le0yVbObm2jMe0i6q0sGjSJszE+T2EzFA5ftoRQ
+        ZoJT2mQzJheJpkWzpUP6JMxDBAByFdPk/CZ9UuASCXpoMBxK3xG0DFkXeUHP1DRbg6A+4Wj7pJ+QS5jG
+        fYNyBQB6HLuZbRTNM+zFu6zVV7kT2xC13gi50L/2AclA9BIiorkewkZE1i5JRGQ/334FZWZWRN2KrXW5
+        9v7kLL8BADwJlQEKnEYAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAd1JREFUSEu1
@@ -259,4 +270,7 @@
         AABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="ReportTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

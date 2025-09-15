@@ -493,5 +493,19 @@ namespace App
             dailyActivity = null;
         }
 
+        private void minimizebtn_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fullscreenbtn_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void crossbtn_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

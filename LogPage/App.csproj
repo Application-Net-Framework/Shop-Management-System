@@ -159,10 +159,10 @@
     <Compile Include="UI Forms\Manager\Discount.Designer.cs">
       <DependentUpon>Discount.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Manager\Home.cs">
+    <Compile Include="UI Forms\Admin\Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Forms\Manager\Home.Designer.cs">
+    <Compile Include="UI Forms\Admin\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Manager\Manager_Home.cs">
@@ -297,7 +297,7 @@
     <EmbeddedResource Include="UI Forms\Manager\Discount.resx">
       <DependentUpon>Discount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Manager\Home.resx">
+    <EmbeddedResource Include="UI Forms\Admin\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\Manager_Home.resx">

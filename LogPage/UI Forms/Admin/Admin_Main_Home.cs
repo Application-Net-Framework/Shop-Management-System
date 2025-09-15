@@ -70,7 +70,8 @@ namespace App.UI_Forms.Admin
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-
+            // Start the timer to expand or collapse the report panel
+            ReportTimer.Start();
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -160,29 +161,6 @@ namespace App.UI_Forms.Admin
                 }
             }
         }
-
-        /*bool reportpnl = false;
-      private void ReportTime_Tick(object sender, EventArgs e)
-    {
-        if (reportpnl == false)
-        {
-            reportpnl.Height += 5;
-            if (reportpnl.Height >= 145)
-            {
-                reportpnl = true;
-                ReportTimer.Stop();
-            }
-        }
-        else
-        {
-            reportpnl.Height -= 5;
-            if (reportpnl.Height <= 45)
-            {
-                reportpnl = false;
-                ReportTimer.Stop();
-            }
-        }
-    }*/
     }
 }
 

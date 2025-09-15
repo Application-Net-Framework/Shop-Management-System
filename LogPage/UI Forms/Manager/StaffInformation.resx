@@ -120,17 +120,17 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAIaSURBVEhLvZQ/SEJRFMbb2lqbWxtbygoaTQhKhERM37nvGRgukVNg0NISLWK0NEWBiy2BEbQU
-        DeFQi0MQOIpDSzSINXjjO+8Pz3ufRvZn+LjvXe77nfO+c84dCW8ujfyVtA2/kqn0qBA0EY0nJrES0Zh6
-        ZpC0DSiRTI0TGbm1VOpSED0LIZq8Gumb1URyG4HUb4KkbQgyQoCITLZrForSPDiX5uG1vRaKUuTyUhDV
-        iSimfqtKByPDrV1pHdekdfEmM5cduXHV4RXv1umTHUSYL0QUV4GBcFjBGQNcbjBs57Yjjx7ePeEdgaxK
-        yw5A9Ix6qFANDo9hBTIGeP++I8/qH7wC6n/nvyg3HIvSJRXaA0dXoHjIxrUCQChTbXtC1oCzTdW2NPdO
-        2H/8tQr24Kg+fhFFA9gP7Ctkf1yTwlp/Ra1UsAe3+1g00RXDwImMiAr+n8wxeegUeK5BBgjJ2EMWPFTe
-        A09eLs99/GX2yLrSkmhbdAsaQgX3wB1r6twxlVb/AM4wcafwtRBsSQ8cwkhj8jgABsmBeaq27QECOJPt
-        Ipl+lmhwJ0CcfczlGcLXgCP2GFbYF1kdATAf/aZU24C4NSldYgC6wRWC8r4RQsYALyzF5Oziyl1QAA3s
-        F983ZITQxy7QX7y5yMrUzOLy43R4OTCABvyuBgXQDg8jf4D5SPTKvWu0g8MKAZA55sW1Tjv0EyFjf020
-        A7+pT3RJaVOAzWatAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAABGdBTUEAALGPC/xhBQAAAhpJREFUSEu9
+        lD9IQlEUxtvaWptbG1vKChpNCEqEREzfue8ZGC6RU2DQ0hItYrQ0RYGLLYERtBQN4VCLQxA4ikNLNIg1
+        eOM77w/Pe59G9mf4uO9d7vud875zzh0Jby6N/JW0Db+SqfSoEDQRjScmsRLRmHpmkLQNKJFMjRMZubVU
+        6lIQPQshmrwa6ZvVRHIbgdRvgqRtCDJCgIhMtmsWitI8OJfm4bW9FopS5PJSENWJKKZ+q0oHI8OtXWkd
+        16R18SYzlx25cdXhFe/W6ZMdRJgvRBRXgYFwWMEZA1xuMGzntiOPHt494R2BrErLDkD0jHqoUA0Oj2EF
+        MgZ4/74jz+ofvALqf+e/KDcci9IlFdoDR1egeMjGtQJAKFNte0LWgLNN1bY0907Yf/y1CvbgqD5+EUUD
+        2A/sK2R/XJPCWn9FrVSwB7f7WDTRFcPAiYyICv6fzDF56BR4rkEGCMnYQxY8VN4DT14uz338ZfbIutKS
+        aFt0CxpCBffAHWvq3DGVVv8AzjBxp/C1EGxJDxzCSGPyOAAGyYF5qrbtAQI4k+0imX6WaHAnQJx9zOUZ
+        wteAI/YYVtgXWR0BMB/9plTbgLg1KV1iALrBFYLyvhFCxgAvLMXk7OLKXVAADewX3zdkhNDHLtBfvLnI
+        ytTM4vLjdHg5MIAG/K4GBdAODyN/gPlI9Mq9a7SDwwoBkDnmxbVOO/QTIWN/TbQDv6lPdElpU4DNZq0A
+        AAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

@@ -22,5 +22,16 @@ namespace App.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-897BHIU\\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security" +
+            "=True;TrustServerCertificate=True")]
+        public string GSMSdbConnectionString {
+            get {
+                return ((string)(this["GSMSdbConnectionString"]));
+            }
+        }
     }
 }

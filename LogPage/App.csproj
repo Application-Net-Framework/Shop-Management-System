@@ -52,6 +52,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GSMSdbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSMSdbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GSMSdbDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GSMSdbDataSet11.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UI Forms\Admin\Admin_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +342,28 @@
     <EmbeddedResource Include="UI Forms\SalesMan\SalesMan_Home.resx">
       <DependentUpon>SalesMan_Home.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="GSMSdbDataSet1.xsc">
+      <DependentUpon>GSMSdbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GSMSdbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSMSdbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSMSdbDataSet1.xss">
+      <DependentUpon>GSMSdbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GSMSdbDataSet11.xsc">
+      <DependentUpon>GSMSdbDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="GSMSdbDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GSMSdbDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GSMSdbDataSet11.xss">
+      <DependentUpon>GSMSdbDataSet11.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -122,5 +122,14 @@ namespace App
             btnProfile.BackColor = Color.FromArgb(25, 112, 255);
             btnProfile.ForeColor = Color.FromArgb(255, 255, 255);
         }
+
+        private void SalesMan_Home_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'gSMSdbDataSet1.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter1.Fill(this.gSMSdbDataSet1.Product);
+            // TODO: This line of code loads data into the 'gSMSdbDataSet.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.gSMSdbDataSet.Product);
+
+        }
     }
 }

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnFeedback = new System.Windows.Forms.Button();
@@ -44,15 +47,34 @@
             this.pnlFeedback = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlProduct = new System.Windows.Forms.Panel();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.productIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cateogoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gSMSdbDataSet1 = new App.GSMSdbDataSet1();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlProfile = new System.Windows.Forms.Panel();
             this.lable10 = new System.Windows.Forms.Label();
+            this.gSMSdbDataSet = new App.GSMSdbDataSet();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productTableAdapter = new App.GSMSdbDataSetTableAdapters.ProductTableAdapter();
+            this.productTableAdapter1 = new App.GSMSdbDataSet1TableAdapters.ProductTableAdapter();
             this.panel1.SuspendLayout();
             this.pnlHome.SuspendLayout();
             this.pnlOrder.SuspendLayout();
             this.pnlFeedback.SuspendLayout();
             this.pnlProduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet1)).BeginInit();
             this.pnlProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,7 +87,7 @@
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Location = new System.Drawing.Point(58, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 359);
+            this.panel1.Size = new System.Drawing.Size(200, 468);
             this.panel1.TabIndex = 0;
             // 
             // btnProfile
@@ -163,11 +185,10 @@
             // 
             this.pnlHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.pnlHome.Controls.Add(this.label1);
-            this.pnlHome.Location = new System.Drawing.Point(289, 46);
+            this.pnlHome.Location = new System.Drawing.Point(8350, 477);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(117, 96);
+            this.pnlHome.Size = new System.Drawing.Size(615, 469);
             this.pnlHome.TabIndex = 1;
-            this.pnlHome.Visible = true;
             // 
             // label1
             // 
@@ -183,9 +204,9 @@
             // 
             this.pnlOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.pnlOrder.Controls.Add(this.label4);
-            this.pnlOrder.Location = new System.Drawing.Point(289, 212);
+            this.pnlOrder.Location = new System.Drawing.Point(5485, 103);
             this.pnlOrder.Name = "pnlOrder";
-            this.pnlOrder.Size = new System.Drawing.Size(117, 101);
+            this.pnlOrder.Size = new System.Drawing.Size(615, 469);
             this.pnlOrder.TabIndex = 2;
             this.pnlOrder.Visible = false;
             // 
@@ -203,9 +224,9 @@
             // 
             this.pnlFeedback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.pnlFeedback.Controls.Add(this.label5);
-            this.pnlFeedback.Location = new System.Drawing.Point(457, 198);
+            this.pnlFeedback.Location = new System.Drawing.Point(8538, 255);
             this.pnlFeedback.Name = "pnlFeedback";
-            this.pnlFeedback.Size = new System.Drawing.Size(127, 115);
+            this.pnlFeedback.Size = new System.Drawing.Size(615, 469);
             this.pnlFeedback.TabIndex = 3;
             this.pnlFeedback.Visible = false;
             // 
@@ -222,18 +243,132 @@
             // pnlProduct
             // 
             this.pnlProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.pnlProduct.Controls.Add(this.dgvProduct);
             this.pnlProduct.Controls.Add(this.label2);
-            this.pnlProduct.Location = new System.Drawing.Point(457, 46);
+            this.pnlProduct.Controls.Add(this.pnlOrder);
+            this.pnlProduct.Location = new System.Drawing.Point(290, 45);
             this.pnlProduct.Name = "pnlProduct";
-            this.pnlProduct.Size = new System.Drawing.Size(127, 96);
+            this.pnlProduct.Size = new System.Drawing.Size(615, 469);
             this.pnlProduct.TabIndex = 4;
             this.pnlProduct.Visible = false;
+            // 
+            // dgvProduct
+            // 
+            this.dgvProduct.AllowUserToAddRows = false;
+            this.dgvProduct.AllowUserToDeleteRows = false;
+            this.dgvProduct.AutoGenerateColumns = false;
+            this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProduct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvProduct.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProduct.ColumnHeadersHeight = 20;
+            this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productIDDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn1,
+            this.priceDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn1,
+            this.cateogoryIdDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.expiryDateDataGridViewTextBoxColumn});
+            this.dgvProduct.DataSource = this.productBindingSource1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProduct.EnableHeadersVisualStyles = false;
+            this.dgvProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvProduct.Location = new System.Drawing.Point(61, 71);
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProduct.RowHeadersVisible = false;
+            this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProduct.Size = new System.Drawing.Size(486, 150);
+            this.dgvProduct.TabIndex = 3;
+            // 
+            // productIDDataGridViewTextBoxColumn1
+            // 
+            this.productIDDataGridViewTextBoxColumn1.DataPropertyName = "ProductID";
+            this.productIDDataGridViewTextBoxColumn1.HeaderText = "ProductID";
+            this.productIDDataGridViewTextBoxColumn1.Name = "productIDDataGridViewTextBoxColumn1";
+            this.productIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.productIDDataGridViewTextBoxColumn1.Width = 69;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.Width = 69;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // quantityDataGridViewTextBoxColumn1
+            // 
+            this.quantityDataGridViewTextBoxColumn1.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn1.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn1.Name = "quantityDataGridViewTextBoxColumn1";
+            this.quantityDataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // cateogoryIdDataGridViewTextBoxColumn
+            // 
+            this.cateogoryIdDataGridViewTextBoxColumn.DataPropertyName = "CateogoryId";
+            this.cateogoryIdDataGridViewTextBoxColumn.HeaderText = "CateogoryId";
+            this.cateogoryIdDataGridViewTextBoxColumn.Name = "cateogoryIdDataGridViewTextBoxColumn";
+            this.cateogoryIdDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // expiryDateDataGridViewTextBoxColumn
+            // 
+            this.expiryDateDataGridViewTextBoxColumn.DataPropertyName = "ExpiryDate";
+            this.expiryDateDataGridViewTextBoxColumn.HeaderText = "ExpiryDate";
+            this.expiryDateDataGridViewTextBoxColumn.Name = "expiryDateDataGridViewTextBoxColumn";
+            this.expiryDateDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataMember = "Product";
+            this.productBindingSource1.DataSource = this.gSMSdbDataSet1;
+            // 
+            // gSMSdbDataSet1
+            // 
+            this.gSMSdbDataSet1.DataSetName = "GSMSdbDataSet1";
+            this.gSMSdbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 38);
+            this.label2.Location = new System.Drawing.Point(548, 1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 20);
             this.label2.TabIndex = 0;
@@ -243,9 +378,9 @@
             // 
             this.pnlProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.pnlProfile.Controls.Add(this.lable10);
-            this.pnlProfile.Location = new System.Drawing.Point(633, 46);
+            this.pnlProfile.Location = new System.Drawing.Point(8535, 375);
             this.pnlProfile.Name = "pnlProfile";
-            this.pnlProfile.Size = new System.Drawing.Size(136, 267);
+            this.pnlProfile.Size = new System.Drawing.Size(615, 469);
             this.pnlProfile.TabIndex = 5;
             this.pnlProfile.Visible = false;
             // 
@@ -253,26 +388,44 @@
             // 
             this.lable10.AutoSize = true;
             this.lable10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lable10.Location = new System.Drawing.Point(43, 124);
+            this.lable10.Location = new System.Drawing.Point(39, 38);
             this.lable10.Name = "lable10";
             this.lable10.Size = new System.Drawing.Size(53, 20);
             this.lable10.TabIndex = 0;
             this.lable10.Text = "Profile";
+            // 
+            // gSMSdbDataSet
+            // 
+            this.gSMSdbDataSet.DataSetName = "GSMSdbDataSet";
+            this.gSMSdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.gSMSdbDataSet;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+            // productTableAdapter1
+            // 
+            this.productTableAdapter1.ClearBeforeFill = true;
             // 
             // SalesMan_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(930, 552);
             this.Controls.Add(this.pnlProfile);
             this.Controls.Add(this.pnlProduct);
             this.Controls.Add(this.pnlFeedback);
-            this.Controls.Add(this.pnlOrder);
             this.Controls.Add(this.pnlHome);
             this.Controls.Add(this.panel1);
             this.Name = "SalesMan_Home";
             this.Text = "SalesMan_Home";
+            this.Load += new System.EventHandler(this.SalesMan_Home_Load);
             this.panel1.ResumeLayout(false);
             this.pnlHome.ResumeLayout(false);
             this.pnlHome.PerformLayout();
@@ -282,8 +435,14 @@
             this.pnlFeedback.PerformLayout();
             this.pnlProduct.ResumeLayout(false);
             this.pnlProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet1)).EndInit();
             this.pnlProfile.ResumeLayout(false);
             this.pnlProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            this.ResumeLayout(false);
 
         }
 
@@ -307,5 +466,19 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lable10;
+        private System.Windows.Forms.DataGridView dgvProduct;
+        private GSMSdbDataSet gSMSdbDataSet;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private GSMSdbDataSetTableAdapters.ProductTableAdapter productTableAdapter;
+        private GSMSdbDataSet1 gSMSdbDataSet1;
+        private System.Windows.Forms.BindingSource productBindingSource1;
+        private GSMSdbDataSet1TableAdapters.ProductTableAdapter productTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cateogoryIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
     }
 }

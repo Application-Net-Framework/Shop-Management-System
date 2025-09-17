@@ -16,7 +16,7 @@ namespace App
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            /*Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Create and show splash screen
@@ -32,7 +32,7 @@ namespace App
             while (splashForm.Visible)
             {
                 Application.DoEvents();
-            }
+            }*/
 
             // Run the login form after splash screen closes
             //Application.Run(loginForm);
@@ -43,9 +43,9 @@ namespace App
             //Application.Run(new SalesMan_Home());
             //Application.Run(new Registration_Admin());
             //Application.Run(new Login_Admin());
-            //Application.Run(new Manager_Home());
+            Application.Run(new Manager_Home());
             //Application.Run(new New_Managed());
-            Application.Run(new Admin_Main_Home());
+           // Application.Run(new Admin_Main_Home());
         }
     }
 }

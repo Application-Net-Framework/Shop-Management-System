@@ -70,7 +70,6 @@ namespace App.UI_Forms.Admin
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            // Start the timer to expand or collapse the report panel
             ReportTimer.Start();
         }
 
@@ -138,13 +137,13 @@ namespace App.UI_Forms.Admin
             }
         }
 
-        bool reportExpanded = false;  // use this for state, keep panel name as is
+        bool reportExpanded = false;  
 
         private void ReportTimer_Tick(object sender, EventArgs e)
         {
             if (!reportExpanded)
             {
-                reportpnl.Height += 5;   // expand panel
+                reportpnl.Height += 5;   
                 if (reportpnl.Height >= 145)
                 {
                     reportExpanded = true;
@@ -153,7 +152,7 @@ namespace App.UI_Forms.Admin
             }
             else
             {
-                reportpnl.Height -= 5;   // collapse panel
+                reportpnl.Height -= 5;   
                 if (reportpnl.Height <= 45)
                 {
                     reportExpanded = false;

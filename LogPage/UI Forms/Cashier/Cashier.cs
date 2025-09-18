@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,13 +11,28 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class SalesMan_Home : Form
+    public partial class Cashier : Form
     {
-        public SalesMan_Home()
+        public Cashier()
         {
             InitializeComponent();
+            show();
         }
-
+        private void show()
+        {
+            string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            string query = "select ProductID, ProductName, CateogoryName from Product;";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adp.Fill(ds);
+            DataTable dt = ds.Tables[0];
+            //DataTable dt2 = ds.Tables[1];
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.DataSource = dt;
+        }
         private void btnHome_Click(object sender, EventArgs e)
         {
 
@@ -121,6 +137,13 @@ namespace App
         {
             btnProfile.BackColor = Color.FromArgb(25, 112, 255);
             btnProfile.ForeColor = Color.FromArgb(255, 255, 255);
+        }
+
+        private void SalesMan_Home_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'gSMSdbDataSet_CashierProduct.Product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.gSMSdbDataSet_CashierProduct.Product);
+
         }
     }
 }

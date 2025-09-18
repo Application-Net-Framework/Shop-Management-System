@@ -96,7 +96,7 @@
             // pnmember
             // 
             this.pnmember.Controls.Add(this.activitybtn);
-            this.pnmember.Location = new System.Drawing.Point(0, 49);
+            this.pnmember.Location = new System.Drawing.Point(0, 50);
             this.pnmember.Margin = new System.Windows.Forms.Padding(0);
             this.pnmember.Name = "pnmember";
             this.pnmember.Size = new System.Drawing.Size(161, 43);
@@ -218,9 +218,10 @@
             // dashbordpn
             // 
             this.dashbordpn.Controls.Add(this.dashbtn);
-            this.dashbordpn.Location = new System.Drawing.Point(3, 3);
+            this.dashbordpn.Location = new System.Drawing.Point(0, 0);
+            this.dashbordpn.Margin = new System.Windows.Forms.Padding(0);
             this.dashbordpn.Name = "dashbordpn";
-            this.dashbordpn.Size = new System.Drawing.Size(167, 43);
+            this.dashbordpn.Size = new System.Drawing.Size(178, 50);
             this.dashbordpn.TabIndex = 8;
             // 
             // dashbtn
@@ -229,10 +230,10 @@
             this.dashbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashbtn.Image = ((System.Drawing.Image)(resources.GetObject("dashbtn.Image")));
             this.dashbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dashbtn.Location = new System.Drawing.Point(-16, -16);
+            this.dashbtn.Location = new System.Drawing.Point(-10, -9);
             this.dashbtn.Name = "dashbtn";
             this.dashbtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.dashbtn.Size = new System.Drawing.Size(200, 71);
+            this.dashbtn.Size = new System.Drawing.Size(202, 71);
             this.dashbtn.TabIndex = 2;
             this.dashbtn.Text = "    Dash Board";
             this.dashbtn.UseVisualStyleBackColor = false;
@@ -252,7 +253,7 @@
             // reportpn
             // 
             this.reportpn.Controls.Add(this.reportbtn);
-            this.reportpn.Location = new System.Drawing.Point(0, 92);
+            this.reportpn.Location = new System.Drawing.Point(0, 93);
             this.reportpn.Margin = new System.Windows.Forms.Padding(0);
             this.reportpn.Name = "reportpn";
             this.reportpn.Size = new System.Drawing.Size(161, 43);
@@ -327,7 +328,7 @@
             this.logoutpn.Controls.Add(this.logoutbtn);
             this.logoutpn.Location = new System.Drawing.Point(3, 105);
             this.logoutpn.Name = "logoutpn";
-            this.logoutpn.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.logoutpn.Padding = new System.Windows.Forms.Padding(3);
             this.logoutpn.Size = new System.Drawing.Size(161, 43);
             this.logoutpn.TabIndex = 4;
             // 
@@ -375,7 +376,7 @@
             this.membersContainer.Controls.Add(this.pnproduct);
             this.membersContainer.Controls.Add(this.registerpn);
             this.membersContainer.Controls.Add(this.tarminationpn);
-            this.membersContainer.Location = new System.Drawing.Point(3, 59);
+            this.membersContainer.Location = new System.Drawing.Point(3, 115);
             this.membersContainer.Name = "membersContainer";
             this.membersContainer.Size = new System.Drawing.Size(170, 50);
             this.membersContainer.TabIndex = 16;
@@ -459,7 +460,7 @@
             this.productContainer.Controls.Add(this.productpn);
             this.productContainer.Controls.Add(this.pnsetting);
             this.productContainer.Controls.Add(this.stackpn);
-            this.productContainer.Location = new System.Drawing.Point(3, 115);
+            this.productContainer.Location = new System.Drawing.Point(3, 59);
             this.productContainer.Name = "productContainer";
             this.productContainer.Size = new System.Drawing.Size(170, 50);
             this.productContainer.TabIndex = 18;
@@ -548,8 +549,8 @@
             // 
             this.featureContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
             this.featureContainer.Controls.Add(this.dashboardContainer);
-            this.featureContainer.Controls.Add(this.membersContainer);
             this.featureContainer.Controls.Add(this.productContainer);
+            this.featureContainer.Controls.Add(this.membersContainer);
             this.featureContainer.Controls.Add(this.settingsContainer);
             this.featureContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.featureContainer.Location = new System.Drawing.Point(3, 37);
@@ -574,7 +575,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Manager_Home";
-            this.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "Manager Dash Board";
             this.Load += new System.EventHandler(this.Manager_Home_Load);
             this.pnmember.ResumeLayout(false);

@@ -35,13 +35,16 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegis = new System.Windows.Forms.Button();
+            this.lbluserNameError = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbluName
             // 
             this.lbluName.AutoSize = true;
             this.lbluName.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbluName.Location = new System.Drawing.Point(111, 166);
+            this.lbluName.Location = new System.Drawing.Point(102, 90);
             this.lbluName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbluName.Name = "lbluName";
             this.lbluName.Size = new System.Drawing.Size(117, 27);
@@ -53,7 +56,7 @@
             // 
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPass.Location = new System.Drawing.Point(111, 220);
+            this.lblPass.Location = new System.Drawing.Point(102, 184);
             this.lblPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(108, 27);
@@ -62,21 +65,21 @@
             // 
             // txtuName
             // 
-            this.txtuName.Location = new System.Drawing.Point(248, 159);
+            this.txtuName.Location = new System.Drawing.Point(248, 90);
             this.txtuName.Name = "txtuName";
             this.txtuName.Size = new System.Drawing.Size(373, 39);
             this.txtuName.TabIndex = 2;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(248, 213);
+            this.txtPass.Location = new System.Drawing.Point(248, 177);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(373, 39);
             this.txtPass.TabIndex = 3;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(327, 291);
+            this.btnLogin.Location = new System.Drawing.Point(363, 275);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(148, 48);
             this.btnLogin.TabIndex = 4;
@@ -86,7 +89,7 @@
             // 
             // btnRegis
             // 
-            this.btnRegis.Location = new System.Drawing.Point(308, 356);
+            this.btnRegis.Location = new System.Drawing.Point(344, 339);
             this.btnRegis.Name = "btnRegis";
             this.btnRegis.Size = new System.Drawing.Size(178, 48);
             this.btnRegis.TabIndex = 5;
@@ -94,11 +97,41 @@
             this.btnRegis.UseVisualStyleBackColor = true;
             this.btnRegis.Click += new System.EventHandler(this.button2_Click);
             // 
+            // lbluserNameError
+            // 
+            this.lbluserNameError.AutoSize = true;
+            this.lbluserNameError.Location = new System.Drawing.Point(454, 136);
+            this.lbluserNameError.Name = "lbluserNameError";
+            this.lbluserNameError.Size = new System.Drawing.Size(0, 31);
+            this.lbluserNameError.TabIndex = 6;
+            this.lbluserNameError.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(242, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 31);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "User";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(242, 219);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(204, 31);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Invalid Password";
+            // 
             // Login_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 544);
+            this.ClientSize = new System.Drawing.Size(878, 483);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbluserNameError);
             this.Controls.Add(this.btnRegis);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPass);
@@ -109,6 +142,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login_Admin";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Admin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +156,8 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegis;
+        private System.Windows.Forms.Label lbluserNameError;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

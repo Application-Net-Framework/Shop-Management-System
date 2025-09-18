@@ -33,5 +33,10 @@ namespace App
             A.Show();
             this.Hide();
         }
+
+        private void Login_Admin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

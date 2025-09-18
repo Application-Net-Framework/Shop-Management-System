@@ -441,7 +441,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(486, 150);
             this.dataGridView1.TabIndex = 4;
             // 
-            // SalesMan_Home
+            // Cashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -452,8 +452,8 @@
             this.Controls.Add(this.pnlFeedback);
             this.Controls.Add(this.pnlHome);
             this.Controls.Add(this.panel1);
-            this.Name = "SalesMan_Home";
-            this.Text = "SalesMan_Home";
+            this.Name = "Cashier";
+            this.Text = "Cashier";
             this.Load += new System.EventHandler(this.SalesMan_Home_Load);
             this.panel1.ResumeLayout(false);
             this.pnlHome.ResumeLayout(false);

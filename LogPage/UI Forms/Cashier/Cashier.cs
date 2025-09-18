@@ -15,7 +15,8 @@ namespace App
     public partial class Cashier : Form
     {
         int serial = -1;
-        string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+        //string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+        string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         public Cashier()
         {
             InitializeComponent();
@@ -228,7 +229,7 @@ namespace App
         private void SalesMan_Home_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'gSMSdbDataSet_CashierProduct.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter.Fill(this.gSMSdbDataSet_CashierProduct.Product);
+            //this.productTableAdapter.Fill(this.gSMSdbDataSet_CashierProduct.Product);
 
         }
 

@@ -64,7 +64,7 @@ namespace App
             else if (inputUsername.EndsWith(".salesman"))
             {
                 MessageBox.Show("Successfully login as Salesman!");
-                SalesMan_Home S = new SalesMan_Home();
+                Cashier S = new Cashier();
                 S.Show();
                 this.Hide();
                

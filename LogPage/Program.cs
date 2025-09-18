@@ -40,7 +40,7 @@ namespace App
             // These will never be executed because Application.Run() is blocking
             // Until the form is closed
             // Application.Run(new Cashier_Home());
-            Application.Run(new SalesMan_Home());
+            Application.Run(new Cashier());
             //Application.Run(new Registration_Admin());
             //Application.Run(new Login_Admin());
             //Application.Run(new Manager_Home());

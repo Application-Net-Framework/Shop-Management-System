@@ -105,10 +105,10 @@
     <Compile Include="UI Forms\Application Starting Logo\SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Cashier\Cashier_Home.cs">
+    <Compile Include="UI Forms\SalesMan\Cashier_Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI Forms\Cashier\Cashier_Home.Designer.cs">
+    <Compile Include="UI Forms\SalesMan\Cashier_Home.Designer.cs">
       <DependentUpon>Cashier_Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Cashier_Return.Designer.cs">
@@ -116,10 +116,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cashier_Return.resx</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Cashier\Cashier_Salary.cs">
+    <Compile Include="UI Forms\SalesMan\Cashier_Salary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI Forms\Cashier\Cashier_Salary.Designer.cs">
+    <Compile Include="UI Forms\SalesMan\Cashier_Salary.Designer.cs">
       <DependentUpon>Cashier_Salary.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Forget Password\ChangePassConfirm.cs">
@@ -176,16 +176,16 @@
     <Compile Include="UI Forms\Manager\Manager_Home.Designer.cs">
       <DependentUpon>Manager_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Cashier\Cashier_POS.cs">
+    <Compile Include="UI Forms\SalesMan\Cashier_POS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI Forms\Cashier\Cashier_POS.Designer.cs">
+    <Compile Include="UI Forms\SalesMan\Cashier_POS.Designer.cs">
       <DependentUpon>Cashier_POS.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Cashier\Cashier_Profile.cs">
+    <Compile Include="UI Forms\SalesMan\Cashier_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI Forms\Cashier\Cashier_Profile.Designer.cs">
+    <Compile Include="UI Forms\SalesMan\Cashier_Profile.Designer.cs">
       <DependentUpon>Cashier_Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -226,17 +226,17 @@
     <Compile Include="UI Forms\Admin\Registration_Admin.Designer.cs">
       <DependentUpon>Registration_Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Cashier\Cashier_Report.cs">
+    <Compile Include="UI Forms\SalesMan\Cashier_Report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI Forms\Cashier\Cashier_Report.Designer.cs">
+    <Compile Include="UI Forms\SalesMan\Cashier_Report.Designer.cs">
       <DependentUpon>Cashier_Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\SalesMan\SalesMan_Home.cs">
+    <Compile Include="UI Forms\Cashier\Cashier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI Forms\SalesMan\SalesMan_Home.Designer.cs">
-      <DependentUpon>SalesMan_Home.cs</DependentUpon>
+    <Compile Include="UI Forms\Cashier\Cashier.Designer.cs">
+      <DependentUpon>Cashier.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UI Forms\Admin\Admin_Home.resx">
       <DependentUpon>Admin_Home.cs</DependentUpon>
@@ -262,7 +262,7 @@
     <EmbeddedResource Include="UI Forms\Application Starting Logo\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Cashier\Cashier_Home.resx">
+    <EmbeddedResource Include="UI Forms\SalesMan\Cashier_Home.resx">
       <DependentUpon>Cashier_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Forget Password\ChangePassConfirm.resx">
@@ -277,10 +277,10 @@
     <EmbeddedResource Include="UI Forms\Admin\Login_Admin.resx">
       <DependentUpon>Login_Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Cashier\Cashier_POS.resx">
+    <EmbeddedResource Include="UI Forms\SalesMan\Cashier_POS.resx">
       <DependentUpon>Cashier_POS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Cashier\Cashier_Profile.resx">
+    <EmbeddedResource Include="UI Forms\SalesMan\Cashier_Profile.resx">
       <DependentUpon>Cashier_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -326,7 +326,7 @@
     <EmbeddedResource Include="UI Forms\Admin\Registration_Admin.resx">
       <DependentUpon>Registration_Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Cashier\Cashier_Report.resx">
+    <EmbeddedResource Include="UI Forms\SalesMan\Cashier_Report.resx">
       <DependentUpon>Cashier_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cashier_Return.resx">
@@ -334,8 +334,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Cashier_Return.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\SalesMan\SalesMan_Home.resx">
-      <DependentUpon>SalesMan_Home.cs</DependentUpon>
+    <EmbeddedResource Include="UI Forms\Cashier\Cashier.resx">
+      <DependentUpon>Cashier.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="GSMSdbDataSet_CashierProduct.xsc">
       <DependentUpon>GSMSdbDataSet_CashierProduct.xsd</DependentUpon>

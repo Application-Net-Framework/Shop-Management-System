@@ -52,11 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GSMSdbDataSet_CashierProduct.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSMSdbDataSet_CashierProduct.xsd</DependentUpon>
-    </Compile>
     <Compile Include="UI Forms\Admin\Admin_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,17 +332,6 @@
     <EmbeddedResource Include="UI Forms\Cashier\Cashier.resx">
       <DependentUpon>Cashier.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="GSMSdbDataSet_CashierProduct.xsc">
-      <DependentUpon>GSMSdbDataSet_CashierProduct.xsd</DependentUpon>
-    </None>
-    <None Include="GSMSdbDataSet_CashierProduct.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GSMSdbDataSet_CashierProduct.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GSMSdbDataSet_CashierProduct.xss">
-      <DependentUpon>GSMSdbDataSet_CashierProduct.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

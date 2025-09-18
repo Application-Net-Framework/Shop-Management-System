@@ -124,7 +124,7 @@
             this.btnFullScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFullScreen.FlatAppearance.BorderSize = 0;
             this.btnFullScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFullScreen.Location = new System.Drawing.Point(518, 12);
+            this.btnFullScreen.Location = new System.Drawing.Point(507, 12);
             this.btnFullScreen.Name = "btnFullScreen";
             this.btnFullScreen.Size = new System.Drawing.Size(57, 40);
             this.btnFullScreen.TabIndex = 4;

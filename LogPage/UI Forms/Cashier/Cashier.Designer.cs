@@ -51,22 +51,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pnlProduct = new System.Windows.Forms.Panel();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-<<<<<<< HEAD:LogPage/UI Forms/SalesMan/SalesMan_Home.Designer.cs
-            this.label2 = new System.Windows.Forms.Label();
-            this.pnlProfile = new System.Windows.Forms.Panel();
-            this.lable10 = new System.Windows.Forms.Label();
-            this.gSMSdbDataSet_CashierProduct = new App.GSMSdbDataSet_CashierProduct();
-            this.gSMSdbDataSetCashierProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productTableAdapter = new App.GSMSdbDataSet_CashierProductTableAdapters.ProductTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cateogoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-=======
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cateogoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,19 +66,12 @@
             this.gSMSdbDataSetCashierProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productTableAdapter = new App.GSMSdbDataSet_CashierProductTableAdapters.ProductTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
->>>>>>> 6b10287c74d772b3ef3a686be69a8a4378d69600:LogPage/UI Forms/Cashier/Cashier.Designer.cs
             this.panel1.SuspendLayout();
             this.pnlHome.SuspendLayout();
             this.pnlOrder.SuspendLayout();
             this.pnlFeedback.SuspendLayout();
             this.pnlProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
-<<<<<<< HEAD:LogPage/UI Forms/SalesMan/SalesMan_Home.Designer.cs
-            this.pnlProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet_CashierProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSetCashierProductBindingSource)).BeginInit();
-=======
->>>>>>> 6b10287c74d772b3ef3a686be69a8a4378d69600:LogPage/UI Forms/Cashier/Cashier.Designer.cs
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet_CashierProduct)).BeginInit();
             this.pnlProfile.SuspendLayout();
@@ -304,16 +281,6 @@
             this.descriptionDataGridViewTextBoxColumn,
             this.expiryDateDataGridViewTextBoxColumn});
             this.dgvProduct.DataSource = this.productBindingSource;
-<<<<<<< HEAD:LogPage/UI Forms/SalesMan/SalesMan_Home.Designer.cs
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle2;
-=======
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -322,7 +289,6 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle5;
->>>>>>> 6b10287c74d772b3ef3a686be69a8a4378d69600:LogPage/UI Forms/Cashier/Cashier.Designer.cs
             this.dgvProduct.EnableHeadersVisualStyles = false;
             this.dgvProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProduct.Location = new System.Drawing.Point(61, 71);
@@ -341,8 +307,6 @@
             this.dgvProduct.Size = new System.Drawing.Size(486, 150);
             this.dgvProduct.TabIndex = 3;
             // 
-<<<<<<< HEAD:LogPage/UI Forms/SalesMan/SalesMan_Home.Designer.cs
-=======
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductID";
@@ -396,7 +360,6 @@
             this.gSMSdbDataSet_CashierProduct.DataSetName = "GSMSdbDataSet_CashierProduct";
             this.gSMSdbDataSet_CashierProduct.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
->>>>>>> 6b10287c74d772b3ef3a686be69a8a4378d69600:LogPage/UI Forms/Cashier/Cashier.Designer.cs
             // label2
             // 
             this.label2.AutoSize = true;
@@ -427,76 +390,15 @@
             this.lable10.TabIndex = 0;
             this.lable10.Text = "Profile";
             // 
-<<<<<<< HEAD:LogPage/UI Forms/SalesMan/SalesMan_Home.Designer.cs
-            // gSMSdbDataSet_CashierProduct
-            // 
-            this.gSMSdbDataSet_CashierProduct.DataSetName = "GSMSdbDataSet_CashierProduct";
-            this.gSMSdbDataSet_CashierProduct.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // gSMSdbDataSetCashierProductBindingSource
             // 
             this.gSMSdbDataSetCashierProductBindingSource.DataSource = this.gSMSdbDataSet_CashierProduct;
             this.gSMSdbDataSetCashierProductBindingSource.Position = 0;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.gSMSdbDataSet_CashierProduct;
-=======
-            // gSMSdbDataSetCashierProductBindingSource
-            // 
-            this.gSMSdbDataSetCashierProductBindingSource.DataSource = this.gSMSdbDataSet_CashierProduct;
-            this.gSMSdbDataSetCashierProductBindingSource.Position = 0;
->>>>>>> 6b10287c74d772b3ef3a686be69a8a4378d69600:LogPage/UI Forms/Cashier/Cashier.Designer.cs
             // 
             // productTableAdapter
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
-<<<<<<< HEAD:LogPage/UI Forms/SalesMan/SalesMan_Home.Designer.cs
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ProductID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            // 
-            // cateogoryNameDataGridViewTextBoxColumn
-            // 
-            this.cateogoryNameDataGridViewTextBoxColumn.DataPropertyName = "CateogoryName";
-            this.cateogoryNameDataGridViewTextBoxColumn.HeaderText = "CateogoryName";
-            this.cateogoryNameDataGridViewTextBoxColumn.Name = "cateogoryNameDataGridViewTextBoxColumn";
-            // 
-            // stockDataGridViewTextBoxColumn
-            // 
-            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
-            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
-            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // expiryDateDataGridViewTextBoxColumn
-            // 
-            this.expiryDateDataGridViewTextBoxColumn.DataPropertyName = "ExpiryDate";
-            this.expiryDateDataGridViewTextBoxColumn.HeaderText = "ExpiryDate";
-            this.expiryDateDataGridViewTextBoxColumn.Name = "expiryDateDataGridViewTextBoxColumn";
-=======
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -538,9 +440,8 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(486, 150);
             this.dataGridView1.TabIndex = 4;
->>>>>>> 6b10287c74d772b3ef3a686be69a8a4378d69600:LogPage/UI Forms/Cashier/Cashier.Designer.cs
             // 
-            // SalesMan_Home
+            // Cashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -551,8 +452,8 @@
             this.Controls.Add(this.pnlFeedback);
             this.Controls.Add(this.pnlHome);
             this.Controls.Add(this.panel1);
-            this.Name = "SalesMan_Home";
-            this.Text = "SalesMan_Home";
+            this.Name = "Cashier";
+            this.Text = "Cashier";
             this.Load += new System.EventHandler(this.SalesMan_Home_Load);
             this.panel1.ResumeLayout(false);
             this.pnlHome.ResumeLayout(false);
@@ -564,20 +465,12 @@
             this.pnlProduct.ResumeLayout(false);
             this.pnlProduct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
-<<<<<<< HEAD:LogPage/UI Forms/SalesMan/SalesMan_Home.Designer.cs
-            this.pnlProfile.ResumeLayout(false);
-            this.pnlProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet_CashierProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSetCashierProductBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-=======
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet_CashierProduct)).EndInit();
             this.pnlProfile.ResumeLayout(false);
             this.pnlProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSetCashierProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
->>>>>>> 6b10287c74d772b3ef3a686be69a8a4378d69600:LogPage/UI Forms/Cashier/Cashier.Designer.cs
             this.ResumeLayout(false);
 
         }

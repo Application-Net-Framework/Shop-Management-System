@@ -66,13 +66,14 @@
             this.EmployeeTimer = new System.Windows.Forms.Timer(this.components);
             this.ProductTimer = new System.Windows.Forms.Timer(this.components);
             this.SalesTimer = new System.Windows.Forms.Timer(this.components);
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTop.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelSide.SuspendLayout();
             this.reportpnl.SuspendLayout();
             this.Salepnl.SuspendLayout();
             this.Productpnl.SuspendLayout();
             this.pnlEmployee.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -199,14 +200,10 @@
             // panelSide
             // 
             this.panelSide.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panelSide.Controls.Add(this.reportpnl);
-            this.panelSide.Controls.Add(this.Salepnl);
-            this.panelSide.Controls.Add(this.Productpnl);
-            this.panelSide.Controls.Add(this.pnlEmployee);
             this.panelSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSide.Location = new System.Drawing.Point(0, 0);
             this.panelSide.Name = "panelSide";
-            this.panelSide.Size = new System.Drawing.Size(271, 572);
+            this.panelSide.Size = new System.Drawing.Size(311, 572);
             this.panelSide.TabIndex = 6;
             this.panelSide.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSide_Paint);
             // 
@@ -215,7 +212,7 @@
             this.reportpnl.Controls.Add(this.btnSetting);
             this.reportpnl.Controls.Add(this.btnAdminInfo);
             this.reportpnl.Controls.Add(this.btnLogOut);
-            this.reportpnl.Location = new System.Drawing.Point(3, 245);
+            this.reportpnl.Location = new System.Drawing.Point(3, 248);
             this.reportpnl.Name = "reportpnl";
             this.reportpnl.Size = new System.Drawing.Size(231, 80);
             this.reportpnl.TabIndex = 2;
@@ -271,7 +268,7 @@
             this.Salepnl.Controls.Add(this.btnMonthlySales);
             this.Salepnl.Controls.Add(this.btnDailySales);
             this.Salepnl.Controls.Add(this.btnsales);
-            this.Salepnl.Location = new System.Drawing.Point(3, 167);
+            this.Salepnl.Location = new System.Drawing.Point(3, 164);
             this.Salepnl.Name = "Salepnl";
             this.Salepnl.Size = new System.Drawing.Size(231, 78);
             this.Salepnl.TabIndex = 12;
@@ -327,7 +324,7 @@
             this.Productpnl.Controls.Add(this.btnManageProduct);
             this.Productpnl.Controls.Add(this.btnAddProduct);
             this.Productpnl.Controls.Add(this.btnProduct);
-            this.Productpnl.Location = new System.Drawing.Point(4, 86);
+            this.Productpnl.Location = new System.Drawing.Point(3, 83);
             this.Productpnl.Name = "Productpnl";
             this.Productpnl.Size = new System.Drawing.Size(231, 75);
             this.Productpnl.TabIndex = 7;
@@ -382,7 +379,7 @@
             this.btnProduct.BackColor = System.Drawing.Color.Gray;
             this.btnProduct.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduct.Location = new System.Drawing.Point(1, 0);
+            this.btnProduct.Location = new System.Drawing.Point(0, -2);
             this.btnProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
@@ -401,7 +398,7 @@
             this.pnlEmployee.Controls.Add(this.btnManageEmployee);
             this.pnlEmployee.Location = new System.Drawing.Point(3, 3);
             this.pnlEmployee.Name = "pnlEmployee";
-            this.pnlEmployee.Size = new System.Drawing.Size(231, 75);
+            this.pnlEmployee.Size = new System.Drawing.Size(231, 74);
             this.pnlEmployee.TabIndex = 11;
             // 
             // btnEmployee
@@ -409,11 +406,11 @@
             this.btnEmployee.BackColor = System.Drawing.Color.Gray;
             this.btnEmployee.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmployee.Location = new System.Drawing.Point(0, 0);
+            this.btnEmployee.Location = new System.Drawing.Point(1, -1);
             this.btnEmployee.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
-            this.btnEmployee.Size = new System.Drawing.Size(231, 75);
+            this.btnEmployee.Size = new System.Drawing.Size(231, 48);
             this.btnEmployee.TabIndex = 5;
             this.btnEmployee.Text = "Employees";
             this.btnEmployee.UseVisualStyleBackColor = false;
@@ -543,12 +540,24 @@
             this.SalesTimer.Interval = 10;
             this.SalesTimer.Tick += new System.EventHandler(this.SalesTimer_Tick);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.pnlEmployee);
+            this.flowLayoutPanel1.Controls.Add(this.Productpnl);
+            this.flowLayoutPanel1.Controls.Add(this.Salepnl);
+            this.flowLayoutPanel1.Controls.Add(this.reportpnl);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(452, 83);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(255, 513);
+            this.flowLayoutPanel1.TabIndex = 3;
+            // 
             // Admin_Main_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1154, 647);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelTop);
@@ -561,11 +570,11 @@
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panelSide.ResumeLayout(false);
             this.reportpnl.ResumeLayout(false);
             this.Salepnl.ResumeLayout(false);
             this.Productpnl.ResumeLayout(false);
             this.pnlEmployee.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -608,5 +617,6 @@
         private System.Windows.Forms.Button btnMonthlySales;
         private System.Windows.Forms.Button btnDailySales;
         private System.Windows.Forms.Timer SalesTimer;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

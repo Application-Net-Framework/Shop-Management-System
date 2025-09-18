@@ -19,33 +19,33 @@ namespace App
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Create and show splash screen
-            //SplashForm splashForm = new SplashForm();
-            //splashForm.Show();
+            // You can choose which form to run by uncommenting one of these lines
+            // For development, you may want to start with a specific form
+            // For production, you'd typically use the splash screen and login flow
 
-            // Create the main login form but don't show it yet
-            LogPage loginForm = new LogPage();
-            // Center the login form as well
-            loginForm.StartPosition = FormStartPosition.CenterScreen;
+            // --- Splash screen and login flow (for production) ---
+            // SplashForm splashForm = new SplashForm();
+            // splashForm.Show();
+            // LogPage loginForm = new LogPage();
+            // loginForm.StartPosition = FormStartPosition.CenterScreen;
+            // while (splashForm.Visible)
+            // {
+            //     Application.DoEvents();
+            // }
+            // Application.Run(loginForm);
 
-            // Process messages while splash screen is shown
-            //while (splashForm.Visible)
-            //{
-            //    Application.DoEvents();
-            //}
-
-            // Run the login form after splash screen closes
-            //Application.Run(loginForm);
-
-            // These will never be executed because Application.Run() is blocking
-            // Until the form is closed
+            // --- Direct form launching (for development) ---
+            // Application.Run(new LogPage());
+             Application.Run(new Cashier());
             // Application.Run(new Cashier_Home());
-            Application.Run(new Cashier());
-            //Application.Run(new Registration_Admin());
-            //Application.Run(new Login_Admin());
             //Application.Run(new Manager_Home());
-            //Application.Run(new New_Managed());
-            //Application.Run(new Admin_Main_Home());
+            // Application.Run(new New_Managed());
+            // Application.Run(new Admin_Main_Home());
+            // Application.Run(new Registration_Admin());
+            // Application.Run(new Login_Admin());
+
+            // Note: Only one Application.Run call can be active at a time
+            // as it blocks until the form is closed
         }
     }
 }

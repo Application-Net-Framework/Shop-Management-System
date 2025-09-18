@@ -48,32 +48,29 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pnlProduct = new System.Windows.Forms.Panel();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.productIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cateogoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.gSMSdbDataSet1 = new App.GSMSdbDataSet1();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlProfile = new System.Windows.Forms.Panel();
             this.lable10 = new System.Windows.Forms.Label();
-            this.gSMSdbDataSet = new App.GSMSdbDataSet();
+            this.gSMSdbDataSet_CashierProduct = new App.GSMSdbDataSet_CashierProduct();
+            this.gSMSdbDataSetCashierProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productTableAdapter = new App.GSMSdbDataSetTableAdapters.ProductTableAdapter();
-            this.productTableAdapter1 = new App.GSMSdbDataSet1TableAdapters.ProductTableAdapter();
+            this.productTableAdapter = new App.GSMSdbDataSet_CashierProductTableAdapters.ProductTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cateogoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.pnlHome.SuspendLayout();
             this.pnlOrder.SuspendLayout();
             this.pnlFeedback.SuspendLayout();
             this.pnlProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet1)).BeginInit();
             this.pnlProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet_CashierProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSetCashierProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -270,14 +267,14 @@
             this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProduct.ColumnHeadersHeight = 20;
             this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productIDDataGridViewTextBoxColumn1,
-            this.nameDataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn1,
+            this.productNameDataGridViewTextBoxColumn,
+            this.cateogoryNameDataGridViewTextBoxColumn,
+            this.stockDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn1,
-            this.cateogoryIdDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
             this.expiryDateDataGridViewTextBoxColumn});
-            this.dgvProduct.DataSource = this.productBindingSource1;
+            this.dgvProduct.DataSource = this.productBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,66 +300,6 @@
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduct.Size = new System.Drawing.Size(486, 150);
             this.dgvProduct.TabIndex = 3;
-            // 
-            // productIDDataGridViewTextBoxColumn1
-            // 
-            this.productIDDataGridViewTextBoxColumn1.DataPropertyName = "ProductID";
-            this.productIDDataGridViewTextBoxColumn1.HeaderText = "ProductID";
-            this.productIDDataGridViewTextBoxColumn1.Name = "productIDDataGridViewTextBoxColumn1";
-            this.productIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.productIDDataGridViewTextBoxColumn1.Width = 69;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.Width = 69;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // quantityDataGridViewTextBoxColumn1
-            // 
-            this.quantityDataGridViewTextBoxColumn1.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn1.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn1.Name = "quantityDataGridViewTextBoxColumn1";
-            this.quantityDataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // cateogoryIdDataGridViewTextBoxColumn
-            // 
-            this.cateogoryIdDataGridViewTextBoxColumn.DataPropertyName = "CateogoryId";
-            this.cateogoryIdDataGridViewTextBoxColumn.HeaderText = "CateogoryId";
-            this.cateogoryIdDataGridViewTextBoxColumn.Name = "cateogoryIdDataGridViewTextBoxColumn";
-            this.cateogoryIdDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // expiryDateDataGridViewTextBoxColumn
-            // 
-            this.expiryDateDataGridViewTextBoxColumn.DataPropertyName = "ExpiryDate";
-            this.expiryDateDataGridViewTextBoxColumn.HeaderText = "ExpiryDate";
-            this.expiryDateDataGridViewTextBoxColumn.Name = "expiryDateDataGridViewTextBoxColumn";
-            this.expiryDateDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // productBindingSource1
-            // 
-            this.productBindingSource1.DataMember = "Product";
-            this.productBindingSource1.DataSource = this.gSMSdbDataSet1;
-            // 
-            // gSMSdbDataSet1
-            // 
-            this.gSMSdbDataSet1.DataSetName = "GSMSdbDataSet1";
-            this.gSMSdbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -394,23 +331,67 @@
             this.lable10.TabIndex = 0;
             this.lable10.Text = "Profile";
             // 
-            // gSMSdbDataSet
+            // gSMSdbDataSet_CashierProduct
             // 
-            this.gSMSdbDataSet.DataSetName = "GSMSdbDataSet";
-            this.gSMSdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.gSMSdbDataSet_CashierProduct.DataSetName = "GSMSdbDataSet_CashierProduct";
+            this.gSMSdbDataSet_CashierProduct.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gSMSdbDataSetCashierProductBindingSource
+            // 
+            this.gSMSdbDataSetCashierProductBindingSource.DataSource = this.gSMSdbDataSet_CashierProduct;
+            this.gSMSdbDataSetCashierProductBindingSource.Position = 0;
             // 
             // productBindingSource
             // 
             this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.gSMSdbDataSet;
+            this.productBindingSource.DataSource = this.gSMSdbDataSet_CashierProduct;
             // 
             // productTableAdapter
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
-            // productTableAdapter1
+            // dataGridViewTextBoxColumn1
             // 
-            this.productTableAdapter1.ClearBeforeFill = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ProductID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            // 
+            // cateogoryNameDataGridViewTextBoxColumn
+            // 
+            this.cateogoryNameDataGridViewTextBoxColumn.DataPropertyName = "CateogoryName";
+            this.cateogoryNameDataGridViewTextBoxColumn.HeaderText = "CateogoryName";
+            this.cateogoryNameDataGridViewTextBoxColumn.Name = "cateogoryNameDataGridViewTextBoxColumn";
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // expiryDateDataGridViewTextBoxColumn
+            // 
+            this.expiryDateDataGridViewTextBoxColumn.DataPropertyName = "ExpiryDate";
+            this.expiryDateDataGridViewTextBoxColumn.HeaderText = "ExpiryDate";
+            this.expiryDateDataGridViewTextBoxColumn.Name = "expiryDateDataGridViewTextBoxColumn";
             // 
             // SalesMan_Home
             // 
@@ -436,11 +417,10 @@
             this.pnlProduct.ResumeLayout(false);
             this.pnlProduct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet1)).EndInit();
             this.pnlProfile.ResumeLayout(false);
             this.pnlProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSet_CashierProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSMSdbDataSetCashierProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -467,17 +447,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lable10;
         private System.Windows.Forms.DataGridView dgvProduct;
-        private GSMSdbDataSet gSMSdbDataSet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private GSMSdbDataSet_CashierProduct gSMSdbDataSet_CashierProduct;
+        private System.Windows.Forms.BindingSource gSMSdbDataSetCashierProductBindingSource;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private GSMSdbDataSetTableAdapters.ProductTableAdapter productTableAdapter;
-        private GSMSdbDataSet1 gSMSdbDataSet1;
-        private System.Windows.Forms.BindingSource productBindingSource1;
-        private GSMSdbDataSet1TableAdapters.ProductTableAdapter productTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private GSMSdbDataSet_CashierProductTableAdapters.ProductTableAdapter productTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cateogoryNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cateogoryIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
     }

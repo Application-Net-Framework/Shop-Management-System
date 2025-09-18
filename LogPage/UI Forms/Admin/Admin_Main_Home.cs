@@ -15,8 +15,8 @@ namespace App.UI_Forms.Admin
         public Admin_Main_Home()
         {
             InitializeComponent();
-            panelSide.Height = btnHome.Height;
-            home1.BringToFront();
+            panelSide.Height = btnLogOut.Height;
+            
 
             btnCross.Text = "X";
             btnCross.ForeColor = Color.Red;
@@ -45,37 +45,37 @@ namespace App.UI_Forms.Admin
 
         private void button8_Click(object sender, EventArgs e)
         {
-            panelSide.Height = btnHome.Height;
-            panelSide.Top = btnHome.Top;
-            home1.BringToFront();
+            panelSide.Height = btnLogOut.Height;
+            panelSide.Top = btnLogOut.Top;
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             panelSide.Height = btnEmployee.Height;
             panelSide.Top = btnEmployee.Top;
-            employees1.BringToFront();
+            EmployeeTimer.Start();
 
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-
+            ProductTimer.Start();
         }
 
         private void btnsales_Click(object sender, EventArgs e)
         {
-
+            SalesTimer.Start();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            ReportTimer.Start();
+            
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-
+            ReportTimer.Start();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -137,9 +137,9 @@ namespace App.UI_Forms.Admin
             }
         }
 
-        bool reportExpanded = false;  
-
-        private void ReportTimer_Tick(object sender, EventArgs e)
+        bool reportExpanded = false;
+    
+       private void ReportTimer_Tick(object sender, EventArgs e)
         {
             if (!reportExpanded)
             {
@@ -160,6 +160,119 @@ namespace App.UI_Forms.Admin
                 }
             }
         }
+        bool employeeExpanded = false;
+
+        private void EmployeeTimer_Tick(object sender, EventArgs e)
+        {
+            if (!employeeExpanded)
+            {
+                pnlEmployee.Height += 5;
+                if (pnlEmployee.Height >= 145)
+                {
+                    employeeExpanded = true;
+                    EmployeeTimer.Stop();
+                }
+            }
+            else
+            {
+                pnlEmployee.Height -= 5;
+                if (pnlEmployee.Height <= 45)
+                {
+                    employeeExpanded = false;
+                    EmployeeTimer.Stop();
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        bool productExpanded = false;
+        private void ProductTimer_Tick(object sender, EventArgs e)
+        {
+            if (!productExpanded)
+            {
+                Productpnl.Height += 5;
+                if (Productpnl.Height >= 145)
+                {
+                    productExpanded = true;
+                    ProductTimer.Stop();
+                }
+            }
+            else
+            {
+                Productpnl.Height -= 5;
+                if (Productpnl.Height <= 45)
+                {
+                    productExpanded = false;
+                    ProductTimer.Stop();
+                }
+            }
+        }
+
+        private void btnManageEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPayroll_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEmpReports_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnManageProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDailySales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMonthlySales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        bool salesExpanded = false;
+
+        private void SalesTimer_Tick(object sender, EventArgs e)
+        {
+            if (!salesExpanded)
+            {
+                Salepnl.Height += 5;
+                if (Salepnl.Height >= 145)
+                {
+                    salesExpanded = true;
+                    SalesTimer.Stop();
+                }
+            }
+            else
+            {
+                Salepnl.Height -= 5;
+                if (Salepnl.Height <= 45)
+                {
+                    salesExpanded = false;
+                    SalesTimer.Stop();
+                }
+            }
+        }
     }
 }
-

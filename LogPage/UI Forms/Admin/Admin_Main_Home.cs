@@ -49,7 +49,7 @@ namespace App.UI_Forms.Admin
             // Close report panel if it's open
             if (reportExpanded)
             {
-                reportpnl.Height = 45;
+                reportpnl.Height = 55;
                 reportExpanded = false;
                 ReportTimer.Stop();
             }
@@ -57,7 +57,7 @@ namespace App.UI_Forms.Admin
             // Close employee panel if it's open
             if (employeeExpanded)
             {
-                pnlEmployee.Height = 45;
+                pnlEmployee.Height = 55;
                 employeeExpanded = false;
                 EmployeeTimer.Stop();
             }
@@ -65,7 +65,7 @@ namespace App.UI_Forms.Admin
             // Close product panel if it's open
             if (productExpanded)
             {
-                Productpnl.Height = 45;
+                Productpnl.Height = 55;
                 productExpanded = false;
                 ProductTimer.Stop();
             }
@@ -73,7 +73,7 @@ namespace App.UI_Forms.Admin
             // Close sales panel if it's open
             if (salesExpanded)
             {
-                Salepnl.Height = 45;
+                Salepnl.Height = 65;
                 salesExpanded = false;
                 SalesTimer.Stop();
             }
@@ -91,8 +91,7 @@ namespace App.UI_Forms.Admin
         private void button7_Click(object sender, EventArgs e)
         {
             SideContainer.Height = btnEmployee.Height;
-            SideContainer
-                .Top = btnEmployee.Top;
+            SideContainer.Top = btnEmployee.Top;
             
             // If employee panel is already open, just close it
             if (employeeExpanded)
@@ -110,6 +109,9 @@ namespace App.UI_Forms.Admin
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
+            SideContainer.Height = btnProduct.Height;
+            SideContainer.Top = btnProduct.Top;
+            
             // If product panel is already open, just close it
             if (productExpanded)
             {
@@ -126,6 +128,28 @@ namespace App.UI_Forms.Admin
 
         private void btnsales_Click(object sender, EventArgs e)
         {
+            SideContainer.Height = btnsales.Height;
+            SideContainer.Top = btnsales.Top;
+            
+            // If report panel is already open, just close it
+            if (reportExpanded)
+            {
+                ReportTimer.Start();
+                return;
+            }
+            
+            // Close all panels first
+            CloseAllPanels();
+            
+            // Now open report panel
+            ReportTimer.Start();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            SideContainer.Height = btnAdminInfo.Height;
+            SideContainer.Top = btnAdminInfo.Top;
+            
             // If sales panel is already open, just close it
             if (salesExpanded)
             {
@@ -140,25 +164,23 @@ namespace App.UI_Forms.Admin
             SalesTimer.Start();
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            // If report panel is already open, just close it
-            if (reportExpanded)
+            SideContainer.Height = btnSetting.Height;
+            SideContainer.Top = btnSetting.Top;
+            
+            // If sales panel is already open, just close it
+            if (salesExpanded)
             {
-                ReportTimer.Start();
+                SalesTimer.Start();
                 return;
             }
             
             // Close all panels first
             CloseAllPanels();
             
-            // Now open report panel
-            ReportTimer.Start();
+            // Now open sales panel
+            SalesTimer.Start();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -224,12 +246,12 @@ namespace App.UI_Forms.Admin
 
         bool reportExpanded = false;
     
-       private void ReportTimer_Tick(object sender, EventArgs e)
+        private void ReportTimer_Tick(object sender, EventArgs e)
         {
             if (!reportExpanded)
             {
-                reportpnl.Height += 5;   
-                if (reportpnl.Height >= 145)
+                reportpnl.Height += 5;
+                if (reportpnl.Height >= 216)
                 {
                     reportExpanded = true;
                     ReportTimer.Stop();
@@ -237,14 +259,15 @@ namespace App.UI_Forms.Admin
             }
             else
             {
-                reportpnl.Height -= 5;   
-                if (reportpnl.Height <= 45)
+                reportpnl.Height -= 5;
+                if (reportpnl.Height <= 55)
                 {
                     reportExpanded = false;
                     ReportTimer.Stop();
                 }
             }
         }
+        
         bool employeeExpanded = false;
 
         private void EmployeeTimer_Tick(object sender, EventArgs e)
@@ -252,7 +275,7 @@ namespace App.UI_Forms.Admin
             if (!employeeExpanded)
             {
                 pnlEmployee.Height += 5;
-                if (pnlEmployee.Height >= 145)
+                if (pnlEmployee.Height >= 170)
                 {
                     employeeExpanded = true;
                     EmployeeTimer.Stop();
@@ -261,7 +284,7 @@ namespace App.UI_Forms.Admin
             else
             {
                 pnlEmployee.Height -= 5;
-                if (pnlEmployee.Height <= 45)
+                if (pnlEmployee.Height <= 55)
                 {
                     employeeExpanded = false;
                     EmployeeTimer.Stop();
@@ -280,8 +303,8 @@ namespace App.UI_Forms.Admin
         {
             if (!productExpanded)
             {
-                Productpnl.Height += 5;
-                if (Productpnl.Height >= 145)
+                Productpnl.Height += 2;
+                if (Productpnl.Height >= 160)
                 {
                     productExpanded = true;
                     ProductTimer.Stop();
@@ -290,7 +313,7 @@ namespace App.UI_Forms.Admin
             else
             {
                 Productpnl.Height -= 5;
-                if (Productpnl.Height <= 45)
+                if (Productpnl.Height <= 55)
                 {
                     productExpanded = false;
                     ProductTimer.Stop();
@@ -345,7 +368,7 @@ namespace App.UI_Forms.Admin
             if (!salesExpanded)
             {
                 Salepnl.Height += 5;
-                if (Salepnl.Height >= 145)
+                if (Salepnl.Height >= 180)
                 {
                     salesExpanded = true;
                     SalesTimer.Stop();
@@ -354,12 +377,27 @@ namespace App.UI_Forms.Admin
             else
             {
                 Salepnl.Height -= 5;
-                if (Salepnl.Height <= 45)
+                if (Salepnl.Height <= 65)
                 {
                     salesExpanded = false;
                     SalesTimer.Stop();
                 }
             }
+        }
+
+        private void pnlEmployee_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SideContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

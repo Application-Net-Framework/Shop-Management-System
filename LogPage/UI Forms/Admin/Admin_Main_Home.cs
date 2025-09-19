@@ -15,7 +15,7 @@ namespace App.UI_Forms.Admin
         public Admin_Main_Home()
         {
             InitializeComponent();
-            panelSide.Height = btnLogOut.Height;
+            SideContainer.Height = btnLogOut.Height;
             
 
             btnCross.Text = "X";
@@ -43,28 +43,100 @@ namespace App.UI_Forms.Admin
 
         }
 
+        // Helper method to close all panels
+        private void CloseAllPanels()
+        {
+            // Close report panel if it's open
+            if (reportExpanded)
+            {
+                reportpnl.Height = 45;
+                reportExpanded = false;
+                ReportTimer.Stop();
+            }
+            
+            // Close employee panel if it's open
+            if (employeeExpanded)
+            {
+                pnlEmployee.Height = 45;
+                employeeExpanded = false;
+                EmployeeTimer.Stop();
+            }
+            
+            // Close product panel if it's open
+            if (productExpanded)
+            {
+                Productpnl.Height = 45;
+                productExpanded = false;
+                ProductTimer.Stop();
+            }
+            
+            // Close sales panel if it's open
+            if (salesExpanded)
+            {
+                Salepnl.Height = 45;
+                salesExpanded = false;
+                SalesTimer.Stop();
+            }
+        }
+
         private void button8_Click(object sender, EventArgs e)
         {
-            panelSide.Height = btnLogOut.Height;
-            panelSide.Top = btnLogOut.Top;
+            SideContainer.Height = btnLogOut.Height;
+            SideContainer.Top = btnLogOut.Top;
             
+            // Close all panels when logout button is clicked
+            CloseAllPanels();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            panelSide.Height = btnEmployee.Height;
-            panelSide.Top = btnEmployee.Top;
+            SideContainer.Height = btnEmployee.Height;
+            SideContainer
+                .Top = btnEmployee.Top;
+            
+            // If employee panel is already open, just close it
+            if (employeeExpanded)
+            {
+                EmployeeTimer.Start();
+                return;
+            }
+            
+            // Close all panels first
+            CloseAllPanels();
+            
+            // Now open employee panel
             EmployeeTimer.Start();
-
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
+            // If product panel is already open, just close it
+            if (productExpanded)
+            {
+                ProductTimer.Start();
+                return;
+            }
+            
+            // Close all panels first
+            CloseAllPanels();
+            
+            // Now open product panel
             ProductTimer.Start();
         }
 
         private void btnsales_Click(object sender, EventArgs e)
         {
+            // If sales panel is already open, just close it
+            if (salesExpanded)
+            {
+                SalesTimer.Start();
+                return;
+            }
+            
+            // Close all panels first
+            CloseAllPanels();
+            
+            // Now open sales panel
             SalesTimer.Start();
         }
 
@@ -75,6 +147,17 @@ namespace App.UI_Forms.Admin
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
+            // If report panel is already open, just close it
+            if (reportExpanded)
+            {
+                ReportTimer.Start();
+                return;
+            }
+            
+            // Close all panels first
+            CloseAllPanels();
+            
+            // Now open report panel
             ReportTimer.Start();
         }
 
@@ -85,12 +168,14 @@ namespace App.UI_Forms.Admin
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-
+            // Close all panels when menu button is clicked
+            CloseAllPanels();
         }
 
         private void btnMail_Click(object sender, EventArgs e)
         {
-
+            // Close all panels when mail button is clicked
+            CloseAllPanels();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -186,8 +271,10 @@ namespace App.UI_Forms.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            // Close all panels when this button is clicked
+            CloseAllPanels();
         }
+        
         bool productExpanded = false;
         private void ProductTimer_Tick(object sender, EventArgs e)
         {

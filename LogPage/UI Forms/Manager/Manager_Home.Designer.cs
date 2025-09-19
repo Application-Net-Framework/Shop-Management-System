@@ -62,16 +62,17 @@
             this.productpn = new System.Windows.Forms.Panel();
             this.probtn = new System.Windows.Forms.Button();
             this.productContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.toppnl = new System.Windows.Forms.Panel();
-            this.menubtn = new System.Windows.Forms.Button();
-            this.minimizebtn = new System.Windows.Forms.Button();
-            this.fullscreenbtn = new System.Windows.Forms.Button();
-            this.crossbtn = new System.Windows.Forms.Button();
-            this.pagetitle = new System.Windows.Forms.Label();
             this.membertimer = new System.Windows.Forms.Timer(this.components);
             this.producttimer = new System.Windows.Forms.Timer(this.components);
             this.featureContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.menupnl = new System.Windows.Forms.Panel();
+            this.btnmenu = new System.Windows.Forms.Button();
             this.featureContainertimer = new System.Windows.Forms.Timer(this.components);
+            this.pnltop = new System.Windows.Forms.Panel();
+            this.minimizebtn = new System.Windows.Forms.Button();
+            this.fullscreenbtn = new System.Windows.Forms.Button();
+            this.crossbtn = new System.Windows.Forms.Button();
+            this.welcomemsg = new System.Windows.Forms.Label();
             this.pnmember.SuspendLayout();
             this.pnsetting.SuspendLayout();
             this.pnproduct.SuspendLayout();
@@ -89,8 +90,9 @@
             this.tarminationpn.SuspendLayout();
             this.productpn.SuspendLayout();
             this.productContainer.SuspendLayout();
-            this.toppnl.SuspendLayout();
             this.featureContainer.SuspendLayout();
+            this.menupnl.SuspendLayout();
+            this.pnltop.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnmember
@@ -230,10 +232,10 @@
             this.dashbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashbtn.Image = ((System.Drawing.Image)(resources.GetObject("dashbtn.Image")));
             this.dashbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dashbtn.Location = new System.Drawing.Point(-10, -9);
+            this.dashbtn.Location = new System.Drawing.Point(-23, -9);
             this.dashbtn.Name = "dashbtn";
             this.dashbtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.dashbtn.Size = new System.Drawing.Size(202, 71);
+            this.dashbtn.Size = new System.Drawing.Size(215, 71);
             this.dashbtn.TabIndex = 2;
             this.dashbtn.Text = "    Dash Board";
             this.dashbtn.UseVisualStyleBackColor = false;
@@ -245,7 +247,7 @@
             this.dashboardContainer.Controls.Add(this.dashbordpn);
             this.dashboardContainer.Controls.Add(this.pnmember);
             this.dashboardContainer.Controls.Add(this.reportpn);
-            this.dashboardContainer.Location = new System.Drawing.Point(3, 3);
+            this.dashboardContainer.Location = new System.Drawing.Point(3, 84);
             this.dashboardContainer.Name = "dashboardContainer";
             this.dashboardContainer.Size = new System.Drawing.Size(170, 50);
             this.dashboardContainer.TabIndex = 9;
@@ -290,7 +292,7 @@
             this.settingsbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsbtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsbtn.Image")));
             this.settingsbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsbtn.Location = new System.Drawing.Point(-8, -15);
+            this.settingsbtn.Location = new System.Drawing.Point(-8, -12);
             this.settingsbtn.Name = "settingsbtn";
             this.settingsbtn.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.settingsbtn.Size = new System.Drawing.Size(190, 77);
@@ -358,7 +360,7 @@
             this.settingsContainer.Controls.Add(this.settingspn);
             this.settingsContainer.Controls.Add(this.aboutpn);
             this.settingsContainer.Controls.Add(this.logoutpn);
-            this.settingsContainer.Location = new System.Drawing.Point(3, 171);
+            this.settingsContainer.Location = new System.Drawing.Point(3, 252);
             this.settingsContainer.Name = "settingsContainer";
             this.settingsContainer.Size = new System.Drawing.Size(170, 50);
             this.settingsContainer.TabIndex = 15;
@@ -376,7 +378,7 @@
             this.membersContainer.Controls.Add(this.pnproduct);
             this.membersContainer.Controls.Add(this.registerpn);
             this.membersContainer.Controls.Add(this.tarminationpn);
-            this.membersContainer.Location = new System.Drawing.Point(3, 115);
+            this.membersContainer.Location = new System.Drawing.Point(3, 140);
             this.membersContainer.Name = "membersContainer";
             this.membersContainer.Size = new System.Drawing.Size(170, 50);
             this.membersContainer.TabIndex = 16;
@@ -460,80 +462,10 @@
             this.productContainer.Controls.Add(this.productpn);
             this.productContainer.Controls.Add(this.pnsetting);
             this.productContainer.Controls.Add(this.stackpn);
-            this.productContainer.Location = new System.Drawing.Point(3, 59);
+            this.productContainer.Location = new System.Drawing.Point(3, 196);
             this.productContainer.Name = "productContainer";
             this.productContainer.Size = new System.Drawing.Size(170, 50);
             this.productContainer.TabIndex = 18;
-            // 
-            // toppnl
-            // 
-            this.toppnl.BackColor = System.Drawing.Color.White;
-            this.toppnl.Controls.Add(this.menubtn);
-            this.toppnl.Controls.Add(this.minimizebtn);
-            this.toppnl.Controls.Add(this.fullscreenbtn);
-            this.toppnl.Controls.Add(this.crossbtn);
-            this.toppnl.Controls.Add(this.pagetitle);
-            this.toppnl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.toppnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.toppnl.Location = new System.Drawing.Point(3, 3);
-            this.toppnl.Name = "toppnl";
-            this.toppnl.Size = new System.Drawing.Size(940, 34);
-            this.toppnl.TabIndex = 19;
-            this.toppnl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.toppnl_MouseDown);
-            // 
-            // menubtn
-            // 
-            this.menubtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menubtn.BackgroundImage")));
-            this.menubtn.Location = new System.Drawing.Point(6, -1);
-            this.menubtn.Name = "menubtn";
-            this.menubtn.Size = new System.Drawing.Size(44, 35);
-            this.menubtn.TabIndex = 21;
-            this.menubtn.UseVisualStyleBackColor = true;
-            this.menubtn.Click += new System.EventHandler(this.menubtn_Click);
-            // 
-            // minimizebtn
-            // 
-            this.minimizebtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.minimizebtn.Location = new System.Drawing.Point(847, 0);
-            this.minimizebtn.Name = "minimizebtn";
-            this.minimizebtn.Size = new System.Drawing.Size(32, 34);
-            this.minimizebtn.TabIndex = 21;
-            this.minimizebtn.Text = "button4";
-            this.minimizebtn.UseVisualStyleBackColor = true;
-            this.minimizebtn.Click += new System.EventHandler(this.minimizebtn_Click_1);
-            // 
-            // fullscreenbtn
-            // 
-            this.fullscreenbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.fullscreenbtn.Location = new System.Drawing.Point(879, 0);
-            this.fullscreenbtn.Name = "fullscreenbtn";
-            this.fullscreenbtn.Size = new System.Drawing.Size(32, 34);
-            this.fullscreenbtn.TabIndex = 22;
-            this.fullscreenbtn.Text = "button4";
-            this.fullscreenbtn.UseVisualStyleBackColor = true;
-            this.fullscreenbtn.Click += new System.EventHandler(this.fullscreenbtn_Click_1);
-            // 
-            // crossbtn
-            // 
-            this.crossbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.crossbtn.Location = new System.Drawing.Point(911, 0);
-            this.crossbtn.Name = "crossbtn";
-            this.crossbtn.Size = new System.Drawing.Size(29, 34);
-            this.crossbtn.TabIndex = 21;
-            this.crossbtn.Text = "button4";
-            this.crossbtn.UseVisualStyleBackColor = true;
-            this.crossbtn.Click += new System.EventHandler(this.crossbtn_Click_1);
-            // 
-            // pagetitle
-            // 
-            this.pagetitle.AutoSize = true;
-            this.pagetitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pagetitle.ForeColor = System.Drawing.Color.Black;
-            this.pagetitle.Location = new System.Drawing.Point(429, 4);
-            this.pagetitle.Name = "pagetitle";
-            this.pagetitle.Size = new System.Drawing.Size(154, 21);
-            this.pagetitle.TabIndex = 21;
-            this.pagetitle.Text = "Welcome Manager";
             // 
             // membertimer
             // 
@@ -548,21 +480,104 @@
             // featureContainer
             // 
             this.featureContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.featureContainer.Controls.Add(this.menupnl);
             this.featureContainer.Controls.Add(this.dashboardContainer);
-            this.featureContainer.Controls.Add(this.productContainer);
             this.featureContainer.Controls.Add(this.membersContainer);
+            this.featureContainer.Controls.Add(this.productContainer);
             this.featureContainer.Controls.Add(this.settingsContainer);
             this.featureContainer.Dock = System.Windows.Forms.DockStyle.Left;
-            this.featureContainer.Location = new System.Drawing.Point(3, 37);
+            this.featureContainer.Location = new System.Drawing.Point(3, 3);
             this.featureContainer.Name = "featureContainer";
-            this.featureContainer.Size = new System.Drawing.Size(178, 551);
+            this.featureContainer.Size = new System.Drawing.Size(173, 585);
             this.featureContainer.TabIndex = 20;
             this.featureContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.featureContainer_Paint);
+            // 
+            // menupnl
+            // 
+            this.menupnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.menupnl.Controls.Add(this.btnmenu);
+            this.menupnl.Location = new System.Drawing.Point(0, 0);
+            this.menupnl.Margin = new System.Windows.Forms.Padding(0);
+            this.menupnl.Name = "menupnl";
+            this.menupnl.Size = new System.Drawing.Size(178, 81);
+            this.menupnl.TabIndex = 22;
+            // 
+            // btnmenu
+            // 
+            this.btnmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.btnmenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmenu.Image = ((System.Drawing.Image)(resources.GetObject("btnmenu.Image")));
+            this.btnmenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnmenu.Location = new System.Drawing.Point(-12, -14);
+            this.btnmenu.Name = "btnmenu";
+            this.btnmenu.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnmenu.Size = new System.Drawing.Size(207, 105);
+            this.btnmenu.TabIndex = 3;
+            this.btnmenu.Text = " Menu";
+            this.btnmenu.UseVisualStyleBackColor = false;
+            this.btnmenu.Click += new System.EventHandler(this.btnmenu_Click);
             // 
             // featureContainertimer
             // 
             this.featureContainertimer.Interval = 10;
             this.featureContainertimer.Tick += new System.EventHandler(this.featureContainertimer_Tick);
+            // 
+            // pnltop
+            // 
+            this.pnltop.BackColor = System.Drawing.Color.White;
+            this.pnltop.Controls.Add(this.minimizebtn);
+            this.pnltop.Controls.Add(this.fullscreenbtn);
+            this.pnltop.Controls.Add(this.crossbtn);
+            this.pnltop.Controls.Add(this.welcomemsg);
+            this.pnltop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnltop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnltop.Location = new System.Drawing.Point(176, 3);
+            this.pnltop.Name = "pnltop";
+            this.pnltop.Size = new System.Drawing.Size(767, 34);
+            this.pnltop.TabIndex = 21;
+            this.pnltop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnltop_Paint);
+            this.pnltop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnltop_MouseDown);
+            // 
+            // minimizebtn
+            // 
+            this.minimizebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizebtn.Location = new System.Drawing.Point(674, 0);
+            this.minimizebtn.Name = "minimizebtn";
+            this.minimizebtn.Size = new System.Drawing.Size(32, 34);
+            this.minimizebtn.TabIndex = 21;
+            this.minimizebtn.UseVisualStyleBackColor = true;
+            // 
+            // fullscreenbtn
+            // 
+            this.fullscreenbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fullscreenbtn.Location = new System.Drawing.Point(706, 0);
+            this.fullscreenbtn.Name = "fullscreenbtn";
+            this.fullscreenbtn.Size = new System.Drawing.Size(32, 34);
+            this.fullscreenbtn.TabIndex = 22;
+            this.fullscreenbtn.Text = "button4";
+            this.fullscreenbtn.UseVisualStyleBackColor = true;
+            // 
+            // crossbtn
+            // 
+            this.crossbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.crossbtn.Location = new System.Drawing.Point(738, 0);
+            this.crossbtn.Name = "crossbtn";
+            this.crossbtn.Size = new System.Drawing.Size(29, 34);
+            this.crossbtn.TabIndex = 21;
+            this.crossbtn.Text = "button4";
+            this.crossbtn.UseVisualStyleBackColor = true;
+            // 
+            // welcomemsg
+            // 
+            this.welcomemsg.AutoSize = true;
+            this.welcomemsg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomemsg.ForeColor = System.Drawing.Color.Black;
+            this.welcomemsg.Location = new System.Drawing.Point(429, 4);
+            this.welcomemsg.Name = "welcomemsg";
+            this.welcomemsg.Size = new System.Drawing.Size(154, 21);
+            this.welcomemsg.TabIndex = 21;
+            this.welcomemsg.Text = "Welcome Manager";
+            this.welcomemsg.Click += new System.EventHandler(this.welcomemsg_Click);
             // 
             // Manager_Home
             // 
@@ -570,8 +585,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(946, 591);
+            this.Controls.Add(this.pnltop);
             this.Controls.Add(this.featureContainer);
-            this.Controls.Add(this.toppnl);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Manager_Home";
@@ -595,9 +610,10 @@
             this.tarminationpn.ResumeLayout(false);
             this.productpn.ResumeLayout(false);
             this.productContainer.ResumeLayout(false);
-            this.toppnl.ResumeLayout(false);
-            this.toppnl.PerformLayout();
             this.featureContainer.ResumeLayout(false);
+            this.menupnl.ResumeLayout(false);
+            this.pnltop.ResumeLayout(false);
+            this.pnltop.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -635,15 +651,16 @@
         private System.Windows.Forms.Panel memberpn;
         private System.Windows.Forms.Button memberbtn;
         private System.Windows.Forms.FlowLayoutPanel productContainer;
-        private System.Windows.Forms.Panel toppnl;
         private System.Windows.Forms.Timer membertimer;
         private System.Windows.Forms.Timer producttimer;
-        private System.Windows.Forms.Label pagetitle;
-        private System.Windows.Forms.Button crossbtn;
-        private System.Windows.Forms.Button minimizebtn;
-        private System.Windows.Forms.Button fullscreenbtn;
-        private System.Windows.Forms.Button menubtn;
         private System.Windows.Forms.FlowLayoutPanel featureContainer;
         private System.Windows.Forms.Timer featureContainertimer;
+        private System.Windows.Forms.Panel menupnl;
+        private System.Windows.Forms.Button btnmenu;
+        private System.Windows.Forms.Panel pnltop;
+        private System.Windows.Forms.Button minimizebtn;
+        private System.Windows.Forms.Button fullscreenbtn;
+        private System.Windows.Forms.Button crossbtn;
+        private System.Windows.Forms.Label welcomemsg;
     }
 }

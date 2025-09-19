@@ -44,22 +44,36 @@ namespace App
             InitializeComponent();
             
             // Set up window control buttons
+            SetupWindowControls();
+
+            // Center the welcome message
+            CenterWelcomeMessage();
+        }
+
+        private void SetupWindowControls()
+        {
+            // Set up cross button
             crossbtn.Text = "X";
             crossbtn.ForeColor = Color.Red;
             crossbtn.FlatStyle = FlatStyle.Flat;
             crossbtn.FlatAppearance.BorderSize = 0;
+            crossbtn.Anchor = AnchorStyles.Right | AnchorStyles.Top;
             crossbtn.Click += crossbtn_Click;
             
+            // Set up minimize button
             minimizebtn.Text = "_";
             minimizebtn.ForeColor = Color.Black;
             minimizebtn.FlatStyle = FlatStyle.Flat;
             minimizebtn.FlatAppearance.BorderSize = 0;
+            minimizebtn.Anchor = AnchorStyles.Right | AnchorStyles.Top;
             minimizebtn.Click += minimizebtn_Click;
             
+            // Set up fullscreen button
             fullscreenbtn.Text = "□";
             fullscreenbtn.ForeColor = Color.Black;
             fullscreenbtn.FlatStyle = FlatStyle.Flat;
             fullscreenbtn.FlatAppearance.BorderSize = 0;
+            fullscreenbtn.Anchor = AnchorStyles.Right | AnchorStyles.Top;
             fullscreenbtn.Click += fullscreenbtn_Click;
         }
 
@@ -67,6 +81,26 @@ namespace App
         {
             // Initialize the UI when the manager home form loads
             IsMdiContainer = true;  // Ensure this form can host MDI child forms
+            
+            // Center the welcome message on form load
+            CenterWelcomeMessage();
+        }
+
+        // Method to center the welcome message in the top panel
+        private void CenterWelcomeMessage()
+        {
+            // Calculate the center point of the top panel
+            int centerX = (pnltop.Width - welcomemsg.Width) / 2;
+            
+            // Set the welcome message location
+            welcomemsg.Location = new Point(centerX, welcomemsg.Location.Y);
+        }
+
+        // Override the resize event to keep welcome message centered
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            CenterWelcomeMessage();
         }
 
         private void dashboardtimer_Tick(object sender, EventArgs e)
@@ -166,6 +200,9 @@ namespace App
                 {
                     featureExpnd = true;
                     featureContainertimer.Stop();
+                    
+                    // Re-center welcome message after the feature container expands
+                    CenterWelcomeMessage();
                 }
             }
             else
@@ -178,6 +215,9 @@ namespace App
                     
                     // When menu is collapsed, close all other panels
                     CloseAllPanels();
+                    
+                    // Re-center welcome message after the feature container collapses
+                    CenterWelcomeMessage();
                 }
             }
         }
@@ -239,8 +279,25 @@ namespace App
             }
         }
 
+        // Helper method to expand the menu if it's collapsed
+        private void EnsureMenuExpanded()
+        {
+            if (!featureExpnd)
+            {
+                // Expand the menu first
+                featureContainer.Width = 165;
+                featureExpnd = true;
+                
+                // Re-center welcome message after the feature container expands
+                CenterWelcomeMessage();
+            }
+        }
+
         private void dashbtn_Click(object sender, EventArgs e)
         {
+            // First ensure the menu is expanded
+            EnsureMenuExpanded();
+            
             // If dashboard is already open, just close it
             if (dashboardExpnd)
             {
@@ -257,6 +314,9 @@ namespace App
         
         private void memberbtn_Click(object sender, EventArgs e)
         {
+            // First ensure the menu is expanded
+            EnsureMenuExpanded();
+            
             // If members is already open, just close it
             if (memberExpnd)
             {
@@ -273,6 +333,9 @@ namespace App
 
         private void probtn_Click(object sender, EventArgs e)
         {
+            // First ensure the menu is expanded
+            EnsureMenuExpanded();
+            
             // If products is already open, just close it
             if (productExpnd)
             {
@@ -289,6 +352,9 @@ namespace App
 
         private void settingsbtn_Click(object sender, EventArgs e)
         {
+            // First ensure the menu is expanded
+            EnsureMenuExpanded();
+            
             // If settings is already open, just close it
             if (settingsExpnd)
             {
@@ -328,7 +394,7 @@ namespace App
         {
            
         }
-       
+      
 
         private void discountbtn_Click(object sender, EventArgs e)
         {
@@ -460,6 +526,9 @@ namespace App
                 this.WindowState = FormWindowState.Maximized;
                 fullscreenbtn.Text = "❐";
             }
+            
+            // Re-center welcome message after changing window state
+            CenterWelcomeMessage();
         }
 
         // Add the MouseDown event handler for the top panel
@@ -495,17 +564,68 @@ namespace App
 
         private void minimizebtn_Click_1(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void fullscreenbtn_Click_1(object sender, EventArgs e)
         {
-
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                fullscreenbtn.Text = "□";
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+                fullscreenbtn.Text = "❐";
+            }
+            
+            // Re-center welcome message after changing window state
+            CenterWelcomeMessage();
         }
 
         private void crossbtn_Click_1(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void btnmenu_Click(object sender, EventArgs e)
+        {
+            featureContainertimer.Start();
+        }
+
+        private void toppnl_Paint(object sender, PaintEventArgs e)
+        {
+            // Nothing to do here
+        }
+
+        private void welcomemsg_Click(object sender, EventArgs e)
+        {
+            // Nothing to do here
+        }
+
+        private void pnltop_Paint(object sender, PaintEventArgs e)
+        {
+            // Nothing to do here
+        }
+        
+        // Add the MouseDown event handler for the top panel to allow dragging
+        private void pnltop_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        
+        // Override the SizeChanged event to recenter welcome message when form size changes
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            base.OnSizeChanged(e);
+            
+            // Recenter welcome message
+            CenterWelcomeMessage();
         }
     }
 }

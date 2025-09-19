@@ -100,15 +100,19 @@
     <Compile Include="UI Forms\Application Starting Logo\SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Manager\circularPicturebox.cs">
+    <Compile Include="UI Forms\Manager\Employee Information\database.cs" />
+    <Compile Include="UI Forms\Manager\Employee Information\roundedpicturebox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI Forms\Manager\database.cs" />
-    <Compile Include="UI Forms\Manager\searchResult.cs">
+    <Compile Include="UI Forms\Manager\Employee Information\SearchResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Forms\Manager\searchResult.Designer.cs">
-      <DependentUpon>searchResult.cs</DependentUpon>
+    <Compile Include="UI Forms\Manager\Employee Information\SearchResultControl.Designer.cs">
+      <DependentUpon>SearchResultControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Manager\StaffInformation.cs" />
+    <Compile Include="UI Forms\Manager\StaffInformation.Designer.cs">
+      <DependentUpon>StaffInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\SalesMan\Cashier_Home.cs">
       <SubType>Form</SubType>
@@ -207,10 +211,10 @@
     <Compile Include="UI Forms\Manager\StackLevel.Designer.cs">
       <DependentUpon>StackLevel.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Manager\StaffInformation.cs">
+    <Compile Include="UI Forms\Manager\Employee Information\StaffInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI Forms\Manager\StaffInformation.Designer.cs">
+    <Compile Include="UI Forms\Manager\Employee Information\StaffInformation.Designer.cs">
       <DependentUpon>StaffInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Manager\TarminationEmployee.cs">
@@ -267,8 +271,8 @@
     <EmbeddedResource Include="UI Forms\Application Starting Logo\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Manager\searchResult.resx">
-      <DependentUpon>searchResult.cs</DependentUpon>
+    <EmbeddedResource Include="UI Forms\Manager\Employee Information\SearchResultControl.resx">
+      <DependentUpon>SearchResultControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\SalesMan\Cashier_Home.resx">
       <DependentUpon>Cashier_Home.cs</DependentUpon>
@@ -322,7 +326,7 @@
     <EmbeddedResource Include="UI Forms\Manager\StackLevel.resx">
       <DependentUpon>StackLevel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Manager\StaffInformation.resx">
+    <EmbeddedResource Include="UI Forms\Manager\Employee Information\StaffInformation.resx">
       <DependentUpon>StaffInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\TarminationEmployee.resx">

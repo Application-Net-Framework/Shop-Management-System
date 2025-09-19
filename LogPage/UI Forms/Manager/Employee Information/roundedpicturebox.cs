@@ -7,15 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App.UI_Forms.Manager
+namespace App.UI_Forms.Manager.Employee_Information
 {
-    public class circularPicturebox : PictureBox
+    public class roundedpicturebox : PictureBox
     {
-        protected override void OnPaint(PaintEventArgs pe)
+       protected override void OnPaint(PaintEventArgs pe)
         {
             GraphicsPath g = new GraphicsPath();
             g.AddEllipse(0, 0, ClientSize.Width, ClientSize.Height);
-            this.Region = new Region(g);
+            this.Region = new System.Drawing.Region(g);
             base.OnPaint(pe);
         }
     }

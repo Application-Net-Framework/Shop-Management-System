@@ -39,20 +39,20 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.reportpnl = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSetting = new System.Windows.Forms.Button();
             this.btnAdminInfo = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.Salepnl = new System.Windows.Forms.Panel();
             this.btnMonthlySales = new System.Windows.Forms.Button();
             this.btnDailySales = new System.Windows.Forms.Button();
             this.btnsales = new System.Windows.Forms.Button();
+            this.btnEmpReports = new System.Windows.Forms.Button();
             this.Productpnl = new System.Windows.Forms.Panel();
             this.btnManageProduct = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.pnlEmployee = new System.Windows.Forms.Panel();
             this.btnEmployee = new System.Windows.Forms.Button();
-            this.btnEmpReports = new System.Windows.Forms.Button();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.btnManageEmployee = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -182,30 +182,14 @@
             // 
             // reportpnl
             // 
-            this.reportpnl.Controls.Add(this.btnAdminInfo);
             this.reportpnl.Controls.Add(this.btnSetting);
+            this.reportpnl.Controls.Add(this.btnAdminInfo);
             this.reportpnl.Controls.Add(this.btnLogOut);
-            this.reportpnl.Location = new System.Drawing.Point(2, 2);
-            this.reportpnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportpnl.Location = new System.Drawing.Point(2, 260);
+            this.reportpnl.Margin = new System.Windows.Forms.Padding(2);
             this.reportpnl.Name = "reportpnl";
-            this.reportpnl.Size = new System.Drawing.Size(244, 87);
+            this.reportpnl.Size = new System.Drawing.Size(244, 94);
             this.reportpnl.TabIndex = 2;
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.BackColor = System.Drawing.Color.DarkGray;
-            this.btnSetting.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
-            this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.Location = new System.Drawing.Point(4, 95);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
-            this.btnSetting.Size = new System.Drawing.Size(231, 80);
-            this.btnSetting.TabIndex = 9;
-            this.btnSetting.Text = "Settings";
-            this.btnSetting.UseVisualStyleBackColor = false;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnAdminInfo
             // 
@@ -213,7 +197,7 @@
             this.btnAdminInfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdminInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnAdminInfo.Image")));
             this.btnAdminInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdminInfo.Location = new System.Drawing.Point(4, 5);
+            this.btnAdminInfo.Location = new System.Drawing.Point(4, 95);
             this.btnAdminInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdminInfo.Name = "btnAdminInfo";
             this.btnAdminInfo.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
@@ -222,6 +206,22 @@
             this.btnAdminInfo.Text = "Admin Info";
             this.btnAdminInfo.UseVisualStyleBackColor = false;
             this.btnAdminInfo.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.BackColor = System.Drawing.Color.DarkGray;
+            this.btnSetting.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
+            this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSetting.Location = new System.Drawing.Point(4, 5);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
+            this.btnSetting.Size = new System.Drawing.Size(231, 80);
+            this.btnSetting.TabIndex = 9;
+            this.btnSetting.Text = "Settings";
+            this.btnSetting.UseVisualStyleBackColor = false;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnLogOut
             // 
@@ -243,10 +243,10 @@
             // 
             this.Salepnl.Controls.Add(this.btnMonthlySales);
             this.Salepnl.Controls.Add(this.btnDailySales);
-            this.Salepnl.Controls.Add(this.btnsales);
+            this.Salepnl.Controls.Add(this.btnProduct);
             this.Salepnl.Controls.Add(this.btnEmpReports);
-            this.Salepnl.Location = new System.Drawing.Point(2, 264);
-            this.Salepnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Salepnl.Location = new System.Drawing.Point(2, 86);
+            this.Salepnl.Margin = new System.Windows.Forms.Padding(2);
             this.Salepnl.Name = "Salepnl";
             this.Salepnl.Size = new System.Drawing.Size(244, 83);
             this.Salepnl.TabIndex = 12;
@@ -299,13 +299,29 @@
             this.btnsales.UseVisualStyleBackColor = false;
             this.btnsales.Click += new System.EventHandler(this.btnsales_Click);
             // 
+            // btnEmpReports
+            // 
+            this.btnEmpReports.BackColor = System.Drawing.Color.DarkGray;
+            this.btnEmpReports.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpReports.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpReports.Image")));
+            this.btnEmpReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpReports.Location = new System.Drawing.Point(0, 256);
+            this.btnEmpReports.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEmpReports.Name = "btnEmpReports";
+            this.btnEmpReports.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
+            this.btnEmpReports.Size = new System.Drawing.Size(231, 80);
+            this.btnEmpReports.TabIndex = 10;
+            this.btnEmpReports.Text = "Employees";
+            this.btnEmpReports.UseVisualStyleBackColor = false;
+            this.btnEmpReports.Click += new System.EventHandler(this.btnEmpReports_Click);
+            // 
             // Productpnl
             // 
+            this.Productpnl.Controls.Add(this.btnsales);
             this.Productpnl.Controls.Add(this.btnManageProduct);
             this.Productpnl.Controls.Add(this.btnAddProduct);
-            this.Productpnl.Controls.Add(this.btnProduct);
-            this.Productpnl.Location = new System.Drawing.Point(2, 177);
-            this.Productpnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Productpnl.Location = new System.Drawing.Point(2, 173);
+            this.Productpnl.Margin = new System.Windows.Forms.Padding(2);
             this.Productpnl.Name = "Productpnl";
             this.Productpnl.Size = new System.Drawing.Size(244, 83);
             this.Productpnl.TabIndex = 7;
@@ -348,7 +364,7 @@
             this.btnProduct.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.Image")));
             this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduct.Location = new System.Drawing.Point(4, 0);
+            this.btnProduct.Location = new System.Drawing.Point(2, 0);
             this.btnProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
@@ -363,8 +379,8 @@
             this.pnlEmployee.Controls.Add(this.btnEmployee);
             this.pnlEmployee.Controls.Add(this.btnAddEmployee);
             this.pnlEmployee.Controls.Add(this.btnManageEmployee);
-            this.pnlEmployee.Location = new System.Drawing.Point(2, 93);
-            this.pnlEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlEmployee.Location = new System.Drawing.Point(2, 2);
+            this.pnlEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.pnlEmployee.Name = "pnlEmployee";
             this.pnlEmployee.Size = new System.Drawing.Size(244, 80);
             this.pnlEmployee.TabIndex = 11;
@@ -385,22 +401,6 @@
             this.btnEmployee.Text = "  Employees";
             this.btnEmployee.UseVisualStyleBackColor = false;
             this.btnEmployee.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btnEmpReports
-            // 
-            this.btnEmpReports.BackColor = System.Drawing.Color.DarkGray;
-            this.btnEmpReports.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpReports.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpReports.Image")));
-            this.btnEmpReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpReports.Location = new System.Drawing.Point(0, 256);
-            this.btnEmpReports.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnEmpReports.Name = "btnEmpReports";
-            this.btnEmpReports.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
-            this.btnEmpReports.Size = new System.Drawing.Size(231, 80);
-            this.btnEmpReports.TabIndex = 10;
-            this.btnEmpReports.Text = "Employees";
-            this.btnEmpReports.UseVisualStyleBackColor = false;
-            this.btnEmpReports.Click += new System.EventHandler(this.btnEmpReports_Click);
             // 
             // btnAddEmployee
             // 
@@ -470,10 +470,10 @@
             // SideContainer
             // 
             this.SideContainer.BackColor = System.Drawing.Color.Gainsboro;
-            this.SideContainer.Controls.Add(this.reportpnl);
             this.SideContainer.Controls.Add(this.pnlEmployee);
-            this.SideContainer.Controls.Add(this.Productpnl);
             this.SideContainer.Controls.Add(this.Salepnl);
+            this.SideContainer.Controls.Add(this.Productpnl);
+            this.SideContainer.Controls.Add(this.reportpnl);
             this.SideContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.SideContainer.Location = new System.Drawing.Point(0, 75);
             this.SideContainer.Name = "SideContainer";

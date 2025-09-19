@@ -27,35 +27,90 @@ namespace App
             LoadCategories();
             cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
         }
+
+        private DataTable ExecuteQuery(string query)
+        {
+           
+            DataTable dt = new DataTable();
+            try 
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                adp.Fill(dt);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("A database error occurred:\n" + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show("Connection error:" + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return dt;
+        }
+
+        private void ExecuteNonQuery(string query)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                    
+                cmd.ExecuteNonQuery();
+                    
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message);
+            }
+        }
+
+
+
+
         private void show()
         {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
+            //SqlConnection conn = new SqlConnection(connectionString);
+            //conn.Open();
             string query = "select ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate from Product;";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            adp.Fill(ds);
-            DataTable dt = ds.Tables[0];
+            dgvProduct.DataSource = ExecuteQuery(query);
+            //SqlCommand cmd = new SqlCommand(query, conn);
+            //SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            //DataSet ds = new DataSet();
+            //adp.Fill(ds);
+            //DataTable dt = ds.Tables[0];
             //DataTable dt2 = ds.Tables[1];
             dgvProduct.AutoGenerateColumns = true;
-            dgvProduct.DataSource = dt;
+            //dgvProduct.DataSource = dt;
         }
 
 
         public void CartView()
         {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
+            //SqlConnection conn = new SqlConnection(connectionString);
+            //conn.Open();
             string query = "select * from CartView;";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            adp.Fill(ds);
-            DataTable dt = ds.Tables[0];
-            //DataTable dt2 = ds.Tables[1];
+            dgvCartView.DataSource = ExecuteQuery(query);
+            //SqlCommand cmd = new SqlCommand(query, conn);
+            //SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            //DataSet ds = new DataSet();
+            //adp.Fill(ds);
+            //DataTable dt = ds.Tables[0];
             dgvCartView.AutoGenerateColumns = true;
-            dgvCartView.DataSource = dt;
+            //dgvCartView.DataSource = dt;
             totalPrice();
         }
         public void removeCart()
@@ -66,12 +121,13 @@ namespace App
                 return;
             }
 
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            string query = "DELETE FROM CartView WHERE Serial = @Serial";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@Serial", serial);
-            cmd.ExecuteNonQuery();
+            //SqlConnection conn = new SqlConnection(connectionString);
+            //conn.Open();
+            string query = "DELETE FROM CartView WHERE Serial = "+serial+"";
+            //SqlCommand cmd = new SqlCommand(query, conn);
+            //cmd.Parameters.AddWithValue("@Serial", serial);
+            //cmd.ExecuteNonQuery();
+            ExecuteNonQuery(query);
 
             //MessageBox.Show("Removed from Cart Successfully");
             CartView(); // refresh grid
@@ -81,11 +137,12 @@ namespace App
         }
         public void clearCart()
         {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
+            //SqlConnection conn = new SqlConnection(connectionString);
+            //conn.Open();
             string query = "DELETE FROM CartView; TRUNCATE TABLE CartView;";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.ExecuteNonQuery();
+            //SqlCommand cmd = new SqlCommand(query, conn);
+            //cmd.ExecuteNonQuery();
+            ExecuteNonQuery(query);
             //MessageBox.Show("Removed from Cart Successfully");
             CartView();
             clear();
@@ -93,14 +150,15 @@ namespace App
 
         public void totalPrice()
         {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
+            //SqlConnection conn = new SqlConnection(connectionString);
+            //conn.Open();
             string query = "SELECT SUM(UnitPrice * Quantity) AS TotalPrice FROM CartView;";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            adp.Fill(ds);
-            DataTable dt = ds.Tables[0];
+            DataTable dt = ExecuteQuery(query);
+            //SqlCommand cmd = new SqlCommand(query, conn);
+            //SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            //DataSet ds = new DataSet();
+            //adp.Fill(ds);
+            //DataTable dt = ds.Tables[0];
             if (dt.Rows.Count > 0 && dt.Rows[0]["TotalPrice"] != DBNull.Value)
             {
                 txtTotalPrice.Text = dt.Rows[0]["TotalPrice"].ToString();
@@ -168,55 +226,45 @@ namespace App
             txtSearch.Clear();
             cmbCategory.SelectedIndex = 0;
         }
-        private void btnHome_Click(object sender, EventArgs e)
-        {
 
-            pnlHome.Visible = true;
+        private void panleVisible()
+        {
+            pnlHome.Visible = false;
             pnlProduct.Visible = false;
             pnlOrder.Visible = false;
             pnlFeedback.Visible = false;
             pnlProfile.Visible = false;
             pnlCartView.Visible = false;
         }
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            panleVisible();
+            pnlHome.Visible = true;
+        }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            pnlHome.Visible = false;
+            panleVisible();
             pnlProduct.Visible = true;
-            pnlOrder.Visible = false;
-            pnlFeedback.Visible = false;
-            pnlProfile.Visible = false;
             pnlCartView.Visible = true;
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            pnlHome.Visible = false;
-            pnlProduct.Visible = false;
+            panleVisible();
             pnlOrder.Visible = true;
-            pnlFeedback.Visible = false;
-            pnlProfile.Visible = false;
-            pnlCartView.Visible = false;
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
-            pnlHome.Visible = false;
-            pnlProduct.Visible = false;
-            pnlOrder.Visible = false;
+            panleVisible();
             pnlFeedback.Visible = true;
-            pnlProfile.Visible = false;
-            pnlCartView.Visible = false;
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            pnlHome.Visible = false;
-            pnlProduct.Visible = false;
-            pnlOrder.Visible = false;
-            pnlFeedback.Visible = false;
+            panleVisible();
             pnlProfile.Visible = true;
-            pnlCartView.Visible = false;
         }
 
         private void btnProduct_MouseMove(object sender, MouseEventArgs e)
@@ -314,10 +362,10 @@ namespace App
       
         private void dgvProduct_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txtProductID.Text = dgvProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtProName.Text = dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtCategory.Text = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtUnitePrice.Text = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtProductID.Text = dgvProduct.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
+            txtProName.Text = dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString().Trim();
+            txtCategory.Text = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString().Trim();
+            txtUnitePrice.Text = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString().Trim();
         }
         private void dgvCartView_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -325,7 +373,7 @@ namespace App
             clearSearch();
             if (e.RowIndex >= 0) // avoid header row
             {
-                txtProductID.Text = dgvCartView.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+                txtProductID.Text = dgvCartView.Rows[e.RowIndex].Cells["ProductID"].Value.ToString().Trim();
                 nudQuantity.Value = Convert.ToDecimal(dgvCartView.Rows[e.RowIndex].Cells["Quantity"].Value);
                 serial = Convert.ToInt32(dgvCartView.Rows[e.RowIndex].Cells["Serial"].Value);
             }
@@ -363,7 +411,7 @@ namespace App
 
                     string checkQuery = "SELECT Quantity, Serial FROM CartView WHERE ProductID = @ProductID";
                     SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
-                    checkCmd.Parameters.AddWithValue("@ProductID", txtProductID.Text);
+                    checkCmd.Parameters.AddWithValue("@ProductID", txtProductID.Text.Trim());
                     SqlDataReader reader = checkCmd.ExecuteReader();
                     if (reader.Read()) // Product exists, update quantity
                     {
@@ -442,12 +490,13 @@ namespace App
 
             else
             {
-                SqlConnection conn = new SqlConnection(connectionString);
-                conn.Open();
+                //SqlConnection conn = new SqlConnection(connectionString);
+                //conn.Open();
                 //string query = "UPDATE CartView SET Quantity = 5 WHERE ProductID = 101;";
                 string query = "UPDATE CartView SET Quantity = " + nudQuantity.Value + " WHERE Serial = " + serial + ";";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
+                //SqlCommand cmd = new SqlCommand(query, conn);
+                //cmd.ExecuteNonQuery();
+                ExecuteNonQuery(query);
                 CartView();
                 clear();
                 clearSearch();
@@ -457,7 +506,6 @@ namespace App
         private void LoadCategories()
         {
             SqlConnection conn = new SqlConnection(connectionString);
-            
             conn.Open();
             string query = "SELECT DISTINCT CateogoryName FROM Product;";
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -478,8 +526,8 @@ namespace App
         }
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-                SqlConnection conn = new SqlConnection(connectionString);
-                conn.Open();
+                //SqlConnection conn = new SqlConnection(connectionString);
+                //conn.Open();
                 string query;
 
                 if (cmbCategory.SelectedItem.ToString() == "All")
@@ -495,20 +543,23 @@ namespace App
                                 "FROM Product WHERE CateogoryName = '" + cmbCategory.SelectedItem.ToString() + "'";
                 }
 
-                SqlCommand cmd = new SqlCommand(query, conn);
+            //DataTable dt = ExecuteQuery(query);
+
+            //SqlCommand cmd = new SqlCommand(query, conn);
 
                 //if (cmbCategory.SelectedItem.ToString() != "All")
                 //{
                 //    cmd.Parameters.AddWithValue("@Category", cmbCategory.SelectedItem.ToString());
                 //}
 
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adp.Fill(ds);
+                //SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //DataSet ds = new DataSet();
+            //adp.Fill(ds);
 
-                dgvProduct.DataSource = ds.Tables[0];
-                clear();
-                txtSearch.Clear();
+            //dgvProduct.DataSource = ds.Tables[0];
+            dgvProduct.DataSource = ExecuteQuery(query);
+            clear();
+            txtSearch.Clear();
         }
 
         private void Cashier_Load(object sender, EventArgs e)
@@ -520,16 +571,18 @@ namespace App
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
+            //SqlConnection conn = new SqlConnection(connectionString);
+            //conn.Open();
             string searchText = "%" + txtSearch.Text + "%";
             string query = "SELECT ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate " +
                            "FROM Product WHERE ProductName LIKE '"+searchText+ "' OR CateogoryName LIKE '"+searchText+ "' OR ProductID LIKE '"+searchText+"';";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            adp.Fill(ds);
-            dgvProduct.DataSource = ds.Tables[0];
+
+            dgvProduct.DataSource = ExecuteQuery(query);
+            //SqlCommand cmd = new SqlCommand(query, conn);
+            //SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            //DataSet ds = new DataSet();
+            //adp.Fill(ds);
+            //dgvProduct.DataSource = ds.Tables[0];
             clear();
 
         }

@@ -105,6 +105,16 @@
     <Compile Include="UI Forms\Application Starting Logo\SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Forms\Manager\circularPicturebox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Manager\database.cs" />
+    <Compile Include="UI Forms\Manager\searchResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Manager\searchResult.Designer.cs">
+      <DependentUpon>searchResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Forms\SalesMan\Cashier_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Application Starting Logo\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\searchResult.resx">
+      <DependentUpon>searchResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\SalesMan\Cashier_Home.resx">
       <DependentUpon>Cashier_Home.cs</DependentUpon>

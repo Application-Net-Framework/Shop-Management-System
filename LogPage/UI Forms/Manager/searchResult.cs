@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,26 +10,25 @@ using System.Windows.Forms;
 
 namespace App.UI_Forms.Manager
 {
-    public partial class StaffInformation : Form
+    public partial class searchResult : UserControl
     {
-        public StaffInformation()
+        public searchResult()
         {
             InitializeComponent();
         }
 
-        private void searchbox_TextChanged(object sender, EventArgs e)
-        {
-           
-            
-        }
-
-        private void searchlbl_Click(object sender, EventArgs e)
+        private void searchResult_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void details(database d)
         {
+
+        }
+        public void searchResult(string key)
+        {
+            database get = new database();
+            get.search(key);
 
         }
     }

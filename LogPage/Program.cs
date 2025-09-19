@@ -20,7 +20,7 @@ namespace App
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Choose only ONE form to run
-            Application.Run(new Admin_Main_Home());
+            //Application.Run(new Admin_Main_Home());
             
             // Other forms are commented out - uncomment only one if you want to change the startup form
             // Application.Run(new LogPage());

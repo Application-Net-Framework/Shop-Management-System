@@ -15,7 +15,7 @@ namespace App.UI_Forms.Admin
         public Admin_Main_Home()
         {
             InitializeComponent();
-            panelSide.Height = btnLogOut.Height;
+            SideContainer.Height = btnLogOut.Height;
             
 
             btnCross.Text = "X";
@@ -81,8 +81,8 @@ namespace App.UI_Forms.Admin
 
         private void button8_Click(object sender, EventArgs e)
         {
-            panelSide.Height = btnLogOut.Height;
-            panelSide.Top = btnLogOut.Top;
+            SideContainer.Height = btnLogOut.Height;
+            SideContainer.Top = btnLogOut.Top;
             
             // Close all panels when logout button is clicked
             CloseAllPanels();
@@ -90,8 +90,9 @@ namespace App.UI_Forms.Admin
 
         private void button7_Click(object sender, EventArgs e)
         {
-            panelSide.Height = btnEmployee.Height;
-            panelSide.Top = btnEmployee.Top;
+            SideContainer.Height = btnEmployee.Height;
+            SideContainer
+                .Top = btnEmployee.Top;
             
             // If employee panel is already open, just close it
             if (employeeExpanded)

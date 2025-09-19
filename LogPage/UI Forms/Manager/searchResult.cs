@@ -21,15 +21,17 @@ namespace App.UI_Forms.Manager
         {
 
         }
+        
         public void details(database d)
         {
-
+            // Your implementation here
         }
-        public void searchResult(string key)
+        
+        // Renamed method to avoid conflict with class name
+        public void performSearch(string key)
         {
             database get = new database();
             get.search(key);
-
         }
     }
 }

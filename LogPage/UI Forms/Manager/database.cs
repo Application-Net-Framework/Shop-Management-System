@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace App.UI_Forms.Manager
 {
-    
-    internal class database
+    // Changed from internal to public to match method parameter accessibility
+    public class database
     {
         string connectionString = "";
         public string name { get; set; }
@@ -18,10 +18,10 @@ namespace App.UI_Forms.Manager
         public string position { get; set; }
         public string salary { get; set; }
         public static List<database> list = new List<database>();
+        
         public void search(string key)
         {
-
+            // Your search implementation
         }
-       
     }
 }

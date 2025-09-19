@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ namespace App
 {
     public partial class Cashier : Form
     {
-        int serial = -1;
+        int RowID = -1;
         string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         //string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         public Cashier()
@@ -45,7 +46,7 @@ namespace App
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("A database error occurred:\n" + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("A database error occurred:" + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (InvalidOperationException ex)
             {
@@ -102,7 +103,7 @@ namespace App
         {
             //SqlConnection conn = new SqlConnection(connectionString);
             //conn.Open();
-            string query = "select * from CartView;";
+            string query = "select ProductID, ProductName, Quantity, UnitPrice, RowID from CartView;";
             dgvCartView.DataSource = ExecuteQuery(query);
             //SqlCommand cmd = new SqlCommand(query, conn);
             //SqlDataAdapter adp = new SqlDataAdapter(cmd);
@@ -115,7 +116,7 @@ namespace App
         }
         public void removeCart()
         {
-            if (serial == -1)
+            if (RowID == -1)
             {
                 MessageBox.Show("Please select a row first from Cart!");
                 return;
@@ -123,9 +124,9 @@ namespace App
 
             //SqlConnection conn = new SqlConnection(connectionString);
             //conn.Open();
-            string query = "DELETE FROM CartView WHERE Serial = "+serial+"";
+            string query = "DELETE FROM CartView WHERE RowID = "+RowID+"";
             //SqlCommand cmd = new SqlCommand(query, conn);
-            //cmd.Parameters.AddWithValue("@Serial", serial);
+            //cmd.Parameters.AddWithValue("@RowID", RowID);
             //cmd.ExecuteNonQuery();
             ExecuteNonQuery(query);
 
@@ -133,7 +134,7 @@ namespace App
             CartView(); // refresh grid
             clear();    // clear input fields
             clearSearch();
-            serial = -1; // reset selection
+            RowID = -1; // reset selection
         }
         public void clearCart()
         {
@@ -375,7 +376,7 @@ namespace App
             {
                 txtProductID.Text = dgvCartView.Rows[e.RowIndex].Cells["ProductID"].Value.ToString().Trim();
                 nudQuantity.Value = Convert.ToDecimal(dgvCartView.Rows[e.RowIndex].Cells["Quantity"].Value);
-                serial = Convert.ToInt32(dgvCartView.Rows[e.RowIndex].Cells["Serial"].Value);
+                RowID = Convert.ToInt32(dgvCartView.Rows[e.RowIndex].Cells["RowID"].Value);
             }
             else { 
                 MessageBox.Show("Please select a valid row!");
@@ -409,23 +410,51 @@ namespace App
                     SqlConnection conn = new SqlConnection(connectionString);
                     conn.Open();
 
-                    string checkQuery = "SELECT Quantity, Serial FROM CartView WHERE ProductID = @ProductID";
+
+                    // 1. Check available stock
+                    string stockQuery = "SELECT Stock FROM Product WHERE ProductID = @ProductID";
+                    SqlCommand stockCmd = new SqlCommand(stockQuery, conn);
+                    stockCmd.Parameters.AddWithValue("@ProductID", txtProductID.Text.Trim());
+                    object stockObj = stockCmd.ExecuteScalar();
+
+                    if (stockObj == null)
+                    {
+                        MessageBox.Show("Product not found in database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    int availableStock = Convert.ToInt32(stockObj);
+                    int requestedQty = Convert.ToInt32(nudQuantity.Value);
+
+                    if (requestedQty > availableStock)
+                    {
+                        MessageBox.Show($"Not enough stock! Available: {availableStock}, Requested: {requestedQty}",
+                                        "Stock Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+
+
+
+
+
+                    string checkQuery = "SELECT Quantity, RowID FROM CartView WHERE ProductID = @ProductID";
                     SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
                     checkCmd.Parameters.AddWithValue("@ProductID", txtProductID.Text.Trim());
                     SqlDataReader reader = checkCmd.ExecuteReader();
                     if (reader.Read()) // Product exists, update quantity
                     {
                         int existingQuantity = Convert.ToInt32(reader["Quantity"]);
-                        int productSerial = Convert.ToInt32(reader["Serial"]);
+                        int productSerial = Convert.ToInt32(reader["RowID"]);
                         reader.Close();
 
                         string updateQuery = "UPDATE CartView SET Quantity = " + (existingQuantity + Convert.ToInt32(nudQuantity.Value)) +
-                         " WHERE Serial = " + productSerial + ";";
-                        //string updateQuery = "UPDATE CartView SET Quantity = @Quantity WHERE Serial = @Serial";
+                         " WHERE RowID = " + productSerial + ";";
+                        //string updateQuery = "UPDATE CartView SET Quantity = @Quantity WHERE RowID = @RowID";
 
                         SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
                         //updateCmd.Parameters.AddWithValue("@Quantity", existingQuantity + Convert.ToInt32(nudQuantity.Value));
-                        //updateCmd.Parameters.AddWithValue("@Serial", productSerial);
+                        //updateCmd.Parameters.AddWithValue("@RowID", productSerial);
                         updateCmd.ExecuteNonQuery();
                     }
 
@@ -482,7 +511,7 @@ namespace App
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (serial == -1)
+            if (RowID == -1)
             {
                 MessageBox.Show("Please select a row first from Cart!");
                 return;
@@ -493,14 +522,14 @@ namespace App
                 //SqlConnection conn = new SqlConnection(connectionString);
                 //conn.Open();
                 //string query = "UPDATE CartView SET Quantity = 5 WHERE ProductID = 101;";
-                string query = "UPDATE CartView SET Quantity = " + nudQuantity.Value + " WHERE Serial = " + serial + ";";
+                string query = "UPDATE CartView SET Quantity = " + nudQuantity.Value + " WHERE RowID = " + RowID + ";";
                 //SqlCommand cmd = new SqlCommand(query, conn);
                 //cmd.ExecuteNonQuery();
                 ExecuteNonQuery(query);
                 CartView();
                 clear();
                 clearSearch();
-                serial = -1;
+                RowID = -1;
             }
         }
         private void LoadCategories()
@@ -604,6 +633,36 @@ namespace App
         private void txtDiscount_Click(object sender, EventArgs e)
         {
             txtDiscount.Clear();
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            //decimal totalPrice = Convert.ToDecimal(txtTotalPrice.Text);
+            //if(string.IsNullOrWhiteSpace(txtDiscount.Text))
+            //    {
+            //    txtDiscount.Text = "0";
+            //}
+            //decimal discount = Convert.ToDecimal(txtDiscount.Text);
+            //decimal netAmount = Convert.ToDecimal(lblNetAmount.Text);
+
+            //string totalPrice = txtTotalPrice.Text;
+            //string discount = txtDiscount.Text;
+            //string netAmount = lblNetAmm.Text;
+            //Payment paymentForm = new Payment(totalPrice, discount, netAmount);
+            //paymentForm.ShowDialog();
+        }
+
+        private void dgvCartView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(dgvCartView.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                string rowNumber = (e.RowIndex + 1).ToString(); // start from 1
+                e.Graphics.DrawString(rowNumber,
+                    e.InheritedRowStyle.Font,
+                    b,
+                    e.RowBounds.Location.X + 10, // adjust left padding
+                    e.RowBounds.Location.Y + 4); // adjust top padding
+            }
         }
     }
 }

@@ -82,16 +82,16 @@
             this.lable10 = new System.Windows.Forms.Label();
             this.g2E_pnlCart = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnlCartView = new System.Windows.Forms.Panel();
-            this.lblNetAmm = new System.Windows.Forms.Label();
-            this.txtTotalPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvCartView = new System.Windows.Forms.DataGridView();
             this.btnRecept = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
-            this.pnlTotalPrice = new System.Windows.Forms.Label();
-            this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblDiscount = new System.Windows.Forms.Label();
-            this.lblNetAmount = new System.Windows.Forms.Label();
             this.g2E_pnlCartView = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lblNetAmount = new System.Windows.Forms.Label();
+            this.lblDiscount = new System.Windows.Forms.Label();
+            this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pnlTotalPrice = new System.Windows.Forms.Label();
+            this.txtTotalPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblNetAmm = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct_Test)).BeginInit();
@@ -601,6 +601,7 @@
             // 
             this.dgvProduct.AllowUserToAddRows = false;
             this.dgvProduct.AllowUserToDeleteRows = false;
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
             this.dgvProduct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProduct.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -753,37 +754,6 @@
             this.pnlCartView.Size = new System.Drawing.Size(335, 523);
             this.pnlCartView.TabIndex = 8;
             // 
-            // lblNetAmm
-            // 
-            this.lblNetAmm.AutoSize = true;
-            this.lblNetAmm.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblNetAmm.Location = new System.Drawing.Point(165, 413);
-            this.lblNetAmm.Name = "lblNetAmm";
-            this.lblNetAmm.Size = new System.Drawing.Size(86, 19);
-            this.lblNetAmm.TabIndex = 22;
-            this.lblNetAmm.Text = "Net Amount";
-            this.lblNetAmm.TextChanged += new System.EventHandler(this.lblNetAmm_TextChanged);
-            // 
-            // txtTotalPrice
-            // 
-            this.txtTotalPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotalPrice.DefaultText = "0.00";
-            this.txtTotalPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTotalPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTotalPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.txtTotalPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalPrice.Location = new System.Drawing.Point(167, 336);
-            this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.PlaceholderText = "";
-            this.txtTotalPrice.SelectedText = "";
-            this.txtTotalPrice.Size = new System.Drawing.Size(143, 28);
-            this.txtTotalPrice.TabIndex = 21;
-            this.txtTotalPrice.TextChanged += new System.EventHandler(this.txtTotalPrice_TextChanged);
-            // 
             // dgvCartView
             // 
             this.dgvCartView.AllowUserToAddRows = false;
@@ -819,15 +789,16 @@
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.NullValue = null;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCartView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvCartView.RowHeadersVisible = false;
             this.dgvCartView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCartView.Size = new System.Drawing.Size(302, 268);
             this.dgvCartView.TabIndex = 20;
             this.dgvCartView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCartView_CellMouseClick_1);
+            this.dgvCartView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvCartView_RowPostPaint);
             // 
             // btnRecept
             // 
@@ -854,16 +825,32 @@
             this.btnPay.TabIndex = 18;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
-            // pnlTotalPrice
+            // g2E_pnlCartView
             // 
-            this.pnlTotalPrice.AutoSize = true;
-            this.pnlTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.pnlTotalPrice.Location = new System.Drawing.Point(84, 345);
-            this.pnlTotalPrice.Name = "pnlTotalPrice";
-            this.pnlTotalPrice.Size = new System.Drawing.Size(75, 19);
-            this.pnlTotalPrice.TabIndex = 13;
-            this.pnlTotalPrice.Text = "Total Price";
+            this.g2E_pnlCartView.BorderRadius = 10;
+            this.g2E_pnlCartView.TargetControl = this.pnlCartView;
+            // 
+            // lblNetAmount
+            // 
+            this.lblNetAmount.AutoSize = true;
+            this.lblNetAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNetAmount.Location = new System.Drawing.Point(73, 413);
+            this.lblNetAmount.Name = "lblNetAmount";
+            this.lblNetAmount.Size = new System.Drawing.Size(86, 19);
+            this.lblNetAmount.TabIndex = 8;
+            this.lblNetAmount.Text = "Net Amount";
+            // 
+            // lblDiscount
+            // 
+            this.lblDiscount.AutoSize = true;
+            this.lblDiscount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblDiscount.Location = new System.Drawing.Point(73, 376);
+            this.lblDiscount.Name = "lblDiscount";
+            this.lblDiscount.Size = new System.Drawing.Size(87, 19);
+            this.lblDiscount.TabIndex = 9;
+            this.lblDiscount.Text = "Discount(%)";
             // 
             // txtDiscount
             // 
@@ -887,30 +874,46 @@
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             this.txtDiscount.Click += new System.EventHandler(this.txtDiscount_Click);
             // 
-            // lblDiscount
+            // pnlTotalPrice
             // 
-            this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblDiscount.Location = new System.Drawing.Point(73, 376);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(87, 19);
-            this.lblDiscount.TabIndex = 9;
-            this.lblDiscount.Text = "Discount(%)";
+            this.pnlTotalPrice.AutoSize = true;
+            this.pnlTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.pnlTotalPrice.Location = new System.Drawing.Point(84, 345);
+            this.pnlTotalPrice.Name = "pnlTotalPrice";
+            this.pnlTotalPrice.Size = new System.Drawing.Size(75, 19);
+            this.pnlTotalPrice.TabIndex = 13;
+            this.pnlTotalPrice.Text = "Total Price";
             // 
-            // lblNetAmount
+            // txtTotalPrice
             // 
-            this.lblNetAmount.AutoSize = true;
-            this.lblNetAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblNetAmount.Location = new System.Drawing.Point(73, 413);
-            this.lblNetAmount.Name = "lblNetAmount";
-            this.lblNetAmount.Size = new System.Drawing.Size(86, 19);
-            this.lblNetAmount.TabIndex = 8;
-            this.lblNetAmount.Text = "Net Amount";
+            this.txtTotalPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotalPrice.DefaultText = "0.00";
+            this.txtTotalPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTotalPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTotalPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.txtTotalPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotalPrice.Location = new System.Drawing.Point(167, 336);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.PlaceholderText = "";
+            this.txtTotalPrice.SelectedText = "";
+            this.txtTotalPrice.Size = new System.Drawing.Size(143, 28);
+            this.txtTotalPrice.TabIndex = 21;
+            this.txtTotalPrice.TextChanged += new System.EventHandler(this.txtTotalPrice_TextChanged);
             // 
-            // g2E_pnlCartView
+            // lblNetAmm
             // 
-            this.g2E_pnlCartView.BorderRadius = 10;
-            this.g2E_pnlCartView.TargetControl = this.pnlCartView;
+            this.lblNetAmm.AutoSize = true;
+            this.lblNetAmm.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNetAmm.Location = new System.Drawing.Point(165, 413);
+            this.lblNetAmm.Name = "lblNetAmm";
+            this.lblNetAmm.Size = new System.Drawing.Size(86, 19);
+            this.lblNetAmm.TabIndex = 22;
+            this.lblNetAmm.Text = "Net Amount";
+            this.lblNetAmm.TextChanged += new System.EventHandler(this.lblNetAmm_TextChanged);
             // 
             // Cashier
             // 
@@ -995,18 +998,18 @@
         private System.Windows.Forms.Panel pnlCartView;
         private System.Windows.Forms.Button btnRecept;
         private System.Windows.Forms.Button btnPay;
-        private System.Windows.Forms.Label pnlTotalPrice;
-        private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
-        private System.Windows.Forms.Label lblDiscount;
-        private System.Windows.Forms.Label lblNetAmount;
         private Guna.UI2.WinForms.Guna2Elipse g2E_pnlCartView;
         private System.Windows.Forms.DataGridView dgvCartView;
         private Guna.UI2.WinForms.Guna2TextBox txtCategory;
         private Guna.UI2.WinForms.Guna2TextBox txtUnitePrice;
         private Guna.UI2.WinForms.Guna2TextBox txtProName;
         private System.Windows.Forms.Button btnEdit;
-        private Guna.UI2.WinForms.Guna2TextBox txtTotalPrice;
         private Guna.UI2.WinForms.Guna2ComboBox cmbCategory;
         private System.Windows.Forms.Label lblNetAmm;
+        private Guna.UI2.WinForms.Guna2TextBox txtTotalPrice;
+        private System.Windows.Forms.Label pnlTotalPrice;
+        private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
+        private System.Windows.Forms.Label lblDiscount;
+        private System.Windows.Forms.Label lblNetAmount;
     }
 }

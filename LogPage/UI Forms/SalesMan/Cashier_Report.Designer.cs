@@ -75,7 +75,7 @@
             this.empIdLbl.Name = "empIdLbl";
             this.empIdLbl.Size = new System.Drawing.Size(130, 18);
             this.empIdLbl.TabIndex = 6;
-            this.empIdLbl.Text = "Employee Serial";
+            this.empIdLbl.Text = "Employee RowID";
             // 
             // textBox1
             // 

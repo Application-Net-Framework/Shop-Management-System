@@ -164,7 +164,7 @@
             this.empSerialLbl.Name = "empSerialLbl";
             this.empSerialLbl.Size = new System.Drawing.Size(124, 15);
             this.empSerialLbl.TabIndex = 4;
-            this.empSerialLbl.Text = "Enter Emplyee serial:";
+            this.empSerialLbl.Text = "Enter Emplyee RowID:";
             this.empSerialLbl.Click += new System.EventHandler(this.empSerialLbl_Click);
             // 
             // textBox1

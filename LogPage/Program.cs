@@ -36,9 +36,9 @@ namespace App
 
             // --- Direct form launching (for development) ---
             // Application.Run(new LogPage());
-            // Application.Run(new Cashier());
+             Application.Run(new Cashier());
             // Application.Run(new Cashier_Home());
-            Application.Run(new Manager_Home());
+            //Application.Run(new Manager_Home());
             // Application.Run(new New_Managed());
             // Application.Run(new Admin_Main_Home());
             // Application.Run(new Registration_Admin());

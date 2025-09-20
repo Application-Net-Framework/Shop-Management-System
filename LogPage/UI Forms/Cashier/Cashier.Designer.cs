@@ -82,16 +82,24 @@
             this.lable10 = new System.Windows.Forms.Label();
             this.g2E_pnlCart = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnlCartView = new System.Windows.Forms.Panel();
+            this.lblNetAmm = new System.Windows.Forms.Label();
+            this.txtTotalPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvCartView = new System.Windows.Forms.DataGridView();
             this.btnRecept = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
-            this.g2E_pnlCartView = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.lblNetAmount = new System.Windows.Forms.Label();
-            this.lblDiscount = new System.Windows.Forms.Label();
-            this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlTotalPrice = new System.Windows.Forms.Label();
-            this.txtTotalPrice = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblNetAmm = new System.Windows.Forms.Label();
+            this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblDiscount = new System.Windows.Forms.Label();
+            this.lblNetAmount = new System.Windows.Forms.Label();
+            this.g2E_pnlCartView = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pnlPayment = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct_Test)).BeginInit();
@@ -105,6 +113,7 @@
             this.pnlProfile.SuspendLayout();
             this.pnlCartView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCartView)).BeginInit();
+            this.pnlPayment.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -754,6 +763,37 @@
             this.pnlCartView.Size = new System.Drawing.Size(335, 523);
             this.pnlCartView.TabIndex = 8;
             // 
+            // lblNetAmm
+            // 
+            this.lblNetAmm.AutoSize = true;
+            this.lblNetAmm.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNetAmm.Location = new System.Drawing.Point(165, 413);
+            this.lblNetAmm.Name = "lblNetAmm";
+            this.lblNetAmm.Size = new System.Drawing.Size(86, 19);
+            this.lblNetAmm.TabIndex = 22;
+            this.lblNetAmm.Text = "Net Amount";
+            this.lblNetAmm.TextChanged += new System.EventHandler(this.lblNetAmm_TextChanged);
+            // 
+            // txtTotalPrice
+            // 
+            this.txtTotalPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotalPrice.DefaultText = "0.00";
+            this.txtTotalPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTotalPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTotalPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.txtTotalPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotalPrice.Location = new System.Drawing.Point(167, 336);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.PlaceholderText = "";
+            this.txtTotalPrice.SelectedText = "";
+            this.txtTotalPrice.Size = new System.Drawing.Size(143, 28);
+            this.txtTotalPrice.TabIndex = 21;
+            this.txtTotalPrice.TextChanged += new System.EventHandler(this.txtTotalPrice_TextChanged);
+            // 
             // dgvCartView
             // 
             this.dgvCartView.AllowUserToAddRows = false;
@@ -825,32 +865,17 @@
             this.btnPay.TabIndex = 18;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = false;
-            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click_1);
             // 
-            // g2E_pnlCartView
+            // pnlTotalPrice
             // 
-            this.g2E_pnlCartView.BorderRadius = 10;
-            this.g2E_pnlCartView.TargetControl = this.pnlCartView;
-            // 
-            // lblNetAmount
-            // 
-            this.lblNetAmount.AutoSize = true;
-            this.lblNetAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblNetAmount.Location = new System.Drawing.Point(73, 413);
-            this.lblNetAmount.Name = "lblNetAmount";
-            this.lblNetAmount.Size = new System.Drawing.Size(86, 19);
-            this.lblNetAmount.TabIndex = 8;
-            this.lblNetAmount.Text = "Net Amount";
-            // 
-            // lblDiscount
-            // 
-            this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblDiscount.Location = new System.Drawing.Point(73, 376);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(87, 19);
-            this.lblDiscount.TabIndex = 9;
-            this.lblDiscount.Text = "Discount(%)";
+            this.pnlTotalPrice.AutoSize = true;
+            this.pnlTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.pnlTotalPrice.Location = new System.Drawing.Point(84, 345);
+            this.pnlTotalPrice.Name = "pnlTotalPrice";
+            this.pnlTotalPrice.Size = new System.Drawing.Size(75, 19);
+            this.pnlTotalPrice.TabIndex = 13;
+            this.pnlTotalPrice.Text = "Total Price";
             // 
             // txtDiscount
             // 
@@ -874,53 +899,146 @@
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             this.txtDiscount.Click += new System.EventHandler(this.txtDiscount_Click);
             // 
-            // pnlTotalPrice
+            // lblDiscount
             // 
-            this.pnlTotalPrice.AutoSize = true;
-            this.pnlTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.pnlTotalPrice.Location = new System.Drawing.Point(84, 345);
-            this.pnlTotalPrice.Name = "pnlTotalPrice";
-            this.pnlTotalPrice.Size = new System.Drawing.Size(75, 19);
-            this.pnlTotalPrice.TabIndex = 13;
-            this.pnlTotalPrice.Text = "Total Price";
+            this.lblDiscount.AutoSize = true;
+            this.lblDiscount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblDiscount.Location = new System.Drawing.Point(73, 376);
+            this.lblDiscount.Name = "lblDiscount";
+            this.lblDiscount.Size = new System.Drawing.Size(87, 19);
+            this.lblDiscount.TabIndex = 9;
+            this.lblDiscount.Text = "Discount(%)";
             // 
-            // txtTotalPrice
+            // lblNetAmount
             // 
-            this.txtTotalPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotalPrice.DefaultText = "0.00";
-            this.txtTotalPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTotalPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTotalPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.txtTotalPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalPrice.Location = new System.Drawing.Point(167, 336);
-            this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.PlaceholderText = "";
-            this.txtTotalPrice.SelectedText = "";
-            this.txtTotalPrice.Size = new System.Drawing.Size(143, 28);
-            this.txtTotalPrice.TabIndex = 21;
-            this.txtTotalPrice.TextChanged += new System.EventHandler(this.txtTotalPrice_TextChanged);
+            this.lblNetAmount.AutoSize = true;
+            this.lblNetAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNetAmount.Location = new System.Drawing.Point(73, 413);
+            this.lblNetAmount.Name = "lblNetAmount";
+            this.lblNetAmount.Size = new System.Drawing.Size(86, 19);
+            this.lblNetAmount.TabIndex = 8;
+            this.lblNetAmount.Text = "Net Amount";
             // 
-            // lblNetAmm
+            // g2E_pnlCartView
             // 
-            this.lblNetAmm.AutoSize = true;
-            this.lblNetAmm.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblNetAmm.Location = new System.Drawing.Point(165, 413);
-            this.lblNetAmm.Name = "lblNetAmm";
-            this.lblNetAmm.Size = new System.Drawing.Size(86, 19);
-            this.lblNetAmm.TabIndex = 22;
-            this.lblNetAmm.Text = "Net Amount";
-            this.lblNetAmm.TextChanged += new System.EventHandler(this.lblNetAmm_TextChanged);
+            this.g2E_pnlCartView.BorderRadius = 10;
+            this.g2E_pnlCartView.TargetControl = this.pnlCartView;
+            // 
+            // pnlPayment
+            // 
+            this.pnlPayment.BackColor = System.Drawing.Color.White;
+            this.pnlPayment.Controls.Add(this.label8);
+            this.pnlPayment.Controls.Add(this.guna2TextBox1);
+            this.pnlPayment.Controls.Add(this.button2);
+            this.pnlPayment.Controls.Add(this.label9);
+            this.pnlPayment.Controls.Add(this.guna2TextBox2);
+            this.pnlPayment.Controls.Add(this.label10);
+            this.pnlPayment.Controls.Add(this.label11);
+            this.pnlPayment.Location = new System.Drawing.Point(1211, 46);
+            this.pnlPayment.Name = "pnlPayment";
+            this.pnlPayment.Size = new System.Drawing.Size(335, 523);
+            this.pnlPayment.TabIndex = 9;
+            this.pnlPayment.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(165, 413);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 19);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Net Amount";
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "0.00";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(167, 336);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(143, 28);
+            this.guna2TextBox1.TabIndex = 21;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(51, 480);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 29);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Pay";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(84, 345);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 19);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Total Price";
+            // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Location = new System.Drawing.Point(167, 372);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.guna2TextBox2.PlaceholderText = "0";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.Size = new System.Drawing.Size(143, 28);
+            this.guna2TextBox2.TabIndex = 12;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(73, 376);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 19);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Discount(%)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(73, 413);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 19);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Net Amount";
             // 
             // Cashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(1205, 602);
+            this.ClientSize = new System.Drawing.Size(1589, 602);
+            this.Controls.Add(this.pnlPayment);
             this.Controls.Add(this.pnlCartView);
             this.Controls.Add(this.pnlProfile);
             this.Controls.Add(this.pnlProduct);
@@ -951,6 +1069,8 @@
             this.pnlCartView.ResumeLayout(false);
             this.pnlCartView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCartView)).EndInit();
+            this.pnlPayment.ResumeLayout(false);
+            this.pnlPayment.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1011,5 +1131,13 @@
         private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
         private System.Windows.Forms.Label lblDiscount;
         private System.Windows.Forms.Label lblNetAmount;
+        private System.Windows.Forms.Panel pnlPayment;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

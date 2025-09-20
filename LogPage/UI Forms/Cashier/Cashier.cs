@@ -1,4 +1,5 @@
 ﻿
+using App.UI_Forms.Cashier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -236,6 +237,7 @@ namespace App
             pnlFeedback.Visible = false;
             pnlProfile.Visible = false;
             pnlCartView.Visible = false;
+            pnlPayment.Visible = false;
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -637,6 +639,13 @@ namespace App
 
         private void btnPay_Click(object sender, EventArgs e)
         {
+
+            //if (Convert.ToDecimal(lblNetAmm.Text) <= 0)
+            //{
+            //    MessageBox.Show("Net Amount must be greater than zero to proceed with payment.", 
+            //        "Payment Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
             //decimal totalPrice = Convert.ToDecimal(txtTotalPrice.Text);
             //if(string.IsNullOrWhiteSpace(txtDiscount.Text))
             //    {
@@ -663,6 +672,34 @@ namespace App
                     e.RowBounds.Location.X + 10, // adjust left padding
                     e.RowBounds.Location.Y + 4); // adjust top padding
             }
+        }
+
+        private void btnPay_Click_1(object sender, EventArgs e)
+        {
+            //if (Convert.ToDecimal(lblNetAmm.Text) <= 0)
+            //{
+            //    MessageBox.Show("Net Amount must be greater than zero to proceed with payment.",
+            //        "Payment Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+            //pnlPayment.Visible = true;
+
+            //decimal totalPrice = Convert.ToDecimal(txtTotalPrice.Text);
+            //if (string.IsNullOrWhiteSpace(txtDiscount.Text))
+            //{
+            //    txtDiscount.Text = "0";
+            //}
+            //decimal discount = Convert.ToDecimal(txtDiscount.Text);
+            //decimal netAmount = Convert.ToDecimal(lblNetAmount.Text);
+
+            string totalPrice = txtTotalPrice.Text;
+            string discount = txtDiscount.Text;
+            string netAmount = lblNetAmm.Text;
+
+            Payment paymentForm = new Payment(totalPrice, discount, netAmount);
+            paymentForm.ShowDialog();
+            //Payment paymentForm = new Payment(totalPrice, discount, netAmount);
+            //paymentForm.ShowDialog();
         }
     }
 }

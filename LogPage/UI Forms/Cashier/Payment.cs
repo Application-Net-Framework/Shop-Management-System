@@ -1,5 +1,6 @@
 ﻿using App.UI_Forms.Manager;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,6 +42,25 @@ namespace App.UI_Forms.Cashier
 
         }
 
+        private void ExecuteNonQuery(string query)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.ExecuteNonQuery();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message);
+            }
+        }
+
         public void CashPayment()
         {
 
@@ -62,7 +82,7 @@ namespace App.UI_Forms.Cashier
                 }
                 if (Convert.ToDecimal(txtCashGiven.Text) < Convert.ToDecimal(lblNetAmm_pay.Text))
                 {
-                    //MessageBox.Show("Insufficient Cash Given", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtChangedAmnt.Clear();
                     return;
                 }
 
@@ -86,21 +106,6 @@ namespace App.UI_Forms.Cashier
                 MessageBox.Show("An error occurred: " + ex.Message,
                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
-            //if (Convert.ToDecimal(txtCashGiven.Text) < Convert.ToDecimal(lblNetAmm_pay.Text))
-            //{
-            //    //MessageBox.Show("Insufficient Cash Given", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-            //else
-            //{
-            //    decimal changeAmmount = Convert.ToDecimal(txtCashGiven.Text) - Convert.ToDecimal(lblNetAmm_pay.Text);
-            //    txtChangedAmnt.Text = changeAmmount.ToString("0.00");
-            //}
-            ////decimal changeAmmount = Convert.ToDecimal(txtCashGiven.Text) - Convert.ToDecimal(lblNetAmm_pay.Text);
-            ////txtChangedAmnt.Text = changeAmmount.ToString("0.00");
         }
 
         private void cmbPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,11 +133,6 @@ namespace App.UI_Forms.Cashier
 
         private void txtCashGiven_TextChanged(object sender, EventArgs e)
         {
-            //if (string.IsNullOrWhiteSpace(txtCashGiven.Text))
-            //{
-            //    txtCashGiven.Text = ".00";
-            //    return;
-            //}
             CashPayment();
         }
 
@@ -142,61 +142,22 @@ namespace App.UI_Forms.Cashier
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-
-
-
-
-
-
-        private int SaveOrderAndPayment(SqlConnection conn, SqlTransaction tran, string method, decimal netAmount, string txnId)
-        {
-            // 1. Insert into Orders
-            string orderQuery = "INSERT INTO Orders (OrderDate, TotalAmount) " +
-                        "OUTPUT INSERTED.OrderID " +
-                        "VALUES (@OrderDate, @TotalAmount)";
-            SqlCommand orderCmd = new SqlCommand(orderQuery, conn, tran);
-            orderCmd.Parameters.AddWithValue("@OrderDate", DateTime.Now);
-            orderCmd.Parameters.AddWithValue("@TotalAmount", netAmount);
-
-            int orderId = (int)orderCmd.ExecuteScalar();
-
-            // 2. Insert into OrderDetails (from CartView)
-            string detailsQuery = @"INSERT INTO OrderDetails (OrderID, ProductID, ProductName, UnitPrice, Quantity)
-                            SELECT @OrderID, ProductID, ProductName, UnitPrice, Quantity FROM CartView";
-            SqlCommand detailsCmd = new SqlCommand(detailsQuery, conn, tran);
-            detailsCmd.Parameters.AddWithValue("@OrderID", orderId);
-            detailsCmd.ExecuteNonQuery();
-
-            // 3. Insert into Payment
-            string paymentQuery = "INSERT INTO Payment (OrderID, PaymentMethod, Amount, TransactionID) " +
-                                  "VALUES (@OrderID, @Method, @Amount, @TransactionID)";
-            SqlCommand paymentCmd = new SqlCommand(paymentQuery, conn, tran);
-            paymentCmd.Parameters.AddWithValue("@OrderID", orderId);
-            paymentCmd.Parameters.AddWithValue("@Method", method);
-            paymentCmd.Parameters.AddWithValue("@Amount", netAmount);
-            paymentCmd.Parameters.AddWithValue("@TransactionID", (object)txnId ?? DBNull.Value);
-            paymentCmd.ExecuteNonQuery();
-
-            return orderId; // return the newly created OrderID
-        }
-
-        private void ClearCart()
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                string query = "DELETE FROM CartView; DBCC CHECKIDENT ('CartView', RESEED, 0);";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-            }
-        }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-
+            if (txtCusName.Text.Length > 100)
+            {
+                MessageBox.Show("Name cannot exceed 50 charecter.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtCusPhone.Text.Length > 11)
+            {
+                MessageBox.Show("Phone number cannot exceed 11 digits.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string method = cmbPaymentMethod.SelectedItem?.ToString();
             if (string.IsNullOrEmpty(method))
             {
@@ -245,32 +206,10 @@ namespace App.UI_Forms.Cashier
             // 🔹 Save to Database
             try
             {
-                ADD();
-                //using (SqlConnection conn = new SqlConnection(connectionString))
-                //{
-                //    conn.Open();
-                //    SqlTransaction tran = conn.BeginTransaction();
-
-                //    try
-                //    {
-                //        int orderId = SaveOrderAndPayment(conn, tran, method, netAmount, txnId);
-
-                //        tran.Commit();
-
-                //        MessageBox.Show($"✅ Payment successful. Order ID: {orderId}",
-                //                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                //        ClearCart(); // empty cart after saving
-
-                //        this.Close(); // close payment form
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        tran.Rollback();
-                //        MessageBox.Show("Transaction failed: " + ex.Message,
-                //                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    }
-                //}
+                SaveOrderAndPayment();
+                this.Close();
+                string query = "TRUNCATE TABLE CartView;";
+                ExecuteNonQuery(query);
             }
             catch (Exception ex)
             {
@@ -281,33 +220,51 @@ namespace App.UI_Forms.Cashier
 
 
 
-        private void ADD()
+        private void SaveOrderAndPayment() 
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-
-                    // 1️⃣ Insert Customer
-                    string insertCustomerQuery = @"
-                INSERT INTO Customer (Name, Phone) 
-                VALUES (@Name, @Phone);
-                SELECT SCOPE_IDENTITY();";
-
-                    SqlCommand cmdCustomer = new SqlCommand(insertCustomerQuery, conn);
-                    cmdCustomer.Parameters.AddWithValue("@Name", txtCusName.Text.Trim());
-                    //cmdCustomer.Parameters.AddWithValue("@Email", txtCustomerEmail.Text.Trim());
-                    cmdCustomer.Parameters.AddWithValue("@Phone", txtCusPhone.Text.Trim());
-
-                    int customerId = Convert.ToInt32(cmdCustomer.ExecuteScalar());
-
-                    // 2️⃣ Insert Order
-                    //string insertOrderQuery = @"INSERT INTO Orders (CustomerID, TotalAmount) 
-                    //                            VALUES (@CustomerID, @TotalAmount);
-                    //                                    SELECT SCOPE_IDENTITY();";
+                    int customerId = 0;
+                    string phoneValue = string.IsNullOrWhiteSpace(txtCusPhone.Text) ? "NULL" : txtCusPhone.Text.Trim();
+                    //// 1️. Insert Customer
+                    //string insertCustomerQuery = "INSERT INTO Customer (Name, Phone) VALUES ('" + txtCusName.Text.Trim() + "', "+phoneValue+");" + 
+                    //                             "SELECT SCOPE_IDENTITY(); ";
 
 
+
+                    //SqlCommand cmdCustomer = new SqlCommand(insertCustomerQuery, conn);
+
+                    //int customerId = Convert.ToInt32(cmdCustomer.ExecuteScalar());
+
+
+
+                    // 1️⃣ Check if customer already exists by phone
+                    string checkCustomerQuery = "SELECT CustomerID FROM Customer WHERE Phone = " + phoneValue;
+                    SqlCommand cmdCheck = new SqlCommand(checkCustomerQuery, conn);
+                    object result = cmdCheck.ExecuteScalar();
+
+                    if (result != null) // customer already exists
+                    {
+                        customerId = Convert.ToInt32(result);
+                        if (!string.IsNullOrWhiteSpace(txtCusName.Text))
+                        {
+                            // Update name if provided
+                            string updateCustomerNameQuery = "UPDATE Customer SET Name = '" + txtCusName.Text.Trim() + "' WHERE CustomerID = " + customerId;
+                            ExecuteNonQuery(updateCustomerNameQuery);
+                        }
+                    }
+                    else // insert new customer
+                    {
+                        string insertCustomerQuery = "INSERT INTO Customer (Name, Phone) VALUES ('" + txtCusName.Text.Trim() + "', '" + phoneValue + "');" +
+                                                     "SELECT SCOPE_IDENTITY();";
+                        SqlCommand cmdCustomer = new SqlCommand(insertCustomerQuery, conn);
+                        customerId = Convert.ToInt32(cmdCustomer.ExecuteScalar());
+                    }
+
+                    // 2️. Insert Order
                     string insertOrderQuery =
                     "INSERT INTO Orders (CustomerID, TotalAmount) VALUES (" + customerId + ", " + Convert.ToDecimal(lblNetAmm_pay.Text) + "); " +
                     "SELECT SCOPE_IDENTITY();";
@@ -315,65 +272,55 @@ namespace App.UI_Forms.Cashier
 
 
                     SqlCommand cmdOrder = new SqlCommand(insertOrderQuery, conn);
-                    //cmdOrder.Parameters.AddWithValue("@CustomerID", customerId);
-                    //cmdOrder.Parameters.AddWithValue("@TotalAmount", Convert.ToDecimal(lblNetAmm_pay.Text));
 
                     int orderId = Convert.ToInt32(cmdOrder.ExecuteScalar());
 
-
-
-                    // 3️⃣ Insert into OrderDetails (loop dgvCartView)
-                    //foreach (DataGridViewRow row in dgvCartView.Rows)
-                    //{
-                    //    if (row.IsNewRow) continue;
-
-                    //    string insertDetailQuery = @"
-                    //INSERT INTO OrderDetails (OrderID, ProductName, ProductID, Quantity, UnitPrice) 
-                    //VALUES (@OrderID, @ProductName, @ProductID, @Quantity, @UnitPrice)";
-
-                    //    SqlCommand cmdDetail = new SqlCommand(insertDetailQuery, conn);
-                    //    cmdDetail.Parameters.AddWithValue("@OrderID", orderId);
-                    //    cmdDetail.Parameters.AddWithValue("@ProductName", row.Cells["ProductName"].Value);
-                    //    cmdDetail.Parameters.AddWithValue("@ProductID", row.Cells["ProductID"].Value);
-                    //    cmdDetail.Parameters.AddWithValue("@Quantity", row.Cells["Quantity"].Value);
-                    //    cmdDetail.Parameters.AddWithValue("@UnitPrice", row.Cells["UnitPrice"].Value);
-
-                    //    cmdDetail.ExecuteNonQuery();
-                    //}
-                    string insertDetailQuery = @"
-                    INSERT INTO OrderDetails (OrderID, ProductName, ProductID, Quantity, UnitPrice)
-                    SELECT @OrderID, ProductName, ProductID, Quantity, UnitPrice
-                    FROM CartView";
-                    SqlCommand cmdDetail = new SqlCommand(insertDetailQuery, conn);
-                        
-                    cmdDetail.Parameters.AddWithValue("@OrderID", orderId);
-                    cmdDetail.ExecuteNonQuery();
-                        
+                    // 3. Insert Orderdetails from CartView
+                    string insertDetailQuery = "INSERT INTO OrderDetails (OrderID, ProductName, ProductID, Quantity, UnitPrice)"+
+                    "SELECT "+ orderId + ", ProductName, ProductID, Quantity, UnitPrice FROM CartView";
+                    ExecuteNonQuery(insertDetailQuery);
                     
 
 
-                    // 4️⃣ Insert Payment
-                    string insertPaymentQuery = @"
-                INSERT INTO Payment (OrderID, PaymentMethod, Amount, TransactionID) 
-                VALUES (@OrderID, @PaymentMethod, @Amount, @TransactionID)";
+                    // 4️. Insert Payment
+                    string insertPaymentQuery = "INSERT INTO Payment (OrderID, PaymentMethod, Amount, TransactionID)"+
+                          "VALUES ("+ orderId + ", '"+ cmbPaymentMethod.SelectedItem.ToString() + "', "+""+ Convert.ToDecimal(lblNetAmm_pay.Text) + ", '"+ txnId.ToString() + "')";
+                    ExecuteNonQuery(insertPaymentQuery);
 
-                    SqlCommand cmdPayment = new SqlCommand(insertPaymentQuery, conn);
-                    cmdPayment.Parameters.AddWithValue("@OrderID", orderId);
-                    cmdPayment.Parameters.AddWithValue("@PaymentMethod", cmbPaymentMethod.SelectedItem.ToString());
-                    cmdPayment.Parameters.AddWithValue("@Amount", Convert.ToDecimal(lblNetAmm_pay.Text));
-                    cmdPayment.Parameters.AddWithValue("@TransactionID", txnId.ToString());
 
-                    cmdPayment.ExecuteNonQuery();
-
-                    // ✅ Success Message
-                    MessageBox.Show("Payment successful! Order saved.",
+                    MessageBox.Show($"Payment successful. Order ID: {orderId}", 
                         "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    string updateStockQuery = "UPDATE Product SET Stock = Stock - (SELECT Quantity FROM CartView C WHERE C.ProductID = Product.ProductID)" +
+                                                "WHERE ProductID IN (SELECT ProductID FROM CartView);";
+                    ExecuteNonQuery(updateStockQuery);
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message,
                         "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void txtCusPhone_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtCusPhone.Text))
+                    Convert.ToInt32(txtCusPhone.Text);
+                return;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter valid numeric phone number.",
+                                "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("The number you entered is too large.",
+                                "Overflow Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

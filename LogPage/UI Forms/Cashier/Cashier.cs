@@ -1,4 +1,5 @@
 ﻿
+using App.UI_Forms.Admin;
 using App.UI_Forms.Cashier;
 using System;
 using System.Collections.Generic;
@@ -79,40 +80,91 @@ namespace App
                 MessageBox.Show("Database error: " + ex.Message);
             }
         }
+        public int GetAvailableStock(string productId)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
+
+                string stockQuery = "SELECT Stock FROM Product WHERE ProductID = @ProductID";
+                using (SqlCommand cmd = new SqlCommand(stockQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ProductID", productId);
+
+                    object stockObj = cmd.ExecuteScalar();
+                    if (stockObj == null || stockObj == DBNull.Value)
+                    {
+                        return -1; // product not found
+                    }
+
+                    return Convert.ToInt32(stockObj);
+                }
+            }
+            catch
+            {
+                return -1; // error case
+            }
+        }
 
 
+        public bool CheckAvailableStock()
+        {
+            if (string.IsNullOrWhiteSpace(txtProductID.Text))
+            {
+                MessageBox.Show("Please select a product first!");
+                return false;
+            }
+
+            int availableStock = GetAvailableStock(txtProductID.Text.Trim());
+            if (availableStock == -1)
+            {
+                MessageBox.Show("Product not found in database!");
+                return false;
+            }
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
+
+                string cartQtyQuery = "SELECT ISNULL(SUM(Quantity),0) FROM CartView WHERE ProductID = "+ txtProductID.Text.Trim() + "";
+                SqlCommand cmd = new SqlCommand(cartQtyQuery, conn);
+
+                int existingCartQty = Convert.ToInt32(cmd.ExecuteScalar());
+
+                int requestedQty = existingCartQty + Convert.ToInt32(nudQuantity.Value);
+
+                if (requestedQty > availableStock)
+                {
+                    MessageBox.Show($"Not enough stock! Available: {availableStock}, Requested: {requestedQty}",
+                                    "Stock Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                return true; // ✅ Stock OK
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error checking stock: " + ex.Message);
+                return false;
+            }
+        }
 
 
         private void show()
         {
-            //SqlConnection conn = new SqlConnection(connectionString);
-            //conn.Open();
             string query = "select ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate from Product;";
             dgvProduct.DataSource = ExecuteQuery(query);
-            //SqlCommand cmd = new SqlCommand(query, conn);
-            //SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            //DataSet ds = new DataSet();
-            //adp.Fill(ds);
-            //DataTable dt = ds.Tables[0];
-            //DataTable dt2 = ds.Tables[1];
             dgvProduct.AutoGenerateColumns = true;
-            //dgvProduct.DataSource = dt;
         }
 
 
-        public void CartView()
+        public void CartView() // refresh grid
         {
-            //SqlConnection conn = new SqlConnection(connectionString);
-            //conn.Open();
             string query = "select ProductID, ProductName, Quantity, UnitPrice, RowID from CartView;";
             dgvCartView.DataSource = ExecuteQuery(query);
-            //SqlCommand cmd = new SqlCommand(query, conn);
-            //SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            //DataSet ds = new DataSet();
-            //adp.Fill(ds);
-            //DataTable dt = ds.Tables[0];
             dgvCartView.AutoGenerateColumns = true;
-            //dgvCartView.DataSource = dt;
             totalPrice();
         }
         public void removeCart()
@@ -123,12 +175,7 @@ namespace App
                 return;
             }
 
-            //SqlConnection conn = new SqlConnection(connectionString);
-            //conn.Open();
             string query = "DELETE FROM CartView WHERE RowID = "+RowID+"";
-            //SqlCommand cmd = new SqlCommand(query, conn);
-            //cmd.Parameters.AddWithValue("@RowID", RowID);
-            //cmd.ExecuteNonQuery();
             ExecuteNonQuery(query);
 
             //MessageBox.Show("Removed from Cart Successfully");
@@ -137,30 +184,18 @@ namespace App
             clearSearch();
             RowID = -1; // reset selection
         }
-        public void clearCart()
+        public void clearCart()// clear CartView table
         {
-            //SqlConnection conn = new SqlConnection(connectionString);
-            //conn.Open();
-            string query = "DELETE FROM CartView; TRUNCATE TABLE CartView;";
-            //SqlCommand cmd = new SqlCommand(query, conn);
-            //cmd.ExecuteNonQuery();
+            string query = "TRUNCATE TABLE CartView;";
             ExecuteNonQuery(query);
-            //MessageBox.Show("Removed from Cart Successfully");
             CartView();
             clear();
         }
 
         public void totalPrice()
         {
-            //SqlConnection conn = new SqlConnection(connectionString);
-            //conn.Open();
             string query = "SELECT SUM(UnitPrice * Quantity) AS TotalPrice FROM CartView;";
             DataTable dt = ExecuteQuery(query);
-            //SqlCommand cmd = new SqlCommand(query, conn);
-            //SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            //DataSet ds = new DataSet();
-            //adp.Fill(ds);
-            //DataTable dt = ds.Tables[0];
             if (dt.Rows.Count > 0 && dt.Rows[0]["TotalPrice"] != DBNull.Value)
             {
                 txtTotalPrice.Text = dt.Rows[0]["TotalPrice"].ToString();
@@ -214,13 +249,12 @@ namespace App
             }
         }
 
-        public void clear()
+        public void clear() // clear input fields
         {
             txtProductID.Clear();
             txtProName.Clear();
             txtCategory.Clear();
             txtUnitePrice.Clear();
-            //txtSearch.Clear();
             nudQuantity.Value = 1;
         }
         public void clearSearch()
@@ -233,39 +267,51 @@ namespace App
         {
             pnlHome.Visible = false;
             pnlProduct.Visible = false;
-            pnlOrder.Visible = false;
-            pnlFeedback.Visible = false;
+            pnlOrders.Visible = false;
             pnlProfile.Visible = false;
             pnlCartView.Visible = false;
-            pnlPayment.Visible = false;
+            this.Location = new Point(
+        (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
+        (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2
+    );
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
+            this.ClientSize = new System.Drawing.Size(943, 602);
             panleVisible();
             pnlHome.Visible = true;
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
+            this.ClientSize = new System.Drawing.Size(1183, 602);
+            //this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            //this.StartPosition = FormStartPosition.CenterScreen;
             panleVisible();
             pnlProduct.Visible = true;
             pnlCartView.Visible = true;
+            this.pnlProduct.Location = new System.Drawing.Point(251, 45);
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            this.ClientSize = new System.Drawing.Size(943, 602);
             panleVisible();
-            pnlOrder.Visible = true;
+
+            pnlOrders.Visible = true;
+            LoadOrdersTable();
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
+            this.ClientSize = new System.Drawing.Size(943, 602);
             panleVisible();
-            pnlFeedback.Visible = true;
+            pnlOrders.Visible = false;
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
+            this.ClientSize = new System.Drawing.Size(943, 602);
             panleVisible();
             pnlProfile.Visible = true;
         }
@@ -330,39 +376,7 @@ namespace App
             btnProfile.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
-       
 
-        //private void btnAdd_MouseLeave(object sender, EventArgs e)
-        //{
-        //    //btnAdd.BackColor = Color.FromArgb(100, 88, 255);
-        //}
-
-        //private void btnAdd_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    //btnAdd.BackColor = Color.FromArgb(7, 99, 102);
-        //}
-
-        //private void btnRemove_MouseLeave(object sender, EventArgs e)
-        //{
-        //    btnRemove.BackColor = Color.FromArgb(100, 88, 255);
-        //}
-
-        //private void btnRemove_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    btnRemove.BackColor = Color.FromArgb(7, 99, 102);
-        //}
-
-        //private void btnClear_MouseLeave(object sender, EventArgs e)
-        //{
-        //    btnClear.BackColor = Color.FromArgb(100, 88, 255);
-        //}
-
-        //private void btnClear_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    btnClear.BackColor = Color.FromArgb(7, 99, 102);
-        //}
-
-      
         private void dgvProduct_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             txtProductID.Text = dgvProduct.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
@@ -411,38 +425,13 @@ namespace App
                 {
                     SqlConnection conn = new SqlConnection(connectionString);
                     conn.Open();
-
-
-                    // 1. Check available stock
-                    string stockQuery = "SELECT Stock FROM Product WHERE ProductID = @ProductID";
-                    SqlCommand stockCmd = new SqlCommand(stockQuery, conn);
-                    stockCmd.Parameters.AddWithValue("@ProductID", txtProductID.Text.Trim());
-                    object stockObj = stockCmd.ExecuteScalar();
-
-                    if (stockObj == null)
+                    if (!CheckAvailableStock())
                     {
-                        MessageBox.Show("Product not found in database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                        return; // Stop if stock check fails
+                    } 
 
-                    int availableStock = Convert.ToInt32(stockObj);
-                    int requestedQty = Convert.ToInt32(nudQuantity.Value);
-
-                    if (requestedQty > availableStock)
-                    {
-                        MessageBox.Show($"Not enough stock! Available: {availableStock}, Requested: {requestedQty}",
-                                        "Stock Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-
-
-
-
-
-                    string checkQuery = "SELECT Quantity, RowID FROM CartView WHERE ProductID = @ProductID";
+                    string checkQuery = "SELECT Quantity, RowID FROM CartView WHERE ProductID = "+ txtProductID.Text.Trim() + "";
                     SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
-                    checkCmd.Parameters.AddWithValue("@ProductID", txtProductID.Text.Trim());
                     SqlDataReader reader = checkCmd.ExecuteReader();
                     if (reader.Read()) // Product exists, update quantity
                     {
@@ -452,11 +441,8 @@ namespace App
 
                         string updateQuery = "UPDATE CartView SET Quantity = " + (existingQuantity + Convert.ToInt32(nudQuantity.Value)) +
                          " WHERE RowID = " + productSerial + ";";
-                        //string updateQuery = "UPDATE CartView SET Quantity = @Quantity WHERE RowID = @RowID";
 
                         SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
-                        //updateCmd.Parameters.AddWithValue("@Quantity", existingQuantity + Convert.ToInt32(nudQuantity.Value));
-                        //updateCmd.Parameters.AddWithValue("@RowID", productSerial);
                         updateCmd.ExecuteNonQuery();
                     }
 
@@ -513,26 +499,38 @@ namespace App
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            int availableStock = GetAvailableStock(txtProductID.Text.Trim());
+
+
             if (RowID == -1)
             {
                 MessageBox.Show("Please select a row first from Cart!");
                 return;
             }
 
+            else if (availableStock == -1)
+            {
+                MessageBox.Show("Product not found!");
+                return;
+            }
+
+            if (nudQuantity.Value > availableStock)
+            {
+                MessageBox.Show($"Not enough stock! Available: {availableStock}, Requested: {nudQuantity.Value}",
+                                "Stock Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             else
             {
-                //SqlConnection conn = new SqlConnection(connectionString);
-                //conn.Open();
-                //string query = "UPDATE CartView SET Quantity = 5 WHERE ProductID = 101;";
                 string query = "UPDATE CartView SET Quantity = " + nudQuantity.Value + " WHERE RowID = " + RowID + ";";
-                //SqlCommand cmd = new SqlCommand(query, conn);
-                //cmd.ExecuteNonQuery();
                 ExecuteNonQuery(query);
                 CartView();
                 clear();
                 clearSearch();
                 RowID = -1;
-            }
+
+                }
+
         }
         private void LoadCategories()
         {
@@ -557,8 +555,6 @@ namespace App
         }
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-                //SqlConnection conn = new SqlConnection(connectionString);
-                //conn.Open();
                 string query;
 
                 if (cmbCategory.SelectedItem.ToString() == "All")
@@ -567,27 +563,10 @@ namespace App
                 }
                 else
                 {
-                    //query = "SELECT ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate " +
-                    //        "FROM Product WHERE CateogoryName = @Category;";
-
                     query = "SELECT ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate " +
                                 "FROM Product WHERE CateogoryName = '" + cmbCategory.SelectedItem.ToString() + "'";
                 }
 
-            //DataTable dt = ExecuteQuery(query);
-
-            //SqlCommand cmd = new SqlCommand(query, conn);
-
-                //if (cmbCategory.SelectedItem.ToString() != "All")
-                //{
-                //    cmd.Parameters.AddWithValue("@Category", cmbCategory.SelectedItem.ToString());
-                //}
-
-                //SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                //DataSet ds = new DataSet();
-            //adp.Fill(ds);
-
-            //dgvProduct.DataSource = ds.Tables[0];
             dgvProduct.DataSource = ExecuteQuery(query);
             clear();
             txtSearch.Clear();
@@ -595,40 +574,27 @@ namespace App
 
         private void Cashier_Load(object sender, EventArgs e)
         {
-            //LoadCategories();
-            //cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
             totalPriceAfterDiscount();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            //SqlConnection conn = new SqlConnection(connectionString);
-            //conn.Open();
             string searchText = "%" + txtSearch.Text + "%";
             string query = "SELECT ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate " +
                            "FROM Product WHERE ProductName LIKE '"+searchText+ "' OR CateogoryName LIKE '"+searchText+ "' OR ProductID LIKE '"+searchText+"';";
 
             dgvProduct.DataSource = ExecuteQuery(query);
-            //SqlCommand cmd = new SqlCommand(query, conn);
-            //SqlDataAdapter adp = new SqlDataAdapter(cmd);
-            //DataSet ds = new DataSet();
-            //adp.Fill(ds);
-            //dgvProduct.DataSource = ds.Tables[0];
             clear();
 
         }
 
         private void lblNetAmm_TextChanged(object sender, EventArgs e)
         {
-            //decimal netAmm = Convert.ToDecimal(txtTotalPrice.Text) - (Convert.ToDecimal(txtDiscount.Text)/100)*Convert.ToDecimal(txtTotalPrice.Text);
             totalPriceAfterDiscount();
         }
 
         private void txtDiscount_TextChanged(object sender, EventArgs e)
         {
-            //decimal netAmm = Convert.ToDecimal(txtTotalPrice.Text) - (Convert.ToDecimal(txtDiscount.Text) / 100) * Convert.ToDecimal(txtTotalPrice.Text);
-            //lblNetAmm.Text = netAmm.ToString("0.00");
-
             totalPriceAfterDiscount();
         }
 
@@ -636,31 +602,6 @@ namespace App
         {
             txtDiscount.Clear();
         }
-
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-
-            //if (Convert.ToDecimal(lblNetAmm.Text) <= 0)
-            //{
-            //    MessageBox.Show("Net Amount must be greater than zero to proceed with payment.", 
-            //        "Payment Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-            //decimal totalPrice = Convert.ToDecimal(txtTotalPrice.Text);
-            //if(string.IsNullOrWhiteSpace(txtDiscount.Text))
-            //    {
-            //    txtDiscount.Text = "0";
-            //}
-            //decimal discount = Convert.ToDecimal(txtDiscount.Text);
-            //decimal netAmount = Convert.ToDecimal(lblNetAmount.Text);
-
-            //string totalPrice = txtTotalPrice.Text;
-            //string discount = txtDiscount.Text;
-            //string netAmount = lblNetAmm.Text;
-            //Payment paymentForm = new Payment(totalPrice, discount, netAmount);
-            //paymentForm.ShowDialog();
-        }
-
         private void dgvCartView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             using (SolidBrush b = new SolidBrush(dgvCartView.RowHeadersDefaultCellStyle.ForeColor))
@@ -676,30 +617,78 @@ namespace App
 
         private void btnPay_Click_1(object sender, EventArgs e)
         {
-            //if (Convert.ToDecimal(lblNetAmm.Text) <= 0)
-            //{
-            //    MessageBox.Show("Net Amount must be greater than zero to proceed with payment.",
-            //        "Payment Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-            //pnlPayment.Visible = true;
-
-            //decimal totalPrice = Convert.ToDecimal(txtTotalPrice.Text);
-            //if (string.IsNullOrWhiteSpace(txtDiscount.Text))
-            //{
-            //    txtDiscount.Text = "0";
-            //}
-            //decimal discount = Convert.ToDecimal(txtDiscount.Text);
-            //decimal netAmount = Convert.ToDecimal(lblNetAmount.Text);
+            if (Convert.ToDecimal(lblNetAmm.Text) <= 0)
+            {
+                MessageBox.Show("Net Amount must be greater than zero to proceed with payment.",
+                    "Payment Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             string totalPrice = txtTotalPrice.Text;
             string discount = txtDiscount.Text;
             string netAmount = lblNetAmm.Text;
 
+            clear();
             Payment paymentForm = new Payment(totalPrice, discount, netAmount);
             paymentForm.ShowDialog();
-            //Payment paymentForm = new Payment(totalPrice, discount, netAmount);
-            //paymentForm.ShowDialog();
+            show();
+            CartView();
+        }
+
+
+
+        //
+        //Order Panel
+        //
+
+
+        public void LoadOrdersTable()
+        { 
+            string query = "SELECT o.OrderID, o.OrderDate, o.TotalAmount, p.PaymentMethod, c.Phone, c.Name " +
+                            "FROM Orders o " +
+                            "INNER JOIN Payment p ON o.OrderID = p.OrderID " +
+                            "INNER JOIN Customer c ON o.CustomerID = c.CustomerID;";
+            dgvOrders.DataSource = ExecuteQuery(query);
+            dgvOrders.AutoGenerateColumns = true;
+        }
+
+        private void txtSearch_ord_TextChanged(object sender, EventArgs e)
+        {
+
+            string searchText = "%" + txtSearch_ord.Text + "%";
+            //string query = "SELECT ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate " +
+            //               "FROM Product WHERE ProductName LIKE '" + searchText + "' OR CateogoryName LIKE '" + searchText + "' OR ProductID LIKE '" + searchText + "';";
+
+            //dgvProduct.DataSource = ExecuteQuery(query);
+            string query = "SELECT o.OrderID, o.OrderDate, o.TotalAmount, p.PaymentMethod, c.Phone, c.Name " +
+                            "FROM Orders o " +
+                            "INNER JOIN Payment p ON o.OrderID = p.OrderID " +
+                            "INNER JOIN Customer c ON o.CustomerID = c.CustomerID " +
+                            "WHERE c.Phone LIKE '"+searchText+"'";
+
+            dgvOrders.DataSource = ExecuteQuery(query);
+        }
+
+        private void dgvOrders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0) // avoid header row
+            {
+                string selectedOrderId = dgvOrders.Rows[e.RowIndex].Cells["OrderID"].Value.ToString().Trim();
+
+                string detailQuery = "SELECT od.ProductID, pr.ProductName, od.Quantity, od.UnitPrice, " +
+                                 "(od.Quantity * od.UnitPrice) AS SubTotal " +
+                                 "FROM OrderDetails od " +
+                                 "INNER JOIN Product pr ON od.ProductID = pr.ProductID " +
+                                 "WHERE od.OrderID = '"+selectedOrderId+"'";
+                dgvOrderDetails.DataSource = ExecuteQuery(detailQuery);
+            }
+            else
+            {
+                dgvOrderDetails.DataSource = null; // Clear details if invalid row
+                MessageBox.Show("Please select a valid row!");
+            }
+            
+
         }
     }
 }

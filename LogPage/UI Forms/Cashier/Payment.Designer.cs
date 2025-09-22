@@ -39,15 +39,15 @@
             this.cmbPaymentMethod = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblPayMethod = new System.Windows.Forms.Label();
             this.pnlCardPay = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCardNo = new System.Windows.Forms.Label();
-            this.txtCardNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtExpiry = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblExpiry = new System.Windows.Forms.Label();
+            this.txtCardNo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblCardNo = new System.Windows.Forms.Label();
             this.pnlCashPay = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtChangedAmnt = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCashGiven = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlMobilePay = new Guna.UI2.WinForms.Guna2Panel();
             this.txtTxnID = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTxnID = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@
             this.txtTotalPrice_pay = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnRecept = new System.Windows.Forms.Button();
             this.pnlCardPay.SuspendLayout();
             this.pnlCashPay.SuspendLayout();
             this.pnlMobilePay.SuspendLayout();
@@ -196,39 +197,10 @@
             this.pnlCardPay.Controls.Add(this.lblExpiry);
             this.pnlCardPay.Controls.Add(this.txtCardNo);
             this.pnlCardPay.Controls.Add(this.lblCardNo);
-            this.pnlCardPay.Location = new System.Drawing.Point(42, 322);
+            this.pnlCardPay.Location = new System.Drawing.Point(42, 244);
             this.pnlCardPay.Name = "pnlCardPay";
-            this.pnlCardPay.Size = new System.Drawing.Size(294, 80);
+            this.pnlCardPay.Size = new System.Drawing.Size(321, 80);
             this.pnlCardPay.TabIndex = 34;
-            // 
-            // lblCardNo
-            // 
-            this.lblCardNo.AutoSize = true;
-            this.lblCardNo.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCardNo.Location = new System.Drawing.Point(49, 8);
-            this.lblCardNo.Name = "lblCardNo";
-            this.lblCardNo.Size = new System.Drawing.Size(61, 19);
-            this.lblCardNo.TabIndex = 35;
-            this.lblCardNo.Text = "Card No";
-            // 
-            // txtCardNo
-            // 
-            this.txtCardNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCardNo.DefaultText = "";
-            this.txtCardNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCardNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCardNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCardNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCardNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCardNo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.txtCardNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCardNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCardNo.Location = new System.Drawing.Point(132, 6);
-            this.txtCardNo.Name = "txtCardNo";
-            this.txtCardNo.PlaceholderText = "";
-            this.txtCardNo.SelectedText = "";
-            this.txtCardNo.Size = new System.Drawing.Size(143, 25);
-            this.txtCardNo.TabIndex = 35;
             // 
             // txtExpiry
             // 
@@ -259,6 +231,35 @@
             this.lblExpiry.TabIndex = 37;
             this.lblExpiry.Text = "Expiry";
             // 
+            // txtCardNo
+            // 
+            this.txtCardNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCardNo.DefaultText = "";
+            this.txtCardNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCardNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCardNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCardNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCardNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCardNo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.txtCardNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCardNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCardNo.Location = new System.Drawing.Point(132, 6);
+            this.txtCardNo.Name = "txtCardNo";
+            this.txtCardNo.PlaceholderText = "";
+            this.txtCardNo.SelectedText = "";
+            this.txtCardNo.Size = new System.Drawing.Size(143, 25);
+            this.txtCardNo.TabIndex = 35;
+            // 
+            // lblCardNo
+            // 
+            this.lblCardNo.AutoSize = true;
+            this.lblCardNo.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblCardNo.Location = new System.Drawing.Point(49, 8);
+            this.lblCardNo.Name = "lblCardNo";
+            this.lblCardNo.Size = new System.Drawing.Size(61, 19);
+            this.lblCardNo.TabIndex = 35;
+            this.lblCardNo.Text = "Card No";
+            // 
             // pnlCashPay
             // 
             this.pnlCashPay.Controls.Add(this.label1);
@@ -267,8 +268,18 @@
             this.pnlCashPay.Controls.Add(this.label2);
             this.pnlCashPay.Location = new System.Drawing.Point(32, 244);
             this.pnlCashPay.Name = "pnlCashPay";
-            this.pnlCashPay.Size = new System.Drawing.Size(335, 83);
+            this.pnlCashPay.Size = new System.Drawing.Size(304, 83);
             this.pnlCashPay.TabIndex = 38;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(3, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 19);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Changed Amount";
             // 
             // txtChangedAmnt
             // 
@@ -321,23 +332,13 @@
             this.label2.TabIndex = 35;
             this.label2.Text = "Cash Given";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(3, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 19);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "Changed Amount";
-            // 
             // pnlMobilePay
             // 
             this.pnlMobilePay.Controls.Add(this.txtTxnID);
             this.pnlMobilePay.Controls.Add(this.lblTxnID);
-            this.pnlMobilePay.Location = new System.Drawing.Point(39, 408);
+            this.pnlMobilePay.Location = new System.Drawing.Point(39, 244);
             this.pnlMobilePay.Name = "pnlMobilePay";
-            this.pnlMobilePay.Size = new System.Drawing.Size(294, 47);
+            this.pnlMobilePay.Size = new System.Drawing.Size(355, 47);
             this.pnlMobilePay.TabIndex = 38;
             // 
             // txtTxnID
@@ -397,7 +398,7 @@
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(42, 476);
+            this.btnConfirm.Location = new System.Drawing.Point(120, 419);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(149, 29);
             this.btnConfirm.TabIndex = 41;
@@ -413,7 +414,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(218, 476);
+            this.btnCancel.Location = new System.Drawing.Point(199, 454);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 29);
             this.btnCancel.TabIndex = 42;
@@ -421,12 +422,29 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnRecept
+            // 
+            this.btnRecept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnRecept.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRecept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.btnRecept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecept.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecept.ForeColor = System.Drawing.Color.White;
+            this.btnRecept.Location = new System.Drawing.Point(82, 454);
+            this.btnRecept.Name = "btnRecept";
+            this.btnRecept.Size = new System.Drawing.Size(98, 29);
+            this.btnRecept.TabIndex = 43;
+            this.btnRecept.Text = "Recept";
+            this.btnRecept.UseVisualStyleBackColor = false;
+            this.btnRecept.Click += new System.EventHandler(this.btnRecept_Click);
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(421, 531);
+            this.Controls.Add(this.btnRecept);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.txtTotalPrice_pay);
@@ -487,5 +505,6 @@
         private System.Windows.Forms.Label txtTotalPrice_pay;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnRecept;
     }
 }

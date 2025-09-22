@@ -17,6 +17,8 @@ namespace App.UI_Forms.Cashier
     {
         string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         string txnId = null;
+        private static int orderId;
+        DataTable orderIdTable = new DataTable();
         public Payment()
         {
             InitializeComponent();
@@ -33,15 +35,67 @@ namespace App.UI_Forms.Cashier
             pnlCardPay.Visible = false;
             pnlCashPay.Visible = true;
             pnlMobilePay.Visible = false;
-           
+            //string detailQuery = @"
+            //                        SELECT od.ProductID, pr.ProductName, od.Quantity, od.UnitPrice,
+            //                               (od.Quantity * od.UnitPrice) AS SubTotal
+            //                        FROM OrderDetails od
+            //                        INNER JOIN Product pr ON od.ProductID = pr.ProductID
+            //                        WHERE od.OrderID = " + orderId+"";
+
+            ////dgvInvoice.DataSource = ExecuteQuery(detailQuery);
+            ////orderIdTable = ExecuteQuery(detailQuery);
+
+            //DataTable orderIdTable = ExecuteQuery(detailQuery);
+
+            string detailQuery = @"
+     SELECT od.ProductID, pr.ProductName, od.Quantity, od.UnitPrice,
+            (od.Quantity * od.UnitPrice) AS SubTotal
+     FROM OrderDetails od
+     INNER JOIN Product pr ON od.ProductID = pr.ProductID
+     WHERE od.OrderID = " + orderId;
+
+            // Get DataTable from ExecuteQuery
+            DataTable orderIdTable = ExecuteQuery(detailQuery);
+
+            // ✅ Pass DataTable to InvoicePrinter
             
+
 
             txtTotalPrice_pay.Text = totalPrice.ToString();
             txtDiscount_pay.Text = discount.ToString();
             lblNetAmm_pay.Text = Math.Round(Convert.ToDecimal(netAmount), 0).ToString();
 
         }
+        private DataTable ExecuteQuery(string query)
+        {
 
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                adp.Fill(dt);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("A database error occurred:" + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show("Connection error:" + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return dt;
+        }
         private void ExecuteNonQuery(string query)
         {
             try
@@ -207,7 +261,7 @@ namespace App.UI_Forms.Cashier
             try
             {
                 SaveOrderAndPayment();
-                this.Close();
+                ////this.Close();
                 string query = "TRUNCATE TABLE CartView;";
                 ExecuteNonQuery(query);
             }
@@ -262,6 +316,7 @@ namespace App.UI_Forms.Cashier
                                                      "SELECT SCOPE_IDENTITY();";
                         SqlCommand cmdCustomer = new SqlCommand(insertCustomerQuery, conn);
                         customerId = Convert.ToInt32(cmdCustomer.ExecuteScalar());
+
                     }
 
                     // 2️. Insert Order
@@ -272,14 +327,22 @@ namespace App.UI_Forms.Cashier
 
 
                     SqlCommand cmdOrder = new SqlCommand(insertOrderQuery, conn);
-
-                    int orderId = Convert.ToInt32(cmdOrder.ExecuteScalar());
+                    orderId = Convert.ToInt32(cmdOrder.ExecuteScalar());
 
                     // 3. Insert Orderdetails from CartView
                     string insertDetailQuery = "INSERT INTO OrderDetails (OrderID, ProductName, ProductID, Quantity, UnitPrice)"+
                     "SELECT "+ orderId + ", ProductName, ProductID, Quantity, UnitPrice FROM CartView";
                     ExecuteNonQuery(insertDetailQuery);
-                    
+
+                    string detailQuery = @"
+                                        SELECT od.ProductID, pr.ProductName, od.Quantity, od.UnitPrice,
+                                               (od.Quantity * od.UnitPrice) AS SubTotal
+                                        FROM OrderDetails od
+                                        INNER JOIN Product pr ON od.ProductID = pr.ProductID
+                                        WHERE od.OrderID = "+orderId+"";
+
+                    orderIdTable = ExecuteQuery(detailQuery);
+
 
 
                     // 4️. Insert Payment
@@ -322,6 +385,23 @@ namespace App.UI_Forms.Cashier
                 MessageBox.Show("The number you entered is too large.",
                                 "Overflow Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public void PrintInvoice()
+        {
+            InvoicePrinter printer = new InvoicePrinter(orderId);
+
+            printer.Print();
+        }
+        private void btnRecept_Click(object sender, EventArgs e)
+        {
+            if (orderId <= 0 || orderIdTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No order found to print receipt.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            PrintInvoice();
+
         }
     }
 }

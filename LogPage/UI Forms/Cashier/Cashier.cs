@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Linq;
 
 namespace App
@@ -18,7 +19,8 @@ namespace App
     public partial class Cashier : Form
     {
         int RowID = -1;
-        string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+        static int orderid = -1;
+        readonly string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         //string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         public Cashier()
         {
@@ -279,6 +281,8 @@ namespace App
         {
             this.ClientSize = new System.Drawing.Size(943, 602);
             panleVisible();
+            LoadDashboardCards();
+            this.pnlHome.Location = new System.Drawing.Point(245, 46);
             pnlHome.Visible = true;
         }
 
@@ -290,14 +294,14 @@ namespace App
             panleVisible();
             pnlProduct.Visible = true;
             pnlCartView.Visible = true;
-            this.pnlProduct.Location = new System.Drawing.Point(251, 45);
+            this.pnlProduct.Location = new System.Drawing.Point(245, 46);
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
             this.ClientSize = new System.Drawing.Size(943, 602);
             panleVisible();
-
+            this.pnlOrders.Location = new System.Drawing.Point(245, 46);
             pnlOrders.Visible = true;
             LoadOrdersTable();
         }
@@ -648,14 +652,15 @@ namespace App
                             "FROM Orders o " +
                             "INNER JOIN Payment p ON o.OrderID = p.OrderID " +
                             "INNER JOIN Customer c ON o.CustomerID = c.CustomerID;";
-            dgvOrders.DataSource = ExecuteQuery(query);
-            dgvOrders.AutoGenerateColumns = true;
+            dgvOrders_order.DataSource = ExecuteQuery(query);
+            dgvOrders_order.AutoGenerateColumns = true;
         }
 
-        private void txtSearch_ord_TextChanged(object sender, EventArgs e)
+        private void txtSearch_order_TextChanged(object sender, EventArgs e)
         {
 
-            string searchText = "%" + txtSearch_ord.Text + "%";
+
+            string searchText = "%" + txtSearch_order.Text + "%";
             //string query = "SELECT ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate " +
             //               "FROM Product WHERE ProductName LIKE '" + searchText + "' OR CateogoryName LIKE '" + searchText + "' OR ProductID LIKE '" + searchText + "';";
 
@@ -664,31 +669,183 @@ namespace App
                             "FROM Orders o " +
                             "INNER JOIN Payment p ON o.OrderID = p.OrderID " +
                             "INNER JOIN Customer c ON o.CustomerID = c.CustomerID " +
-                            "WHERE c.Phone LIKE '"+searchText+"'";
+                            "WHERE c.Phone LIKE '" + searchText + "'";
+            //string query2 = @"
+            //    SELECT 
+            //        o.OrderID, o.OrderDate, o.TotalAmount,
+            //        c.Name AS CustomerName, c.Phone,
+            //        p.PaymentMethod, p.PaymentDate, p.TransactionID,
+            //        od.ProductID, od.ProductName, od.Quantity, od.UnitPrice,
+            //        (od.Quantity * od.UnitPrice) AS LineTotal
+            //    FROM Orders o
+            //    INNER JOIN Customer c ON o.CustomerID = c.CustomerID
+            //    LEFT JOIN Payment p ON o.OrderID = p.OrderID
+            //    INNER JOIN OrderDetails od ON o.OrderID = od.OrderID
+            //    WHERE c.Phone LIKE '"+searchText+"';";
 
-            dgvOrders.DataSource = ExecuteQuery(query);
+            dgvOrders_order.DataSource = ExecuteQuery(query);
         }
 
-        private void dgvOrders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgvOrders_order_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0) // avoid header row
             {
-                string selectedOrderId = dgvOrders.Rows[e.RowIndex].Cells["OrderID"].Value.ToString().Trim();
+                DataGridViewRow row = dgvOrders_order.Rows[e.RowIndex];
 
-                string detailQuery = "SELECT od.ProductID, pr.ProductName, od.Quantity, od.UnitPrice, " +
-                                 "(od.Quantity * od.UnitPrice) AS SubTotal " +
-                                 "FROM OrderDetails od " +
-                                 "INNER JOIN Product pr ON od.ProductID = pr.ProductID " +
-                                 "WHERE od.OrderID = '"+selectedOrderId+"'";
-                dgvOrderDetails.DataSource = ExecuteQuery(detailQuery);
+                // ------- Order Header directly from dgvOrders -------
+                lblCustomerName_order.Text = row.Cells["Phone"].Value.ToString();
+                lblOrderDate_order.Text = Convert.ToDateTime(row.Cells["OrderDate"].Value).ToString("dd-MMM-yyyy");
+                lblTotal_order.Text = row.Cells["TotalAmount"].Value.ToString();
+                lblPaymentMethod_order.Text = row.Cells["PaymentMethod"].Value.ToString();
+
+                // ------- Order Details (products) -------
+                int orderId = Convert.ToInt32(row.Cells["OrderID"].Value);
+
+                string detailQuery = @"
+                                    SELECT od.ProductID, pr.ProductName, od.Quantity, od.UnitPrice,
+                                           (od.Quantity * od.UnitPrice) AS SubTotal
+                                    FROM OrderDetails od
+                                    INNER JOIN Product pr ON od.ProductID = pr.ProductID
+                                    WHERE od.OrderID = " + orderId;
+
+                dgvOrderDetails_order.DataSource = ExecuteQuery(detailQuery);
             }
             else
             {
-                dgvOrderDetails.DataSource = null; // Clear details if invalid row
+                dgvOrderDetails_order.DataSource = null; // Clear details if invalid row
                 MessageBox.Show("Please select a valid row!");
             }
-            
-
         }
+
+        //
+        //Home Panel
+        //
+
+
+        private void LoadDashboardCards()
+        {
+            try
+            {
+                // 1. Total Orders Today
+                string ordersQuery = "SELECT COUNT(*) FROM Orders WHERE CAST(OrderDate AS DATE) = CAST(GETDATE() AS DATE)";
+                DataTable dtOrders = ExecuteQuery(ordersQuery);
+                lblOrdersToday_home.Text = dtOrders.Rows[0][0].ToString();
+
+                // 2. Revenue Today
+                string revenueQuery = "SELECT ISNULL(SUM(TotalAmount),0) FROM Orders WHERE CAST(OrderDate AS DATE) = CAST(GETDATE() AS DATE)";
+                DataTable dtRevenue = ExecuteQuery(revenueQuery);
+                lblRevenueToday_home.Text = Convert.ToDecimal(dtRevenue.Rows[0][0]).ToString("0.00");
+
+                // 3. Low Stock
+                string stockQuery = "SELECT COUNT(*) FROM Product WHERE Stock < 10";
+                DataTable dtStock = ExecuteQuery(stockQuery);
+                lblLowStock_home.Text = dtStock.Rows[0][0].ToString();
+
+                // 4. New Customers Today
+                string custQuery = "SELECT COUNT(*) FROM Customer WHERE CAST(JoinDate AS DATE) = CAST(GETDATE() AS DATE)";
+                DataTable dtCust = ExecuteQuery(custQuery);
+                lblNewCustomers_home.Text = dtCust.Rows[0][0].ToString();
+
+               
+
+                string recentOrdersQuery = @"
+                    SELECT TOP 5 o.OrderID, o.OrderDate, c.Name AS CustomerName, c.Phone, o.TotalAmount
+                    FROM Orders o
+                    INNER JOIN Customer c ON o.CustomerID = c.CustomerID
+                    ORDER BY o.OrderDate DESC";
+                dgvRecentOrders_home.DataSource = ExecuteQuery(recentOrdersQuery);
+
+                LoadMonthlySales();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading dashboard: " + ex.Message);
+            }
+        }
+
+        private void LoadMonthlySales()
+        {
+            string query = @"
+                            SELECT FORMAT(OrderDate,'MMM-yyyy') AS Month, SUM(TotalAmount) AS Revenue
+                            FROM Orders
+                            GROUP BY FORMAT(OrderDate,'MMM-yyyy')
+                            ORDER BY MIN(OrderDate);";
+            dgvMonthlySale_home.DataSource = ExecuteQuery(query);
+
+            string topRecentMonthProductsQuery = @"
+                                SELECT TOP 5 pr.ProductName, SUM(od.Quantity) AS TotalSold
+                                FROM OrderDetails od
+                                INNER JOIN Product pr ON od.ProductID = pr.ProductID
+                                INNER JOIN Orders o ON od.OrderID = o.OrderID
+                                WHERE o.OrderDate >= DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1)
+                                GROUP BY pr.ProductName
+                                ORDER BY TotalSold DESC;";
+            dgvTopProduct_home.DataSource = ExecuteQuery(topRecentMonthProductsQuery);
+        }
+
+
+        private void dgvRecentOrders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+        }
+
+        private void btnReceipt_home_Click(object sender, EventArgs e)
+        {
+            if (orderid == -1)
+            {
+                MessageBox.Show("Please select an order first from Recent Orders!");
+                return;
+            }
+            InvoicePrinter printer = new InvoicePrinter(orderid);
+
+            printer.Print();
+
+            orderid = -1; // reset after printing
+        }
+
+        private void dgvRecentOrders_home_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            orderid = -1;
+            if (e.RowIndex >= 0) // avoid header row
+            {
+                DataGridViewRow row = dgvRecentOrders_home.Rows[e.RowIndex];
+                orderid = Convert.ToInt32(row.Cells["OrderID"].Value);
+            }
+            else
+            {
+                MessageBox.Show("Please select a valid row!");
+                return;
+            }
+        }
+
+        private void pnlLowStock_home_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                string query = "SELECT ProductName, Stock FROM Product WHERE Stock < 10";
+                DataTable dt = ExecuteQuery(query);
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("All products are sufficiently stocked.");
+                    return;
+                }
+
+                string items = "";
+                foreach (DataRow row in dt.Rows)
+                {
+                    items += row["ProductName"] + " - Stock: " + row["Stock"] + "\n";
+                }
+
+
+                MessageBox.Show("Low Stock Products:\n\n" + items,
+                                "Low Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching low stock items: " + ex.Message);
+            }
+        }
+
     }
 }

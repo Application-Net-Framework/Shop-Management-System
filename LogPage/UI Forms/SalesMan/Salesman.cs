@@ -14,9 +14,8 @@ namespace App
 {
     public partial class Salesman : Form
     {
-       
-         String connectionString = @"Data Source=DESKTOP-ESC3M7E\SQLEXPRESS;Initial Catalog=DeshiShop;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
+        String connectionString = @"Data Source=DESKTOP-ESC3M7E\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public Salesman()
     {       InitializeComponent();
             this.AutoScaleMode = AutoScaleMode.Dpi; 

@@ -1,6 +1,6 @@
 ﻿namespace App
 {
-    partial class Cashier_Home
+    partial class Salesman
     {
         /// <summary>
         /// Required designer variable.
@@ -225,7 +225,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = " Welcome to Deshi Grocery Shop";
             // 
-            // Cashier_Home
+            // Salesman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,8 +234,8 @@
             this.Controls.Add(this.mainPnl);
             this.Controls.Add(this.headerPnl);
             this.Controls.Add(this.sidePnl);
-            this.Name = "Cashier_Home";
-            this.Text = "Cashier_Home";
+            this.Name = "Salesman";
+            this.Text = "Salesman";
             this.Load += new System.EventHandler(this.Cashier_Home_Load);
             this.sidePnl.ResumeLayout(false);
             this.mainPnl.ResumeLayout(false);

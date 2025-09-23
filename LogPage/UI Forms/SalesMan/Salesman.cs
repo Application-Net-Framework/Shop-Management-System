@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class Cashier_Home : Form
+    public partial class Salesman : Form
     {
        
 
 
-     public Cashier_Home()
+     public Salesman()
     {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace App
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
-            Cashier_Home h = new Cashier_Home();  
+            Salesman h = new Salesman();  
             h.Show();
             this.Hide();
         }

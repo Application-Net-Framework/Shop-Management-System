@@ -122,22 +122,16 @@
     <Compile Include="UI Forms\Manager\StaffInformation.Designer.cs">
       <DependentUpon>StaffInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\SalesMan\Cashier_Home.cs">
+    <Compile Include="UI Forms\SalesMan\Salesman.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI Forms\SalesMan\Cashier_Home.Designer.cs">
-      <DependentUpon>Cashier_Home.cs</DependentUpon>
+    <Compile Include="UI Forms\SalesMan\Salesman.Designer.cs">
+      <DependentUpon>Salesman.cs</DependentUpon>
     </Compile>
     <Compile Include="Cashier_Return.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Cashier_Return.resx</DependentUpon>
-    </Compile>
-    <Compile Include="UI Forms\SalesMan\Cashier_Salary.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI Forms\SalesMan\Cashier_Salary.Designer.cs">
-      <DependentUpon>Cashier_Salary.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Forget Password\ChangePassConfirm.cs">
       <SubType>Form</SubType>
@@ -193,18 +187,6 @@
     <Compile Include="UI Forms\Manager\Manager_Home.Designer.cs">
       <DependentUpon>Manager_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\SalesMan\Cashier_POS.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI Forms\SalesMan\Cashier_POS.Designer.cs">
-      <DependentUpon>Cashier_POS.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI Forms\SalesMan\Cashier_Profile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI Forms\SalesMan\Cashier_Profile.Designer.cs">
-      <DependentUpon>Cashier_Profile.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI Forms\Manager\Report.cs">
@@ -243,12 +225,6 @@
     <Compile Include="UI Forms\Admin\Registration_Admin.Designer.cs">
       <DependentUpon>Registration_Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\SalesMan\Cashier_Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI Forms\SalesMan\Cashier_Report.Designer.cs">
-      <DependentUpon>Cashier_Report.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI Forms\Cashier\Cashier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,8 +261,8 @@
     <EmbeddedResource Include="UI Forms\Manager\Employee Information\SearchResultControl.resx">
       <DependentUpon>SearchResultControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\SalesMan\Cashier_Home.resx">
-      <DependentUpon>Cashier_Home.cs</DependentUpon>
+    <EmbeddedResource Include="UI Forms\SalesMan\Salesman.resx">
+      <DependentUpon>Salesman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Forget Password\ChangePassConfirm.resx">
       <DependentUpon>ChangePassConfirm.cs</DependentUpon>
@@ -299,12 +275,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Admin\Login_Admin.resx">
       <DependentUpon>Login_Admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\SalesMan\Cashier_POS.resx">
-      <DependentUpon>Cashier_POS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\SalesMan\Cashier_Profile.resx">
-      <DependentUpon>Cashier_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -348,9 +318,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Admin\Registration_Admin.resx">
       <DependentUpon>Registration_Admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\SalesMan\Cashier_Report.resx">
-      <DependentUpon>Cashier_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cashier_Return.resx">
       <DependentUpon>Cashier_Return.cs</DependentUpon>

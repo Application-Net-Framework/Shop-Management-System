@@ -131,7 +131,9 @@ public class InvoicePrinter
     private void LoadOrderData(int orderId)
     {
         try {
-            string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+            //string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+            string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+
             string txnId = null;
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();

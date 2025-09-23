@@ -131,18 +131,16 @@ public class InvoicePrinter
     private void LoadOrderData(int orderId)
     {
         try {
-            //string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
-            string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+            //string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
 
             string txnId = null;
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
-            // 1. Get Order Header (Customer + Payment)
+            // Get Order Header (Customer + Payment)
             string headerQuery = @"
-            SELECT o.OrderID, o.TotalAmount, o.OrderDate,
-                    c.Name AS CustomerName, c.Phone,
-                    p.PaymentMethod
+            SELECT o.OrderID, o.TotalAmount, o.OrderDate, c.Name AS CustomerName, c.Phone, p.PaymentMethod
             FROM Orders o
             INNER JOIN Customer c ON o.CustomerID = c.CustomerID
             INNER JOIN Payment p ON o.OrderID = p.OrderID
@@ -160,7 +158,7 @@ public class InvoicePrinter
             reader.Close();
 
 
-            // 2. Get Order Items
+            // Get Order Items
             string detailQuery = @"
             SELECT ProductID, ProductName, Quantity, UnitPrice, (Quantity * UnitPrice) AS SubTotal FROM OrderDetails
             WHERE OrderID = " + orderId + "";
@@ -169,7 +167,7 @@ public class InvoicePrinter
             _orderItems = new DataTable();
             da.Fill(_orderItems);
 
-            // 3. Calculate SubTotal & Discount
+            // Calculate SubTotal & Discount
             _subTotal = 0;
             foreach (DataRow row in _orderItems.Rows)
             {

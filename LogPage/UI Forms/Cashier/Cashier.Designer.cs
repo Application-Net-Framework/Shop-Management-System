@@ -58,17 +58,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnOrder = new System.Windows.Forms.Button();
+            this.btnProduct = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dgvProduct_Test = new System.Windows.Forms.DataGridView();
+            this.btnHome = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
+            this.dgvProduct_Test = new System.Windows.Forms.DataGridView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblPaymentMethod_order = new System.Windows.Forms.Label();
             this.lblCustomerName_order = new System.Windows.Forms.Label();
             this.lblTotal_order = new System.Windows.Forms.Label();
             this.lblOrderDate_order = new System.Windows.Forms.Label();
-            this.btnOrder = new System.Windows.Forms.Button();
-            this.btnProduct = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
             this.btnRefresh_order = new System.Windows.Forms.Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.g2E_pnlProduct = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -138,6 +138,9 @@
             this.lblWelcome = new System.Windows.Forms.Label();
             this.g2E__pnlWelcome = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnlWelcome = new System.Windows.Forms.Panel();
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.ucPnl_Home1 = new App.UI_Forms.Cashier.ucPnl_Home();
+            this.ucPnl_Order1 = new App.UI_Forms.Cashier.ucPnl_Order();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct_Test)).BeginInit();
@@ -167,13 +170,13 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dataGridView2);
-            this.panel1.Controls.Add(this.dgvProduct_Test);
-            this.panel1.Controls.Add(this.btnProfile);
-            this.panel1.Controls.Add(this.guna2Panel1);
             this.panel1.Controls.Add(this.btnOrder);
             this.panel1.Controls.Add(this.btnProduct);
+            this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.btnHome);
+            this.panel1.Controls.Add(this.btnProfile);
+            this.panel1.Controls.Add(this.dgvProduct_Test);
+            this.panel1.Controls.Add(this.guna2Panel1);
             this.panel1.Location = new System.Drawing.Point(25, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 523);
@@ -185,11 +188,45 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(64, 303);
+            this.label2.Location = new System.Drawing.Point(64, 252);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "   Cart   ";
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.btnOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrder.FlatAppearance.BorderSize = 0;
+            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.btnOrder.Location = new System.Drawing.Point(29, 142);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(149, 40);
+            this.btnOrder.TabIndex = 2;
+            this.btnOrder.Text = "Orders";
+            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+            this.btnOrder.MouseLeave += new System.EventHandler(this.btnOrder_MouseLeave);
+            this.btnOrder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnOrder_MouseMove);
+            // 
+            // btnProduct
+            // 
+            this.btnProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.btnProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProduct.FlatAppearance.BorderSize = 0;
+            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.btnProduct.Location = new System.Drawing.Point(29, 85);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Size = new System.Drawing.Size(149, 40);
+            this.btnProduct.TabIndex = 1;
+            this.btnProduct.Text = "Products";
+            this.btnProduct.UseVisualStyleBackColor = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            this.btnProduct.MouseLeave += new System.EventHandler(this.btnProduct_MouseLeave);
+            this.btnProduct.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnProduct_MouseMove);
             // 
             // dataGridView2
             // 
@@ -217,7 +254,7 @@
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridView2.Location = new System.Drawing.Point(29, 326);
+            this.dataGridView2.Location = new System.Drawing.Point(29, 275);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -232,6 +269,41 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(51, 61);
             this.dataGridView2.TabIndex = 5;
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Location = new System.Drawing.Point(29, 28);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(149, 40);
+            this.btnHome.TabIndex = 0;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.btnHome.MouseLeave += new System.EventHandler(this.btnHome_MouseLeave);
+            this.btnHome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnHome_MouseMove);
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfile.FlatAppearance.BorderSize = 0;
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.btnProfile.Location = new System.Drawing.Point(29, 204);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(149, 40);
+            this.btnProfile.TabIndex = 4;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = false;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            this.btnProfile.MouseLeave += new System.EventHandler(this.btnProfile_MouseLeave);
+            this.btnProfile.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnProfile_MouseMove);
             // 
             // dgvProduct_Test
             // 
@@ -259,7 +331,7 @@
             this.dgvProduct_Test.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvProduct_Test.EnableHeadersVisualStyles = false;
             this.dgvProduct_Test.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvProduct_Test.Location = new System.Drawing.Point(103, 326);
+            this.dgvProduct_Test.Location = new System.Drawing.Point(103, 275);
             this.dgvProduct_Test.Name = "dgvProduct_Test";
             this.dgvProduct_Test.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -275,23 +347,6 @@
             this.dgvProduct_Test.Size = new System.Drawing.Size(63, 61);
             this.dgvProduct_Test.TabIndex = 3;
             // 
-            // btnProfile
-            // 
-            this.btnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProfile.FlatAppearance.BorderSize = 0;
-            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold);
-            this.btnProfile.Location = new System.Drawing.Point(29, 256);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(149, 40);
-            this.btnProfile.TabIndex = 4;
-            this.btnProfile.Text = "Profile";
-            this.btnProfile.UseVisualStyleBackColor = false;
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
-            this.btnProfile.MouseLeave += new System.EventHandler(this.btnProfile_MouseLeave);
-            this.btnProfile.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnProfile_MouseMove);
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
@@ -300,7 +355,7 @@
             this.guna2Panel1.Controls.Add(this.lblCustomerName_order);
             this.guna2Panel1.Controls.Add(this.lblTotal_order);
             this.guna2Panel1.Controls.Add(this.lblOrderDate_order);
-            this.guna2Panel1.Location = new System.Drawing.Point(29, 400);
+            this.guna2Panel1.Location = new System.Drawing.Point(29, 349);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(168, 123);
             this.guna2Panel1.TabIndex = 18;
@@ -344,58 +399,6 @@
             this.lblOrderDate_order.Size = new System.Drawing.Size(95, 23);
             this.lblOrderDate_order.TabIndex = 15;
             this.lblOrderDate_order.Text = "Order Date";
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.btnOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOrder.FlatAppearance.BorderSize = 0;
-            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold);
-            this.btnOrder.Location = new System.Drawing.Point(29, 142);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(149, 40);
-            this.btnOrder.TabIndex = 2;
-            this.btnOrder.Text = "Orders";
-            this.btnOrder.UseVisualStyleBackColor = false;
-            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
-            this.btnOrder.MouseLeave += new System.EventHandler(this.btnOrder_MouseLeave);
-            this.btnOrder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnOrder_MouseMove);
-            // 
-            // btnProduct
-            // 
-            this.btnProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.btnProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProduct.FlatAppearance.BorderSize = 0;
-            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold);
-            this.btnProduct.Location = new System.Drawing.Point(29, 85);
-            this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(149, 40);
-            this.btnProduct.TabIndex = 1;
-            this.btnProduct.Text = "Products";
-            this.btnProduct.UseVisualStyleBackColor = false;
-            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
-            this.btnProduct.MouseLeave += new System.EventHandler(this.btnProduct_MouseLeave);
-            this.btnProduct.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnProduct_MouseMove);
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
-            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Location = new System.Drawing.Point(29, 28);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(149, 40);
-            this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            this.btnHome.MouseLeave += new System.EventHandler(this.btnHome_MouseLeave);
-            this.btnHome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnHome_MouseMove);
             // 
             // btnRefresh_order
             // 
@@ -1306,7 +1309,7 @@
             // 
             // pnlOrders
             // 
-            this.pnlOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.pnlOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
             this.pnlOrders.Controls.Add(this.pnlReceipt_home);
             this.pnlOrders.Controls.Add(this.lblProductDetails_order);
             this.pnlOrders.Controls.Add(this.btnRefresh_order);
@@ -1525,11 +1528,38 @@
             // pnlWelcome
             // 
             this.pnlWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.pnlWelcome.Controls.Add(this.lblTimer);
             this.pnlWelcome.Controls.Add(this.lblWelcome);
             this.pnlWelcome.Location = new System.Drawing.Point(25, 6);
             this.pnlWelcome.Name = "pnlWelcome";
             this.pnlWelcome.Size = new System.Drawing.Size(904, 32);
             this.pnlWelcome.TabIndex = 6;
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimer.Location = new System.Drawing.Point(675, 5);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(54, 21);
+            this.lblTimer.TabIndex = 20;
+            this.lblTimer.Text = "Today";
+            // 
+            // ucPnl_Home1
+            // 
+            this.ucPnl_Home1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.ucPnl_Home1.Location = new System.Drawing.Point(940, 586);
+            this.ucPnl_Home1.Name = "ucPnl_Home1";
+            this.ucPnl_Home1.Size = new System.Drawing.Size(684, 524);
+            this.ucPnl_Home1.TabIndex = 9;
+            // 
+            // ucPnl_Order1
+            // 
+            this.ucPnl_Order1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.ucPnl_Order1.Location = new System.Drawing.Point(245, 46);
+            this.ucPnl_Order1.Name = "ucPnl_Order1";
+            this.ucPnl_Order1.Size = new System.Drawing.Size(684, 523);
+            this.ucPnl_Order1.TabIndex = 10;
             // 
             // mainCashier
             // 
@@ -1537,6 +1567,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(952, 602);
+            this.Controls.Add(this.ucPnl_Order1);
+            this.Controls.Add(this.ucPnl_Home1);
             this.Controls.Add(this.pnlCartView);
             this.Controls.Add(this.pnlWelcome);
             this.Controls.Add(this.pnlProfile);
@@ -1675,5 +1707,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label lblTimer;
+        private UI_Forms.Cashier.ucPnl_Home ucPnl_Home1;
+        private UI_Forms.Cashier.ucPnl_Order ucPnl_Order1;
     }
 }

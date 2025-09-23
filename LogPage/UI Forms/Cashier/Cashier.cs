@@ -20,8 +20,8 @@ namespace App
     {
         int RowID = -1;
         static int orderid = -1;
-        //readonly string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
-        string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+        readonly string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+        //string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         public mainCashier()
         {
             InitializeComponent();
@@ -85,7 +85,7 @@ namespace App
                 MessageBox.Show("Database error: " + ex.Message);
             }
         }
-        public int GetAvailableStock(string productId)
+        public int GetAvailableStock(string productId) //Product Panel
         {
             try
             {
@@ -113,7 +113,7 @@ namespace App
         }
 
 
-        public bool CheckAvailableStock()
+        public bool CheckAvailableStock() // check stock before adding to cart. // Product Panel
         {
             if (string.IsNullOrWhiteSpace(txtProductID.Text))
             {
@@ -157,7 +157,7 @@ namespace App
         }
 
 
-        private void show()
+        private void show() // refresh product list grid
         {
             string query = "select ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate from Product;";
             dgvProduct.DataSource = ExecuteQuery(query);
@@ -165,7 +165,7 @@ namespace App
         }
 
 
-        public void CartView() // refresh grid
+        public void CartView() // refresh cart grid
         {
             string query = "select ProductID, ProductName, Quantity, UnitPrice, RowID from CartView;";
             dgvCartView.DataSource = ExecuteQuery(query);
@@ -189,7 +189,7 @@ namespace App
             clearSearch();
             RowID = -1; // reset selection
         }
-        public void clearCart()// clear CartView table
+        public void clearCart() // clear CartView table
         {
             string query = "TRUNCATE TABLE CartView;";
             ExecuteNonQuery(query);
@@ -227,15 +227,11 @@ namespace App
                 {
                     MessageBox.Show("Discount cannot be greater than 100%.", 
                         "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //txtDiscount.Text = "0";
                     txtDiscount.Clear();
                     discount = 0;
                 }
-
-                // Calculate net amount
                 decimal netAmm = totalPrice - (discount / 100) * totalPrice;
 
-                // Show result
                 lblNetAmm.Text = netAmm.ToString("0.00");
             }
             catch (FormatException)
@@ -278,14 +274,14 @@ namespace App
             pnlOrders.Location = new Point(245, 46);
             pnlProfile.Location = new Point(245, 46);
 
-            // Hide all panels
             pnlHome.Visible = false;
             pnlProduct.Visible = false;
             pnlOrders.Visible = false;
             pnlProfile.Visible = false;
             pnlCartView.Visible = false;
+            ucPnl_Home1.Visible = false;
+            ucPnl_Order1.Visible = false;
 
-            // Center form on screen
             this.Location = new Point(
                 (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                 (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
@@ -293,8 +289,6 @@ namespace App
 
         private void ShowPanel(string panelName)
         {
-            PanleVisible(); // reset first
-
             switch (panelName)
             {
                 case "Home":
@@ -336,7 +330,15 @@ namespace App
                     pnlWelcome.Size = new Size(904, 32);
                     this.ClientSize = new Size(952, 602);
                     PanleVisible();
-                    pnlProfile.Visible = true;
+                    //ucPnl_Home.Visible = true;
+                    //ucPnl_Home.BringToFront();
+                    pnlProfile.Visible = false;
+
+
+                    LoadOrdersTable();
+                    pnlOrders.Visible = false;
+                    ucPnl_Home1.Visible = true;
+                    ucPnl_Order1.Visible= true;
                     break;
             }
         }
@@ -437,7 +439,6 @@ namespace App
         // 
         // Add, Edit, Remove, Clear Button
         // 
-
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -619,6 +620,7 @@ namespace App
         private void Cashier_Load(object sender, EventArgs e)
         {
             totalPriceAfterDiscount();
+            lblTimer.Text = DateTime.Now.ToString("dddd, MMM dd yyyy HH:mm:ss");
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -705,27 +707,12 @@ namespace App
         private void txtSearch_order_TextChanged(object sender, EventArgs e)
         {
             string searchText = "%" + txtSearch_order.Text + "%";
-            //string query = "SELECT ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate " +
-            //               "FROM Product WHERE ProductName LIKE '" + searchText + "' OR CateogoryName LIKE '" + searchText + "' OR ProductID LIKE '" + searchText + "';";
 
-            //dgvProduct.DataSource = ExecuteQuery(query);
             string query = "SELECT o.OrderID, o.OrderDate, o.TotalAmount, p.PaymentMethod, c.Phone, c.Name " +
                             "FROM Orders o " +
                             "INNER JOIN Payment p ON o.OrderID = p.OrderID " +
                             "INNER JOIN Customer c ON o.CustomerID = c.CustomerID " +
                             "WHERE c.Phone LIKE '" + searchText + "' OR o.OrderID LIKE '"+searchText+"'";
-            //string query2 = @"
-            //    SELECT 
-            //        o.OrderID, o.OrderDate, o.TotalAmount,
-            //        c.Name AS CustomerName, c.Phone,
-            //        p.PaymentMethod, p.PaymentDate, p.TransactionID,
-            //        od.ProductID, od.ProductName, od.Quantity, od.UnitPrice,
-            //        (od.Quantity * od.UnitPrice) AS LineTotal
-            //    FROM Orders o
-            //    INNER JOIN Customer c ON o.CustomerID = c.CustomerID
-            //    LEFT JOIN Payment p ON o.OrderID = p.OrderID
-            //    INNER JOIN OrderDetails od ON o.OrderID = od.OrderID
-            //    WHERE c.Phone LIKE '"+searchText+"';";
 
             dgvOrders_order.DataSource = ExecuteQuery(query);
 
@@ -859,10 +846,6 @@ namespace App
             dgvTopProduct_home.DataSource = ExecuteQuery(topRecentMonthProductsQuery);
         }
 
-
-        private void dgvRecentOrders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-        }
 
         private void btnReceipt_home_Click(object sender, EventArgs e)
         {

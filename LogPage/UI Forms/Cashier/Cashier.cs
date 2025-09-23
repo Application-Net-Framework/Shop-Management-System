@@ -25,6 +25,7 @@ namespace App
         public mainCashier()
         {
             InitializeComponent();
+            PanleVisible();
             show();
             CartView();
             clear();
@@ -32,8 +33,8 @@ namespace App
             LoadCategories();
             LoadDashboardCards();
             cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
-            PanleVisible();
-            pnlHome.Visible = true;
+            //pnlHome.Visible = true;
+            ucPnl_Home1.Visible = true;
         }
 
         private DataTable ExecuteQuery(string query)
@@ -269,9 +270,11 @@ namespace App
         private void PanleVisible()
         {
             // Reset panel positions
-            pnlHome.Location = new Point(245, 46);
+            //pnlHome.Location = new Point(245, 46);
+            ucPnl_Order1.Location = new Point(245, 46);
             pnlProduct.Location = new Point(245, 46);
-            pnlOrders.Location = new Point(245, 46);
+            //pnlOrders.Location = new Point(245, 46);
+            ucPnl_Home1.Location = new Point(245, 46);
             pnlProfile.Location = new Point(245, 46);
 
             pnlHome.Visible = false;
@@ -298,7 +301,8 @@ namespace App
 
                     PanleVisible();
                     LoadDashboardCards();
-                    pnlHome.Visible = true;
+                    //pnlHome.Visible = true;
+                    ucPnl_Home1.Visible = true;
                     break;
 
                 case "Product":
@@ -319,7 +323,8 @@ namespace App
                     this.ClientSize = new Size(952, 602);
 
                     PanleVisible();
-                    pnlOrders.Visible = true;
+                    //pnlOrders.Visible = true;
+                    ucPnl_Order1.Visible = true;
                     LoadOrdersTable();
                     dgvOrderDetails_order.Visible = false;
                     lblProductDetails_order.Visible = false;
@@ -619,6 +624,7 @@ namespace App
 
         private void Cashier_Load(object sender, EventArgs e)
         {
+            this.ClientSize = new Size(952, 602);
             totalPriceAfterDiscount();
             lblTimer.Text = DateTime.Now.ToString("dddd, MMM dd yyyy HH:mm:ss");
         }

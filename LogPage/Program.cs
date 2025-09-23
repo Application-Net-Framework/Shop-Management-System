@@ -21,7 +21,7 @@ namespace App
 
             // Choose only ONE form to run
             //Application.Run(new Admin_Main_Home());
-            
+
             // Other forms are commented out - uncomment only one if you want to change the startup form
             // Application.Run(new LogPage());
             // Application.Run(new Cashier());
@@ -31,6 +31,7 @@ namespace App
             // Application.Run(new Registration_Admin());
             // Application.Run(new Login_Admin());
 
+            Application.Run(new Salesman());
             // Note: Only one Application.Run call can be active at a time
             // as it blocks until the form is closed
         }

@@ -39,8 +39,6 @@
             this.cmbPaymentMethod = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblPayMethod = new System.Windows.Forms.Label();
             this.pnlCardPay = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtExpiry = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblExpiry = new System.Windows.Forms.Label();
             this.txtCardNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblCardNo = new System.Windows.Forms.Label();
             this.pnlCashPay = new Guna.UI2.WinForms.Guna2Panel();
@@ -136,9 +134,9 @@
             this.lblNetAmm_pay.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblNetAmm_pay.Location = new System.Drawing.Point(171, 187);
             this.lblNetAmm_pay.Name = "lblNetAmm_pay";
-            this.lblNetAmm_pay.Size = new System.Drawing.Size(86, 19);
+            this.lblNetAmm_pay.Size = new System.Drawing.Size(17, 19);
             this.lblNetAmm_pay.TabIndex = 31;
-            this.lblNetAmm_pay.Text = "Net Amount";
+            this.lblNetAmm_pay.Text = "0";
             // 
             // lblDiscount_pay
             // 
@@ -193,43 +191,12 @@
             // 
             // pnlCardPay
             // 
-            this.pnlCardPay.Controls.Add(this.txtExpiry);
-            this.pnlCardPay.Controls.Add(this.lblExpiry);
             this.pnlCardPay.Controls.Add(this.txtCardNo);
             this.pnlCardPay.Controls.Add(this.lblCardNo);
             this.pnlCardPay.Location = new System.Drawing.Point(42, 244);
             this.pnlCardPay.Name = "pnlCardPay";
             this.pnlCardPay.Size = new System.Drawing.Size(321, 80);
             this.pnlCardPay.TabIndex = 34;
-            // 
-            // txtExpiry
-            // 
-            this.txtExpiry.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtExpiry.DefaultText = "";
-            this.txtExpiry.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtExpiry.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtExpiry.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtExpiry.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtExpiry.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtExpiry.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.txtExpiry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtExpiry.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtExpiry.Location = new System.Drawing.Point(132, 39);
-            this.txtExpiry.Name = "txtExpiry";
-            this.txtExpiry.PlaceholderText = "";
-            this.txtExpiry.SelectedText = "";
-            this.txtExpiry.Size = new System.Drawing.Size(143, 25);
-            this.txtExpiry.TabIndex = 36;
-            // 
-            // lblExpiry
-            // 
-            this.lblExpiry.AutoSize = true;
-            this.lblExpiry.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblExpiry.Location = new System.Drawing.Point(62, 40);
-            this.lblExpiry.Name = "lblExpiry";
-            this.lblExpiry.Size = new System.Drawing.Size(48, 19);
-            this.lblExpiry.TabIndex = 37;
-            this.lblExpiry.Text = "Expiry";
             // 
             // txtCardNo
             // 
@@ -321,6 +288,7 @@
             this.txtCashGiven.Size = new System.Drawing.Size(143, 25);
             this.txtCashGiven.TabIndex = 35;
             this.txtCashGiven.TextChanged += new System.EventHandler(this.txtCashGiven_TextChanged);
+            this.txtCashGiven.Click += new System.EventHandler(this.txtCashGiven_Click);
             // 
             // label2
             // 
@@ -393,28 +361,30 @@
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.btnConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(120, 419);
+            this.btnConfirm.Location = new System.Drawing.Point(28, 429);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(149, 29);
+            this.btnConfirm.Size = new System.Drawing.Size(98, 29);
             this.btnConfirm.TabIndex = 41;
-            this.btnConfirm.Text = "Confirm Payment";
+            this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.OrangeRed;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(199, 454);
+            this.btnCancel.Location = new System.Drawing.Point(262, 429);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 29);
             this.btnCancel.TabIndex = 42;
@@ -425,12 +395,13 @@
             // btnRecept
             // 
             this.btnRecept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnRecept.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRecept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecept.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
             this.btnRecept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             this.btnRecept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecept.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecept.ForeColor = System.Drawing.Color.White;
-            this.btnRecept.Location = new System.Drawing.Point(82, 454);
+            this.btnRecept.Location = new System.Drawing.Point(145, 429);
             this.btnRecept.Name = "btnRecept";
             this.btnRecept.Size = new System.Drawing.Size(98, 29);
             this.btnRecept.TabIndex = 43;
@@ -443,7 +414,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(421, 531);
+            this.ClientSize = new System.Drawing.Size(384, 531);
             this.Controls.Add(this.btnRecept);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
@@ -489,8 +460,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbPaymentMethod;
         private System.Windows.Forms.Label lblPayMethod;
         private Guna.UI2.WinForms.Guna2Panel pnlCardPay;
-        private Guna.UI2.WinForms.Guna2TextBox txtExpiry;
-        private System.Windows.Forms.Label lblExpiry;
         private Guna.UI2.WinForms.Guna2TextBox txtCardNo;
         private System.Windows.Forms.Label lblCardNo;
         private Guna.UI2.WinForms.Guna2Panel pnlCashPay;

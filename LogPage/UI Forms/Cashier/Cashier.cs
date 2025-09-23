@@ -16,13 +16,13 @@ using System.Xml.Linq;
 
 namespace App
 {
-    public partial class Cashier : Form
+    public partial class mainCashier : Form
     {
         int RowID = -1;
         static int orderid = -1;
         readonly string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         //string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
-        public Cashier()
+        public mainCashier()
         {
             InitializeComponent();
             show();
@@ -30,7 +30,10 @@ namespace App
             clear();
             clearCart();
             LoadCategories();
+            LoadDashboardCards();
             cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
+            PanleVisible();
+            pnlHome.Visible = true;
         }
 
         private DataTable ExecuteQuery(string query)
@@ -224,7 +227,8 @@ namespace App
                 {
                     MessageBox.Show("Discount cannot be greater than 100%.", 
                         "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtDiscount.Text = "0";
+                    //txtDiscount.Text = "0";
+                    txtDiscount.Clear();
                     discount = 0;
                 }
 
@@ -265,59 +269,95 @@ namespace App
             cmbCategory.SelectedIndex = 0;
         }
 
-        private void panleVisible()
+
+        private void PanleVisible()
         {
+            // Reset panel positions
+            pnlHome.Location = new Point(245, 46);
+            pnlProduct.Location = new Point(245, 46);
+            pnlOrders.Location = new Point(245, 46);
+            pnlProfile.Location = new Point(245, 46);
+
+            // Hide all panels
             pnlHome.Visible = false;
             pnlProduct.Visible = false;
             pnlOrders.Visible = false;
             pnlProfile.Visible = false;
             pnlCartView.Visible = false;
+
+            // Center form on screen
             this.Location = new Point(
-        (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-        (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2
-    );
+                (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
+                (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+        }
+
+        private void ShowPanel(string panelName)
+        {
+            PanleVisible(); // reset first
+
+            switch (panelName)
+            {
+                case "Home":
+                    lblWelcome.Location = new Point(361, 5);
+                    pnlWelcome.Size = new Size(904, 32);
+                    this.ClientSize = new Size(952, 602);
+
+                    PanleVisible();
+                    LoadDashboardCards();
+                    pnlHome.Visible = true;
+                    break;
+
+                case "Product":
+                    lblWelcome.Location = new Point(481, 5);
+                    pnlWelcome.Size = new Size(1140, 32);
+                    this.ClientSize = new Size(1183, 602);
+
+                    PanleVisible();
+                    pnlProduct.Visible = true;
+                    pnlCartView.Visible = true;
+                    pnlProduct.Location = new Point(245, 46);
+                    pnlCartView.Location = new Point(830, 46);
+                    break;
+
+                case "Orders":
+                    lblWelcome.Location = new Point(361, 5);
+                    pnlWelcome.Size = new Size(904, 32);
+                    this.ClientSize = new Size(952, 602);
+
+                    PanleVisible();
+                    pnlOrders.Visible = true;
+                    LoadOrdersTable();
+                    dgvOrderDetails_order.Visible = false;
+                    lblProductDetails_order.Visible = false;
+                    break;
+
+                case "Profile":
+                    lblWelcome.Location = new Point(361, 5);
+                    pnlWelcome.Size = new Size(904, 32);
+                    this.ClientSize = new Size(952, 602);
+                    PanleVisible();
+                    pnlProfile.Visible = true;
+                    break;
+            }
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
-            this.ClientSize = new System.Drawing.Size(943, 602);
-            panleVisible();
-            LoadDashboardCards();
-            this.pnlHome.Location = new System.Drawing.Point(245, 46);
-            pnlHome.Visible = true;
+            ShowPanel("Home");
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            this.ClientSize = new System.Drawing.Size(1183, 602);
-            //this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            //this.StartPosition = FormStartPosition.CenterScreen;
-            panleVisible();
-            pnlProduct.Visible = true;
-            pnlCartView.Visible = true;
-            this.pnlProduct.Location = new System.Drawing.Point(245, 46);
+            ShowPanel("Product");
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            this.ClientSize = new System.Drawing.Size(943, 602);
-            panleVisible();
-            this.pnlOrders.Location = new System.Drawing.Point(245, 46);
-            pnlOrders.Visible = true;
-            LoadOrdersTable();
-        }
-
-        private void btnFeedback_Click(object sender, EventArgs e)
-        {
-            this.ClientSize = new System.Drawing.Size(943, 602);
-            panleVisible();
-            pnlOrders.Visible = false;
+            ShowPanel("Orders");
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            this.ClientSize = new System.Drawing.Size(943, 602);
-            panleVisible();
-            pnlProfile.Visible = true;
+            ShowPanel("Profile");
         }
 
         private void btnProduct_MouseMove(object sender, MouseEventArgs e)
@@ -356,18 +396,6 @@ namespace App
             btnOrder.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
-        private void btnFeedback_MouseLeave(object sender, EventArgs e)
-        {
-            btnFeedback.BackColor = Color.FromArgb(255, 255, 255);
-            btnFeedback.ForeColor = Color.FromArgb(0, 0, 0);
-        }
-
-        private void btnFeedback_MouseMove(object sender, MouseEventArgs e)
-        {
-            btnFeedback.BackColor = Color.FromArgb(25, 112, 255);
-            btnFeedback.ForeColor = Color.FromArgb(255, 255, 255);
-        }
-
         private void btnProfile_MouseLeave(object sender, EventArgs e)
         {
             btnProfile.BackColor = Color.FromArgb(255, 255, 255);
@@ -394,6 +422,9 @@ namespace App
             clearSearch();
             if (e.RowIndex >= 0) // avoid header row
             {
+                txtProName.Text = dgvCartView.Rows[e.RowIndex].Cells["ProductName"].Value.ToString().Trim();
+                txtUnitePrice.Text = dgvCartView.Rows[e.RowIndex].Cells["UnitPrice"].Value.ToString().Trim();
+                txtCategory.ReadOnly = true; // Category not in CartView
                 txtProductID.Text = dgvCartView.Rows[e.RowIndex].Cells["ProductID"].Value.ToString().Trim();
                 nudQuantity.Value = Convert.ToDecimal(dgvCartView.Rows[e.RowIndex].Cells["Quantity"].Value);
                 RowID = Convert.ToInt32(dgvCartView.Rows[e.RowIndex].Cells["RowID"].Value);
@@ -406,6 +437,15 @@ namespace App
         // 
         // Add, Edit, Remove, Clear Button
         // 
+
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            show();
+            clear();
+            clearSearch();
+
+        }
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
             if(string.IsNullOrWhiteSpace(txtProductID.Text))
@@ -604,7 +644,9 @@ namespace App
 
         private void txtDiscount_Click(object sender, EventArgs e)
         {
-            txtDiscount.Clear();
+            txtDiscount.SelectAll();
+            //txtDiscount.Clear();
+
         }
         private void dgvCartView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -621,11 +663,15 @@ namespace App
 
         private void btnPay_Click_1(object sender, EventArgs e)
         {
-            if (Convert.ToDecimal(lblNetAmm.Text) <= 0)
+            if (Convert.ToDecimal(txtTotalPrice.Text) <= 0)
             {
                 MessageBox.Show("Net Amount must be greater than zero to proceed with payment.",
                     "Payment Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
+            if (txtDiscount.Text == "")
+            {
+                txtDiscount.Text = "0";
             }
 
             string totalPrice = txtTotalPrice.Text;
@@ -658,8 +704,6 @@ namespace App
 
         private void txtSearch_order_TextChanged(object sender, EventArgs e)
         {
-
-
             string searchText = "%" + txtSearch_order.Text + "%";
             //string query = "SELECT ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate " +
             //               "FROM Product WHERE ProductName LIKE '" + searchText + "' OR CateogoryName LIKE '" + searchText + "' OR ProductID LIKE '" + searchText + "';";
@@ -669,7 +713,7 @@ namespace App
                             "FROM Orders o " +
                             "INNER JOIN Payment p ON o.OrderID = p.OrderID " +
                             "INNER JOIN Customer c ON o.CustomerID = c.CustomerID " +
-                            "WHERE c.Phone LIKE '" + searchText + "'";
+                            "WHERE c.Phone LIKE '" + searchText + "' OR o.OrderID LIKE '"+searchText+"'";
             //string query2 = @"
             //    SELECT 
             //        o.OrderID, o.OrderDate, o.TotalAmount,
@@ -684,6 +728,9 @@ namespace App
             //    WHERE c.Phone LIKE '"+searchText+"';";
 
             dgvOrders_order.DataSource = ExecuteQuery(query);
+
+            dgvOrderDetails_order.Visible = false;
+            lblProductDetails_order.Visible = false;
         }
 
         private void dgvOrders_order_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -709,12 +756,41 @@ namespace App
                                     WHERE od.OrderID = " + orderId;
 
                 dgvOrderDetails_order.DataSource = ExecuteQuery(detailQuery);
+                dgvOrderDetails_order.Visible = true;
+                lblProductDetails_order.Visible = true;
+                orderid = orderId;
             }
             else
             {
+                orderid = -1;
                 dgvOrderDetails_order.DataSource = null; // Clear details if invalid row
                 MessageBox.Show("Please select a valid row!");
             }
+        }
+
+        private void btnRefresh_order_Click(object sender, EventArgs e)
+        {
+            LoadOrdersTable();
+            dgvOrderDetails_order.DataSource = null; // clear details grid
+            dgvOrderDetails_order.Visible = false; // clear details grid
+            lblProductDetails_order.Visible = false;
+            txtSearch_order.Clear();
+            orderid = -1;
+        }
+
+        private void pnlReceipt_home_Click(object sender, EventArgs e)
+        {
+            if (orderid == -1)
+            {
+                MessageBox.Show("Please select an order first from Order Details!");
+                return;
+            }
+            InvoicePrinter printer = new InvoicePrinter(orderid);
+
+            printer.Print();
+
+            orderid = -1; // reset after printing
+
         }
 
         //
@@ -749,7 +825,7 @@ namespace App
                
 
                 string recentOrdersQuery = @"
-                    SELECT TOP 5 o.OrderID, o.OrderDate, c.Name AS CustomerName, c.Phone, o.TotalAmount
+                    SELECT TOP 10 o.OrderID, o.OrderDate, c.Name AS CustomerName, c.Phone, o.TotalAmount
                     FROM Orders o
                     INNER JOIN Customer c ON o.CustomerID = c.CustomerID
                     ORDER BY o.OrderDate DESC";
@@ -844,6 +920,14 @@ namespace App
             catch (Exception ex)
             {
                 MessageBox.Show("Error fetching low stock items: " + ex.Message);
+            }
+        }
+
+        private void dgvProduct_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnAdd.PerformClick();
             }
         }
 

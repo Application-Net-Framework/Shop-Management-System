@@ -131,7 +131,6 @@ namespace App.UI_Forms.Cashier
 
                 if (string.IsNullOrWhiteSpace(txtCashGiven.Text))
                 {
-                    txtCashGiven.Text = ".00";
                     return;
                 }
                 if (Convert.ToDecimal(txtCashGiven.Text) < Convert.ToDecimal(lblNetAmm_pay.Text))
@@ -202,7 +201,7 @@ namespace App.UI_Forms.Cashier
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (txtCusName.Text.Length > 100)
+            if (txtCusName.Text.Length > 50)
             {
                 MessageBox.Show("Name cannot exceed 50 charecter.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -219,12 +218,12 @@ namespace App.UI_Forms.Cashier
                 return;
             }
 
-            decimal netAmount;
-            if (!decimal.TryParse(lblNetAmm_pay.Text, out netAmount) || netAmount <= 0)
-            {
-                MessageBox.Show("Invalid Net Amount.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            decimal netAmount = Convert.ToDecimal(lblNetAmm_pay.Text);
+            //if (!decimal.TryParse(lblNetAmm_pay.Text, out netAmount) || netAmount <= 0)
+            //{
+            //    MessageBox.Show("Invalid Net Amount.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
 
             // 🔹 Validate based on method
@@ -255,12 +254,24 @@ namespace App.UI_Forms.Cashier
                     return;
                 }
                 txnId = txtTxnID.Text.Trim();
+
             }
 
             // 🔹 Save to Database
             try
             {
                 SaveOrderAndPayment();
+                txtCardNo.Clear();
+                txtCashGiven.Clear();
+                txtChangedAmnt.Clear();
+                txtCusName.Clear();
+                txtCusPhone.Clear();
+                txtTxnID.Clear();
+                pnlCardPay.Visible = false;
+                pnlCashPay.Visible = true;
+                pnlMobilePay.Visible = false;
+
+
                 ////this.Close();
                 string query = "TRUNCATE TABLE CartView;";
                 ExecuteNonQuery(query);
@@ -282,7 +293,58 @@ namespace App.UI_Forms.Cashier
                 {
                     conn.Open();
                     int customerId = 0;
-                    string phoneValue = string.IsNullOrWhiteSpace(txtCusPhone.Text) ? "NULL" : txtCusPhone.Text.Trim();
+                    if (string.IsNullOrWhiteSpace(txtCusPhone.Text))
+                    {
+                        string insertCustomerQuery = @"
+                        INSERT INTO Customer (Name, Phone) 
+                        VALUES (@Name, NULL);
+                        SELECT SCOPE_IDENTITY();";
+
+                        using (SqlCommand cmdCustomer = new SqlCommand(insertCustomerQuery, conn))
+                        {
+                            cmdCustomer.Parameters.AddWithValue("@Name",
+                                string.IsNullOrWhiteSpace(txtCusName.Text) ? (object)DBNull.Value : txtCusName.Text.Trim());
+
+                            customerId = Convert.ToInt32(cmdCustomer.ExecuteScalar());
+                        }
+                    }
+                    else
+                    {
+                        string phoneValue = txtCusPhone.Text.Trim();
+                        string checkCustomerQuery = "SELECT CustomerID FROM Customer WHERE Phone = '" + phoneValue + "'";
+                        SqlCommand cmdCheck = new SqlCommand(checkCustomerQuery, conn);
+                        object result = cmdCheck.ExecuteScalar();
+
+                        if (result != null) // customer already exists
+                        {
+                            customerId = Convert.ToInt32(result);
+                            if (!string.IsNullOrWhiteSpace(txtCusName.Text))
+                            {
+                                // Update name if provided
+                                string updateCustomerNameQuery = "UPDATE Customer SET Name = '" + txtCusName.Text.Trim() + "' WHERE CustomerID = " + customerId;
+                                ExecuteNonQuery(updateCustomerNameQuery);
+                            }
+                        }
+                        else // insert new customer
+                        {
+                            string insertCustomerQuery = "INSERT INTO Customer (Name, Phone) VALUES ('" + txtCusName.Text.Trim() + "', '" + phoneValue + "');" +
+                                                         "SELECT SCOPE_IDENTITY();";
+                            SqlCommand cmdCustomer = new SqlCommand(insertCustomerQuery, conn);
+                            customerId = Convert.ToInt32(cmdCustomer.ExecuteScalar());
+
+                        }
+                    }
+                    //    object phoneValue;
+
+                    //if (string.IsNullOrWhiteSpace(txtCusPhone.Text))
+                    //{
+                    //    phoneValue = DBNull.Value;
+                    //}
+                    //else
+                    //{
+                    //    phoneValue = txtCusPhone.Text.Trim();
+                    //}
+
                     //// 1️. Insert Customer
                     //string insertCustomerQuery = "INSERT INTO Customer (Name, Phone) VALUES ('" + txtCusName.Text.Trim() + "', "+phoneValue+");" + 
                     //                             "SELECT SCOPE_IDENTITY(); ";
@@ -296,28 +358,28 @@ namespace App.UI_Forms.Cashier
 
 
                     // 1️⃣ Check if customer already exists by phone
-                    string checkCustomerQuery = "SELECT CustomerID FROM Customer WHERE Phone = " + phoneValue;
-                    SqlCommand cmdCheck = new SqlCommand(checkCustomerQuery, conn);
-                    object result = cmdCheck.ExecuteScalar();
+                    //string checkCustomerQuery = "SELECT CustomerID FROM Customer WHERE Phone = '" + phoneValue+"'";
+                    //SqlCommand cmdCheck = new SqlCommand(checkCustomerQuery, conn);
+                    //object result = cmdCheck.ExecuteScalar();
 
-                    if (result != null) // customer already exists
-                    {
-                        customerId = Convert.ToInt32(result);
-                        if (!string.IsNullOrWhiteSpace(txtCusName.Text))
-                        {
-                            // Update name if provided
-                            string updateCustomerNameQuery = "UPDATE Customer SET Name = '" + txtCusName.Text.Trim() + "' WHERE CustomerID = " + customerId;
-                            ExecuteNonQuery(updateCustomerNameQuery);
-                        }
-                    }
-                    else // insert new customer
-                    {
-                        string insertCustomerQuery = "INSERT INTO Customer (Name, Phone) VALUES ('" + txtCusName.Text.Trim() + "', '" + phoneValue + "');" +
-                                                     "SELECT SCOPE_IDENTITY();";
-                        SqlCommand cmdCustomer = new SqlCommand(insertCustomerQuery, conn);
-                        customerId = Convert.ToInt32(cmdCustomer.ExecuteScalar());
+                    //if (result != null) // customer already exists
+                    //{
+                    //    customerId = Convert.ToInt32(result);
+                    //    if (!string.IsNullOrWhiteSpace(txtCusName.Text))
+                    //    {
+                    //        // Update name if provided
+                    //        string updateCustomerNameQuery = "UPDATE Customer SET Name = '" + txtCusName.Text.Trim() + "' WHERE CustomerID = " + customerId;
+                    //        ExecuteNonQuery(updateCustomerNameQuery);
+                    //    }
+                    //}
+                    //else // insert new customer
+                    //{
+                    //    string insertCustomerQuery = "INSERT INTO Customer (Name, Phone) VALUES ('" + txtCusName.Text.Trim() + "', '" + phoneValue + "');" +
+                    //                                 "SELECT SCOPE_IDENTITY();";
+                    //    SqlCommand cmdCustomer = new SqlCommand(insertCustomerQuery, conn);
+                    //    customerId = Convert.ToInt32(cmdCustomer.ExecuteScalar());
 
-                    }
+                    //}
 
                     // 2️. Insert Order
                     string insertOrderQuery =
@@ -402,6 +464,11 @@ namespace App.UI_Forms.Cashier
             }
             PrintInvoice();
 
+        }
+
+        private void txtCashGiven_Click(object sender, EventArgs e)
+        {
+            txtCashGiven.SelectAll();
         }
     }
 }

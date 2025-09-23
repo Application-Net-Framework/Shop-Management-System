@@ -175,11 +175,6 @@ public class InvoicePrinter
             }
 
             _discount = _subTotal - _total;
-            try 
-            {
-                _discountPrct = ((_subTotal - _total) / _subTotal) * 100;
-            }
-            catch (DivideByZeroException) { _discountPrct = 0; }
         }
 
         catch (SqlException ex)
@@ -252,8 +247,7 @@ public class InvoicePrinter
 
         y += 20;
         e.Graphics.DrawString("Sub Total       :  " + _subTotal, headerFont, Brushes.Black, 276 + i, y); y += 30;
-        e.Graphics.DrawString("Discount        :  " + _discount, headerFont, Brushes.Black, 276 + i, y); y += 2;
-        e.Graphics.DrawString("(" + _discountPrct + "%)", headerFont2, Brushes.Black, 350 + i, y); y += 30;
+        e.Graphics.DrawString("Discount        :  " + _discount, headerFont, Brushes.Black, 276 + i, y); y += 30;
         e.Graphics.DrawString("Net Amount   :  " + _total, headerFont, Brushes.Black, 276 + i, y);
     }
 }

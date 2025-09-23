@@ -101,12 +101,24 @@
     <Compile Include="UI Forms\Application Starting Logo\SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Forms\Cashier\ucPnl_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Cashier\ucPnl_Home.Designer.cs">
+      <DependentUpon>ucPnl_Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Forms\Cashier\InvoicePrinter.cs" />
     <Compile Include="UI Forms\Cashier\Payment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI Forms\Cashier\Payment.Designer.cs">
       <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Cashier\ucPnl_Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Cashier\ucPnl_Order.Designer.cs">
+      <DependentUpon>ucPnl_Order.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Manager\Employee Information\database.cs" />
     <Compile Include="UI Forms\Manager\Employee Information\roundedpicturebox.cs">
@@ -257,6 +269,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Cashier\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Cashier\ucPnl_Home.resx">
+      <DependentUpon>ucPnl_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Cashier\ucPnl_Order.resx">
+      <DependentUpon>ucPnl_Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\Employee Information\SearchResultControl.resx">
       <DependentUpon>SearchResultControl.cs</DependentUpon>

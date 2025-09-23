@@ -15,8 +15,8 @@ namespace App.UI_Forms.Cashier
 {
     public partial class Payment : Form
     {
-        //string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
-        string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+        string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+        //string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         string txnId = null;
         private static int orderId;
         DataTable orderIdTable = new DataTable();
@@ -36,29 +36,15 @@ namespace App.UI_Forms.Cashier
             pnlCardPay.Visible = false;
             pnlCashPay.Visible = true;
             pnlMobilePay.Visible = false;
-            //string detailQuery = @"
-            //                        SELECT od.ProductID, pr.ProductName, od.Quantity, od.UnitPrice,
-            //                               (od.Quantity * od.UnitPrice) AS SubTotal
-            //                        FROM OrderDetails od
-            //                        INNER JOIN Product pr ON od.ProductID = pr.ProductID
-            //                        WHERE od.OrderID = " + orderId+"";
-
-            ////dgvInvoice.DataSource = ExecuteQuery(detailQuery);
-            ////orderIdTable = ExecuteQuery(detailQuery);
-
-            //DataTable orderIdTable = ExecuteQuery(detailQuery);
 
             string detailQuery = @"
-     SELECT od.ProductID, pr.ProductName, od.Quantity, od.UnitPrice,
-            (od.Quantity * od.UnitPrice) AS SubTotal
-     FROM OrderDetails od
-     INNER JOIN Product pr ON od.ProductID = pr.ProductID
-     WHERE od.OrderID = " + orderId;
-
-            // Get DataTable from ExecuteQuery
+         SELECT od.ProductID, pr.ProductName, od.Quantity, od.UnitPrice, (od.Quantity * od.UnitPrice) AS SubTotal
+         FROM OrderDetails od
+         INNER JOIN Product pr ON od.ProductID = pr.ProductID
+         WHERE od.OrderID = "+ orderId + "";
             DataTable orderIdTable = ExecuteQuery(detailQuery);
 
-            // ✅ Pass DataTable to InvoicePrinter
+            // Pass DataTable to InvoicePrinter
             
 
 
@@ -220,14 +206,9 @@ namespace App.UI_Forms.Cashier
             }
 
             decimal netAmount = Convert.ToDecimal(lblNetAmm_pay.Text);
-            //if (!decimal.TryParse(lblNetAmm_pay.Text, out netAmount) || netAmount <= 0)
-            //{
-            //    MessageBox.Show("Invalid Net Amount.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
 
 
-            // 🔹 Validate based on method
+            // Validate based on method
             if (method == "Cash")
             {
                 decimal cashGiven;
@@ -258,7 +239,7 @@ namespace App.UI_Forms.Cashier
 
             }
 
-            // 🔹 Save to Database
+            // Save to Database
             try
             {
                 SaveOrderAndPayment();

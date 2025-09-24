@@ -188,5 +188,15 @@ namespace App.UI_Forms.SalesMan
             MessageBox.Show(benefits, "Membership Benefits", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
+        private void preOrderBtn_Click(object sender, EventArgs e)
+        {
+            PreOrder PO = new PreOrder();
+            PO.StartPosition = FormStartPosition.Manual;
+            PO.Location = this.Location;
+            PO.Size = this.Size;
+            PO.Show();
+            this.Hide();
+        }
     }
 }

@@ -31,11 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.sidePnl = new System.Windows.Forms.Panel();
+            this.feedbackBtn = new System.Windows.Forms.Button();
             this.cManagementBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
             this.pQueryBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
-            this.feedbackBtn = new System.Windows.Forms.Button();
+            this.preOrderBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.sidePnl.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             // sidePnl
             // 
             this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.Controls.Add(this.preOrderBtn);
             this.sidePnl.Controls.Add(this.feedbackBtn);
             this.sidePnl.Controls.Add(this.cManagementBtn);
             this.sidePnl.Controls.Add(this.homeBtn);
@@ -75,6 +77,21 @@
             this.sidePnl.Name = "sidePnl";
             this.sidePnl.Size = new System.Drawing.Size(154, 521);
             this.sidePnl.TabIndex = 29;
+            // 
+            // feedbackBtn
+            // 
+            this.feedbackBtn.BackColor = System.Drawing.Color.DimGray;
+            this.feedbackBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feedbackBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
+            this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.feedbackBtn.Location = new System.Drawing.Point(12, 145);
+            this.feedbackBtn.Name = "feedbackBtn";
+            this.feedbackBtn.Size = new System.Drawing.Size(135, 37);
+            this.feedbackBtn.TabIndex = 31;
+            this.feedbackBtn.Text = "FEEDBACK";
+            this.feedbackBtn.UseVisualStyleBackColor = false;
+            this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
             // 
             // cManagementBtn
             // 
@@ -136,20 +153,20 @@
             this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
-            // feedbackBtn
+            // preOrderBtn
             // 
-            this.feedbackBtn.BackColor = System.Drawing.Color.DimGray;
-            this.feedbackBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feedbackBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
-            this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.feedbackBtn.Location = new System.Drawing.Point(12, 145);
-            this.feedbackBtn.Name = "feedbackBtn";
-            this.feedbackBtn.Size = new System.Drawing.Size(135, 37);
-            this.feedbackBtn.TabIndex = 31;
-            this.feedbackBtn.Text = "FEEDBACK";
-            this.feedbackBtn.UseVisualStyleBackColor = false;
-            this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
+            this.preOrderBtn.BackColor = System.Drawing.Color.DimGray;
+            this.preOrderBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preOrderBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.preOrderBtn.Image = global::App.Properties.Resources.cart;
+            this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.preOrderBtn.Location = new System.Drawing.Point(12, 188);
+            this.preOrderBtn.Name = "preOrderBtn";
+            this.preOrderBtn.Size = new System.Drawing.Size(135, 37);
+            this.preOrderBtn.TabIndex = 31;
+            this.preOrderBtn.Text = "Pre-Order";
+            this.preOrderBtn.UseVisualStyleBackColor = false;
+            this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
             // 
             // DiscountSuggestion
             // 
@@ -179,5 +196,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel sidePnl;
         private System.Windows.Forms.Button feedbackBtn;
+        private System.Windows.Forms.Button preOrderBtn;
     }
 }

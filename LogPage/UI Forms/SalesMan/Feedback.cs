@@ -175,5 +175,15 @@ namespace App.UI_Forms.SalesMan
             DS.Show();
             this.Hide();
         }
+
+        private void preOrderBtn_Click(object sender, EventArgs e)
+        {
+            PreOrder PO = new PreOrder();
+            PO.StartPosition = FormStartPosition.Manual;
+            PO.Location = this.Location;
+            PO.Size = this.Size;
+            PO.Show();
+            this.Hide();
+        }
     }
 }

@@ -32,21 +32,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.nameLbl = new System.Windows.Forms.Label();
-            this.mobileLbl = new System.Windows.Forms.Label();
-            this.emailLbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.statusTxt = new System.Windows.Forms.ComboBox();
-            this.nameTxt = new System.Windows.Forms.TextBox();
-            this.mobileTxt = new System.Windows.Forms.TextBox();
             this.emailTxt = new System.Windows.Forms.TextBox();
+            this.mobileTxt = new System.Windows.Forms.TextBox();
+            this.nameTxt = new System.Windows.Forms.TextBox();
+            this.emailLbl = new System.Windows.Forms.Label();
+            this.mobileLbl = new System.Windows.Forms.Label();
+            this.nameLbl = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.benifitBtn = new System.Windows.Forms.Button();
+            this.statusTxt = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.addBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.seeBtn = new System.Windows.Forms.Button();
-            this.benifitBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
+            this.preOrderBtn = new System.Windows.Forms.Button();
             this.discountBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
             this.pQueryBtn = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@
             // sidePnl
             // 
             this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.Controls.Add(this.preOrderBtn);
             this.sidePnl.Controls.Add(this.discountBtn);
             this.sidePnl.Controls.Add(this.homeBtn);
             this.sidePnl.Controls.Add(this.pQueryBtn);
@@ -109,36 +111,26 @@
             this.panel2.Size = new System.Drawing.Size(580, 143);
             this.panel2.TabIndex = 14;
             // 
-            // panel3
+            // emailTxt
             // 
-            this.panel3.BackColor = System.Drawing.Color.Azure;
-            this.panel3.Controls.Add(this.benifitBtn);
-            this.panel3.Controls.Add(this.statusTxt);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(160, 239);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(580, 151);
-            this.panel3.TabIndex = 15;
+            this.emailTxt.Location = new System.Drawing.Point(220, 95);
+            this.emailTxt.Name = "emailTxt";
+            this.emailTxt.Size = new System.Drawing.Size(347, 20);
+            this.emailTxt.TabIndex = 5;
             // 
-            // nameLbl
+            // mobileTxt
             // 
-            this.nameLbl.AutoSize = true;
-            this.nameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLbl.Location = new System.Drawing.Point(15, 11);
-            this.nameLbl.Name = "nameLbl";
-            this.nameLbl.Size = new System.Drawing.Size(77, 16);
-            this.nameLbl.TabIndex = 0;
-            this.nameLbl.Text = "Full Name";
+            this.mobileTxt.Location = new System.Drawing.Point(220, 50);
+            this.mobileTxt.Name = "mobileTxt";
+            this.mobileTxt.Size = new System.Drawing.Size(347, 20);
+            this.mobileTxt.TabIndex = 4;
             // 
-            // mobileLbl
+            // nameTxt
             // 
-            this.mobileLbl.AutoSize = true;
-            this.mobileLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mobileLbl.Location = new System.Drawing.Point(15, 54);
-            this.mobileLbl.Name = "mobileLbl";
-            this.mobileLbl.Size = new System.Drawing.Size(112, 16);
-            this.mobileLbl.TabIndex = 1;
-            this.mobileLbl.Text = "Mobile Number";
+            this.nameTxt.Location = new System.Drawing.Point(220, 11);
+            this.nameTxt.Name = "nameTxt";
+            this.nameTxt.Size = new System.Drawing.Size(347, 20);
+            this.nameTxt.TabIndex = 3;
             // 
             // emailLbl
             // 
@@ -150,15 +142,48 @@
             this.emailLbl.TabIndex = 2;
             this.emailLbl.Text = "Email Address(Optional)";
             // 
-            // label2
+            // mobileLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Membership status";
+            this.mobileLbl.AutoSize = true;
+            this.mobileLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mobileLbl.Location = new System.Drawing.Point(15, 54);
+            this.mobileLbl.Name = "mobileLbl";
+            this.mobileLbl.Size = new System.Drawing.Size(112, 16);
+            this.mobileLbl.TabIndex = 1;
+            this.mobileLbl.Text = "Mobile Number";
+            // 
+            // nameLbl
+            // 
+            this.nameLbl.AutoSize = true;
+            this.nameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLbl.Location = new System.Drawing.Point(15, 11);
+            this.nameLbl.Name = "nameLbl";
+            this.nameLbl.Size = new System.Drawing.Size(77, 16);
+            this.nameLbl.TabIndex = 0;
+            this.nameLbl.Text = "Full Name";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Azure;
+            this.panel3.Controls.Add(this.benifitBtn);
+            this.panel3.Controls.Add(this.statusTxt);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(160, 239);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(580, 151);
+            this.panel3.TabIndex = 15;
+            // 
+            // benifitBtn
+            // 
+            this.benifitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.benifitBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.benifitBtn.Location = new System.Drawing.Point(18, 94);
+            this.benifitBtn.Name = "benifitBtn";
+            this.benifitBtn.Size = new System.Drawing.Size(204, 23);
+            this.benifitBtn.TabIndex = 19;
+            this.benifitBtn.Text = "View Memebrship Benifit";
+            this.benifitBtn.UseVisualStyleBackColor = false;
+            this.benifitBtn.Click += new System.EventHandler(this.benifitBtn_Click);
             // 
             // statusTxt
             // 
@@ -171,26 +196,15 @@
             this.statusTxt.Size = new System.Drawing.Size(186, 21);
             this.statusTxt.TabIndex = 4;
             // 
-            // nameTxt
+            // label2
             // 
-            this.nameTxt.Location = new System.Drawing.Point(220, 11);
-            this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(347, 20);
-            this.nameTxt.TabIndex = 3;
-            // 
-            // mobileTxt
-            // 
-            this.mobileTxt.Location = new System.Drawing.Point(220, 50);
-            this.mobileTxt.Name = "mobileTxt";
-            this.mobileTxt.Size = new System.Drawing.Size(347, 20);
-            this.mobileTxt.TabIndex = 4;
-            // 
-            // emailTxt
-            // 
-            this.emailTxt.Location = new System.Drawing.Point(220, 95);
-            this.emailTxt.Name = "emailTxt";
-            this.emailTxt.Size = new System.Drawing.Size(347, 20);
-            this.emailTxt.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Membership status";
             // 
             // addBtn
             // 
@@ -237,18 +251,6 @@
             this.seeBtn.UseVisualStyleBackColor = false;
             this.seeBtn.Click += new System.EventHandler(this.seeBtn_Click);
             // 
-            // benifitBtn
-            // 
-            this.benifitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.benifitBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.benifitBtn.Location = new System.Drawing.Point(18, 94);
-            this.benifitBtn.Name = "benifitBtn";
-            this.benifitBtn.Size = new System.Drawing.Size(204, 23);
-            this.benifitBtn.TabIndex = 19;
-            this.benifitBtn.Text = "View Memebrship Benifit";
-            this.benifitBtn.UseVisualStyleBackColor = false;
-            this.benifitBtn.Click += new System.EventHandler(this.benifitBtn_Click);
-            // 
             // clearBtn
             // 
             this.clearBtn.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -261,6 +263,21 @@
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = false;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
+            // preOrderBtn
+            // 
+            this.preOrderBtn.BackColor = System.Drawing.Color.DimGray;
+            this.preOrderBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preOrderBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.preOrderBtn.Image = global::App.Properties.Resources.cart;
+            this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.preOrderBtn.Location = new System.Drawing.Point(12, 188);
+            this.preOrderBtn.Name = "preOrderBtn";
+            this.preOrderBtn.Size = new System.Drawing.Size(135, 37);
+            this.preOrderBtn.TabIndex = 21;
+            this.preOrderBtn.Text = "Pre-Order";
+            this.preOrderBtn.UseVisualStyleBackColor = false;
+            this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
             // 
             // discountBtn
             // 
@@ -394,5 +411,6 @@
         private System.Windows.Forms.Button seeBtn;
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Button discountBtn;
+        private System.Windows.Forms.Button preOrderBtn;
     }
 }

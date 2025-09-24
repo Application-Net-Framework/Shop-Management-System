@@ -40,11 +40,12 @@
             this.supplierRequestGrid = new System.Windows.Forms.DataGridView();
             this.supplyRequestBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.discountBtn = new System.Windows.Forms.Button();
             this.cManagementBtn = new System.Windows.Forms.Button();
             this.pQueryBtn = new System.Windows.Forms.Button();
             this.feedbackBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
-            this.discountBtn = new System.Windows.Forms.Button();
+            this.preOrderBtn = new System.Windows.Forms.Button();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lowStockGrid)).BeginInit();
@@ -54,6 +55,7 @@
             // sidePnl
             // 
             this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.Controls.Add(this.preOrderBtn);
             this.sidePnl.Controls.Add(this.discountBtn);
             this.sidePnl.Controls.Add(this.cManagementBtn);
             this.sidePnl.Controls.Add(this.pQueryBtn);
@@ -174,6 +176,21 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Requested Products";
             // 
+            // discountBtn
+            // 
+            this.discountBtn.BackColor = System.Drawing.Color.DimGray;
+            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.discountBtn.Image = global::App.Properties.Resources.discount;
+            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.discountBtn.Location = new System.Drawing.Point(12, 145);
+            this.discountBtn.Name = "discountBtn";
+            this.discountBtn.Size = new System.Drawing.Size(135, 37);
+            this.discountBtn.TabIndex = 17;
+            this.discountBtn.Text = "Discount";
+            this.discountBtn.UseVisualStyleBackColor = false;
+            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
+            // 
             // cManagementBtn
             // 
             this.cManagementBtn.BackColor = System.Drawing.Color.DimGray;
@@ -234,20 +251,20 @@
             this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
-            // discountBtn
+            // preOrderBtn
             // 
-            this.discountBtn.BackColor = System.Drawing.Color.DimGray;
-            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.discountBtn.Image = global::App.Properties.Resources.discount;
-            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.discountBtn.Location = new System.Drawing.Point(12, 145);
-            this.discountBtn.Name = "discountBtn";
-            this.discountBtn.Size = new System.Drawing.Size(135, 37);
-            this.discountBtn.TabIndex = 17;
-            this.discountBtn.Text = "Discount";
-            this.discountBtn.UseVisualStyleBackColor = false;
-            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
+            this.preOrderBtn.BackColor = System.Drawing.Color.DimGray;
+            this.preOrderBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preOrderBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.preOrderBtn.Image = global::App.Properties.Resources.cart;
+            this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.preOrderBtn.Location = new System.Drawing.Point(12, 188);
+            this.preOrderBtn.Name = "preOrderBtn";
+            this.preOrderBtn.Size = new System.Drawing.Size(135, 37);
+            this.preOrderBtn.TabIndex = 22;
+            this.preOrderBtn.Text = "Pre-Order";
+            this.preOrderBtn.UseVisualStyleBackColor = false;
+            this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
             // 
             // Salesman
             // 
@@ -296,5 +313,6 @@
         private System.Windows.Forms.Button supplyRequestBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button discountBtn;
+        private System.Windows.Forms.Button preOrderBtn;
     }
 }

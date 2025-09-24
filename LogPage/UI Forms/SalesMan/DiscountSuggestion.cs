@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace App.UI_Forms.SalesMan
 {
-    public partial class CustomerManagement : Form
+    public partial class DiscountSuggestion : Form
     {
-        public CustomerManagement()
+        public DiscountSuggestion()
         {
             InitializeComponent();
-            this.AutoScaleMode = AutoScaleMode.Dpi;   // or AutoScaleMode.Font
-            this.AutoSize = true;
         }
 
-        private void CustomerManagement_Load(object sender, EventArgs e)
+        private void DiscountSuggestion_Load(object sender, EventArgs e)
         {
-           
-            
+
         }
 
         private void homeBtn_Click(object sender, EventArgs e)
@@ -55,13 +52,13 @@ namespace App.UI_Forms.SalesMan
             this.Hide();
         }
 
-        private void discountBtn_Click(object sender, EventArgs e)
+        private void cManagementBtn_Click(object sender, EventArgs e)
         {
-            DiscountSuggestion DS = new DiscountSuggestion();
-            DS.StartPosition = FormStartPosition.Manual;
-            DS.Location = this.Location;
-            DS.Size = this.Size;
-            DS.Show();
+            CustomerManagement CM = new CustomerManagement();
+            CM.StartPosition = FormStartPosition.Manual;
+            CM.Location = this.Location;
+            CM.Size = this.Size;
+            CM.Show();
             this.Hide();
         }
     }

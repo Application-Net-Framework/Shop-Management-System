@@ -29,19 +29,40 @@
         private void InitializeComponent()
         {
             this.sidePnl = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.nameLbl = new System.Windows.Forms.Label();
+            this.mobileLbl = new System.Windows.Forms.Label();
+            this.emailLbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.seeBtn = new System.Windows.Forms.Button();
+            this.benifitBtn = new System.Windows.Forms.Button();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
             this.pQueryBtn = new System.Windows.Forms.Button();
             this.feedbackBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.discountBtn = new System.Windows.Forms.Button();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePnl
             // 
             this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.Controls.Add(this.discountBtn);
             this.sidePnl.Controls.Add(this.homeBtn);
             this.sidePnl.Controls.Add(this.pQueryBtn);
             this.sidePnl.Controls.Add(this.feedbackBtn);
@@ -51,6 +72,191 @@
             this.sidePnl.Name = "sidePnl";
             this.sidePnl.Size = new System.Drawing.Size(154, 521);
             this.sidePnl.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(153, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(928, 53);
+            this.panel1.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DimGray;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(322, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(220, 24);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "MANAGE CUSTOMER";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Azure;
+            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.emailLbl);
+            this.panel2.Controls.Add(this.mobileLbl);
+            this.panel2.Controls.Add(this.nameLbl);
+            this.panel2.Location = new System.Drawing.Point(160, 79);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(580, 143);
+            this.panel2.TabIndex = 14;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Azure;
+            this.panel3.Controls.Add(this.benifitBtn);
+            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(160, 239);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(580, 151);
+            this.panel3.TabIndex = 15;
+            // 
+            // nameLbl
+            // 
+            this.nameLbl.AutoSize = true;
+            this.nameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLbl.Location = new System.Drawing.Point(15, 11);
+            this.nameLbl.Name = "nameLbl";
+            this.nameLbl.Size = new System.Drawing.Size(77, 16);
+            this.nameLbl.TabIndex = 0;
+            this.nameLbl.Text = "Full Name";
+            // 
+            // mobileLbl
+            // 
+            this.mobileLbl.AutoSize = true;
+            this.mobileLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mobileLbl.Location = new System.Drawing.Point(15, 54);
+            this.mobileLbl.Name = "mobileLbl";
+            this.mobileLbl.Size = new System.Drawing.Size(112, 16);
+            this.mobileLbl.TabIndex = 1;
+            this.mobileLbl.Text = "Mobile Number";
+            // 
+            // emailLbl
+            // 
+            this.emailLbl.AutoSize = true;
+            this.emailLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLbl.Location = new System.Drawing.Point(15, 99);
+            this.emailLbl.Name = "emailLbl";
+            this.emailLbl.Size = new System.Drawing.Size(176, 16);
+            this.emailLbl.TabIndex = 2;
+            this.emailLbl.Text = "Email Address(Optional)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Membership status";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Premimum",
+            "Regular"});
+            this.comboBox1.Location = new System.Drawing.Point(18, 31);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(186, 21);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(220, 11);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(347, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(220, 50);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(347, 20);
+            this.textBox2.TabIndex = 4;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(220, 95);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(347, 20);
+            this.textBox3.TabIndex = 5;
+            // 
+            // addBtn
+            // 
+            this.addBtn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addBtn.Location = new System.Drawing.Point(380, 396);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(132, 23);
+            this.addBtn.TabIndex = 16;
+            this.addBtn.Text = "Add Customer";
+            this.addBtn.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(157, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Personal Details";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Azure;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(756, 239);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(311, 151);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // seeBtn
+            // 
+            this.seeBtn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.seeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seeBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.seeBtn.Location = new System.Drawing.Point(844, 396);
+            this.seeBtn.Name = "seeBtn";
+            this.seeBtn.Size = new System.Drawing.Size(132, 23);
+            this.seeBtn.TabIndex = 18;
+            this.seeBtn.Text = "View Member";
+            this.seeBtn.UseVisualStyleBackColor = false;
+            // 
+            // benifitBtn
+            // 
+            this.benifitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.benifitBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.benifitBtn.Location = new System.Drawing.Point(18, 94);
+            this.benifitBtn.Name = "benifitBtn";
+            this.benifitBtn.Size = new System.Drawing.Size(204, 23);
+            this.benifitBtn.TabIndex = 19;
+            this.benifitBtn.Text = "View Memebrship Benifit";
+            this.benifitBtn.UseVisualStyleBackColor = false;
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.clearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.clearBtn.Location = new System.Drawing.Point(307, 396);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(67, 23);
+            this.clearBtn.TabIndex = 19;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = false;
             // 
             // homeBtn
             // 
@@ -111,33 +317,33 @@
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // discountBtn
             // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(153, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(928, 53);
-            this.panel1.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DimGray;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(322, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "MANAGE CUSTOMER";
+            this.discountBtn.BackColor = System.Drawing.Color.DimGray;
+            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.discountBtn.Image = global::App.Properties.Resources.discount;
+            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.discountBtn.Location = new System.Drawing.Point(12, 145);
+            this.discountBtn.Name = "discountBtn";
+            this.discountBtn.Size = new System.Drawing.Size(135, 37);
+            this.discountBtn.TabIndex = 20;
+            this.discountBtn.Text = "Discount";
+            this.discountBtn.UseVisualStyleBackColor = false;
+            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
             // 
             // CustomerManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 521);
+            this.Controls.Add(this.clearBtn);
+            this.Controls.Add(this.seeBtn);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.addBtn);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidePnl);
             this.MaximumSize = new System.Drawing.Size(1095, 560);
@@ -148,7 +354,13 @@
             this.sidePnl.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -160,5 +372,22 @@
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label emailLbl;
+        private System.Windows.Forms.Label mobileLbl;
+        private System.Windows.Forms.Label nameLbl;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Button benifitBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button seeBtn;
+        private System.Windows.Forms.Button clearBtn;
+        private System.Windows.Forms.Button discountBtn;
     }
 }

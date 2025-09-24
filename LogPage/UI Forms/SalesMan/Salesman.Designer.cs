@@ -32,10 +32,6 @@
             this.sidePnl = new System.Windows.Forms.Panel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.cManagementBtn = new System.Windows.Forms.Button();
-            this.pQueryBtn = new System.Windows.Forms.Button();
-            this.feedbackBtn = new System.Windows.Forms.Button();
-            this.logoutBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lowStockGrid = new System.Windows.Forms.DataGridView();
@@ -44,6 +40,11 @@
             this.supplierRequestGrid = new System.Windows.Forms.DataGridView();
             this.supplyRequestBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.cManagementBtn = new System.Windows.Forms.Button();
+            this.pQueryBtn = new System.Windows.Forms.Button();
+            this.feedbackBtn = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
+            this.discountBtn = new System.Windows.Forms.Button();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lowStockGrid)).BeginInit();
@@ -53,6 +54,7 @@
             // sidePnl
             // 
             this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.Controls.Add(this.discountBtn);
             this.sidePnl.Controls.Add(this.cManagementBtn);
             this.sidePnl.Controls.Add(this.pQueryBtn);
             this.sidePnl.Controls.Add(this.feedbackBtn);
@@ -74,66 +76,6 @@
             this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // cManagementBtn
-            // 
-            this.cManagementBtn.BackColor = System.Drawing.Color.DimGray;
-            this.cManagementBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cManagementBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.cManagementBtn.Image = global::App.Properties.Resources.user1;
-            this.cManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cManagementBtn.Location = new System.Drawing.Point(12, 102);
-            this.cManagementBtn.Name = "cManagementBtn";
-            this.cManagementBtn.Size = new System.Drawing.Size(135, 37);
-            this.cManagementBtn.TabIndex = 12;
-            this.cManagementBtn.Text = "CUSTOMER";
-            this.cManagementBtn.UseVisualStyleBackColor = false;
-            this.cManagementBtn.Click += new System.EventHandler(this.cManagementBtn_Click);
-            // 
-            // pQueryBtn
-            // 
-            this.pQueryBtn.BackColor = System.Drawing.Color.DimGray;
-            this.pQueryBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pQueryBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.pQueryBtn.Image = global::App.Properties.Resources.product1;
-            this.pQueryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.pQueryBtn.Location = new System.Drawing.Point(12, 59);
-            this.pQueryBtn.Name = "pQueryBtn";
-            this.pQueryBtn.Size = new System.Drawing.Size(135, 37);
-            this.pQueryBtn.TabIndex = 11;
-            this.pQueryBtn.Text = "PRODUCT";
-            this.pQueryBtn.UseVisualStyleBackColor = false;
-            this.pQueryBtn.Click += new System.EventHandler(this.pQueryBtn_Click);
-            // 
-            // feedbackBtn
-            // 
-            this.feedbackBtn.BackColor = System.Drawing.Color.DimGray;
-            this.feedbackBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feedbackBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
-            this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.feedbackBtn.Location = new System.Drawing.Point(12, 16);
-            this.feedbackBtn.Name = "feedbackBtn";
-            this.feedbackBtn.Size = new System.Drawing.Size(135, 37);
-            this.feedbackBtn.TabIndex = 10;
-            this.feedbackBtn.Text = "FEEDBACK";
-            this.feedbackBtn.UseVisualStyleBackColor = false;
-            this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
-            // 
-            // logoutBtn
-            // 
-            this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
-            this.logoutBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.logoutBtn.Image = global::App.Properties.Resources.logout;
-            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutBtn.Location = new System.Drawing.Point(12, 472);
-            this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(135, 37);
-            this.logoutBtn.TabIndex = 8;
-            this.logoutBtn.Text = "Logout";
-            this.logoutBtn.UseVisualStyleBackColor = false;
-            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // label1
             // 
@@ -232,6 +174,81 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Requested Products";
             // 
+            // cManagementBtn
+            // 
+            this.cManagementBtn.BackColor = System.Drawing.Color.DimGray;
+            this.cManagementBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cManagementBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.cManagementBtn.Image = global::App.Properties.Resources.user1;
+            this.cManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cManagementBtn.Location = new System.Drawing.Point(12, 102);
+            this.cManagementBtn.Name = "cManagementBtn";
+            this.cManagementBtn.Size = new System.Drawing.Size(135, 37);
+            this.cManagementBtn.TabIndex = 12;
+            this.cManagementBtn.Text = "CUSTOMER";
+            this.cManagementBtn.UseVisualStyleBackColor = false;
+            this.cManagementBtn.Click += new System.EventHandler(this.cManagementBtn_Click);
+            // 
+            // pQueryBtn
+            // 
+            this.pQueryBtn.BackColor = System.Drawing.Color.DimGray;
+            this.pQueryBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pQueryBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.pQueryBtn.Image = global::App.Properties.Resources.product1;
+            this.pQueryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pQueryBtn.Location = new System.Drawing.Point(12, 59);
+            this.pQueryBtn.Name = "pQueryBtn";
+            this.pQueryBtn.Size = new System.Drawing.Size(135, 37);
+            this.pQueryBtn.TabIndex = 11;
+            this.pQueryBtn.Text = "PRODUCT";
+            this.pQueryBtn.UseVisualStyleBackColor = false;
+            this.pQueryBtn.Click += new System.EventHandler(this.pQueryBtn_Click);
+            // 
+            // feedbackBtn
+            // 
+            this.feedbackBtn.BackColor = System.Drawing.Color.DimGray;
+            this.feedbackBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feedbackBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
+            this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.feedbackBtn.Location = new System.Drawing.Point(12, 16);
+            this.feedbackBtn.Name = "feedbackBtn";
+            this.feedbackBtn.Size = new System.Drawing.Size(135, 37);
+            this.feedbackBtn.TabIndex = 10;
+            this.feedbackBtn.Text = "FEEDBACK";
+            this.feedbackBtn.UseVisualStyleBackColor = false;
+            this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
+            this.logoutBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.Image = global::App.Properties.Resources.logout;
+            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutBtn.Location = new System.Drawing.Point(12, 472);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(135, 37);
+            this.logoutBtn.TabIndex = 8;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
+            // discountBtn
+            // 
+            this.discountBtn.BackColor = System.Drawing.Color.DimGray;
+            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.discountBtn.Image = global::App.Properties.Resources.discount;
+            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.discountBtn.Location = new System.Drawing.Point(12, 145);
+            this.discountBtn.Name = "discountBtn";
+            this.discountBtn.Size = new System.Drawing.Size(135, 37);
+            this.discountBtn.TabIndex = 17;
+            this.discountBtn.Text = "Discount";
+            this.discountBtn.UseVisualStyleBackColor = false;
+            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
+            // 
             // Salesman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,5 +295,6 @@
         private System.Windows.Forms.DataGridView supplierRequestGrid;
         private System.Windows.Forms.Button supplyRequestBtn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button discountBtn;
     }
 }

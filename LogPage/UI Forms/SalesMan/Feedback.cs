@@ -164,5 +164,16 @@ namespace App.UI_Forms.SalesMan
         {
             LoadAllFeedbacks();
 ;        }
+
+        private void discountBtn_Click(object sender, EventArgs e)
+        {
+
+            DiscountSuggestion DS = new DiscountSuggestion();
+            DS.StartPosition = FormStartPosition.Manual;
+            DS.Location = this.Location;
+            DS.Size = this.Size;
+            DS.Show();
+            this.Hide();
+        }
     }
 }

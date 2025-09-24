@@ -284,6 +284,7 @@ namespace App
             pnlCartView.Visible = false;
             ucPnl_Home1.Visible = false;
             ucPnl_Order1.Visible = false;
+            ucPnl_Product1.Visible = false;
 
             this.Location = new Point(
                 (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
@@ -311,10 +312,12 @@ namespace App
                     this.ClientSize = new Size(1183, 602);
 
                     PanleVisible();
-                    pnlProduct.Visible = true;
-                    pnlCartView.Visible = true;
-                    pnlProduct.Location = new Point(245, 46);
-                    pnlCartView.Location = new Point(830, 46);
+                    //pnlProduct.Visible = true;
+                    //pnlCartView.Visible = true;
+                    ucPnl_Product1.Visible = true;
+                    //ucPnl_Product1.Location = new Point(245, 46);
+                    //pnlProduct.Location = new Point(245, 46);
+                    //pnlCartView.Location = new Point(830, 46);
                     break;
 
                 case "Orders":

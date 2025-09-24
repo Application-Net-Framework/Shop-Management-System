@@ -139,6 +139,7 @@
             this.g2E__pnlWelcome = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnlWelcome = new System.Windows.Forms.Panel();
             this.lblTimer = new System.Windows.Forms.Label();
+            this.ucPnl_Product1 = new App.UI_Forms.Cashier.ucPnl_Product();
             this.ucPnl_Order1 = new App.UI_Forms.Cashier.ucPnl_Order();
             this.ucPnl_Home1 = new App.UI_Forms.Cashier.ucPnl_Home();
             this.panel1.SuspendLayout();
@@ -436,7 +437,7 @@
             this.pnlProduct.Controls.Add(this.txtSearch);
             this.pnlProduct.Controls.Add(this.lblSearch);
             this.pnlProduct.Controls.Add(this.dgvProduct);
-            this.pnlProduct.Location = new System.Drawing.Point(251, 45);
+            this.pnlProduct.Location = new System.Drawing.Point(2510, 45);
             this.pnlProduct.Name = "pnlProduct";
             this.pnlProduct.Size = new System.Drawing.Size(566, 524);
             this.pnlProduct.TabIndex = 4;
@@ -821,7 +822,7 @@
             this.pnlCartView.Controls.Add(this.lblDiscount);
             this.pnlCartView.Controls.Add(this.lblNetAmount);
             this.pnlCartView.Controls.Add(this.btnClear);
-            this.pnlCartView.Location = new System.Drawing.Point(830, 45);
+            this.pnlCartView.Location = new System.Drawing.Point(8300, 45);
             this.pnlCartView.Name = "pnlCartView";
             this.pnlCartView.Size = new System.Drawing.Size(335, 523);
             this.pnlCartView.TabIndex = 8;
@@ -1545,6 +1546,14 @@
             this.lblTimer.TabIndex = 20;
             this.lblTimer.Text = "Today";
             // 
+            // ucPnl_Product1
+            // 
+            this.ucPnl_Product1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.ucPnl_Product1.Location = new System.Drawing.Point(241, 46);
+            this.ucPnl_Product1.Name = "ucPnl_Product1";
+            this.ucPnl_Product1.Size = new System.Drawing.Size(952, 524);
+            this.ucPnl_Product1.TabIndex = 10;
+            // 
             // ucPnl_Order1
             // 
             this.ucPnl_Order1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
@@ -1567,6 +1576,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1182, 602);
+            this.Controls.Add(this.ucPnl_Product1);
             this.Controls.Add(this.ucPnl_Order1);
             this.Controls.Add(this.ucPnl_Home1);
             this.Controls.Add(this.pnlCartView);
@@ -1710,5 +1720,6 @@
         private System.Windows.Forms.Label lblTimer;
         private UI_Forms.Cashier.ucPnl_Home ucPnl_Home1;
         private UI_Forms.Cashier.ucPnl_Order ucPnl_Order1;
+        private UI_Forms.Cashier.ucPnl_Product ucPnl_Product1;
     }
 }

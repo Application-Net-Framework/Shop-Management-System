@@ -120,6 +120,12 @@
     <Compile Include="UI Forms\Cashier\ucPnl_Order.Designer.cs">
       <DependentUpon>ucPnl_Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Forms\Cashier\ucPnl_Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Cashier\ucPnl_Product.Designer.cs">
+      <DependentUpon>ucPnl_Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Forms\Manager\Employee Information\database.cs" />
     <Compile Include="UI Forms\Manager\Employee Information\roundedpicturebox.cs">
       <SubType>Component</SubType>
@@ -305,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Cashier\ucPnl_Order.resx">
       <DependentUpon>ucPnl_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Cashier\ucPnl_Product.resx">
+      <DependentUpon>ucPnl_Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\Employee Information\SearchResultControl.resx">
       <DependentUpon>SearchResultControl.cs</DependentUpon>

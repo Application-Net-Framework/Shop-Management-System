@@ -27,6 +27,9 @@ namespace App.UI_Forms.Cashier
             clear();
             clearCart();
             LoadCategories();
+            totalPriceAfterDiscount();
+
+            cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged_1;
         }
 
         private DataTable ExecuteQuery(string query)

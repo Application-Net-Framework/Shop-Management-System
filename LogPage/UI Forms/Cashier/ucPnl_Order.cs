@@ -54,34 +54,6 @@ namespace App.UI_Forms.Cashier
             return dt;
         }
 
-        private void ExecuteNonQuery(string query)
-        {
-            try
-            {
-                SqlConnection conn = new SqlConnection(connectionString);
-
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
-
-                cmd.ExecuteNonQuery();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Database error: " + ex.Message);
-            }
-        }
-
-
-
-
-
-
-
-
-
-
 
 
         public void LoadOrdersTable()
@@ -92,6 +64,15 @@ namespace App.UI_Forms.Cashier
                             "INNER JOIN Customer c ON o.CustomerID = c.CustomerID;";
             dgvOrders_order.DataSource = ExecuteQuery(query);
             dgvOrders_order.AutoGenerateColumns = true;
+        }
+
+        public void RefreshData()
+        {
+            dgvOrderDetails_order.DataSource = null; // clear details grid
+            dgvOrderDetails_order.Visible = false; // clear details grid
+            lblProductDetails_order.Visible = false;
+            txtSearch_order.Clear();
+            orderid = -1;
         }
 
 
@@ -128,11 +109,7 @@ namespace App.UI_Forms.Cashier
         private void btnRefresh_order_Click_1(object sender, EventArgs e)
         {
             LoadOrdersTable();
-            dgvOrderDetails_order.DataSource = null; // clear details grid
-            dgvOrderDetails_order.Visible = false; // clear details grid
-            lblProductDetails_order.Visible = false;
-            txtSearch_order.Clear();
-            orderid = -1;
+            RefreshData();
         }
 
         private void txtSearch_order_TextChanged_1(object sender, EventArgs e)

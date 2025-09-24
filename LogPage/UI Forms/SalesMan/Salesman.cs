@@ -87,12 +87,12 @@ namespace App
 
         private void label1_Click(object sender, EventArgs e)
         {
-            loadform(new Cashier_Report());
+            //loadform(new Cashier_Report());
         }
 
         private void feedbackBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Cashier_Profile());
+            //loadform(new Cashier_Profile());
         }
 
         private void pQueryBtn_Click(object sender, EventArgs e)
@@ -160,7 +160,7 @@ namespace App
 
         private void discountBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Cashier_Salary());
+            //loadform(new Cashier_Salary());
 
             DiscountSuggestion DS = new DiscountSuggestion();
             DS.StartPosition = FormStartPosition.Manual;

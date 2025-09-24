@@ -1548,9 +1548,10 @@
             // 
             // ucPnl_Product1
             // 
+            this.ucPnl_Product1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.ucPnl_Product1.Location = new System.Drawing.Point(241, 46);
             this.ucPnl_Product1.Name = "ucPnl_Product1";
-            this.ucPnl_Product1.Size = new System.Drawing.Size(951, 524);
+            this.ucPnl_Product1.Size = new System.Drawing.Size(952, 524);
             this.ucPnl_Product1.TabIndex = 10;
             // 
             // ucPnl_Order1

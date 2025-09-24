@@ -37,21 +37,21 @@
             this.mobileLbl = new System.Windows.Forms.Label();
             this.emailLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.statusTxt = new System.Windows.Forms.ComboBox();
+            this.nameTxt = new System.Windows.Forms.TextBox();
+            this.mobileTxt = new System.Windows.Forms.TextBox();
+            this.emailTxt = new System.Windows.Forms.TextBox();
             this.addBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.seeBtn = new System.Windows.Forms.Button();
             this.benifitBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
+            this.discountBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
             this.pQueryBtn = new System.Windows.Forms.Button();
             this.feedbackBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
-            this.discountBtn = new System.Windows.Forms.Button();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -98,9 +98,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Azure;
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.emailTxt);
+            this.panel2.Controls.Add(this.mobileTxt);
+            this.panel2.Controls.Add(this.nameTxt);
             this.panel2.Controls.Add(this.emailLbl);
             this.panel2.Controls.Add(this.mobileLbl);
             this.panel2.Controls.Add(this.nameLbl);
@@ -113,7 +113,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Azure;
             this.panel3.Controls.Add(this.benifitBtn);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.statusTxt);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(160, 239);
             this.panel3.Name = "panel3";
@@ -160,37 +160,37 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Membership status";
             // 
-            // comboBox1
+            // statusTxt
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.statusTxt.FormattingEnabled = true;
+            this.statusTxt.Items.AddRange(new object[] {
             "Premimum",
             "Regular"});
-            this.comboBox1.Location = new System.Drawing.Point(18, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(186, 21);
-            this.comboBox1.TabIndex = 4;
+            this.statusTxt.Location = new System.Drawing.Point(18, 31);
+            this.statusTxt.Name = "statusTxt";
+            this.statusTxt.Size = new System.Drawing.Size(186, 21);
+            this.statusTxt.TabIndex = 4;
             // 
-            // textBox1
+            // nameTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(220, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(347, 20);
-            this.textBox1.TabIndex = 3;
+            this.nameTxt.Location = new System.Drawing.Point(220, 11);
+            this.nameTxt.Name = "nameTxt";
+            this.nameTxt.Size = new System.Drawing.Size(347, 20);
+            this.nameTxt.TabIndex = 3;
             // 
-            // textBox2
+            // mobileTxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(220, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(347, 20);
-            this.textBox2.TabIndex = 4;
+            this.mobileTxt.Location = new System.Drawing.Point(220, 50);
+            this.mobileTxt.Name = "mobileTxt";
+            this.mobileTxt.Size = new System.Drawing.Size(347, 20);
+            this.mobileTxt.TabIndex = 4;
             // 
-            // textBox3
+            // emailTxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(220, 95);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(347, 20);
-            this.textBox3.TabIndex = 5;
+            this.emailTxt.Location = new System.Drawing.Point(220, 95);
+            this.emailTxt.Name = "emailTxt";
+            this.emailTxt.Size = new System.Drawing.Size(347, 20);
+            this.emailTxt.TabIndex = 5;
             // 
             // addBtn
             // 
@@ -203,6 +203,7 @@
             this.addBtn.TabIndex = 16;
             this.addBtn.Text = "Add Customer";
             this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // label3
             // 
@@ -234,6 +235,7 @@
             this.seeBtn.TabIndex = 18;
             this.seeBtn.Text = "View Member";
             this.seeBtn.UseVisualStyleBackColor = false;
+            this.seeBtn.Click += new System.EventHandler(this.seeBtn_Click);
             // 
             // benifitBtn
             // 
@@ -245,6 +247,7 @@
             this.benifitBtn.TabIndex = 19;
             this.benifitBtn.Text = "View Memebrship Benifit";
             this.benifitBtn.UseVisualStyleBackColor = false;
+            this.benifitBtn.Click += new System.EventHandler(this.benifitBtn_Click);
             // 
             // clearBtn
             // 
@@ -257,6 +260,22 @@
             this.clearBtn.TabIndex = 19;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
+            // discountBtn
+            // 
+            this.discountBtn.BackColor = System.Drawing.Color.DimGray;
+            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.discountBtn.Image = global::App.Properties.Resources.discount;
+            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.discountBtn.Location = new System.Drawing.Point(12, 145);
+            this.discountBtn.Name = "discountBtn";
+            this.discountBtn.Size = new System.Drawing.Size(135, 37);
+            this.discountBtn.TabIndex = 20;
+            this.discountBtn.Text = "Discount";
+            this.discountBtn.UseVisualStyleBackColor = false;
+            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
             // 
             // homeBtn
             // 
@@ -316,21 +335,7 @@
             this.logoutBtn.TabIndex = 8;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = false;
-            // 
-            // discountBtn
-            // 
-            this.discountBtn.BackColor = System.Drawing.Color.DimGray;
-            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.discountBtn.Image = global::App.Properties.Resources.discount;
-            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.discountBtn.Location = new System.Drawing.Point(12, 145);
-            this.discountBtn.Name = "discountBtn";
-            this.discountBtn.Size = new System.Drawing.Size(135, 37);
-            this.discountBtn.TabIndex = 20;
-            this.discountBtn.Text = "Discount";
-            this.discountBtn.UseVisualStyleBackColor = false;
-            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // CustomerManagement
             // 
@@ -374,13 +379,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox emailTxt;
+        private System.Windows.Forms.TextBox mobileTxt;
+        private System.Windows.Forms.TextBox nameTxt;
         private System.Windows.Forms.Label emailLbl;
         private System.Windows.Forms.Label mobileLbl;
         private System.Windows.Forms.Label nameLbl;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox statusTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button benifitBtn;

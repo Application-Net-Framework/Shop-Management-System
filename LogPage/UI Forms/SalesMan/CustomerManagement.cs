@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,91 @@ namespace App.UI_Forms.SalesMan
             this.AutoScaleMode = AutoScaleMode.Dpi;   // or AutoScaleMode.Font
             this.AutoSize = true;
         }
+        String connectionString = @"Data Source=DESKTOP-ESC3M7E\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+
+
+        private void AddCustomer(string name, string mobile, string email, string membershipStatus)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    string query = "INSERT INTO Customer (Name, Mobile, Email, MembershipStatus) VALUES (@Name, @Mobile, @Email, @MembershipStatus)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", name);
+                        cmd.Parameters.AddWithValue("@Mobile", mobile);
+                        cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(email) ? (object)DBNull.Value : email);
+                        cmd.Parameters.AddWithValue("@MembershipStatus", membershipStatus);
+
+                        int rows = cmd.ExecuteNonQuery();
+
+                        if (rows > 0)
+                        {
+                            MessageBox.Show("Customer added successfully!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to add customer.");
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error: " + ex.Message);
+            }
+        }
+
+        private void LoadCustomerList()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string query = "SELECT CustomerID, Name, Mobile, Email, MembershipStatus FROM Customer";
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(query, con))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        dataGridView1.DataSource = dt;
+                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        dataGridView1.ReadOnly = true;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error: " + ex.Message);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void CustomerManagement_Load(object sender, EventArgs e)
         {
@@ -63,6 +149,44 @@ namespace App.UI_Forms.SalesMan
             DS.Size = this.Size;
             DS.Show();
             this.Hide();
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            LogPage login = new LogPage();
+            login.Show();
+            this.Close();
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            AddCustomer(nameTxt.Text, mobileTxt.Text, emailTxt.Text, statusTxt.Text);
+        }
+
+        private void seeBtn_Click(object sender, EventArgs e)
+        {
+            LoadCustomerList();
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            nameTxt.Text = "";
+            mobileTxt.Text = "";
+            emailTxt.Text = "";
+            statusTxt.Text = "";
+        }
+
+        private void benifitBtn_Click(object sender, EventArgs e)
+        {
+            string benefits = "Regular Membership:\n" +
+                      "1. Basic Access to Services\n" +
+                      "2. Cost-Effective\n\n" +
+                      "Premium Membership:\n" +
+                      "1. Priority Support and Exclusive Features\n" +
+                      "2. Enhanced Flexibility and Perks";
+
+            MessageBox.Show(benefits, "Membership Benefits", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }

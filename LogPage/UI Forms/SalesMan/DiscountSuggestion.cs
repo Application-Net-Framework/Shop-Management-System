@@ -61,5 +61,12 @@ namespace App.UI_Forms.SalesMan
             CM.Show();
             this.Hide();
         }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            LogPage login = new LogPage();
+            login.Show();
+            this.Close();
+        }
     }
 }

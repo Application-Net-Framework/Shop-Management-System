@@ -43,7 +43,7 @@ namespace App
 
         private void posBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Cashier_POS());
+            //loadform(new Cashier_POS());
         }
 
         private void returnBtn_Click(object sender, EventArgs e)
@@ -58,12 +58,12 @@ namespace App
 
         private void reportBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Cashier_Report());
+            //loadform(new Cashier_Report());
         }
 
         private void profilebtn_Click(object sender, EventArgs e)
         {
-            loadform(new Cashier_Profile());
+            //loadform(new Cashier_Profile());
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace App
 
         private void salaryBtn_Click(object sender, EventArgs e)
         {
-            loadform(new Cashier_Salary());
+            //loadform(new Cashier_Salary());
 
         }
     }

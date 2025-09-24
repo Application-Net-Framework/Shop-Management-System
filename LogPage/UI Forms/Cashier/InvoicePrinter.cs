@@ -230,7 +230,7 @@ public class InvoicePrinter
         e.Graphics.DrawString("Product", bodyFont, Brushes.Black, 20 + i, y);
         e.Graphics.DrawString("Qty", bodyFont, Brushes.Black, 200 + i, y);
         e.Graphics.DrawString("Price", bodyFont, Brushes.Black, 300 + i, y);
-        e.Graphics.DrawString("Total", bodyFont, Brushes.Black, 400 + i, y);
+        e.Graphics.DrawString("Sub Total", bodyFont, Brushes.Black, 400 + i, y);
         y += 20;
 
         // Items

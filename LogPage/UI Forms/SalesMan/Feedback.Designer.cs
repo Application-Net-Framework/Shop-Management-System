@@ -1,4 +1,4 @@
-﻿namespace App
+﻿namespace App.UI_Forms.SalesMan
 {
     partial class Feedback
     {
@@ -28,170 +28,392 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.backBtn = new System.Windows.Forms.Button();
+            this.sidePnl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.addBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.mobileTxt = new System.Windows.Forms.TextBox();
-            this.mobileLbl = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pNameLbl = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.pIdLbl = new System.Windows.Forms.Label();
-            this.feedbackLbl = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.suggestionBtn = new System.Windows.Forms.RadioButton();
+            this.submitBtn = new System.Windows.Forms.Button();
+            this.detailsTxt = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.subjectTxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.complainRBtn = new System.Windows.Forms.RadioButton();
+            this.satisfiedRBtn = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.feedbackRecordBtn = new System.Windows.Forms.Button();
+            this.feedbackDataGridView = new System.Windows.Forms.DataGridView();
+            this.cManagementBtn = new System.Windows.Forms.Button();
+            this.homeBtn = new System.Windows.Forms.Button();
+            this.pQueryBtn = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
+            this.discountBtn = new System.Windows.Forms.Button();
+            this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // backBtn
+            // sidePnl
             // 
-            this.backBtn.AutoSize = true;
-            this.backBtn.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.backBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.backBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.backBtn.Location = new System.Drawing.Point(66, 324);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(92, 29);
-            this.backBtn.TabIndex = 13;
-            this.backBtn.Text = "BACK";
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click_1);
+            this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.Controls.Add(this.discountBtn);
+            this.sidePnl.Controls.Add(this.cManagementBtn);
+            this.sidePnl.Controls.Add(this.homeBtn);
+            this.sidePnl.Controls.Add(this.pQueryBtn);
+            this.sidePnl.Controls.Add(this.logoutBtn);
+            this.sidePnl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidePnl.Location = new System.Drawing.Point(0, 0);
+            this.sidePnl.Name = "sidePnl";
+            this.sidePnl.Size = new System.Drawing.Size(154, 521);
+            this.sidePnl.TabIndex = 2;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(125)))), ((int)(((byte)(130)))));
-            this.panel1.Controls.Add(this.feedbackLbl);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.pIdLbl);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.pNameLbl);
-            this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Controls.Add(this.addBtn);
-            this.panel1.Controls.Add(this.mobileTxt);
-            this.panel1.Controls.Add(this.mobileLbl);
-            this.panel1.Location = new System.Drawing.Point(66, 80);
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(153, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(651, 238);
-            this.panel1.TabIndex = 14;
+            this.panel1.Size = new System.Drawing.Size(928, 53);
+            this.panel1.TabIndex = 3;
             // 
-            // addBtn
+            // label1
             // 
-            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Location = new System.Drawing.Point(311, 184);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(59, 27);
-            this.addBtn.TabIndex = 11;
-            this.addBtn.Text = "Add Coustomer";
-            this.addBtn.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DimGray;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(358, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 24);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "FEEDBACK";
             // 
             // mobileTxt
             // 
-            this.mobileTxt.Location = new System.Drawing.Point(189, 55);
+            this.mobileTxt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.mobileTxt.Location = new System.Drawing.Point(171, 102);
             this.mobileTxt.Name = "mobileTxt";
-            this.mobileTxt.Size = new System.Drawing.Size(182, 20);
-            this.mobileTxt.TabIndex = 3;
+            this.mobileTxt.Size = new System.Drawing.Size(167, 20);
+            this.mobileTxt.TabIndex = 4;
             // 
-            // mobileLbl
+            // panel2
             // 
-            this.mobileLbl.AutoSize = true;
-            this.mobileLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mobileLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.mobileLbl.Location = new System.Drawing.Point(29, 55);
-            this.mobileLbl.Name = "mobileLbl";
-            this.mobileLbl.Size = new System.Drawing.Size(66, 20);
-            this.mobileLbl.TabIndex = 9;
-            this.mobileLbl.Text = "Mobile:";
+            this.panel2.BackColor = System.Drawing.SystemColors.MenuText;
+            this.panel2.Controls.Add(this.suggestionBtn);
+            this.panel2.Controls.Add(this.submitBtn);
+            this.panel2.Controls.Add(this.detailsTxt);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.subjectTxt);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.complainRBtn);
+            this.panel2.Controls.Add(this.satisfiedRBtn);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(171, 197);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(580, 287);
+            this.panel2.TabIndex = 14;
             // 
-            // richTextBox1
+            // suggestionBtn
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(377, 55);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(249, 103);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "";
+            this.suggestionBtn.AutoSize = true;
+            this.suggestionBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.suggestionBtn.Location = new System.Drawing.Point(184, 53);
+            this.suggestionBtn.Name = "suggestionBtn";
+            this.suggestionBtn.Size = new System.Drawing.Size(78, 17);
+            this.suggestionBtn.TabIndex = 26;
+            this.suggestionBtn.TabStop = true;
+            this.suggestionBtn.Text = "Suggestion";
+            this.suggestionBtn.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // submitBtn
             // 
-            this.textBox1.Location = new System.Drawing.Point(189, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 20);
-            this.textBox1.TabIndex = 13;
+            this.submitBtn.BackColor = System.Drawing.Color.DimGray;
+            this.submitBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.submitBtn.Location = new System.Drawing.Point(144, 238);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.Size = new System.Drawing.Size(161, 27);
+            this.submitBtn.TabIndex = 20;
+            this.submitBtn.Text = "Submit Feedback";
+            this.submitBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.submitBtn.UseVisualStyleBackColor = false;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
-            // pNameLbl
+            // detailsTxt
             // 
-            this.pNameLbl.AutoSize = true;
-            this.pNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pNameLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pNameLbl.Location = new System.Drawing.Point(29, 97);
-            this.pNameLbl.Name = "pNameLbl";
-            this.pNameLbl.Size = new System.Drawing.Size(154, 20);
-            this.pNameLbl.TabIndex = 14;
-            this.pNameLbl.Text = "PRODUCT NAME:";
+            this.detailsTxt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.detailsTxt.Location = new System.Drawing.Point(100, 111);
+            this.detailsTxt.Name = "detailsTxt";
+            this.detailsTxt.Size = new System.Drawing.Size(255, 121);
+            this.detailsTxt.TabIndex = 25;
+            this.detailsTxt.Text = "";
             // 
-            // textBox2
+            // label6
             // 
-            this.textBox2.Location = new System.Drawing.Point(189, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 20);
-            this.textBox2.TabIndex = 15;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(3, 127);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 20);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Details :";
             // 
-            // pIdLbl
+            // subjectTxt
             // 
-            this.pIdLbl.AutoSize = true;
-            this.pIdLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pIdLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pIdLbl.Location = new System.Drawing.Point(29, 136);
-            this.pIdLbl.Name = "pIdLbl";
-            this.pIdLbl.Size = new System.Drawing.Size(123, 20);
-            this.pIdLbl.TabIndex = 16;
-            this.pIdLbl.Text = "PRODUCT ID:";
+            this.subjectTxt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.subjectTxt.Location = new System.Drawing.Point(100, 85);
+            this.subjectTxt.Name = "subjectTxt";
+            this.subjectTxt.Size = new System.Drawing.Size(255, 20);
+            this.subjectTxt.TabIndex = 20;
             // 
-            // feedbackLbl
+            // label5
             // 
-            this.feedbackLbl.AutoSize = true;
-            this.feedbackLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feedbackLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.feedbackLbl.Location = new System.Drawing.Point(277, 9);
-            this.feedbackLbl.Name = "feedbackLbl";
-            this.feedbackLbl.Size = new System.Drawing.Size(104, 20);
-            this.feedbackLbl.TabIndex = 17;
-            this.feedbackLbl.Text = "FEEDBACK";
-            this.feedbackLbl.Click += new System.EventHandler(this.feedbackLbl_Click);
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(3, 83);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 20);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Subject :";
+            // 
+            // complainRBtn
+            // 
+            this.complainRBtn.AutoSize = true;
+            this.complainRBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.complainRBtn.Location = new System.Drawing.Point(287, 21);
+            this.complainRBtn.Name = "complainRBtn";
+            this.complainRBtn.Size = new System.Drawing.Size(68, 17);
+            this.complainRBtn.TabIndex = 22;
+            this.complainRBtn.TabStop = true;
+            this.complainRBtn.Text = "Complain";
+            this.complainRBtn.UseVisualStyleBackColor = true;
+            // 
+            // satisfiedRBtn
+            // 
+            this.satisfiedRBtn.AutoSize = true;
+            this.satisfiedRBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.satisfiedRBtn.Location = new System.Drawing.Point(184, 20);
+            this.satisfiedRBtn.Name = "satisfiedRBtn";
+            this.satisfiedRBtn.Size = new System.Drawing.Size(65, 17);
+            this.satisfiedRBtn.TabIndex = 21;
+            this.satisfiedRBtn.TabStop = true;
+            this.satisfiedRBtn.Text = "Satisfied";
+            this.satisfiedRBtn.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(3, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 20);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Feedback Type";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(167, 170);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 20);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Feedback Details";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(167, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 20);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Customer Mobile";
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.DimGray;
+            this.searchBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.searchBtn.Location = new System.Drawing.Point(355, 102);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(92, 22);
+            this.searchBtn.TabIndex = 19;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.searchBtn.UseVisualStyleBackColor = false;
+            // 
+            // feedbackRecordBtn
+            // 
+            this.feedbackRecordBtn.BackColor = System.Drawing.Color.DimGray;
+            this.feedbackRecordBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feedbackRecordBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.feedbackRecordBtn.Location = new System.Drawing.Point(826, 426);
+            this.feedbackRecordBtn.Name = "feedbackRecordBtn";
+            this.feedbackRecordBtn.Size = new System.Drawing.Size(161, 27);
+            this.feedbackRecordBtn.TabIndex = 27;
+            this.feedbackRecordBtn.Text = "See Feedback";
+            this.feedbackRecordBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.feedbackRecordBtn.UseVisualStyleBackColor = false;
+            this.feedbackRecordBtn.Click += new System.EventHandler(this.feedbackRecordBtn_Click);
+            // 
+            // feedbackDataGridView
+            // 
+            this.feedbackDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.feedbackDataGridView.Location = new System.Drawing.Point(757, 197);
+            this.feedbackDataGridView.Name = "feedbackDataGridView";
+            this.feedbackDataGridView.Size = new System.Drawing.Size(310, 223);
+            this.feedbackDataGridView.TabIndex = 28;
+            // 
+            // cManagementBtn
+            // 
+            this.cManagementBtn.BackColor = System.Drawing.Color.DimGray;
+            this.cManagementBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cManagementBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.cManagementBtn.Image = global::App.Properties.Resources.user1;
+            this.cManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cManagementBtn.Location = new System.Drawing.Point(12, 102);
+            this.cManagementBtn.Name = "cManagementBtn";
+            this.cManagementBtn.Size = new System.Drawing.Size(135, 37);
+            this.cManagementBtn.TabIndex = 12;
+            this.cManagementBtn.Text = "CUSTOMER";
+            this.cManagementBtn.UseVisualStyleBackColor = false;
+            this.cManagementBtn.Click += new System.EventHandler(this.cManagementBtn_Click);
+            // 
+            // homeBtn
+            // 
+            this.homeBtn.BackColor = System.Drawing.Color.DimGray;
+            this.homeBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.homeBtn.Image = global::App.Properties.Resources.home1;
+            this.homeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.homeBtn.Location = new System.Drawing.Point(12, 16);
+            this.homeBtn.Name = "homeBtn";
+            this.homeBtn.Size = new System.Drawing.Size(135, 37);
+            this.homeBtn.TabIndex = 0;
+            this.homeBtn.Text = "Home";
+            this.homeBtn.UseVisualStyleBackColor = false;
+            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
+            // 
+            // pQueryBtn
+            // 
+            this.pQueryBtn.BackColor = System.Drawing.Color.DimGray;
+            this.pQueryBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pQueryBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.pQueryBtn.Image = global::App.Properties.Resources.product1;
+            this.pQueryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pQueryBtn.Location = new System.Drawing.Point(12, 59);
+            this.pQueryBtn.Name = "pQueryBtn";
+            this.pQueryBtn.Size = new System.Drawing.Size(135, 37);
+            this.pQueryBtn.TabIndex = 11;
+            this.pQueryBtn.Text = "PRODUCT";
+            this.pQueryBtn.UseVisualStyleBackColor = false;
+            this.pQueryBtn.Click += new System.EventHandler(this.pQueryBtn_Click);
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
+            this.logoutBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.Image = global::App.Properties.Resources.logout;
+            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutBtn.Location = new System.Drawing.Point(12, 472);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(135, 37);
+            this.logoutBtn.TabIndex = 8;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = false;
+            // 
+            // discountBtn
+            // 
+            this.discountBtn.BackColor = System.Drawing.Color.DimGray;
+            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.discountBtn.Image = global::App.Properties.Resources.discount;
+            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.discountBtn.Location = new System.Drawing.Point(12, 145);
+            this.discountBtn.Name = "discountBtn";
+            this.discountBtn.Size = new System.Drawing.Size(135, 37);
+            this.discountBtn.TabIndex = 27;
+            this.discountBtn.Text = "Discount";
+            this.discountBtn.UseVisualStyleBackColor = false;
+            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
             // 
             // Feedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Azure;
-            this.BackgroundImage = global::App.Properties.Resources.flat_lay_transparent_leaves_lamina;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ControlText;
+            this.ClientSize = new System.Drawing.Size(1079, 521);
+            this.Controls.Add(this.feedbackDataGridView);
+            this.Controls.Add(this.feedbackRecordBtn);
+            this.Controls.Add(this.searchBtn);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.mobileTxt);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.backBtn);
-            this.MaximumSize = new System.Drawing.Size(1920, 1080);
-            this.MinimumSize = new System.Drawing.Size(815, 489);
+            this.Controls.Add(this.sidePnl);
+            this.MaximumSize = new System.Drawing.Size(1095, 560);
+            this.MinimumSize = new System.Drawing.Size(1095, 560);
             this.Name = "Feedback";
             this.Text = "Feedback";
+            this.sidePnl.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.feedbackDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Panel sidePnl;
+        private System.Windows.Forms.Button cManagementBtn;
+        private System.Windows.Forms.Button homeBtn;
+        private System.Windows.Forms.Button pQueryBtn;
+        private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox mobileTxt;
-        private System.Windows.Forms.Label mobileLbl;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label pIdLbl;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label pNameLbl;
-        private System.Windows.Forms.Label feedbackLbl;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.RichTextBox detailsTxt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox subjectTxt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton complainRBtn;
+        private System.Windows.Forms.RadioButton satisfiedRBtn;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton suggestionBtn;
+        private System.Windows.Forms.Button submitBtn;
+        private System.Windows.Forms.Button feedbackRecordBtn;
+        private System.Windows.Forms.DataGridView feedbackDataGridView;
+        private System.Windows.Forms.Button discountBtn;
     }
 }

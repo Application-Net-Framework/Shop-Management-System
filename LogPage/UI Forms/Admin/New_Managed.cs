@@ -110,5 +110,10 @@ namespace App.UI_Forms.Admin
         {
 
         }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

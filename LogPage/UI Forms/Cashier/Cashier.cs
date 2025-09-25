@@ -71,6 +71,8 @@ namespace App
                     this.ClientSize = new Size(952, 602);
 
                     PanleVisible();
+                    ucPnl_Home1.LoadDashboardCards();
+                    ucPnl_Home1.LoadMonthlySales();
                     ucPnl_Home1.Visible = true;
                     break;
 

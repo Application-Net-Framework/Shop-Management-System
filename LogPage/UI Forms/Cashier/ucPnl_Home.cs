@@ -20,7 +20,9 @@ namespace App.UI_Forms.Cashier
         {
             InitializeComponent();
             LoadDashboardCards();
+            LoadMonthlySales();
         }
+
         private DataTable ExecuteQuery(string query)
         {
 
@@ -52,26 +54,7 @@ namespace App.UI_Forms.Cashier
             return dt;
         }
 
-        private void ExecuteNonQuery(string query)
-        {
-            try
-            {
-                SqlConnection conn = new SqlConnection(connectionString);
-
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
-
-                cmd.ExecuteNonQuery();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Database error: " + ex.Message);
-            }
-        }
-
-        private void LoadDashboardCards()
+        public void LoadDashboardCards()
         {
             try
             {
@@ -104,6 +87,8 @@ namespace App.UI_Forms.Cashier
                     ORDER BY o.OrderDate DESC";
                 dgvRecentOrders_home.DataSource = ExecuteQuery(recentOrdersQuery);
 
+                dgvRecentOrders_home.AutoGenerateColumns = true;
+
                 LoadMonthlySales();
             }
             catch (Exception ex)
@@ -112,7 +97,7 @@ namespace App.UI_Forms.Cashier
             }
         }
 
-        private void LoadMonthlySales()
+        public void LoadMonthlySales()
         {
             string query = @"
                             SELECT FORMAT(OrderDate,'MMM-yyyy') AS Month, SUM(TotalAmount) AS Revenue
@@ -191,5 +176,6 @@ namespace App.UI_Forms.Cashier
                 return;
             }
         }
+
     }
 }

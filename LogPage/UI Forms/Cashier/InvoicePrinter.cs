@@ -26,7 +26,7 @@ public class InvoicePrinter
         LoadOrderData(orderId);
     }
 
-    private void LoadOrderData(int orderId)
+    public void LoadOrderData(int orderId)
     {
         try {
             string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.sidePnl = new System.Windows.Forms.Panel();
+            this.preOrderBtn = new System.Windows.Forms.Button();
             this.discountBtn = new System.Windows.Forms.Button();
             this.cManagementBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
@@ -37,19 +38,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameTxt = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.preOrderBtn = new System.Windows.Forms.Button();
+            this.stockBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePnl
             // 
-            this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.BackColor = System.Drawing.Color.Azure;
             this.sidePnl.Controls.Add(this.preOrderBtn);
             this.sidePnl.Controls.Add(this.discountBtn);
             this.sidePnl.Controls.Add(this.cManagementBtn);
@@ -59,12 +62,27 @@
             this.sidePnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePnl.Location = new System.Drawing.Point(0, 0);
             this.sidePnl.Name = "sidePnl";
-            this.sidePnl.Size = new System.Drawing.Size(154, 521);
+            this.sidePnl.Size = new System.Drawing.Size(154, 561);
             this.sidePnl.TabIndex = 2;
+            // 
+            // preOrderBtn
+            // 
+            this.preOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.preOrderBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preOrderBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.preOrderBtn.Image = global::App.Properties.Resources.cart;
+            this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.preOrderBtn.Location = new System.Drawing.Point(12, 188);
+            this.preOrderBtn.Name = "preOrderBtn";
+            this.preOrderBtn.Size = new System.Drawing.Size(135, 37);
+            this.preOrderBtn.TabIndex = 22;
+            this.preOrderBtn.Text = "Pre-Order";
+            this.preOrderBtn.UseVisualStyleBackColor = false;
+            this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
             // 
             // discountBtn
             // 
-            this.discountBtn.BackColor = System.Drawing.Color.DimGray;
+            this.discountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
             this.discountBtn.Image = global::App.Properties.Resources.discount;
@@ -78,7 +96,7 @@
             // 
             // cManagementBtn
             // 
-            this.cManagementBtn.BackColor = System.Drawing.Color.DimGray;
+            this.cManagementBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cManagementBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cManagementBtn.ForeColor = System.Drawing.Color.Transparent;
             this.cManagementBtn.Image = global::App.Properties.Resources.user1;
@@ -93,7 +111,7 @@
             // 
             // homeBtn
             // 
-            this.homeBtn.BackColor = System.Drawing.Color.DimGray;
+            this.homeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.homeBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeBtn.ForeColor = System.Drawing.Color.Transparent;
             this.homeBtn.Image = global::App.Properties.Resources.home1;
@@ -108,7 +126,7 @@
             // 
             // feedbackBtn
             // 
-            this.feedbackBtn.BackColor = System.Drawing.Color.DimGray;
+            this.feedbackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.feedbackBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.feedbackBtn.ForeColor = System.Drawing.Color.Transparent;
             this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
@@ -123,7 +141,7 @@
             // 
             // logoutBtn
             // 
-            this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
+            this.logoutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.logoutBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
             this.logoutBtn.Image = global::App.Properties.Resources.logout;
@@ -137,107 +155,118 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.BackColor = System.Drawing.Color.Azure;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(153, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(935, 53);
+            this.panel1.Size = new System.Drawing.Size(829, 53);
             this.panel1.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DimGray;
+            this.label1.BackColor = System.Drawing.Color.Azure;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(323, 16);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(245, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 24);
+            this.label1.Size = new System.Drawing.Size(213, 32);
             this.label1.TabIndex = 13;
             this.label1.Text = "PRODUCT QUERY";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Location = new System.Drawing.Point(201, 89);
+            this.label3.BackColor = System.Drawing.Color.Azure;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(17, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 16);
+            this.label3.Size = new System.Drawing.Size(144, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Search Product Name ";
             // 
-            // textBox1
+            // nameTxt
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox1.Location = new System.Drawing.Point(204, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(270, 20);
-            this.textBox1.TabIndex = 8;
+            this.nameTxt.BackColor = System.Drawing.Color.White;
+            this.nameTxt.Location = new System.Drawing.Point(20, 55);
+            this.nameTxt.Name = "nameTxt";
+            this.nameTxt.Size = new System.Drawing.Size(270, 20);
+            this.nameTxt.TabIndex = 8;
             // 
             // searchBtn
             // 
-            this.searchBtn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.searchBtn.Location = new System.Drawing.Point(491, 109);
+            this.searchBtn.Location = new System.Drawing.Point(307, 53);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(86, 23);
             this.searchBtn.TabIndex = 17;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(201, 153);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 16);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Product Details";
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Azure;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(204, 172);
+            this.dataGridView1.Location = new System.Drawing.Point(20, 113);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(373, 151);
             this.dataGridView1.TabIndex = 19;
             // 
-            // preOrderBtn
+            // stockBtn
             // 
-            this.preOrderBtn.BackColor = System.Drawing.Color.DimGray;
-            this.preOrderBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.preOrderBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.preOrderBtn.Image = global::App.Properties.Resources.cart;
-            this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.preOrderBtn.Location = new System.Drawing.Point(12, 188);
-            this.preOrderBtn.Name = "preOrderBtn";
-            this.preOrderBtn.Size = new System.Drawing.Size(135, 37);
-            this.preOrderBtn.TabIndex = 22;
-            this.preOrderBtn.Text = "Pre-Order";
-            this.preOrderBtn.UseVisualStyleBackColor = false;
-            this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
+            this.stockBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.stockBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.stockBtn.Location = new System.Drawing.Point(148, 285);
+            this.stockBtn.Name = "stockBtn";
+            this.stockBtn.Size = new System.Drawing.Size(121, 23);
+            this.stockBtn.TabIndex = 20;
+            this.stockBtn.Text = "View Stock";
+            this.stockBtn.UseVisualStyleBackColor = false;
+            this.stockBtn.Click += new System.EventHandler(this.stockBtn_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Azure;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(17, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 17);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Product Details";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Azure;
+            this.panel2.Controls.Add(this.nameTxt);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.stockBtn);
+            this.panel2.Controls.Add(this.searchBtn);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(331, 88);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(413, 322);
+            this.panel2.TabIndex = 22;
             // 
             // ProductQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(1079, 521);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.searchBtn);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidePnl);
-            this.MaximumSize = new System.Drawing.Size(1095, 560);
-            this.MinimumSize = new System.Drawing.Size(1095, 560);
+            this.MaximumSize = new System.Drawing.Size(1000, 600);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "ProductQuery";
             this.Text = "ProductQuery";
             this.Load += new System.EventHandler(this.ProductQuery_Load);
@@ -245,8 +274,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -259,11 +289,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameTxt;
         private System.Windows.Forms.Button searchBtn;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button discountBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button preOrderBtn;
+        private System.Windows.Forms.Button stockBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
     }
 }

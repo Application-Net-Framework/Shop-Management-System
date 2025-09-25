@@ -22,24 +22,78 @@ namespace App.UI_Forms.SalesMan
         }
 
         String connectionString = @"Data Source=DESKTOP-ESC3M7E\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private void SearchCustomer()
+        {
+            string searchMobile = searchMobileTxt.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchMobile))
+            {
+                MessageBox.Show("Please enter a mobile number.");
+                return;
+            }
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                // ✅ Use LIKE for partial search
+                string query = "SELECT CustomerID, Name, Mobile FROM Customer WHERE Mobile LIKE @Mobile + '%'";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Mobile", searchMobile);
+
+                    try
+                    {
+                        con.Open();
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        if (dt.Rows.Count > 0)
+                        {
+                            // ✅ Show results in DataGridView
+                            dataGridView1.DataSource = dt;
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = null; // clear old results
+                            MessageBox.Show("Customer not found.");
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Error while searching: " + ex.Message);
+                    }
+                }
+            }
+        }
+
 
         private void InsertFeedback()
         {
-            // 1️⃣ Get values from form controls
-            string customerMobile = mobileTxt.Text.Trim();
+            string customerId = idTxt.Text.Trim();
+            string name = nameTxt.Text.Trim();
+            string mobile = mobileTxt.Text.Trim();
             string subject = subjectTxt.Text.Trim();
             string details = detailsTxt.Text.Trim();
 
-            // Determine feedback type from RadioButtons
             string feedbackType = "";
             if (satisfiedRBtn.Checked) feedbackType = "Satisfied";
             else if (complainRBtn.Checked) feedbackType = "Complaint";
             else if (suggestionBtn.Checked) feedbackType = "Suggestion";
 
-            // 2️⃣ Validation
-            if (string.IsNullOrEmpty(customerMobile))
+            if (string.IsNullOrEmpty(customerId))
             {
-                MessageBox.Show("Please enter Customer Mobile.");
+                MessageBox.Show("Please search and select a valid customer first.");
+                return;
+            }
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Name can't be empty.");
+                return;
+            }
+            if (string.IsNullOrEmpty(mobile))
+            {
+                MessageBox.Show("Mobile can't be empty.");
                 return;
             }
             if (string.IsNullOrEmpty(feedbackType))
@@ -58,16 +112,16 @@ namespace App.UI_Forms.SalesMan
                 return;
             }
 
-            // 3️⃣ Insert into database
-           
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = @"INSERT INTO Feedback (CustomerMobile, FeedbackType, Subject, Details)
-                         VALUES (@CustomerMobile, @FeedbackType, @Subject, @Details)";
+                string query = @"INSERT INTO Feedback (CustomerID, Name, Mobile, FeedbackType, Subject, Details)
+                         VALUES (@CustomerID, @Name, @Mobile, @FeedbackType, @Subject, @Details)";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@CustomerMobile", customerMobile);
+                    cmd.Parameters.AddWithValue("@CustomerID", Convert.ToInt32(customerId));
+                    cmd.Parameters.AddWithValue("@Name", name);
+                    cmd.Parameters.AddWithValue("@Mobile", string.IsNullOrEmpty(mobile) ? (object)DBNull.Value : mobile);
                     cmd.Parameters.AddWithValue("@FeedbackType", feedbackType);
                     cmd.Parameters.AddWithValue("@Subject", subject);
                     cmd.Parameters.AddWithValue("@Details", details);
@@ -78,7 +132,8 @@ namespace App.UI_Forms.SalesMan
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Feedback submitted successfully!");
 
-                        // Optional: clear inputs after submission
+                        idTxt.Clear();
+                        nameTxt.Clear();
                         mobileTxt.Clear();
                         subjectTxt.Clear();
                         detailsTxt.Clear();
@@ -93,14 +148,13 @@ namespace App.UI_Forms.SalesMan
         }
 
 
-
         private void LoadAllFeedbacks()
         {
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT FeedbackID, CustomerMobile, FeedbackType, Subject, Details, FeedbackDate FROM Feedback ORDER BY FeedbackDate DESC";
+                    string query = "SELECT FeedbackID,Mobile, FeedbackType, Subject, Details, FeedbackDate FROM Feedback ORDER BY FeedbackDate DESC";
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                     DataTable dt = new DataTable();
@@ -184,6 +238,33 @@ namespace App.UI_Forms.SalesMan
             PO.Size = this.Size;
             PO.Show();
             this.Hide();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            SearchCustomer();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void addCustomerBtn_Click(object sender, EventArgs e)
+        {
+            CustomerManagement CM = new CustomerManagement();
+            CM.StartPosition = FormStartPosition.Manual;
+            CM.Location = this.Location;
+            CM.Size = this.Size;
+            CM.Show();
+            this.Hide();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idTxt.Text= dataGridView1.CurrentRow.Cells["CustomerID"].Value.ToString();
+            nameTxt.Text = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
+            mobileTxt.Text = dataGridView1.CurrentRow.Cells["Mobile"].Value.ToString();
         }
     }
 }

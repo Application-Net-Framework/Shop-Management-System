@@ -42,15 +42,15 @@
             this.preOrderLbl = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.sidePnl = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.cManagementBtn = new System.Windows.Forms.Button();
             this.discountBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
             this.pQueryBtn = new System.Windows.Forms.Button();
             this.feedbackBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
-            this.cManagementBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.preferedDateTxt = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.sidePnl.SuspendLayout();
@@ -74,7 +74,7 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Azure;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(695, 188);
+            this.dataGridView1.Location = new System.Drawing.Point(554, 275);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(371, 202);
             this.dataGridView1.TabIndex = 26;
@@ -83,11 +83,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(156, 57);
+            this.label3.Location = new System.Drawing.Point(306, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 16);
+            this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 21;
-            this.label3.Text = "Personal Details";
+            this.label3.Text = "Details";
             // 
             // preOrderBtn
             // 
@@ -107,7 +107,7 @@
             this.viewPreOrderbtn.BackColor = System.Drawing.SystemColors.HotTrack;
             this.viewPreOrderbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewPreOrderbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.viewPreOrderbtn.Location = new System.Drawing.Point(797, 396);
+            this.viewPreOrderbtn.Location = new System.Drawing.Point(636, 486);
             this.viewPreOrderbtn.Name = "viewPreOrderbtn";
             this.viewPreOrderbtn.Size = new System.Drawing.Size(201, 23);
             this.viewPreOrderbtn.TabIndex = 27;
@@ -169,19 +169,19 @@
             // preOrderLbl
             // 
             this.preOrderLbl.AutoSize = true;
-            this.preOrderLbl.BackColor = System.Drawing.Color.DimGray;
+            this.preOrderLbl.BackColor = System.Drawing.Color.Azure;
             this.preOrderLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.preOrderLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.preOrderLbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.preOrderLbl.Location = new System.Drawing.Point(322, 16);
+            this.preOrderLbl.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preOrderLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.preOrderLbl.Location = new System.Drawing.Point(324, 9);
             this.preOrderLbl.Name = "preOrderLbl";
-            this.preOrderLbl.Size = new System.Drawing.Size(102, 24);
+            this.preOrderLbl.Size = new System.Drawing.Size(125, 32);
             this.preOrderLbl.TabIndex = 2;
             this.preOrderLbl.Text = "Pre Order";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.BackColor = System.Drawing.Color.Azure;
             this.panel1.Controls.Add(this.preOrderLbl);
             this.panel1.Location = new System.Drawing.Point(152, 0);
             this.panel1.Name = "panel1";
@@ -190,7 +190,7 @@
             // 
             // sidePnl
             // 
-            this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.BackColor = System.Drawing.Color.Azure;
             this.sidePnl.Controls.Add(this.cManagementBtn);
             this.sidePnl.Controls.Add(this.discountBtn);
             this.sidePnl.Controls.Add(this.homeBtn);
@@ -200,8 +200,97 @@
             this.sidePnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePnl.Location = new System.Drawing.Point(0, 0);
             this.sidePnl.Name = "sidePnl";
-            this.sidePnl.Size = new System.Drawing.Size(154, 521);
+            this.sidePnl.Size = new System.Drawing.Size(154, 561);
             this.sidePnl.TabIndex = 20;
+            // 
+            // cManagementBtn
+            // 
+            this.cManagementBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cManagementBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cManagementBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.cManagementBtn.Image = global::App.Properties.Resources.user1;
+            this.cManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cManagementBtn.Location = new System.Drawing.Point(12, 188);
+            this.cManagementBtn.Name = "cManagementBtn";
+            this.cManagementBtn.Size = new System.Drawing.Size(135, 37);
+            this.cManagementBtn.TabIndex = 29;
+            this.cManagementBtn.Text = "CUSTOMER";
+            this.cManagementBtn.UseVisualStyleBackColor = false;
+            this.cManagementBtn.Click += new System.EventHandler(this.cManagementBtn_Click);
+            // 
+            // discountBtn
+            // 
+            this.discountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.discountBtn.Image = global::App.Properties.Resources.discount;
+            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.discountBtn.Location = new System.Drawing.Point(12, 145);
+            this.discountBtn.Name = "discountBtn";
+            this.discountBtn.Size = new System.Drawing.Size(135, 37);
+            this.discountBtn.TabIndex = 20;
+            this.discountBtn.Text = "Discount";
+            this.discountBtn.UseVisualStyleBackColor = false;
+            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
+            // 
+            // homeBtn
+            // 
+            this.homeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.homeBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.homeBtn.Image = global::App.Properties.Resources.home1;
+            this.homeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.homeBtn.Location = new System.Drawing.Point(12, 16);
+            this.homeBtn.Name = "homeBtn";
+            this.homeBtn.Size = new System.Drawing.Size(135, 37);
+            this.homeBtn.TabIndex = 0;
+            this.homeBtn.Text = "Home";
+            this.homeBtn.UseVisualStyleBackColor = false;
+            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
+            // 
+            // pQueryBtn
+            // 
+            this.pQueryBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.pQueryBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pQueryBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.pQueryBtn.Image = global::App.Properties.Resources.product1;
+            this.pQueryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pQueryBtn.Location = new System.Drawing.Point(12, 102);
+            this.pQueryBtn.Name = "pQueryBtn";
+            this.pQueryBtn.Size = new System.Drawing.Size(135, 37);
+            this.pQueryBtn.TabIndex = 11;
+            this.pQueryBtn.Text = "PRODUCT";
+            this.pQueryBtn.UseVisualStyleBackColor = false;
+            this.pQueryBtn.Click += new System.EventHandler(this.pQueryBtn_Click);
+            // 
+            // feedbackBtn
+            // 
+            this.feedbackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.feedbackBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feedbackBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
+            this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.feedbackBtn.Location = new System.Drawing.Point(12, 59);
+            this.feedbackBtn.Name = "feedbackBtn";
+            this.feedbackBtn.Size = new System.Drawing.Size(135, 37);
+            this.feedbackBtn.TabIndex = 10;
+            this.feedbackBtn.Text = "FEEDBACK";
+            this.feedbackBtn.UseVisualStyleBackColor = false;
+            this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.logoutBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.Image = global::App.Properties.Resources.logout;
+            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutBtn.Location = new System.Drawing.Point(12, 472);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(135, 37);
+            this.logoutBtn.TabIndex = 8;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -219,94 +308,13 @@
             this.panel2.Size = new System.Drawing.Size(368, 190);
             this.panel2.TabIndex = 23;
             // 
-            // discountBtn
+            // preferedDateTxt
             // 
-            this.discountBtn.BackColor = System.Drawing.Color.DimGray;
-            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.discountBtn.Image = global::App.Properties.Resources.discount;
-            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.discountBtn.Location = new System.Drawing.Point(12, 145);
-            this.discountBtn.Name = "discountBtn";
-            this.discountBtn.Size = new System.Drawing.Size(135, 37);
-            this.discountBtn.TabIndex = 20;
-            this.discountBtn.Text = "Discount";
-            this.discountBtn.UseVisualStyleBackColor = false;
-            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
-            // 
-            // homeBtn
-            // 
-            this.homeBtn.BackColor = System.Drawing.Color.DimGray;
-            this.homeBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.homeBtn.Image = global::App.Properties.Resources.home1;
-            this.homeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.homeBtn.Location = new System.Drawing.Point(12, 16);
-            this.homeBtn.Name = "homeBtn";
-            this.homeBtn.Size = new System.Drawing.Size(135, 37);
-            this.homeBtn.TabIndex = 0;
-            this.homeBtn.Text = "Home";
-            this.homeBtn.UseVisualStyleBackColor = false;
-            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
-            // 
-            // pQueryBtn
-            // 
-            this.pQueryBtn.BackColor = System.Drawing.Color.DimGray;
-            this.pQueryBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pQueryBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.pQueryBtn.Image = global::App.Properties.Resources.product1;
-            this.pQueryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.pQueryBtn.Location = new System.Drawing.Point(12, 102);
-            this.pQueryBtn.Name = "pQueryBtn";
-            this.pQueryBtn.Size = new System.Drawing.Size(135, 37);
-            this.pQueryBtn.TabIndex = 11;
-            this.pQueryBtn.Text = "PRODUCT";
-            this.pQueryBtn.UseVisualStyleBackColor = false;
-            this.pQueryBtn.Click += new System.EventHandler(this.pQueryBtn_Click);
-            // 
-            // feedbackBtn
-            // 
-            this.feedbackBtn.BackColor = System.Drawing.Color.DimGray;
-            this.feedbackBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feedbackBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
-            this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.feedbackBtn.Location = new System.Drawing.Point(12, 59);
-            this.feedbackBtn.Name = "feedbackBtn";
-            this.feedbackBtn.Size = new System.Drawing.Size(135, 37);
-            this.feedbackBtn.TabIndex = 10;
-            this.feedbackBtn.Text = "FEEDBACK";
-            this.feedbackBtn.UseVisualStyleBackColor = false;
-            this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
-            // 
-            // logoutBtn
-            // 
-            this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
-            this.logoutBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.logoutBtn.Image = global::App.Properties.Resources.logout;
-            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutBtn.Location = new System.Drawing.Point(12, 472);
-            this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(135, 37);
-            this.logoutBtn.TabIndex = 8;
-            this.logoutBtn.Text = "Logout";
-            this.logoutBtn.UseVisualStyleBackColor = false;
-            // 
-            // cManagementBtn
-            // 
-            this.cManagementBtn.BackColor = System.Drawing.Color.DimGray;
-            this.cManagementBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cManagementBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.cManagementBtn.Image = global::App.Properties.Resources.user1;
-            this.cManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cManagementBtn.Location = new System.Drawing.Point(12, 188);
-            this.cManagementBtn.Name = "cManagementBtn";
-            this.cManagementBtn.Size = new System.Drawing.Size(135, 37);
-            this.cManagementBtn.TabIndex = 29;
-            this.cManagementBtn.Text = "CUSTOMER";
-            this.cManagementBtn.UseVisualStyleBackColor = false;
-            this.cManagementBtn.Click += new System.EventHandler(this.cManagementBtn_Click);
+            this.preferedDateTxt.Location = new System.Drawing.Point(138, 134);
+            this.preferedDateTxt.Name = "preferedDateTxt";
+            this.preferedDateTxt.Size = new System.Drawing.Size(212, 20);
+            this.preferedDateTxt.TabIndex = 29;
+            this.preferedDateTxt.ValueChanged += new System.EventHandler(this.preferedDateTxt_ValueChanged);
             // 
             // label1
             // 
@@ -318,19 +326,11 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Prefered Date";
             // 
-            // preferedDateTxt
-            // 
-            this.preferedDateTxt.Location = new System.Drawing.Point(138, 134);
-            this.preferedDateTxt.Name = "preferedDateTxt";
-            this.preferedDateTxt.Size = new System.Drawing.Size(212, 20);
-            this.preferedDateTxt.TabIndex = 29;
-            this.preferedDateTxt.ValueChanged += new System.EventHandler(this.preferedDateTxt_ValueChanged);
-            // 
             // PreOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 521);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
@@ -339,8 +339,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidePnl);
             this.Controls.Add(this.panel2);
-            this.MaximumSize = new System.Drawing.Size(1095, 560);
-            this.MinimumSize = new System.Drawing.Size(1095, 560);
+            this.MaximumSize = new System.Drawing.Size(1000, 600);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "PreOrder";
             this.Text = "PreOrder";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

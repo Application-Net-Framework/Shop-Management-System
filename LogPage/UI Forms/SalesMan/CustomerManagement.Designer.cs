@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.sidePnl = new System.Windows.Forms.Panel();
+            this.preOrderBtn = new System.Windows.Forms.Button();
+            this.discountBtn = new System.Windows.Forms.Button();
+            this.homeBtn = new System.Windows.Forms.Button();
+            this.pQueryBtn = new System.Windows.Forms.Button();
+            this.feedbackBtn = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,12 +53,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.seeBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
-            this.preOrderBtn = new System.Windows.Forms.Button();
-            this.discountBtn = new System.Windows.Forms.Button();
-            this.homeBtn = new System.Windows.Forms.Button();
-            this.pQueryBtn = new System.Windows.Forms.Button();
-            this.feedbackBtn = new System.Windows.Forms.Button();
-            this.logoutBtn = new System.Windows.Forms.Button();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,7 +62,7 @@
             // 
             // sidePnl
             // 
-            this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.BackColor = System.Drawing.Color.Azure;
             this.sidePnl.Controls.Add(this.preOrderBtn);
             this.sidePnl.Controls.Add(this.discountBtn);
             this.sidePnl.Controls.Add(this.homeBtn);
@@ -72,12 +72,102 @@
             this.sidePnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePnl.Location = new System.Drawing.Point(0, 0);
             this.sidePnl.Name = "sidePnl";
-            this.sidePnl.Size = new System.Drawing.Size(154, 521);
+            this.sidePnl.Size = new System.Drawing.Size(154, 561);
             this.sidePnl.TabIndex = 2;
+            // 
+            // preOrderBtn
+            // 
+            this.preOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.preOrderBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preOrderBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.preOrderBtn.Image = global::App.Properties.Resources.cart;
+            this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.preOrderBtn.Location = new System.Drawing.Point(12, 188);
+            this.preOrderBtn.Name = "preOrderBtn";
+            this.preOrderBtn.Size = new System.Drawing.Size(135, 37);
+            this.preOrderBtn.TabIndex = 21;
+            this.preOrderBtn.Text = "Pre-Order";
+            this.preOrderBtn.UseVisualStyleBackColor = false;
+            this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
+            // 
+            // discountBtn
+            // 
+            this.discountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.discountBtn.Image = global::App.Properties.Resources.discount;
+            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.discountBtn.Location = new System.Drawing.Point(12, 145);
+            this.discountBtn.Name = "discountBtn";
+            this.discountBtn.Size = new System.Drawing.Size(135, 37);
+            this.discountBtn.TabIndex = 20;
+            this.discountBtn.Text = "Discount";
+            this.discountBtn.UseVisualStyleBackColor = false;
+            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
+            // 
+            // homeBtn
+            // 
+            this.homeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.homeBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.homeBtn.Image = global::App.Properties.Resources.home1;
+            this.homeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.homeBtn.Location = new System.Drawing.Point(12, 16);
+            this.homeBtn.Name = "homeBtn";
+            this.homeBtn.Size = new System.Drawing.Size(135, 37);
+            this.homeBtn.TabIndex = 0;
+            this.homeBtn.Text = "Home";
+            this.homeBtn.UseVisualStyleBackColor = false;
+            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
+            // 
+            // pQueryBtn
+            // 
+            this.pQueryBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.pQueryBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pQueryBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.pQueryBtn.Image = global::App.Properties.Resources.product1;
+            this.pQueryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pQueryBtn.Location = new System.Drawing.Point(12, 102);
+            this.pQueryBtn.Name = "pQueryBtn";
+            this.pQueryBtn.Size = new System.Drawing.Size(135, 37);
+            this.pQueryBtn.TabIndex = 11;
+            this.pQueryBtn.Text = "PRODUCT";
+            this.pQueryBtn.UseVisualStyleBackColor = false;
+            this.pQueryBtn.Click += new System.EventHandler(this.pQueryBtn_Click);
+            // 
+            // feedbackBtn
+            // 
+            this.feedbackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.feedbackBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feedbackBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
+            this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.feedbackBtn.Location = new System.Drawing.Point(12, 59);
+            this.feedbackBtn.Name = "feedbackBtn";
+            this.feedbackBtn.Size = new System.Drawing.Size(135, 37);
+            this.feedbackBtn.TabIndex = 10;
+            this.feedbackBtn.Text = "FEEDBACK";
+            this.feedbackBtn.UseVisualStyleBackColor = false;
+            this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.logoutBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.Image = global::App.Properties.Resources.logout;
+            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutBtn.Location = new System.Drawing.Point(12, 472);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(135, 37);
+            this.logoutBtn.TabIndex = 8;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.BackColor = System.Drawing.Color.Azure;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(153, 0);
             this.panel1.Name = "panel1";
@@ -87,13 +177,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DimGray;
+            this.label1.BackColor = System.Drawing.Color.Azure;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(322, 16);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(266, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 24);
+            this.label1.Size = new System.Drawing.Size(255, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "MANAGE CUSTOMER";
             // 
@@ -108,28 +198,31 @@
             this.panel2.Controls.Add(this.nameLbl);
             this.panel2.Location = new System.Drawing.Point(160, 79);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 143);
+            this.panel2.Size = new System.Drawing.Size(456, 143);
             this.panel2.TabIndex = 14;
             // 
             // emailTxt
             // 
-            this.emailTxt.Location = new System.Drawing.Point(220, 95);
+            this.emailTxt.BackColor = System.Drawing.Color.White;
+            this.emailTxt.Location = new System.Drawing.Point(204, 95);
             this.emailTxt.Name = "emailTxt";
-            this.emailTxt.Size = new System.Drawing.Size(347, 20);
+            this.emailTxt.Size = new System.Drawing.Size(218, 20);
             this.emailTxt.TabIndex = 5;
             // 
             // mobileTxt
             // 
-            this.mobileTxt.Location = new System.Drawing.Point(220, 50);
+            this.mobileTxt.BackColor = System.Drawing.Color.White;
+            this.mobileTxt.Location = new System.Drawing.Point(204, 50);
             this.mobileTxt.Name = "mobileTxt";
-            this.mobileTxt.Size = new System.Drawing.Size(347, 20);
+            this.mobileTxt.Size = new System.Drawing.Size(218, 20);
             this.mobileTxt.TabIndex = 4;
             // 
             // nameTxt
             // 
-            this.nameTxt.Location = new System.Drawing.Point(220, 11);
+            this.nameTxt.BackColor = System.Drawing.Color.White;
+            this.nameTxt.Location = new System.Drawing.Point(204, 11);
             this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(347, 20);
+            this.nameTxt.Size = new System.Drawing.Size(218, 20);
             this.nameTxt.TabIndex = 3;
             // 
             // emailLbl
@@ -170,11 +263,12 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(160, 239);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(580, 151);
+            this.panel3.Size = new System.Drawing.Size(456, 151);
             this.panel3.TabIndex = 15;
             // 
             // benifitBtn
             // 
+            this.benifitBtn.BackColor = System.Drawing.Color.White;
             this.benifitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.benifitBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.benifitBtn.Location = new System.Drawing.Point(18, 94);
@@ -187,6 +281,7 @@
             // 
             // statusTxt
             // 
+            this.statusTxt.BackColor = System.Drawing.Color.White;
             this.statusTxt.FormattingEnabled = true;
             this.statusTxt.Items.AddRange(new object[] {
             "Premimum",
@@ -233,7 +328,7 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Azure;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(756, 239);
+            this.dataGridView1.Location = new System.Drawing.Point(639, 239);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(311, 151);
             this.dataGridView1.TabIndex = 17;
@@ -243,11 +338,11 @@
             this.seeBtn.BackColor = System.Drawing.SystemColors.HotTrack;
             this.seeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seeBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.seeBtn.Location = new System.Drawing.Point(844, 396);
+            this.seeBtn.Location = new System.Drawing.Point(739, 396);
             this.seeBtn.Name = "seeBtn";
             this.seeBtn.Size = new System.Drawing.Size(132, 23);
             this.seeBtn.TabIndex = 18;
-            this.seeBtn.Text = "View Member";
+            this.seeBtn.Text = "View Members";
             this.seeBtn.UseVisualStyleBackColor = false;
             this.seeBtn.Click += new System.EventHandler(this.seeBtn_Click);
             // 
@@ -264,101 +359,11 @@
             this.clearBtn.UseVisualStyleBackColor = false;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
-            // preOrderBtn
-            // 
-            this.preOrderBtn.BackColor = System.Drawing.Color.DimGray;
-            this.preOrderBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.preOrderBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.preOrderBtn.Image = global::App.Properties.Resources.cart;
-            this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.preOrderBtn.Location = new System.Drawing.Point(12, 188);
-            this.preOrderBtn.Name = "preOrderBtn";
-            this.preOrderBtn.Size = new System.Drawing.Size(135, 37);
-            this.preOrderBtn.TabIndex = 21;
-            this.preOrderBtn.Text = "Pre-Order";
-            this.preOrderBtn.UseVisualStyleBackColor = false;
-            this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
-            // 
-            // discountBtn
-            // 
-            this.discountBtn.BackColor = System.Drawing.Color.DimGray;
-            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.discountBtn.Image = global::App.Properties.Resources.discount;
-            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.discountBtn.Location = new System.Drawing.Point(12, 145);
-            this.discountBtn.Name = "discountBtn";
-            this.discountBtn.Size = new System.Drawing.Size(135, 37);
-            this.discountBtn.TabIndex = 20;
-            this.discountBtn.Text = "Discount";
-            this.discountBtn.UseVisualStyleBackColor = false;
-            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
-            // 
-            // homeBtn
-            // 
-            this.homeBtn.BackColor = System.Drawing.Color.DimGray;
-            this.homeBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.homeBtn.Image = global::App.Properties.Resources.home1;
-            this.homeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.homeBtn.Location = new System.Drawing.Point(12, 16);
-            this.homeBtn.Name = "homeBtn";
-            this.homeBtn.Size = new System.Drawing.Size(135, 37);
-            this.homeBtn.TabIndex = 0;
-            this.homeBtn.Text = "Home";
-            this.homeBtn.UseVisualStyleBackColor = false;
-            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
-            // 
-            // pQueryBtn
-            // 
-            this.pQueryBtn.BackColor = System.Drawing.Color.DimGray;
-            this.pQueryBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pQueryBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.pQueryBtn.Image = global::App.Properties.Resources.product1;
-            this.pQueryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.pQueryBtn.Location = new System.Drawing.Point(12, 102);
-            this.pQueryBtn.Name = "pQueryBtn";
-            this.pQueryBtn.Size = new System.Drawing.Size(135, 37);
-            this.pQueryBtn.TabIndex = 11;
-            this.pQueryBtn.Text = "PRODUCT";
-            this.pQueryBtn.UseVisualStyleBackColor = false;
-            this.pQueryBtn.Click += new System.EventHandler(this.pQueryBtn_Click);
-            // 
-            // feedbackBtn
-            // 
-            this.feedbackBtn.BackColor = System.Drawing.Color.DimGray;
-            this.feedbackBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feedbackBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
-            this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.feedbackBtn.Location = new System.Drawing.Point(12, 59);
-            this.feedbackBtn.Name = "feedbackBtn";
-            this.feedbackBtn.Size = new System.Drawing.Size(135, 37);
-            this.feedbackBtn.TabIndex = 10;
-            this.feedbackBtn.Text = "FEEDBACK";
-            this.feedbackBtn.UseVisualStyleBackColor = false;
-            this.feedbackBtn.Click += new System.EventHandler(this.feedbackBtn_Click);
-            // 
-            // logoutBtn
-            // 
-            this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
-            this.logoutBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.logoutBtn.Image = global::App.Properties.Resources.logout;
-            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutBtn.Location = new System.Drawing.Point(12, 472);
-            this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(135, 37);
-            this.logoutBtn.TabIndex = 8;
-            this.logoutBtn.Text = "Logout";
-            this.logoutBtn.UseVisualStyleBackColor = false;
-            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
-            // 
             // CustomerManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 521);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.seeBtn);
             this.Controls.Add(this.dataGridView1);
@@ -368,8 +373,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidePnl);
-            this.MaximumSize = new System.Drawing.Size(1095, 560);
-            this.MinimumSize = new System.Drawing.Size(1095, 560);
+            this.MaximumSize = new System.Drawing.Size(1000, 600);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "CustomerManagement";
             this.Text = "CustomerManagement";
             this.Load += new System.EventHandler(this.CustomerManagement_Load);

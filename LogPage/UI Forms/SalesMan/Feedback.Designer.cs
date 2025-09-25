@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.sidePnl = new System.Windows.Forms.Panel();
+            this.preOrderBtn = new System.Windows.Forms.Button();
             this.discountBtn = new System.Windows.Forms.Button();
             this.cManagementBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
@@ -36,32 +37,45 @@
             this.logoutBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.mobileTxt = new System.Windows.Forms.TextBox();
+            this.searchMobileTxt = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.idTxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nameTxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.mobileTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.suggestionBtn = new System.Windows.Forms.RadioButton();
             this.submitBtn = new System.Windows.Forms.Button();
             this.detailsTxt = new System.Windows.Forms.RichTextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.subjectTxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.complainRBtn = new System.Windows.Forms.RadioButton();
             this.satisfiedRBtn = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.searchBtn = new System.Windows.Forms.Button();
             this.feedbackRecordBtn = new System.Windows.Forms.Button();
             this.feedbackDataGridView = new System.Windows.Forms.DataGridView();
-            this.preOrderBtn = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.addCustomerBtn = new System.Windows.Forms.Button();
+            this.addCustomerLbl = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.feedbackDataGridView)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePnl
             // 
-            this.sidePnl.BackColor = System.Drawing.Color.DimGray;
+            this.sidePnl.BackColor = System.Drawing.Color.Azure;
             this.sidePnl.Controls.Add(this.preOrderBtn);
             this.sidePnl.Controls.Add(this.discountBtn);
             this.sidePnl.Controls.Add(this.cManagementBtn);
@@ -71,12 +85,27 @@
             this.sidePnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePnl.Location = new System.Drawing.Point(0, 0);
             this.sidePnl.Name = "sidePnl";
-            this.sidePnl.Size = new System.Drawing.Size(154, 521);
+            this.sidePnl.Size = new System.Drawing.Size(154, 561);
             this.sidePnl.TabIndex = 2;
+            // 
+            // preOrderBtn
+            // 
+            this.preOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.preOrderBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preOrderBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.preOrderBtn.Image = global::App.Properties.Resources.cart;
+            this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.preOrderBtn.Location = new System.Drawing.Point(12, 188);
+            this.preOrderBtn.Name = "preOrderBtn";
+            this.preOrderBtn.Size = new System.Drawing.Size(135, 37);
+            this.preOrderBtn.TabIndex = 29;
+            this.preOrderBtn.Text = "Pre-Order";
+            this.preOrderBtn.UseVisualStyleBackColor = false;
+            this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
             // 
             // discountBtn
             // 
-            this.discountBtn.BackColor = System.Drawing.Color.DimGray;
+            this.discountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
             this.discountBtn.Image = global::App.Properties.Resources.discount;
@@ -91,7 +120,7 @@
             // 
             // cManagementBtn
             // 
-            this.cManagementBtn.BackColor = System.Drawing.Color.DimGray;
+            this.cManagementBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cManagementBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cManagementBtn.ForeColor = System.Drawing.Color.Transparent;
             this.cManagementBtn.Image = global::App.Properties.Resources.user1;
@@ -106,7 +135,7 @@
             // 
             // homeBtn
             // 
-            this.homeBtn.BackColor = System.Drawing.Color.DimGray;
+            this.homeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.homeBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeBtn.ForeColor = System.Drawing.Color.Transparent;
             this.homeBtn.Image = global::App.Properties.Resources.home1;
@@ -121,7 +150,7 @@
             // 
             // pQueryBtn
             // 
-            this.pQueryBtn.BackColor = System.Drawing.Color.DimGray;
+            this.pQueryBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.pQueryBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pQueryBtn.ForeColor = System.Drawing.Color.Transparent;
             this.pQueryBtn.Image = global::App.Properties.Resources.product1;
@@ -136,7 +165,7 @@
             // 
             // logoutBtn
             // 
-            this.logoutBtn.BackColor = System.Drawing.Color.DimGray;
+            this.logoutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.logoutBtn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
             this.logoutBtn.Image = global::App.Properties.Resources.logout;
@@ -150,69 +179,179 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.BackColor = System.Drawing.Color.Azure;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(153, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(928, 53);
+            this.panel1.Size = new System.Drawing.Size(834, 53);
             this.panel1.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DimGray;
+            this.label1.BackColor = System.Drawing.Color.Azure;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(358, 16);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(324, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 24);
+            this.label1.Size = new System.Drawing.Size(133, 32);
             this.label1.TabIndex = 13;
             this.label1.Text = "FEEDBACK";
             // 
-            // mobileTxt
+            // searchMobileTxt
             // 
-            this.mobileTxt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.mobileTxt.Location = new System.Drawing.Point(171, 102);
-            this.mobileTxt.Name = "mobileTxt";
-            this.mobileTxt.Size = new System.Drawing.Size(167, 20);
-            this.mobileTxt.TabIndex = 4;
+            this.searchMobileTxt.BackColor = System.Drawing.Color.White;
+            this.searchMobileTxt.Location = new System.Drawing.Point(127, 13);
+            this.searchMobileTxt.Name = "searchMobileTxt";
+            this.searchMobileTxt.Size = new System.Drawing.Size(167, 20);
+            this.searchMobileTxt.TabIndex = 4;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.MenuText;
+            this.panel2.BackColor = System.Drawing.Color.Azure;
+            this.panel2.Controls.Add(this.idTxt);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.nameTxt);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.mobileTxt);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.suggestionBtn);
             this.panel2.Controls.Add(this.submitBtn);
             this.panel2.Controls.Add(this.detailsTxt);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.subjectTxt);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.complainRBtn);
             this.panel2.Controls.Add(this.satisfiedRBtn);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(171, 197);
+            this.panel2.Location = new System.Drawing.Point(184, 256);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 287);
+            this.panel2.Size = new System.Drawing.Size(393, 305);
             this.panel2.TabIndex = 14;
+            // 
+            // idTxt
+            // 
+            this.idTxt.BackColor = System.Drawing.Color.White;
+            this.idTxt.Location = new System.Drawing.Point(138, 10);
+            this.idTxt.Name = "idTxt";
+            this.idTxt.Size = new System.Drawing.Size(167, 20);
+            this.idTxt.TabIndex = 35;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Azure;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(4, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 17);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Customer ID";
+            // 
+            // nameTxt
+            // 
+            this.nameTxt.BackColor = System.Drawing.Color.White;
+            this.nameTxt.Location = new System.Drawing.Point(138, 32);
+            this.nameTxt.Name = "nameTxt";
+            this.nameTxt.Size = new System.Drawing.Size(167, 20);
+            this.nameTxt.TabIndex = 33;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Azure;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(4, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 17);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Customer Name";
+            // 
+            // mobileTxt
+            // 
+            this.mobileTxt.BackColor = System.Drawing.Color.White;
+            this.mobileTxt.Location = new System.Drawing.Point(138, 58);
+            this.mobileTxt.Name = "mobileTxt";
+            this.mobileTxt.Size = new System.Drawing.Size(167, 20);
+            this.mobileTxt.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Azure;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(4, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 17);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Customer Mobile";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Azure;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label8.Location = new System.Drawing.Point(4, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 17);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Feedback Type:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Azure;
+            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label9.Location = new System.Drawing.Point(7, 111);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 17);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Subject:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Azure;
+            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label10.Location = new System.Drawing.Point(7, 137);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(55, 17);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Details:";
             // 
             // suggestionBtn
             // 
             this.suggestionBtn.AutoSize = true;
-            this.suggestionBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.suggestionBtn.Location = new System.Drawing.Point(184, 53);
+            this.suggestionBtn.BackColor = System.Drawing.Color.Azure;
+            this.suggestionBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suggestionBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.suggestionBtn.Location = new System.Drawing.Point(288, 84);
             this.suggestionBtn.Name = "suggestionBtn";
-            this.suggestionBtn.Size = new System.Drawing.Size(78, 17);
+            this.suggestionBtn.Size = new System.Drawing.Size(95, 21);
             this.suggestionBtn.TabIndex = 26;
             this.suggestionBtn.TabStop = true;
             this.suggestionBtn.Text = "Suggestion";
-            this.suggestionBtn.UseVisualStyleBackColor = true;
+            this.suggestionBtn.UseVisualStyleBackColor = false;
             // 
             // submitBtn
             // 
-            this.submitBtn.BackColor = System.Drawing.Color.DimGray;
+            this.submitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.submitBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.submitBtn.Location = new System.Drawing.Point(144, 238);
+            this.submitBtn.Location = new System.Drawing.Point(147, 264);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.Size = new System.Drawing.Size(161, 27);
             this.submitBtn.TabIndex = 20;
@@ -223,129 +362,82 @@
             // 
             // detailsTxt
             // 
-            this.detailsTxt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.detailsTxt.Location = new System.Drawing.Point(100, 111);
+            this.detailsTxt.BackColor = System.Drawing.Color.White;
+            this.detailsTxt.Location = new System.Drawing.Point(103, 137);
             this.detailsTxt.Name = "detailsTxt";
             this.detailsTxt.Size = new System.Drawing.Size(255, 121);
             this.detailsTxt.TabIndex = 25;
             this.detailsTxt.Text = "";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(3, 127);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 20);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Details :";
-            // 
             // subjectTxt
             // 
-            this.subjectTxt.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.subjectTxt.Location = new System.Drawing.Point(100, 85);
+            this.subjectTxt.BackColor = System.Drawing.Color.White;
+            this.subjectTxt.Location = new System.Drawing.Point(103, 111);
             this.subjectTxt.Name = "subjectTxt";
             this.subjectTxt.Size = new System.Drawing.Size(255, 20);
             this.subjectTxt.TabIndex = 20;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(3, 83);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 20);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Subject :";
-            // 
             // complainRBtn
             // 
             this.complainRBtn.AutoSize = true;
-            this.complainRBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.complainRBtn.Location = new System.Drawing.Point(287, 21);
+            this.complainRBtn.BackColor = System.Drawing.Color.Azure;
+            this.complainRBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.complainRBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.complainRBtn.Location = new System.Drawing.Point(197, 84);
             this.complainRBtn.Name = "complainRBtn";
-            this.complainRBtn.Size = new System.Drawing.Size(68, 17);
+            this.complainRBtn.Size = new System.Drawing.Size(85, 21);
             this.complainRBtn.TabIndex = 22;
             this.complainRBtn.TabStop = true;
             this.complainRBtn.Text = "Complain";
-            this.complainRBtn.UseVisualStyleBackColor = true;
+            this.complainRBtn.UseVisualStyleBackColor = false;
             // 
             // satisfiedRBtn
             // 
             this.satisfiedRBtn.AutoSize = true;
-            this.satisfiedRBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.satisfiedRBtn.Location = new System.Drawing.Point(184, 20);
+            this.satisfiedRBtn.BackColor = System.Drawing.Color.Azure;
+            this.satisfiedRBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.satisfiedRBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.satisfiedRBtn.Location = new System.Drawing.Point(112, 84);
             this.satisfiedRBtn.Name = "satisfiedRBtn";
-            this.satisfiedRBtn.Size = new System.Drawing.Size(65, 17);
+            this.satisfiedRBtn.Size = new System.Drawing.Size(79, 21);
             this.satisfiedRBtn.TabIndex = 21;
             this.satisfiedRBtn.TabStop = true;
             this.satisfiedRBtn.Text = "Satisfied";
-            this.satisfiedRBtn.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(3, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 20);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Feedback Type";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(167, 170);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 20);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Feedback Details";
+            this.satisfiedRBtn.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.BackColor = System.Drawing.Color.Azure;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(167, 72);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(7, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 20);
+            this.label2.Size = new System.Drawing.Size(114, 17);
             this.label2.TabIndex = 18;
             this.label2.Text = "Customer Mobile";
             // 
             // searchBtn
             // 
-            this.searchBtn.BackColor = System.Drawing.Color.DimGray;
+            this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.searchBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.searchBtn.Location = new System.Drawing.Point(355, 102);
+            this.searchBtn.Location = new System.Drawing.Point(165, 36);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(92, 22);
+            this.searchBtn.Size = new System.Drawing.Size(94, 25);
             this.searchBtn.TabIndex = 19;
             this.searchBtn.Text = "Search";
             this.searchBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // feedbackRecordBtn
             // 
-            this.feedbackRecordBtn.BackColor = System.Drawing.Color.DimGray;
+            this.feedbackRecordBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.feedbackRecordBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.feedbackRecordBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.feedbackRecordBtn.Location = new System.Drawing.Point(826, 426);
+            this.feedbackRecordBtn.Location = new System.Drawing.Point(108, 165);
             this.feedbackRecordBtn.Name = "feedbackRecordBtn";
             this.feedbackRecordBtn.Size = new System.Drawing.Size(161, 27);
             this.feedbackRecordBtn.TabIndex = 27;
@@ -356,44 +448,103 @@
             // 
             // feedbackDataGridView
             // 
+            this.feedbackDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.feedbackDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.feedbackDataGridView.Location = new System.Drawing.Point(757, 197);
+            this.feedbackDataGridView.Location = new System.Drawing.Point(3, 12);
             this.feedbackDataGridView.Name = "feedbackDataGridView";
-            this.feedbackDataGridView.Size = new System.Drawing.Size(310, 223);
+            this.feedbackDataGridView.Size = new System.Drawing.Size(380, 147);
             this.feedbackDataGridView.TabIndex = 28;
             // 
-            // preOrderBtn
+            // label7
             // 
-            this.preOrderBtn.BackColor = System.Drawing.Color.DimGray;
-            this.preOrderBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.preOrderBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.preOrderBtn.Image = global::App.Properties.Resources.cart;
-            this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.preOrderBtn.Location = new System.Drawing.Point(12, 188);
-            this.preOrderBtn.Name = "preOrderBtn";
-            this.preOrderBtn.Size = new System.Drawing.Size(135, 37);
-            this.preOrderBtn.TabIndex = 29;
-            this.preOrderBtn.Text = "Pre-Order";
-            this.preOrderBtn.UseVisualStyleBackColor = false;
-            this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label7.Location = new System.Drawing.Point(183, 236);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 17);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Feedback Details";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Azure;
+            this.panel3.Controls.Add(this.feedbackDataGridView);
+            this.panel3.Controls.Add(this.feedbackRecordBtn);
+            this.panel3.Location = new System.Drawing.Point(586, 319);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(386, 208);
+            this.panel3.TabIndex = 33;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Azure;
+            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Controls.Add(this.searchMobileTxt);
+            this.panel4.Controls.Add(this.searchBtn);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(184, 59);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(393, 174);
+            this.panel4.TabIndex = 33;
+            // 
+            // addCustomerBtn
+            // 
+            this.addCustomerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.addCustomerBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCustomerBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.addCustomerBtn.Location = new System.Drawing.Point(666, 168);
+            this.addCustomerBtn.Name = "addCustomerBtn";
+            this.addCustomerBtn.Size = new System.Drawing.Size(225, 25);
+            this.addCustomerBtn.TabIndex = 20;
+            this.addCustomerBtn.Text = "Add new customer";
+            this.addCustomerBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.addCustomerBtn.UseVisualStyleBackColor = false;
+            this.addCustomerBtn.Click += new System.EventHandler(this.addCustomerBtn_Click);
+            // 
+            // addCustomerLbl
+            // 
+            this.addCustomerLbl.AutoSize = true;
+            this.addCustomerLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.addCustomerLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.addCustomerLbl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCustomerLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.addCustomerLbl.Location = new System.Drawing.Point(619, 148);
+            this.addCustomerLbl.Name = "addCustomerLbl";
+            this.addCustomerLbl.Size = new System.Drawing.Size(332, 17);
+            this.addCustomerLbl.TabIndex = 34;
+            this.addCustomerLbl.Text = "If customers credential  does not exist,add customer";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 67);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(373, 99);
+            this.dataGridView1.TabIndex = 29;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Feedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(1079, 521);
-            this.Controls.Add(this.feedbackDataGridView);
-            this.Controls.Add(this.feedbackRecordBtn);
-            this.Controls.Add(this.searchBtn);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.addCustomerLbl);
+            this.Controls.Add(this.addCustomerBtn);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.mobileTxt);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidePnl);
-            this.MaximumSize = new System.Drawing.Size(1095, 560);
-            this.MinimumSize = new System.Drawing.Size(1095, 560);
+            this.MaximumSize = new System.Drawing.Size(1000, 600);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "Feedback";
             this.Text = "Feedback";
             this.sidePnl.ResumeLayout(false);
@@ -402,6 +553,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.feedbackDataGridView)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,23 +570,34 @@
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox mobileTxt;
+        private System.Windows.Forms.TextBox searchMobileTxt;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.RichTextBox detailsTxt;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox subjectTxt;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton complainRBtn;
         private System.Windows.Forms.RadioButton satisfiedRBtn;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton suggestionBtn;
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.Button feedbackRecordBtn;
         private System.Windows.Forms.DataGridView feedbackDataGridView;
         private System.Windows.Forms.Button discountBtn;
         private System.Windows.Forms.Button preOrderBtn;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button addCustomerBtn;
+        private System.Windows.Forms.Label addCustomerLbl;
+        private System.Windows.Forms.TextBox idTxt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox nameTxt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox mobileTxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

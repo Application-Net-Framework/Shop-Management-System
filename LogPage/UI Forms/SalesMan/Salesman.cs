@@ -92,7 +92,13 @@ namespace App
 
         private void feedbackBtn_Click(object sender, EventArgs e)
         {
-            //loadform(new Cashier_Profile());
+            Feedback f = new Feedback();
+            f.StartPosition = FormStartPosition.Manual;
+            f.Location = this.Location;
+            f.Size = this.Size;
+            f.Show();
+            this.Hide();
+
         }
 
         private void pQueryBtn_Click(object sender, EventArgs e)

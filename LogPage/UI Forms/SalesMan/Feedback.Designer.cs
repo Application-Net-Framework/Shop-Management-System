@@ -64,6 +64,17 @@
             this.addCustomerBtn = new System.Windows.Forms.Button();
             this.addCustomerLbl = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.responseTxt = new System.Windows.Forms.RichTextBox();
+            this.repsonseBtn = new System.Windows.Forms.Button();
+            this.cIdTxt = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.nTxt = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.mTxt = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.fIdTxt = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -365,7 +376,7 @@
             this.detailsTxt.BackColor = System.Drawing.Color.White;
             this.detailsTxt.Location = new System.Drawing.Point(103, 137);
             this.detailsTxt.Name = "detailsTxt";
-            this.detailsTxt.Size = new System.Drawing.Size(255, 121);
+            this.detailsTxt.Size = new System.Drawing.Size(255, 72);
             this.detailsTxt.TabIndex = 25;
             this.detailsTxt.Text = "";
             // 
@@ -452,8 +463,10 @@
             this.feedbackDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.feedbackDataGridView.Location = new System.Drawing.Point(3, 12);
             this.feedbackDataGridView.Name = "feedbackDataGridView";
+            this.feedbackDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.feedbackDataGridView.Size = new System.Drawing.Size(380, 147);
             this.feedbackDataGridView.TabIndex = 28;
+            this.feedbackDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.feedbackDataGridView_CellClick);
             // 
             // label7
             // 
@@ -471,11 +484,22 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Azure;
+            this.panel3.Controls.Add(this.fIdTxt);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.cIdTxt);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.repsonseBtn);
+            this.panel3.Controls.Add(this.nTxt);
+            this.panel3.Controls.Add(this.responseTxt);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.mTxt);
             this.panel3.Controls.Add(this.feedbackDataGridView);
+            this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.feedbackRecordBtn);
-            this.panel3.Location = new System.Drawing.Point(586, 319);
+            this.panel3.Location = new System.Drawing.Point(586, 188);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(386, 208);
+            this.panel3.Size = new System.Drawing.Size(386, 373);
             this.panel3.TabIndex = 33;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -496,7 +520,7 @@
             this.addCustomerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.addCustomerBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addCustomerBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.addCustomerBtn.Location = new System.Drawing.Point(666, 168);
+            this.addCustomerBtn.Location = new System.Drawing.Point(673, 89);
             this.addCustomerBtn.Name = "addCustomerBtn";
             this.addCustomerBtn.Size = new System.Drawing.Size(225, 25);
             this.addCustomerBtn.TabIndex = 20;
@@ -512,7 +536,7 @@
             this.addCustomerLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addCustomerLbl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addCustomerLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.addCustomerLbl.Location = new System.Drawing.Point(619, 148);
+            this.addCustomerLbl.Location = new System.Drawing.Point(626, 69);
             this.addCustomerLbl.Name = "addCustomerLbl";
             this.addCustomerLbl.Size = new System.Drawing.Size(332, 17);
             this.addCustomerLbl.TabIndex = 34;
@@ -528,6 +552,126 @@
             this.dataGridView1.Size = new System.Drawing.Size(373, 99);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Azure;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(18, 295);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 17);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Response:";
+            // 
+            // responseTxt
+            // 
+            this.responseTxt.BackColor = System.Drawing.Color.White;
+            this.responseTxt.Location = new System.Drawing.Point(87, 295);
+            this.responseTxt.Name = "responseTxt";
+            this.responseTxt.Size = new System.Drawing.Size(234, 50);
+            this.responseTxt.TabIndex = 37;
+            this.responseTxt.Text = "";
+            // 
+            // repsonseBtn
+            // 
+            this.repsonseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.repsonseBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repsonseBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.repsonseBtn.Location = new System.Drawing.Point(108, 346);
+            this.repsonseBtn.Name = "repsonseBtn";
+            this.repsonseBtn.Size = new System.Drawing.Size(161, 27);
+            this.repsonseBtn.TabIndex = 38;
+            this.repsonseBtn.Text = "Response";
+            this.repsonseBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.repsonseBtn.UseVisualStyleBackColor = false;
+            this.repsonseBtn.Click += new System.EventHandler(this.repsonseBtn_Click);
+            // 
+            // cIdTxt
+            // 
+            this.cIdTxt.BackColor = System.Drawing.Color.White;
+            this.cIdTxt.Location = new System.Drawing.Point(154, 223);
+            this.cIdTxt.Name = "cIdTxt";
+            this.cIdTxt.Size = new System.Drawing.Size(167, 20);
+            this.cIdTxt.TabIndex = 41;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Azure;
+            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label11.Location = new System.Drawing.Point(20, 226);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 17);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "Customer ID";
+            // 
+            // nTxt
+            // 
+            this.nTxt.BackColor = System.Drawing.Color.White;
+            this.nTxt.Location = new System.Drawing.Point(154, 245);
+            this.nTxt.Name = "nTxt";
+            this.nTxt.Size = new System.Drawing.Size(167, 20);
+            this.nTxt.TabIndex = 39;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Azure;
+            this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label12.Location = new System.Drawing.Point(20, 248);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(107, 17);
+            this.label12.TabIndex = 40;
+            this.label12.Text = "Customer Name";
+            // 
+            // mTxt
+            // 
+            this.mTxt.BackColor = System.Drawing.Color.White;
+            this.mTxt.Location = new System.Drawing.Point(154, 271);
+            this.mTxt.Name = "mTxt";
+            this.mTxt.Size = new System.Drawing.Size(167, 20);
+            this.mTxt.TabIndex = 37;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Azure;
+            this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label13.Location = new System.Drawing.Point(20, 274);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(114, 17);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Customer Mobile";
+            // 
+            // fIdTxt
+            // 
+            this.fIdTxt.BackColor = System.Drawing.Color.White;
+            this.fIdTxt.Location = new System.Drawing.Point(154, 197);
+            this.fIdTxt.Name = "fIdTxt";
+            this.fIdTxt.Size = new System.Drawing.Size(167, 20);
+            this.fIdTxt.TabIndex = 43;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Azure;
+            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label14.Location = new System.Drawing.Point(20, 200);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 17);
+            this.label14.TabIndex = 44;
+            this.label14.Text = "Customer ID";
             // 
             // Feedback
             // 
@@ -554,6 +698,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.feedbackDataGridView)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -599,5 +744,16 @@
         private System.Windows.Forms.TextBox mobileTxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button repsonseBtn;
+        private System.Windows.Forms.RichTextBox responseTxt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox cIdTxt;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox nTxt;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox mTxt;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox fIdTxt;
+        private System.Windows.Forms.Label label14;
     }
 }

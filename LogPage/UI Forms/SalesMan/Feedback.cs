@@ -154,7 +154,10 @@ namespace App.UI_Forms.SalesMan
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT FeedbackID,Mobile, FeedbackType, Subject, Details, FeedbackDate FROM Feedback ORDER BY FeedbackDate DESC";
+                    
+                    string query = "SELECT FeedbackID, CustomerID, Name, Mobile, FeedbackType, Subject, Details, Response, FeedbackDate FROM Feedback ORDER BY FeedbackDate DESC";
+
+
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                     DataTable dt = new DataTable();
@@ -266,5 +269,89 @@ namespace App.UI_Forms.SalesMan
             nameTxt.Text = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
             mobileTxt.Text = dataGridView1.CurrentRow.Cells["Mobile"].Value.ToString();
         }
+
+        private void feedbackDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {   fIdTxt.Text= feedbackDataGridView.CurrentRow.Cells["FeedbackID"].Value.ToString();
+            cIdTxt.Text = feedbackDataGridView.CurrentRow.Cells["CustomerID"].Value.ToString();
+            mTxt.Text = feedbackDataGridView.CurrentRow.Cells["Mobile"].Value.ToString();
+            nTxt.Text = feedbackDataGridView.CurrentRow.Cells["Name"].Value.ToString();
+
+        }
+
+        private void repsonseBtn_Click(object sender, EventArgs e)
+        {
+           
+            // 1️⃣ Get values from form controls
+            string feedbackId = fIdTxt.Text.Trim();
+            string customerId = cIdTxt.Text.Trim();
+            string name = nTxt.Text.Trim();
+            string mobile = mTxt.Text.Trim();
+            string response = responseTxt.Text.Trim();
+
+            // 2️⃣ Validation
+            if (string.IsNullOrEmpty(feedbackId))
+            {
+                MessageBox.Show("Feedback ID is required.");
+                return;
+            }
+            if (string.IsNullOrEmpty(customerId))
+            {
+                MessageBox.Show("Customer ID is required.");
+                return;
+            }
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Customer Name is required.");
+                return;
+            }
+            if (string.IsNullOrEmpty(mobile))
+            {
+                MessageBox.Show("Customer Mobile is required.");
+                return;
+            }
+            if (string.IsNullOrEmpty(response))
+            {
+                MessageBox.Show("Please enter a Response & Solution.");
+                return;
+            }
+
+            // 3️⃣ Update into database
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = @"UPDATE Feedback 
+                         SET Response = @Response
+                         WHERE FeedbackID = @FeedbackID 
+                           AND CustomerID = @CustomerID";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Response", response);
+                    cmd.Parameters.AddWithValue("@FeedbackID", Convert.ToInt32(feedbackId));
+                    cmd.Parameters.AddWithValue("@CustomerID", Convert.ToInt32(customerId));
+
+                    try
+                    {
+                        con.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Response updated successfully!");
+                            responseTxt.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No matching feedback record found.");
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Error while updating response: " + ex.Message);
+                    }
+                }
+            
+        }
+
     }
+}
 }

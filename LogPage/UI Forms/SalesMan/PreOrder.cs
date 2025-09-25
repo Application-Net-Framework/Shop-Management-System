@@ -146,15 +146,7 @@ namespace App.UI_Forms.SalesMan
             this.Hide();
         }
 
-        private void discountBtn_Click(object sender, EventArgs e)
-        {
-            DiscountSuggestion DS = new DiscountSuggestion();
-            DS.StartPosition = FormStartPosition.Manual;
-            DS.Location = this.Location;
-            DS.Size = this.Size;
-            DS.Show();
-            this.Hide();
-        }
+       
 
         private void cManagementBtn_Click(object sender, EventArgs e)
         {

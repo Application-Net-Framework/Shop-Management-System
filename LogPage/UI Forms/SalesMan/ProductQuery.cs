@@ -131,5 +131,7 @@ namespace App.UI_Forms.SalesMan
         {
             LoadAllProducts();
         }
+
+        
     }
 }

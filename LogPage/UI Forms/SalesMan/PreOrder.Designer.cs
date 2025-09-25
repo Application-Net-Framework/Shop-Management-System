@@ -43,7 +43,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.sidePnl = new System.Windows.Forms.Panel();
             this.cManagementBtn = new System.Windows.Forms.Button();
-            this.discountBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
             this.pQueryBtn = new System.Windows.Forms.Button();
             this.feedbackBtn = new System.Windows.Forms.Button();
@@ -192,7 +191,6 @@
             // 
             this.sidePnl.BackColor = System.Drawing.Color.Azure;
             this.sidePnl.Controls.Add(this.cManagementBtn);
-            this.sidePnl.Controls.Add(this.discountBtn);
             this.sidePnl.Controls.Add(this.homeBtn);
             this.sidePnl.Controls.Add(this.pQueryBtn);
             this.sidePnl.Controls.Add(this.feedbackBtn);
@@ -217,21 +215,6 @@
             this.cManagementBtn.Text = "CUSTOMER";
             this.cManagementBtn.UseVisualStyleBackColor = false;
             this.cManagementBtn.Click += new System.EventHandler(this.cManagementBtn_Click);
-            // 
-            // discountBtn
-            // 
-            this.discountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.discountBtn.Image = global::App.Properties.Resources.discount;
-            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.discountBtn.Location = new System.Drawing.Point(12, 145);
-            this.discountBtn.Name = "discountBtn";
-            this.discountBtn.Size = new System.Drawing.Size(135, 37);
-            this.discountBtn.TabIndex = 20;
-            this.discountBtn.Text = "Discount";
-            this.discountBtn.UseVisualStyleBackColor = false;
-            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
             // 
             // homeBtn
             // 
@@ -370,7 +353,6 @@
         private System.Windows.Forms.Label preOrderLbl;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel sidePnl;
-        private System.Windows.Forms.Button discountBtn;
         private System.Windows.Forms.Button homeBtn;
         private System.Windows.Forms.Button pQueryBtn;
         private System.Windows.Forms.Button feedbackBtn;

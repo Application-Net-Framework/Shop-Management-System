@@ -164,17 +164,7 @@ namespace App
             LoadSupplierRequests();
         }
 
-        private void discountBtn_Click(object sender, EventArgs e)
-        {
-            //loadform(new Cashier_Salary());
-
-            DiscountSuggestion DS = new DiscountSuggestion();
-            DS.StartPosition = FormStartPosition.Manual;
-            DS.Location = this.Location;
-            DS.Size = this.Size;
-            DS.Show();
-            this.Hide();
-        }
+       
 
         private void preOrderBtn_Click(object sender, EventArgs e)
         {

@@ -146,12 +146,6 @@
     <Compile Include="UI Forms\SalesMan\CustomerManagement.Designer.cs">
       <DependentUpon>CustomerManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\SalesMan\DiscountSuggestion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI Forms\SalesMan\DiscountSuggestion.Designer.cs">
-      <DependentUpon>DiscountSuggestion.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI Forms\SalesMan\Feedback.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,9 +314,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\SalesMan\CustomerManagement.resx">
       <DependentUpon>CustomerManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\SalesMan\DiscountSuggestion.resx">
-      <DependentUpon>DiscountSuggestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\SalesMan\Feedback.resx">
       <DependentUpon>Feedback.cs</DependentUpon>

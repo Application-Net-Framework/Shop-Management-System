@@ -30,7 +30,6 @@
         {
             this.sidePnl = new System.Windows.Forms.Panel();
             this.preOrderBtn = new System.Windows.Forms.Button();
-            this.discountBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
             this.pQueryBtn = new System.Windows.Forms.Button();
             this.feedbackBtn = new System.Windows.Forms.Button();
@@ -64,7 +63,6 @@
             // 
             this.sidePnl.BackColor = System.Drawing.Color.Azure;
             this.sidePnl.Controls.Add(this.preOrderBtn);
-            this.sidePnl.Controls.Add(this.discountBtn);
             this.sidePnl.Controls.Add(this.homeBtn);
             this.sidePnl.Controls.Add(this.pQueryBtn);
             this.sidePnl.Controls.Add(this.feedbackBtn);
@@ -82,28 +80,13 @@
             this.preOrderBtn.ForeColor = System.Drawing.Color.Transparent;
             this.preOrderBtn.Image = global::App.Properties.Resources.cart;
             this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.preOrderBtn.Location = new System.Drawing.Point(12, 188);
+            this.preOrderBtn.Location = new System.Drawing.Point(12, 145);
             this.preOrderBtn.Name = "preOrderBtn";
             this.preOrderBtn.Size = new System.Drawing.Size(135, 37);
             this.preOrderBtn.TabIndex = 21;
             this.preOrderBtn.Text = "Pre-Order";
             this.preOrderBtn.UseVisualStyleBackColor = false;
             this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
-            // 
-            // discountBtn
-            // 
-            this.discountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.discountBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.discountBtn.Image = global::App.Properties.Resources.discount;
-            this.discountBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.discountBtn.Location = new System.Drawing.Point(12, 145);
-            this.discountBtn.Name = "discountBtn";
-            this.discountBtn.Size = new System.Drawing.Size(135, 37);
-            this.discountBtn.TabIndex = 20;
-            this.discountBtn.Text = "Discount";
-            this.discountBtn.UseVisualStyleBackColor = false;
-            this.discountBtn.Click += new System.EventHandler(this.discountBtn_Click);
             // 
             // homeBtn
             // 
@@ -415,7 +398,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button seeBtn;
         private System.Windows.Forms.Button clearBtn;
-        private System.Windows.Forms.Button discountBtn;
         private System.Windows.Forms.Button preOrderBtn;
     }
 }

@@ -488,7 +488,7 @@
             this.featureContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.featureContainer.Location = new System.Drawing.Point(3, 3);
             this.featureContainer.Name = "featureContainer";
-            this.featureContainer.Size = new System.Drawing.Size(173, 585);
+            this.featureContainer.Size = new System.Drawing.Size(173, 594);
             this.featureContainer.TabIndex = 20;
             this.featureContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.featureContainer_Paint);
             // 
@@ -533,7 +533,7 @@
             this.pnltop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnltop.Location = new System.Drawing.Point(176, 3);
             this.pnltop.Name = "pnltop";
-            this.pnltop.Size = new System.Drawing.Size(767, 34);
+            this.pnltop.Size = new System.Drawing.Size(821, 34);
             this.pnltop.TabIndex = 21;
             this.pnltop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnltop_Paint);
             this.pnltop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnltop_MouseDown);
@@ -541,7 +541,7 @@
             // minimizebtn
             // 
             this.minimizebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizebtn.Location = new System.Drawing.Point(674, 0);
+            this.minimizebtn.Location = new System.Drawing.Point(728, 0);
             this.minimizebtn.Name = "minimizebtn";
             this.minimizebtn.Size = new System.Drawing.Size(32, 34);
             this.minimizebtn.TabIndex = 21;
@@ -550,7 +550,7 @@
             // fullscreenbtn
             // 
             this.fullscreenbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.fullscreenbtn.Location = new System.Drawing.Point(706, 0);
+            this.fullscreenbtn.Location = new System.Drawing.Point(760, 0);
             this.fullscreenbtn.Name = "fullscreenbtn";
             this.fullscreenbtn.Size = new System.Drawing.Size(32, 34);
             this.fullscreenbtn.TabIndex = 22;
@@ -560,7 +560,7 @@
             // crossbtn
             // 
             this.crossbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.crossbtn.Location = new System.Drawing.Point(738, 0);
+            this.crossbtn.Location = new System.Drawing.Point(792, 0);
             this.crossbtn.Name = "crossbtn";
             this.crossbtn.Size = new System.Drawing.Size(29, 34);
             this.crossbtn.TabIndex = 21;
@@ -584,7 +584,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(946, 591);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.pnltop);
             this.Controls.Add(this.featureContainer);
             this.ForeColor = System.Drawing.Color.White;

@@ -45,7 +45,7 @@
             this.txtTProduct = new System.Windows.Forms.TextBox();
             this.lblAProduct = new System.Windows.Forms.Label();
             this.txtAProduct = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSearchID = new System.Windows.Forms.Label();
             this.txtSearchId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +72,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(522, 128);
+            this.lblName.Location = new System.Drawing.Point(522, 151);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(179, 31);
             this.lblName.TabIndex = 35;
@@ -221,15 +221,16 @@
             this.txtAProduct.Size = new System.Drawing.Size(161, 38);
             this.txtAProduct.TabIndex = 42;
             // 
-            // label1
+            // lblSearchID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 31);
-            this.label1.TabIndex = 43;
-            this.label1.Text = "SearchID:";
+            this.lblSearchID.AutoSize = true;
+            this.lblSearchID.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchID.ForeColor = System.Drawing.Color.Red;
+            this.lblSearchID.Location = new System.Drawing.Point(25, 78);
+            this.lblSearchID.Name = "lblSearchID";
+            this.lblSearchID.Size = new System.Drawing.Size(122, 31);
+            this.lblSearchID.TabIndex = 43;
+            this.lblSearchID.Text = "SearchID:";
             // 
             // txtSearchId
             // 
@@ -246,7 +247,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.txtSearchId);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSearchID);
             this.Controls.Add(this.txtAProduct);
             this.Controls.Add(this.lblAProduct);
             this.Controls.Add(this.txtTProduct);
@@ -291,7 +292,7 @@
         private System.Windows.Forms.TextBox txtTProduct;
         private System.Windows.Forms.Label lblAProduct;
         private System.Windows.Forms.TextBox txtAProduct;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSearchID;
         private System.Windows.Forms.TextBox txtSearchId;
     }
 }

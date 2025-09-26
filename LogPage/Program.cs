@@ -20,7 +20,7 @@ namespace App
             Application.SetCompatibleTextRenderingDefault(false);
            // Application.Run(new Admin_Main_Home());
             // Start with the login page
-         //   Application.Run(new App.LogPage());
+            Application.Run(new App.LogPage());
 
             // Other forms are commented out - uncomment only one if you want to change the startup form
             // Application.Run(new App.UI_Forms.Admin.Admin_Main_Home());

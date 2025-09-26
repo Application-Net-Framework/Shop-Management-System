@@ -14,7 +14,8 @@ namespace App.UI_Forms.Admin.Features
 {
     public partial class addEmployee : UserControl
     {
-        public string UserID, UserName, Email, PhoneNumber, JoiningDate, Role, Gender;
+        public string UserName, Email, PhoneNumber, Role;
+        public DateTime JoiningDate;
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -48,13 +49,6 @@ namespace App.UI_Forms.Admin.Features
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUserID.Text))
-            {
-                MessageBox.Show("Full ID is required.", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtUserID.Focus();
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(txtUserName.Text))
             {
                 MessageBox.Show("Full Name is required.", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -62,14 +56,12 @@ namespace App.UI_Forms.Admin.Features
                 return;
             }
 
-
             if (!txtUserName.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
             {
                 MessageBox.Show("Full Name must contain only letters and spaces.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUserName.Focus();
                 return;
             }
-
 
             if (string.IsNullOrWhiteSpace(txtMail.Text))
             {
@@ -93,17 +85,10 @@ namespace App.UI_Forms.Admin.Features
                 return;
             }
 
-
             if (!txtPhoneNumber.Text.All(char.IsDigit))
             {
                 MessageBox.Show("Phone number must contain digits only", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPhoneNumber.Focus();
-                return;
-            }
-
-            if (!rdoMale.Checked && !rdoFemale.Checked)
-            {
-                MessageBox.Show("Please select Gender", "Required Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -114,16 +99,11 @@ namespace App.UI_Forms.Admin.Features
                 return;
             }
             
-            UserID = txtUserID.Text;
             UserName = txtUserName.Text;
             Email = txtMail.Text;
             PhoneNumber = txtPhoneNumber.Text;
-            JoiningDate = dateTimePicker1.Text;
+            JoiningDate = dateTimePicker1.Value; // Store as DateTime
             Role = cmbRole.Text;
-            if (rdoMale.Checked)
-                Gender = "Male";
-            if (rdoFemale.Checked)
-                Gender = "Female";
            
             // Connect to database and add employee
             if (connect())
@@ -139,14 +119,11 @@ namespace App.UI_Forms.Admin.Features
         // Clear all input fields
         private void ClearFields()
         {
-            txtUserID.Clear();
             txtUserName.Clear();
             txtMail.Clear();
             txtPhoneNumber.Clear();
             dateTimePicker1.Value = DateTime.Now;
             cmbRole.SelectedIndex = -1;
-            rdoMale.Checked = false;
-            rdoFemale.Checked = false;
         }
 
         private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
@@ -172,10 +149,22 @@ namespace App.UI_Forms.Admin.Features
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = $"INSERT INTO AddEmployee(UserID, UserName, Email, PhoneNumber, JoiningDate, Role, Gender) VALUES ('" + UserID + "','" + UserName + "','" + Email + "','" + PhoneNumber + "','" + JoiningDate + "','" + Role + "','" + Gender + "')";
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.ExecuteNonQuery();
-                    return true; // Return true if successful
+                    
+                    // Use parameterized query to prevent SQL injection and handle date properly
+                    string query = "INSERT INTO Employees(UserName, Email, PhoneNumber, JoiningDate, Role) VALUES (@UserName, @Email, @PhoneNumber, @JoiningDate, @Role)";
+                    
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Add parameters with proper types
+                        command.Parameters.AddWithValue("@UserName", UserName);
+                        command.Parameters.AddWithValue("@Email", Email);
+                        command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+                        command.Parameters.AddWithValue("@JoiningDate", JoiningDate); // SQL Server knows how to handle DateTime
+                        command.Parameters.AddWithValue("@Role", Role);
+                        
+                        command.ExecuteNonQuery();
+                        return true; // Return true if successful
+                    }
                 }
             }
             catch (Exception ex)
@@ -188,11 +177,6 @@ namespace App.UI_Forms.Admin.Features
         private void addEmployee_Load(object sender, EventArgs e)
         {
             // Initialize form
-        }
-
-        private void lblUserID_Click(object sender, EventArgs e)
-        {
-            // Event handler for label click
         }
     }
 }

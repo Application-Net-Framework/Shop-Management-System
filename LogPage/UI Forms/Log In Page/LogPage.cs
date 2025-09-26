@@ -69,15 +69,21 @@ namespace App
                             // Redirect based on Role
                             Form nextForm = null;
                             if (role == "Admin")
-                                nextForm = new Admin_Main_Home(userId, userName);
+                            {
+                                nextForm = new App.UI_Forms.Admin.Admin_Main_Home();
+                            }
+                            //nextForm = new Admin_Home(userId, userName);
                             else if (role == "Manager")
                                 nextForm = new Manager_Home();
-                           // else if (role == "Cashier")
-                           // {
-                           //     nextForm = new Cashier();
-                           // }
+                            // nextForm = new Manager_Home(userId, userName);
+                            // else if (role == "Cashier")
+                            // {
+                            //     nextForm = new Cashier();
+                            //nextForm = new Cashier(userId, userName);
+                            //}
                             else if (role == "Salesman")
                                 nextForm = new Salesman();
+                            //nextForm = new Salesman(userId, userName);
                             else
                             {
                                 MessageBox.Show("Role not recognized. Contact admin.");
@@ -104,6 +110,23 @@ namespace App
                 }
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void logBtn_Click(object sender, EventArgs e)
         {

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.HtmlControls;
 using System.Windows.Forms;
+using App.UI_Forms.Admin;
 
 namespace App
 {    public partial class LogPage : Form
@@ -68,19 +69,15 @@ namespace App
                             // Redirect based on Role
                             Form nextForm = null;
                             if (role == "Admin")
-                                nextForm = new Admin_Main_Home();
-                            //nextForm = new Admin_Home(userId, userName);
+                                nextForm = new Admin_Main_Home(userId, userName);
                             else if (role == "Manager")
                                 nextForm = new Manager_Home();
-                           // nextForm = new Manager_Home(userId, userName);
                            // else if (role == "Cashier")
                            // {
                            //     nextForm = new Cashier();
-                                //nextForm = new Cashier(userId, userName);
-                            //}
+                           // }
                             else if (role == "Salesman")
                                 nextForm = new Salesman();
-                            //nextForm = new Salesman(userId, userName);
                             else
                             {
                                 MessageBox.Show("Role not recognized. Contact admin.");
@@ -107,23 +104,6 @@ namespace App
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         private void logBtn_Click(object sender, EventArgs e)
         {

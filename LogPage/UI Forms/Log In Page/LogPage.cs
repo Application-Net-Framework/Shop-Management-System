@@ -12,12 +12,8 @@ using System.Web.UI.HtmlControls;
 using System.Windows.Forms;
 
 namespace App
-{
-
-    public partial class LogPage : Form
+{    public partial class LogPage : Form
     {
-
-
         public LogPage()
         {
             InitializeComponent();
@@ -25,18 +21,14 @@ namespace App
 
         string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
-
         private string HashPassword(string password)
         {
-            using (MD5 md5 = MD5.Create())
+            using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] inputBytes = Encoding.UTF8.GetBytes(password);
-                byte[] hashBytes = md5.ComputeHash(inputBytes);
-
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
                 StringBuilder sb = new StringBuilder();
-                foreach (byte b in hashBytes)
+                foreach (byte b in bytes)
                     sb.Append(b.ToString("x2"));
-
                 return sb.ToString();
             }
         }
@@ -45,15 +37,10 @@ namespace App
         {
             string email = emailTxt.Text.Trim();
             string password = passTxt.Text.Trim();
-
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Please enter both Email and Password.");
-                return;
-            }
+            { MessageBox.Show("Please enter both Email and Password."); return; }
 
             string hashedPassword = HashPassword(password);
-
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 string query = @"SELECT UserID, UserName, Role 

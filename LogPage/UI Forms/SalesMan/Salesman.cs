@@ -1,4 +1,5 @@
-﻿using App.UI_Forms.SalesMan;
+﻿using App.Configuration;
+using App.UI_Forms.SalesMan;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,9 @@ namespace App
 {
     public partial class Salesman : Form
     {
-       // private int userId;
-       // private string userName;
-        String connectionString = @"Data Source=DESKTOP-ESC3M7E\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        // private int userId;
+        // private string userName;
+        String connectionString = GlobalConfig.ConnectionString;
         public Salesman()
         {
             InitializeComponent();

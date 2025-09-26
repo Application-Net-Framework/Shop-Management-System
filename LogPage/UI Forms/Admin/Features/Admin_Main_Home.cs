@@ -28,10 +28,18 @@ namespace App.UI_Forms.Admin
         // SideContainer animation variables
         private bool sideContainerExpanded = true; // Start expanded
         private int sideContainerFullHeight;
+        
+        // User information properties
+        private int userId;
+        private string userName;
 
-        public Admin_Main_Home()
+        public Admin_Main_Home(int userId, string userName)
         {
             InitializeComponent();
+
+            // Store user information
+            this.userId = userId;
+            this.userName = userName;
 
             // Set form size
             this.Size = new Size(900, 600);
@@ -69,6 +77,11 @@ namespace App.UI_Forms.Admin
             // Start with SideContainer hidden
             sideContainerExpanded = false;
             SideContainer.Visible = false;
+        }
+        
+        // Default constructor for designer and backward compatibility
+        public Admin_Main_Home() : this(0, "Unknown")
+        {
         }
         
         // Employee panel timer

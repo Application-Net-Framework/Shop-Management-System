@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using App.UI_Forms.Admin;
-using App.UI_Forms.Application_Starting_Logo;
 
 namespace App
 {
@@ -18,10 +13,8 @@ namespace App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new Admin_Main_Home());
+            
             // Start with the login page
-
-
             // Other forms are commented out - uncomment only one if you want to change the startup form
             // Application.Run(new App.UI_Forms.Admin.Admin_Main_Home());
             // Application.Run(new mainCashier());

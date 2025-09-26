@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace App.UI_Forms.Manager
 {
-    public partial class TarminationEmployee : Form
+    public partial class dailyactivityform : UserControl
     {
-        public TarminationEmployee()
+        public dailyactivityform()
         {
             InitializeComponent();
         }

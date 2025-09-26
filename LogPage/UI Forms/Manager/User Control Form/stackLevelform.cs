@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace App.UI_Forms.Manager
 {
-    public partial class About : Form
+    public partial class stackLevelform : UserControl
     {
-        public About()
+        public stackLevelform()
         {
             InitializeComponent();
         }

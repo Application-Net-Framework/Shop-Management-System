@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App.UI_Forms.Manager
+namespace App.UI_Forms.Manager.User_Control_Form
 {
-    public partial class Discount : Form
+    public partial class tarminationForm : UserControl
     {
-        public Discount()
+        public tarminationForm()
         {
             InitializeComponent();
         }

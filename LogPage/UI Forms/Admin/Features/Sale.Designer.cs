@@ -32,10 +32,11 @@
             // 
             // Sale
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Sale";
-            this.Size = new System.Drawing.Size(594, 548);
+            this.Size = new System.Drawing.Size(828, 370);
             this.Load += new System.EventHandler(this.Sale_Load);
             this.ResumeLayout(false);
 

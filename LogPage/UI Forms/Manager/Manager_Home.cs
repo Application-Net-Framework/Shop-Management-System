@@ -456,13 +456,7 @@ namespace App
         private void reportbtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
-            if (reportControl == null)
-            {
-                reportControl = new report();
-                featurePanel.Controls.Add(reportControl);
-                reportControl.Dock = DockStyle.Fill;
-            }
-            reportControl.Visible = true;
+            report1.Visible = true;
         }
         
         // Helper method to hide all controls in the feature panel
@@ -477,40 +471,31 @@ namespace App
         private void discountbtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
-            if (discountControl == null)
-            {
-                discountControl = new discountform();
-                featurePanel.Controls.Add(discountControl);
-                discountControl.Dock = DockStyle.Fill;
-            }
-            discountControl.Visible = true;
+            discountform1.Visible = true;
         }
 
         private void productbtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
-            if (stackLevelControl == null)
-            {
-                stackLevelControl = new stackLevelform();
-                featurePanel.Controls.Add(stackLevelControl);
-                stackLevelControl.Dock = DockStyle.Fill;
-            }
-            stackLevelControl.Visible = true;
+            stackLevelform1.Visible = false;
         }
 
         private void staffbtn_Click(object sender, EventArgs e)
         {
-            // Staff info implementation
+            
         }
-        
+
+        // Tarmination Button
         private void button2_Click(object sender, EventArgs e)
         {
-            // Termination implementation
+            HideAllControls();
+            managerTarmination.Visible = true;
+
         }
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
-            // Register implementation
+            
         }
 
         //ABOUT BUTTON
@@ -529,19 +514,12 @@ namespace App
         private void activitybtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
-            if (dailyActivityControl == null)
-            {
-                dailyActivityControl = new dailyactivityform();
-                featurePanel.Controls.Add(dailyActivityControl);
-                dailyActivityControl.Dock = DockStyle.Fill;
-            }
-            dailyActivityControl.Visible = true;
+            activity1.Visible = true;
         }
 
         private void minimizebtn_Click_1(object sender, EventArgs e)
         {
-            // Disabled to prevent form from being minimized
-            // this.WindowState = FormWindowState.Minimized;
+           //nothing
         }
 
         private void crossbtn_Click_1(object sender, EventArgs e)

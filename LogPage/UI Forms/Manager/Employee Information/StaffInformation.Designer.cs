@@ -85,7 +85,7 @@
             this.infolbl.Location = new System.Drawing.Point(0, 7);
             this.infolbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.infolbl.Name = "infolbl";
-            this.infolbl.Size = new System.Drawing.Size(281, 32);
+            this.infolbl.Size = new System.Drawing.Size(219, 25);
             this.infolbl.TabIndex = 0;
             this.infolbl.Text = "Employee Informations";
             // 
@@ -108,7 +108,7 @@
             this.searchbox.Location = new System.Drawing.Point(4, 11);
             this.searchbox.Margin = new System.Windows.Forms.Padding(4);
             this.searchbox.Name = "searchbox";
-            this.searchbox.Size = new System.Drawing.Size(439, 24);
+            this.searchbox.Size = new System.Drawing.Size(439, 20);
             this.searchbox.TabIndex = 2;
             this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
             // 
@@ -146,7 +146,7 @@
             this.label1.Location = new System.Drawing.Point(15, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 23);
+            this.label1.Size = new System.Drawing.Size(43, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Role :";
             // 
@@ -156,7 +156,7 @@
             this.comboBox1.Location = new System.Drawing.Point(74, 8);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(119, 24);
+            this.comboBox1.Size = new System.Drawing.Size(119, 21);
             this.comboBox1.TabIndex = 4;
             // 
             // label2
@@ -167,7 +167,7 @@
             this.label2.Location = new System.Drawing.Point(201, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 23);
+            this.label2.Size = new System.Drawing.Size(57, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Assign :";
             // 
@@ -188,7 +188,7 @@
             this.comboBox2.Location = new System.Drawing.Point(273, 7);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(119, 24);
+            this.comboBox2.Size = new System.Drawing.Size(119, 21);
             this.comboBox2.TabIndex = 4;
             // 
             // searchcontainerpnl
@@ -290,7 +290,7 @@
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(4, 401);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 23);
+            this.label11.Size = new System.Drawing.Size(84, 19);
             this.label11.TabIndex = 27;
             this.label11.Text = "Degree       :";
             // 
@@ -298,7 +298,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(132, 401);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 22);
+            this.textBox1.Size = new System.Drawing.Size(241, 20);
             this.textBox1.TabIndex = 26;
             // 
             // label3
@@ -308,7 +308,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(4, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 23);
+            this.label3.Size = new System.Drawing.Size(86, 19);
             this.label3.TabIndex = 9;
             this.label3.Text = "User ID       :";
             // 
@@ -316,28 +316,28 @@
             // 
             this.dateofbirthtxt.Location = new System.Drawing.Point(131, 205);
             this.dateofbirthtxt.Name = "dateofbirthtxt";
-            this.dateofbirthtxt.Size = new System.Drawing.Size(242, 22);
+            this.dateofbirthtxt.Size = new System.Drawing.Size(242, 20);
             this.dateofbirthtxt.TabIndex = 25;
             // 
             // txtuserid
             // 
             this.txtuserid.Location = new System.Drawing.Point(130, 11);
             this.txtuserid.Name = "txtuserid";
-            this.txtuserid.Size = new System.Drawing.Size(241, 22);
+            this.txtuserid.Size = new System.Drawing.Size(241, 20);
             this.txtuserid.TabIndex = 8;
             // 
             // hiredate
             // 
             this.hiredate.Location = new System.Drawing.Point(131, 351);
             this.hiredate.Name = "hiredate";
-            this.hiredate.Size = new System.Drawing.Size(242, 22);
+            this.hiredate.Size = new System.Drawing.Size(242, 20);
             this.hiredate.TabIndex = 24;
             // 
             // txtusrname
             // 
             this.txtusrname.Location = new System.Drawing.Point(131, 57);
             this.txtusrname.Name = "txtusrname";
-            this.txtusrname.Size = new System.Drawing.Size(241, 22);
+            this.txtusrname.Size = new System.Drawing.Size(241, 20);
             this.txtusrname.TabIndex = 10;
             // 
             // label10
@@ -347,7 +347,7 @@
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(4, 350);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(107, 23);
+            this.label10.Size = new System.Drawing.Size(87, 19);
             this.label10.TabIndex = 23;
             this.label10.Text = "Hire Date    :";
             // 
@@ -358,7 +358,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(4, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 23);
+            this.label4.Size = new System.Drawing.Size(85, 19);
             this.label4.TabIndex = 11;
             this.label4.Text = "User Name :";
             // 
@@ -369,7 +369,7 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(4, 300);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 23);
+            this.label9.Size = new System.Drawing.Size(88, 19);
             this.label9.TabIndex = 21;
             this.label9.Text = "Role            :";
             this.label9.Click += new System.EventHandler(this.label9_Click);
@@ -378,14 +378,14 @@
             // 
             this.txtgender.Location = new System.Drawing.Point(131, 106);
             this.txtgender.Name = "txtgender";
-            this.txtgender.Size = new System.Drawing.Size(241, 22);
+            this.txtgender.Size = new System.Drawing.Size(241, 20);
             this.txtgender.TabIndex = 12;
             // 
             // txtrole
             // 
             this.txtrole.Location = new System.Drawing.Point(132, 300);
             this.txtrole.Name = "txtrole";
-            this.txtrole.Size = new System.Drawing.Size(241, 22);
+            this.txtrole.Size = new System.Drawing.Size(241, 20);
             this.txtrole.TabIndex = 20;
             // 
             // label6
@@ -395,7 +395,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(3, 106);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 23);
+            this.label6.Size = new System.Drawing.Size(85, 19);
             this.label6.TabIndex = 13;
             this.label6.Text = "Gender       :";
             // 
@@ -406,7 +406,7 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(3, 252);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 23);
+            this.label7.Size = new System.Drawing.Size(92, 19);
             this.label7.TabIndex = 19;
             this.label7.Text = "Age             : ";
             // 
@@ -414,14 +414,14 @@
             // 
             this.txtphone.Location = new System.Drawing.Point(132, 158);
             this.txtphone.Name = "txtphone";
-            this.txtphone.Size = new System.Drawing.Size(241, 22);
+            this.txtphone.Size = new System.Drawing.Size(241, 20);
             this.txtphone.TabIndex = 14;
             // 
             // txtage
             // 
             this.txtage.Location = new System.Drawing.Point(132, 252);
             this.txtage.Name = "txtage";
-            this.txtage.Size = new System.Drawing.Size(241, 22);
+            this.txtage.Size = new System.Drawing.Size(241, 20);
             this.txtage.TabIndex = 18;
             // 
             // label5
@@ -431,7 +431,7 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(4, 158);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 23);
+            this.label5.Size = new System.Drawing.Size(86, 19);
             this.label5.TabIndex = 15;
             this.label5.Text = "Phone No   :";
             // 
@@ -442,7 +442,7 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(3, 204);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 23);
+            this.label8.Size = new System.Drawing.Size(85, 19);
             this.label8.TabIndex = 17;
             this.label8.Text = "DOB           :";
             // 

@@ -16,6 +16,36 @@ namespace App.UI_Forms.Admin.Features
     {
         public string UserID, UserName, Email, PhoneNumber, JoiningDate, Role, Gender;
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            // Find the parent form that contains this UserControl
+            Form parentForm = this.FindForm();
+            
+            // Check if we found the parent form and if it's the Admin_Main_Home type
+            if (parentForm != null && parentForm is Admin.Admin_Main_Home)
+            {
+                // Make this UserControl invisible
+                this.Visible = false;
+                
+                // Try to find and show the home1 control
+                Control home1Control = null;
+                foreach (Control control in parentForm.Controls.Find("featurePanel", true)[0].Controls)
+                {
+                    if (control.Name == "home1")
+                    {
+                        home1Control = control;
+                        break;
+                    }
+                }
+                
+                if (home1Control != null)
+                {
+                    home1Control.Visible = true;
+                    home1Control.BringToFront();
+                }
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtUserID.Text))
@@ -48,14 +78,13 @@ namespace App.UI_Forms.Admin.Features
                 return;
             }
 
-            if (!txtMail.Text.All(char.IsLetter))
+            // Changed the email validation to be more realistic
+            if (!txtMail.Text.Contains("@") || !txtMail.Text.Contains("."))
             {
-                MessageBox.Show("Email must contain only letters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid email address.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMail.Focus();
                 return;
             }
-
-
 
             if (string.IsNullOrWhiteSpace(txtPhoneNumber.Text))
             {
@@ -80,14 +109,11 @@ namespace App.UI_Forms.Admin.Features
 
             if (string.IsNullOrWhiteSpace(cmbRole.Text))
             {
-                MessageBox.Show("Full Religion is required.", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Role is required.", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cmbRole.Focus();
                 return;
             }
             
-
-
-
             UserID = txtUserID.Text;
             UserName = txtUserName.Text;
             Email = txtMail.Text;
@@ -99,21 +125,32 @@ namespace App.UI_Forms.Admin.Features
             if (rdoFemale.Checked)
                 Gender = "Female";
            
-
-
-
-
-            connect();
-
-            /*Admin_Managed A = new Admin_Managed();
-            A.Show();
-            this.Hide();*/
+            // Connect to database and add employee
+            if (connect())
+            {
+                // Show success message
+                MessageBox.Show("Employee added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                // Clear the form fields after successful addition
+                ClearFields();
+            }
         }
 
+        // Clear all input fields
+        private void ClearFields()
+        {
+            txtUserID.Clear();
+            txtUserName.Clear();
+            txtMail.Clear();
+            txtPhoneNumber.Clear();
+            dateTimePicker1.Value = DateTime.Now;
+            cmbRole.SelectedIndex = -1;
+            rdoMale.Checked = false;
+            rdoFemale.Checked = false;
+        }
 
         private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
@@ -121,13 +158,12 @@ namespace App.UI_Forms.Admin.Features
             }
         }
         
-
         public addEmployee()
         {
             InitializeComponent();
         }
 
-        public void connect()
+        public bool connect()
         {
             try
             {
@@ -136,25 +172,27 @@ namespace App.UI_Forms.Admin.Features
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = $"INSERT INTO AddEmployee(UserID, UserName, Email, PhoneNumber, JoiningDate, Role, Gender ) VALUES ('" + UserID + "','" + UserName + "','" + Email + "','" + PhoneNumber + "','" + JoiningDate + "','" + Role + "','" + Gender + "')";
+                    string query = $"INSERT INTO AddEmployee(UserID, UserName, Email, PhoneNumber, JoiningDate, Role, Gender) VALUES ('" + UserID + "','" + UserName + "','" + Email + "','" + PhoneNumber + "','" + JoiningDate + "','" + Role + "','" + Gender + "')";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.ExecuteNonQuery();
+                    return true; // Return true if successful
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // Return false if there was an error
             }
         }
 
         private void addEmployee_Load(object sender, EventArgs e)
         {
-
+            // Initialize form
         }
 
         private void lblUserID_Click(object sender, EventArgs e)
         {
-
+            // Event handler for label click
         }
     }
 }

@@ -45,6 +45,7 @@
             this.rdoFemale = new System.Windows.Forms.RadioButton();
             this.GenderPnl = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.GenderPnl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -214,7 +215,7 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Silver;
-            this.btnAdd.Location = new System.Drawing.Point(506, 388);
+            this.btnAdd.Location = new System.Drawing.Point(515, 347);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(142, 64);
             this.btnAdd.TabIndex = 20;
@@ -222,11 +223,23 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Silver;
+            this.btnBack.Location = new System.Drawing.Point(515, 447);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(142, 64);
+            this.btnBack.TabIndex = 21;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // addEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.GenderPnl);
             this.Controls.Add(this.cmbRole);
@@ -273,5 +286,6 @@
         private System.Windows.Forms.RadioButton rdoFemale;
         private System.Windows.Forms.Panel GenderPnl;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnBack;
     }
 }

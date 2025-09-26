@@ -45,8 +45,6 @@
             this.rdoFemale = new System.Windows.Forms.RadioButton();
             this.GenderPnl = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lblPass = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
             this.GenderPnl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -224,32 +222,11 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lblPass
-            // 
-            this.lblPass.AutoSize = true;
-            this.lblPass.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPass.Location = new System.Drawing.Point(381, 233);
-            this.lblPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(128, 31);
-            this.lblPass.TabIndex = 21;
-            this.lblPass.Text = "Password:";
-            // 
-            // txtPass
-            // 
-            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPass.Location = new System.Drawing.Point(387, 267);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(305, 37);
-            this.txtPass.TabIndex = 22;
-            // 
             // addEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.lblPass);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.GenderPnl);
             this.Controls.Add(this.cmbRole);
@@ -296,7 +273,5 @@
         private System.Windows.Forms.RadioButton rdoFemale;
         private System.Windows.Forms.Panel GenderPnl;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label lblPass;
-        private System.Windows.Forms.TextBox txtPass;
     }
 }

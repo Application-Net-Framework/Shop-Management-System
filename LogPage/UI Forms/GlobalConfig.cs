@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace App.UI_Forms
+namespace App.Configuration
 {
    
     public static class GlobalConfig

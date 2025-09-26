@@ -14,10 +14,19 @@ namespace App
 {
     public partial class Salesman : Form
     {
-
+       // private int userId;
+       // private string userName;
         String connectionString = @"Data Source=DESKTOP-ESC3M7E\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public Salesman()
-    {       InitializeComponent();
+        {
+            InitializeComponent();
+           // this.userId = userId;
+           // this.userName = userName;
+
+            // Example: show username on a label
+            ///welcomeLbl.Text = "Welcome, " + userName;
+
+
             this.AutoScaleMode = AutoScaleMode.Dpi; 
             this.AutoSize = true;
     }

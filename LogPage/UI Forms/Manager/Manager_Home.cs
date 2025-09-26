@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using App.UI_Forms.Manager;
+using App.UI_Forms.Manager.User_Control_Form;
 
 namespace App
 {
@@ -16,28 +17,33 @@ namespace App
     {
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
-        // THis part auto generate
+
         [DllImport("user32.dll")]
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
+        
+        private activity homeManagerControl;
+        private about aboutControl;
+        private report reportControl;
+        private discountform discountControl;
+        private productform productControl;
+        private stackLevelform stackLevelControl;
+        private dailyactivityform dailyActivityControl;
 
-
-        // This part is for expand and collapse features
         bool dashboardExpnd = false;
         bool settingsExpnd = false;
         bool memberExpnd = false;
         bool productExpnd = false;
         bool featureExpnd = false;
 
-        // main  code start from here
         public Manager_Home()
         {
             InitializeComponent();
             
-            // This part is for size 
-            this.Size = new Size(1200, 700);
-            this.ClientSize = new Size(1200, 700);
+            // Set form size
+            this.Size = new Size(1200, 600);
+            this.ClientSize = new Size(1200, 600);
 
             // Lock the form in center position
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -53,6 +59,17 @@ namespace App
             // Center the welcome message
             CenterWelcomeMessage();
 
+            // Initialize user controls
+            homeManagerControl = new activity();
+            aboutControl = new about();
+
+            // Add controls to the feature panel
+            featurePanel.Controls.Add(homeManagerControl);
+            featurePanel.Controls.Add(aboutControl);
+
+            // Set initial visibility
+            homeManagerControl.Visible = true;
+            aboutControl.Visible = false;
         }
         private void welcomemsg_Click(object sender, EventArgs e)
         {
@@ -79,17 +96,19 @@ namespace App
 
         private void Manager_Home_Load(object sender, EventArgs e)
         {
-           
-            IsMdiContainer = true;  
+            // Initialize the UI when the manager home form loads
+            IsMdiContainer = true;  // Ensure this form can host MDI child forms
             
+            // Force the form to be centered on screen
             this.CenterToScreen();
             
+            // Prevent the form from being moved after loading
+            this.ControlBox = false; // Hide the control box completely
             
-            this.ControlBox = false; 
-            
-            // this part is for center the welcome message
+            // Center the welcome message on form load
             CenterWelcomeMessage();
             
+            // Make sure feature container has correct initial state
             if (featureExpnd)
             {
                 featureContainer.Width = 165;
@@ -99,19 +118,24 @@ namespace App
                 featureContainer.Width = 60;
             }
             
+            // Apply all visual settings after load
             this.Update();
         }
 
+        // Method to center the welcome message in the top panel
         private void CenterWelcomeMessage()
         {
-            
+            // Calculate the center point of the top panel
             int centerX = (pnltop.Width - welcomemsg.Width) / 2;
             
+            // Ensure we don't position it off-screen
             if (centerX < 0) centerX = 0;
             
+            // Set the welcome message location
             welcomemsg.Location = new Point(centerX, welcomemsg.Location.Y);
         }
 
+        // Override the resize event to keep welcome message centered
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
@@ -126,12 +150,16 @@ namespace App
                 }));
             }
         }
+
+        // Override the SizeChanged event to recenter welcome message when form size changes
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
             
-           if (IsHandleCreated) 
+            // Apply after base resize to ensure accurate measurements
+            if (IsHandleCreated) // Prevent issues during initialization
             {
+                // Use BeginInvoke to ensure UI is ready for measurement
                 this.BeginInvoke(new Action(() => 
                 {
                     CenterWelcomeMessage();
@@ -226,21 +254,7 @@ namespace App
                 }
             }
         }
-        private void settingsbtn_Click(object sender, EventArgs e)
-        {
-           
-            EnsureMenuExpanded();
-
-            if (settingsExpnd)
-            {
-                settingstime.Start();
-                return;
-            }
-
-            CloseAllPanels();
-
-            settingstime.Start();
-        }
+        
         private void featureContainertimer_Tick(object sender, EventArgs e)
         {
             if (featureExpnd == false)
@@ -250,7 +264,7 @@ namespace App
                 {
                     featureExpnd = true;
                     featureContainertimer.Stop();
-                    
+
                     this.BeginInvoke(new Action(() => 
                     {
                         CenterWelcomeMessage();
@@ -274,6 +288,7 @@ namespace App
                 }
             }
             
+            // Re-center during animation to keep it smooth
             CenterWelcomeMessage();
         }
         
@@ -407,93 +422,121 @@ namespace App
             
             // Now open products
             producttimer.Start();
+
+            // Show the product control
+            HideAllControls();
+            if (productControl == null)
+            {
+                productControl = new productform();
+                featurePanel.Controls.Add(productControl);
+                productControl.Dock = DockStyle.Fill;
+            }
+            productControl.Visible = true;
         }
 
-    
+        private void settingsbtn_Click(object sender, EventArgs e)
+        {
+            // First ensure the menu is expanded
+            EnsureMenuExpanded();
+            
+            // If settings is already open, just close it
+            if (settingsExpnd)
+            {
+                settingstime.Start();
+                return;
+            }
+            
+            // Close all panels first
+            CloseAllPanels();
+            
+            // Now open settings
+            settingstime.Start();
+        }
 
         private void reportbtn_Click(object sender, EventArgs e)
         {
-            about1.Visible = false;
-            activity1.Visible = false;
-            dailyactivityform1.Visible = false;
-            discountform1.Visible = false;
-            stackLevelform1.Visible = false;
-
-            report1.Visible = true;
+            HideAllControls();
+            if (reportControl == null)
+            {
+                reportControl = new report();
+                featurePanel.Controls.Add(reportControl);
+                reportControl.Dock = DockStyle.Fill;
+            }
+            reportControl.Visible = true;
         }
         
-
-        private void logoutbtn_Click(object sender, EventArgs e)
+        // Helper method to hide all controls in the feature panel
+        private void HideAllControls()
         {
-            this.Close();
+            foreach (Control control in featurePanel.Controls)
+            {
+                control.Visible = false;
+            }
         }
-      
 
         private void discountbtn_Click(object sender, EventArgs e)
         {
-
-            about1.Visible = false;
-            activity1.Visible = false;
-            dailyactivityform1.Visible = false;
-
-            discountform1.Visible = true;
-            
-            stackLevelform1.Visible = false;
-            report1.Visible = false ;
+            HideAllControls();
+            if (discountControl == null)
+            {
+                discountControl = new discountform();
+                featurePanel.Controls.Add(discountControl);
+                discountControl.Dock = DockStyle.Fill;
+            }
+            discountControl.Visible = true;
         }
 
         private void productbtn_Click(object sender, EventArgs e)
         {
-            about1.Visible = false;
-            activity1.Visible = false;
-            dailyactivityform1.Visible = false;
-            discountform1.Visible = false;
-            stackLevelform1.Visible = false;
-            report1.Visible = true;
+            HideAllControls();
+            if (stackLevelControl == null)
+            {
+                stackLevelControl = new stackLevelform();
+                featurePanel.Controls.Add(stackLevelControl);
+                stackLevelControl.Dock = DockStyle.Fill;
+            }
+            stackLevelControl.Visible = true;
         }
 
         private void staffbtn_Click(object sender, EventArgs e)
         {
-      
-        }
-  
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            // Staff info implementation
         }
         
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Termination implementation
+        }
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
-
+            // Register implementation
         }
-        
- 
+
         //ABOUT BUTTON
         private void aboutbtn_Click(object sender, EventArgs e)
         {
-           
+            HideAllControls();
+            aboutControl.Visible = true;
         }
+        
         private void minimizebtn_Click(object sender, EventArgs e)
         {
             // Disabled to prevent form from being minimized
             // this.WindowState = FormWindowState.Minimized;
         }
 
-
         private void activitybtn_Click(object sender, EventArgs e)
         {
-            about1.Visible = false;
-
-            activity1.Visible = true;
-            
-            dailyactivityform1.Visible = false;
-            discountform1.Visible = false;
-            stackLevelform1.Visible = false;
-            report1.Visible = false;
+            HideAllControls();
+            if (dailyActivityControl == null)
+            {
+                dailyActivityControl = new dailyactivityform();
+                featurePanel.Controls.Add(dailyActivityControl);
+                dailyActivityControl.Dock = DockStyle.Fill;
+            }
+            dailyActivityControl.Visible = true;
         }
-
 
         private void minimizebtn_Click_1(object sender, EventArgs e)
         {
@@ -510,28 +553,22 @@ namespace App
         {
             featureContainertimer.Start();
         }
-
-
-
-
-        private void pnltop_Paint(object sender, PaintEventArgs e)
+        
+        private void logoutbtn_Click(object sender, EventArgs e)
         {
-            // Nothing to do here
+            // Log out implementation
+            this.Close();
         }
         
-        // Add the MouseDown event handler for the top panel to allow dragging
+        // Empty method implementations to fix designer references
+        private void pnltop_Paint(object sender, PaintEventArgs e)
+        {
+            // Empty implementation to satisfy designer reference
+        }
+        
         private void pnltop_MouseDown(object sender, MouseEventArgs e)
         {
-            // Disabled to prevent form movement
-            // if (e.Button == MouseButtons.Left)
-            // {
-            //     ReleaseCapture();
-            //     SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            // }
+            // Empty implementation to satisfy designer reference
         }
-
-       
-
-
     }
 }

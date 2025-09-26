@@ -1,6 +1,6 @@
 ﻿namespace App.UI_Forms.Manager.User_Control_Form
 {
-    partial class productManagerForm
+    partial class productform
     {
         /// <summary> 
         /// Required designer variable.
@@ -40,12 +40,12 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "productForm";
             // 
-            // productManagerForm
+            // productform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Name = "productManagerForm";
+            this.Name = "productform";
             this.Size = new System.Drawing.Size(841, 461);
             this.Load += new System.EventHandler(this.productManagerForm_Load);
             this.ResumeLayout(false);

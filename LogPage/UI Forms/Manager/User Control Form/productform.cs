@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace App.UI_Forms.Manager.User_Control_Form
 {
-    public partial class productManagerForm : UserControl
+    public partial class productform : UserControl
     {
-        public productManagerForm()
+        public productform()
         {
             InitializeComponent();
         }

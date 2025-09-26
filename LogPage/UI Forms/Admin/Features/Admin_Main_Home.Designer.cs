@@ -61,12 +61,12 @@
             this.btnContainer = new System.Windows.Forms.Timer(this.components);
             this.FeatureHolder = new System.Windows.Forms.Panel();
             this.featurePanel = new System.Windows.Forms.Panel();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.addProduct1 = new App.UI_Forms.Admin.Features.addProduct();
             this.employeesSearch = new App.UI_Forms.Admin.Employees();
             this.product1 = new App.UI_Forms.Admin.Product();
             this.addEmployee1 = new App.UI_Forms.Admin.Features.addEmployee();
             this.home1 = new App.UI_Forms.Manager.Home();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.panelTop.SuspendLayout();
             this.reportpnl.SuspendLayout();
             this.Salepnl.SuspendLayout();
@@ -122,7 +122,7 @@
             this.reportpnl.Controls.Add(this.btnAdminInfo);
             this.reportpnl.Controls.Add(this.btnLogOut);
             this.reportpnl.Location = new System.Drawing.Point(2, 438);
-            this.reportpnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportpnl.Margin = new System.Windows.Forms.Padding(2);
             this.reportpnl.Name = "reportpnl";
             this.reportpnl.Size = new System.Drawing.Size(262, 82);
             this.reportpnl.TabIndex = 2;
@@ -181,7 +181,7 @@
             this.Salepnl.Controls.Add(this.btnMonthlySales);
             this.Salepnl.Controls.Add(this.btnDailySales);
             this.Salepnl.Location = new System.Drawing.Point(2, 351);
-            this.Salepnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Salepnl.Margin = new System.Windows.Forms.Padding(2);
             this.Salepnl.Name = "Salepnl";
             this.Salepnl.Size = new System.Drawing.Size(262, 83);
             this.Salepnl.TabIndex = 12;
@@ -193,7 +193,7 @@
             this.btnsales.Image = ((System.Drawing.Image)(resources.GetObject("btnsales.Image")));
             this.btnsales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsales.Location = new System.Drawing.Point(0, 0);
-            this.btnsales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnsales.Margin = new System.Windows.Forms.Padding(2);
             this.btnsales.Name = "btnsales";
             this.btnsales.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.btnsales.Size = new System.Drawing.Size(260, 82);
@@ -238,7 +238,7 @@
             this.Productpnl.Controls.Add(this.btnAddProduct);
             this.Productpnl.Controls.Add(this.btnProduct);
             this.Productpnl.Location = new System.Drawing.Point(2, 267);
-            this.Productpnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Productpnl.Margin = new System.Windows.Forms.Padding(2);
             this.Productpnl.Name = "Productpnl";
             this.Productpnl.Size = new System.Drawing.Size(262, 80);
             this.Productpnl.TabIndex = 7;
@@ -297,7 +297,7 @@
             this.pnlEmployee.Controls.Add(this.btnAddEmployee);
             this.pnlEmployee.Controls.Add(this.btnManageEmployee);
             this.pnlEmployee.Location = new System.Drawing.Point(2, 181);
-            this.pnlEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.pnlEmployee.Name = "pnlEmployee";
             this.pnlEmployee.Size = new System.Drawing.Size(262, 82);
             this.pnlEmployee.TabIndex = 11;
@@ -310,7 +310,7 @@
             this.btnEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployee.Image")));
             this.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmployee.Location = new System.Drawing.Point(2, 0);
-            this.btnEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnEmployee.Size = new System.Drawing.Size(260, 80);
@@ -462,6 +462,7 @@
             // 
             // addProduct1
             // 
+            this.addProduct1.BackColor = System.Drawing.Color.White;
             this.addProduct1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addProduct1.Location = new System.Drawing.Point(0, 0);
             this.addProduct1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -482,6 +483,7 @@
             // 
             // product1
             // 
+            this.product1.BackColor = System.Drawing.Color.White;
             this.product1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.product1.Location = new System.Drawing.Point(0, 0);
             this.product1.Name = "product1";

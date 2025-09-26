@@ -388,25 +388,27 @@ namespace App.UI_Forms.Admin
             }
         }
 
-        // SideContainer animation timer - matches your panel animation pattern exactly
+        // SideContainer animation timer
         private void btnContainer_Tick(object sender, EventArgs e)
         {
             if (sideContainerExpanded == false)
             {
-                // Expanding - increase height by 2 pixels per tick
-                SideContainer.Height += 2;
+                // Expanding - increase height by pixels per tick
+                SideContainer.Height += 5;
                 if (SideContainer.Height >= sideContainerFullHeight)
                 {
+                    SideContainer.Height = sideContainerFullHeight; // Ensure exact height
                     sideContainerExpanded = true;
                     btnContainer.Stop();
                 }
             }
             else
             {
-                // Collapsing - decrease height by 2 pixels per tick
-                SideContainer.Height -= 2;
+                // Collapsing - decrease height by pixels per tick
+                SideContainer.Height -= 5;
                 if (SideContainer.Height <= 0)
                 {
+                    SideContainer.Height = 0; // Ensure exact height
                     sideContainerExpanded = false;
                     SideContainer.Visible = false;
                     btnContainer.Stop();

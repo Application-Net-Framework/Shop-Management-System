@@ -482,12 +482,12 @@ namespace App.UI_Forms.Admin
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-            employeesSearch.Visible = true;
+            employeesSearch.Visible = false;
             addProduct1.Visible = false;
             product1.Visible = false;
             home1.Visible = false;
 
-            addEmployee1.Visible = false;
+            addEmployee1.Visible = true;
         }
 
         private void btnAddProduct_Click_1(object sender, EventArgs e)
@@ -503,12 +503,12 @@ namespace App.UI_Forms.Admin
 
         private void btnManageEmployee_Click_1(object sender, EventArgs e)
         {
-            addProduct1.Visible = true;
+            addProduct1.Visible = false;
             product1.Visible = false;
             home1.Visible = false;
             addEmployee1.Visible = false;
 
-            employeesSearch.Visible = false;
+            employeesSearch.Visible = true;
         }
 
         private void btnManageProduct_Click_1(object sender, EventArgs e)

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace App.UI_Forms.Manager
 {
-    public partial class Report : Form
+    public partial class about : UserControl
     {
-        public Report()
+        public about()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

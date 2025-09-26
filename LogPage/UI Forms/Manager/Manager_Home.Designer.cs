@@ -30,72 +30,57 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manager_Home));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnmember = new System.Windows.Forms.Panel();
-            this.activitybtn = new System.Windows.Forms.Button();
             this.pnsetting = new System.Windows.Forms.Panel();
-            this.discountbtn = new System.Windows.Forms.Button();
             this.pnproduct = new System.Windows.Forms.Panel();
-            this.staffbtn = new System.Windows.Forms.Button();
             this.stackpn = new System.Windows.Forms.Panel();
-            this.productbtn = new System.Windows.Forms.Button();
             this.registerpn = new System.Windows.Forms.Panel();
-            this.registerbtn = new System.Windows.Forms.Button();
             this.dashbordpn = new System.Windows.Forms.Panel();
-            this.dashbtn = new System.Windows.Forms.Button();
             this.dashboardContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.reportpn = new System.Windows.Forms.Panel();
-            this.reportbtn = new System.Windows.Forms.Button();
             this.settingspn = new System.Windows.Forms.Panel();
-            this.settingsbtn = new System.Windows.Forms.Button();
             this.aboutpn = new System.Windows.Forms.Panel();
-            this.aboutbtn = new System.Windows.Forms.Button();
             this.logoutpn = new System.Windows.Forms.Panel();
-            this.logoutbtn = new System.Windows.Forms.Button();
             this.dashboardtimer = new System.Windows.Forms.Timer(this.components);
             this.settingsContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.settingstime = new System.Windows.Forms.Timer(this.components);
             this.membersContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.memberpn = new System.Windows.Forms.Panel();
-            this.memberbtn = new System.Windows.Forms.Button();
             this.tarminationpn = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.productpn = new System.Windows.Forms.Panel();
-            this.probtn = new System.Windows.Forms.Button();
             this.productContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.membertimer = new System.Windows.Forms.Timer(this.components);
             this.producttimer = new System.Windows.Forms.Timer(this.components);
             this.featureContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.menupnl = new System.Windows.Forms.Panel();
-            this.btnmenu = new System.Windows.Forms.Button();
             this.featureContainertimer = new System.Windows.Forms.Timer(this.components);
             this.pnltop = new System.Windows.Forms.Panel();
             this.minimizebtn = new System.Windows.Forms.Button();
             this.fullscreenbtn = new System.Windows.Forms.Button();
             this.crossbtn = new System.Windows.Forms.Button();
             this.welcomemsg = new System.Windows.Forms.Label();
-            this.homemnager = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.salemanLb = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cashierEmpLb = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.totalsalelb = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.totalpricepnl = new System.Windows.Forms.Panel();
-            this.totalpricelb = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button1 = new System.Windows.Forms.Button();
+            this.featurePanel = new System.Windows.Forms.Panel();
+            this.btnmenu = new System.Windows.Forms.Button();
+            this.dashbtn = new System.Windows.Forms.Button();
+            this.activitybtn = new System.Windows.Forms.Button();
+            this.reportbtn = new System.Windows.Forms.Button();
+            this.memberbtn = new System.Windows.Forms.Button();
+            this.staffbtn = new System.Windows.Forms.Button();
+            this.registerbtn = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.probtn = new System.Windows.Forms.Button();
+            this.discountbtn = new System.Windows.Forms.Button();
+            this.productbtn = new System.Windows.Forms.Button();
+            this.settingsbtn = new System.Windows.Forms.Button();
+            this.aboutbtn = new System.Windows.Forms.Button();
+            this.logoutbtn = new System.Windows.Forms.Button();
+            this.stackLevelform1 = new App.UI_Forms.Manager.stackLevelform();
+            this.report1 = new App.UI_Forms.Manager.User_Control_Form.report();
+            this.discountform1 = new App.UI_Forms.Manager.User_Control_Form.discountform();
+            this.dailyactivityform1 = new App.UI_Forms.Manager.dailyactivityform();
+            this.about1 = new App.UI_Forms.Manager.about();
+            this.activity1 = new App.UI_Forms.Manager.activity();
+            this.managerProduct = new App.UI_Forms.Manager.User_Control_Form.productform();
             this.pnmember.SuspendLayout();
             this.pnsetting.SuspendLayout();
             this.pnproduct.SuspendLayout();
@@ -116,16 +101,7 @@
             this.featureContainer.SuspendLayout();
             this.menupnl.SuspendLayout();
             this.pnltop.SuspendLayout();
-            this.homemnager.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.totalpricepnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.featurePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnmember
@@ -137,21 +113,6 @@
             this.pnmember.Size = new System.Drawing.Size(161, 43);
             this.pnmember.TabIndex = 3;
             // 
-            // activitybtn
-            // 
-            this.activitybtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(26)))));
-            this.activitybtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activitybtn.Image = ((System.Drawing.Image)(resources.GetObject("activitybtn.Image")));
-            this.activitybtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.activitybtn.Location = new System.Drawing.Point(-13, -11);
-            this.activitybtn.Name = "activitybtn";
-            this.activitybtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.activitybtn.Size = new System.Drawing.Size(183, 66);
-            this.activitybtn.TabIndex = 2;
-            this.activitybtn.Text = "Daily Activity";
-            this.activitybtn.UseVisualStyleBackColor = false;
-            this.activitybtn.Click += new System.EventHandler(this.activitybtn_Click);
-            // 
             // pnsetting
             // 
             this.pnsetting.Controls.Add(this.discountbtn);
@@ -160,21 +121,6 @@
             this.pnsetting.Name = "pnsetting";
             this.pnsetting.Size = new System.Drawing.Size(161, 43);
             this.pnsetting.TabIndex = 4;
-            // 
-            // discountbtn
-            // 
-            this.discountbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.discountbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountbtn.Image = ((System.Drawing.Image)(resources.GetObject("discountbtn.Image")));
-            this.discountbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.discountbtn.Location = new System.Drawing.Point(-23, -11);
-            this.discountbtn.Name = "discountbtn";
-            this.discountbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.discountbtn.Size = new System.Drawing.Size(210, 66);
-            this.discountbtn.TabIndex = 2;
-            this.discountbtn.Text = "Discount";
-            this.discountbtn.UseVisualStyleBackColor = false;
-            this.discountbtn.Click += new System.EventHandler(this.discountbtn_Click);
             // 
             // pnproduct
             // 
@@ -186,21 +132,6 @@
             this.pnproduct.Size = new System.Drawing.Size(161, 43);
             this.pnproduct.TabIndex = 5;
             // 
-            // staffbtn
-            // 
-            this.staffbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.staffbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffbtn.Image = ((System.Drawing.Image)(resources.GetObject("staffbtn.Image")));
-            this.staffbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.staffbtn.Location = new System.Drawing.Point(-13, -11);
-            this.staffbtn.Name = "staffbtn";
-            this.staffbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.staffbtn.Size = new System.Drawing.Size(183, 66);
-            this.staffbtn.TabIndex = 2;
-            this.staffbtn.Text = "Staff Info";
-            this.staffbtn.UseVisualStyleBackColor = false;
-            this.staffbtn.Click += new System.EventHandler(this.staffbtn_Click);
-            // 
             // stackpn
             // 
             this.stackpn.Controls.Add(this.productbtn);
@@ -209,21 +140,6 @@
             this.stackpn.Name = "stackpn";
             this.stackpn.Size = new System.Drawing.Size(161, 43);
             this.stackpn.TabIndex = 6;
-            // 
-            // productbtn
-            // 
-            this.productbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.productbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productbtn.Image = ((System.Drawing.Image)(resources.GetObject("productbtn.Image")));
-            this.productbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.productbtn.Location = new System.Drawing.Point(-13, -11);
-            this.productbtn.Name = "productbtn";
-            this.productbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.productbtn.Size = new System.Drawing.Size(183, 66);
-            this.productbtn.TabIndex = 2;
-            this.productbtn.Text = "Stack Level";
-            this.productbtn.UseVisualStyleBackColor = false;
-            this.productbtn.Click += new System.EventHandler(this.productbtn_Click);
             // 
             // registerpn
             // 
@@ -235,21 +151,6 @@
             this.registerpn.Size = new System.Drawing.Size(161, 43);
             this.registerpn.TabIndex = 7;
             // 
-            // registerbtn
-            // 
-            this.registerbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.registerbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerbtn.Image = ((System.Drawing.Image)(resources.GetObject("registerbtn.Image")));
-            this.registerbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.registerbtn.Location = new System.Drawing.Point(-13, -13);
-            this.registerbtn.Name = "registerbtn";
-            this.registerbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.registerbtn.Size = new System.Drawing.Size(183, 66);
-            this.registerbtn.TabIndex = 2;
-            this.registerbtn.Text = "Registers";
-            this.registerbtn.UseVisualStyleBackColor = false;
-            this.registerbtn.Click += new System.EventHandler(this.registerbtn_Click);
-            // 
             // dashbordpn
             // 
             this.dashbordpn.Controls.Add(this.dashbtn);
@@ -258,21 +159,6 @@
             this.dashbordpn.Name = "dashbordpn";
             this.dashbordpn.Size = new System.Drawing.Size(178, 50);
             this.dashbordpn.TabIndex = 8;
-            // 
-            // dashbtn
-            // 
-            this.dashbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.dashbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashbtn.Image = ((System.Drawing.Image)(resources.GetObject("dashbtn.Image")));
-            this.dashbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dashbtn.Location = new System.Drawing.Point(-23, -9);
-            this.dashbtn.Name = "dashbtn";
-            this.dashbtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.dashbtn.Size = new System.Drawing.Size(215, 71);
-            this.dashbtn.TabIndex = 2;
-            this.dashbtn.Text = "    Dash Board";
-            this.dashbtn.UseVisualStyleBackColor = false;
-            this.dashbtn.Click += new System.EventHandler(this.dashbtn_Click);
             // 
             // dashboardContainer
             // 
@@ -294,21 +180,6 @@
             this.reportpn.Size = new System.Drawing.Size(161, 43);
             this.reportpn.TabIndex = 12;
             // 
-            // reportbtn
-            // 
-            this.reportbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.reportbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportbtn.Image = ((System.Drawing.Image)(resources.GetObject("reportbtn.Image")));
-            this.reportbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportbtn.Location = new System.Drawing.Point(-13, -11);
-            this.reportbtn.Name = "reportbtn";
-            this.reportbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.reportbtn.Size = new System.Drawing.Size(183, 66);
-            this.reportbtn.TabIndex = 2;
-            this.reportbtn.Text = "Report";
-            this.reportbtn.UseVisualStyleBackColor = false;
-            this.reportbtn.Click += new System.EventHandler(this.reportbtn_Click);
-            // 
             // settingspn
             // 
             this.settingspn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
@@ -319,21 +190,6 @@
             this.settingspn.Size = new System.Drawing.Size(170, 53);
             this.settingspn.TabIndex = 13;
             // 
-            // settingsbtn
-            // 
-            this.settingsbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.settingsbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.settingsbtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsbtn.Image")));
-            this.settingsbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsbtn.Location = new System.Drawing.Point(-8, -12);
-            this.settingsbtn.Name = "settingsbtn";
-            this.settingsbtn.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.settingsbtn.Size = new System.Drawing.Size(190, 77);
-            this.settingsbtn.TabIndex = 2;
-            this.settingsbtn.Text = "Settings";
-            this.settingsbtn.UseVisualStyleBackColor = false;
-            this.settingsbtn.Click += new System.EventHandler(this.settingsbtn_Click);
-            // 
             // aboutpn
             // 
             this.aboutpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
@@ -342,20 +198,6 @@
             this.aboutpn.Name = "aboutpn";
             this.aboutpn.Size = new System.Drawing.Size(161, 43);
             this.aboutpn.TabIndex = 14;
-            // 
-            // aboutbtn
-            // 
-            this.aboutbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutbtn.Image = ((System.Drawing.Image)(resources.GetObject("aboutbtn.Image")));
-            this.aboutbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.aboutbtn.Location = new System.Drawing.Point(-11, -10);
-            this.aboutbtn.Name = "aboutbtn";
-            this.aboutbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.aboutbtn.Size = new System.Drawing.Size(182, 66);
-            this.aboutbtn.TabIndex = 2;
-            this.aboutbtn.Text = "About";
-            this.aboutbtn.UseVisualStyleBackColor = false;
-            this.aboutbtn.Click += new System.EventHandler(this.aboutbtn_Click);
             // 
             // logoutpn
             // 
@@ -366,21 +208,6 @@
             this.logoutpn.Padding = new System.Windows.Forms.Padding(3);
             this.logoutpn.Size = new System.Drawing.Size(161, 43);
             this.logoutpn.TabIndex = 4;
-            // 
-            // logoutbtn
-            // 
-            this.logoutbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.logoutbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutbtn.Image = ((System.Drawing.Image)(resources.GetObject("logoutbtn.Image")));
-            this.logoutbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutbtn.Location = new System.Drawing.Point(-11, -11);
-            this.logoutbtn.Name = "logoutbtn";
-            this.logoutbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.logoutbtn.Size = new System.Drawing.Size(182, 66);
-            this.logoutbtn.TabIndex = 2;
-            this.logoutbtn.Text = "Log Out";
-            this.logoutbtn.UseVisualStyleBackColor = false;
-            this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click);
             // 
             // dashboardtimer
             // 
@@ -395,7 +222,7 @@
             this.settingsContainer.Controls.Add(this.logoutpn);
             this.settingsContainer.Location = new System.Drawing.Point(3, 252);
             this.settingsContainer.Name = "settingsContainer";
-            this.settingsContainer.Size = new System.Drawing.Size(170, 50);
+            this.settingsContainer.Size = new System.Drawing.Size(170, 114);
             this.settingsContainer.TabIndex = 15;
             this.settingsContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.settingsContainer_Paint);
             // 
@@ -425,21 +252,6 @@
             this.memberpn.Size = new System.Drawing.Size(170, 54);
             this.memberpn.TabIndex = 19;
             // 
-            // memberbtn
-            // 
-            this.memberbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.memberbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memberbtn.Image = ((System.Drawing.Image)(resources.GetObject("memberbtn.Image")));
-            this.memberbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.memberbtn.Location = new System.Drawing.Point(-15, -4);
-            this.memberbtn.Name = "memberbtn";
-            this.memberbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.memberbtn.Size = new System.Drawing.Size(199, 66);
-            this.memberbtn.TabIndex = 2;
-            this.memberbtn.Text = "Members";
-            this.memberbtn.UseVisualStyleBackColor = false;
-            this.memberbtn.Click += new System.EventHandler(this.memberbtn_Click);
-            // 
             // tarminationpn
             // 
             this.tarminationpn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
@@ -450,21 +262,6 @@
             this.tarminationpn.Size = new System.Drawing.Size(161, 43);
             this.tarminationpn.TabIndex = 18;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(-13, -11);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(183, 66);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Termination";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // productpn
             // 
             this.productpn.Controls.Add(this.probtn);
@@ -473,21 +270,6 @@
             this.productpn.Name = "productpn";
             this.productpn.Size = new System.Drawing.Size(170, 54);
             this.productpn.TabIndex = 17;
-            // 
-            // probtn
-            // 
-            this.probtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.probtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.probtn.Image = ((System.Drawing.Image)(resources.GetObject("probtn.Image")));
-            this.probtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.probtn.Location = new System.Drawing.Point(-13, -8);
-            this.probtn.Name = "probtn";
-            this.probtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.probtn.Size = new System.Drawing.Size(200, 66);
-            this.probtn.TabIndex = 2;
-            this.probtn.Text = "Products";
-            this.probtn.UseVisualStyleBackColor = false;
-            this.probtn.Click += new System.EventHandler(this.probtn_Click);
             // 
             // productContainer
             // 
@@ -521,7 +303,7 @@
             this.featureContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.featureContainer.Location = new System.Drawing.Point(3, 3);
             this.featureContainer.Name = "featureContainer";
-            this.featureContainer.Size = new System.Drawing.Size(277, 594);
+            this.featureContainer.Size = new System.Drawing.Size(171, 594);
             this.featureContainer.TabIndex = 20;
             this.featureContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.featureContainer_Paint);
             // 
@@ -534,21 +316,6 @@
             this.menupnl.Name = "menupnl";
             this.menupnl.Size = new System.Drawing.Size(178, 81);
             this.menupnl.TabIndex = 22;
-            // 
-            // btnmenu
-            // 
-            this.btnmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.btnmenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmenu.Image = ((System.Drawing.Image)(resources.GetObject("btnmenu.Image")));
-            this.btnmenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnmenu.Location = new System.Drawing.Point(-12, -14);
-            this.btnmenu.Name = "btnmenu";
-            this.btnmenu.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.btnmenu.Size = new System.Drawing.Size(207, 105);
-            this.btnmenu.TabIndex = 3;
-            this.btnmenu.Text = " Menu";
-            this.btnmenu.UseVisualStyleBackColor = false;
-            this.btnmenu.Click += new System.EventHandler(this.btnmenu_Click);
             // 
             // featureContainertimer
             // 
@@ -564,9 +331,9 @@
             this.pnltop.Controls.Add(this.welcomemsg);
             this.pnltop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnltop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnltop.Location = new System.Drawing.Point(280, 3);
+            this.pnltop.Location = new System.Drawing.Point(174, 3);
             this.pnltop.Name = "pnltop";
-            this.pnltop.Size = new System.Drawing.Size(717, 34);
+            this.pnltop.Size = new System.Drawing.Size(823, 34);
             this.pnltop.TabIndex = 21;
             this.pnltop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnltop_Paint);
             this.pnltop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnltop_MouseDown);
@@ -574,7 +341,7 @@
             // minimizebtn
             // 
             this.minimizebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizebtn.Location = new System.Drawing.Point(624, 0);
+            this.minimizebtn.Location = new System.Drawing.Point(730, 0);
             this.minimizebtn.Name = "minimizebtn";
             this.minimizebtn.Size = new System.Drawing.Size(32, 34);
             this.minimizebtn.TabIndex = 21;
@@ -583,7 +350,7 @@
             // fullscreenbtn
             // 
             this.fullscreenbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.fullscreenbtn.Location = new System.Drawing.Point(656, 0);
+            this.fullscreenbtn.Location = new System.Drawing.Point(762, 0);
             this.fullscreenbtn.Name = "fullscreenbtn";
             this.fullscreenbtn.Size = new System.Drawing.Size(32, 34);
             this.fullscreenbtn.TabIndex = 22;
@@ -593,7 +360,7 @@
             // crossbtn
             // 
             this.crossbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.crossbtn.Location = new System.Drawing.Point(688, 0);
+            this.crossbtn.Location = new System.Drawing.Point(794, 0);
             this.crossbtn.Name = "crossbtn";
             this.crossbtn.Size = new System.Drawing.Size(29, 34);
             this.crossbtn.TabIndex = 21;
@@ -612,215 +379,285 @@
             this.welcomemsg.Text = "Welcome Manager";
             this.welcomemsg.Click += new System.EventHandler(this.welcomemsg_Click);
             // 
-            // homemnager
+            // featurePanel
             // 
-            this.homemnager.Controls.Add(this.button1);
-            this.homemnager.Controls.Add(this.chart1);
-            this.homemnager.Controls.Add(this.panel3);
-            this.homemnager.Controls.Add(this.panel2);
-            this.homemnager.Controls.Add(this.panel1);
-            this.homemnager.Controls.Add(this.totalpricepnl);
-            this.homemnager.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homemnager.Location = new System.Drawing.Point(280, 37);
-            this.homemnager.Name = "homemnager";
-            this.homemnager.Size = new System.Drawing.Size(717, 560);
-            this.homemnager.TabIndex = 22;
-            this.homemnager.Paint += new System.Windows.Forms.PaintEventHandler(this.homemnager_Paint);
+            this.featurePanel.Controls.Add(this.managerProduct);
+            this.featurePanel.Controls.Add(this.stackLevelform1);
+            this.featurePanel.Controls.Add(this.report1);
+            this.featurePanel.Controls.Add(this.discountform1);
+            this.featurePanel.Controls.Add(this.dailyactivityform1);
+            this.featurePanel.Controls.Add(this.about1);
+            this.featurePanel.Controls.Add(this.activity1);
+            this.featurePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.featurePanel.Location = new System.Drawing.Point(174, 37);
+            this.featurePanel.Name = "featurePanel";
+            this.featurePanel.Size = new System.Drawing.Size(823, 560);
+            this.featurePanel.TabIndex = 22;
             // 
-            // panel3
+            // btnmenu
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(0)))), ((int)(((byte)(13)))));
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.salemanLb);
-            this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(637, 21);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(155, 91);
-            this.panel3.TabIndex = 4;
+            this.btnmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.btnmenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmenu.Image = ((System.Drawing.Image)(resources.GetObject("btnmenu.Image")));
+            this.btnmenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnmenu.Location = new System.Drawing.Point(-12, -14);
+            this.btnmenu.Name = "btnmenu";
+            this.btnmenu.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnmenu.Size = new System.Drawing.Size(207, 105);
+            this.btnmenu.TabIndex = 3;
+            this.btnmenu.Text = " Menu";
+            this.btnmenu.UseVisualStyleBackColor = false;
+            this.btnmenu.Click += new System.EventHandler(this.btnmenu_Click);
             // 
-            // label10
+            // dashbtn
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(7, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 15);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Sales Man";
+            this.dashbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.dashbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashbtn.Image = ((System.Drawing.Image)(resources.GetObject("dashbtn.Image")));
+            this.dashbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dashbtn.Location = new System.Drawing.Point(-23, -9);
+            this.dashbtn.Name = "dashbtn";
+            this.dashbtn.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.dashbtn.Size = new System.Drawing.Size(215, 71);
+            this.dashbtn.TabIndex = 2;
+            this.dashbtn.Text = "    Dash Board";
+            this.dashbtn.UseVisualStyleBackColor = false;
+            this.dashbtn.Click += new System.EventHandler(this.dashbtn_Click);
             // 
-            // salemanLb
+            // activitybtn
             // 
-            this.salemanLb.AutoSize = true;
-            this.salemanLb.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salemanLb.Location = new System.Drawing.Point(83, 62);
-            this.salemanLb.Name = "salemanLb";
-            this.salemanLb.Size = new System.Drawing.Size(58, 17);
-            this.salemanLb.TabIndex = 2;
-            this.salemanLb.Text = "Amount";
+            this.activitybtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(26)))));
+            this.activitybtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activitybtn.Image = ((System.Drawing.Image)(resources.GetObject("activitybtn.Image")));
+            this.activitybtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.activitybtn.Location = new System.Drawing.Point(-13, -11);
+            this.activitybtn.Name = "activitybtn";
+            this.activitybtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.activitybtn.Size = new System.Drawing.Size(183, 66);
+            this.activitybtn.TabIndex = 2;
+            this.activitybtn.Text = "Daily Activity";
+            this.activitybtn.UseVisualStyleBackColor = false;
+            this.activitybtn.Click += new System.EventHandler(this.activitybtn_Click);
             // 
-            // pictureBox4
+            // reportbtn
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(10, 43);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.reportbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.reportbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportbtn.Image = ((System.Drawing.Image)(resources.GetObject("reportbtn.Image")));
+            this.reportbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reportbtn.Location = new System.Drawing.Point(-13, -11);
+            this.reportbtn.Name = "reportbtn";
+            this.reportbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.reportbtn.Size = new System.Drawing.Size(183, 66);
+            this.reportbtn.TabIndex = 2;
+            this.reportbtn.Text = "Report";
+            this.reportbtn.UseVisualStyleBackColor = false;
+            this.reportbtn.Click += new System.EventHandler(this.reportbtn_Click);
             // 
-            // label9
+            // memberbtn
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(7, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 15);
-            this.label9.TabIndex = 2;
+            this.memberbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.memberbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberbtn.Image = ((System.Drawing.Image)(resources.GetObject("memberbtn.Image")));
+            this.memberbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.memberbtn.Location = new System.Drawing.Point(-15, -4);
+            this.memberbtn.Name = "memberbtn";
+            this.memberbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.memberbtn.Size = new System.Drawing.Size(199, 66);
+            this.memberbtn.TabIndex = 2;
+            this.memberbtn.Text = "Members";
+            this.memberbtn.UseVisualStyleBackColor = false;
+            this.memberbtn.Click += new System.EventHandler(this.memberbtn_Click);
             // 
-            // panel2
+            // staffbtn
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(0)))), ((int)(((byte)(13)))));
-            this.panel2.Controls.Add(this.cashierEmpLb);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(433, 21);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(155, 91);
-            this.panel2.TabIndex = 3;
+            this.staffbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.staffbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffbtn.Image = ((System.Drawing.Image)(resources.GetObject("staffbtn.Image")));
+            this.staffbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.staffbtn.Location = new System.Drawing.Point(-13, -11);
+            this.staffbtn.Name = "staffbtn";
+            this.staffbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.staffbtn.Size = new System.Drawing.Size(183, 66);
+            this.staffbtn.TabIndex = 2;
+            this.staffbtn.Text = "Staff Info";
+            this.staffbtn.UseVisualStyleBackColor = false;
+            this.staffbtn.Click += new System.EventHandler(this.staffbtn_Click);
             // 
-            // cashierEmpLb
+            // registerbtn
             // 
-            this.cashierEmpLb.AutoSize = true;
-            this.cashierEmpLb.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierEmpLb.Location = new System.Drawing.Point(83, 62);
-            this.cashierEmpLb.Name = "cashierEmpLb";
-            this.cashierEmpLb.Size = new System.Drawing.Size(58, 17);
-            this.cashierEmpLb.TabIndex = 2;
-            this.cashierEmpLb.Text = "Amount";
+            this.registerbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.registerbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerbtn.Image = ((System.Drawing.Image)(resources.GetObject("registerbtn.Image")));
+            this.registerbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.registerbtn.Location = new System.Drawing.Point(-13, -13);
+            this.registerbtn.Name = "registerbtn";
+            this.registerbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.registerbtn.Size = new System.Drawing.Size(183, 66);
+            this.registerbtn.TabIndex = 2;
+            this.registerbtn.Text = "Registers";
+            this.registerbtn.UseVisualStyleBackColor = false;
+            this.registerbtn.Click += new System.EventHandler(this.registerbtn_Click);
             // 
-            // pictureBox3
+            // button2
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(10, 46);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(-13, -11);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(183, 66);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Termination";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label7
+            // probtn
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 15);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Cashier";
+            this.probtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.probtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.probtn.Image = ((System.Drawing.Image)(resources.GetObject("probtn.Image")));
+            this.probtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.probtn.Location = new System.Drawing.Point(-13, -8);
+            this.probtn.Name = "probtn";
+            this.probtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.probtn.Size = new System.Drawing.Size(200, 66);
+            this.probtn.TabIndex = 2;
+            this.probtn.Text = "Products";
+            this.probtn.UseVisualStyleBackColor = false;
+            this.probtn.Click += new System.EventHandler(this.probtn_Click);
             // 
-            // panel1
+            // discountbtn
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(0)))), ((int)(((byte)(13)))));
-            this.panel1.Controls.Add(this.totalsalelb);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(227, 21);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(155, 91);
-            this.panel1.TabIndex = 2;
+            this.discountbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.discountbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountbtn.Image = ((System.Drawing.Image)(resources.GetObject("discountbtn.Image")));
+            this.discountbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.discountbtn.Location = new System.Drawing.Point(-23, -11);
+            this.discountbtn.Name = "discountbtn";
+            this.discountbtn.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.discountbtn.Size = new System.Drawing.Size(210, 66);
+            this.discountbtn.TabIndex = 2;
+            this.discountbtn.Text = "Discount";
+            this.discountbtn.UseVisualStyleBackColor = false;
+            this.discountbtn.Click += new System.EventHandler(this.discountbtn_Click);
             // 
-            // totalsalelb
+            // productbtn
             // 
-            this.totalsalelb.AutoSize = true;
-            this.totalsalelb.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalsalelb.Location = new System.Drawing.Point(83, 62);
-            this.totalsalelb.Name = "totalsalelb";
-            this.totalsalelb.Size = new System.Drawing.Size(58, 17);
-            this.totalsalelb.TabIndex = 2;
-            this.totalsalelb.Text = "Amount";
+            this.productbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.productbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productbtn.Image = ((System.Drawing.Image)(resources.GetObject("productbtn.Image")));
+            this.productbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.productbtn.Location = new System.Drawing.Point(-13, -11);
+            this.productbtn.Name = "productbtn";
+            this.productbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.productbtn.Size = new System.Drawing.Size(183, 66);
+            this.productbtn.TabIndex = 2;
+            this.productbtn.Text = "Stack Level";
+            this.productbtn.UseVisualStyleBackColor = false;
+            this.productbtn.Click += new System.EventHandler(this.productbtn_Click);
             // 
-            // pictureBox2
+            // settingsbtn
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(10, 43);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.settingsbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.settingsbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settingsbtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsbtn.Image")));
+            this.settingsbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.settingsbtn.Location = new System.Drawing.Point(-8, -12);
+            this.settingsbtn.Name = "settingsbtn";
+            this.settingsbtn.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.settingsbtn.Size = new System.Drawing.Size(190, 77);
+            this.settingsbtn.TabIndex = 2;
+            this.settingsbtn.Text = "Settings";
+            this.settingsbtn.UseVisualStyleBackColor = false;
+            this.settingsbtn.Click += new System.EventHandler(this.settingsbtn_Click);
             // 
-            // label5
+            // aboutbtn
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 15);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Tatal Sale";
+            this.aboutbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutbtn.Image = ((System.Drawing.Image)(resources.GetObject("aboutbtn.Image")));
+            this.aboutbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.aboutbtn.Location = new System.Drawing.Point(-11, -10);
+            this.aboutbtn.Name = "aboutbtn";
+            this.aboutbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.aboutbtn.Size = new System.Drawing.Size(182, 66);
+            this.aboutbtn.TabIndex = 2;
+            this.aboutbtn.Text = "About";
+            this.aboutbtn.UseVisualStyleBackColor = false;
+            this.aboutbtn.Click += new System.EventHandler(this.aboutbtn_Click);
             // 
-            // totalpricepnl
+            // logoutbtn
             // 
-            this.totalpricepnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(0)))), ((int)(((byte)(13)))));
-            this.totalpricepnl.Controls.Add(this.totalpricelb);
-            this.totalpricepnl.Controls.Add(this.pictureBox1);
-            this.totalpricepnl.Controls.Add(this.label2);
-            this.totalpricepnl.Location = new System.Drawing.Point(15, 21);
-            this.totalpricepnl.Name = "totalpricepnl";
-            this.totalpricepnl.Size = new System.Drawing.Size(155, 91);
-            this.totalpricepnl.TabIndex = 1;
+            this.logoutbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.logoutbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutbtn.Image = ((System.Drawing.Image)(resources.GetObject("logoutbtn.Image")));
+            this.logoutbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutbtn.Location = new System.Drawing.Point(-11, -11);
+            this.logoutbtn.Name = "logoutbtn";
+            this.logoutbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.logoutbtn.Size = new System.Drawing.Size(182, 66);
+            this.logoutbtn.TabIndex = 2;
+            this.logoutbtn.Text = "Log Out";
+            this.logoutbtn.UseVisualStyleBackColor = false;
+            this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click);
             // 
-            // totalpricelb
+            // stackLevelform1
             // 
-            this.totalpricelb.AutoSize = true;
-            this.totalpricelb.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalpricelb.Location = new System.Drawing.Point(83, 62);
-            this.totalpricelb.Name = "totalpricelb";
-            this.totalpricelb.Size = new System.Drawing.Size(58, 17);
-            this.totalpricelb.TabIndex = 2;
-            this.totalpricelb.Text = "Amount";
+            this.stackLevelform1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stackLevelform1.Location = new System.Drawing.Point(0, 0);
+            this.stackLevelform1.Name = "stackLevelform1";
+            this.stackLevelform1.Size = new System.Drawing.Size(823, 560);
+            this.stackLevelform1.TabIndex = 5;
             // 
-            // pictureBox1
+            // report1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.report1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.report1.Location = new System.Drawing.Point(0, 0);
+            this.report1.Name = "report1";
+            this.report1.Size = new System.Drawing.Size(823, 560);
+            this.report1.TabIndex = 4;
             // 
-            // label2
+            // discountform1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Total Price";
+            this.discountform1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.discountform1.Location = new System.Drawing.Point(0, 0);
+            this.discountform1.Name = "discountform1";
+            this.discountform1.Size = new System.Drawing.Size(823, 560);
+            this.discountform1.TabIndex = 3;
             // 
-            // chart1
+            // dailyactivityform1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(25, 162);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(397, 308);
-            this.chart1.TabIndex = 5;
-            this.chart1.Text = "chart1";
+            this.dailyactivityform1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dailyactivityform1.Location = new System.Drawing.Point(0, 0);
+            this.dailyactivityform1.Name = "dailyactivityform1";
+            this.dailyactivityform1.Size = new System.Drawing.Size(823, 560);
+            this.dailyactivityform1.TabIndex = 2;
             // 
-            // button1
+            // about1
             // 
-            this.button1.Location = new System.Drawing.Point(319, 501);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.about1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.about1.Location = new System.Drawing.Point(0, 0);
+            this.about1.Name = "about1";
+            this.about1.Size = new System.Drawing.Size(823, 560);
+            this.about1.TabIndex = 1;
+            // 
+            // activity1
+            // 
+            this.activity1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activity1.Location = new System.Drawing.Point(0, 0);
+            this.activity1.Name = "activity1";
+            this.activity1.Size = new System.Drawing.Size(823, 560);
+            this.activity1.TabIndex = 0;
+            // 
+            // managerProduct
+            // 
+            this.managerProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.managerProduct.Location = new System.Drawing.Point(0, 0);
+            this.managerProduct.Name = "managerProduct";
+            this.managerProduct.Size = new System.Drawing.Size(823, 560);
+            this.managerProduct.TabIndex = 6;
             // 
             // Manager_Home
             // 
@@ -828,7 +665,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.homemnager);
+            this.Controls.Add(this.featurePanel);
             this.Controls.Add(this.pnltop);
             this.Controls.Add(this.featureContainer);
             this.ForeColor = System.Drawing.Color.White;
@@ -858,20 +695,7 @@
             this.menupnl.ResumeLayout(false);
             this.pnltop.ResumeLayout(false);
             this.pnltop.PerformLayout();
-            this.homemnager.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.totalpricepnl.ResumeLayout(false);
-            this.totalpricepnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.featurePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -920,25 +744,13 @@
         private System.Windows.Forms.Button fullscreenbtn;
         private System.Windows.Forms.Button crossbtn;
         private System.Windows.Forms.Label welcomemsg;
-        private System.Windows.Forms.Panel homemnager;
-        private System.Windows.Forms.Panel totalpricepnl;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label salemanLb;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label cashierEmpLb;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label totalsalelb;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label totalpricelb;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel featurePanel;
+        private UI_Forms.Manager.activity activity1;
+        private UI_Forms.Manager.stackLevelform stackLevelform1;
+        private UI_Forms.Manager.User_Control_Form.report report1;
+        private UI_Forms.Manager.User_Control_Form.discountform discountform1;
+        private UI_Forms.Manager.dailyactivityform dailyactivityform1;
+        private UI_Forms.Manager.about about1;
+        private UI_Forms.Manager.User_Control_Form.productform managerProduct;
     }
 }

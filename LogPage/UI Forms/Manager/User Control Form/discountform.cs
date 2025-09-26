@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App.UI_Forms.Manager
+namespace App.UI_Forms.Manager.User_Control_Form
 {
-    public partial class DailyActivity : Form
+    public partial class discountform : UserControl
     {
-        public DailyActivity()
+        public discountform()
         {
             InitializeComponent();
-        }
-
-        private void DailyActivity_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

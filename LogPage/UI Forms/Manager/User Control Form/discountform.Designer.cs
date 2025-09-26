@@ -1,13 +1,13 @@
-﻿namespace App.UI_Forms.Manager
+﻿namespace App.UI_Forms.Manager.User_Control_Form
 {
-    partial class Report
+    partial class discountform
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -34,23 +34,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(202, 221);
+            this.label1.Location = new System.Drawing.Point(377, 257);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 108);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Report";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "discount";
             // 
-            // Report
+            // discountform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 550);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Report";
-            this.Text = "Report";
+            this.Name = "discountform";
+            this.Size = new System.Drawing.Size(819, 527);
             this.ResumeLayout(false);
             this.PerformLayout();
 

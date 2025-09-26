@@ -34,7 +34,7 @@ namespace App.UI_Forms.Admin
             string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
             SqlConnection conne = new SqlConnection(connectionString);
             conne.Open();
-            string quarry = "SELECT * FROM AddEmployee";
+            string quarry = "SELECT * FROM Product";
             SqlCommand cmd = new SqlCommand(quarry, conne);
             cmd.ExecuteNonQuery();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -49,19 +49,19 @@ namespace App.UI_Forms.Admin
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-           /* string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+            string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            string query = "UPDATE AddEmployee " +
+            string query = "UPDATE Product " +
                "SET Name='" + txtPName.Text +
-               "', Email='" + txtEmail.Text +
-               "', Phone_Number='" + txtNumber.Text +
-               "' WHERE ID=" + txtID.Text;
+               "', Price='" + txtPrice.Text +
+               "', Category='" + txtCategory.Text +
+               "' WHERE ID=" + txtPID.Text;
 
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             show();
-            clear();*/
+            clear();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace App.UI_Forms.Admin
                 string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
-                string query = "delete from AddEmployee where ID=" + txtPID.Text + "";
+                string query = "delete from Product where ID=" + txtPID.Text + "";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 show();
@@ -86,7 +86,7 @@ namespace App.UI_Forms.Admin
             string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
             SqlConnection conne = new SqlConnection(connectionString);
             conne.Open();
-            string quarry = "SELECT * FROM AddEmployee";
+            string quarry = "SELECT * FROM Product";
             SqlCommand cmd = new SqlCommand(quarry, conne);
             cmd.ExecuteNonQuery();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -106,6 +106,5 @@ namespace App.UI_Forms.Admin
             txtAProduct.Text = "";
             txtTProduct.Text = "";
         }
-
     }
 }

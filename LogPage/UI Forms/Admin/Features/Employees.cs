@@ -43,7 +43,7 @@ namespace App.UI_Forms.Admin
                 string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
-                string query = "delete from AddEmployee where ID=" + txtID.Text + "";
+                string query = "delete from Employees where ID=" + txtID.Text + "";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 show();
@@ -56,7 +56,7 @@ namespace App.UI_Forms.Admin
             string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            string query = "UPDATE AddEmployee " +
+            string query = "UPDATE Employees " +
                "SET Name='" + txtName.Text +
                "', Email='" + txtEmail.Text +
                "', Phone_Number='" + txtNumber.Text +
@@ -73,7 +73,7 @@ namespace App.UI_Forms.Admin
             string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
             SqlConnection conne = new SqlConnection(connectionString);
             conne.Open();
-            string quarry = "SELECT * FROM AddEmployee";
+            string quarry = "SELECT * FROM Employees";
             SqlCommand cmd = new SqlCommand(quarry, conne);
             cmd.ExecuteNonQuery();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -90,7 +90,7 @@ namespace App.UI_Forms.Admin
             string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
             SqlConnection conne = new SqlConnection(connectionString);
             conne.Open();
-            string quarry = "SELECT * FROM AddEmployee";
+            string quarry = "SELECT * FROM Employees";
             SqlCommand cmd = new SqlCommand(quarry, conne);
             cmd.ExecuteNonQuery();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,16 +11,11 @@ using System.Windows.Forms;
 
 namespace App.UI_Forms.Admin
 {
-    public partial class About : Form
+    public partial class Employees : UserControl
     {
-        public About()
+        public Employees()
         {
             InitializeComponent();
-        }
-
-        private void AdminImage_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

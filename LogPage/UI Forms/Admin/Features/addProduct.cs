@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App.UI_Forms.Admin
+namespace App.UI_Forms.Admin.Features
 {
-    public partial class About : Form
+    public partial class addProduct : UserControl
     {
-        public About()
+        public addProduct()
         {
             InitializeComponent();
         }
 
-        private void AdminImage_Click(object sender, EventArgs e)
+        private void addProduct_Load(object sender, EventArgs e)
         {
 
         }

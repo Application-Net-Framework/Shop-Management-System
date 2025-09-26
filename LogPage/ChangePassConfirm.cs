@@ -8,18 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App.UI_Forms.Admin
+namespace App
 {
-    public partial class About : Form
+    public partial class ChangePassConfirm : Form
     {
-        public About()
+        public ChangePassConfirm()
         {
             InitializeComponent();
         }
 
-        private void AdminImage_Click(object sender, EventArgs e)
+        private void backBtn_Click(object sender, EventArgs e)
         {
-
+            ForgetPass homeForm = new ForgetPass();
+            homeForm.Show();
+            this.Hide();
         }
     }
 }

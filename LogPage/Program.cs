@@ -18,21 +18,17 @@ namespace App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            // Choose only ONE form to run
-            //Application.Run(new Admin_Main_Home());
+            Application.Run(new Admin_Main_Home());
+            // Start with the login page
+         //   Application.Run(new App.LogPage());
 
             // Other forms are commented out - uncomment only one if you want to change the startup form
-            // Application.Run(new LogPage());
+            // Application.Run(new App.UI_Forms.Admin.Admin_Main_Home());
             // Application.Run(new mainCashier());
             // Application.Run(new Manager_Home());
-            // Application.Run(new New_Managed());
             // Application.Run(new Registration_Admin());
             // Application.Run(new Login_Admin());
-
-            Application.Run(new Salesman());
-            // Note: Only one Application.Run call can be active at a time
-            // as it blocks until the form is closed
+            // Application.Run(new Salesman());
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace App.UI_Forms.Admin
+﻿namespace App.UI_Forms.Admin.Features
 {
-    partial class Employees
+    partial class addEmployee
     {
         /// <summary> 
         /// Required designer variable.
@@ -46,109 +46,120 @@
             // lblNumber
             // 
             this.lblNumber.AutoSize = true;
-            this.lblNumber.Location = new System.Drawing.Point(628, 254);
+            this.lblNumber.Location = new System.Drawing.Point(404, 172);
+            this.lblNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(120, 20);
-            this.lblNumber.TabIndex = 25;
+            this.lblNumber.Size = new System.Drawing.Size(81, 13);
+            this.lblNumber.TabIndex = 37;
             this.lblNumber.Text = "Phone_Number";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(661, 203);
+            this.lblEmail.Location = new System.Drawing.Point(426, 139);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 20);
-            this.lblEmail.TabIndex = 24;
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 36;
             this.lblEmail.Text = "Email";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(658, 123);
+            this.lblName.Location = new System.Drawing.Point(424, 87);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(51, 20);
-            this.lblName.TabIndex = 23;
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 35;
             this.lblName.Text = "Name";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(673, 71);
+            this.lblID.Location = new System.Drawing.Point(434, 53);
+            this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(26, 20);
-            this.lblID.TabIndex = 22;
+            this.lblID.Size = new System.Drawing.Size(18, 13);
+            this.lblID.TabIndex = 34;
             this.lblID.Text = "ID";
             // 
             // txtNumber
             // 
-            this.txtNumber.Location = new System.Drawing.Point(779, 254);
+            this.txtNumber.Location = new System.Drawing.Point(504, 172);
+            this.txtNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(155, 26);
-            this.txtNumber.TabIndex = 21;
+            this.txtNumber.Size = new System.Drawing.Size(105, 20);
+            this.txtNumber.TabIndex = 33;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(779, 197);
+            this.txtEmail.Location = new System.Drawing.Point(504, 135);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(155, 26);
-            this.txtEmail.TabIndex = 20;
+            this.txtEmail.Size = new System.Drawing.Size(105, 20);
+            this.txtEmail.TabIndex = 32;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(789, 120);
+            this.txtName.Location = new System.Drawing.Point(504, 88);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(155, 26);
-            this.txtName.TabIndex = 19;
+            this.txtName.Size = new System.Drawing.Size(105, 20);
+            this.txtName.TabIndex = 31;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(789, 55);
+            this.txtID.Location = new System.Drawing.Point(504, 46);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(155, 26);
-            this.txtID.TabIndex = 18;
+            this.txtID.Size = new System.Drawing.Size(105, 20);
+            this.txtID.TabIndex = 30;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(732, 528);
+            this.btnDelete.Location = new System.Drawing.Point(473, 350);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(152, 57);
-            this.btnDelete.TabIndex = 17;
+            this.btnDelete.Size = new System.Drawing.Size(101, 37);
+            this.btnDelete.TabIndex = 29;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(422, 531);
+            this.btnUpdate.Location = new System.Drawing.Point(266, 352);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(152, 56);
-            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Size = new System.Drawing.Size(101, 36);
+            this.btnUpdate.TabIndex = 28;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(124, 528);
+            this.btnRefresh.Location = new System.Drawing.Point(68, 350);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(152, 62);
-            this.btnRefresh.TabIndex = 15;
+            this.btnRefresh.Size = new System.Drawing.Size(101, 40);
+            this.btnRefresh.TabIndex = 27;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 11);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 14);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(564, 488);
-            this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.Size = new System.Drawing.Size(376, 317);
+            this.dataGridView1.TabIndex = 26;
             // 
-            // Employees
+            // addEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblNumber);
@@ -163,8 +174,8 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Employees";
-            this.Size = new System.Drawing.Size(1050, 900);
+            this.Name = "addEmployee";
+            this.Size = new System.Drawing.Size(724, 532);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

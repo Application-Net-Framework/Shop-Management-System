@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App.UI_Forms.Admin
+namespace App
 {
-    public partial class About : Form
+    public partial class Cashier_Report : Form
     {
-        public About()
+        public Cashier_Report()
         {
             InitializeComponent();
         }
 
-        private void AdminImage_Click(object sender, EventArgs e)
+        private void reportLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void generateLbl_Click(object sender, EventArgs e)
         {
 
         }

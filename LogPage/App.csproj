@@ -59,10 +59,26 @@
     <Compile Include="UI Forms\Admin\Admin_Home.Designer.cs">
       <DependentUpon>Admin_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Admin\Admin_Main_Home.cs">
+    <Compile Include="UI Forms\Admin\Admin_Main_Home.cs" />
+    <Compile Include="UI Forms\Admin\Admin_Main_Home.Designer.cs">
+      <DependentUpon>Admin_Main_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Features\addEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Features\addEmployee.Designer.cs">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Features\addProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Features\addProduct.Designer.cs">
+      <DependentUpon>addProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Admin\Features\Admin_Main_Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI Forms\Admin\Admin_Main_Home.Designer.cs">
+    <Compile Include="UI Forms\Admin\Features\Admin_Main_Home.Designer.cs">
       <DependentUpon>Admin_Main_Home.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Admin\Admin_Managed.cs">
@@ -71,10 +87,10 @@
     <Compile Include="UI Forms\Admin\Admin_Managed.Designer.cs">
       <DependentUpon>Admin_Managed.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Admin\Employees.cs">
+    <Compile Include="UI Forms\Admin\Features\Employees.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Forms\Admin\Employees.Designer.cs">
+    <Compile Include="UI Forms\Admin\Features\Employees.Designer.cs">
       <DependentUpon>Employees.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Admin\New_Managed.cs">
@@ -83,16 +99,16 @@
     <Compile Include="UI Forms\Admin\New_Managed.Designer.cs">
       <DependentUpon>New_Managed.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Admin\Product.cs">
+    <Compile Include="UI Forms\Admin\Features\Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Forms\Admin\Product.Designer.cs">
+    <Compile Include="UI Forms\Admin\Features\Product.Designer.cs">
       <DependentUpon>Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Admin\Sale.cs">
+    <Compile Include="UI Forms\Admin\Features\Sale.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Forms\Admin\Sale.Designer.cs">
+    <Compile Include="UI Forms\Admin\Features\Sale.Designer.cs">
       <DependentUpon>Sale.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Application Starting Logo\SplashForm.cs">
@@ -217,10 +233,10 @@
     <Compile Include="UI Forms\Manager\Discount.Designer.cs">
       <DependentUpon>Discount.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Admin\Home.cs">
+    <Compile Include="UI Forms\Admin\Features\Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Forms\Admin\Home.Designer.cs">
+    <Compile Include="UI Forms\Admin\Features\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Manager\Manager_Home.cs">
@@ -276,22 +292,28 @@
     <EmbeddedResource Include="UI Forms\Admin\Admin_Home.resx">
       <DependentUpon>Admin_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Admin\Admin_Main_Home.resx">
+    <EmbeddedResource Include="UI Forms\Admin\Features\addEmployee.resx">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Admin\Features\addProduct.resx">
+      <DependentUpon>addProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Admin\Features\Admin_Main_Home.resx">
       <DependentUpon>Admin_Main_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Admin\Admin_Managed.resx">
       <DependentUpon>Admin_Managed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Admin\Employees.resx">
+    <EmbeddedResource Include="UI Forms\Admin\Features\Employees.resx">
       <DependentUpon>Employees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Admin\New_Managed.resx">
       <DependentUpon>New_Managed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Admin\Product.resx">
+    <EmbeddedResource Include="UI Forms\Admin\Features\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Admin\Sale.resx">
+    <EmbeddedResource Include="UI Forms\Admin\Features\Sale.resx">
       <DependentUpon>Sale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Application Starting Logo\SplashForm.resx">
@@ -358,7 +380,7 @@
     <EmbeddedResource Include="UI Forms\Manager\Discount.resx">
       <DependentUpon>Discount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Admin\Home.resx">
+    <EmbeddedResource Include="UI Forms\Admin\Features\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\Manager_Home.resx">

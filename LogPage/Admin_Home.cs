@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App.UI_Forms.Admin
+namespace App
 {
-    public partial class About : Form
+    public partial class Admin_Home : Form
     {
-        public About()
+        public Admin_Home()
         {
             InitializeComponent();
         }
 
-        private void AdminImage_Click(object sender, EventArgs e)
+        private void Admin_Home_Load(object sender, EventArgs e)
         {
 
         }

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App.UI_Forms.Admin
+namespace App.UI_Forms.Manager
 {
     public partial class About : Form
     {
         public About()
         {
             InitializeComponent();
-        }
-
-        private void AdminImage_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

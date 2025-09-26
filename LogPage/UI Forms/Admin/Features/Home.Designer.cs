@@ -35,19 +35,21 @@
             // 
             this.lblHome.AutoSize = true;
             this.lblHome.Font = new System.Drawing.Font("Microsoft YaHei", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHome.Location = new System.Drawing.Point(239, 185);
+            this.lblHome.Location = new System.Drawing.Point(331, 189);
+            this.lblHome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHome.Name = "lblHome";
-            this.lblHome.Size = new System.Drawing.Size(222, 41);
+            this.lblHome.Size = new System.Drawing.Size(154, 30);
             this.lblHome.TabIndex = 0;
             this.lblHome.Text = "Home Admin";
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblHome);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Home";
-            this.Size = new System.Drawing.Size(757, 468);
+            this.Size = new System.Drawing.Size(789, 434);
             this.ResumeLayout(false);
             this.PerformLayout();
 

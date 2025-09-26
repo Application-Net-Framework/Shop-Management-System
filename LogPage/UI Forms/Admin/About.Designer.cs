@@ -2,12 +2,12 @@
 {
     partial class About
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -329,6 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(900, 600);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtSalary);
@@ -349,8 +350,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblFName);
             this.Controls.Add(this.AdminImage);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "About";
-            this.Size = new System.Drawing.Size(900, 600);
+            this.Text = "About";
             ((System.ComponentModel.ISupportInitialize)(this.AdminImage)).EndInit();
             this.pnlQuali.ResumeLayout(false);
             this.pnlQuali.PerformLayout();
@@ -358,7 +360,6 @@
             this.pnlGender.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

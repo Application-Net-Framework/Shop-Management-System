@@ -454,6 +454,8 @@
     <None Include="Resources\salary1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Database\" />
+    <Folder Include="Helpers\" />
     <Folder Include="Photos\" />
     <Folder Include="UI Forms\Manager\About\" />
   </ItemGroup>

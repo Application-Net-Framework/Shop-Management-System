@@ -28,56 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblHome = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlTotalSale = new System.Windows.Forms.Panel();
+            this.totalProduct = new System.Windows.Forms.Panel();
+            this.totalEmp = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblHome
+            // pnlTotalSale
             // 
-            this.lblHome.AutoSize = true;
-            this.lblHome.Font = new System.Drawing.Font("Microsoft YaHei", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHome.Location = new System.Drawing.Point(331, 189);
-            this.lblHome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblHome.Name = "lblHome";
-            this.lblHome.Size = new System.Drawing.Size(154, 30);
-            this.lblHome.TabIndex = 0;
-            this.lblHome.Text = "Home Admin";
+            this.pnlTotalSale.BackColor = System.Drawing.Color.Tan;
+            this.pnlTotalSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTotalSale.Location = new System.Drawing.Point(79, 0);
+            this.pnlTotalSale.Name = "pnlTotalSale";
+            this.pnlTotalSale.Size = new System.Drawing.Size(200, 137);
+            this.pnlTotalSale.TabIndex = 1;
             // 
-            // panel1
+            // totalProduct
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(52, 34);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(136, 116);
-            this.panel1.TabIndex = 1;
+            this.totalProduct.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.totalProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.totalProduct.Location = new System.Drawing.Point(371, 0);
+            this.totalProduct.Name = "totalProduct";
+            this.totalProduct.Size = new System.Drawing.Size(200, 137);
+            this.totalProduct.TabIndex = 2;
             // 
-            // flowLayoutPanel1
+            // totalEmp
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(249, 34);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(142, 116);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.totalEmp.BackColor = System.Drawing.Color.Lavender;
+            this.totalEmp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.totalEmp.Location = new System.Drawing.Point(644, 0);
+            this.totalEmp.Name = "totalEmp";
+            this.totalEmp.Size = new System.Drawing.Size(200, 137);
+            this.totalEmp.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Beige;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 236);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(835, 336);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(14, 202);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 31);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Employee Record";
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblHome);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.totalEmp);
+            this.Controls.Add(this.totalProduct);
+            this.Controls.Add(this.pnlTotalSale);
             this.Name = "Home";
-            this.Size = new System.Drawing.Size(789, 434);
+            this.Size = new System.Drawing.Size(900, 600);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblHome;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel pnlTotalSale;
+        private System.Windows.Forms.Panel totalProduct;
+        private System.Windows.Forms.Panel totalEmp;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
     }
 }

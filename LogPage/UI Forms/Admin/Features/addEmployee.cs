@@ -14,7 +14,7 @@ namespace App.UI_Forms.Admin.Features
 {
     public partial class addEmployee : UserControl
     {
-        public string UserID, UserName, Email, PhoneNumber, JoiningDate, Role, Gender, Password;
+        public string UserID, UserName, Email, PhoneNumber, JoiningDate, Role, Gender;
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -84,12 +84,7 @@ namespace App.UI_Forms.Admin.Features
                 cmbRole.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtPass.Text))
-            {
-                MessageBox.Show("Full Password is required.", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtPass.Focus();
-                return;
-            }
+            
 
 
 
@@ -103,7 +98,7 @@ namespace App.UI_Forms.Admin.Features
                 Gender = "Male";
             if (rdoFemale.Checked)
                 Gender = "Female";
-            Password = txtPass.Text;
+           
 
 
 
@@ -141,7 +136,7 @@ namespace App.UI_Forms.Admin.Features
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = $"INSERT INTO AddEmployee(UserID, UserName, Email, PhoneNumber, JoiningDate, Role, Gender ,Password) VALUES ('" + UserID + "','" + UserName + "','" + Email + "','" + PhoneNumber + "','" + JoiningDate + "','" + Role + "','" + Gender + "','" + Password + "')";
+                    string query = $"INSERT INTO AddEmployee(UserID, UserName, Email, PhoneNumber, JoiningDate, Role, Gender ) VALUES ('" + UserID + "','" + UserName + "','" + Email + "','" + PhoneNumber + "','" + JoiningDate + "','" + Role + "','" + Gender + "')";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.ExecuteNonQuery();
                 }

@@ -49,7 +49,7 @@ namespace App.UI_Forms.Admin
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+           /* string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             string query = "UPDATE AddEmployee " +
@@ -61,7 +61,7 @@ namespace App.UI_Forms.Admin
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             show();
-            clear();
+            clear();*/
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

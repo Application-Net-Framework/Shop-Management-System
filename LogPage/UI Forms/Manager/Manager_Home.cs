@@ -24,6 +24,7 @@ namespace App
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
         
+        About about;
         DailyActivity dailyActivity;
         Report report;
         StackLevel stackLevel;
@@ -553,8 +554,29 @@ namespace App
         //ABOUT BUTTON
         private void aboutbtn_Click(object sender, EventArgs e)
         {
-            
+            // Try to create and show the About form
+            try
+            {
+                // Create an instance of About form
+                About about = new About();
+                about.FormClosed += About_FormClosed;
+                about.MdiParent = this;
+                about.Dock = DockStyle.Fill;
+                about.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Could not open About form: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+        
+        // Event handler for when the About form is closed
+        private void About_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Set the about reference to null when form is closed
+        }
+
         private void minimizebtn_Click(object sender, EventArgs e)
         {
             // Disabled to prevent form from being minimized
@@ -564,9 +586,19 @@ namespace App
 
         private void activitybtn_Click(object sender, EventArgs e)
         {
-            homemnager.Show();
+            if(dailyActivity == null)
+            {
+                dailyActivity = new DailyActivity();
+                dailyActivity.FormClosed += DailyActivity_FormClosed;
+                dailyActivity.MdiParent = this;
+                dailyActivity.Dock = DockStyle.Fill;
+                dailyActivity.Show();
+            }
+            else
+            {
+                dailyActivity.Activate();
+            }
         }
-
 
         private void minimizebtn_Click_1(object sender, EventArgs e)
         {
@@ -605,7 +637,8 @@ namespace App
 
         private void homemnager_Paint(object sender, PaintEventArgs e)
         {
-            homemnager.Show();
+            // This method should not call .Show() on a non-existent control
+            // Instead, let's just leave it empty for now
         }
     }
 }

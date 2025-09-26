@@ -68,7 +68,7 @@ namespace App
                             // Redirect based on Role
                             Form nextForm = null;
                             if (role == "Admin")
-                                nextForm = new Admin_Home();
+                                nextForm = new Admin_Main_Home();
                             //nextForm = new Admin_Home(userId, userName);
                             else if (role == "Manager")
                                 nextForm = new Manager_Home();

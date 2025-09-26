@@ -43,6 +43,18 @@ namespace App
         {
             InitializeComponent();
             
+            // Set form size
+            this.Size = new Size(900, 600);
+            this.ClientSize = new Size(900, 600);
+
+            // Lock the form in center position
+            this.StartPosition = FormStartPosition.CenterScreen;
+            
+            // Disable form resizing and maximize/minimize buttons
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            
             // Set up window control buttons
             SetupWindowControls();
 
@@ -60,21 +72,13 @@ namespace App
             crossbtn.Anchor = AnchorStyles.Right | AnchorStyles.Top;
             crossbtn.Click += crossbtn_Click;
             
-            // Set up minimize button
-            minimizebtn.Text = "_";
-            minimizebtn.ForeColor = Color.Black;
-            minimizebtn.FlatStyle = FlatStyle.Flat;
-            minimizebtn.FlatAppearance.BorderSize = 0;
-            minimizebtn.Anchor = AnchorStyles.Right | AnchorStyles.Top;
-            minimizebtn.Click += minimizebtn_Click;
+            // Disable minimize button
+            minimizebtn.Visible = false;
+            minimizebtn.Enabled = false;
             
-            // Set up fullscreen button
-            fullscreenbtn.Text = "□";
-            fullscreenbtn.ForeColor = Color.Black;
-            fullscreenbtn.FlatStyle = FlatStyle.Flat;
-            fullscreenbtn.FlatAppearance.BorderSize = 0;
-            fullscreenbtn.Anchor = AnchorStyles.Right | AnchorStyles.Top;
-            fullscreenbtn.Click += fullscreenbtn_Click;
+            // Disable fullscreen button
+            fullscreenbtn.Visible = false;
+            fullscreenbtn.Enabled = false;
         }
 
         private void Manager_Home_Load(object sender, EventArgs e)
@@ -82,8 +86,27 @@ namespace App
             // Initialize the UI when the manager home form loads
             IsMdiContainer = true;  // Ensure this form can host MDI child forms
             
+            // Force the form to be centered on screen
+            this.CenterToScreen();
+            
+            // Prevent the form from being moved after loading
+            this.ControlBox = false; // Hide the control box completely
+            
             // Center the welcome message on form load
             CenterWelcomeMessage();
+            
+            // Make sure feature container has correct initial state
+            if (featureExpnd)
+            {
+                featureContainer.Width = 165;
+            }
+            else
+            {
+                featureContainer.Width = 60;
+            }
+            
+            // Apply all visual settings after load
+            this.Update();
         }
 
         // Method to center the welcome message in the top panel
@@ -91,6 +114,9 @@ namespace App
         {
             // Calculate the center point of the top panel
             int centerX = (pnltop.Width - welcomemsg.Width) / 2;
+            
+            // Ensure we don't position it off-screen
+            if (centerX < 0) centerX = 0;
             
             // Set the welcome message location
             welcomemsg.Location = new Point(centerX, welcomemsg.Location.Y);
@@ -100,7 +126,32 @@ namespace App
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            CenterWelcomeMessage();
+            
+            // Apply after base resize to ensure accurate measurements
+            if (IsHandleCreated) // Prevent issues during initialization
+            {
+                // Use BeginInvoke to ensure UI is ready for measurement
+                this.BeginInvoke(new Action(() => 
+                {
+                    CenterWelcomeMessage();
+                }));
+            }
+        }
+
+        // Override the SizeChanged event to recenter welcome message when form size changes
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            base.OnSizeChanged(e);
+            
+            // Apply after base resize to ensure accurate measurements
+            if (IsHandleCreated) // Prevent issues during initialization
+            {
+                // Use BeginInvoke to ensure UI is ready for measurement
+                this.BeginInvoke(new Action(() => 
+                {
+                    CenterWelcomeMessage();
+                }));
+            }
         }
 
         private void dashboardtimer_Tick(object sender, EventArgs e)
@@ -202,7 +253,11 @@ namespace App
                     featureContainertimer.Stop();
                     
                     // Re-center welcome message after the feature container expands
-                    CenterWelcomeMessage();
+                    // Use BeginInvoke to ensure UI is ready
+                    this.BeginInvoke(new Action(() => 
+                    {
+                        CenterWelcomeMessage();
+                    }));
                 }
             }
             else
@@ -217,9 +272,16 @@ namespace App
                     CloseAllPanels();
                     
                     // Re-center welcome message after the feature container collapses
-                    CenterWelcomeMessage();
+                    // Use BeginInvoke to ensure UI is ready
+                    this.BeginInvoke(new Action(() => 
+                    {
+                        CenterWelcomeMessage();
+                    }));
                 }
             }
+            
+            // Re-center during animation to keep it smooth
+            CenterWelcomeMessage();
         }
         
         private void menubtn_Click(object sender, EventArgs e)
@@ -392,7 +454,7 @@ namespace App
 
         private void logoutbtn_Click(object sender, EventArgs e)
         {
-           
+            this.Close();
         }
       
 
@@ -511,34 +573,41 @@ namespace App
 
         private void minimizebtn_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            // Disabled to prevent form from being minimized
+            // this.WindowState = FormWindowState.Minimized;
         }
 
         private void fullscreenbtn_Click(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-                fullscreenbtn.Text = "□";
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-                fullscreenbtn.Text = "❐";
-            }
-            
-            // Re-center welcome message after changing window state
-            CenterWelcomeMessage();
+            // Disabled to prevent form from being maximized
+            // if (this.WindowState == FormWindowState.Maximized)
+            // {
+            //     this.WindowState = FormWindowState.Normal;
+            //     fullscreenbtn.Text = "□";
+            // }
+            // else
+            // {
+            //     this.WindowState = FormWindowState.Maximized;
+            //     fullscreenbtn.Text = "❐";
+            // }
+            // 
+            // // Re-center welcome message after changing window state
+            // // Use BeginInvoke to ensure window has finished changing state
+            // this.BeginInvoke(new Action(() => 
+            // {
+            //     CenterWelcomeMessage();
+            // }));
         }
 
         // Add the MouseDown event handler for the top panel
         private void toppnl_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
+            // Disabled to prevent form movement
+            // if (e.Button == MouseButtons.Left)
+            // {
+            //     ReleaseCapture();
+            //     SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            // }
         }
 
         private void activitybtn_Click(object sender, EventArgs e)
@@ -564,24 +633,30 @@ namespace App
 
         private void minimizebtn_Click_1(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            // Disabled to prevent form from being minimized
+            // this.WindowState = FormWindowState.Minimized;
         }
 
         private void fullscreenbtn_Click_1(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-                fullscreenbtn.Text = "□";
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-                fullscreenbtn.Text = "❐";
-            }
-            
-            // Re-center welcome message after changing window state
-            CenterWelcomeMessage();
+             
+            // if (this.WindowState == FormWindowState.Maximized)
+            // {
+            //     this.WindowState = FormWindowState.Normal;
+            //     fullscreenbtn.Text = "□";
+            // }
+            // else
+            // {
+            //     this.WindowState = FormWindowState.Maximized;
+            //     fullscreenbtn.Text = "❐";
+            // }
+            // 
+            // // Re-center welcome message after changing window state
+            // // Use BeginInvoke to ensure window has finished changing state
+            // this.BeginInvoke(new Action(() => 
+            // {
+            //     CenterWelcomeMessage();
+            // }));
         }
 
         private void crossbtn_Click_1(object sender, EventArgs e)
@@ -612,20 +687,12 @@ namespace App
         // Add the MouseDown event handler for the top panel to allow dragging
         private void pnltop_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-        
-        // Override the SizeChanged event to recenter welcome message when form size changes
-        protected override void OnSizeChanged(EventArgs e)
-        {
-            base.OnSizeChanged(e);
-            
-            // Recenter welcome message
-            CenterWelcomeMessage();
+            // Disabled to prevent form movement
+            // if (e.Button == MouseButtons.Left)
+            // {
+            //     ReleaseCapture();
+            //     SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            // }
         }
     }
 }

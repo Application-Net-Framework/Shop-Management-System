@@ -18,7 +18,7 @@ namespace App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Admin_Main_Home());
+           // Application.Run(new Admin_Main_Home());
             // Start with the login page
          //   Application.Run(new App.LogPage());
 

@@ -86,11 +86,11 @@ namespace App
                             else if (role == "Manager")
                                 nextForm = new Manager_Home();
                            // nextForm = new Manager_Home(userId, userName);
-                            else if (role == "Cashier")
-                            {
-                                nextForm = new Cashier();
+                           // else if (role == "Cashier")
+                           // {
+                           //     nextForm = new Cashier();
                                 //nextForm = new Cashier(userId, userName);
-                            }
+                            //}
                             else if (role == "Salesman")
                                 nextForm = new Salesman();
                             //nextForm = new Salesman(userId, userName);

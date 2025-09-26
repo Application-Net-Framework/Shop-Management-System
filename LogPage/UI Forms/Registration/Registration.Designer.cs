@@ -31,11 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.empIdLbl = new System.Windows.Forms.Label();
             this.idTxt = new System.Windows.Forms.TextBox();
-            this.nameLbl = new System.Windows.Forms.Label();
             this.perAddressLbl = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dobDate = new System.Windows.Forms.DateTimePicker();
-            this.nameTxt = new System.Windows.Forms.TextBox();
             this.mobileLbl = new System.Windows.Forms.Label();
             this.emailLbl = new System.Windows.Forms.Label();
             this.emailTxt = new System.Windows.Forms.TextBox();
@@ -89,23 +87,12 @@
             this.idTxt.Size = new System.Drawing.Size(283, 20);
             this.idTxt.TabIndex = 5;
             // 
-            // nameLbl
-            // 
-            this.nameLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nameLbl.AutoSize = true;
-            this.nameLbl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLbl.Location = new System.Drawing.Point(44, 91);
-            this.nameLbl.Name = "nameLbl";
-            this.nameLbl.Size = new System.Drawing.Size(111, 17);
-            this.nameLbl.TabIndex = 6;
-            this.nameLbl.Text = "Enter Full Name:";
-            // 
             // perAddressLbl
             // 
             this.perAddressLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.perAddressLbl.AutoSize = true;
             this.perAddressLbl.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.perAddressLbl.Location = new System.Drawing.Point(43, 315);
+            this.perAddressLbl.Location = new System.Drawing.Point(43, 278);
             this.perAddressLbl.Name = "perAddressLbl";
             this.perAddressLbl.Size = new System.Drawing.Size(67, 19);
             this.perAddressLbl.TabIndex = 7;
@@ -116,7 +103,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(43, 219);
+            this.label7.Location = new System.Drawing.Point(43, 182);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 19);
             this.label7.TabIndex = 11;
@@ -125,25 +112,17 @@
             // dobDate
             // 
             this.dobDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dobDate.Location = new System.Drawing.Point(269, 216);
+            this.dobDate.Location = new System.Drawing.Point(269, 179);
             this.dobDate.Name = "dobDate";
             this.dobDate.Size = new System.Drawing.Size(283, 20);
             this.dobDate.TabIndex = 14;
-            // 
-            // nameTxt
-            // 
-            this.nameTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nameTxt.Location = new System.Drawing.Point(269, 88);
-            this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(283, 20);
-            this.nameTxt.TabIndex = 15;
             // 
             // mobileLbl
             // 
             this.mobileLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mobileLbl.AutoSize = true;
             this.mobileLbl.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.mobileLbl.Location = new System.Drawing.Point(43, 175);
+            this.mobileLbl.Location = new System.Drawing.Point(43, 138);
             this.mobileLbl.Name = "mobileLbl";
             this.mobileLbl.Size = new System.Drawing.Size(120, 19);
             this.mobileLbl.TabIndex = 17;
@@ -154,7 +133,7 @@
             this.emailLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailLbl.AutoSize = true;
             this.emailLbl.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.emailLbl.Location = new System.Drawing.Point(43, 131);
+            this.emailLbl.Location = new System.Drawing.Point(43, 94);
             this.emailLbl.Name = "emailLbl";
             this.emailLbl.Size = new System.Drawing.Size(53, 19);
             this.emailLbl.TabIndex = 18;
@@ -163,7 +142,7 @@
             // emailTxt
             // 
             this.emailTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.emailTxt.Location = new System.Drawing.Point(269, 130);
+            this.emailTxt.Location = new System.Drawing.Point(269, 93);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(283, 20);
             this.emailTxt.TabIndex = 19;
@@ -171,7 +150,7 @@
             // mobileTxt
             // 
             this.mobileTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mobileTxt.Location = new System.Drawing.Point(269, 174);
+            this.mobileTxt.Location = new System.Drawing.Point(269, 137);
             this.mobileTxt.Name = "mobileTxt";
             this.mobileTxt.Size = new System.Drawing.Size(283, 20);
             this.mobileTxt.TabIndex = 20;
@@ -179,7 +158,7 @@
             // addressTxt
             // 
             this.addressTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addressTxt.Location = new System.Drawing.Point(269, 314);
+            this.addressTxt.Location = new System.Drawing.Point(269, 277);
             this.addressTxt.Name = "addressTxt";
             this.addressTxt.Size = new System.Drawing.Size(283, 20);
             this.addressTxt.TabIndex = 22;
@@ -189,7 +168,7 @@
             this.genderLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.genderLbl.AutoSize = true;
             this.genderLbl.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.genderLbl.Location = new System.Drawing.Point(43, 272);
+            this.genderLbl.Location = new System.Drawing.Point(43, 235);
             this.genderLbl.Name = "genderLbl";
             this.genderLbl.Size = new System.Drawing.Size(63, 19);
             this.genderLbl.TabIndex = 23;
@@ -201,7 +180,7 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.femaleRBtn);
             this.panel3.Controls.Add(this.maleRBtn);
-            this.panel3.Location = new System.Drawing.Point(269, 263);
+            this.panel3.Location = new System.Drawing.Point(269, 226);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(283, 28);
             this.panel3.TabIndex = 17;
@@ -249,7 +228,7 @@
             this.passBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passBtn.AutoSize = true;
             this.passBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.passBtn.Location = new System.Drawing.Point(43, 409);
+            this.passBtn.Location = new System.Drawing.Point(43, 372);
             this.passBtn.Name = "passBtn";
             this.passBtn.Size = new System.Drawing.Size(115, 19);
             this.passBtn.TabIndex = 26;
@@ -260,7 +239,7 @@
             this.rePassLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rePassLbl.AutoSize = true;
             this.rePassLbl.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.rePassLbl.Location = new System.Drawing.Point(43, 453);
+            this.rePassLbl.Location = new System.Drawing.Point(43, 416);
             this.rePassLbl.Name = "rePassLbl";
             this.rePassLbl.Size = new System.Drawing.Size(142, 19);
             this.rePassLbl.TabIndex = 27;
@@ -269,7 +248,7 @@
             // passTxt
             // 
             this.passTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passTxt.Location = new System.Drawing.Point(269, 408);
+            this.passTxt.Location = new System.Drawing.Point(269, 371);
             this.passTxt.Name = "passTxt";
             this.passTxt.Size = new System.Drawing.Size(283, 20);
             this.passTxt.TabIndex = 28;
@@ -277,7 +256,7 @@
             // confirmPassTxt
             // 
             this.confirmPassTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.confirmPassTxt.Location = new System.Drawing.Point(269, 452);
+            this.confirmPassTxt.Location = new System.Drawing.Point(269, 415);
             this.confirmPassTxt.Name = "confirmPassTxt";
             this.confirmPassTxt.Size = new System.Drawing.Size(283, 20);
             this.confirmPassTxt.TabIndex = 29;
@@ -287,7 +266,7 @@
             this.educationLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.educationLbl.AutoSize = true;
             this.educationLbl.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.educationLbl.Location = new System.Drawing.Point(43, 364);
+            this.educationLbl.Location = new System.Drawing.Point(43, 327);
             this.educationLbl.Name = "educationLbl";
             this.educationLbl.Size = new System.Drawing.Size(209, 19);
             this.educationLbl.TabIndex = 32;
@@ -306,7 +285,7 @@
             "SSC/EQ",
             "JSC/EQ",
             "PSC/EQ"});
-            this.educationCBox.Location = new System.Drawing.Point(269, 364);
+            this.educationCBox.Location = new System.Drawing.Point(269, 327);
             this.educationCBox.Name = "educationCBox";
             this.educationCBox.Size = new System.Drawing.Size(283, 21);
             this.educationCBox.TabIndex = 33;
@@ -330,7 +309,6 @@
             this.panel4.Controls.Add(this.educationLbl);
             this.panel4.Controls.Add(this.empIdLbl);
             this.panel4.Controls.Add(this.idTxt);
-            this.panel4.Controls.Add(this.nameLbl);
             this.panel4.Controls.Add(this.confirmPassTxt);
             this.panel4.Controls.Add(this.perAddressLbl);
             this.panel4.Controls.Add(this.passTxt);
@@ -342,7 +320,6 @@
             this.panel4.Controls.Add(this.genderLbl);
             this.panel4.Controls.Add(this.dobDate);
             this.panel4.Controls.Add(this.addressTxt);
-            this.panel4.Controls.Add(this.nameTxt);
             this.panel4.Controls.Add(this.mobileTxt);
             this.panel4.Controls.Add(this.mobileLbl);
             this.panel4.Controls.Add(this.emailTxt);
@@ -386,11 +363,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label empIdLbl;
         private System.Windows.Forms.TextBox idTxt;
-        private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.Label perAddressLbl;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dobDate;
-        private System.Windows.Forms.TextBox nameTxt;
         private System.Windows.Forms.Label mobileLbl;
         private System.Windows.Forms.Label emailLbl;
         private System.Windows.Forms.TextBox emailTxt;

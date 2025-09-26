@@ -19,11 +19,8 @@ namespace App
             InitializeComponent();
         }
         string connectionString= @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
-
         private void SaveEmployee()
-        {
-            string userId = idTxt.Text.Trim();
-            string userName = nameTxt.Text.Trim();
+        {   string userId = idTxt.Text.Trim();            
             string email = emailTxt.Text.Trim();
             string mobile = mobileTxt.Text.Trim();
             string address = addressTxt.Text.Trim();
@@ -33,51 +30,26 @@ namespace App
             DateTime dob = dobDate.Value;
             string gender = maleRBtn.Checked ? "Male" : femaleRBtn.Checked ? "Female" : "";
 
-            // 🔹 1. Basic validation
-            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(email))
-            {
-                MessageBox.Show("User ID and Email are required.");
-                return;
-            }
-            if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(pass) || string.IsNullOrEmpty(confirmPass))
-            {
-                MessageBox.Show("Name, Password and Confirm Password are required.");
-                return;
-            }
-            if (pass != confirmPass)
-            {
-                MessageBox.Show("Passwords do not match.");
-                return;
-            }
-
-            // 🔹 2. Hash password
+           
+            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(email)) {  MessageBox.Show("User ID and Email are required.");  return; }
+           
+            if (pass != confirmPass) {  MessageBox.Show("Passwords do not match.");  return;}
+                     
             string hashedPassword = HashPassword(pass);
 
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    con.Open();
+            SqlConnection con = new SqlConnection(connectionString);
+            try
+                {con.Open();                    
+                 string checkQuery = "SELECT COUNT(*) FROM Employees WHERE UserID=@UserID AND Email=@Email";
+                 SqlCommand checkCmd = new SqlCommand(checkQuery, con);
+                    
+                 checkCmd.Parameters.AddWithValue("@UserID", userId);
+                 checkCmd.Parameters.AddWithValue("@Email", email);
 
-                    // 🔹 3. Check if UserID + Email exist
-                    string checkQuery = "SELECT COUNT(*) FROM Employees WHERE UserID=@UserID AND Email=@Email";
-                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, con))
-                    {
-                        checkCmd.Parameters.AddWithValue("@UserID", userId);
-                        checkCmd.Parameters.AddWithValue("@Email", email);
-
-                        int exists = (int)checkCmd.ExecuteScalar();
-                        if (exists == 0)
-                        {
-                            MessageBox.Show("UserID and Email do not match any record.");
-                            return;
-                        }
-                    }
-
-                    // 🔹 4. Update Employee data
-                    string updateQuery = @"UPDATE Employees
-                                   SET UserName=@UserName,
-                                       PhoneNumber=@PhoneNumber,
+                 int exists = (int)checkCmd.ExecuteScalar();
+                 if (exists == 0){ MessageBox.Show("UserID and Email do not match any record."); return; }                   
+                  string updateQuery = @"UPDATE Employees
+                                   SET PhoneNumber=@PhoneNumber,
                                        Gender=@Gender,
                                        Address=@Address,
                                        Qualification=@Qualification,
@@ -88,8 +60,7 @@ namespace App
                     using (SqlCommand cmd = new SqlCommand(updateQuery, con))
                     {
                         cmd.Parameters.AddWithValue("@UserID", userId);
-                        cmd.Parameters.AddWithValue("@Email", email);
-                        cmd.Parameters.AddWithValue("@UserName", userName);
+                        cmd.Parameters.AddWithValue("@Email", email);                        
                         cmd.Parameters.AddWithValue("@PhoneNumber", string.IsNullOrEmpty(mobile) ? (object)DBNull.Value : mobile);
                         cmd.Parameters.AddWithValue("@Gender", string.IsNullOrEmpty(gender) ? (object)DBNull.Value : gender);
                         cmd.Parameters.AddWithValue("@Address", string.IsNullOrEmpty(address) ? (object)DBNull.Value : address);
@@ -98,25 +69,12 @@ namespace App
                         cmd.Parameters.AddWithValue("@Password", hashedPassword);
 
                         int rows = cmd.ExecuteNonQuery();
-                        if (rows > 0)
-                        {
-                            MessageBox.Show("Employee data updated successfully!");
-                            ClearInputs();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Update failed.");
-                        }
+                        if (rows > 0) {MessageBox.Show("Employee data updated successfully!"); ClearInputs(); }
+                        else{ MessageBox.Show("Update failed."); }
                     }
                 }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Database Error: " + ex.Message);
-                }
-            }
-        }
-
-      
+                catch (SqlException ex) {MessageBox.Show("Database Error: " + ex.Message);}
+            }      
         private string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -128,11 +86,8 @@ namespace App
                 return sb.ToString();
             }
         }
-
         private void ClearInputs()
-        {
-            idTxt.Clear();
-            nameTxt.Clear();
+        {   idTxt.Clear();            
             emailTxt.Clear();
             mobileTxt.Clear();
             addressTxt.Clear();

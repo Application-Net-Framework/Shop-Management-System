@@ -22,17 +22,7 @@ namespace App
 
         string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder sb = new StringBuilder();
-                foreach (byte b in bytes)
-                    sb.Append(b.ToString("x2"));
-                return sb.ToString();
-            }
-        }
+        
 
         private void login()
         {
@@ -41,7 +31,7 @@ namespace App
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             { MessageBox.Show("Please enter both Email and Password."); return; }
 
-            string hashedPassword = HashPassword(password);
+            
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 string query = @"SELECT UserID, UserName, Role 
@@ -51,7 +41,7 @@ namespace App
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Password", hashedPassword);
+                    cmd.Parameters.AddWithValue("@Password", password);
 
                     try
                     {
@@ -65,16 +55,12 @@ namespace App
                             string role = reader["Role"].ToString();
 
                             MessageBox.Show("Login Successful! Welcome " + userName);
-
-                            // Redirect based on Role
+                                                        
                             Form nextForm = null;
-                            if (role == "Admin")
-                            {
-                                nextForm = new App.UI_Forms.Admin.Admin_Main_Home();
-                            }
-                            //nextForm = new Admin_Home(userId, userName);
+                            if (role == "Admin")  { nextForm = new App.UI_Forms.Admin.Admin_Main_Home(); }
+                            
                             else if (role == "Manager")
-                                nextForm = new Manager_Home();
+                            nextForm = new Manager_Home();
                             // nextForm = new Manager_Home(userId, userName);
                             // else if (role == "Cashier")
                             // {
@@ -110,23 +96,6 @@ namespace App
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         private void logBtn_Click(object sender, EventArgs e)
         {

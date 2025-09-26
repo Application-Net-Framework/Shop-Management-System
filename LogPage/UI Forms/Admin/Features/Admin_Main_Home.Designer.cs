@@ -58,15 +58,15 @@
             this.FeatureHolder = new System.Windows.Forms.Panel();
             this.featurePanel = new System.Windows.Forms.Panel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pnlinfo = new System.Windows.Forms.Panel();
+            this.userlb = new System.Windows.Forms.Label();
+            this.idlb = new System.Windows.Forms.Label();
             this.addProduct1 = new App.UI_Forms.Admin.Features.addProduct();
             this.employeesSearch = new App.UI_Forms.Admin.Employees();
             this.product1 = new App.UI_Forms.Admin.Product();
             this.addEmployee1 = new App.UI_Forms.Admin.Features.addEmployee();
             this.home1 = new App.UI_Forms.Manager.Home();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.userlb = new System.Windows.Forms.Label();
-            this.idlb = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             this.reportpnl.SuspendLayout();
             this.Salepnl.SuspendLayout();
@@ -76,7 +76,7 @@
             this.FeatureHolder.SuspendLayout();
             this.featurePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlinfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -377,7 +377,7 @@
             // SideContainer
             // 
             this.SideContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.SideContainer.Controls.Add(this.panel1);
+            this.SideContainer.Controls.Add(this.pnlinfo);
             this.SideContainer.Controls.Add(this.pnlEmployee);
             this.SideContainer.Controls.Add(this.Productpnl);
             this.SideContainer.Controls.Add(this.Salepnl);
@@ -385,7 +385,7 @@
             this.SideContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.SideContainer.Location = new System.Drawing.Point(0, 49);
             this.SideContainer.Name = "SideContainer";
-            this.SideContainer.Size = new System.Drawing.Size(180, 471);
+            this.SideContainer.Size = new System.Drawing.Size(182, 471);
             this.SideContainer.TabIndex = 3;
             this.SideContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.SideContainer_Paint_1);
             // 
@@ -398,10 +398,10 @@
             // 
             this.FeatureHolder.Controls.Add(this.featurePanel);
             this.FeatureHolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FeatureHolder.Location = new System.Drawing.Point(180, 49);
+            this.FeatureHolder.Location = new System.Drawing.Point(182, 49);
             this.FeatureHolder.Margin = new System.Windows.Forms.Padding(2);
             this.FeatureHolder.Name = "FeatureHolder";
-            this.FeatureHolder.Size = new System.Drawing.Size(620, 471);
+            this.FeatureHolder.Size = new System.Drawing.Size(618, 471);
             this.FeatureHolder.TabIndex = 4;
             // 
             // featurePanel
@@ -414,58 +414,8 @@
             this.featurePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.featurePanel.Location = new System.Drawing.Point(0, 0);
             this.featurePanel.Name = "featurePanel";
-            this.featurePanel.Size = new System.Drawing.Size(620, 471);
+            this.featurePanel.Size = new System.Drawing.Size(618, 471);
             this.featurePanel.TabIndex = 0;
-            // 
-            // addProduct1
-            // 
-            this.addProduct1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addProduct1.Location = new System.Drawing.Point(0, 0);
-            this.addProduct1.Name = "addProduct1";
-            this.addProduct1.Size = new System.Drawing.Size(620, 471);
-            this.addProduct1.TabIndex = 4;
-            this.addProduct1.Load += new System.EventHandler(this.addProduct1_Load);
-            // 
-            // employeesSearch
-            // 
-            this.employeesSearch.BackColor = System.Drawing.Color.White;
-            this.employeesSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.employeesSearch.Location = new System.Drawing.Point(0, 0);
-            this.employeesSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.employeesSearch.Name = "employeesSearch";
-            this.employeesSearch.Size = new System.Drawing.Size(620, 471);
-            this.employeesSearch.TabIndex = 3;
-            this.employeesSearch.Load += new System.EventHandler(this.employeesSearch_Load);
-            // 
-            // product1
-            // 
-            this.product1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.product1.Location = new System.Drawing.Point(0, 0);
-            this.product1.Margin = new System.Windows.Forms.Padding(2);
-            this.product1.Name = "product1";
-            this.product1.Size = new System.Drawing.Size(620, 471);
-            this.product1.TabIndex = 2;
-            this.product1.Load += new System.EventHandler(this.product1_Load);
-            // 
-            // addEmployee1
-            // 
-            this.addEmployee1.BackColor = System.Drawing.Color.White;
-            this.addEmployee1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addEmployee1.Location = new System.Drawing.Point(0, 0);
-            this.addEmployee1.Name = "addEmployee1";
-            this.addEmployee1.Size = new System.Drawing.Size(620, 471);
-            this.addEmployee1.TabIndex = 1;
-            this.addEmployee1.Load += new System.EventHandler(this.addEmployee1_Load);
-            // 
-            // home1
-            // 
-            this.home1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.home1.Location = new System.Drawing.Point(0, 0);
-            this.home1.Margin = new System.Windows.Forms.Padding(2);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(620, 471);
-            this.home1.TabIndex = 0;
-            this.home1.Load += new System.EventHandler(this.home1_Load);
             // 
             // guna2CirclePictureBox1
             // 
@@ -477,15 +427,15 @@
             this.guna2CirclePictureBox1.TabIndex = 13;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // panel1
+            // pnlinfo
             // 
-            this.panel1.Controls.Add(this.idlb);
-            this.panel1.Controls.Add(this.userlb);
-            this.panel1.Controls.Add(this.guna2CirclePictureBox1);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(173, 72);
-            this.panel1.TabIndex = 13;
+            this.pnlinfo.Controls.Add(this.idlb);
+            this.pnlinfo.Controls.Add(this.userlb);
+            this.pnlinfo.Controls.Add(this.guna2CirclePictureBox1);
+            this.pnlinfo.Location = new System.Drawing.Point(3, 3);
+            this.pnlinfo.Name = "pnlinfo";
+            this.pnlinfo.Size = new System.Drawing.Size(173, 72);
+            this.pnlinfo.TabIndex = 13;
             // 
             // userlb
             // 
@@ -506,6 +456,56 @@
             this.idlb.Size = new System.Drawing.Size(24, 20);
             this.idlb.TabIndex = 15;
             this.idlb.Text = "ID";
+            // 
+            // addProduct1
+            // 
+            this.addProduct1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addProduct1.Location = new System.Drawing.Point(0, 0);
+            this.addProduct1.Name = "addProduct1";
+            this.addProduct1.Size = new System.Drawing.Size(618, 471);
+            this.addProduct1.TabIndex = 4;
+            this.addProduct1.Load += new System.EventHandler(this.addProduct1_Load);
+            // 
+            // employeesSearch
+            // 
+            this.employeesSearch.BackColor = System.Drawing.Color.White;
+            this.employeesSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeesSearch.Location = new System.Drawing.Point(0, 0);
+            this.employeesSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.employeesSearch.Name = "employeesSearch";
+            this.employeesSearch.Size = new System.Drawing.Size(618, 471);
+            this.employeesSearch.TabIndex = 3;
+            this.employeesSearch.Load += new System.EventHandler(this.employeesSearch_Load);
+            // 
+            // product1
+            // 
+            this.product1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.product1.Location = new System.Drawing.Point(0, 0);
+            this.product1.Margin = new System.Windows.Forms.Padding(2);
+            this.product1.Name = "product1";
+            this.product1.Size = new System.Drawing.Size(618, 471);
+            this.product1.TabIndex = 2;
+            this.product1.Load += new System.EventHandler(this.product1_Load);
+            // 
+            // addEmployee1
+            // 
+            this.addEmployee1.BackColor = System.Drawing.Color.White;
+            this.addEmployee1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addEmployee1.Location = new System.Drawing.Point(0, 0);
+            this.addEmployee1.Name = "addEmployee1";
+            this.addEmployee1.Size = new System.Drawing.Size(618, 471);
+            this.addEmployee1.TabIndex = 1;
+            this.addEmployee1.Load += new System.EventHandler(this.addEmployee1_Load);
+            // 
+            // home1
+            // 
+            this.home1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.home1.Location = new System.Drawing.Point(0, 0);
+            this.home1.Margin = new System.Windows.Forms.Padding(2);
+            this.home1.Name = "home1";
+            this.home1.Size = new System.Drawing.Size(618, 471);
+            this.home1.TabIndex = 0;
+            this.home1.Load += new System.EventHandler(this.home1_Load);
             // 
             // Admin_Main_Home
             // 
@@ -532,8 +532,8 @@
             this.FeatureHolder.ResumeLayout(false);
             this.featurePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlinfo.ResumeLayout(false);
+            this.pnlinfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -573,7 +573,7 @@
         private Product product1;
         private Employees employeesSearch;
         private Features.addProduct addProduct1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlinfo;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Label idlb;
         private System.Windows.Forms.Label userlb;

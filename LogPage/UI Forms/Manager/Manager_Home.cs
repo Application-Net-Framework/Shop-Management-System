@@ -24,7 +24,6 @@ namespace App
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
         
-        About about;
         DailyActivity dailyActivity;
         Report report;
         StackLevel stackLevel;
@@ -61,7 +60,10 @@ namespace App
             // Center the welcome message
             CenterWelcomeMessage();
         }
-
+        private void welcomemsg_Click(object sender, EventArgs e)
+        {
+            // Nothing to do here
+        }
         private void SetupWindowControls()
         {
             // Set up cross button
@@ -392,6 +394,10 @@ namespace App
             // Now open members
             membertimer.Start();
         }
+        private void crossbtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void probtn_Click(object sender, EventArgs e)
         {
@@ -523,10 +529,6 @@ namespace App
         {
             tarminated = null;
         }
-        private void About_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            about = null;
-        }
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
@@ -548,115 +550,28 @@ namespace App
         {
             stackLevel = null;
         }
-
+        //ABOUT BUTTON
         private void aboutbtn_Click(object sender, EventArgs e)
         {
-            if(about == null)
-            {
-                about = new About();
-                about.FormClosed += About_FormClosed;
-                about.MdiParent = this;
-                about.Dock = DockStyle.Fill;
-                about.Show();
-            }
-            else
-            {
-                about.Activate();
-            }
+            
         }
-
-        // Window control button handlers
-        private void crossbtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void minimizebtn_Click(object sender, EventArgs e)
         {
             // Disabled to prevent form from being minimized
             // this.WindowState = FormWindowState.Minimized;
         }
 
-        private void fullscreenbtn_Click(object sender, EventArgs e)
-        {
-            // Disabled to prevent form from being maximized
-            // if (this.WindowState == FormWindowState.Maximized)
-            // {
-            //     this.WindowState = FormWindowState.Normal;
-            //     fullscreenbtn.Text = "□";
-            // }
-            // else
-            // {
-            //     this.WindowState = FormWindowState.Maximized;
-            //     fullscreenbtn.Text = "❐";
-            // }
-            // 
-            // // Re-center welcome message after changing window state
-            // // Use BeginInvoke to ensure window has finished changing state
-            // this.BeginInvoke(new Action(() => 
-            // {
-            //     CenterWelcomeMessage();
-            // }));
-        }
-
-        // Add the MouseDown event handler for the top panel
-        private void toppnl_MouseDown(object sender, MouseEventArgs e)
-        {
-            // Disabled to prevent form movement
-            // if (e.Button == MouseButtons.Left)
-            // {
-            //     ReleaseCapture();
-            //     SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            // }
-        }
 
         private void activitybtn_Click(object sender, EventArgs e)
         {
-            if(dailyActivity == null)
-            {
-                dailyActivity = new DailyActivity();
-                dailyActivity.FormClosed += DailyActivity_FormClosed;
-                dailyActivity.MdiParent = this;
-                dailyActivity.Dock = DockStyle.Fill;
-                dailyActivity.Show();
-            }
-            else
-            {
-                dailyActivity.Activate();
-            }
+            homemnager.Show();
         }
 
-        private void DailyActivity_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            dailyActivity = null;
-        }
 
         private void minimizebtn_Click_1(object sender, EventArgs e)
         {
             // Disabled to prevent form from being minimized
             // this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void fullscreenbtn_Click_1(object sender, EventArgs e)
-        {
-             
-            // if (this.WindowState == FormWindowState.Maximized)
-            // {
-            //     this.WindowState = FormWindowState.Normal;
-            //     fullscreenbtn.Text = "□";
-            // }
-            // else
-            // {
-            //     this.WindowState = FormWindowState.Maximized;
-            //     fullscreenbtn.Text = "❐";
-            // }
-            // 
-            // // Re-center welcome message after changing window state
-            // // Use BeginInvoke to ensure window has finished changing state
-            // this.BeginInvoke(new Action(() => 
-            // {
-            //     CenterWelcomeMessage();
-            // }));
         }
 
         private void crossbtn_Click_1(object sender, EventArgs e)
@@ -669,15 +584,8 @@ namespace App
             featureContainertimer.Start();
         }
 
-        private void toppnl_Paint(object sender, PaintEventArgs e)
-        {
-            // Nothing to do here
-        }
 
-        private void welcomemsg_Click(object sender, EventArgs e)
-        {
-            // Nothing to do here
-        }
+
 
         private void pnltop_Paint(object sender, PaintEventArgs e)
         {
@@ -693,6 +601,11 @@ namespace App
             //     ReleaseCapture();
             //     SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             // }
+        }
+
+        private void homemnager_Paint(object sender, PaintEventArgs e)
+        {
+            homemnager.Show();
         }
     }
 }

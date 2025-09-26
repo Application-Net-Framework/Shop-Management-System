@@ -19,9 +19,8 @@ namespace App.UI_Forms.SalesMan
             this.AutoScaleMode = AutoScaleMode.Dpi;   // or AutoScaleMode.Font
             this.AutoSize = true;
         }
-        String connectionString = @"Data Source=DESKTOP-ESC3M7E\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
-
+        String connectionString = GlobalConfig.ConnectionString;
         private void AddCustomer(string name, string mobile, string email, string membershipStatus)
         {
             try

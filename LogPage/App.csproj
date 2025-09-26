@@ -117,6 +117,7 @@
     <Compile Include="UI Forms\Application Starting Logo\SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Forms\GlobalConfig.cs" />
     <Compile Include="UI Forms\Cashier\ucPnl_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>

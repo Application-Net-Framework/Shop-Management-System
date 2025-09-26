@@ -13,8 +13,7 @@ namespace App.UI_Forms.SalesMan
 {
     public partial class ProductQuery : Form
     {
-        String connectionString = @"Data Source=DESKTOP-ESC3M7E\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-
+        String connectionString = GlobalConfig.ConnectionString;
         public ProductQuery()
         {
             InitializeComponent();

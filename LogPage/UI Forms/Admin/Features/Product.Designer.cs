@@ -41,136 +41,190 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblPrice = new System.Windows.Forms.Label();
+            this.lblTProduct = new System.Windows.Forms.Label();
+            this.txtTProduct = new System.Windows.Forms.TextBox();
+            this.lblAProduct = new System.Windows.Forms.Label();
+            this.txtAProduct = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNumber
             // 
             this.lblNumber.AutoSize = true;
-            this.lblNumber.Location = new System.Drawing.Point(389, 165);
-            this.lblNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNumber.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumber.Location = new System.Drawing.Point(522, 248);
             this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(49, 13);
+            this.lblNumber.Size = new System.Drawing.Size(124, 31);
             this.lblNumber.TabIndex = 37;
-            this.lblNumber.Text = "Category";
+            this.lblNumber.Text = "Category:";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(411, 132);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail.Location = new System.Drawing.Point(616, 203);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(0, 13);
+            this.lblEmail.Size = new System.Drawing.Size(0, 20);
             this.lblEmail.TabIndex = 36;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(409, 80);
-            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(522, 128);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(72, 13);
+            this.lblName.Size = new System.Drawing.Size(179, 31);
             this.lblName.TabIndex = 35;
-            this.lblName.Text = "ProductName";
+            this.lblName.Text = "ProductName:";
             // 
             // lblPID
             // 
             this.lblPID.AutoSize = true;
-            this.lblPID.Location = new System.Drawing.Point(419, 46);
-            this.lblPID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPID.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPID.Location = new System.Drawing.Point(25, 128);
             this.lblPID.Name = "lblPID";
-            this.lblPID.Size = new System.Drawing.Size(53, 13);
+            this.lblPID.Size = new System.Drawing.Size(132, 31);
             this.lblPID.TabIndex = 34;
-            this.lblPID.Text = "ProductId";
+            this.lblPID.Text = "ProductId:";
             // 
             // txtCategory
             // 
-            this.txtCategory.Location = new System.Drawing.Point(489, 165);
-            this.txtCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCategory.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategory.Location = new System.Drawing.Point(528, 282);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(105, 20);
+            this.txtCategory.Size = new System.Drawing.Size(370, 38);
             this.txtCategory.TabIndex = 33;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(489, 128);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(31, 282);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(105, 20);
+            this.txtPrice.Size = new System.Drawing.Size(370, 38);
             this.txtPrice.TabIndex = 32;
             // 
             // txtPName
             // 
-            this.txtPName.Location = new System.Drawing.Point(496, 78);
-            this.txtPName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPName.Location = new System.Drawing.Point(528, 169);
             this.txtPName.Name = "txtPName";
-            this.txtPName.Size = new System.Drawing.Size(105, 20);
+            this.txtPName.Size = new System.Drawing.Size(370, 38);
             this.txtPName.TabIndex = 31;
             // 
             // txtPID
             // 
-            this.txtPID.Location = new System.Drawing.Point(496, 36);
-            this.txtPID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPID.Location = new System.Drawing.Point(31, 169);
             this.txtPID.Name = "txtPID";
-            this.txtPID.Size = new System.Drawing.Size(105, 20);
+            this.txtPID.Size = new System.Drawing.Size(370, 38);
             this.txtPID.TabIndex = 30;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(458, 343);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnDelete.Location = new System.Drawing.Point(821, 705);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(101, 37);
+            this.btnDelete.Size = new System.Drawing.Size(152, 57);
             this.btnDelete.TabIndex = 29;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(251, 345);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnUpdate.Location = new System.Drawing.Point(464, 712);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(101, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(152, 55);
             this.btnUpdate.TabIndex = 28;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(53, 343);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefresh.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnRefresh.Location = new System.Drawing.Point(72, 705);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(101, 40);
+            this.btnRefresh.Size = new System.Drawing.Size(152, 62);
             this.btnRefresh.TabIndex = 27;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 12);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 344);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(376, 317);
+            this.dataGridView1.Size = new System.Drawing.Size(805, 340);
             this.dataGridView1.TabIndex = 26;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(400, 128);
-            this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(25, 248);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(31, 13);
+            this.lblPrice.Size = new System.Drawing.Size(76, 31);
             this.lblPrice.TabIndex = 38;
-            this.lblPrice.Text = "Price";
+            this.lblPrice.Text = "Price:";
+            // 
+            // lblTProduct
+            // 
+            this.lblTProduct.AutoSize = true;
+            this.lblTProduct.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTProduct.Location = new System.Drawing.Point(847, 374);
+            this.lblTProduct.Name = "lblTProduct";
+            this.lblTProduct.Size = new System.Drawing.Size(167, 31);
+            this.lblTProduct.TabIndex = 39;
+            this.lblTProduct.Text = "TotalProduct:";
+            // 
+            // txtTProduct
+            // 
+            this.txtTProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTProduct.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTProduct.Location = new System.Drawing.Point(853, 419);
+            this.txtTProduct.Name = "txtTProduct";
+            this.txtTProduct.Size = new System.Drawing.Size(161, 38);
+            this.txtTProduct.TabIndex = 40;
+            // 
+            // lblAProduct
+            // 
+            this.lblAProduct.AutoSize = true;
+            this.lblAProduct.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAProduct.Location = new System.Drawing.Point(847, 506);
+            this.lblAProduct.Name = "lblAProduct";
+            this.lblAProduct.Size = new System.Drawing.Size(213, 31);
+            this.lblAProduct.TabIndex = 41;
+            this.lblAProduct.Text = "AvailableProduct:";
+            // 
+            // txtAProduct
+            // 
+            this.txtAProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAProduct.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAProduct.Location = new System.Drawing.Point(853, 553);
+            this.txtAProduct.Name = "txtAProduct";
+            this.txtAProduct.Size = new System.Drawing.Size(161, 38);
+            this.txtAProduct.TabIndex = 42;
             // 
             // Product
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtAProduct);
+            this.Controls.Add(this.lblAProduct);
+            this.Controls.Add(this.txtTProduct);
+            this.Controls.Add(this.lblTProduct);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblNumber);
             this.Controls.Add(this.lblEmail);
@@ -184,9 +238,8 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Product";
-            this.Size = new System.Drawing.Size(695, 412);
+            this.Size = new System.Drawing.Size(1093, 800);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -208,5 +261,9 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblTProduct;
+        private System.Windows.Forms.TextBox txtTProduct;
+        private System.Windows.Forms.Label lblAProduct;
+        private System.Windows.Forms.TextBox txtAProduct;
     }
 }

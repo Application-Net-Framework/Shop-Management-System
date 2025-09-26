@@ -216,7 +216,7 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Silver;
-            this.btnAdd.Location = new System.Drawing.Point(550, 469);
+            this.btnAdd.Location = new System.Drawing.Point(506, 388);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(142, 64);
             this.btnAdd.TabIndex = 20;
@@ -240,7 +240,7 @@
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPass.Location = new System.Drawing.Point(387, 267);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(328, 37);
+            this.txtPass.Size = new System.Drawing.Size(305, 37);
             this.txtPass.TabIndex = 22;
             // 
             // addEmployee

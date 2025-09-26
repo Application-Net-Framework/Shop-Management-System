@@ -29,27 +29,54 @@
         private void InitializeComponent()
         {
             this.lblHome = new System.Windows.Forms.Label();
+            this.pnlTotalSale = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lblHome
             // 
             this.lblHome.AutoSize = true;
             this.lblHome.Font = new System.Drawing.Font("Microsoft YaHei", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHome.Location = new System.Drawing.Point(331, 189);
-            this.lblHome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHome.Location = new System.Drawing.Point(496, 291);
             this.lblHome.Name = "lblHome";
-            this.lblHome.Size = new System.Drawing.Size(154, 30);
+            this.lblHome.Size = new System.Drawing.Size(222, 41);
             this.lblHome.TabIndex = 0;
             this.lblHome.Text = "Home Admin";
             // 
+            // pnlTotalSale
+            // 
+            this.pnlTotalSale.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlTotalSale.Location = new System.Drawing.Point(41, 0);
+            this.pnlTotalSale.Name = "pnlTotalSale";
+            this.pnlTotalSale.Size = new System.Drawing.Size(200, 178);
+            this.pnlTotalSale.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(333, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 178);
+            this.panel2.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(614, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 178);
+            this.panel3.TabIndex = 3;
+            // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlTotalSale);
             this.Controls.Add(this.lblHome);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Home";
-            this.Size = new System.Drawing.Size(789, 434);
+            this.Size = new System.Drawing.Size(900, 600);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +85,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblHome;
+        private System.Windows.Forms.Panel pnlTotalSale;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

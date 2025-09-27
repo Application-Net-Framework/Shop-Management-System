@@ -97,7 +97,7 @@
             this.preOrderBtn.Name = "preOrderBtn";
             this.preOrderBtn.Size = new System.Drawing.Size(158, 23);
             this.preOrderBtn.TabIndex = 25;
-            this.preOrderBtn.Text = "Requestr Product";
+            this.preOrderBtn.Text = "Request Product";
             this.preOrderBtn.UseVisualStyleBackColor = false;
             this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
             // 
@@ -110,7 +110,7 @@
             this.viewPreOrderbtn.Name = "viewPreOrderbtn";
             this.viewPreOrderbtn.Size = new System.Drawing.Size(201, 23);
             this.viewPreOrderbtn.TabIndex = 27;
-            this.viewPreOrderbtn.Text = "View Pre_order Request";
+            this.viewPreOrderbtn.Text = "View Pre-order Request";
             this.viewPreOrderbtn.UseVisualStyleBackColor = false;
             this.viewPreOrderbtn.Click += new System.EventHandler(this.viewPreOrderbtn_Click);
             // 
@@ -208,7 +208,7 @@
             this.cManagementBtn.ForeColor = System.Drawing.Color.Transparent;
             this.cManagementBtn.Image = global::App.Properties.Resources.user1;
             this.cManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cManagementBtn.Location = new System.Drawing.Point(12, 188);
+            this.cManagementBtn.Location = new System.Drawing.Point(12, 145);
             this.cManagementBtn.Name = "cManagementBtn";
             this.cManagementBtn.Size = new System.Drawing.Size(135, 37);
             this.cManagementBtn.TabIndex = 29;

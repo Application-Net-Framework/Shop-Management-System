@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using App.Configuration; // Added reference to the namespace where GlobalConfig is defined
 
 namespace App.UI_Forms.Admin.Features
 {
@@ -17,7 +18,7 @@ namespace App.UI_Forms.Admin.Features
         public string ProductID, ProductName, Price, Category, Stock;
         
         // Connection string for database access
-        private readonly string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+        private readonly string connectionString = GlobalConfig.ConnectionString;
 
         public addProduct()
         {

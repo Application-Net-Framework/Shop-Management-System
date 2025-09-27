@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;  
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,60 +14,33 @@ namespace App.UI_Forms.SalesMan
 {
     public partial class Feedback : Form
     {
-        
         public Feedback()
-        {
-            InitializeComponent();
-            this.AutoScaleMode = AutoScaleMode.Dpi;   // or AutoScaleMode.Font
-            this.AutoSize = true;
-        }
+        { InitializeComponent(); }
 
         String connectionString = GlobalConfig.ConnectionString;
+
         private void SearchCustomer()
         {
             string searchMobile = searchMobileTxt.Text.Trim();
-
             if (string.IsNullOrEmpty(searchMobile))
+            { MessageBox.Show("Please enter a mobile number."); return; }
+            SqlConnection con = new SqlConnection(connectionString);
+            string query = "SELECT CustomerID, Name, Mobile FROM Customer WHERE Mobile LIKE '" + searchMobile + "%'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            try
             {
-                MessageBox.Show("Please enter a mobile number.");
-                return;
+                con.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                { dataGridView1.DataSource = dt; }
+                else
+                { dataGridView1.DataSource = null; MessageBox.Show("Customer not found."); }
             }
-
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                // ✅ Use LIKE for partial search
-                string query = "SELECT CustomerID, Name, Mobile FROM Customer WHERE Mobile LIKE @Mobile + '%'";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@Mobile", searchMobile);
-
-                    try
-                    {
-                        con.Open();
-                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-
-                        if (dt.Rows.Count > 0)
-                        {
-                            // ✅ Show results in DataGridView
-                            dataGridView1.DataSource = dt;
-                        }
-                        else
-                        {
-                            dataGridView1.DataSource = null; // clear old results
-                            MessageBox.Show("Customer not found.");
-                        }
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show("Error while searching: " + ex.Message);
-                    }
-                }
-            }
+            catch (SqlException ex)
+            { MessageBox.Show("Error while searching: " + ex.Message); }
         }
-
 
         private void InsertFeedback()
         {
@@ -83,109 +56,58 @@ namespace App.UI_Forms.SalesMan
             else if (suggestionBtn.Checked) feedbackType = "Suggestion";
 
             if (string.IsNullOrEmpty(customerId))
-            {
-                MessageBox.Show("Please search and select a valid customer first.");
-                return;
-            }
+            { MessageBox.Show("Please search and select a valid customer first."); return; }
             if (string.IsNullOrEmpty(name))
-            {
-                MessageBox.Show("Name can't be empty.");
-                return;
-            }
+            { MessageBox.Show("Name can't be empty."); return; }
             if (string.IsNullOrEmpty(mobile))
-            {
-                MessageBox.Show("Mobile can't be empty.");
-                return;
-            }
+            { MessageBox.Show("Mobile can't be empty."); return; }
             if (string.IsNullOrEmpty(feedbackType))
-            {
-                MessageBox.Show("Please select a Feedback Type.");
-                return;
-            }
+            { MessageBox.Show("Please select a Feedback Type."); return; }
             if (string.IsNullOrEmpty(subject))
-            {
-                MessageBox.Show("Please enter a Subject.");
-                return;
-            }
+            { MessageBox.Show("Please enter a Subject."); return; }
             if (string.IsNullOrEmpty(details))
+            { MessageBox.Show("Please enter Details."); return; }
+
+            SqlConnection con = new SqlConnection(connectionString);
+            string query = "INSERT INTO Feedback (CustomerID, Name, Mobile, FeedbackType, Subject, Details) " +
+                           "VALUES (" + customerId + ",'" + name + "','" + mobile + "','" + feedbackType + "','" + subject + "','" + details + "')";
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            try
             {
-                MessageBox.Show("Please enter Details.");
-                return;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Feedback submitted successfully!");
+                idTxt.Clear();
+                nameTxt.Clear();
+                mobileTxt.Clear();
+                subjectTxt.Clear();
+                detailsTxt.Clear();
+                satisfiedRBtn.Checked = complainRBtn.Checked = suggestionBtn.Checked = false;
             }
-
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                string query = @"INSERT INTO Feedback (CustomerID, Name, Mobile, FeedbackType, Subject, Details)
-                         VALUES (@CustomerID, @Name, @Mobile, @FeedbackType, @Subject, @Details)";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@CustomerID", Convert.ToInt32(customerId));
-                    cmd.Parameters.AddWithValue("@Name", name);
-                    cmd.Parameters.AddWithValue("@Mobile", string.IsNullOrEmpty(mobile) ? (object)DBNull.Value : mobile);
-                    cmd.Parameters.AddWithValue("@FeedbackType", feedbackType);
-                    cmd.Parameters.AddWithValue("@Subject", subject);
-                    cmd.Parameters.AddWithValue("@Details", details);
-
-                    try
-                    {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Feedback submitted successfully!");
-
-                        idTxt.Clear();
-                        nameTxt.Clear();
-                        mobileTxt.Clear();
-                        subjectTxt.Clear();
-                        detailsTxt.Clear();
-                        satisfiedRBtn.Checked = complainRBtn.Checked = suggestionBtn.Checked = false;
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show("Error saving feedback: " + ex.Message);
-                    }
-                }
-            }
+            catch (SqlException ex)
+            { MessageBox.Show("Error saving feedback: " + ex.Message); }
         }
-
 
         private void LoadAllFeedbacks()
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    
-                    string query = "SELECT FeedbackID, CustomerID, Name, Mobile, FeedbackType, Subject, Details, Response, FeedbackDate FROM Feedback ORDER BY FeedbackDate DESC";
-
-
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, con);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    feedbackDataGridView.DataSource = dt;  // feedbackDataGridView is your DataGridView control
-                    feedbackDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                }
+                SqlConnection con = new SqlConnection(connectionString);
+                string query = "SELECT FeedbackID, CustomerID, Name, Mobile, FeedbackType, Subject, Details, Response, FeedbackDate FROM Feedback ORDER BY FeedbackDate DESC";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                feedbackDataGridView.DataSource = dt;
+                feedbackDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (SqlException ex)
-            {
-                MessageBox.Show("Error loading feedback: " + ex.Message);
-            }
+            { MessageBox.Show("Error loading feedback: " + ex.Message); }
         }
-
-
-
-
-
-
-
-
-
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
-            Salesman S= new Salesman();
+            Salesman S = new Salesman();
             S.StartPosition = FormStartPosition.Manual;
             S.Location = this.Location;
             S.Size = this.Size;
@@ -213,17 +135,8 @@ namespace App.UI_Forms.SalesMan
             this.Hide();
         }
 
-        private void submitBtn_Click(object sender, EventArgs e)
-        {
-            InsertFeedback();
-        }
-
-        private void feedbackRecordBtn_Click(object sender, EventArgs e)
-        {
-            LoadAllFeedbacks();
-;        }
-
-      
+        private void submitBtn_Click(object sender, EventArgs e) { InsertFeedback(); }
+        private void feedbackRecordBtn_Click(object sender, EventArgs e) { LoadAllFeedbacks(); }
 
         private void preOrderBtn_Click(object sender, EventArgs e)
         {
@@ -235,15 +148,8 @@ namespace App.UI_Forms.SalesMan
             this.Hide();
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
-        {
-            SearchCustomer();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        private void searchBtn_Click(object sender, EventArgs e) { SearchCustomer(); }
+        private void panel3_Paint(object sender, PaintEventArgs e) { }
 
         private void addCustomerBtn_Click(object sender, EventArgs e)
         {
@@ -257,93 +163,47 @@ namespace App.UI_Forms.SalesMan
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idTxt.Text= dataGridView1.CurrentRow.Cells["CustomerID"].Value.ToString();
+            idTxt.Text = dataGridView1.CurrentRow.Cells["CustomerID"].Value.ToString();
             nameTxt.Text = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
             mobileTxt.Text = dataGridView1.CurrentRow.Cells["Mobile"].Value.ToString();
         }
 
         private void feedbackDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {   fIdTxt.Text= feedbackDataGridView.CurrentRow.Cells["FeedbackID"].Value.ToString();
+        {
+            fIdTxt.Text = feedbackDataGridView.CurrentRow.Cells["FeedbackID"].Value.ToString();
             cIdTxt.Text = feedbackDataGridView.CurrentRow.Cells["CustomerID"].Value.ToString();
             mTxt.Text = feedbackDataGridView.CurrentRow.Cells["Mobile"].Value.ToString();
             nTxt.Text = feedbackDataGridView.CurrentRow.Cells["Name"].Value.ToString();
-
         }
 
         private void repsonseBtn_Click(object sender, EventArgs e)
         {
-           
-            // 1️⃣ Get values from form controls
             string feedbackId = fIdTxt.Text.Trim();
             string customerId = cIdTxt.Text.Trim();
             string name = nTxt.Text.Trim();
             string mobile = mTxt.Text.Trim();
             string response = responseTxt.Text.Trim();
 
-            // 2️⃣ Validation
             if (string.IsNullOrEmpty(feedbackId))
-            {
-                MessageBox.Show("Feedback ID is required.");
-                return;
-            }
-            if (string.IsNullOrEmpty(customerId))
-            {
-                MessageBox.Show("Customer ID is required.");
-                return;
-            }
-            if (string.IsNullOrEmpty(name))
-            {
-                MessageBox.Show("Customer Name is required.");
-                return;
-            }
-            if (string.IsNullOrEmpty(mobile))
-            {
-                MessageBox.Show("Customer Mobile is required.");
-                return;
-            }
-            if (string.IsNullOrEmpty(response))
-            {
-                MessageBox.Show("Please enter a Response & Solution.");
-                return;
-            }
+            { MessageBox.Show("Feedback ID is required."); return; }
+            if (string.IsNullOrEmpty(customerId)) { MessageBox.Show("Customer ID is required."); return; }
+            if (string.IsNullOrEmpty(name)) { MessageBox.Show("Customer Name is required."); return; }
+            if (string.IsNullOrEmpty(mobile)) { MessageBox.Show("Customer Mobile is required."); return; }
+            if (string.IsNullOrEmpty(response)) { MessageBox.Show("Please enter a Response & Solution."); return; }
 
-            // 3️⃣ Update into database
-            using (SqlConnection con = new SqlConnection(connectionString))
+            SqlConnection con = new SqlConnection(connectionString);
+            string query = "UPDATE Feedback SET Response = '" + response + "' " +
+                           "WHERE FeedbackID = " + feedbackId + " AND CustomerID = " + customerId;
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            try
             {
-                string query = @"UPDATE Feedback 
-                         SET Response = @Response
-                         WHERE FeedbackID = @FeedbackID 
-                           AND CustomerID = @CustomerID";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@Response", response);
-                    cmd.Parameters.AddWithValue("@FeedbackID", Convert.ToInt32(feedbackId));
-                    cmd.Parameters.AddWithValue("@CustomerID", Convert.ToInt32(customerId));
-
-                    try
-                    {
-                        con.Open();
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Response updated successfully!");
-                            responseTxt.Clear();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No matching feedback record found.");
-                        }
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show("Error while updating response: " + ex.Message);
-                    }
-                }
-            
+                con.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0) { MessageBox.Show("Response updated successfully!"); responseTxt.Clear(); }
+                else { MessageBox.Show("No matching feedback record found."); }
+            }
+            catch (SqlException ex) { MessageBox.Show("Error while updating response: " + ex.Message); }
         }
-
     }
-}
 }

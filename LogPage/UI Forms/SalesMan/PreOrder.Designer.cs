@@ -61,7 +61,7 @@
             this.clearBtn.BackColor = System.Drawing.SystemColors.HotTrack;
             this.clearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.clearBtn.Location = new System.Drawing.Point(236, 275);
+            this.clearBtn.Location = new System.Drawing.Point(277, 275);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(67, 23);
             this.clearBtn.TabIndex = 28;
@@ -73,16 +73,16 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Azure;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(554, 275);
+            this.dataGridView1.Location = new System.Drawing.Point(261, 347);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(371, 202);
+            this.dataGridView1.Size = new System.Drawing.Size(616, 173);
             this.dataGridView1.TabIndex = 26;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(306, 59);
+            this.label3.Location = new System.Drawing.Point(375, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 21;
@@ -93,11 +93,11 @@
             this.preOrderBtn.BackColor = System.Drawing.SystemColors.HotTrack;
             this.preOrderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.preOrderBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.preOrderBtn.Location = new System.Drawing.Point(309, 275);
+            this.preOrderBtn.Location = new System.Drawing.Point(350, 275);
             this.preOrderBtn.Name = "preOrderBtn";
             this.preOrderBtn.Size = new System.Drawing.Size(158, 23);
             this.preOrderBtn.TabIndex = 25;
-            this.preOrderBtn.Text = "Requestr Product";
+            this.preOrderBtn.Text = "Request Product";
             this.preOrderBtn.UseVisualStyleBackColor = false;
             this.preOrderBtn.Click += new System.EventHandler(this.preOrderBtn_Click);
             // 
@@ -106,11 +106,11 @@
             this.viewPreOrderbtn.BackColor = System.Drawing.SystemColors.HotTrack;
             this.viewPreOrderbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewPreOrderbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.viewPreOrderbtn.Location = new System.Drawing.Point(636, 486);
+            this.viewPreOrderbtn.Location = new System.Drawing.Point(461, 526);
             this.viewPreOrderbtn.Name = "viewPreOrderbtn";
             this.viewPreOrderbtn.Size = new System.Drawing.Size(201, 23);
             this.viewPreOrderbtn.TabIndex = 27;
-            this.viewPreOrderbtn.Text = "View Pre_order Request";
+            this.viewPreOrderbtn.Text = "View Pre-order Request";
             this.viewPreOrderbtn.UseVisualStyleBackColor = false;
             this.viewPreOrderbtn.Click += new System.EventHandler(this.viewPreOrderbtn_Click);
             // 
@@ -159,7 +159,7 @@
             // 
             this.nameLbl.AutoSize = true;
             this.nameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLbl.Location = new System.Drawing.Point(15, 11);
+            this.nameLbl.Location = new System.Drawing.Point(15, 15);
             this.nameLbl.Name = "nameLbl";
             this.nameLbl.Size = new System.Drawing.Size(105, 16);
             this.nameLbl.TabIndex = 0;
@@ -208,7 +208,7 @@
             this.cManagementBtn.ForeColor = System.Drawing.Color.Transparent;
             this.cManagementBtn.Image = global::App.Properties.Resources.user1;
             this.cManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cManagementBtn.Location = new System.Drawing.Point(12, 188);
+            this.cManagementBtn.Location = new System.Drawing.Point(12, 145);
             this.cManagementBtn.Name = "cManagementBtn";
             this.cManagementBtn.Size = new System.Drawing.Size(135, 37);
             this.cManagementBtn.TabIndex = 29;
@@ -286,7 +286,7 @@
             this.panel2.Controls.Add(this.emailLbl);
             this.panel2.Controls.Add(this.mobileLbl);
             this.panel2.Controls.Add(this.nameLbl);
-            this.panel2.Location = new System.Drawing.Point(159, 79);
+            this.panel2.Location = new System.Drawing.Point(209, 79);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(368, 190);
             this.panel2.TabIndex = 23;

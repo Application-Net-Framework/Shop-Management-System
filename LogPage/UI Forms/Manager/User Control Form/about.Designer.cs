@@ -28,31 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(about));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.invalidretypelb = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.invalidpasswodlb = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.invemaillb = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.invalidaddresslb = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.invalidphonelb = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -63,15 +60,21 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.userNamelb = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pictureAndLogo = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.edit = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel16.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -79,80 +82,48 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.pictureAndLogo.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel16);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.panel14);
-            this.panel1.Controls.Add(this.panel15);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.panel12);
-            this.panel1.Controls.Add(this.panel13);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.panel11);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.guna2CirclePictureBox1);
+            this.panel1.Controls.Add(this.pictureAndLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(844, 553);
+            this.panel1.Size = new System.Drawing.Size(1100, 600);
             this.panel1.TabIndex = 8;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(63, 21);
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(28, 8);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(581, 79);
+            this.pictureBox5.Size = new System.Drawing.Size(801, 184);
             this.pictureBox5.TabIndex = 33;
             this.pictureBox5.TabStop = false;
             // 
-            // panel16
+            // invalidretypelb
             // 
-            this.panel16.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel16.Controls.Add(this.label11);
-            this.panel16.Location = new System.Drawing.Point(63, 110);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(703, 33);
-            this.panel16.TabIndex = 32;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(7, 5);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(201, 20);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Shop Manager Informations";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.Color.IndianRed;
-            this.label16.Location = new System.Drawing.Point(60, 529);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(198, 13);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "Invalid Input Please enter correct Syntex";
+            this.invalidretypelb.AutoSize = true;
+            this.invalidretypelb.ForeColor = System.Drawing.Color.IndianRed;
+            this.invalidretypelb.Location = new System.Drawing.Point(542, 289);
+            this.invalidretypelb.Name = "invalidretypelb";
+            this.invalidretypelb.Size = new System.Drawing.Size(198, 13);
+            this.invalidretypelb.TabIndex = 31;
+            this.invalidretypelb.Text = "Invalid Input Please enter correct Syntex";
             // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.White;
             this.panel14.Controls.Add(this.textBox6);
-            this.panel14.Location = new System.Drawing.Point(214, 490);
+            this.panel14.Location = new System.Drawing.Point(696, 250);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(310, 37);
             this.panel14.TabIndex = 30;
@@ -168,7 +139,7 @@
             // 
             this.panel15.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel15.Controls.Add(this.label17);
-            this.panel15.Location = new System.Drawing.Point(63, 490);
+            this.panel15.Location = new System.Drawing.Point(545, 250);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(151, 37);
             this.panel15.TabIndex = 29;
@@ -180,25 +151,25 @@
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(7, 9);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(93, 20);
+            this.label17.Size = new System.Drawing.Size(126, 20);
             this.label17.TabIndex = 1;
-            this.label17.Text = "User Name :";
+            this.label17.Text = "Re-Type Passwod";
             // 
-            // label14
+            // invalidpasswodlb
             // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.IndianRed;
-            this.label14.Location = new System.Drawing.Point(63, 459);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(198, 13);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "Invalid Input Please enter correct Syntex";
+            this.invalidpasswodlb.AutoSize = true;
+            this.invalidpasswodlb.ForeColor = System.Drawing.Color.IndianRed;
+            this.invalidpasswodlb.Location = new System.Drawing.Point(545, 222);
+            this.invalidpasswodlb.Name = "invalidpasswodlb";
+            this.invalidpasswodlb.Size = new System.Drawing.Size(198, 13);
+            this.invalidpasswodlb.TabIndex = 28;
+            this.invalidpasswodlb.Text = "Invalid Input Please enter correct Syntex";
             // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.White;
             this.panel12.Controls.Add(this.textBox5);
-            this.panel12.Location = new System.Drawing.Point(214, 419);
+            this.panel12.Location = new System.Drawing.Point(696, 182);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(310, 37);
             this.panel12.TabIndex = 27;
@@ -214,7 +185,7 @@
             // 
             this.panel13.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel13.Controls.Add(this.label15);
-            this.panel13.Location = new System.Drawing.Point(63, 419);
+            this.panel13.Location = new System.Drawing.Point(545, 182);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(151, 37);
             this.panel13.TabIndex = 26;
@@ -226,25 +197,25 @@
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(7, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(93, 20);
+            this.label15.Size = new System.Drawing.Size(73, 20);
             this.label15.TabIndex = 1;
-            this.label15.Text = "User Name :";
+            this.label15.Text = "Password";
             // 
-            // label12
+            // invemaillb
             // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.IndianRed;
-            this.label12.Location = new System.Drawing.Point(63, 389);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(198, 13);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "Invalid Input Please enter correct Syntex";
+            this.invemaillb.AutoSize = true;
+            this.invemaillb.ForeColor = System.Drawing.Color.IndianRed;
+            this.invemaillb.Location = new System.Drawing.Point(545, 159);
+            this.invemaillb.Name = "invemaillb";
+            this.invemaillb.Size = new System.Drawing.Size(198, 13);
+            this.invemaillb.TabIndex = 25;
+            this.invemaillb.Text = "Invalid Input Please enter correct Syntex";
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.White;
             this.panel10.Controls.Add(this.textBox4);
-            this.panel10.Location = new System.Drawing.Point(212, 350);
+            this.panel10.Location = new System.Drawing.Point(694, 120);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(315, 37);
             this.panel10.TabIndex = 24;
@@ -256,41 +227,21 @@
             this.textBox4.Size = new System.Drawing.Size(309, 20);
             this.textBox4.TabIndex = 16;
             // 
-            // panel11
+            // invalidaddresslb
             // 
-            this.panel11.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel11.Controls.Add(this.label13);
-            this.panel11.Location = new System.Drawing.Point(63, 350);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(151, 37);
-            this.panel11.TabIndex = 23;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(7, 9);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(93, 20);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "User Name :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.IndianRed;
-            this.label6.Location = new System.Drawing.Point(63, 319);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(198, 13);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Invalid Input Please enter correct Syntex";
+            this.invalidaddresslb.AutoSize = true;
+            this.invalidaddresslb.ForeColor = System.Drawing.Color.IndianRed;
+            this.invalidaddresslb.Location = new System.Drawing.Point(22, 295);
+            this.invalidaddresslb.Name = "invalidaddresslb";
+            this.invalidaddresslb.Size = new System.Drawing.Size(198, 13);
+            this.invalidaddresslb.TabIndex = 22;
+            this.invalidaddresslb.Text = "Invalid Input Please enter correct Syntex";
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.Controls.Add(this.textBox3);
-            this.panel8.Location = new System.Drawing.Point(213, 280);
+            this.panel8.Location = new System.Drawing.Point(172, 256);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(314, 37);
             this.panel8.TabIndex = 21;
@@ -306,7 +257,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel9.Controls.Add(this.label8);
-            this.panel9.Location = new System.Drawing.Point(63, 280);
+            this.panel9.Location = new System.Drawing.Point(22, 256);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(151, 37);
             this.panel9.TabIndex = 20;
@@ -318,25 +269,25 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(7, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 20);
+            this.label8.Size = new System.Drawing.Size(71, 20);
             this.label8.TabIndex = 1;
-            this.label8.Text = "User Name :";
+            this.label8.Text = "Address :";
             // 
-            // label3
+            // invalidphonelb
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.IndianRed;
-            this.label3.Location = new System.Drawing.Point(63, 248);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(198, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Invalid Input Please enter correct Syntex";
+            this.invalidphonelb.AutoSize = true;
+            this.invalidphonelb.ForeColor = System.Drawing.Color.IndianRed;
+            this.invalidphonelb.Location = new System.Drawing.Point(22, 224);
+            this.invalidphonelb.Name = "invalidphonelb";
+            this.invalidphonelb.Size = new System.Drawing.Size(198, 13);
+            this.invalidphonelb.TabIndex = 19;
+            this.invalidphonelb.Text = "Invalid Input Please enter correct Syntex";
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.textBox2);
-            this.panel6.Location = new System.Drawing.Point(214, 209);
+            this.panel6.Location = new System.Drawing.Point(173, 185);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(307, 37);
             this.panel6.TabIndex = 18;
@@ -352,7 +303,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel7.Controls.Add(this.label4);
-            this.panel7.Location = new System.Drawing.Point(63, 209);
+            this.panel7.Location = new System.Drawing.Point(22, 185);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(151, 37);
             this.panel7.TabIndex = 17;
@@ -372,17 +323,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.IndianRed;
-            this.label1.Location = new System.Drawing.Point(62, 187);
+            this.label1.Location = new System.Drawing.Point(21, 163);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 13);
             this.label1.TabIndex = 16;
             this.label1.Text = "Invalid Input Please enter correct Syntex";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Location = new System.Drawing.Point(214, 149);
+            this.panel5.Location = new System.Drawing.Point(173, 125);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(307, 37);
             this.panel5.TabIndex = 15;
@@ -398,7 +350,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel4.Controls.Add(this.userNamelb);
-            this.panel4.Location = new System.Drawing.Point(63, 149);
+            this.panel4.Location = new System.Drawing.Point(22, 125);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(151, 37);
             this.panel4.TabIndex = 14;
@@ -417,12 +369,112 @@
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(661, 6);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(886, 37);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(117, 98);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(123, 104);
             this.guna2CirclePictureBox1.TabIndex = 12;
             this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
+            // 
+            // pictureAndLogo
+            // 
+            this.pictureAndLogo.Controls.Add(this.pictureBox5);
+            this.pictureAndLogo.Controls.Add(this.guna2CirclePictureBox1);
+            this.pictureAndLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureAndLogo.Location = new System.Drawing.Point(0, 0);
+            this.pictureAndLogo.Name = "pictureAndLogo";
+            this.pictureAndLogo.Size = new System.Drawing.Size(1100, 200);
+            this.pictureAndLogo.TabIndex = 34;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel16.Controls.Add(this.label11);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel16.Location = new System.Drawing.Point(0, 200);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(1100, 33);
+            this.panel16.TabIndex = 35;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(7, 5);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(201, 20);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Shop Manager Informations";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(7, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(0, 20);
+            this.label13.TabIndex = 1;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel11.Controls.Add(this.label2);
+            this.panel11.Controls.Add(this.label13);
+            this.panel11.Location = new System.Drawing.Point(545, 120);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(151, 37);
+            this.panel11.TabIndex = 23;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(7, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 20);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Email";
+            // 
+            // edit
+            // 
+            this.edit.Location = new System.Drawing.Point(442, 322);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(110, 31);
+            this.edit.TabIndex = 36;
+            this.edit.Text = "edit";
+            this.edit.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.edit);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.invalidretypelb);
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panel14);
+            this.panel2.Controls.Add(this.invalidphonelb);
+            this.panel2.Controls.Add(this.panel15);
+            this.panel2.Controls.Add(this.panel9);
+            this.panel2.Controls.Add(this.invalidpasswodlb);
+            this.panel2.Controls.Add(this.panel8);
+            this.panel2.Controls.Add(this.panel12);
+            this.panel2.Controls.Add(this.invalidaddresslb);
+            this.panel2.Controls.Add(this.panel13);
+            this.panel2.Controls.Add(this.panel11);
+            this.panel2.Controls.Add(this.invemaillb);
+            this.panel2.Controls.Add(this.panel10);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 233);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1100, 367);
+            this.panel2.TabIndex = 37;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // about
             // 
@@ -430,12 +482,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "about";
-            this.Size = new System.Drawing.Size(844, 553);
+            this.Size = new System.Drawing.Size(1100, 600);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
@@ -446,8 +495,6 @@
             this.panel13.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -461,6 +508,13 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.pictureAndLogo.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -469,29 +523,25 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label invalidretypelb;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label invalidpasswodlb;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label invemaillb;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label invalidaddresslb;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label invalidphonelb;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel7;
@@ -502,5 +552,13 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label userNamelb;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel pictureAndLogo;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button edit;
+        private System.Windows.Forms.Panel panel2;
     }
 }

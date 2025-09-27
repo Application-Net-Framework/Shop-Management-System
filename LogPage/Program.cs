@@ -15,14 +15,14 @@ namespace App
             Application.SetCompatibleTextRenderingDefault(false);
             
             // Start with the login page
-            // Other forms are commented out - uncomment only one if you want to change the startup form
-             Application.Run(new App.UI_Forms.Admin.Admin_Main_Home());
+            
+            // Application.Run(new App.UI_Forms.Admin.Admin_Main_Home());
             // Application.Run(new mainCashier());
-            // Application.Run(new Manager_Home());
+            Application.Run(new Manager_Home());
             // Application.Run(new Registration_Admin());
             // Application.Run(new Login_Admin());
-           // Application.Run(new Salesman());
-           // Application.Run(new App.LogPage());
+            // Application.Run(new Salesman());
+            // Application.Run(new App.LogPage());
         }
     }
 }

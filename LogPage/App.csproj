@@ -278,12 +278,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI Forms\Manager\StackLevel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI Forms\Manager\StackLevel.Designer.cs">
-      <DependentUpon>StackLevel.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI Forms\Manager\Employee Information\StaffInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -419,9 +413,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\Manager_Home.resx">
       <DependentUpon>Manager_Home.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Manager\StackLevel.resx">
-      <DependentUpon>StackLevel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\Employee Information\StaffInformation.resx">
       <DependentUpon>StaffInformation.cs</DependentUpon>

@@ -23,7 +23,7 @@ namespace App.UI_Forms.SalesMan
             try
             {
                 SqlConnection conn = new SqlConnection(connectionString);
-                string query = "SELECT ProductID, ProductName, CategoryName, PurchasePrice, SellingPrice, Stock, ExpiryDate FROM Product " +
+                string query = "SELECT ProductID, ProductName, CategoryName, Price, Stock, ExpiryDate FROM Product " +
                                "WHERE ProductName LIKE '%" + productName + "%'";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
@@ -38,7 +38,7 @@ namespace App.UI_Forms.SalesMan
             try
             {
                 SqlConnection conn = new SqlConnection(connectionString);
-                string query = "SELECT ProductID, ProductName, CategoryName, PurchasePrice, SellingPrice, Stock, ExpiryDate, DateAdded, Description FROM Product";
+                string query = "SELECT ProductID, ProductName, CategoryName, Price, Stock, ExpiryDate, DateAdded, Description FROM Product";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -50,7 +50,8 @@ namespace App.UI_Forms.SalesMan
         private void ProductQuery_Load(object sender, EventArgs e) { }
         private void pQueryBtn_Click(object sender, EventArgs e) { }
         private void homeBtn_Click(object sender, EventArgs e)
-        {   Salesman S = new Salesman();
+        {
+            Salesman S = new Salesman();
             S.StartPosition = FormStartPosition.Manual;
             S.Location = this.Location;
             S.Size = this.Size;
@@ -58,7 +59,8 @@ namespace App.UI_Forms.SalesMan
             this.Hide();
         }
         private void feedbackBtn_Click(object sender, EventArgs e)
-        {   Feedback f = new Feedback();
+        {
+            Feedback f = new Feedback();
             f.StartPosition = FormStartPosition.Manual;
             f.Location = this.Location;
             f.Size = this.Size;
@@ -66,7 +68,8 @@ namespace App.UI_Forms.SalesMan
             this.Hide();
         }
         private void cManagementBtn_Click(object sender, EventArgs e)
-        {   CustomerManagement CM = new CustomerManagement();
+        {
+            CustomerManagement CM = new CustomerManagement();
             CM.StartPosition = FormStartPosition.Manual;
             CM.Location = this.Location;
             CM.Size = this.Size;
@@ -74,7 +77,8 @@ namespace App.UI_Forms.SalesMan
             this.Hide();
         }
         private void preOrderBtn_Click(object sender, EventArgs e)
-        {   PreOrder PO = new PreOrder();
+        {
+            PreOrder PO = new PreOrder();
             PO.StartPosition = FormStartPosition.Manual;
             PO.Location = this.Location;
             PO.Size = this.Size;
@@ -84,6 +88,6 @@ namespace App.UI_Forms.SalesMan
         private void searchBtn_Click(object sender, EventArgs e)
         { SearchByName(nameTxt.Text); }
         private void stockBtn_Click(object sender, EventArgs e)
-        {  LoadAllProducts();  }
+        { LoadAllProducts(); }
     }
 }

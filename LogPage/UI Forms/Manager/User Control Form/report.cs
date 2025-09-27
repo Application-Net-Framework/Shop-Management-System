@@ -16,5 +16,10 @@ namespace App.UI_Forms.Manager.User_Control_Form
         {
             InitializeComponent();
         }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -105,5 +105,51 @@ namespace App.UI_Forms.Admin
         {
 
         }
+
+        private void boxSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = boxSearch.Text.Trim();
+            
+            if (string.IsNullOrEmpty(searchText))
+            {
+                show();
+                return;
+            }
+            
+            string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+            
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+               
+                string query = @"SELECT * FROM Employees 
+                               WHERE Name LIKE @SearchText 
+                               OR Email LIKE @SearchText 
+                               OR Phone_Number LIKE @SearchText 
+                               OR UserName LIKE @SearchText 
+                               OR ID LIKE @SearchText";
+                
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    
+                    cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
+                    
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);
+                    
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        
+                        dataGridView1.DataSource = ds.Tables[0];
+                    }
+                    else
+                    {
+                        
+                        dataGridView1.DataSource = ds.Tables[0];
+                    }
+                }
+            }
+        }
     }
 }

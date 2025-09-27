@@ -38,7 +38,7 @@ namespace App.UI_Forms.SalesMan
             try
             {
                 SqlConnection conn = new SqlConnection(connectionString);
-                string query = "SELECT ProductID, ProductName, CategoryName, Price, Stock, ExpiryDate, DateAdded, Description FROM Product";
+                string query = "SELECT ProductID, ProductName, CategoryName, Price, Stock, ExpiryDate, Description FROM Product";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

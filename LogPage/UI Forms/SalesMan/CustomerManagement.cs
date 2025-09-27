@@ -8,169 +8,107 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using App.Configuration;
 
 namespace App.UI_Forms.SalesMan
 {
     public partial class CustomerManagement : Form
     {
-        public CustomerManagement()
-        {
-            InitializeComponent();
-            this.AutoScaleMode = AutoScaleMode.Dpi;   // or AutoScaleMode.Font
-            this.AutoSize = true;
-        }
-        String connectionString = @"Data Source=DESKTOP-ESC3M7E\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        public CustomerManagement() { InitializeComponent(); }
+        String connectionString = GlobalConfig.ConnectionString;
+        private void AddCustomer()
+        {   string name = nameTxt.Text.Trim();
+            string mobile = mobileTxt.Text.Trim();
+            string email = emailTxt.Text.Trim();
+            string status = statusTxt.Text.Trim();
+          
+            if (string.IsNullOrEmpty(name)) {  MessageBox.Show("Name cannot be empty."); return; }           
+            if (string.IsNullOrEmpty(status)) {MessageBox.Show("Membership Status cannot be empty.");return; }
+            if (string.IsNullOrEmpty(mobile) || mobile.Length < 11 || !mobile.All(char.IsDigit))
+            { MessageBox.Show("Mobile number must be at least 11 digits and contain only numbers."); return; }
+            if (!string.IsNullOrEmpty(email) && !email.Contains("@"))
+            { MessageBox.Show("Invalid email address. Email must contain '@'."); return; }
 
-
-        private void AddCustomer(string name, string mobile, string email, string membershipStatus)
-        {
             try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();                
+                string checkMobileQuery = $"SELECT COUNT(*) FROM Customer WHERE Mobile = '{mobile}'";
+                SqlCommand checkMobileCmd = new SqlCommand(checkMobileQuery, con);
+                int mobileCount = (int)checkMobileCmd.ExecuteScalar();
+                if (mobileCount > 0) { MessageBox.Show("This mobile number is already registered."); return; }
+                if (!string.IsNullOrEmpty(email))
                 {
-                    con.Open();
-
-                    string query = "INSERT INTO Customer (Name, Mobile, Email, MembershipStatus) VALUES (@Name, @Mobile, @Email, @MembershipStatus)";
-
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        cmd.Parameters.AddWithValue("@Name", name);
-                        cmd.Parameters.AddWithValue("@Mobile", mobile);
-                        cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(email) ? (object)DBNull.Value : email);
-                        cmd.Parameters.AddWithValue("@MembershipStatus", membershipStatus);
-
-                        int rows = cmd.ExecuteNonQuery();
-
-                        if (rows > 0)
-                        {
-                            MessageBox.Show("Customer added successfully!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Failed to add customer.");
-                        }
-                    }
+                    string checkEmailQuery = $"SELECT COUNT(*) FROM Customer WHERE Email = '{email}'";
+                    SqlCommand checkEmailCmd = new SqlCommand(checkEmailQuery, con);
+                    int emailCount = (int)checkEmailCmd.ExecuteScalar();
+                    if (emailCount > 0)
+                    { MessageBox.Show("This email already exists with a mobile number."); return;}
                 }
+                string query = $"INSERT INTO Customer (Name, Mobile, Email, MembershipStatus) " +
+                               $"VALUES ('{name}', '{mobile}', '{(string.IsNullOrEmpty(email) ? "NULL" : email)}', '{status}')";
+                SqlCommand cmd = new SqlCommand(query, con);
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0){MessageBox.Show("Customer added successfully!"); }
+                else{MessageBox.Show("Failed to add customer."); }
             }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Database error: " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unexpected error: " + ex.Message);
-            }
+            catch (SqlException ex) { MessageBox.Show("Database error: " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show("Unexpected error: " + ex.Message); }
         }
 
         private void LoadCustomerList()
-        {
-            try
+        { try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-                    string query = "SELECT CustomerID, Name, Mobile, Email, MembershipStatus FROM Customer";
-
-                    using (SqlDataAdapter da = new SqlDataAdapter(query, con))
-                    {
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-
-                        dataGridView1.DataSource = dt;
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                        dataGridView1.ReadOnly = true;
-                    }
-                }
+                SqlConnection con = new SqlConnection(connectionString);                
+                con.Open();
+                string query = "SELECT CustomerID, Name, Mobile, Email, MembershipStatus FROM Customer ORDER BY CustomerID DESC";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.ReadOnly = true;                    
+                
             }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Database error: " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unexpected error: " + ex.Message);
-            }
+            catch (SqlException ex) { MessageBox.Show("Database error: " + ex.Message); }
+            catch (Exception ex) {MessageBox.Show("Unexpected error: " + ex.Message); }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void CustomerManagement_Load(object sender, EventArgs e)
-        {
-           
-            
-        }
-
+        private void CustomerManagement_Load(object sender, EventArgs e)   { }
         private void homeBtn_Click(object sender, EventArgs e)
-        {
-            Salesman S = new Salesman();
+        {   Salesman S = new Salesman();
             S.StartPosition = FormStartPosition.Manual;
             S.Location = this.Location;
             S.Size = this.Size;
             S.Show();
             this.Hide();
         }
-
         private void feedbackBtn_Click(object sender, EventArgs e)
-        {
-            Feedback f = new Feedback();
+        {   Feedback f = new Feedback();
             f.StartPosition = FormStartPosition.Manual;
             f.Location = this.Location;
             f.Size = this.Size;
             f.Show();
             this.Hide();
         }
-
         private void pQueryBtn_Click(object sender, EventArgs e)
-        {
-            ProductQuery PQ = new ProductQuery();
+        {   ProductQuery PQ = new ProductQuery();
             PQ.StartPosition = FormStartPosition.Manual;
             PQ.Location = this.Location;
             PQ.Size = this.Size;
             PQ.Show();
             this.Hide();
         }
-
-        
-
         private void logoutBtn_Click(object sender, EventArgs e)
-        {
-            LogPage login = new LogPage();
+        {   LogPage login = new LogPage();
             login.Show();
             this.Close();
         }
-
-        private void addBtn_Click(object sender, EventArgs e)
-        {
-            AddCustomer(nameTxt.Text, mobileTxt.Text, emailTxt.Text, statusTxt.Text);
-        }
-
-        private void seeBtn_Click(object sender, EventArgs e)
-        {
-            LoadCustomerList();
-        }
-
+        private void addBtn_Click(object sender, EventArgs e) { AddCustomer(); }
+        private void seeBtn_Click(object sender, EventArgs e)    {   LoadCustomerList(); }
         private void clearBtn_Click(object sender, EventArgs e)
-        {
-            nameTxt.Text = "";
-            mobileTxt.Text = "";
-            emailTxt.Text = "";
-            statusTxt.Text = "";
-        }
-
+        {   nameTxt.Text = "";   mobileTxt.Text = "";    emailTxt.Text = "";     statusTxt.Text = "";     }
         private void benifitBtn_Click(object sender, EventArgs e)
-        {
-            string benefits = "Regular Membership:\n" +
+        { string benefits = "Regular Membership:\n" +
                       "1. Basic Access to Services\n" +
                       "2. Cost-Effective\n\n" +
                       "Premium Membership:\n" +
@@ -178,9 +116,7 @@ namespace App.UI_Forms.SalesMan
                       "2. Enhanced Flexibility and Perks";
 
             MessageBox.Show(benefits, "Membership Benefits", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
-
         private void preOrderBtn_Click(object sender, EventArgs e)
         {
             PreOrder PO = new PreOrder();
@@ -190,5 +126,43 @@ namespace App.UI_Forms.SalesMan
             PO.Show();
             this.Hide();
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {  idTxt.Text = dataGridView1.CurrentRow.Cells["CustomerID"].Value.ToString();
+            nameTxt.Text = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
+            mobileTxt.Text = dataGridView1.CurrentRow.Cells["Mobile"].Value.ToString();
+            emailTxt.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
+            statusTxt.Text = dataGridView1.CurrentRow.Cells["MembershipStatus"].Value.ToString();
+        }
+        private void UpdateCustomer()
+        {
+            string customerId = idTxt.Text.Trim();
+            string name = nameTxt.Text.Trim();
+            string mobile = mobileTxt.Text.Trim();
+            string email = emailTxt.Text.Trim();
+            string status = statusTxt.Text.Trim();
+
+            if (string.IsNullOrEmpty(customerId)) { MessageBox.Show("Customer ID is required."); return; }
+            if (string.IsNullOrEmpty(name)) {MessageBox.Show("Name cannot be empty.");return; }
+            if (string.IsNullOrEmpty(mobile) || mobile.Length < 11) {MessageBox.Show("Mobile must be at least 11 digits."); return; }
+            if (string.IsNullOrEmpty(email) || !email.Contains("@"))  {  MessageBox.Show("Enter a valid email containing '@'."); return;  }
+            if (string.IsNullOrEmpty(status)) { MessageBox.Show("Membership status cannot be empty."); return;   }
+
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            string checkQuery = $"SELECT COUNT(*) FROM Customer WHERE (Mobile='{mobile}' OR Email='{email}') AND CustomerID<>{customerId}";
+            SqlCommand checkCmd = new SqlCommand(checkQuery, con);
+            int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+            if (count > 0)
+            {MessageBox.Show("Another customer already exists with this mobile or email."); con.Close(); return;}
+            string updateQuery = $"UPDATE Customer SET Name='{name}', Mobile='{mobile}', Email='{email}', MembershipStatus='{status}' WHERE CustomerID={customerId}";
+            SqlCommand updateCmd = new SqlCommand(updateQuery, con);
+            int rows = updateCmd.ExecuteNonQuery();
+
+            if (rows > 0) { MessageBox.Show("Customer updated successfully!");}
+            else {  MessageBox.Show("Failed to update customer."); }
+            con.Close();
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e){ UpdateCustomer();}
     }
 }

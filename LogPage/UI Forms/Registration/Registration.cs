@@ -35,7 +35,7 @@ namespace App
            
             if (pass != confirmPass) {  MessageBox.Show("Passwords do not match.");  return;}
                      
-            string hashedPassword = HashPassword(pass);
+           
 
             SqlConnection con = new SqlConnection(connectionString);
             try
@@ -66,7 +66,7 @@ namespace App
                         cmd.Parameters.AddWithValue("@Address", string.IsNullOrEmpty(address) ? (object)DBNull.Value : address);
                         cmd.Parameters.AddWithValue("@Qualification", string.IsNullOrEmpty(education) ? (object)DBNull.Value : education);
                         cmd.Parameters.AddWithValue("@DOB", dob == DateTime.MinValue ? (object)DBNull.Value : dob);
-                        cmd.Parameters.AddWithValue("@Password", hashedPassword);
+                        cmd.Parameters.AddWithValue("@Password", pass);
 
                         int rows = cmd.ExecuteNonQuery();
                         if (rows > 0) {MessageBox.Show("Employee data updated successfully!"); ClearInputs(); }
@@ -75,17 +75,8 @@ namespace App
                 }
                 catch (SqlException ex) {MessageBox.Show("Database Error: " + ex.Message);}
             }      
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder sb = new StringBuilder();
-                foreach (byte b in bytes)
-                    sb.Append(b.ToString("x2"));
-                return sb.ToString();
-            }
-        }
+        
+        
         private void ClearInputs()
         {   idTxt.Clear();            
             emailTxt.Clear();

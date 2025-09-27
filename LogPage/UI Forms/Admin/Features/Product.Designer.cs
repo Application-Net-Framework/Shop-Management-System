@@ -45,6 +45,8 @@
             this.txtTProduct = new System.Windows.Forms.TextBox();
             this.lblAProduct = new System.Windows.Forms.Label();
             this.txtAProduct = new System.Windows.Forms.TextBox();
+            this.lblSearchID = new System.Windows.Forms.Label();
+            this.txtSearchId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(522, 128);
+            this.lblName.Location = new System.Drawing.Point(522, 151);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(179, 31);
             this.lblName.TabIndex = 35;
@@ -80,7 +82,7 @@
             // 
             this.lblPID.AutoSize = true;
             this.lblPID.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPID.Location = new System.Drawing.Point(25, 128);
+            this.lblPID.Location = new System.Drawing.Point(25, 151);
             this.lblPID.Name = "lblPID";
             this.lblPID.Size = new System.Drawing.Size(132, 31);
             this.lblPID.TabIndex = 34;
@@ -108,7 +110,7 @@
             // 
             this.txtPName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPName.Location = new System.Drawing.Point(528, 169);
+            this.txtPName.Location = new System.Drawing.Point(528, 185);
             this.txtPName.Name = "txtPName";
             this.txtPName.Size = new System.Drawing.Size(370, 38);
             this.txtPName.TabIndex = 31;
@@ -117,7 +119,7 @@
             // 
             this.txtPID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPID.Location = new System.Drawing.Point(31, 169);
+            this.txtPID.Location = new System.Drawing.Point(31, 185);
             this.txtPID.Name = "txtPID";
             this.txtPID.Size = new System.Drawing.Size(370, 38);
             this.txtPID.TabIndex = 30;
@@ -125,6 +127,7 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(821, 705);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(152, 57);
@@ -136,6 +139,7 @@
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(464, 712);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(152, 55);
@@ -147,6 +151,7 @@
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Location = new System.Drawing.Point(72, 705);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(152, 62);
@@ -216,11 +221,33 @@
             this.txtAProduct.Size = new System.Drawing.Size(161, 38);
             this.txtAProduct.TabIndex = 42;
             // 
+            // lblSearchID
+            // 
+            this.lblSearchID.AutoSize = true;
+            this.lblSearchID.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchID.ForeColor = System.Drawing.Color.Red;
+            this.lblSearchID.Location = new System.Drawing.Point(25, 78);
+            this.lblSearchID.Name = "lblSearchID";
+            this.lblSearchID.Size = new System.Drawing.Size(122, 31);
+            this.lblSearchID.TabIndex = 43;
+            this.lblSearchID.Text = "SearchID:";
+            // 
+            // txtSearchId
+            // 
+            this.txtSearchId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearchId.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchId.Location = new System.Drawing.Point(162, 76);
+            this.txtSearchId.Name = "txtSearchId";
+            this.txtSearchId.Size = new System.Drawing.Size(370, 38);
+            this.txtSearchId.TabIndex = 44;
+            // 
             // Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtSearchId);
+            this.Controls.Add(this.lblSearchID);
             this.Controls.Add(this.txtAProduct);
             this.Controls.Add(this.lblAProduct);
             this.Controls.Add(this.txtTProduct);
@@ -265,5 +292,7 @@
         private System.Windows.Forms.TextBox txtTProduct;
         private System.Windows.Forms.Label lblAProduct;
         private System.Windows.Forms.TextBox txtAProduct;
+        private System.Windows.Forms.Label lblSearchID;
+        private System.Windows.Forms.TextBox txtSearchId;
     }
 }

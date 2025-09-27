@@ -45,6 +45,7 @@
             this.supplierRequestGrid = new System.Windows.Forms.DataGridView();
             this.supplyRequestBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.welcomeLbl = new System.Windows.Forms.Label();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lowStockGrid)).BeginInit();
@@ -249,12 +250,25 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Requested Products";
             // 
+            // welcomeLbl
+            // 
+            this.welcomeLbl.AutoSize = true;
+            this.welcomeLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.welcomeLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.welcomeLbl.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.welcomeLbl.Location = new System.Drawing.Point(225, 84);
+            this.welcomeLbl.Name = "welcomeLbl";
+            this.welcomeLbl.Size = new System.Drawing.Size(0, 25);
+            this.welcomeLbl.TabIndex = 17;
+            // 
             // Salesman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.welcomeLbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.supplyRequestBtn);
             this.Controls.Add(this.supplierRequestGrid);
@@ -296,5 +310,6 @@
         private System.Windows.Forms.Button supplyRequestBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button preOrderBtn;
+        private System.Windows.Forms.Label welcomeLbl;
     }
 }

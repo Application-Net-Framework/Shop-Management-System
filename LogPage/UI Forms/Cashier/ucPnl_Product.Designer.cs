@@ -371,7 +371,7 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(26, 235);
+            this.lblSearch.Location = new System.Drawing.Point(26, 232);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(113, 20);
             this.lblSearch.TabIndex = 5;

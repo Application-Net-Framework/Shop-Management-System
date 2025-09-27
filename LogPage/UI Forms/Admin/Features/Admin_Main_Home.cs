@@ -432,7 +432,7 @@ namespace App.UI_Forms.Admin
            
         }
         
-        // Button click handlers for the AdminMainHome form
+        
         private void btnManageEmployee_Click(object sender, EventArgs e)
         {
          
@@ -451,7 +451,7 @@ namespace App.UI_Forms.Admin
 
         private void btnDailySales_Click(object sender, EventArgs e)
         {
-            // Clear the feature panel
+           
       
         }
 
@@ -460,7 +460,7 @@ namespace App.UI_Forms.Admin
 
         }
 
-        // Form event handlers
+        
         private void label1_Click(object sender, EventArgs e) { }
         private void panelTop_Paint(object sender, PaintEventArgs e) { }
         private void SideContainer_Paint_1(object sender, PaintEventArgs e) { }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product));
             this.lblNumber = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
@@ -45,9 +46,12 @@
             this.txtTProduct = new System.Windows.Forms.TextBox();
             this.lblAProduct = new System.Windows.Forms.Label();
             this.txtAProduct = new System.Windows.Forms.TextBox();
-            this.lblSearchID = new System.Windows.Forms.Label();
-            this.txtSearchId = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.boxSearchproduct = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNumber
@@ -197,7 +201,7 @@
             // 
             this.txtTProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTProduct.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTProduct.Location = new System.Drawing.Point(853, 419);
+            this.txtTProduct.Location = new System.Drawing.Point(853, 446);
             this.txtTProduct.Name = "txtTProduct";
             this.txtTProduct.Size = new System.Drawing.Size(161, 38);
             this.txtTProduct.TabIndex = 40;
@@ -221,33 +225,48 @@
             this.txtAProduct.Size = new System.Drawing.Size(161, 38);
             this.txtAProduct.TabIndex = 42;
             // 
-            // lblSearchID
+            // panel1
             // 
-            this.lblSearchID.AutoSize = true;
-            this.lblSearchID.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchID.ForeColor = System.Drawing.Color.Red;
-            this.lblSearchID.Location = new System.Drawing.Point(25, 78);
-            this.lblSearchID.Name = "lblSearchID";
-            this.lblSearchID.Size = new System.Drawing.Size(122, 31);
-            this.lblSearchID.TabIndex = 43;
-            this.lblSearchID.Text = "SearchID:";
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.boxSearchproduct);
+            this.panel1.Location = new System.Drawing.Point(51, 49);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(672, 80);
+            this.panel1.TabIndex = 55;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // txtSearchId
+            // boxSearchproduct
             // 
-            this.txtSearchId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearchId.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchId.Location = new System.Drawing.Point(162, 76);
-            this.txtSearchId.Name = "txtSearchId";
-            this.txtSearchId.Size = new System.Drawing.Size(370, 38);
-            this.txtSearchId.TabIndex = 44;
+            this.boxSearchproduct.BackColor = System.Drawing.Color.White;
+            this.boxSearchproduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.boxSearchproduct.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxSearchproduct.Location = new System.Drawing.Point(2, 22);
+            this.boxSearchproduct.Margin = new System.Windows.Forms.Padding(6);
+            this.boxSearchproduct.Name = "boxSearchproduct";
+            this.boxSearchproduct.Size = new System.Drawing.Size(658, 29);
+            this.boxSearchproduct.TabIndex = 2;
+            this.boxSearchproduct.TextChanged += new System.EventHandler(this.boxSearchproduct_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(724, 49);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 82);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 54;
+            this.pictureBox1.TabStop = false;
             // 
             // Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.txtSearchId);
-            this.Controls.Add(this.lblSearchID);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtAProduct);
             this.Controls.Add(this.lblAProduct);
             this.Controls.Add(this.txtTProduct);
@@ -268,6 +287,9 @@
             this.Name = "Product";
             this.Size = new System.Drawing.Size(1093, 800);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,7 +314,8 @@
         private System.Windows.Forms.TextBox txtTProduct;
         private System.Windows.Forms.Label lblAProduct;
         private System.Windows.Forms.TextBox txtAProduct;
-        private System.Windows.Forms.Label lblSearchID;
-        private System.Windows.Forms.TextBox txtSearchId;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox boxSearchproduct;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

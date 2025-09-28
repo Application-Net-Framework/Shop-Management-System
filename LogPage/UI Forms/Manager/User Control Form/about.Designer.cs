@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(about));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.QulifiShow = new System.Windows.Forms.Label();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
             this.aboutRePass = new System.Windows.Forms.TextBox();
             this.panel21 = new System.Windows.Forms.Panel();
@@ -86,12 +90,10 @@
             this.pictureAndLogo = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.QulifiShow = new System.Windows.Forms.Label();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel24.SuspendLayout();
+            this.panel25.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
@@ -116,8 +118,6 @@
             this.pictureAndLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.panel24.SuspendLayout();
-            this.panel25.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -172,6 +172,49 @@
             this.panel2.Size = new System.Drawing.Size(1200, 367);
             this.panel2.TabIndex = 37;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.White;
+            this.panel24.Controls.Add(this.QulifiShow);
+            this.panel24.Location = new System.Drawing.Point(659, 259);
+            this.panel24.Margin = new System.Windows.Forms.Padding(4);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(225, 37);
+            this.panel24.TabIndex = 55;
+            // 
+            // QulifiShow
+            // 
+            this.QulifiShow.AutoSize = true;
+            this.QulifiShow.BackColor = System.Drawing.Color.White;
+            this.QulifiShow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QulifiShow.ForeColor = System.Drawing.Color.Black;
+            this.QulifiShow.Location = new System.Drawing.Point(19, 9);
+            this.QulifiShow.Name = "QulifiShow";
+            this.QulifiShow.Size = new System.Drawing.Size(83, 20);
+            this.QulifiShow.TabIndex = 51;
+            this.QulifiShow.Text = "QulifiShow";
+            this.QulifiShow.Click += new System.EventHandler(this.QulifiShow_Click);
+            // 
+            // panel25
+            // 
+            this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel25.Controls.Add(this.label10);
+            this.panel25.Location = new System.Drawing.Point(547, 259);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(112, 37);
+            this.panel25.TabIndex = 54;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(7, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 20);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Qualification";
             // 
             // panel23
             // 
@@ -513,7 +556,7 @@
             this.editbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.editbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editbtn.ForeColor = System.Drawing.Color.White;
-            this.editbtn.Location = new System.Drawing.Point(854, 259);
+            this.editbtn.Location = new System.Drawing.Point(891, 258);
             this.editbtn.Name = "editbtn";
             this.editbtn.Size = new System.Drawing.Size(126, 38);
             this.editbtn.TabIndex = 36;
@@ -746,49 +789,6 @@
             this.guna2CirclePictureBox1.TabStop = false;
             this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
             // 
-            // panel24
-            // 
-            this.panel24.BackColor = System.Drawing.Color.White;
-            this.panel24.Controls.Add(this.QulifiShow);
-            this.panel24.Location = new System.Drawing.Point(659, 259);
-            this.panel24.Margin = new System.Windows.Forms.Padding(4);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(117, 37);
-            this.panel24.TabIndex = 55;
-            // 
-            // QulifiShow
-            // 
-            this.QulifiShow.AutoSize = true;
-            this.QulifiShow.BackColor = System.Drawing.Color.White;
-            this.QulifiShow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QulifiShow.ForeColor = System.Drawing.Color.Black;
-            this.QulifiShow.Location = new System.Drawing.Point(19, 9);
-            this.QulifiShow.Name = "QulifiShow";
-            this.QulifiShow.Size = new System.Drawing.Size(83, 20);
-            this.QulifiShow.TabIndex = 51;
-            this.QulifiShow.Text = "QulifiShow";
-            this.QulifiShow.Click += new System.EventHandler(this.QulifiShow_Click);
-            // 
-            // panel25
-            // 
-            this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.panel25.Controls.Add(this.label10);
-            this.panel25.Location = new System.Drawing.Point(547, 259);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(112, 37);
-            this.panel25.TabIndex = 54;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(7, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Qualification";
-            // 
             // about
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -799,6 +799,10 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             this.panel21.ResumeLayout(false);
@@ -843,10 +847,6 @@
             this.pictureAndLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
             this.ResumeLayout(false);
 
         }

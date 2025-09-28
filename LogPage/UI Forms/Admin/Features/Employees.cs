@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
+
+
 
 namespace App.UI_Forms.Admin
 {
@@ -43,7 +41,7 @@ namespace App.UI_Forms.Admin
                 string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
-                string query = "delete from Employees where ID=" + txtID.Text + "";
+                string query = "DELETE FROM Employees WHERE UserID=" + txtID.Text + "";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 show();
@@ -57,10 +55,10 @@ namespace App.UI_Forms.Admin
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             string query = "UPDATE Employees " +
-               "SET Name='" + txtName.Text +
-               "', Email='" + txtEmail.Text +
-               "', Phone_Number='" + txtNumber.Text +
-               "' WHERE ID=" + txtID.Text;
+                           "SET UserName='" + txtName.Text +
+                           "', Email='" + txtEmail.Text +
+                           "', PhoneNumber='" + txtNumber.Text +
+                           "' WHERE UserID=" + txtID.Text;
 
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.ExecuteNonQuery();
@@ -85,6 +83,7 @@ namespace App.UI_Forms.Admin
             show();
             clear();
         }
+
         private void show()
         {
             string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
@@ -109,47 +108,59 @@ namespace App.UI_Forms.Admin
         private void boxSearch_TextChanged(object sender, EventArgs e)
         {
             string searchText = boxSearch.Text.Trim();
-            
+
             if (string.IsNullOrEmpty(searchText))
             {
                 show();
                 return;
             }
+
             
+            //string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+
             string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
-            
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-               
+
                 string query = @"SELECT * FROM Employees 
-                               WHERE Name LIKE @SearchText 
-                               OR Email LIKE @SearchText 
-                               OR Phone_Number LIKE @SearchText 
-                               OR UserName LIKE @SearchText 
-                               OR ID LIKE @SearchText";
-                
+                                 WHERE UserName LIKE @SearchText 
+                                 OR Email LIKE @SearchText 
+                                 OR PhoneNumber LIKE @SearchText 
+                                 OR UserName LIKE @SearchText 
+                                 OR CAST(UserID AS NVARCHAR) LIKE @SearchText";
+
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    
                     cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
-                    
+
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     da.Fill(ds);
-                    
+
                     if (ds.Tables[0].Rows.Count > 0)
                     {
-                        
                         dataGridView1.DataSource = ds.Tables[0];
                     }
                     else
                     {
-                        
                         dataGridView1.DataSource = ds.Tables[0];
                     }
                 }
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
+
+

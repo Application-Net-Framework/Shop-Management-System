@@ -35,8 +35,6 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtPName = new System.Windows.Forms.TextBox();
             this.lblPName = new System.Windows.Forms.Label();
-            this.txtPID = new System.Windows.Forms.TextBox();
-            this.lblPID = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.txt = new System.Windows.Forms.TextBox();
             this.lblStock = new System.Windows.Forms.Label();
@@ -114,26 +112,6 @@
             this.lblPName.TabIndex = 25;
             this.lblPName.Text = "ProductName:";
             // 
-            // txtPID
-            // 
-            this.txtPID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPID.Location = new System.Drawing.Point(46, 64);
-            this.txtPID.Name = "txtPID";
-            this.txtPID.Size = new System.Drawing.Size(328, 38);
-            this.txtPID.TabIndex = 24;
-            // 
-            // lblPID
-            // 
-            this.lblPID.AutoSize = true;
-            this.lblPID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPID.Location = new System.Drawing.Point(40, 30);
-            this.lblPID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPID.Name = "lblPID";
-            this.lblPID.Size = new System.Drawing.Size(135, 31);
-            this.lblPID.TabIndex = 23;
-            this.lblPID.Text = "ProductID:";
-            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.Silver;
@@ -181,8 +159,6 @@
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtPName);
             this.Controls.Add(this.lblPName);
-            this.Controls.Add(this.txtPID);
-            this.Controls.Add(this.lblPID);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "addProduct";
             this.Size = new System.Drawing.Size(1093, 800);
@@ -200,8 +176,6 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtPName;
         private System.Windows.Forms.Label lblPName;
-        private System.Windows.Forms.TextBox txtPID;
-        private System.Windows.Forms.Label lblPID;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox txt;
         private System.Windows.Forms.Label lblStock;

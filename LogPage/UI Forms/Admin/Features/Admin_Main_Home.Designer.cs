@@ -61,12 +61,12 @@
             this.btnContainer = new System.Windows.Forms.Timer(this.components);
             this.FeatureHolder = new System.Windows.Forms.Panel();
             this.featurePanel = new System.Windows.Forms.Panel();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.addProduct1 = new App.UI_Forms.Admin.Features.addProduct();
             this.employeesSearch = new App.UI_Forms.Admin.Employees();
             this.product1 = new App.UI_Forms.Admin.Product();
             this.addEmployee1 = new App.UI_Forms.Admin.Features.addEmployee();
             this.home1 = new App.UI_Forms.Manager.Home();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.panelTop.SuspendLayout();
             this.reportpnl.SuspendLayout();
             this.Salepnl.SuspendLayout();

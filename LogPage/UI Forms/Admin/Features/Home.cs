@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Drawing.Drawing2D; // Added for LinearGradientBrush
+using System.Drawing.Drawing2D; 
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,23 +14,23 @@ namespace App.UI_Forms.Manager
 {
     public partial class Home : UserControl
     {
-        // Define multiple connection strings to try
+        
         private readonly string[] connectionStrings = new string[] {
             @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;",
             @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True"
         };
         
-        // Labels to display sales information
+        
         private Label lblTotalSaleTitle;
         private Label lblTotalSaleAmount;
         private Label lblTotalSaleDate;
         
-        // Labels to display product information
+        
         private Label lblTotalProductTitle;
         private Label lblTotalProductCount;
         private Label lblTotalProductValue;
         
-        // Labels to display employee information
+        
         private Label lblTotalEmployeeTitle;
         private Label lblTotalEmployeeCount;
         private Label lblTotalEmployeeStatus;
@@ -39,23 +39,23 @@ namespace App.UI_Forms.Manager
         {
             InitializeComponent();
             
-            // Setup the panel UIs
+            
             SetupTotalSalesPanel();
             SetupTotalProductPanel();
             SetupTotalEmployeePanel();
             
-            // Load data when control is initialized
+            
             LoadDailySalesData();
             LoadTotalProductsData();
             LoadTotalEmployeeData();
             
-            // Load employee data for the grid
+            
             LoadEmployeeData();
         }
 
         private void SetupTotalSalesPanel()
         {
-            // Create and configure the title label
+           
             lblTotalSaleTitle = new Label
             {
                 Text = "Today's Sales",
@@ -68,7 +68,7 @@ namespace App.UI_Forms.Manager
                 Location = new Point(5, 10)
             };
             
-            // Create and configure the amount label
+            
             lblTotalSaleAmount = new Label
             {
                 Text = "$0.00",
@@ -82,7 +82,7 @@ namespace App.UI_Forms.Manager
                 Location = new Point(5, 50)
             };
             
-            // Create and configure the date label
+            
             lblTotalSaleDate = new Label
             {
                 Text = DateTime.Now.ToString("dddd, MMMM d, yyyy"),
@@ -95,18 +95,18 @@ namespace App.UI_Forms.Manager
                 Location = new Point(5, 100)
             };
             
-            // Add all labels to the panel
+           
             pnlTotalSale.Controls.Add(lblTotalSaleTitle);
             pnlTotalSale.Controls.Add(lblTotalSaleAmount);
             pnlTotalSale.Controls.Add(lblTotalSaleDate);
             
-            // Add paint handler for custom styling
+            
             pnlTotalSale.Paint += pnlTotalSale_Paint;
         }
         
         private void SetupTotalProductPanel()
         {
-            // Create and configure the title label
+           
             lblTotalProductTitle = new Label
             {
                 Text = "Total Products",
@@ -119,7 +119,7 @@ namespace App.UI_Forms.Manager
                 Location = new Point(5, 10)
             };
             
-            // Create and configure the count label
+          
             lblTotalProductCount = new Label
             {
                 Text = "0",
@@ -133,7 +133,7 @@ namespace App.UI_Forms.Manager
                 Location = new Point(5, 50)
             };
             
-            // Create and configure the description label
+            
             lblTotalProductValue = new Label
             {
                 Text = "Items in inventory",
@@ -146,18 +146,17 @@ namespace App.UI_Forms.Manager
                 Location = new Point(5, 100)
             };
             
-            // Add all labels to the panel
+            
             totalProduct.Controls.Add(lblTotalProductTitle);
             totalProduct.Controls.Add(lblTotalProductCount);
             totalProduct.Controls.Add(lblTotalProductValue);
             
-            // Add paint handler for custom styling
             totalProduct.Paint += TotalProduct_Paint;
         }
         
         private void SetupTotalEmployeePanel()
         {
-            // Create and configure the title label
+            
             lblTotalEmployeeTitle = new Label
             {
                 Text = "Total Employees",
@@ -170,7 +169,7 @@ namespace App.UI_Forms.Manager
                 Location = new Point(5, 10)
             };
             
-            // Create and configure the count label
+            
             lblTotalEmployeeCount = new Label
             {
                 Text = "0",
@@ -184,7 +183,6 @@ namespace App.UI_Forms.Manager
                 Location = new Point(5, 50)
             };
             
-            // Create and configure the status label
             lblTotalEmployeeStatus = new Label
             {
                 Text = "Active team members",
@@ -197,18 +195,18 @@ namespace App.UI_Forms.Manager
                 Location = new Point(5, 100)
             };
             
-            // Add all labels to the panel
+            
             totalEmp.Controls.Add(lblTotalEmployeeTitle);
             totalEmp.Controls.Add(lblTotalEmployeeCount);
             totalEmp.Controls.Add(lblTotalEmployeeStatus);
             
-            // Add paint handler for custom styling
+            
             totalEmp.Paint += TotalEmployee_Paint;
         }
         
         private void TotalEmployee_Paint(object sender, PaintEventArgs e)
         {
-            // Add a gradient background
+            
             using (LinearGradientBrush brush = new LinearGradientBrush(
                 totalEmp.ClientRectangle,
                 Color.FromArgb(255, 240, 240),
@@ -218,7 +216,7 @@ namespace App.UI_Forms.Manager
                 e.Graphics.FillRectangle(brush, totalEmp.ClientRectangle);
             }
             
-            // Add a border
+            
             Rectangle rect = new Rectangle(0, 0, totalEmp.Width - 1, totalEmp.Height - 1);
             using (Pen pen = new Pen(Color.FromArgb(200, 180, 180), 1))
             {
@@ -228,7 +226,7 @@ namespace App.UI_Forms.Manager
         
         private void TotalProduct_Paint(object sender, PaintEventArgs e)
         {
-            // Add a gradient background
+            
             using (LinearGradientBrush brush = new LinearGradientBrush(
                 totalProduct.ClientRectangle,
                 Color.FromArgb(240, 240, 255),
@@ -238,7 +236,7 @@ namespace App.UI_Forms.Manager
                 e.Graphics.FillRectangle(brush, totalProduct.ClientRectangle);
             }
             
-            // Add a border
+           
             Rectangle rect = new Rectangle(0, 0, totalProduct.Width - 1, totalProduct.Height - 1);
             using (Pen pen = new Pen(Color.FromArgb(180, 180, 200), 1))
             {
@@ -251,7 +249,7 @@ namespace App.UI_Forms.Manager
             bool success = false;
             decimal totalSales = 0;
             
-            // Try each connection string until one works
+            
             foreach (string connectionString in connectionStrings)
             {
                 try
@@ -260,31 +258,31 @@ namespace App.UI_Forms.Manager
                     {
                         conn.Open();
                         
-                        // Query to get total sales amount for today
+                        
                         string salesAmountQuery = "SELECT ISNULL(SUM(TotalAmount), 0) FROM Orders WHERE CAST(OrderDate AS DATE) = CAST(GETDATE() AS DATE)";
                         using (SqlCommand cmd = new SqlCommand(salesAmountQuery, conn))
                         {
                             object result = cmd.ExecuteScalar();
                             totalSales = Convert.ToDecimal(result);
                             success = true;
-                            break; // Exit the loop if successful
+                            break; 
                         }
                     }
                 }
                 catch
                 {
-                    // Just try the next connection string
+                    
                     continue;
                 }
             }
             
-            // Display the result or default value
+            
             lblTotalSaleAmount.Text = success ? totalSales.ToString("C") : "$0.00";
         }
         
         private void LoadTotalProductsData()
         {
-            // Try each connection string until one works
+            
             foreach (string connectionString in connectionStrings)
             {
                 try
@@ -293,21 +291,21 @@ namespace App.UI_Forms.Manager
                     {
                         conn.Open();
                         
-                        // First try Product table
+                        
                         try
                         {
-                            // Query to get total product count
+                           
                             string productQuery = "SELECT COUNT(*) FROM Product";
                             using (SqlCommand cmd = new SqlCommand(productQuery, conn))
                             {
                                 object result = cmd.ExecuteScalar();
                                 int productCount = Convert.ToInt32(result);
-                                lblTotalProductCount.Text = productCount.ToString("N0"); // Format with thousand separators
+                                lblTotalProductCount.Text = productCount.ToString("N0"); 
                                 
-                                // Add some context based on the count
+                                
                                 if (productCount > 0)
                                 {
-                                    // Get total stock value if available
+                                    
                                     try
                                     {
                                         string valueQuery = "SELECT SUM(Stock) FROM Product";
@@ -326,12 +324,12 @@ namespace App.UI_Forms.Manager
                                         lblTotalProductValue.Text = "Items in inventory";
                                     }
                                 }
-                                return; // Exit if successful
+                                return; 
                             }
                         }
                         catch
                         {
-                            // Try Stock table as fallback
+                           
                             try
                             {
                                 string stockQuery = "SELECT COUNT(*) FROM Stock";
@@ -346,25 +344,25 @@ namespace App.UI_Forms.Manager
                             }
                             catch
                             {
-                                // Continue to next connection string
+                                
                             }
                         }
                     }
                 }
                 catch
                 {
-                    // Continue to next connection string
+                    
                 }
             }
             
-            // If we get here, we couldn't fetch the data
+            
             lblTotalProductCount.Text = "0";
             lblTotalProductValue.Text = "Items in inventory";
         }
         
         private void LoadTotalEmployeeData()
         {
-            // Try each connection string until one works
+           
             foreach (string connectionString in connectionStrings)
             {
                 try
@@ -373,7 +371,7 @@ namespace App.UI_Forms.Manager
                     {
                         conn.Open();
                         
-                        // Try AddEmployee table first
+                        
                         try
                         {
                             string employeeQuery = "SELECT COUNT(*) FROM AddEmployee";
@@ -383,11 +381,11 @@ namespace App.UI_Forms.Manager
                                 int employeeCount = Convert.ToInt32(result);
                                 lblTotalEmployeeCount.Text = employeeCount.ToString("N0");
                                 
-                                // Update status message based on count
+                                
                                 lblTotalEmployeeStatus.Text = employeeCount == 1 
                                     ? "Active team member" 
                                     : "Active team members";
-                                return; // Exit if successful
+                                return; 
                             }
                         }
                         catch
@@ -402,34 +400,34 @@ namespace App.UI_Forms.Manager
                                     int empCount = Convert.ToInt32(result);
                                     lblTotalEmployeeCount.Text = empCount.ToString("N0");
                                     
-                                    // Update status message based on count
+                                    
                                     lblTotalEmployeeStatus.Text = empCount == 1 
                                         ? "Active team member" 
                                         : "Active team members";
-                                    return; // Exit if successful
+                                    return; 
                                 }
                             }
                             catch
                             {
-                                // Continue to next connection string
+                                
                             }
                         }
                     }
                 }
                 catch
                 {
-                    // Continue to next connection string
+                    
                 }
             }
             
-            // If we get here, we couldn't fetch the data
+            
             lblTotalEmployeeCount.Text = "0";
             lblTotalEmployeeStatus.Text = "Active team members";
         }
         
         private void LoadEmployeeData()
         {
-            // Try each connection string until one works
+            
             foreach (string connectionString in connectionStrings)
             {
                 try
@@ -438,7 +436,6 @@ namespace App.UI_Forms.Manager
                     {
                         conn.Open();
                         
-                        // First try AddEmployee table
                         try
                         {
                             string employeeQuery = "SELECT ID, Name, Email, Phone_Number FROM AddEmployee";
@@ -447,14 +444,14 @@ namespace App.UI_Forms.Manager
                                 DataTable dataTable = new DataTable();
                                 adapter.Fill(dataTable);
                                 
-                                // Bind data to the grid
+                                
                                 dataGridView1.DataSource = dataTable;
-                                return; // Exit if successful
+                                return; 
                             }
                         }
                         catch
                         {
-                            // Try Employee table as fallback
+                            
                             try
                             {
                                 string altQuery = "SELECT * FROM Employee";
@@ -463,26 +460,26 @@ namespace App.UI_Forms.Manager
                                     DataTable dataTable = new DataTable();
                                     adapter.Fill(dataTable);
                                     dataGridView1.DataSource = dataTable;
-                                    return; // Exit if successful
+                                    return; 
                                 }
                             }
                             catch
                             {
-                                // Continue to next connection string
+                                
                             }
                         }
                     }
                 }
                 catch
                 {
-                    // Continue to next connection string
+                    
                 }
             }
         }
 
         private void pnlTotalSale_Paint(object sender, PaintEventArgs e)
         {
-            // Add a gradient background
+            
             using (LinearGradientBrush brush = new LinearGradientBrush(
                 pnlTotalSale.ClientRectangle,
                 Color.FromArgb(240, 240, 240),
@@ -492,7 +489,7 @@ namespace App.UI_Forms.Manager
                 e.Graphics.FillRectangle(brush, pnlTotalSale.ClientRectangle);
             }
             
-            // Add a border
+            
             Rectangle rect = new Rectangle(0, 0, pnlTotalSale.Width - 1, pnlTotalSale.Height - 1);
             using (Pen pen = new Pen(Color.FromArgb(180, 180, 180), 1))
             {

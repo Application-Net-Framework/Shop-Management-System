@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace App.UI_Forms.Admin
 {
@@ -21,28 +14,18 @@ namespace App.UI_Forms.Admin
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtPID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtPName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtPrice.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtCategory.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtAProduct.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtTProduct.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            if (e.RowIndex >= 0 && dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                txtPID.Text = dataGridView1.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+                txtPName.Text = dataGridView1.Rows[e.RowIndex].Cells["ProductName"].Value.ToString();
+                txtPrice.Text = dataGridView1.Rows[e.RowIndex].Cells["Price"].Value.ToString();
+                txtCategory.Text = dataGridView1.Rows[e.RowIndex].Cells["CategoryName"].Value.ToString();
+                
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
-            SqlConnection conne = new SqlConnection(connectionString);
-            conne.Open();
-            string quarry = "SELECT * FROM Product";
-            SqlCommand cmd = new SqlCommand(quarry, conne);
-            cmd.ExecuteNonQuery();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            DataTable dt = ds.Tables[0];
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = dt;
             show();
             clear();
         }
@@ -50,16 +33,17 @@ namespace App.UI_Forms.Admin
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            string query = "UPDATE Product " +
-               "SET Name='" + txtPName.Text +
-               "', Price='" + txtPrice.Text +
-               "', Category='" + txtCategory.Text +
-               "' WHERE ID=" + txtPID.Text;
-
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.ExecuteNonQuery();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "UPDATE Product SET ProductName=@ProductName, Price=@Price, CategoryName=@CategoryName WHERE ProductID=@ProductID";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ProductName", txtPName.Text);
+                cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
+                cmd.Parameters.AddWithValue("@CategoryName", txtCategory.Text);
+                cmd.Parameters.AddWithValue("@ProductID", txtPID.Text);
+                cmd.ExecuteNonQuery();
+            }
             show();
             clear();
         }
@@ -67,15 +51,20 @@ namespace App.UI_Forms.Admin
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (txtPID.Text == "")
+            {
                 MessageBox.Show("Please select a row first:");
+            }
             else
             {
                 string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
-                SqlConnection conn = new SqlConnection(connectionString);
-                conn.Open();
-                string query = "delete from Product where ID=" + txtPID.Text + "";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "DELETE FROM Product WHERE ProductID=@ProductID";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@ProductID", txtPID.Text);
+                    cmd.ExecuteNonQuery();
+                }
                 show();
                 clear();
             }
@@ -84,17 +73,17 @@ namespace App.UI_Forms.Admin
         private void show()
         {
             string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
-            SqlConnection conne = new SqlConnection(connectionString);
-            conne.Open();
-            string quarry = "SELECT * FROM Product";
-            SqlCommand cmd = new SqlCommand(quarry, conne);
-            cmd.ExecuteNonQuery();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            DataTable dt = ds.Tables[0];
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = dt;
+            using (SqlConnection conne = new SqlConnection(connectionString))
+            {
+                conne.Open();
+                string quarry = "SELECT ProductID, ProductName, Price, CategoryName FROM Product";
+                SqlCommand cmd = new SqlCommand(quarry, conne);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.AutoGenerateColumns = true;
+                dataGridView1.DataSource = dt;
+            }
         }
 
         private void clear()
@@ -103,8 +92,70 @@ namespace App.UI_Forms.Admin
             txtPName.Text = "";
             txtPrice.Text = "";
             txtCategory.Text = "";
-            txtAProduct.Text = "";
-            txtTProduct.Text = "";
+            
+        }
+
+        private void boxSearch_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void boxSearchproduct_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = boxSearchproduct.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                show();
+                return;
+            }
+
+            string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = @"SELECT ProductID, ProductName, Price, CategoryName
+                             FROM Product
+                             WHERE ProductName LIKE @SearchText
+                             OR CategoryName LIKE @SearchText
+                             OR CAST(ProductID AS NVARCHAR(50)) LIKE @SearchText
+                             OR CAST(Price AS NVARCHAR(50)) LIKE @SearchText";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.Add("@SearchText", SqlDbType.NVarChar).Value = "%" + searchText + "%";
+
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        dataGridView1.AutoGenerateColumns = true;
+
+                        if (dt.Rows.Count > 0)
+                            dataGridView1.DataSource = dt;
+                        else
+                            dataGridView1.DataSource = null;
+
+                        dataGridView1.Refresh();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search error: " + ex.Message);
+            }
         }
     }
 }
+
+

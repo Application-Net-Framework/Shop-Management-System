@@ -23,7 +23,7 @@ namespace App.UI_Forms.SalesMan
             string status = statusTxt.Text.Trim();
           
             if (string.IsNullOrEmpty(name)) {  MessageBox.Show("Name cannot be empty."); return; }           
-            if (string.IsNullOrEmpty(status)) {MessageBox.Show("Membership Status cannot be empty.");return; }
+            if (string.IsNullOrEmpty(status)) {MessageBox.Show("Membership Type cannot be empty.");return; }
             if (string.IsNullOrEmpty(mobile) || mobile.Length < 11 || !mobile.All(char.IsDigit))
             { MessageBox.Show("Mobile number must be at least 11 digits and contain only numbers."); return; }
             if (!string.IsNullOrEmpty(email) && !email.Contains("@"))
@@ -45,7 +45,7 @@ namespace App.UI_Forms.SalesMan
                     if (emailCount > 0)
                     { MessageBox.Show("This email already exists with a mobile number."); return;}
                 }
-                string query = $"INSERT INTO Customer (Name, Mobile, Email, MembershipStatus) " +
+                string query = $"INSERT INTO Customer (Name, Mobile, Email, MembershipType) " +
                                $"VALUES ('{name}', '{mobile}', '{(string.IsNullOrEmpty(email) ? "NULL" : email)}', '{status}')";
                 SqlCommand cmd = new SqlCommand(query, con);
                 int rows = cmd.ExecuteNonQuery();
@@ -61,7 +61,7 @@ namespace App.UI_Forms.SalesMan
             {
                 SqlConnection con = new SqlConnection(connectionString);                
                 con.Open();
-                string query = "SELECT CustomerID, Name, Mobile, Email, MembershipStatus FROM Customer ORDER BY CustomerID DESC";
+                string query = "SELECT CustomerID, Name, Mobile, Email, MembershipType FROM Customer ORDER BY CustomerID DESC";
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -131,7 +131,7 @@ namespace App.UI_Forms.SalesMan
             nameTxt.Text = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
             mobileTxt.Text = dataGridView1.CurrentRow.Cells["Mobile"].Value.ToString();
             emailTxt.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
-            statusTxt.Text = dataGridView1.CurrentRow.Cells["MembershipStatus"].Value.ToString();
+            statusTxt.Text = dataGridView1.CurrentRow.Cells["MembershipType"].Value.ToString();
         }
         private void UpdateCustomer()
         {
@@ -145,7 +145,7 @@ namespace App.UI_Forms.SalesMan
             if (string.IsNullOrEmpty(name)) {MessageBox.Show("Name cannot be empty.");return; }
             if (string.IsNullOrEmpty(mobile) || mobile.Length < 11) {MessageBox.Show("Mobile must be at least 11 digits."); return; }
             if (string.IsNullOrEmpty(email) || !email.Contains("@"))  {  MessageBox.Show("Enter a valid email containing '@'."); return;  }
-            if (string.IsNullOrEmpty(status)) { MessageBox.Show("Membership status cannot be empty."); return;   }
+            if (string.IsNullOrEmpty(status)) { MessageBox.Show("MemberType status cannot be empty."); return;   }
 
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
@@ -154,7 +154,7 @@ namespace App.UI_Forms.SalesMan
             int count = Convert.ToInt32(checkCmd.ExecuteScalar());
             if (count > 0)
             {MessageBox.Show("Another customer already exists with this mobile or email."); con.Close(); return;}
-            string updateQuery = $"UPDATE Customer SET Name='{name}', Mobile='{mobile}', Email='{email}', MembershipStatus='{status}' WHERE CustomerID={customerId}";
+            string updateQuery = $"UPDATE Customer SET Name='{name}', Mobile='{mobile}', Email='{email}', MembershipType='{status}' WHERE CustomerID={customerId}";
             SqlCommand updateCmd = new SqlCommand(updateQuery, con);
             int rows = updateCmd.ExecuteNonQuery();
 

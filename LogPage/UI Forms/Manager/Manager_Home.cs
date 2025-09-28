@@ -531,13 +531,23 @@ namespace App
         {
             featureContainertimer.Start();
         }
-        
+
         private void logoutbtn_Click(object sender, EventArgs e)
         {
             // Log out implementation
             this.Close();
+            DialogResult result = MessageBox.Show("Are you sure you want to Logout?",
+                                                      "Confirm",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+
+            }
         }
-        
+
         // Empty method implementations to fix designer references
         private void pnltop_Paint(object sender, PaintEventArgs e)
         {

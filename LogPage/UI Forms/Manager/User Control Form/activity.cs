@@ -18,7 +18,7 @@ namespace App.UI_Forms.Manager
         public int totalcashier;
         public int totalsaleman;
 
-        string ConnectionString;
+        string ConnectionString = "Data Source=DESKTOP-FGUJCMU\\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;TrustServerCertificate=True";
         public activity()
         {
             InitializeComponent();
@@ -30,10 +30,11 @@ namespace App.UI_Forms.Manager
             cashierEmpLb.Text = totalcashier.ToString();
             salemanLb.Text = totalsaleman.ToString();
 
-            this.DailyRecordsChart.Series["Total Price"].Points.AddXY("totalprice",100);
-            this.DailyRecordsChart.Series["Total Price"].Points.AddXY("totalsale", 100);
-            this.DailyRecordsChart.Series["Total Price"].Points.AddXY("totalcashier", 100);
-            this.DailyRecordsChart.Series["Total Price"].Points.AddXY("totalsaleman", 100);
+            this.DailyRecordsChart.Series["Total Price"].Points.AddXY("totalprice",totalprice);
+            this.DailyRecordsChart.Series["Total Sale"].Points.AddXY("totalsale", totalsale);
+
+            this.employeChart.Series["Cashier"].Points.AddXY("totalcashier", totalcashier);
+            this.employeChart.Series["SalesMan"].Points.AddXY("totalsaleman", totalsaleman);
         }
         public void loadDatabase()
         {
@@ -41,11 +42,12 @@ namespace App.UI_Forms.Manager
             {
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-                    
-                    string totalSum = "SELECT SUM(TotalPrice) AS TotalPrice, SUM(Sale) AS TotalSale FROM Orders";
-                    string totalCashier = "SELECT COUNT(*) AS TotalCashier FROM Employees WHERE Role = 'Cashier'";
-                    string totalSaleman = "SELECT COUNT(*) AS TotalSaleman FROM Employees WHERE Role = 'Saleman'";
-                    
+
+                    string totalSum = "SELECT SUM([Product Price]) AS TotalPrice, SUM([Product Sale Price]) AS TotalSale FROM [Daily Activity]";
+                    string totalCashier = "SELECT COUNT(*) AS TotalCashier FROM [Daily Activity] WHERE Role = 'Cashier'";
+                    string totalSaleman = "SELECT COUNT(*) AS TotalSaleman FROM [Daily Activity] WHERE Role = 'Salesman'";
+
+
                     connection.Open();
                     SqlCommand commandSum = new SqlCommand(totalSum, connection);
                     SqlCommand commandCashier = new SqlCommand(totalCashier, connection);

@@ -51,8 +51,8 @@ namespace App.UI_Forms.Manager.User_Control_Form
             {
                 using(SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-                    string TotalPrice = "SELECT SUM(productPrice) FROM Products";
-                    string TotalSales = "SELECT SUM(productPrice) FROM Products WHERE Status = 'sale'";
+                    string TotalPrice = "SELECT  SUM(ProductPrice*BuyQuantity)FROM Product";
+                    string TotalSales = "SELECT SUM((ProductPrice*(BuyQuantity-SaleQuantity))) FROM Products WHERE Status = 'sale'";
                     string TotalCashier = "SELECT COUNT(*) FROM Employee WHERE role = 'Cashier'";
                     string TotalSalesman = "SELECT COUNT(*) FROM Employee WHERE role = 'salesman'";
 

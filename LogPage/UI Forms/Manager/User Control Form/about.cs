@@ -63,7 +63,7 @@ namespace App.UI_Forms.Manager
             invalidaddresslb.Visible = false;
             dobLb.Visible = false;
 
-            LoadUserData();
+          //  LoadUserData();
 
             QulifiShow.Text = Qualification;
             genderLb.Text = Gender;
@@ -317,7 +317,7 @@ namespace App.UI_Forms.Manager
                             {
                                 Password = aboutNewPass.Text;
                             }
-                            SaveUserData();
+                         //   SaveUserData();
 
                         }
                         else

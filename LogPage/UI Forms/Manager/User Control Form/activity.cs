@@ -23,7 +23,7 @@ namespace App.UI_Forms.Manager
         {
             InitializeComponent();
             
-            loadDatabase();
+           // loadDatabase();
 
             totalpricelb.Text = totalprice.ToString();
             totalsalelb.Text = totalsale.ToString();

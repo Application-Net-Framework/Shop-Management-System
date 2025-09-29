@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(report));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -71,7 +73,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.MoneyPiChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -86,12 +88,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.totalpricepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoneyPiChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.chart1);
+            this.panel1.Controls.Add(this.MoneyPiChart);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.panel7);
@@ -106,6 +108,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 536);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel7
             // 
@@ -209,31 +212,23 @@
             // 
             // EmployeeChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.EmployeeChart.ChartAreas.Add(chartArea2);
+            chartArea5.Name = "ChartArea1";
+            this.EmployeeChart.ChartAreas.Add(chartArea5);
             legend2.Name = "Legend1";
             this.EmployeeChart.Legends.Add(legend2);
-            this.EmployeeChart.Location = new System.Drawing.Point(46, 151);
+            this.EmployeeChart.Location = new System.Drawing.Point(29, 151);
             this.EmployeeChart.Name = "EmployeeChart";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Total Price";
             series5.ChartArea = "ChartArea1";
             series5.Legend = "Legend1";
-            series5.Name = "Total Sale";
+            series5.Name = "Cashier";
             series6.ChartArea = "ChartArea1";
             series6.Legend = "Legend1";
-            series6.Name = "Cashier";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Sales Man";
-            this.EmployeeChart.Series.Add(series4);
+            series6.Name = "Sales Man";
             this.EmployeeChart.Series.Add(series5);
             this.EmployeeChart.Series.Add(series6);
-            this.EmployeeChart.Series.Add(series7);
-            this.EmployeeChart.Size = new System.Drawing.Size(575, 308);
+            this.EmployeeChart.Size = new System.Drawing.Size(379, 308);
             this.EmployeeChart.TabIndex = 11;
-            this.EmployeeChart.Text = "chart1";
+            this.EmployeeChart.Text = "Employee Chart";
             this.EmployeeChart.Click += new System.EventHandler(this.chart1_Click);
             // 
             // panel3
@@ -243,7 +238,7 @@
             this.panel3.Controls.Add(this.salemanLb);
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(542, 15);
+            this.panel3.Location = new System.Drawing.Point(220, 15);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(141, 91);
             this.panel3.TabIndex = 10;
@@ -292,7 +287,7 @@
             this.panel2.Controls.Add(this.cashierEmpLb);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(377, 15);
+            this.panel2.Location = new System.Drawing.Point(55, 15);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(141, 91);
             this.panel2.TabIndex = 9;
@@ -332,7 +327,7 @@
             this.panel4.Controls.Add(this.totalsalelb);
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(213, 15);
+            this.panel4.Location = new System.Drawing.Point(555, 16);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(140, 91);
             this.panel4.TabIndex = 8;
@@ -372,7 +367,7 @@
             this.totalpricepnl.Controls.Add(this.totalpricelb);
             this.totalpricepnl.Controls.Add(this.pictureBox1);
             this.totalpricepnl.Controls.Add(this.label2);
-            this.totalpricepnl.Location = new System.Drawing.Point(44, 15);
+            this.totalpricepnl.Location = new System.Drawing.Point(397, 16);
             this.totalpricepnl.Name = "totalpricepnl";
             this.totalpricepnl.Size = new System.Drawing.Size(140, 91);
             this.totalpricepnl.TabIndex = 7;
@@ -410,7 +405,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(228, 472);
+            this.label3.Location = new System.Drawing.Point(130, 462);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 21);
             this.label3.TabIndex = 17;
@@ -420,38 +415,49 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(781, 472);
+            this.label6.Location = new System.Drawing.Point(736, 462);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 21);
             this.label6.TabIndex = 18;
             this.label6.Text = "Money Chart";
             // 
-            // chart1
+            // MoneyPiChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea1.Name = "TotalPriceArea";
+            chartArea2.Name = "TotalSalePriceArea";
+            chartArea3.Name = "SalesManSalaryArea";
+            chartArea4.Name = "CashierSalaryArea";
+            this.MoneyPiChart.ChartAreas.Add(chartArea1);
+            this.MoneyPiChart.ChartAreas.Add(chartArea2);
+            this.MoneyPiChart.ChartAreas.Add(chartArea3);
+            this.MoneyPiChart.ChartAreas.Add(chartArea4);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(649, 151);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
+            this.MoneyPiChart.Legends.Add(legend1);
+            this.MoneyPiChart.Location = new System.Drawing.Point(429, 151);
+            this.MoneyPiChart.Name = "MoneyPiChart";
+            series1.ChartArea = "SalesManSalaryArea";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "SalesManSalary";
-            series2.ChartArea = "ChartArea1";
+            series2.ChartArea = "CashierSalaryArea";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series2.Legend = "Legend1";
             series2.Name = "CashierSalary";
-            series3.ChartArea = "ChartArea1";
+            series3.ChartArea = "TotalSalePriceArea";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series3.Legend = "Legend1";
             series3.Name = "Total Sales";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(498, 283);
-            this.chart1.TabIndex = 19;
-            this.chart1.Text = "chart1";
+            series4.ChartArea = "TotalPriceArea";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series4.Legend = "Legend1";
+            series4.Name = "TotalPrice";
+            this.MoneyPiChart.Series.Add(series1);
+            this.MoneyPiChart.Series.Add(series2);
+            this.MoneyPiChart.Series.Add(series3);
+            this.MoneyPiChart.Series.Add(series4);
+            this.MoneyPiChart.Size = new System.Drawing.Size(589, 308);
+            this.MoneyPiChart.TabIndex = 19;
+            this.MoneyPiChart.Text = "Money Pi Chart";
             // 
             // report
             // 
@@ -481,7 +487,7 @@
             this.totalpricepnl.ResumeLayout(false);
             this.totalpricepnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoneyPiChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -519,6 +525,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart MoneyPiChart;
     }
 }

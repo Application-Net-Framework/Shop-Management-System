@@ -13,8 +13,8 @@ namespace App.UI_Forms.Manager.User_Control_Form
 {
     public partial class report : UserControl
     {
-        public float totalSales;
-        public float totalPrice;
+        public decimal totalSales;
+        public decimal totalPrice;
 
         public int totalsalesman;
         public int totalcashier;
@@ -25,12 +25,12 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public int netIncomeSalesman;
         public int netIncomeCashier;
 
-        public string ConnectionString ="";
+        public string ConnectionString = "Data Source=DESKTOP-FGUJCMU\\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;TrustServerCertificate=True";
         public report()
         {
             InitializeComponent();
             
-            //loadDatabase();
+            loadDatabase();
             
             cashierEmpLb.Text = totalcashier.ToString();
             salemanLb.Text = totalsalesman.ToString();
@@ -43,62 +43,71 @@ namespace App.UI_Forms.Manager.User_Control_Form
             saleManSalary.Text = netIncomeSalesman.ToString();
             cashierSalary.Text = netIncomeCashier.ToString();
 
+            this.EmployeeChart.Series["Sales Man"].Points.AddXY("Sales Man", totalsalesman);
+            this.EmployeeChart.Series["Cashier"].Points.AddXY("Cashier", totalcashier);
+
+            this.MoneyPiChart.Series["TotalPrice"].Points.AddXY("TotalPrice", totalPrice);
+            this.MoneyPiChart.Series["TotalSales"].Points.AddXY("TotalSales", totalSales);
+
+            this.MoneyPiChart.Series["SalesManSalary"].Points.AddXY("SalesManSalary", netIncomeSalesman);
+            this.MoneyPiChart.Series["CashierSalary"].Points.AddXY("CashierSalary", netIncomeCashier);
         }
 
         public void loadDatabase()
         {
             try
             {
+ 
                 using(SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-                    string TotalPrice = "SELECT  SUM(ProductPrice*BuyQuantity)FROM Product";
-                    string TotalSales = "SELECT SUM((ProductPrice*(BuyQuantity-SaleQuantity))) FROM Products WHERE Status = 'sale'";
-                    string TotalCashier = "SELECT COUNT(*) FROM Employee WHERE role = 'Cashier'";
-                    string TotalSalesman = "SELECT COUNT(*) FROM Employee WHERE role = 'salesman'";
-
+                    string TotalPrice = "SELECT SUM(ProductPrice * BuyQuantity) FROM Product";
+                    string TotalSales = "SELECT SUM(ProductPrice * SaleQuantity) AS TotalSales FROM Product";
+                    string TotalCashier = "SELECT COUNT(*) FROM Employee WHERE Role = 'Cashier'";
+                    string TotalSalesman = "SELECT COUNT(*) FROM Employee WHERE Role = 'Salesman'";
 
                     connection.Open();
-                    SqlCommand totalprice = new SqlCommand(TotalPrice, connection);
-                    SqlCommand totalsales = new SqlCommand(TotalSales, connection);
-
-                    SqlCommand totalcashier = new SqlCommand(TotalCashier, connection);
-                    SqlCommand totalsalesman = new SqlCommand(TotalSalesman, connection);
-
-                    SqlDataReader readerPrice = totalprice.ExecuteReader();
+                    SqlCommand cmdTotalPrice = new SqlCommand(TotalPrice, connection);
+                    SqlCommand cmdTotalSales = new SqlCommand(TotalSales, connection);
+                    SqlCommand cmdTotalCashier = new SqlCommand(TotalCashier, connection);
+                    SqlCommand cmdTotalSalesman = new SqlCommand(TotalSalesman, connection);
+                    
+                    SqlDataReader readerPrice = cmdTotalPrice.ExecuteReader();
                     if (readerPrice.Read())
                     {
-                        totalPrice = readerPrice.IsDBNull(0) ? 0 : readerPrice.GetFloat(0);
+                        totalPrice = readerPrice.IsDBNull(0) ? 0 : Convert.ToDecimal(readerPrice[0]);
                     }
                     readerPrice.Close();
-
-                    SqlDataReader readerSales = totalsales.ExecuteReader();
+                    
+                    SqlDataReader readerSales = cmdTotalSales.ExecuteReader();
                     if (readerSales.Read())
                     {
-                        totalSales = readerSales.IsDBNull(0) ? 0 : readerSales.GetFloat(0);
+                        totalSales = readerSales.IsDBNull(0) ? 0 : Convert.ToDecimal(readerSales[0]);
+
                     }
                     readerSales.Close();
+                    
 
-
-                    SqlDataReader readerCashier = totalcashier.ExecuteReader();
+                    SqlDataReader readerCashier = cmdTotalCashier.ExecuteReader();
                     if (readerCashier.Read())
                     {
                         totalcashier = readerCashier.IsDBNull(0) ? 0 : readerCashier.GetInt32(0);
                     }
                     readerCashier.Close();
 
-                    SqlDataReader readerSalesman = totalsalesman.ExecuteReader();
+                    SqlDataReader readerSalesman = cmdTotalSalesman.ExecuteReader();
                     if (readerSalesman.Read())
                     {
                         totalsalesman = readerSalesman.IsDBNull(0) ? 0 : readerSalesman.GetInt32(0);
-
                     }
-                    readerCashier.Close();
+                    readerSalesman.Close();
                 }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void chart1_Click(object sender, EventArgs e)
         {
 

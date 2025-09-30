@@ -199,7 +199,7 @@
             this.agelb.ForeColor = System.Drawing.Color.Black;
             this.agelb.Location = new System.Drawing.Point(6, 9);
             this.agelb.Name = "agelb";
-            this.agelb.Size = new System.Drawing.Size(71, 20);
+            this.agelb.Size = new System.Drawing.Size(89, 25);
             this.agelb.TabIndex = 51;
             this.agelb.Text = "ageShow";
             // 
@@ -219,7 +219,7 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(7, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 20);
+            this.label12.Size = new System.Drawing.Size(46, 25);
             this.label12.TabIndex = 1;
             this.label12.Text = "Age";
             // 
@@ -241,7 +241,7 @@
             this.QulifiShow.ForeColor = System.Drawing.Color.Black;
             this.QulifiShow.Location = new System.Drawing.Point(19, 9);
             this.QulifiShow.Name = "QulifiShow";
-            this.QulifiShow.Size = new System.Drawing.Size(83, 20);
+            this.QulifiShow.Size = new System.Drawing.Size(105, 25);
             this.QulifiShow.TabIndex = 51;
             this.QulifiShow.Text = "QulifiShow";
             this.QulifiShow.Click += new System.EventHandler(this.QulifiShow_Click);
@@ -262,7 +262,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(7, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 20);
+            this.label10.Size = new System.Drawing.Size(123, 25);
             this.label10.TabIndex = 1;
             this.label10.Text = "Qualification";
             // 
@@ -284,7 +284,7 @@
             this.aboutRePass.Location = new System.Drawing.Point(4, 9);
             this.aboutRePass.Margin = new System.Windows.Forms.Padding(4);
             this.aboutRePass.Name = "aboutRePass";
-            this.aboutRePass.Size = new System.Drawing.Size(311, 20);
+            this.aboutRePass.Size = new System.Drawing.Size(311, 24);
             this.aboutRePass.TabIndex = 2;
             this.aboutRePass.TextChanged += new System.EventHandler(this.aboutRePass_TextChanged);
             // 
@@ -302,9 +302,9 @@
             // 
             this.genderLb.AutoSize = true;
             this.genderLb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderLb.Location = new System.Drawing.Point(7, 9);
+            this.genderLb.Location = new System.Drawing.Point(5, 9);
             this.genderLb.Name = "genderLb";
-            this.genderLb.Size = new System.Drawing.Size(95, 20);
+            this.genderLb.Size = new System.Drawing.Size(118, 25);
             this.genderLb.TabIndex = 51;
             this.genderLb.Text = "genderShow";
             this.genderLb.Click += new System.EventHandler(this.genderLb_Click);
@@ -325,7 +325,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(7, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 20);
+            this.label9.Size = new System.Drawing.Size(74, 25);
             this.label9.TabIndex = 1;
             this.label9.Text = "Gender";
             // 
@@ -347,7 +347,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(19, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 20);
+            this.label6.Size = new System.Drawing.Size(89, 25);
             this.label6.TabIndex = 51;
             this.label6.Text = "Manager";
             // 
@@ -367,7 +367,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(7, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 20);
+            this.label1.Size = new System.Drawing.Size(50, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Title";
             // 
@@ -389,7 +389,7 @@
             this.aboutAddressTxt.Location = new System.Drawing.Point(4, 9);
             this.aboutAddressTxt.Margin = new System.Windows.Forms.Padding(4);
             this.aboutAddressTxt.Name = "aboutAddressTxt";
-            this.aboutAddressTxt.Size = new System.Drawing.Size(311, 20);
+            this.aboutAddressTxt.Size = new System.Drawing.Size(311, 24);
             this.aboutAddressTxt.TabIndex = 2;
             this.aboutAddressTxt.TextChanged += new System.EventHandler(this.aboutAddressTxt_TextChanged);
             // 
@@ -409,7 +409,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(7, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 20);
+            this.label3.Size = new System.Drawing.Size(90, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "Address :";
             // 
@@ -419,7 +419,7 @@
             this.invalidaddresslb.ForeColor = System.Drawing.Color.IndianRed;
             this.invalidaddresslb.Location = new System.Drawing.Point(15, 284);
             this.invalidaddresslb.Name = "invalidaddresslb";
-            this.invalidaddresslb.Size = new System.Drawing.Size(78, 13);
+            this.invalidaddresslb.Size = new System.Drawing.Size(89, 15);
             this.invalidaddresslb.TabIndex = 47;
             this.invalidaddresslb.Text = "invalid Address";
             // 
@@ -447,7 +447,7 @@
             this.dobLb.ForeColor = System.Drawing.Color.IndianRed;
             this.dobLb.Location = new System.Drawing.Point(15, 229);
             this.dobLb.Name = "dobLb";
-            this.dobLb.Size = new System.Drawing.Size(64, 13);
+            this.dobLb.Size = new System.Drawing.Size(71, 15);
             this.dobLb.TabIndex = 44;
             this.dobLb.Text = "Invalid Date";
             // 
@@ -467,7 +467,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(7, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 20);
+            this.label5.Size = new System.Drawing.Size(126, 25);
             this.label5.TabIndex = 1;
             this.label5.Text = "Date Of Birth";
             // 
@@ -489,7 +489,7 @@
             this.aboutPrePass.Location = new System.Drawing.Point(4, 9);
             this.aboutPrePass.Margin = new System.Windows.Forms.Padding(4);
             this.aboutPrePass.Name = "aboutPrePass";
-            this.aboutPrePass.Size = new System.Drawing.Size(311, 20);
+            this.aboutPrePass.Size = new System.Drawing.Size(311, 24);
             this.aboutPrePass.TabIndex = 2;
             this.aboutPrePass.TextChanged += new System.EventHandler(this.aboutPrePass_TextChanged);
             // 
@@ -511,7 +511,7 @@
             this.aboutNewPass.Location = new System.Drawing.Point(4, 9);
             this.aboutNewPass.Margin = new System.Windows.Forms.Padding(4);
             this.aboutNewPass.Name = "aboutNewPass";
-            this.aboutNewPass.Size = new System.Drawing.Size(311, 20);
+            this.aboutNewPass.Size = new System.Drawing.Size(311, 24);
             this.aboutNewPass.TabIndex = 2;
             this.aboutNewPass.TextChanged += new System.EventHandler(this.aboutNewPass_TextChanged);
             // 
@@ -533,7 +533,7 @@
             this.aboutEmailTxt.Location = new System.Drawing.Point(4, 9);
             this.aboutEmailTxt.Margin = new System.Windows.Forms.Padding(4);
             this.aboutEmailTxt.Name = "aboutEmailTxt";
-            this.aboutEmailTxt.Size = new System.Drawing.Size(311, 20);
+            this.aboutEmailTxt.Size = new System.Drawing.Size(311, 24);
             this.aboutEmailTxt.TabIndex = 2;
             this.aboutEmailTxt.TextChanged += new System.EventHandler(this.aboutEmailTxt_TextChanged);
             // 
@@ -555,7 +555,7 @@
             this.aboutPhoneTxt.Location = new System.Drawing.Point(4, 9);
             this.aboutPhoneTxt.Margin = new System.Windows.Forms.Padding(4);
             this.aboutPhoneTxt.Name = "aboutPhoneTxt";
-            this.aboutPhoneTxt.Size = new System.Drawing.Size(311, 20);
+            this.aboutPhoneTxt.Size = new System.Drawing.Size(311, 24);
             this.aboutPhoneTxt.TabIndex = 2;
             this.aboutPhoneTxt.TextChanged += new System.EventHandler(this.aboutPhoneTxt_TextChanged);
             // 
@@ -577,7 +577,7 @@
             this.aboutTxtboxName.Location = new System.Drawing.Point(4, 9);
             this.aboutTxtboxName.Margin = new System.Windows.Forms.Padding(4);
             this.aboutTxtboxName.Name = "aboutTxtboxName";
-            this.aboutTxtboxName.Size = new System.Drawing.Size(311, 20);
+            this.aboutTxtboxName.Size = new System.Drawing.Size(311, 24);
             this.aboutTxtboxName.TabIndex = 2;
             this.aboutTxtboxName.TextChanged += new System.EventHandler(this.aboutTxtboxName_TextChanged);
             // 
@@ -597,7 +597,7 @@
             this.userNamelb.ForeColor = System.Drawing.Color.White;
             this.userNamelb.Location = new System.Drawing.Point(7, 9);
             this.userNamelb.Name = "userNamelb";
-            this.userNamelb.Size = new System.Drawing.Size(94, 20);
+            this.userNamelb.Size = new System.Drawing.Size(118, 25);
             this.userNamelb.TabIndex = 1;
             this.userNamelb.Text = "User Name :";
             // 
@@ -620,7 +620,7 @@
             this.invalidUsernamelb.ForeColor = System.Drawing.Color.IndianRed;
             this.invalidUsernamelb.Location = new System.Drawing.Point(15, 56);
             this.invalidUsernamelb.Name = "invalidUsernamelb";
-            this.invalidUsernamelb.Size = new System.Drawing.Size(93, 13);
+            this.invalidUsernamelb.Size = new System.Drawing.Size(107, 15);
             this.invalidUsernamelb.TabIndex = 16;
             this.invalidUsernamelb.Text = "Invalid  user name";
             this.invalidUsernamelb.Click += new System.EventHandler(this.label1_Click);
@@ -641,7 +641,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(7, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 20);
+            this.label4.Size = new System.Drawing.Size(142, 25);
             this.label4.TabIndex = 1;
             this.label4.Text = "Phone Number";
             // 
@@ -651,7 +651,7 @@
             this.invalidretypelb.ForeColor = System.Drawing.Color.IndianRed;
             this.invalidretypelb.Location = new System.Drawing.Point(544, 238);
             this.invalidretypelb.Name = "invalidretypelb";
-            this.invalidretypelb.Size = new System.Drawing.Size(132, 13);
+            this.invalidretypelb.Size = new System.Drawing.Size(150, 15);
             this.invalidretypelb.TabIndex = 31;
             this.invalidretypelb.Text = "Password Dose not Match";
             // 
@@ -661,7 +661,7 @@
             this.invalidphonelb.ForeColor = System.Drawing.Color.IndianRed;
             this.invalidphonelb.Location = new System.Drawing.Point(12, 118);
             this.invalidphonelb.Name = "invalidphonelb";
-            this.invalidphonelb.Size = new System.Drawing.Size(111, 13);
+            this.invalidphonelb.Size = new System.Drawing.Size(129, 15);
             this.invalidphonelb.TabIndex = 19;
             this.invalidphonelb.Text = "invalid Phone Number";
             // 
@@ -681,7 +681,7 @@
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(7, 9);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(127, 20);
+            this.label17.Size = new System.Drawing.Size(163, 25);
             this.label17.TabIndex = 1;
             this.label17.Text = "Re-Type Passwod";
             // 
@@ -699,9 +699,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(7, 9);
+            this.label8.Location = new System.Drawing.Point(4, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(137, 20);
+            this.label8.Size = new System.Drawing.Size(174, 25);
             this.label8.TabIndex = 1;
             this.label8.Text = "Previouse Passwod";
             // 
@@ -711,7 +711,7 @@
             this.invalidpasswodlb.ForeColor = System.Drawing.Color.IndianRed;
             this.invalidpasswodlb.Location = new System.Drawing.Point(547, 174);
             this.invalidpasswodlb.Name = "invalidpasswodlb";
-            this.invalidpasswodlb.Size = new System.Drawing.Size(96, 13);
+            this.invalidpasswodlb.Size = new System.Drawing.Size(108, 15);
             this.invalidpasswodlb.TabIndex = 28;
             this.invalidpasswodlb.Text = "Try New Password";
             // 
@@ -721,7 +721,7 @@
             this.invalidpreviouspasslb.ForeColor = System.Drawing.Color.IndianRed;
             this.invalidpreviouspasslb.Location = new System.Drawing.Point(547, 118);
             this.invalidpreviouspasslb.Name = "invalidpreviouspasslb";
-            this.invalidpreviouspasslb.Size = new System.Drawing.Size(88, 13);
+            this.invalidpreviouspasslb.Size = new System.Drawing.Size(100, 15);
             this.invalidpreviouspasslb.TabIndex = 22;
             this.invalidpreviouspasslb.Text = "Wrong Password";
             // 
@@ -741,7 +741,7 @@
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(7, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(108, 20);
+            this.label15.Size = new System.Drawing.Size(137, 25);
             this.label15.TabIndex = 1;
             this.label15.Text = "New Password";
             // 
@@ -762,7 +762,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(7, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 20);
+            this.label2.Size = new System.Drawing.Size(60, 25);
             this.label2.TabIndex = 36;
             this.label2.Text = "Email";
             // 
@@ -773,7 +773,7 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(7, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(0, 20);
+            this.label13.Size = new System.Drawing.Size(0, 25);
             this.label13.TabIndex = 1;
             // 
             // invemaillb
@@ -782,7 +782,7 @@
             this.invemaillb.ForeColor = System.Drawing.Color.IndianRed;
             this.invemaillb.Location = new System.Drawing.Point(15, 173);
             this.invemaillb.Name = "invemaillb";
-            this.invemaillb.Size = new System.Drawing.Size(64, 13);
+            this.invemaillb.Size = new System.Drawing.Size(76, 15);
             this.invemaillb.TabIndex = 25;
             this.invemaillb.Text = "invalid email";
             // 
@@ -803,7 +803,7 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(7, 5);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(201, 20);
+            this.label11.Size = new System.Drawing.Size(253, 25);
             this.label11.TabIndex = 13;
             this.label11.Text = "Shop Manager Informations";
             // 

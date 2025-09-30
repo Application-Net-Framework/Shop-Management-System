@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(about));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.agelb = new System.Windows.Forms.Label();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.QulifiShow = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
@@ -92,6 +96,8 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel26.SuspendLayout();
+            this.panel27.SuspendLayout();
             this.panel24.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel23.SuspendLayout();
@@ -128,12 +134,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 600);
+            this.panel1.Size = new System.Drawing.Size(1150, 600);
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel26);
+            this.panel2.Controls.Add(this.panel27);
             this.panel2.Controls.Add(this.panel24);
             this.panel2.Controls.Add(this.panel25);
             this.panel2.Controls.Add(this.panel23);
@@ -169,9 +177,51 @@
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(0, 233);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1200, 367);
+            this.panel2.Size = new System.Drawing.Size(1150, 367);
             this.panel2.TabIndex = 37;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel26
+            // 
+            this.panel26.BackColor = System.Drawing.Color.White;
+            this.panel26.Controls.Add(this.agelb);
+            this.panel26.Location = new System.Drawing.Point(404, 191);
+            this.panel26.Margin = new System.Windows.Forms.Padding(4);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(81, 37);
+            this.panel26.TabIndex = 57;
+            // 
+            // agelb
+            // 
+            this.agelb.AutoSize = true;
+            this.agelb.BackColor = System.Drawing.Color.White;
+            this.agelb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agelb.ForeColor = System.Drawing.Color.Black;
+            this.agelb.Location = new System.Drawing.Point(6, 9);
+            this.agelb.Name = "agelb";
+            this.agelb.Size = new System.Drawing.Size(71, 20);
+            this.agelb.TabIndex = 51;
+            this.agelb.Text = "ageShow";
+            // 
+            // panel27
+            // 
+            this.panel27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel27.Controls.Add(this.label12);
+            this.panel27.Location = new System.Drawing.Point(356, 191);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(48, 37);
+            this.panel27.TabIndex = 56;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(7, 9);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 20);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Age";
             // 
             // panel24
             // 
@@ -377,7 +427,7 @@
             // 
             this.panel14.BackColor = System.Drawing.Color.White;
             this.panel14.Controls.Add(this.dateTimePicker1);
-            this.panel14.Location = new System.Drawing.Point(167, 190);
+            this.panel14.Location = new System.Drawing.Point(144, 190);
             this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(201, 37);
@@ -407,7 +457,7 @@
             this.panel12.Controls.Add(this.label5);
             this.panel12.Location = new System.Drawing.Point(16, 190);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(151, 37);
+            this.panel12.Size = new System.Drawing.Size(128, 37);
             this.panel12.TabIndex = 43;
             // 
             // label5
@@ -743,7 +793,7 @@
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 200);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1200, 33);
+            this.panel16.Size = new System.Drawing.Size(1150, 33);
             this.panel16.TabIndex = 35;
             // 
             // label11
@@ -765,7 +815,7 @@
             this.pictureAndLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureAndLogo.Location = new System.Drawing.Point(0, 0);
             this.pictureAndLogo.Name = "pictureAndLogo";
-            this.pictureAndLogo.Size = new System.Drawing.Size(1200, 200);
+            this.pictureAndLogo.Size = new System.Drawing.Size(1150, 200);
             this.pictureAndLogo.TabIndex = 34;
             // 
             // pictureBox5
@@ -795,10 +845,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "about";
-            this.Size = new System.Drawing.Size(1200, 600);
+            this.Size = new System.Drawing.Size(1150, 600);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
+            this.panel27.ResumeLayout(false);
+            this.panel27.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
             this.panel25.ResumeLayout(false);
@@ -914,5 +968,9 @@
         private System.Windows.Forms.Label QulifiShow;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Label agelb;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.Label label12;
     }
 }

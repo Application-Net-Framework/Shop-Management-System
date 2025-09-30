@@ -48,8 +48,8 @@ namespace App.UI_Forms.Manager
         public string PreviousPassword;
         public string Gender;
         public string Qualification;
-        public DateTime DateOfBirt;  
-
+        public DateTime DateOfBirt;
+        public int Age;
         public about()
         {
             InitializeComponent();
@@ -67,7 +67,7 @@ namespace App.UI_Forms.Manager
 
             QulifiShow.Text = Qualification;
             genderLb.Text = Gender;
-            
+            agelb.Text = Age.ToString();    
 
         }
 
@@ -261,6 +261,7 @@ namespace App.UI_Forms.Manager
             {
                 age--;
             }
+            Age = age;
             return age;
         }
 

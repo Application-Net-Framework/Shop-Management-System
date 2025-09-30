@@ -16,5 +16,15 @@ namespace App.UI_Forms.Manager.User_Control_Form
         {
             InitializeComponent();
         }
+
+        private void tarminationbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void undobtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

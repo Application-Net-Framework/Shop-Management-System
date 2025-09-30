@@ -370,7 +370,7 @@
             this.settingsContainer.Controls.Add(this.settingspn);
             this.settingsContainer.Controls.Add(this.aboutpn);
             this.settingsContainer.Controls.Add(this.logoutpn);
-            this.settingsContainer.Location = new System.Drawing.Point(3, 355);
+            this.settingsContainer.Location = new System.Drawing.Point(3, 481);
             this.settingsContainer.Name = "settingsContainer";
             this.settingsContainer.Size = new System.Drawing.Size(170, 147);
             this.settingsContainer.TabIndex = 15;
@@ -390,7 +390,7 @@
             this.membersContainer.Controls.Add(this.tarminationpn);
             this.membersContainer.Location = new System.Drawing.Point(3, 140);
             this.membersContainer.Name = "membersContainer";
-            this.membersContainer.Size = new System.Drawing.Size(175, 59);
+            this.membersContainer.Size = new System.Drawing.Size(175, 185);
             this.membersContainer.TabIndex = 16;
             // 
             // memberpn
@@ -472,7 +472,7 @@
             this.productContainer.Controls.Add(this.productpn);
             this.productContainer.Controls.Add(this.pnsetting);
             this.productContainer.Controls.Add(this.stackpn);
-            this.productContainer.Location = new System.Drawing.Point(3, 205);
+            this.productContainer.Location = new System.Drawing.Point(3, 331);
             this.productContainer.Name = "productContainer";
             this.productContainer.Size = new System.Drawing.Size(170, 144);
             this.productContainer.TabIndex = 18;

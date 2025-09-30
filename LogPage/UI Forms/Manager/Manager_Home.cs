@@ -41,40 +41,34 @@ namespace App
         {
             InitializeComponent();
             
-            // Set form size
+            
             this.Size = new Size(1200, 600);
             this.ClientSize = new Size(1200, 600);
 
-            // Lock the form in center position
+           
             this.StartPosition = FormStartPosition.CenterScreen;
             
-            // Disable form resizing and maximize/minimize buttons
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             
-            // Set up window control buttons
+   
             SetupWindowControls();
 
-            // Center the welcome message
+       
             CenterWelcomeMessage();
 
-            // Initialize user controls
+  
             homeManagerControl = new activity();
             aboutControl = new about();
 
-            // Add controls to the feature panel
             featurePanel.Controls.Add(homeManagerControl);
             featurePanel.Controls.Add(aboutControl);
 
-            // Set initial visibility
             homeManagerControl.Visible = true;
             aboutControl.Visible = false;
         }
-        private void welcomemsg_Click(object sender, EventArgs e)
-        {
-            // Nothing to do here
-        }
+      
         private void SetupWindowControls()
         {
             // Set up cross button
@@ -287,16 +281,25 @@ namespace App
                     }));
                 }
             }
-            
-            // Re-center during animation to keep it smooth
             CenterWelcomeMessage();
         }
-        
+        private void HideAllControls()
+        {
+            foreach (Control control in featurePanel.Controls)
+            {
+                control.Visible = false;
+            }
+        }
+
         private void menubtn_Click(object sender, EventArgs e)
         {
             featureContainertimer.Start();
         }
-        
+        private void btnmenu_Click(object sender, EventArgs e)
+        {
+            featureContainertimer.Start();
+        }
+
         private void featureContainer_Paint(object sender, PaintEventArgs e)
         {
             // Custom painting for the feature container if needed
@@ -459,29 +462,22 @@ namespace App
             report1.Visible = true;
         }
         
-        // Helper method to hide all controls in the feature panel
-        private void HideAllControls()
-        {
-            foreach (Control control in featurePanel.Controls)
-            {
-                control.Visible = false;
-            }
-        }
-
         private void discountbtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
             discountform1.Visible = true;
         }
 
+        //stack level button
         private void productbtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
-            stackLevelform1.Visible = false;
+            stackLevelform1.Visible = true;
         }
 
         private void staffbtn_Click(object sender, EventArgs e)
         {
+            HideAllControls();
             
         }
 
@@ -505,21 +501,10 @@ namespace App
             aboutControl.Visible = true;
         }
         
-        private void minimizebtn_Click(object sender, EventArgs e)
-        {
-            // Disabled to prevent form from being minimized
-            // this.WindowState = FormWindowState.Minimized;
-        }
-
         private void activitybtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
             activity1.Visible = true;
-        }
-
-        private void minimizebtn_Click_1(object sender, EventArgs e)
-        {
-           //nothing
         }
 
         private void crossbtn_Click_1(object sender, EventArgs e)
@@ -527,14 +512,10 @@ namespace App
             this.Close();
         }
 
-        private void btnmenu_Click(object sender, EventArgs e)
-        {
-            featureContainertimer.Start();
-        }
+    
 
         private void logoutbtn_Click(object sender, EventArgs e)
         {
-            // Log out implementation
             this.Close();
             DialogResult result = MessageBox.Show("Are you sure you want to Logout?",
                                                       "Confirm",
@@ -551,12 +532,25 @@ namespace App
         // Empty method implementations to fix designer references
         private void pnltop_Paint(object sender, PaintEventArgs e)
         {
-            // Empty implementation to satisfy designer reference
+            // nothing
         }
         
         private void pnltop_MouseDown(object sender, MouseEventArgs e)
         {
-            // Empty implementation to satisfy designer reference
+            //nothing
         }
+        private void welcomemsg_Click(object sender, EventArgs e)
+        {
+            //nothing
+        }
+        private void minimizebtn_Click_1(object sender, EventArgs e)
+        {
+            //nothing
+        }
+        private void minimizebtn_Click(object sender, EventArgs e)
+        {
+            //nothing
+        }
+
     }
 }

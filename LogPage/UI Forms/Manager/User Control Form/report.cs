@@ -30,7 +30,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
         {
             InitializeComponent();
             
-            loadDatabase();
+           // loadDatabase();
             
             cashierEmpLb.Text = totalcashier.ToString();
             salemanLb.Text = totalsalesman.ToString();

@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(about));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.usrIdlbl = new System.Windows.Forms.Label();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
             this.agelb = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
@@ -94,12 +98,10 @@
             this.pictureAndLogo = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.idShowPanel = new System.Windows.Forms.Label();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel28.SuspendLayout();
+            this.panel29.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel27.SuspendLayout();
             this.panel24.SuspendLayout();
@@ -128,8 +130,6 @@
             this.pictureAndLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.panel28.SuspendLayout();
-            this.panel29.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -188,6 +188,48 @@
             this.panel2.Size = new System.Drawing.Size(1150, 409);
             this.panel2.TabIndex = 37;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel28
+            // 
+            this.panel28.BackColor = System.Drawing.Color.White;
+            this.panel28.Controls.Add(this.usrIdlbl);
+            this.panel28.Location = new System.Drawing.Point(131, 28);
+            this.panel28.Margin = new System.Windows.Forms.Padding(4);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(354, 37);
+            this.panel28.TabIndex = 59;
+            // 
+            // usrIdlbl
+            // 
+            this.usrIdlbl.AutoSize = true;
+            this.usrIdlbl.BackColor = System.Drawing.Color.White;
+            this.usrIdlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usrIdlbl.ForeColor = System.Drawing.Color.Black;
+            this.usrIdlbl.Location = new System.Drawing.Point(124, 9);
+            this.usrIdlbl.Name = "usrIdlbl";
+            this.usrIdlbl.Size = new System.Drawing.Size(97, 20);
+            this.usrIdlbl.TabIndex = 51;
+            this.usrIdlbl.Text = "IdShowPanel";
+            // 
+            // panel29
+            // 
+            this.panel29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel29.Controls.Add(this.label14);
+            this.panel29.Location = new System.Drawing.Point(15, 28);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(116, 37);
+            this.panel29.TabIndex = 58;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(34, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 20);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "ID :";
             // 
             // panel26
             // 
@@ -847,48 +889,6 @@
             this.guna2CirclePictureBox1.TabStop = false;
             this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
             // 
-            // panel28
-            // 
-            this.panel28.BackColor = System.Drawing.Color.White;
-            this.panel28.Controls.Add(this.idShowPanel);
-            this.panel28.Location = new System.Drawing.Point(131, 28);
-            this.panel28.Margin = new System.Windows.Forms.Padding(4);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(354, 37);
-            this.panel28.TabIndex = 59;
-            // 
-            // idShowPanel
-            // 
-            this.idShowPanel.AutoSize = true;
-            this.idShowPanel.BackColor = System.Drawing.Color.White;
-            this.idShowPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idShowPanel.ForeColor = System.Drawing.Color.Black;
-            this.idShowPanel.Location = new System.Drawing.Point(124, 9);
-            this.idShowPanel.Name = "idShowPanel";
-            this.idShowPanel.Size = new System.Drawing.Size(97, 20);
-            this.idShowPanel.TabIndex = 51;
-            this.idShowPanel.Text = "IdShowPanel";
-            // 
-            // panel29
-            // 
-            this.panel29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.panel29.Controls.Add(this.label14);
-            this.panel29.Location = new System.Drawing.Point(15, 28);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(116, 37);
-            this.panel29.TabIndex = 58;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(34, 9);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 20);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "ID :";
-            // 
             // about
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -899,6 +899,10 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
+            this.panel29.ResumeLayout(false);
+            this.panel29.PerformLayout();
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
             this.panel27.ResumeLayout(false);
@@ -951,10 +955,6 @@
             this.pictureAndLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.panel28.ResumeLayout(false);
-            this.panel28.PerformLayout();
-            this.panel29.ResumeLayout(false);
-            this.panel29.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1027,7 +1027,7 @@
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.Label idShowPanel;
+        private System.Windows.Forms.Label usrIdlbl;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Label label14;
     }

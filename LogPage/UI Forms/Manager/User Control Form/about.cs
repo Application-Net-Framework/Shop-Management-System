@@ -50,6 +50,8 @@ namespace App.UI_Forms.Manager
         public string Qualification;
         public DateTime DateOfBirt;
         public int Age;
+        public int UserID;
+
         public about()
         {
             InitializeComponent();
@@ -63,11 +65,16 @@ namespace App.UI_Forms.Manager
             invalidaddresslb.Visible = false;
             dobLb.Visible = false;
 
-          //  LoadUserData();
+            aboutNewPass.Text = "";
+            aboutRePass.Text = "";
+            aboutPrePass.Text = "";
+
+            //LoadUserData();
 
             QulifiShow.Text = Qualification;
             genderLb.Text = Gender;
             agelb.Text = Age.ToString();    
+
 
         }
 
@@ -77,7 +84,7 @@ namespace App.UI_Forms.Manager
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string selectQuery = "SELECT  UserName, PhoneNumber, Email, DateOfBirt, Address, Gender, Password, Qulification FROM Employee";
+                    string selectQuery = "SELECT UserID, UserName, PhoneNumber, Email, DateOfBirt, Address, Gender, Password, Qulification FROM Employee";
                     SqlCommand cmd = new SqlCommand(selectQuery, conn);
 
                     conn.Open();
@@ -93,8 +100,9 @@ namespace App.UI_Forms.Manager
                         Gender = reader["Gender"].ToString();
                         Password = reader["Password"].ToString();
                         Qualification = reader["Qulification"].ToString();
+                        UserID = Convert.ToInt32(reader["UserID"]);
 
-                        // Populate form controls with loaded data
+                        
                         PopulateFormControls();
                     }
                 }
@@ -104,7 +112,29 @@ namespace App.UI_Forms.Manager
                 MessageBox.Show($"Error loading user data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private bool IsDataChanged()
+        {
+            return UserName != aboutTxtboxName.Text ||
+                   PhoneNumber != aboutPhoneTxt.Text ||
+                   Email != aboutEmailTxt.Text ||
+                   DateOfBirt != dateTimePicker1.Value ||
+                   Address != aboutAddressTxt.Text ||
+                   Gender != genderLb.Text ||
+                   Qualification != QulifiShow.Text ||
+                   (aboutNewPass.Text != "" && Password != aboutNewPass.Text); 
+        }
 
+        public void refreashData()
+        {
+            aboutNewPass.Text = "";
+            aboutRePass.Text = "";
+            aboutPrePass.Text = "";
+
+            Age = calculateAge(DateOfBirt);
+            agelb.Text = Age.ToString();
+            
+           // LoadUserData();
+        }
         private void PopulateFormControls()
         {
             if (aboutTxtboxName != null) aboutTxtboxName.Text = UserName;
@@ -112,6 +142,7 @@ namespace App.UI_Forms.Manager
             if (aboutEmailTxt != null) aboutEmailTxt.Text = Email;
             if (aboutAddressTxt != null) aboutAddressTxt.Text = Address;
             if (dateTimePicker1 != null) dateTimePicker1.Value = DateOfBirt;
+            if(UserID!=0) usrIdlbl.Text = UserID.ToString();
         }
 
         private bool SaveUserData()
@@ -121,6 +152,7 @@ namespace App.UI_Forms.Manager
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string updateQuery = @"UPDATE Employee SET 
+                                         UserName = @UserName,
                                          PhoneNumber = @PhoneNumber,
                                          Email = @Email,
                                          DateOfBirt = @DateOfBirt,
@@ -128,9 +160,11 @@ namespace App.UI_Forms.Manager
                                          Gender = @Gender,
                                          Password = @Password,
                                          Qulification = @Qulification
-                                         WHERE UserName = @UserName";
+                                         WHERE UserID = @UserID";
+
 
                     SqlCommand cmd = new SqlCommand(updateQuery, conn);
+                    cmd.Parameters.AddWithValue("@UserID", UserID);
                     cmd.Parameters.AddWithValue("@UserName", UserName);
                     cmd.Parameters.AddWithValue("@PhoneNumber", aboutPhoneTxt.Text);
                     cmd.Parameters.AddWithValue("@Email", aboutEmailTxt.Text);
@@ -244,7 +278,7 @@ namespace App.UI_Forms.Manager
         {
             DateTime dob = dateTimePicker1.Value;
             int age = calculateAge(dob);
-            if(age < 18)
+            if(age < 18 && age > 100)
             {
                 dobLb.Visible = true;
             }
@@ -257,10 +291,6 @@ namespace App.UI_Forms.Manager
         private int calculateAge(DateTime birthDate)
         {
             int age = DateTime.Now.Year - birthDate.Year;
-            if (DateTime.Now < birthDate.AddYears(age))
-            {
-                age--;
-            }
             Age = age;
             return age;
         }
@@ -300,33 +330,38 @@ namespace App.UI_Forms.Manager
                                                           "Confirm",
                                                           MessageBoxButtons.YesNo,
                                                           MessageBoxIcon.Question);
-
-                    if (result == DialogResult.Yes)
+                    if(!IsDataChanged())
                     {
-                        if (!string.IsNullOrEmpty(aboutNewPass.Text))
+                        MessageBox.Show("No changes were made.", "Information",
+                              MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
+                        return;
+                    }
+                    else {
+                        if (result == DialogResult.Yes)
                         {
-                            MessageBox.Show("Changes applied successfully!",
-                                            "Success",
-                                            MessageBoxButtons.OK,
-                                            MessageBoxIcon.Information);
-
-                            PhoneNumber = aboutPhoneTxt.Text;
-                            Email = aboutEmailTxt.Text;
-                            DateOfBirt = dateTimePicker1.Value;
-                            Address = aboutAddressTxt.Text;
-                            if (!string.IsNullOrEmpty(aboutNewPass.Text))
+                            if (!string.IsNullOrEmpty(aboutPrePass.Text))
                             {
-                                Password = aboutNewPass.Text;
-                            }
-                         //   SaveUserData();
+                                MessageBox.Show("Changes applied successfully!",
+                                                "Success",
+                                                MessageBoxButtons.OK,
+                                                MessageBoxIcon.Information);
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Failed to save changes. Please try again.",
-                                            "Error",
-                                            MessageBoxButtons.OK,
-                                            MessageBoxIcon.Error);
+                                PhoneNumber = aboutPhoneTxt.Text;
+                                Email = aboutEmailTxt.Text;
+                                DateOfBirt = dateTimePicker1.Value;
+                                Address = aboutAddressTxt.Text;
+                                UserName = aboutTxtboxName.Text;
+
+                                if (!string.IsNullOrEmpty(aboutNewPass.Text))
+                                {
+                                    Password = aboutNewPass.Text;
+                                }
+
+                              //  SaveUserData();
+                                refreashData();
+
+                            }
                         }
                     }
                 }

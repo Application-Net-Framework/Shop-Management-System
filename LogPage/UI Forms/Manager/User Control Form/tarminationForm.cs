@@ -19,7 +19,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public tarminationForm()
         {
             InitializeComponent();
-            LoadDatabase();
+           // LoadDatabase();
         }
 
         private void tarminationbtn_Click(object sender, EventArgs e)
@@ -30,8 +30,8 @@ namespace App.UI_Forms.Manager.User_Control_Form
         {
             try
             {
-                string activeEmployees = "SELECT ID,UserName,Role FROM TARMINATION WHERE AccountStatus = 'ACTIVE'";
-                string inactiveEmployees = "SELECT ID,UserName,Role FROM TARMINATION WHERE AccountStatus = 'INACTIVE'";
+                string activeEmployees = "SELECT ID,UserName,Role,Email FROM TARMINATION WHERE AccountStatus = 'ACTIVE'";
+                string inactiveEmployees = "SELECT ID,UserName,Role,Email FROM TARMINATION WHERE AccountStatus = 'INACTIVE'";
                     
                 using(SqlConnection connection = new SqlConnection(connectionString))
                 {

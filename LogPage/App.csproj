@@ -163,6 +163,12 @@
     <Compile Include="UI Forms\Manager\User Control Form\discountform.Designer.cs">
       <DependentUpon>discountform.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Forms\Manager\User Control Form\newRegistrationEmployees.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Manager\User Control Form\newRegistrationEmployees.Designer.cs">
+      <DependentUpon>newRegistrationEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Forms\Manager\User Control Form\productform.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,6 +218,12 @@
     </Compile>
     <Compile Include="UI Forms\Manager\User Control Form\report.Designer.cs">
       <DependentUpon>report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Manager\User Control Form\staffinformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Manager\User Control Form\staffinformation.Designer.cs">
+      <DependentUpon>staffinformation.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Manager\User Control Form\tarminationForm.cs">
       <SubType>UserControl</SubType>
@@ -373,6 +385,9 @@
     <EmbeddedResource Include="UI Forms\Manager\User Control Form\discountform.resx">
       <DependentUpon>discountform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\User Control Form\newRegistrationEmployees.resx">
+      <DependentUpon>newRegistrationEmployees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\User Control Form\productform.resx">
       <DependentUpon>productform.cs</DependentUpon>
     </EmbeddedResource>
@@ -381,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\User Control Form\stackLevelform.resx">
       <DependentUpon>stackLevelform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\User Control Form\staffinformation.resx">
+      <DependentUpon>staffinformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\User Control Form\tarminationForm.resx">
       <DependentUpon>tarminationForm.cs</DependentUpon>

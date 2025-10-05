@@ -74,6 +74,7 @@
             this.crossbtn = new System.Windows.Forms.Button();
             this.welcomemsg = new System.Windows.Forms.Label();
             this.featurePanel = new System.Windows.Forms.Panel();
+            this.managerTarmination = new App.UI_Forms.Manager.User_Control_Form.tarminationForm();
             this.managerProduct = new App.UI_Forms.Manager.User_Control_Form.productform();
             this.stackLevelform1 = new App.UI_Forms.Manager.stackLevelform();
             this.report1 = new App.UI_Forms.Manager.User_Control_Form.report();
@@ -81,7 +82,8 @@
             this.dailyactivityform1 = new App.UI_Forms.Manager.dailyactivityform();
             this.about1 = new App.UI_Forms.Manager.about();
             this.activity1 = new App.UI_Forms.Manager.activity();
-            this.managerTarmination = new App.UI_Forms.Manager.User_Control_Form.tarminationForm();
+            this.staffinformationManager = new App.UI_Forms.Manager.User_Control_Form.staffinformation();
+            this.newRegistrationEmployeesManager = new App.UI_Forms.Manager.User_Control_Form.newRegistrationEmployees();
             this.pnmember.SuspendLayout();
             this.pnsetting.SuspendLayout();
             this.pnproduct.SuspendLayout();
@@ -498,7 +500,7 @@
             this.featureContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.featureContainer.Location = new System.Drawing.Point(3, 3);
             this.featureContainer.Name = "featureContainer";
-            this.featureContainer.Size = new System.Drawing.Size(246, 594);
+            this.featureContainer.Size = new System.Drawing.Size(246, 607);
             this.featureContainer.TabIndex = 20;
             this.featureContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.featureContainer_Paint);
             // 
@@ -543,7 +545,7 @@
             this.pnltop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnltop.Location = new System.Drawing.Point(249, 3);
             this.pnltop.Name = "pnltop";
-            this.pnltop.Size = new System.Drawing.Size(748, 34);
+            this.pnltop.Size = new System.Drawing.Size(1037, 34);
             this.pnltop.TabIndex = 21;
             this.pnltop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnltop_Paint);
             this.pnltop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnltop_MouseDown);
@@ -551,7 +553,7 @@
             // minimizebtn
             // 
             this.minimizebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizebtn.Location = new System.Drawing.Point(655, 0);
+            this.minimizebtn.Location = new System.Drawing.Point(944, 0);
             this.minimizebtn.Name = "minimizebtn";
             this.minimizebtn.Size = new System.Drawing.Size(32, 34);
             this.minimizebtn.TabIndex = 21;
@@ -560,7 +562,7 @@
             // fullscreenbtn
             // 
             this.fullscreenbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.fullscreenbtn.Location = new System.Drawing.Point(687, 0);
+            this.fullscreenbtn.Location = new System.Drawing.Point(976, 0);
             this.fullscreenbtn.Name = "fullscreenbtn";
             this.fullscreenbtn.Size = new System.Drawing.Size(32, 34);
             this.fullscreenbtn.TabIndex = 22;
@@ -570,7 +572,7 @@
             // crossbtn
             // 
             this.crossbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.crossbtn.Location = new System.Drawing.Point(719, 0);
+            this.crossbtn.Location = new System.Drawing.Point(1008, 0);
             this.crossbtn.Name = "crossbtn";
             this.crossbtn.Size = new System.Drawing.Size(29, 34);
             this.crossbtn.TabIndex = 21;
@@ -591,6 +593,8 @@
             // 
             // featurePanel
             // 
+            this.featurePanel.Controls.Add(this.newRegistrationEmployeesManager);
+            this.featurePanel.Controls.Add(this.staffinformationManager);
             this.featurePanel.Controls.Add(this.managerTarmination);
             this.featurePanel.Controls.Add(this.managerProduct);
             this.featurePanel.Controls.Add(this.stackLevelform1);
@@ -602,15 +606,23 @@
             this.featurePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.featurePanel.Location = new System.Drawing.Point(249, 37);
             this.featurePanel.Name = "featurePanel";
-            this.featurePanel.Size = new System.Drawing.Size(748, 560);
+            this.featurePanel.Size = new System.Drawing.Size(1037, 573);
             this.featurePanel.TabIndex = 22;
+            // 
+            // managerTarmination
+            // 
+            this.managerTarmination.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.managerTarmination.Location = new System.Drawing.Point(0, 0);
+            this.managerTarmination.Name = "managerTarmination";
+            this.managerTarmination.Size = new System.Drawing.Size(1037, 573);
+            this.managerTarmination.TabIndex = 7;
             // 
             // managerProduct
             // 
             this.managerProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.managerProduct.Location = new System.Drawing.Point(0, 0);
             this.managerProduct.Name = "managerProduct";
-            this.managerProduct.Size = new System.Drawing.Size(748, 560);
+            this.managerProduct.Size = new System.Drawing.Size(1037, 573);
             this.managerProduct.TabIndex = 6;
             // 
             // stackLevelform1
@@ -618,7 +630,7 @@
             this.stackLevelform1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stackLevelform1.Location = new System.Drawing.Point(0, 0);
             this.stackLevelform1.Name = "stackLevelform1";
-            this.stackLevelform1.Size = new System.Drawing.Size(748, 560);
+            this.stackLevelform1.Size = new System.Drawing.Size(1037, 573);
             this.stackLevelform1.TabIndex = 5;
             // 
             // report1
@@ -626,7 +638,7 @@
             this.report1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.report1.Location = new System.Drawing.Point(0, 0);
             this.report1.Name = "report1";
-            this.report1.Size = new System.Drawing.Size(748, 560);
+            this.report1.Size = new System.Drawing.Size(1037, 573);
             this.report1.TabIndex = 4;
             // 
             // discountform1
@@ -634,7 +646,7 @@
             this.discountform1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.discountform1.Location = new System.Drawing.Point(0, 0);
             this.discountform1.Name = "discountform1";
-            this.discountform1.Size = new System.Drawing.Size(748, 560);
+            this.discountform1.Size = new System.Drawing.Size(1037, 573);
             this.discountform1.TabIndex = 3;
             // 
             // dailyactivityform1
@@ -642,7 +654,7 @@
             this.dailyactivityform1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dailyactivityform1.Location = new System.Drawing.Point(0, 0);
             this.dailyactivityform1.Name = "dailyactivityform1";
-            this.dailyactivityform1.Size = new System.Drawing.Size(748, 560);
+            this.dailyactivityform1.Size = new System.Drawing.Size(1037, 573);
             this.dailyactivityform1.TabIndex = 2;
             // 
             // about1
@@ -650,7 +662,7 @@
             this.about1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.about1.Location = new System.Drawing.Point(0, 0);
             this.about1.Name = "about1";
-            this.about1.Size = new System.Drawing.Size(748, 560);
+            this.about1.Size = new System.Drawing.Size(1037, 573);
             this.about1.TabIndex = 1;
             // 
             // activity1
@@ -658,23 +670,31 @@
             this.activity1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.activity1.Location = new System.Drawing.Point(0, 0);
             this.activity1.Name = "activity1";
-            this.activity1.Size = new System.Drawing.Size(748, 560);
+            this.activity1.Size = new System.Drawing.Size(1037, 573);
             this.activity1.TabIndex = 0;
             // 
-            // managerTarmination
+            // staffinformationManager
             // 
-            this.managerTarmination.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.managerTarmination.Location = new System.Drawing.Point(0, 0);
-            this.managerTarmination.Name = "managerTarmination";
-            this.managerTarmination.Size = new System.Drawing.Size(748, 560);
-            this.managerTarmination.TabIndex = 7;
+            this.staffinformationManager.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.staffinformationManager.Location = new System.Drawing.Point(0, 0);
+            this.staffinformationManager.Name = "staffinformationManager";
+            this.staffinformationManager.Size = new System.Drawing.Size(1037, 573);
+            this.staffinformationManager.TabIndex = 8;
+            // 
+            // newRegistrationEmployeesManager
+            // 
+            this.newRegistrationEmployeesManager.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newRegistrationEmployeesManager.Location = new System.Drawing.Point(0, 0);
+            this.newRegistrationEmployeesManager.Name = "newRegistrationEmployeesManager";
+            this.newRegistrationEmployeesManager.Size = new System.Drawing.Size(1037, 573);
+            this.newRegistrationEmployeesManager.TabIndex = 9;
             // 
             // Manager_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.ClientSize = new System.Drawing.Size(1289, 613);
             this.Controls.Add(this.featurePanel);
             this.Controls.Add(this.pnltop);
             this.Controls.Add(this.featureContainer);
@@ -763,5 +783,7 @@
         private UI_Forms.Manager.about about1;
         private UI_Forms.Manager.User_Control_Form.productform managerProduct;
         private UI_Forms.Manager.User_Control_Form.tarminationForm managerTarmination;
+        private UI_Forms.Manager.User_Control_Form.staffinformation staffinformationManager;
+        private UI_Forms.Manager.User_Control_Form.newRegistrationEmployees newRegistrationEmployeesManager;
     }
 }

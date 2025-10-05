@@ -426,20 +426,12 @@ namespace App
             // Now open products
             producttimer.Start();
 
-            // Show the product control
-            HideAllControls();
-            if (productControl == null)
-            {
-                productControl = new productform();
-                featurePanel.Controls.Add(productControl);
-                productControl.Dock = DockStyle.Fill;
-            }
-            productControl.Visible = true;
+            
         }
 
         private void settingsbtn_Click(object sender, EventArgs e)
         {
-            // First ensure the menu is expanded
+            
             EnsureMenuExpanded();
             
             // If settings is already open, just close it
@@ -478,7 +470,8 @@ namespace App
         private void staffbtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
-            
+            staffinformationManager.Visible = true;
+
         }
 
         // Tarmination Button
@@ -491,7 +484,8 @@ namespace App
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
-            
+            HideAllControls();
+            newRegistrationEmployeesManager.Visible = true;
         }
 
         //ABOUT BUTTON

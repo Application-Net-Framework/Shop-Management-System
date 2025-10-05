@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tarminationForm));
             this.tarminationpnl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,7 +51,6 @@
             this.picturepnl = new System.Windows.Forms.Panel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.tarminationpnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,7 +61,6 @@
             this.picturepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tarminationpnl
@@ -91,10 +89,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(755, 166);
+            this.panel1.Location = new System.Drawing.Point(675, 166);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 37);
+            this.panel1.Size = new System.Drawing.Size(335, 37);
             this.panel1.TabIndex = 45;
             // 
             // textBox1
@@ -105,14 +103,14 @@
             this.textBox1.Location = new System.Drawing.Point(6, 7);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 24);
+            this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 2;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(671, 166);
+            this.panel2.Location = new System.Drawing.Point(591, 166);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(85, 37);
             this.panel2.TabIndex = 43;
@@ -124,7 +122,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(7, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 25);
+            this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Search";
             // 
@@ -132,20 +130,20 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.IndianRed;
-            this.label4.Location = new System.Drawing.Point(670, 204);
+            this.label4.Location = new System.Drawing.Point(590, 204);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 15);
+            this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 44;
-            this.label4.Text = "Invalid  user name";
+            this.label4.Text = "Not Found";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.aboutTxtboxName);
-            this.panel3.Location = new System.Drawing.Point(179, 166);
+            this.panel3.Location = new System.Drawing.Point(146, 166);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(278, 37);
+            this.panel3.Size = new System.Drawing.Size(330, 37);
             this.panel3.TabIndex = 42;
             // 
             // aboutTxtboxName
@@ -156,14 +154,14 @@
             this.aboutTxtboxName.Location = new System.Drawing.Point(4, 9);
             this.aboutTxtboxName.Margin = new System.Windows.Forms.Padding(4);
             this.aboutTxtboxName.Name = "aboutTxtboxName";
-            this.aboutTxtboxName.Size = new System.Drawing.Size(270, 24);
+            this.aboutTxtboxName.Size = new System.Drawing.Size(322, 20);
             this.aboutTxtboxName.TabIndex = 2;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.panel4.Controls.Add(this.userNamelb);
-            this.panel4.Location = new System.Drawing.Point(90, 166);
+            this.panel4.Location = new System.Drawing.Point(57, 166);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(89, 37);
             this.panel4.TabIndex = 40;
@@ -175,7 +173,7 @@
             this.userNamelb.ForeColor = System.Drawing.Color.White;
             this.userNamelb.Location = new System.Drawing.Point(7, 6);
             this.userNamelb.Name = "userNamelb";
-            this.userNamelb.Size = new System.Drawing.Size(70, 25);
+            this.userNamelb.Size = new System.Drawing.Size(56, 20);
             this.userNamelb.TabIndex = 1;
             this.userNamelb.Text = "Search";
             // 
@@ -183,11 +181,11 @@
             // 
             this.invalidUsernamelb.AutoSize = true;
             this.invalidUsernamelb.ForeColor = System.Drawing.Color.IndianRed;
-            this.invalidUsernamelb.Location = new System.Drawing.Point(92, 206);
+            this.invalidUsernamelb.Location = new System.Drawing.Point(59, 206);
             this.invalidUsernamelb.Name = "invalidUsernamelb";
-            this.invalidUsernamelb.Size = new System.Drawing.Size(107, 15);
+            this.invalidUsernamelb.Size = new System.Drawing.Size(57, 13);
             this.invalidUsernamelb.TabIndex = 41;
-            this.invalidUsernamelb.Text = "Invalid  user name";
+            this.invalidUsernamelb.Text = "Not Found";
             // 
             // TarminationEmployee
             // 
@@ -196,17 +194,17 @@
             this.TarminationEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TarminationEmployee.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.TarminationEmployee.GridColor = System.Drawing.Color.Black;
-            this.TarminationEmployee.Location = new System.Drawing.Point(675, 234);
+            this.TarminationEmployee.Location = new System.Drawing.Point(590, 234);
             this.TarminationEmployee.Name = "TarminationEmployee";
             this.TarminationEmployee.RowHeadersVisible = false;
             this.TarminationEmployee.RowHeadersWidth = 51;
             this.TarminationEmployee.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.TarminationEmployee.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.TarminationEmployee.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.TarminationEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TarminationEmployee.Size = new System.Drawing.Size(305, 284);
+            this.TarminationEmployee.Size = new System.Drawing.Size(420, 280);
             this.TarminationEmployee.TabIndex = 39;
             this.TarminationEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TarminationEmployee_CellContentClick);
             // 
@@ -215,7 +213,7 @@
             this.undobtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.undobtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.undobtn.ForeColor = System.Drawing.Color.White;
-            this.undobtn.Location = new System.Drawing.Point(722, 521);
+            this.undobtn.Location = new System.Drawing.Point(719, 520);
             this.undobtn.Name = "undobtn";
             this.undobtn.Size = new System.Drawing.Size(196, 38);
             this.undobtn.TabIndex = 38;
@@ -228,7 +226,7 @@
             this.tarminationbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.tarminationbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tarminationbtn.ForeColor = System.Drawing.Color.White;
-            this.tarminationbtn.Location = new System.Drawing.Point(140, 521);
+            this.tarminationbtn.Location = new System.Drawing.Point(151, 520);
             this.tarminationbtn.Name = "tarminationbtn";
             this.tarminationbtn.Size = new System.Drawing.Size(196, 38);
             this.tarminationbtn.TabIndex = 37;
@@ -241,9 +239,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(85, 134);
+            this.label1.Location = new System.Drawing.Point(58, 141);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 28);
+            this.label1.Size = new System.Drawing.Size(89, 21);
             this.label1.TabIndex = 5;
             this.label1.Text = "Employees";
             // 
@@ -252,11 +250,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(668, 134);
+            this.label2.Location = new System.Drawing.Point(589, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 28);
+            this.label2.Size = new System.Drawing.Size(174, 21);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Tarmination Employees";
+            this.label2.Text = "Tarminated Employees";
             // 
             // EmployeeData
             // 
@@ -265,25 +263,24 @@
             this.EmployeeData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeeData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.EmployeeData.GridColor = System.Drawing.Color.Black;
-            this.EmployeeData.Location = new System.Drawing.Point(95, 234);
+            this.EmployeeData.Location = new System.Drawing.Point(56, 234);
             this.EmployeeData.Name = "EmployeeData";
             this.EmployeeData.RowHeadersVisible = false;
             this.EmployeeData.RowHeadersWidth = 51;
             this.EmployeeData.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.EmployeeData.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.EmployeeData.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.EmployeeData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmployeeData.Size = new System.Drawing.Size(305, 284);
+            this.EmployeeData.Size = new System.Drawing.Size(420, 280);
             this.EmployeeData.TabIndex = 1;
             this.EmployeeData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeData_CellContentClick);
             // 
             // picturepnl
             // 
             this.picturepnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(228)))), ((int)(((byte)(155)))));
-            this.picturepnl.Controls.Add(this.guna2CirclePictureBox2);
             this.picturepnl.Controls.Add(this.guna2CirclePictureBox1);
             this.picturepnl.Controls.Add(this.pictureBox1);
             this.picturepnl.Dock = System.Windows.Forms.DockStyle.Top;
@@ -312,17 +309,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(149, 3);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(152, 111);
-            this.guna2CirclePictureBox2.TabIndex = 14;
-            this.guna2CirclePictureBox2.TabStop = false;
-            // 
             // tarminationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,7 +331,6 @@
             this.picturepnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,6 +357,5 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label userNamelb;
         private System.Windows.Forms.Label invalidUsernamelb;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
     }
 }

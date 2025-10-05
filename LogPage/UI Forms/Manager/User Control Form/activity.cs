@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App.UI_Forms.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,18 +24,21 @@ namespace App.UI_Forms.Manager
         {
             InitializeComponent();
             
-           // loadDatabase();
+            // loadDatabase();
 
             totalpricelb.Text = totalprice.ToString();
             totalsalelb.Text = totalsale.ToString();
             cashierEmpLb.Text = totalcashier.ToString();
             salemanLb.Text = totalsaleman.ToString();
 
-            this.DailyRecordsChart.Series["Total Price"].Points.AddXY("totalprice",totalprice);
-            this.DailyRecordsChart.Series["Total Sale"].Points.AddXY("totalsale", totalsale);
+            chart1.Titles.Add("Cost of A Shop");
+            chart1.Series["S1"].Points.AddXY("Total Price","33");
+            chart1.Series["S1"].Points.AddXY("Total Sale", "33");
+            chart1.Series["S1"].Points.AddXY("Total Cost", "33");
 
-            this.employeChart.Series["Cashier"].Points.AddXY("totalcashier", totalcashier);
-            this.employeChart.Series["SalesMan"].Points.AddXY("totalsaleman", totalsaleman);
+            employeChart.Titles.Add("Employee Ratio");
+            employeChart.Series["EMP"].Points.AddXY("Cashier", "33");
+            employeChart.Series["EMP"].Points.AddXY("Salesman", "33");
         }
         public void loadDatabase()
         {
@@ -88,6 +92,11 @@ namespace App.UI_Forms.Manager
         }
 
         private void activity_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void employeChart_Click(object sender, EventArgs e)
         {
 
         }

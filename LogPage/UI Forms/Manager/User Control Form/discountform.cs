@@ -16,5 +16,25 @@ namespace App.UI_Forms.Manager.User_Control_Form
         {
             InitializeComponent();
         }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void activebtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deletebtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deactivebtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

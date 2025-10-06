@@ -19,7 +19,13 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public tarminationForm()
         {
             InitializeComponent();
-           // LoadDatabase();
+            // LoadDatabase();
+            warningMassage.Visible = true;
+
+            notFoundlb.Visible = false;
+            adminPermission.Visible = false;
+
+            deginepnl.Visible = false;
         }
 
         private void tarminationbtn_Click(object sender, EventArgs e)
@@ -30,23 +36,19 @@ namespace App.UI_Forms.Manager.User_Control_Form
         {
             try
             {
-                string activeEmployees = "SELECT ID,UserName,Role,Email FROM TARMINATION WHERE AccountStatus = 'ACTIVE'";
+           
                 string inactiveEmployees = "SELECT ID,UserName,Role,Email FROM TARMINATION WHERE AccountStatus = 'INACTIVE'";
                     
                 using(SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    using(SqlDataAdapter sda1 = new SqlDataAdapter(activeEmployees, connection))
+                 
                     using(SqlDataAdapter sda2 = new SqlDataAdapter(inactiveEmployees, connection))
                     {
-                        DataTable dt1 = new DataTable();
+                        
                         DataTable dt2 = new DataTable();
-
-                        sda1.Fill(dt1);
+   
                         sda2.Fill(dt2);
-
-                        if(EmployeeData != null)
-                            EmployeeData.DataSource = dt1;
-                            
+  
                         if(TarminationEmployee != null)
                             TarminationEmployee.DataSource = dt2;
                     }

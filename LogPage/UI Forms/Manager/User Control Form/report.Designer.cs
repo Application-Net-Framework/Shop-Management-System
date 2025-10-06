@@ -28,19 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(report));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.MoneyPiChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -53,7 +48,6 @@
             this.saleManSalary = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.EmployeeChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.salemanLb = new System.Windows.Forms.Label();
@@ -71,13 +65,13 @@
             this.totalpricelb = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MoneyPiChart)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeChart)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
@@ -86,16 +80,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.totalpricepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.MoneyPiChart);
+            this.panel1.Controls.Add(this.chart2);
+            this.panel1.Controls.Add(this.chart1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.EmployeeChart);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel4);
@@ -107,45 +103,11 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // MoneyPiChart
-            // 
-            this.MoneyPiChart.AntiAliasing = System.Windows.Forms.DataVisualization.Charting.AntiAliasingStyles.Graphics;
-            chartArea1.Name = "Combine";
-            this.MoneyPiChart.ChartAreas.Add(chartArea1);
-            this.MoneyPiChart.IsSoftShadows = false;
-            legend1.Name = "Legend1";
-            this.MoneyPiChart.Legends.Add(legend1);
-            this.MoneyPiChart.Location = new System.Drawing.Point(429, 179);
-            this.MoneyPiChart.Name = "MoneyPiChart";
-            series1.ChartArea = "Combine";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "SalesManSalary";
-            series2.ChartArea = "Combine";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "CashierSalary";
-            series3.ChartArea = "Combine";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "TotalSales";
-            series4.ChartArea = "Combine";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "TotalPrice";
-            this.MoneyPiChart.Series.Add(series1);
-            this.MoneyPiChart.Series.Add(series2);
-            this.MoneyPiChart.Series.Add(series3);
-            this.MoneyPiChart.Series.Add(series4);
-            this.MoneyPiChart.Size = new System.Drawing.Size(589, 308);
-            this.MoneyPiChart.TabIndex = 19;
-            this.MoneyPiChart.Text = "Money Pi Chart";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(736, 490);
+            this.label6.Location = new System.Drawing.Point(648, 490);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 21);
             this.label6.TabIndex = 18;
@@ -163,7 +125,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.ForestGreen;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(87)))), ((int)(((byte)(61)))));
             this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.cashierSalary);
             this.panel7.Controls.Add(this.pictureBox7);
@@ -213,12 +175,12 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Gray;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(14)))), ((int)(((byte)(126)))));
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.saleManSalary);
             this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(705, 43);
+            this.panel5.Location = new System.Drawing.Point(715, 43);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(141, 91);
             this.panel5.TabIndex = 13;
@@ -261,30 +223,9 @@
             this.label4.Size = new System.Drawing.Size(0, 15);
             this.label4.TabIndex = 2;
             // 
-            // EmployeeChart
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.EmployeeChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.EmployeeChart.Legends.Add(legend2);
-            this.EmployeeChart.Location = new System.Drawing.Point(29, 179);
-            this.EmployeeChart.Name = "EmployeeChart";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Cashier";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Sales Man";
-            this.EmployeeChart.Series.Add(series5);
-            this.EmployeeChart.Series.Add(series6);
-            this.EmployeeChart.Size = new System.Drawing.Size(379, 308);
-            this.EmployeeChart.TabIndex = 11;
-            this.EmployeeChart.Text = "Employee Chart";
-            this.EmployeeChart.Click += new System.EventHandler(this.chart1_Click);
-            // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(14)))), ((int)(((byte)(126)))));
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.salemanLb);
             this.panel3.Controls.Add(this.pictureBox4);
@@ -317,7 +258,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(10, 43);
+            this.pictureBox4.Location = new System.Drawing.Point(7, 46);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 40);
             this.pictureBox4.TabIndex = 5;
@@ -334,7 +275,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(0)))), ((int)(((byte)(13)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(87)))), ((int)(((byte)(61)))));
             this.panel2.Controls.Add(this.cashierEmpLb);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.label7);
@@ -356,7 +297,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 50);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 46);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
             this.pictureBox3.TabIndex = 5;
@@ -374,7 +315,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Khaki;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(181)))), ((int)(((byte)(76)))));
             this.panel4.Controls.Add(this.totalsalelb);
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.label5);
@@ -414,7 +355,7 @@
             // 
             // totalpricepnl
             // 
-            this.totalpricepnl.BackColor = System.Drawing.Color.Blue;
+            this.totalpricepnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(129)))), ((int)(((byte)(101)))));
             this.totalpricepnl.Controls.Add(this.totalpricelb);
             this.totalpricepnl.Controls.Add(this.pictureBox1);
             this.totalpricepnl.Controls.Add(this.label2);
@@ -436,7 +377,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 57);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 48);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 34);
             this.pictureBox1.TabIndex = 5;
@@ -452,6 +393,40 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Total Price";
             // 
+            // chart1
+            // 
+            chartArea8.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chart1.Legends.Add(legend8);
+            this.chart1.Location = new System.Drawing.Point(55, 161);
+            this.chart1.Name = "chart1";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Legend = "Legend1";
+            series8.Name = "S1";
+            this.chart1.Series.Add(series8);
+            this.chart1.Size = new System.Drawing.Size(306, 326);
+            this.chart1.TabIndex = 19;
+            this.chart1.Text = "chart1";
+            // 
+            // chart2
+            // 
+            chartArea7.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chart2.Legends.Add(legend7);
+            this.chart2.Location = new System.Drawing.Point(397, 161);
+            this.chart2.Name = "chart2";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series7.Legend = "Legend1";
+            series7.Name = "S2";
+            this.chart2.Series.Add(series7);
+            this.chart2.Size = new System.Drawing.Size(621, 326);
+            this.chart2.TabIndex = 20;
+            this.chart2.Text = "chart2";
+            // 
             // report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,14 +436,12 @@
             this.Size = new System.Drawing.Size(1200, 536);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MoneyPiChart)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeChart)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -481,6 +454,8 @@
             this.totalpricepnl.ResumeLayout(false);
             this.totalpricepnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -498,7 +473,6 @@
         private System.Windows.Forms.Label saleManSalary;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart EmployeeChart;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label salemanLb;
@@ -518,6 +492,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart MoneyPiChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

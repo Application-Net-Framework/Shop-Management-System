@@ -43,14 +43,16 @@ namespace App.UI_Forms.Manager.User_Control_Form
             saleManSalary.Text = netIncomeSalesman.ToString();
             cashierSalary.Text = netIncomeCashier.ToString();
 
-            this.EmployeeChart.Series["Sales Man"].Points.AddXY("Sales Man", totalsalesman);
-            this.EmployeeChart.Series["Cashier"].Points.AddXY("Cashier", totalcashier);
+            chart1.Titles.Add("Employee Ratio");
+            chart1.Series["S1"].Points.AddXY("Cashier", "33");
+            chart1.Series["S1"].Points.AddXY("Saleman", "33");
 
-            this.MoneyPiChart.Series["TotalPrice"].Points.AddXY("TotalPrice", totalPrice);
-            this.MoneyPiChart.Series["TotalSales"].Points.AddXY("TotalSales", totalSales);
+            chart2.Titles.Add("Cost of a shop");           
+            chart2.Series["S2"].Points.AddXY("Total Price", "33");
+            chart2.Series["S2"].Points.AddXY("Total Sale", "33");
+            chart2.Series["S2"].Points.AddXY("Sales Man Salary", "33");
+            chart2.Series["S2"].Points.AddXY("Cashier Salary", "33");
 
-            this.MoneyPiChart.Series["SalesManSalary"].Points.AddXY("SalesManSalary", netIncomeSalesman);
-            this.MoneyPiChart.Series["CashierSalary"].Points.AddXY("CashierSalary", netIncomeCashier);
         }
 
         public void loadDatabase()

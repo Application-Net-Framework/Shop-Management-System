@@ -28,55 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tarminationForm));
             this.tarminationpnl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.aboutTxtboxName = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.userNamelb = new System.Windows.Forms.Label();
-            this.invalidUsernamelb = new System.Windows.Forms.Label();
             this.TarminationEmployee = new System.Windows.Forms.DataGridView();
             this.undobtn = new System.Windows.Forms.Button();
-            this.tarminationbtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.EmployeeData = new System.Windows.Forms.DataGridView();
             this.picturepnl = new System.Windows.Forms.Panel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.warningMassage = new System.Windows.Forms.Panel();
+            this.deginepnl = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.notFoundlb = new System.Windows.Forms.Label();
+            this.adminPermission = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tarminationpnl.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TarminationEmployee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeData)).BeginInit();
             this.picturepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.warningMassage.SuspendLayout();
+            this.deginepnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tarminationpnl
             // 
+            this.tarminationpnl.Controls.Add(this.pictureBox2);
+            this.tarminationpnl.Controls.Add(this.deginepnl);
+            this.tarminationpnl.Controls.Add(this.warningMassage);
             this.tarminationpnl.Controls.Add(this.panel1);
             this.tarminationpnl.Controls.Add(this.panel2);
-            this.tarminationpnl.Controls.Add(this.label4);
-            this.tarminationpnl.Controls.Add(this.panel3);
-            this.tarminationpnl.Controls.Add(this.panel4);
-            this.tarminationpnl.Controls.Add(this.invalidUsernamelb);
             this.tarminationpnl.Controls.Add(this.TarminationEmployee);
             this.tarminationpnl.Controls.Add(this.undobtn);
-            this.tarminationpnl.Controls.Add(this.tarminationbtn);
-            this.tarminationpnl.Controls.Add(this.label1);
-            this.tarminationpnl.Controls.Add(this.label2);
-            this.tarminationpnl.Controls.Add(this.EmployeeData);
             this.tarminationpnl.Controls.Add(this.picturepnl);
             this.tarminationpnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tarminationpnl.Location = new System.Drawing.Point(0, 0);
@@ -89,10 +79,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(675, 166);
+            this.panel1.Location = new System.Drawing.Point(304, 181);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(335, 37);
+            this.panel1.Size = new System.Drawing.Size(470, 37);
             this.panel1.TabIndex = 45;
             // 
             // textBox1
@@ -103,14 +93,14 @@
             this.textBox1.Location = new System.Drawing.Point(6, 7);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 20);
+            this.textBox1.Size = new System.Drawing.Size(460, 20);
             this.textBox1.TabIndex = 2;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(591, 166);
+            this.panel2.Location = new System.Drawing.Point(220, 181);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(85, 37);
             this.panel2.TabIndex = 43;
@@ -126,67 +116,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Search";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.IndianRed;
-            this.label4.Location = new System.Drawing.Point(590, 204);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Not Found";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.aboutTxtboxName);
-            this.panel3.Location = new System.Drawing.Point(146, 166);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(330, 37);
-            this.panel3.TabIndex = 42;
-            // 
-            // aboutTxtboxName
-            // 
-            this.aboutTxtboxName.BackColor = System.Drawing.Color.White;
-            this.aboutTxtboxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.aboutTxtboxName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutTxtboxName.Location = new System.Drawing.Point(4, 9);
-            this.aboutTxtboxName.Margin = new System.Windows.Forms.Padding(4);
-            this.aboutTxtboxName.Name = "aboutTxtboxName";
-            this.aboutTxtboxName.Size = new System.Drawing.Size(322, 20);
-            this.aboutTxtboxName.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.panel4.Controls.Add(this.userNamelb);
-            this.panel4.Location = new System.Drawing.Point(57, 166);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(89, 37);
-            this.panel4.TabIndex = 40;
-            // 
-            // userNamelb
-            // 
-            this.userNamelb.AutoSize = true;
-            this.userNamelb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNamelb.ForeColor = System.Drawing.Color.White;
-            this.userNamelb.Location = new System.Drawing.Point(7, 6);
-            this.userNamelb.Name = "userNamelb";
-            this.userNamelb.Size = new System.Drawing.Size(56, 20);
-            this.userNamelb.TabIndex = 1;
-            this.userNamelb.Text = "Search";
-            // 
-            // invalidUsernamelb
-            // 
-            this.invalidUsernamelb.AutoSize = true;
-            this.invalidUsernamelb.ForeColor = System.Drawing.Color.IndianRed;
-            this.invalidUsernamelb.Location = new System.Drawing.Point(59, 206);
-            this.invalidUsernamelb.Name = "invalidUsernamelb";
-            this.invalidUsernamelb.Size = new System.Drawing.Size(57, 13);
-            this.invalidUsernamelb.TabIndex = 41;
-            this.invalidUsernamelb.Text = "Not Found";
-            // 
             // TarminationEmployee
             // 
             this.TarminationEmployee.AllowUserToResizeRows = false;
@@ -194,17 +123,17 @@
             this.TarminationEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TarminationEmployee.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.TarminationEmployee.GridColor = System.Drawing.Color.Black;
-            this.TarminationEmployee.Location = new System.Drawing.Point(590, 234);
+            this.TarminationEmployee.Location = new System.Drawing.Point(75, 234);
             this.TarminationEmployee.Name = "TarminationEmployee";
             this.TarminationEmployee.RowHeadersVisible = false;
             this.TarminationEmployee.RowHeadersWidth = 51;
             this.TarminationEmployee.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.TarminationEmployee.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.TarminationEmployee.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.TarminationEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TarminationEmployee.Size = new System.Drawing.Size(420, 280);
+            this.TarminationEmployee.Size = new System.Drawing.Size(897, 280);
             this.TarminationEmployee.TabIndex = 39;
             this.TarminationEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TarminationEmployee_CellContentClick);
             // 
@@ -213,70 +142,13 @@
             this.undobtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.undobtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.undobtn.ForeColor = System.Drawing.Color.White;
-            this.undobtn.Location = new System.Drawing.Point(719, 520);
+            this.undobtn.Location = new System.Drawing.Point(393, 520);
             this.undobtn.Name = "undobtn";
             this.undobtn.Size = new System.Drawing.Size(196, 38);
             this.undobtn.TabIndex = 38;
             this.undobtn.Text = "Undo tarmination";
             this.undobtn.UseVisualStyleBackColor = false;
             this.undobtn.Click += new System.EventHandler(this.undobtn_Click);
-            // 
-            // tarminationbtn
-            // 
-            this.tarminationbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.tarminationbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tarminationbtn.ForeColor = System.Drawing.Color.White;
-            this.tarminationbtn.Location = new System.Drawing.Point(151, 520);
-            this.tarminationbtn.Name = "tarminationbtn";
-            this.tarminationbtn.Size = new System.Drawing.Size(196, 38);
-            this.tarminationbtn.TabIndex = 37;
-            this.tarminationbtn.Text = "Tarmination";
-            this.tarminationbtn.UseVisualStyleBackColor = false;
-            this.tarminationbtn.Click += new System.EventHandler(this.tarminationbtn_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(58, 141);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 21);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Employees";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(589, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 21);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Tarminated Employees";
-            // 
-            // EmployeeData
-            // 
-            this.EmployeeData.AllowUserToResizeRows = false;
-            this.EmployeeData.BackgroundColor = System.Drawing.Color.DimGray;
-            this.EmployeeData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmployeeData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.EmployeeData.GridColor = System.Drawing.Color.Black;
-            this.EmployeeData.Location = new System.Drawing.Point(56, 234);
-            this.EmployeeData.Name = "EmployeeData";
-            this.EmployeeData.RowHeadersVisible = false;
-            this.EmployeeData.RowHeadersWidth = 51;
-            this.EmployeeData.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.EmployeeData.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.EmployeeData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmployeeData.Size = new System.Drawing.Size(420, 280);
-            this.EmployeeData.TabIndex = 1;
-            this.EmployeeData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeData_CellContentClick);
             // 
             // picturepnl
             // 
@@ -309,6 +181,71 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // warningMassage
+            // 
+            this.warningMassage.BackColor = System.Drawing.Color.IndianRed;
+            this.warningMassage.Controls.Add(this.adminPermission);
+            this.warningMassage.Controls.Add(this.notFoundlb);
+            this.warningMassage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.warningMassage.Location = new System.Drawing.Point(0, 116);
+            this.warningMassage.Name = "warningMassage";
+            this.warningMassage.Size = new System.Drawing.Size(1100, 24);
+            this.warningMassage.TabIndex = 47;
+            // 
+            // deginepnl
+            // 
+            this.deginepnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.deginepnl.Controls.Add(this.label11);
+            this.deginepnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.deginepnl.Location = new System.Drawing.Point(0, 140);
+            this.deginepnl.Name = "deginepnl";
+            this.deginepnl.Size = new System.Drawing.Size(1100, 28);
+            this.deginepnl.TabIndex = 48;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(3, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(167, 20);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Tarminated Employees ";
+            // 
+            // notFoundlb
+            // 
+            this.notFoundlb.AutoSize = true;
+            this.notFoundlb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notFoundlb.ForeColor = System.Drawing.Color.White;
+            this.notFoundlb.Location = new System.Drawing.Point(494, 3);
+            this.notFoundlb.Name = "notFoundlb";
+            this.notFoundlb.Size = new System.Drawing.Size(154, 20);
+            this.notFoundlb.TabIndex = 15;
+            this.notFoundlb.Text = "Employee Not Found";
+            // 
+            // adminPermission
+            // 
+            this.adminPermission.AutoSize = true;
+            this.adminPermission.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPermission.ForeColor = System.Drawing.Color.White;
+            this.adminPermission.Location = new System.Drawing.Point(364, 1);
+            this.adminPermission.Name = "adminPermission";
+            this.adminPermission.Size = new System.Drawing.Size(413, 20);
+            this.adminPermission.TabIndex = 16;
+            this.adminPermission.Text = "You Can not Change This You need Permission From Admin";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(773, 181);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(51, 37);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 90;
+            this.pictureBox2.TabStop = false;
+            // 
             // tarminationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,20 +254,19 @@
             this.Name = "tarminationForm";
             this.Size = new System.Drawing.Size(1100, 600);
             this.tarminationpnl.ResumeLayout(false);
-            this.tarminationpnl.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TarminationEmployee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeData)).EndInit();
             this.picturepnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.warningMassage.ResumeLayout(false);
+            this.warningMassage.PerformLayout();
+            this.deginepnl.ResumeLayout(false);
+            this.deginepnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,21 +277,17 @@
         private System.Windows.Forms.Panel picturepnl;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView EmployeeData;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button undobtn;
-        private System.Windows.Forms.Button tarminationbtn;
         private System.Windows.Forms.DataGridView TarminationEmployee;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox aboutTxtboxName;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label userNamelb;
-        private System.Windows.Forms.Label invalidUsernamelb;
+        private System.Windows.Forms.Panel warningMassage;
+        private System.Windows.Forms.Panel deginepnl;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label notFoundlb;
+        private System.Windows.Forms.Label adminPermission;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

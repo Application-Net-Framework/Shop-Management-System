@@ -74,6 +74,8 @@
             this.crossbtn = new System.Windows.Forms.Button();
             this.welcomemsg = new System.Windows.Forms.Label();
             this.featurePanel = new System.Windows.Forms.Panel();
+            this.newRegistrationEmployeesManager = new App.UI_Forms.Manager.User_Control_Form.newRegistrationEmployees();
+            this.staffinformationManager = new App.UI_Forms.Manager.User_Control_Form.staffinformation();
             this.managerTarmination = new App.UI_Forms.Manager.User_Control_Form.tarminationForm();
             this.managerProduct = new App.UI_Forms.Manager.User_Control_Form.productform();
             this.stackLevelform1 = new App.UI_Forms.Manager.stackLevelform();
@@ -82,8 +84,6 @@
             this.dailyactivityform1 = new App.UI_Forms.Manager.dailyactivityform();
             this.about1 = new App.UI_Forms.Manager.about();
             this.activity1 = new App.UI_Forms.Manager.activity();
-            this.staffinformationManager = new App.UI_Forms.Manager.User_Control_Form.staffinformation();
-            this.newRegistrationEmployeesManager = new App.UI_Forms.Manager.User_Control_Form.newRegistrationEmployees();
             this.pnmember.SuspendLayout();
             this.pnsetting.SuspendLayout();
             this.pnproduct.SuspendLayout();
@@ -372,9 +372,9 @@
             this.settingsContainer.Controls.Add(this.settingspn);
             this.settingsContainer.Controls.Add(this.aboutpn);
             this.settingsContainer.Controls.Add(this.logoutpn);
-            this.settingsContainer.Location = new System.Drawing.Point(3, 481);
+            this.settingsContainer.Location = new System.Drawing.Point(3, 252);
             this.settingsContainer.Name = "settingsContainer";
-            this.settingsContainer.Size = new System.Drawing.Size(170, 147);
+            this.settingsContainer.Size = new System.Drawing.Size(170, 50);
             this.settingsContainer.TabIndex = 15;
             this.settingsContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.settingsContainer_Paint);
             // 
@@ -392,7 +392,7 @@
             this.membersContainer.Controls.Add(this.tarminationpn);
             this.membersContainer.Location = new System.Drawing.Point(3, 140);
             this.membersContainer.Name = "membersContainer";
-            this.membersContainer.Size = new System.Drawing.Size(175, 185);
+            this.membersContainer.Size = new System.Drawing.Size(170, 50);
             this.membersContainer.TabIndex = 16;
             // 
             // memberpn
@@ -474,9 +474,9 @@
             this.productContainer.Controls.Add(this.productpn);
             this.productContainer.Controls.Add(this.pnsetting);
             this.productContainer.Controls.Add(this.stackpn);
-            this.productContainer.Location = new System.Drawing.Point(3, 331);
+            this.productContainer.Location = new System.Drawing.Point(3, 196);
             this.productContainer.Name = "productContainer";
-            this.productContainer.Size = new System.Drawing.Size(170, 144);
+            this.productContainer.Size = new System.Drawing.Size(170, 50);
             this.productContainer.TabIndex = 18;
             // 
             // membertimer
@@ -500,7 +500,7 @@
             this.featureContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.featureContainer.Location = new System.Drawing.Point(3, 3);
             this.featureContainer.Name = "featureContainer";
-            this.featureContainer.Size = new System.Drawing.Size(246, 607);
+            this.featureContainer.Size = new System.Drawing.Size(195, 607);
             this.featureContainer.TabIndex = 20;
             this.featureContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.featureContainer_Paint);
             // 
@@ -543,9 +543,9 @@
             this.pnltop.Controls.Add(this.welcomemsg);
             this.pnltop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnltop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnltop.Location = new System.Drawing.Point(249, 3);
+            this.pnltop.Location = new System.Drawing.Point(198, 3);
             this.pnltop.Name = "pnltop";
-            this.pnltop.Size = new System.Drawing.Size(1037, 34);
+            this.pnltop.Size = new System.Drawing.Size(1088, 34);
             this.pnltop.TabIndex = 21;
             this.pnltop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnltop_Paint);
             this.pnltop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnltop_MouseDown);
@@ -553,7 +553,7 @@
             // minimizebtn
             // 
             this.minimizebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizebtn.Location = new System.Drawing.Point(944, 0);
+            this.minimizebtn.Location = new System.Drawing.Point(995, 0);
             this.minimizebtn.Name = "minimizebtn";
             this.minimizebtn.Size = new System.Drawing.Size(32, 34);
             this.minimizebtn.TabIndex = 21;
@@ -562,7 +562,7 @@
             // fullscreenbtn
             // 
             this.fullscreenbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.fullscreenbtn.Location = new System.Drawing.Point(976, 0);
+            this.fullscreenbtn.Location = new System.Drawing.Point(1027, 0);
             this.fullscreenbtn.Name = "fullscreenbtn";
             this.fullscreenbtn.Size = new System.Drawing.Size(32, 34);
             this.fullscreenbtn.TabIndex = 22;
@@ -572,7 +572,7 @@
             // crossbtn
             // 
             this.crossbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.crossbtn.Location = new System.Drawing.Point(1008, 0);
+            this.crossbtn.Location = new System.Drawing.Point(1059, 0);
             this.crossbtn.Name = "crossbtn";
             this.crossbtn.Size = new System.Drawing.Size(29, 34);
             this.crossbtn.TabIndex = 21;
@@ -604,17 +604,33 @@
             this.featurePanel.Controls.Add(this.about1);
             this.featurePanel.Controls.Add(this.activity1);
             this.featurePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.featurePanel.Location = new System.Drawing.Point(249, 37);
+            this.featurePanel.Location = new System.Drawing.Point(198, 37);
             this.featurePanel.Name = "featurePanel";
-            this.featurePanel.Size = new System.Drawing.Size(1037, 573);
+            this.featurePanel.Size = new System.Drawing.Size(1088, 573);
             this.featurePanel.TabIndex = 22;
+            // 
+            // newRegistrationEmployeesManager
+            // 
+            this.newRegistrationEmployeesManager.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newRegistrationEmployeesManager.Location = new System.Drawing.Point(0, 0);
+            this.newRegistrationEmployeesManager.Name = "newRegistrationEmployeesManager";
+            this.newRegistrationEmployeesManager.Size = new System.Drawing.Size(1088, 573);
+            this.newRegistrationEmployeesManager.TabIndex = 9;
+            // 
+            // staffinformationManager
+            // 
+            this.staffinformationManager.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.staffinformationManager.Location = new System.Drawing.Point(0, 0);
+            this.staffinformationManager.Name = "staffinformationManager";
+            this.staffinformationManager.Size = new System.Drawing.Size(1088, 573);
+            this.staffinformationManager.TabIndex = 8;
             // 
             // managerTarmination
             // 
             this.managerTarmination.Dock = System.Windows.Forms.DockStyle.Fill;
             this.managerTarmination.Location = new System.Drawing.Point(0, 0);
             this.managerTarmination.Name = "managerTarmination";
-            this.managerTarmination.Size = new System.Drawing.Size(1037, 573);
+            this.managerTarmination.Size = new System.Drawing.Size(1088, 573);
             this.managerTarmination.TabIndex = 7;
             // 
             // managerProduct
@@ -622,7 +638,7 @@
             this.managerProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.managerProduct.Location = new System.Drawing.Point(0, 0);
             this.managerProduct.Name = "managerProduct";
-            this.managerProduct.Size = new System.Drawing.Size(1037, 573);
+            this.managerProduct.Size = new System.Drawing.Size(1088, 573);
             this.managerProduct.TabIndex = 6;
             // 
             // stackLevelform1
@@ -630,7 +646,7 @@
             this.stackLevelform1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stackLevelform1.Location = new System.Drawing.Point(0, 0);
             this.stackLevelform1.Name = "stackLevelform1";
-            this.stackLevelform1.Size = new System.Drawing.Size(1037, 573);
+            this.stackLevelform1.Size = new System.Drawing.Size(1088, 573);
             this.stackLevelform1.TabIndex = 5;
             // 
             // report1
@@ -638,7 +654,7 @@
             this.report1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.report1.Location = new System.Drawing.Point(0, 0);
             this.report1.Name = "report1";
-            this.report1.Size = new System.Drawing.Size(1037, 573);
+            this.report1.Size = new System.Drawing.Size(1088, 573);
             this.report1.TabIndex = 4;
             // 
             // discountform1
@@ -646,7 +662,7 @@
             this.discountform1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.discountform1.Location = new System.Drawing.Point(0, 0);
             this.discountform1.Name = "discountform1";
-            this.discountform1.Size = new System.Drawing.Size(1037, 573);
+            this.discountform1.Size = new System.Drawing.Size(1088, 573);
             this.discountform1.TabIndex = 3;
             // 
             // dailyactivityform1
@@ -654,7 +670,7 @@
             this.dailyactivityform1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dailyactivityform1.Location = new System.Drawing.Point(0, 0);
             this.dailyactivityform1.Name = "dailyactivityform1";
-            this.dailyactivityform1.Size = new System.Drawing.Size(1037, 573);
+            this.dailyactivityform1.Size = new System.Drawing.Size(1088, 573);
             this.dailyactivityform1.TabIndex = 2;
             // 
             // about1
@@ -662,7 +678,7 @@
             this.about1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.about1.Location = new System.Drawing.Point(0, 0);
             this.about1.Name = "about1";
-            this.about1.Size = new System.Drawing.Size(1037, 573);
+            this.about1.Size = new System.Drawing.Size(1088, 573);
             this.about1.TabIndex = 1;
             // 
             // activity1
@@ -670,24 +686,8 @@
             this.activity1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.activity1.Location = new System.Drawing.Point(0, 0);
             this.activity1.Name = "activity1";
-            this.activity1.Size = new System.Drawing.Size(1037, 573);
+            this.activity1.Size = new System.Drawing.Size(1088, 573);
             this.activity1.TabIndex = 0;
-            // 
-            // staffinformationManager
-            // 
-            this.staffinformationManager.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.staffinformationManager.Location = new System.Drawing.Point(0, 0);
-            this.staffinformationManager.Name = "staffinformationManager";
-            this.staffinformationManager.Size = new System.Drawing.Size(1037, 573);
-            this.staffinformationManager.TabIndex = 8;
-            // 
-            // newRegistrationEmployeesManager
-            // 
-            this.newRegistrationEmployeesManager.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.newRegistrationEmployeesManager.Location = new System.Drawing.Point(0, 0);
-            this.newRegistrationEmployeesManager.Name = "newRegistrationEmployeesManager";
-            this.newRegistrationEmployeesManager.Size = new System.Drawing.Size(1037, 573);
-            this.newRegistrationEmployeesManager.TabIndex = 9;
             // 
             // Manager_Home
             // 

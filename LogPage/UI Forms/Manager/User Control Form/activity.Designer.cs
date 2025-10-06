@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(activity));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.homemnager = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -90,24 +90,24 @@
             // 
             // chart1
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(20, 144);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Legend = "Legend1";
-            series5.Name = "S1";
-            this.chart1.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "S1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(517, 326);
             this.chart1.TabIndex = 8;
             this.chart1.Text = "chart1";
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Khaki;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(181)))), ((int)(((byte)(100)))));
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.pictureBox5);
             this.panel4.Controls.Add(this.label3);
@@ -120,6 +120,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(83, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 17);
@@ -139,6 +140,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(7, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 15);
@@ -148,18 +150,18 @@
             // employeChart
             // 
             this.employeChart.BorderlineColor = System.Drawing.Color.Black;
-            chartArea6.Name = "ChartArea1";
-            this.employeChart.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.employeChart.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.employeChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.employeChart.Legends.Add(legend2);
             this.employeChart.Location = new System.Drawing.Point(588, 144);
             this.employeChart.Margin = new System.Windows.Forms.Padding(2);
             this.employeChart.Name = "employeChart";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series6.Legend = "Legend1";
-            series6.Name = "EMP";
-            this.employeChart.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "EMP";
+            this.employeChart.Series.Add(series2);
             this.employeChart.Size = new System.Drawing.Size(390, 339);
             this.employeChart.TabIndex = 6;
             this.employeChart.Text = "EmployeesChart";
@@ -181,6 +183,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(7, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 15);
@@ -191,6 +194,7 @@
             // 
             this.salemanLb.AutoSize = true;
             this.salemanLb.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salemanLb.ForeColor = System.Drawing.Color.White;
             this.salemanLb.Location = new System.Drawing.Point(83, 62);
             this.salemanLb.Name = "salemanLb";
             this.salemanLb.Size = new System.Drawing.Size(58, 17);
@@ -230,6 +234,7 @@
             // 
             this.cashierEmpLb.AutoSize = true;
             this.cashierEmpLb.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashierEmpLb.ForeColor = System.Drawing.Color.White;
             this.cashierEmpLb.Location = new System.Drawing.Point(83, 62);
             this.cashierEmpLb.Name = "cashierEmpLb";
             this.cashierEmpLb.Size = new System.Drawing.Size(58, 17);
@@ -249,6 +254,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(7, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 15);
@@ -257,7 +263,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Khaki;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(181)))), ((int)(((byte)(76)))));
             this.panel1.Controls.Add(this.totalsalelb);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label5);
@@ -270,6 +276,7 @@
             // 
             this.totalsalelb.AutoSize = true;
             this.totalsalelb.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalsalelb.ForeColor = System.Drawing.Color.White;
             this.totalsalelb.Location = new System.Drawing.Point(83, 62);
             this.totalsalelb.Name = "totalsalelb";
             this.totalsalelb.Size = new System.Drawing.Size(58, 17);
@@ -289,6 +296,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(7, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 15);
@@ -297,7 +305,7 @@
             // 
             // totalpricepnl
             // 
-            this.totalpricepnl.BackColor = System.Drawing.Color.Blue;
+            this.totalpricepnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(129)))), ((int)(((byte)(101)))));
             this.totalpricepnl.Controls.Add(this.totalpricelb);
             this.totalpricepnl.Controls.Add(this.pictureBox1);
             this.totalpricepnl.Controls.Add(this.label2);
@@ -310,6 +318,7 @@
             // 
             this.totalpricelb.AutoSize = true;
             this.totalpricelb.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalpricelb.ForeColor = System.Drawing.Color.White;
             this.totalpricelb.Location = new System.Drawing.Point(83, 62);
             this.totalpricelb.Name = "totalpricelb";
             this.totalpricelb.Size = new System.Drawing.Size(58, 17);
@@ -330,6 +339,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(7, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 15);

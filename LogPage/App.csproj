@@ -169,16 +169,28 @@
     <Compile Include="UI Forms\Manager\User Control Form\newRegistrationEmployees.Designer.cs">
       <DependentUpon>newRegistrationEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Forms\Manager\User Control Form\Stak Level Featurs\productAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Manager\User Control Form\Stak Level Featurs\productAdd.Designer.cs">
+      <DependentUpon>productAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Forms\Manager\User Control Form\productform.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI Forms\Manager\User Control Form\productform.Designer.cs">
       <DependentUpon>productform.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\Manager\User Control Form\stackLevelform.cs">
+    <Compile Include="UI Forms\Manager\User Control Form\Stak Level Featurs\searchProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Forms\Manager\User Control Form\stackLevelform.Designer.cs">
+    <Compile Include="UI Forms\Manager\User Control Form\Stak Level Featurs\searchProduct.Designer.cs">
+      <DependentUpon>searchProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Manager\User Control Form\Stak Level Featurs\stackLevelform.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Manager\User Control Form\Stak Level Featurs\stackLevelform.Designer.cs">
       <DependentUpon>stackLevelform.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Forms\Manager\User Control Form\about.cs">
@@ -388,13 +400,19 @@
     <EmbeddedResource Include="UI Forms\Manager\User Control Form\newRegistrationEmployees.resx">
       <DependentUpon>newRegistrationEmployees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\User Control Form\Stak Level Featurs\productAdd.resx">
+      <DependentUpon>productAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\User Control Form\productform.resx">
       <DependentUpon>productform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\User Control Form\report.resx">
       <DependentUpon>report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Forms\Manager\User Control Form\stackLevelform.resx">
+    <EmbeddedResource Include="UI Forms\Manager\User Control Form\Stak Level Featurs\searchProduct.resx">
+      <DependentUpon>searchProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Manager\User Control Form\Stak Level Featurs\stackLevelform.resx">
       <DependentUpon>stackLevelform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Manager\User Control Form\staffinformation.resx">

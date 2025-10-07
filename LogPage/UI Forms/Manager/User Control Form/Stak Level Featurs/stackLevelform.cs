@@ -15,23 +15,20 @@ namespace App.UI_Forms.Manager
         public stackLevelform()
         {
             InitializeComponent();
-            addproductpnl.Visible = false;
-            searchPnl.Visible = false;
             StackLevelchartpnl.Visible = true;
+            searchProductManager.Visible = false;
+            productAddManager.Visible = false;
+
         }
 
         private void addproductpnlbtn_Click(object sender, EventArgs e)
         {
-            addproductpnl.Visible = true;
-            StackLevelchartpnl.Visible = false;
-            searchPnl.Visible = false;
+            productAddManager.Visible = true;
         }
 
         private void serchpnlbtn_Click(object sender, EventArgs e)
         {
-            addproductpnl.Visible = false;
-            StackLevelchartpnl.Visible = false;
-            searchPnl.Visible = true;
+            searchProductManager.Visible = true;
         }
 
         private void refreashbtn_Click(object sender, EventArgs e)
@@ -46,20 +43,28 @@ namespace App.UI_Forms.Manager
         private void stacklevelbtn1_Click(object sender, EventArgs e)
         {
             StackLevelchartpnl.Visible = true;
-            addproductpnl.Visible = false;
-            searchPnl.Visible = false;
+           
         }
 
         private void stacklevelbtn2_Click(object sender, EventArgs e)
         {
             StackLevelchartpnl.Visible = true;
-            addproductpnl.Visible = false;
-            searchPnl.Visible = false;
+       
         }
 
         private void addproductpnl_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void employeChart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchProductManager_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

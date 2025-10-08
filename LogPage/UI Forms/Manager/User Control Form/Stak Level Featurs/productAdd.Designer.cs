@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.addproductpnl = new System.Windows.Forms.Panel();
+            this.minusbtn = new System.Windows.Forms.Button();
+            this.productAddDatabase = new System.Windows.Forms.DataGridView();
+            this.plusbtn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -52,13 +55,11 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.descriptiontxt = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.expiredate = new System.Windows.Forms.DateTimePicker();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.productAddDatabase = new System.Windows.Forms.DataGridView();
-            this.expiredate = new System.Windows.Forms.DateTimePicker();
-            this.plusbtn = new System.Windows.Forms.Button();
-            this.minusbtn = new System.Windows.Forms.Button();
             this.addproductpnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productAddDatabase)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -71,7 +72,6 @@
             this.panel6.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productAddDatabase)).BeginInit();
             this.SuspendLayout();
             // 
             // addproductpnl
@@ -98,6 +98,34 @@
             this.addproductpnl.Name = "addproductpnl";
             this.addproductpnl.Size = new System.Drawing.Size(1000, 438);
             this.addproductpnl.TabIndex = 85;
+            // 
+            // minusbtn
+            // 
+            this.minusbtn.Location = new System.Drawing.Point(207, 304);
+            this.minusbtn.Name = "minusbtn";
+            this.minusbtn.Size = new System.Drawing.Size(42, 29);
+            this.minusbtn.TabIndex = 88;
+            this.minusbtn.Text = "button2";
+            this.minusbtn.UseVisualStyleBackColor = true;
+            this.minusbtn.Click += new System.EventHandler(this.minusbtn_Click);
+            // 
+            // productAddDatabase
+            // 
+            this.productAddDatabase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productAddDatabase.Location = new System.Drawing.Point(503, 13);
+            this.productAddDatabase.Name = "productAddDatabase";
+            this.productAddDatabase.Size = new System.Drawing.Size(432, 339);
+            this.productAddDatabase.TabIndex = 86;
+            // 
+            // plusbtn
+            // 
+            this.plusbtn.Location = new System.Drawing.Point(317, 304);
+            this.plusbtn.Name = "plusbtn";
+            this.plusbtn.Size = new System.Drawing.Size(40, 29);
+            this.plusbtn.TabIndex = 87;
+            this.plusbtn.Text = "button1";
+            this.plusbtn.UseVisualStyleBackColor = true;
+            this.plusbtn.Click += new System.EventHandler(this.plusbtn_Click);
             // 
             // panel7
             // 
@@ -251,7 +279,7 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.White;
             this.panel11.Controls.Add(this.quantitytxt);
-            this.panel11.Location = new System.Drawing.Point(262, 304);
+            this.panel11.Location = new System.Drawing.Point(251, 304);
             this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(65, 29);
@@ -262,11 +290,12 @@
             this.quantitytxt.BackColor = System.Drawing.Color.White;
             this.quantitytxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.quantitytxt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantitytxt.Location = new System.Drawing.Point(4, 4);
+            this.quantitytxt.Location = new System.Drawing.Point(9, 4);
             this.quantitytxt.Margin = new System.Windows.Forms.Padding(4);
             this.quantitytxt.Name = "quantitytxt";
-            this.quantitytxt.Size = new System.Drawing.Size(57, 20);
+            this.quantitytxt.Size = new System.Drawing.Size(44, 20);
             this.quantitytxt.TabIndex = 2;
+            this.quantitytxt.TextChanged += new System.EventHandler(this.quantitytxt_TextChanged);
             // 
             // panel8
             // 
@@ -339,6 +368,13 @@
             this.panel13.Size = new System.Drawing.Size(265, 29);
             this.panel13.TabIndex = 77;
             // 
+            // expiredate
+            // 
+            this.expiredate.Location = new System.Drawing.Point(24, 6);
+            this.expiredate.Name = "expiredate";
+            this.expiredate.Size = new System.Drawing.Size(200, 20);
+            this.expiredate.TabIndex = 0;
+            // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
@@ -359,39 +395,6 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "ExpireDate";
             // 
-            // productAddDatabase
-            // 
-            this.productAddDatabase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productAddDatabase.Location = new System.Drawing.Point(503, 13);
-            this.productAddDatabase.Name = "productAddDatabase";
-            this.productAddDatabase.Size = new System.Drawing.Size(432, 339);
-            this.productAddDatabase.TabIndex = 86;
-            // 
-            // expiredate
-            // 
-            this.expiredate.Location = new System.Drawing.Point(24, 6);
-            this.expiredate.Name = "expiredate";
-            this.expiredate.Size = new System.Drawing.Size(200, 20);
-            this.expiredate.TabIndex = 0;
-            // 
-            // plusbtn
-            // 
-            this.plusbtn.Location = new System.Drawing.Point(343, 304);
-            this.plusbtn.Name = "plusbtn";
-            this.plusbtn.Size = new System.Drawing.Size(40, 29);
-            this.plusbtn.TabIndex = 87;
-            this.plusbtn.Text = "button1";
-            this.plusbtn.UseVisualStyleBackColor = true;
-            // 
-            // minusbtn
-            // 
-            this.minusbtn.Location = new System.Drawing.Point(206, 304);
-            this.minusbtn.Name = "minusbtn";
-            this.minusbtn.Size = new System.Drawing.Size(42, 29);
-            this.minusbtn.TabIndex = 88;
-            this.minusbtn.Text = "button2";
-            this.minusbtn.UseVisualStyleBackColor = true;
-            // 
             // productAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,6 +403,7 @@
             this.Name = "productAdd";
             this.Size = new System.Drawing.Size(1000, 438);
             this.addproductpnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productAddDatabase)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -423,7 +427,6 @@
             this.panel13.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productAddDatabase)).EndInit();
             this.ResumeLayout(false);
 
         }

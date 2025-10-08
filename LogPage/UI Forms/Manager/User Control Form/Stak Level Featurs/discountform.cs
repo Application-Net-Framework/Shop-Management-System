@@ -39,13 +39,13 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string insertQuery = "INSERT INTO Discounts (DiscountCode, DiscountPercentage, StartDate, EndDate, DiscountStatus) " +
-                                         "VALUES (@DiscountCode, @DiscountPercentage, @StartDate, @EndDate, 'Active')";
+                    string insertQuery = "INSERT INTO Discounts (DiscountCode, Percentage, StartDate, EndDate, DiscountStatus) " +
+                                         "VALUES (@DiscountCode, @Percentage, @StartDate, @EndDate, 'Active')";
                     
                     using (SqlCommand command = new SqlCommand(insertQuery, connection))
                     {
                         command.Parameters.AddWithValue("@DiscountCode", discountCode);
-                        command.Parameters.AddWithValue("@DiscountPercentage", discountPercentage);
+                        command.Parameters.AddWithValue("@Percentage", discountPercentage);
                         command.Parameters.AddWithValue("@StartDate", startDate);
                         command.Parameters.AddWithValue("@EndDate", endDate);
                         
@@ -255,13 +255,12 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 discountId = row.Cells["DiscountID"].Value.ToString();
                 discountCode = row.Cells["DiscountCode"].Value.ToString();
                 
-                // Optionally display the selected discount's information in text boxes
                 discountIdtxt.Text = discountId;
-                discountcodetxt.Text = discountCode;
-                
-                if (row.Cells["DiscountPercentage"].Value != null)
+                          
+                if (row.Cells["Percentage"].Value != null)
                 {
-                    discountPercentage = Convert.ToInt32(row.Cells["DiscountPercentage"].Value);
+                    discountPercentage = row.Cells["Percentage"].Value.ToString();
+                    
                     percentagetxt.Text = discountPercentage.ToString();
                 }
                 

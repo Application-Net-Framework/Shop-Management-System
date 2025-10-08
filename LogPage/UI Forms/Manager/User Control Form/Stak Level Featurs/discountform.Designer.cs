@@ -135,6 +135,7 @@
             this.discountDataTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.discountDataTable.Size = new System.Drawing.Size(482, 318);
             this.discountDataTable.TabIndex = 56;
+            this.discountDataTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.discountDataTable_CellContentClick);
             // 
             // deactivebtn
             // 

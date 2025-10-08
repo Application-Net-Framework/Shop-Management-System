@@ -16,6 +16,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public string totalCashier;
         public string totalManager;
         public string totalSalesman;
+        public string totalNewEmployee;
 
         public string connectionString = "Data Source=DESKTOP-FGUJCMU\\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;TrustServerCertificate=True";
         public newRegistrationEmployees()
@@ -27,13 +28,13 @@ namespace App.UI_Forms.Manager.User_Control_Form
             cashierEmpLb.Text = totalCashier;
             managerAmountlb.Text = totalManager;
             salemanLb.Text = totalSalesman;
+            // totalNewEmployeelb.Text = totalNewEmployee;
+
         }
         public void DataGridviewDesign()
         {
             NewEmployee.DataSource = null;
-            NewEmployee.Rows.Clear();
-            NewEmployee.Columns.Clear();
-            NewEmployee.Height = 0;
+            
         }
         public void LoadMemberCount()
         {
@@ -70,6 +71,9 @@ namespace App.UI_Forms.Manager.User_Control_Form
                         totalSalesman = readerSalesman.IsDBNull(0) ? "0" : readerSalesman.GetInt32(0).ToString();
                     }
                     readerSalesman.Close();
+
+                    totalNewEmployee = (int.Parse(totalCashier) + int.Parse(totalManager) + int.Parse(totalSalesman)).ToString();
+                    connection.Close();
                 }
             }
             catch (Exception ex)
@@ -123,7 +127,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 {
                     conn.Open();
 
-                    string query = "SELECT userID, userName, Role FROM Employee WHERE AccountStatus = 'active' AND (CAST(userID AS NVARCHAR) LIKE @Search OR userName LIKE @Search)";
+                    string query = "SELECT * FROM Employee WHERE AccountStatus = 'active' AND (CAST(userID AS NVARCHAR) LIKE @Search OR userName LIKE @Search)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -150,7 +154,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 MessageBox.Show("Search error: " + ex.Message);
             }
         }
-
+        // Refresh Button
         private void undobtn_Click(object sender, EventArgs e)
         {
             LoadDatabse();

@@ -29,11 +29,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(staffinformation));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.staffinformationPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.demopicturebox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.cashierpicturebox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.searchbox = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.SaleManPicturebox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.QulifiShow = new System.Windows.Forms.Label();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tarminationbtn = new System.Windows.Forms.Button();
+            this.updatebtn = new System.Windows.Forms.Button();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.genderLb = new System.Windows.Forms.Label();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.titleShow = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.invalidDatelb = new System.Windows.Forms.Label();
             this.panel28 = new System.Windows.Forms.Panel();
             this.usrIdlbl = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
@@ -46,9 +67,8 @@
             this.aboutAddressTxt = new System.Windows.Forms.TextBox();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.invalidaddresslb = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dobtime = new System.Windows.Forms.DateTimePicker();
             this.dobLb = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,36 +87,25 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.invemaillb = new System.Windows.Forms.Label();
-            this.invalidDatelb = new System.Windows.Forms.Label();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.genderLb = new System.Windows.Forms.Label();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.titleShow = new System.Windows.Forms.Label();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.updatebtn = new System.Windows.Forms.Button();
-            this.tarminationbtn = new System.Windows.Forms.Button();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.QulifiShow = new System.Windows.Forms.Label();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.SaleManPicturebox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.searchbox = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.cashierpicturebox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.demopicturebox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.informationEmployee = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.informationEmployeeDataGrid = new System.Windows.Forms.DataGridView();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.staffinformationPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.demopicturebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashierpicturebox)).BeginInit();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaleManPicturebox)).BeginInit();
+            this.panel24.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.panel28.SuspendLayout();
             this.panel29.SuspendLayout();
             this.panel26.SuspendLayout();
@@ -111,23 +120,17 @@
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel11.SuspendLayout();
-            this.panel21.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel19.SuspendLayout();
-            this.panel20.SuspendLayout();
-            this.panel24.SuspendLayout();
-            this.panel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SaleManPicturebox)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cashierpicturebox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.demopicturebox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.informationEmployee)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informationEmployeeDataGrid)).BeginInit();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // staffinformationPanel
             // 
-            this.staffinformationPanel.Controls.Add(this.informationEmployee);
+            this.staffinformationPanel.Controls.Add(this.panel9);
+            this.staffinformationPanel.Controls.Add(this.informationEmployeeDataGrid);
             this.staffinformationPanel.Controls.Add(this.demopicturebox);
             this.staffinformationPanel.Controls.Add(this.cashierpicturebox);
             this.staffinformationPanel.Controls.Add(this.panel8);
@@ -148,7 +151,6 @@
             this.staffinformationPanel.Controls.Add(this.panel27);
             this.staffinformationPanel.Controls.Add(this.panel17);
             this.staffinformationPanel.Controls.Add(this.panel18);
-            this.staffinformationPanel.Controls.Add(this.invalidaddresslb);
             this.staffinformationPanel.Controls.Add(this.panel14);
             this.staffinformationPanel.Controls.Add(this.dobLb);
             this.staffinformationPanel.Controls.Add(this.panel12);
@@ -160,7 +162,6 @@
             this.staffinformationPanel.Controls.Add(this.panel7);
             this.staffinformationPanel.Controls.Add(this.invalidphonelb);
             this.staffinformationPanel.Controls.Add(this.panel11);
-            this.staffinformationPanel.Controls.Add(this.invemaillb);
             this.staffinformationPanel.Controls.Add(this.panel2);
             this.staffinformationPanel.Controls.Add(this.panel1);
             this.staffinformationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -170,45 +171,231 @@
             this.staffinformationPanel.TabIndex = 0;
             this.staffinformationPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.staffinformationPanel_Paint);
             // 
-            // panel2
+            // demopicturebox
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1100, 28);
-            this.panel2.TabIndex = 2;
+            this.demopicturebox.Image = ((System.Drawing.Image)(resources.GetObject("demopicturebox.Image")));
+            this.demopicturebox.ImageRotate = 0F;
+            this.demopicturebox.Location = new System.Drawing.Point(800, 132);
+            this.demopicturebox.Name = "demopicturebox";
+            this.demopicturebox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.demopicturebox.Size = new System.Drawing.Size(138, 111);
+            this.demopicturebox.TabIndex = 92;
+            this.demopicturebox.TabStop = false;
             // 
-            // label11
+            // cashierpicturebox
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(3, 4);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(173, 20);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Employees Informations";
+            this.cashierpicturebox.Image = ((System.Drawing.Image)(resources.GetObject("cashierpicturebox.Image")));
+            this.cashierpicturebox.ImageRotate = 0F;
+            this.cashierpicturebox.Location = new System.Drawing.Point(803, 132);
+            this.cashierpicturebox.Name = "cashierpicturebox";
+            this.cashierpicturebox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.cashierpicturebox.Size = new System.Drawing.Size(112, 111);
+            this.cashierpicturebox.TabIndex = 91;
+            this.cashierpicturebox.TabStop = false;
             // 
-            // panel1
+            // panel8
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(228)))), ((int)(((byte)(155)))));
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 100);
-            this.panel1.TabIndex = 1;
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.searchbox);
+            this.panel8.Location = new System.Drawing.Point(104, 135);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(303, 39);
+            this.panel8.TabIndex = 90;
             // 
-            // pictureBox1
+            // searchbox
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(306, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(403, 100);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.searchbox.BackColor = System.Drawing.Color.White;
+            this.searchbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchbox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchbox.Location = new System.Drawing.Point(6, 10);
+            this.searchbox.Margin = new System.Windows.Forms.Padding(4);
+            this.searchbox.Name = "searchbox";
+            this.searchbox.Size = new System.Drawing.Size(289, 20);
+            this.searchbox.TabIndex = 2;
+            this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(405, 135);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 43);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 89;
+            this.pictureBox2.TabStop = false;
+            // 
+            // SaleManPicturebox
+            // 
+            this.SaleManPicturebox.Image = ((System.Drawing.Image)(resources.GetObject("SaleManPicturebox.Image")));
+            this.SaleManPicturebox.ImageRotate = 0F;
+            this.SaleManPicturebox.Location = new System.Drawing.Point(800, 135);
+            this.SaleManPicturebox.Name = "SaleManPicturebox";
+            this.SaleManPicturebox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.SaleManPicturebox.Size = new System.Drawing.Size(124, 103);
+            this.SaleManPicturebox.TabIndex = 88;
+            this.SaleManPicturebox.TabStop = false;
+            // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.White;
+            this.panel24.Controls.Add(this.QulifiShow);
+            this.panel24.Location = new System.Drawing.Point(620, 478);
+            this.panel24.Margin = new System.Windows.Forms.Padding(4);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(129, 30);
+            this.panel24.TabIndex = 87;
+            // 
+            // QulifiShow
+            // 
+            this.QulifiShow.AutoSize = true;
+            this.QulifiShow.BackColor = System.Drawing.Color.White;
+            this.QulifiShow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QulifiShow.ForeColor = System.Drawing.Color.Black;
+            this.QulifiShow.Location = new System.Drawing.Point(21, 6);
+            this.QulifiShow.Name = "QulifiShow";
+            this.QulifiShow.Size = new System.Drawing.Size(83, 20);
+            this.QulifiShow.TabIndex = 51;
+            this.QulifiShow.Text = "QulifiShow";
+            // 
+            // panel25
+            // 
+            this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel25.Controls.Add(this.label10);
+            this.panel25.Location = new System.Drawing.Point(508, 478);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(112, 30);
+            this.panel25.TabIndex = 86;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(7, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 20);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Qualification";
+            // 
+            // tarminationbtn
+            // 
+            this.tarminationbtn.BackColor = System.Drawing.Color.IndianRed;
+            this.tarminationbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tarminationbtn.ForeColor = System.Drawing.Color.White;
+            this.tarminationbtn.Location = new System.Drawing.Point(779, 522);
+            this.tarminationbtn.Name = "tarminationbtn";
+            this.tarminationbtn.Size = new System.Drawing.Size(126, 38);
+            this.tarminationbtn.TabIndex = 85;
+            this.tarminationbtn.Text = "Tarmination";
+            this.tarminationbtn.UseVisualStyleBackColor = false;
+            this.tarminationbtn.Click += new System.EventHandler(this.tarminationbtn_Click);
+            // 
+            // updatebtn
+            // 
+            this.updatebtn.BackColor = System.Drawing.Color.IndianRed;
+            this.updatebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatebtn.ForeColor = System.Drawing.Color.White;
+            this.updatebtn.Location = new System.Drawing.Point(564, 522);
+            this.updatebtn.Name = "updatebtn";
+            this.updatebtn.Size = new System.Drawing.Size(126, 38);
+            this.updatebtn.TabIndex = 84;
+            this.updatebtn.Text = "Update";
+            this.updatebtn.UseVisualStyleBackColor = false;
+            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.White;
+            this.panel21.Controls.Add(this.genderLb);
+            this.panel21.Location = new System.Drawing.Point(870, 479);
+            this.panel21.Margin = new System.Windows.Forms.Padding(4);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(110, 29);
+            this.panel21.TabIndex = 83;
+            // 
+            // genderLb
+            // 
+            this.genderLb.AutoSize = true;
+            this.genderLb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderLb.Location = new System.Drawing.Point(5, 5);
+            this.genderLb.Name = "genderLb";
+            this.genderLb.Size = new System.Drawing.Size(95, 20);
+            this.genderLb.TabIndex = 51;
+            this.genderLb.Text = "genderShow";
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel22.Controls.Add(this.label9);
+            this.panel22.Location = new System.Drawing.Point(758, 479);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(112, 29);
+            this.panel22.TabIndex = 82;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(16, 6);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 20);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Gender";
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.White;
+            this.panel19.Controls.Add(this.titleShow);
+            this.panel19.Location = new System.Drawing.Point(620, 153);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(129, 30);
+            this.panel19.TabIndex = 81;
+            // 
+            // titleShow
+            // 
+            this.titleShow.AutoSize = true;
+            this.titleShow.BackColor = System.Drawing.Color.White;
+            this.titleShow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleShow.ForeColor = System.Drawing.Color.Black;
+            this.titleShow.Location = new System.Drawing.Point(19, 5);
+            this.titleShow.Name = "titleShow";
+            this.titleShow.Size = new System.Drawing.Size(71, 20);
+            this.titleShow.TabIndex = 51;
+            this.titleShow.Text = "Manager";
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel20.Controls.Add(this.label7);
+            this.panel20.Location = new System.Drawing.Point(508, 153);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(112, 30);
+            this.panel20.TabIndex = 80;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(19, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 20);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Title";
+            // 
+            // invalidDatelb
+            // 
+            this.invalidDatelb.AutoSize = true;
+            this.invalidDatelb.ForeColor = System.Drawing.Color.IndianRed;
+            this.invalidDatelb.Location = new System.Drawing.Point(509, 416);
+            this.invalidDatelb.Name = "invalidDatelb";
+            this.invalidDatelb.Size = new System.Drawing.Size(64, 13);
+            this.invalidDatelb.TabIndex = 79;
+            this.invalidDatelb.Text = "Invalid Date";
             // 
             // panel28
             // 
@@ -312,6 +499,7 @@
             this.aboutAddressTxt.Location = new System.Drawing.Point(4, 5);
             this.aboutAddressTxt.Margin = new System.Windows.Forms.Padding(4);
             this.aboutAddressTxt.Name = "aboutAddressTxt";
+            this.aboutAddressTxt.ReadOnly = true;
             this.aboutAddressTxt.Size = new System.Drawing.Size(311, 20);
             this.aboutAddressTxt.TabIndex = 2;
             this.aboutAddressTxt.TextChanged += new System.EventHandler(this.aboutAddressTxt_TextChanged);
@@ -336,32 +524,22 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Address :";
             // 
-            // invalidaddresslb
-            // 
-            this.invalidaddresslb.AutoSize = true;
-            this.invalidaddresslb.ForeColor = System.Drawing.Color.IndianRed;
-            this.invalidaddresslb.Location = new System.Drawing.Point(511, 462);
-            this.invalidaddresslb.Name = "invalidaddresslb";
-            this.invalidaddresslb.Size = new System.Drawing.Size(78, 13);
-            this.invalidaddresslb.TabIndex = 73;
-            this.invalidaddresslb.Text = "invalid Address";
-            // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.White;
-            this.panel14.Controls.Add(this.dateTimePicker1);
+            this.panel14.Controls.Add(this.dobtime);
             this.panel14.Location = new System.Drawing.Point(637, 384);
             this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(201, 30);
             this.panel14.TabIndex = 71;
             // 
-            // dateTimePicker1
+            // dobtime
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 6);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(188, 20);
-            this.dateTimePicker1.TabIndex = 42;
+            this.dobtime.Location = new System.Drawing.Point(6, 6);
+            this.dobtime.Name = "dobtime";
+            this.dobtime.Size = new System.Drawing.Size(188, 20);
+            this.dobtime.TabIndex = 42;
             // 
             // dobLb
             // 
@@ -411,6 +589,7 @@
             this.aboutEmailTxt.Location = new System.Drawing.Point(4, 4);
             this.aboutEmailTxt.Margin = new System.Windows.Forms.Padding(4);
             this.aboutEmailTxt.Name = "aboutEmailTxt";
+            this.aboutEmailTxt.ReadOnly = true;
             this.aboutEmailTxt.Size = new System.Drawing.Size(311, 20);
             this.aboutEmailTxt.TabIndex = 2;
             // 
@@ -549,279 +728,116 @@
             this.label13.Size = new System.Drawing.Size(0, 20);
             this.label13.TabIndex = 1;
             // 
-            // invemaillb
+            // panel2
             // 
-            this.invemaillb.AutoSize = true;
-            this.invemaillb.ForeColor = System.Drawing.Color.IndianRed;
-            this.invemaillb.Location = new System.Drawing.Point(507, 370);
-            this.invemaillb.Name = "invemaillb";
-            this.invemaillb.Size = new System.Drawing.Size(64, 13);
-            this.invemaillb.TabIndex = 65;
-            this.invemaillb.Text = "invalid email";
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1100, 28);
+            this.panel2.TabIndex = 2;
             // 
-            // invalidDatelb
+            // label11
             // 
-            this.invalidDatelb.AutoSize = true;
-            this.invalidDatelb.ForeColor = System.Drawing.Color.IndianRed;
-            this.invalidDatelb.Location = new System.Drawing.Point(509, 416);
-            this.invalidDatelb.Name = "invalidDatelb";
-            this.invalidDatelb.Size = new System.Drawing.Size(64, 13);
-            this.invalidDatelb.TabIndex = 79;
-            this.invalidDatelb.Text = "Invalid Date";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(3, 4);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(173, 20);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Employees Informations";
             // 
-            // panel21
+            // panel1
             // 
-            this.panel21.BackColor = System.Drawing.Color.White;
-            this.panel21.Controls.Add(this.genderLb);
-            this.panel21.Location = new System.Drawing.Point(870, 479);
-            this.panel21.Margin = new System.Windows.Forms.Padding(4);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(110, 29);
-            this.panel21.TabIndex = 83;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(228)))), ((int)(((byte)(155)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1100, 100);
+            this.panel1.TabIndex = 1;
             // 
-            // genderLb
+            // pictureBox1
             // 
-            this.genderLb.AutoSize = true;
-            this.genderLb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderLb.Location = new System.Drawing.Point(5, 5);
-            this.genderLb.Name = "genderLb";
-            this.genderLb.Size = new System.Drawing.Size(95, 20);
-            this.genderLb.TabIndex = 51;
-            this.genderLb.Text = "genderShow";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(306, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(403, 100);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
-            // panel22
+            // informationEmployeeDataGrid
             // 
-            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.panel22.Controls.Add(this.label9);
-            this.panel22.Location = new System.Drawing.Point(758, 479);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(112, 29);
-            this.panel22.TabIndex = 82;
+            this.informationEmployeeDataGrid.AllowUserToAddRows = false;
+            this.informationEmployeeDataGrid.AllowUserToDeleteRows = false;
+            this.informationEmployeeDataGrid.AllowUserToResizeColumns = false;
+            this.informationEmployeeDataGrid.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.informationEmployeeDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.informationEmployeeDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.informationEmployeeDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.informationEmployeeDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.informationEmployeeDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.informationEmployeeDataGrid.ColumnHeadersHeight = 30;
+            this.informationEmployeeDataGrid.ColumnHeadersVisible = false;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.informationEmployeeDataGrid.DefaultCellStyle = dataGridViewCellStyle7;
+            this.informationEmployeeDataGrid.GridColor = System.Drawing.Color.White;
+            this.informationEmployeeDataGrid.Location = new System.Drawing.Point(103, 174);
+            this.informationEmployeeDataGrid.Name = "informationEmployeeDataGrid";
+            this.informationEmployeeDataGrid.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.informationEmployeeDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.informationEmployeeDataGrid.RowHeadersVisible = false;
+            this.informationEmployeeDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.informationEmployeeDataGrid.Size = new System.Drawing.Size(304, 3);
+            this.informationEmployeeDataGrid.TabIndex = 93;
+            this.informationEmployeeDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.informationEmployeeDataGrid_CellContentClick);
             // 
-            // label9
+            // panel9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(16, 6);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 20);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Gender";
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel9.Controls.Add(this.label1);
+            this.panel9.Location = new System.Drawing.Point(25, 134);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(78, 43);
+            this.panel9.TabIndex = 94;
             // 
-            // panel19
+            // label1
             // 
-            this.panel19.BackColor = System.Drawing.Color.White;
-            this.panel19.Controls.Add(this.titleShow);
-            this.panel19.Location = new System.Drawing.Point(620, 153);
-            this.panel19.Margin = new System.Windows.Forms.Padding(4);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(129, 30);
-            this.panel19.TabIndex = 81;
-            // 
-            // titleShow
-            // 
-            this.titleShow.AutoSize = true;
-            this.titleShow.BackColor = System.Drawing.Color.White;
-            this.titleShow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleShow.ForeColor = System.Drawing.Color.Black;
-            this.titleShow.Location = new System.Drawing.Point(19, 5);
-            this.titleShow.Name = "titleShow";
-            this.titleShow.Size = new System.Drawing.Size(71, 20);
-            this.titleShow.TabIndex = 51;
-            this.titleShow.Text = "Manager";
-            // 
-            // panel20
-            // 
-            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.panel20.Controls.Add(this.label7);
-            this.panel20.Location = new System.Drawing.Point(508, 153);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(112, 30);
-            this.panel20.TabIndex = 80;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(19, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Title";
-            // 
-            // updatebtn
-            // 
-            this.updatebtn.BackColor = System.Drawing.Color.IndianRed;
-            this.updatebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updatebtn.ForeColor = System.Drawing.Color.White;
-            this.updatebtn.Location = new System.Drawing.Point(564, 522);
-            this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(126, 38);
-            this.updatebtn.TabIndex = 84;
-            this.updatebtn.Text = "Update";
-            this.updatebtn.UseVisualStyleBackColor = false;
-            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
-            // 
-            // tarminationbtn
-            // 
-            this.tarminationbtn.BackColor = System.Drawing.Color.IndianRed;
-            this.tarminationbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tarminationbtn.ForeColor = System.Drawing.Color.White;
-            this.tarminationbtn.Location = new System.Drawing.Point(779, 522);
-            this.tarminationbtn.Name = "tarminationbtn";
-            this.tarminationbtn.Size = new System.Drawing.Size(126, 38);
-            this.tarminationbtn.TabIndex = 85;
-            this.tarminationbtn.Text = "Tarmination";
-            this.tarminationbtn.UseVisualStyleBackColor = false;
-            this.tarminationbtn.Click += new System.EventHandler(this.tarminationbtn_Click);
-            // 
-            // panel24
-            // 
-            this.panel24.BackColor = System.Drawing.Color.White;
-            this.panel24.Controls.Add(this.QulifiShow);
-            this.panel24.Location = new System.Drawing.Point(620, 478);
-            this.panel24.Margin = new System.Windows.Forms.Padding(4);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(129, 30);
-            this.panel24.TabIndex = 87;
-            // 
-            // QulifiShow
-            // 
-            this.QulifiShow.AutoSize = true;
-            this.QulifiShow.BackColor = System.Drawing.Color.White;
-            this.QulifiShow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QulifiShow.ForeColor = System.Drawing.Color.Black;
-            this.QulifiShow.Location = new System.Drawing.Point(21, 6);
-            this.QulifiShow.Name = "QulifiShow";
-            this.QulifiShow.Size = new System.Drawing.Size(83, 20);
-            this.QulifiShow.TabIndex = 51;
-            this.QulifiShow.Text = "QulifiShow";
-            // 
-            // panel25
-            // 
-            this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.panel25.Controls.Add(this.label10);
-            this.panel25.Location = new System.Drawing.Point(508, 478);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(112, 30);
-            this.panel25.TabIndex = 86;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(7, 5);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Qualification";
-            // 
-            // SaleManPicturebox
-            // 
-            this.SaleManPicturebox.ImageRotate = 0F;
-            this.SaleManPicturebox.Location = new System.Drawing.Point(793, 132);
-            this.SaleManPicturebox.Name = "SaleManPicturebox";
-            this.SaleManPicturebox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.SaleManPicturebox.Size = new System.Drawing.Size(138, 111);
-            this.SaleManPicturebox.TabIndex = 88;
-            this.SaleManPicturebox.TabStop = false;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Controls.Add(this.searchbox);
-            this.panel8.Location = new System.Drawing.Point(22, 135);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(385, 43);
-            this.panel8.TabIndex = 90;
-            // 
-            // searchbox
-            // 
-            this.searchbox.BackColor = System.Drawing.Color.White;
-            this.searchbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchbox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbox.Location = new System.Drawing.Point(4, 11);
-            this.searchbox.Margin = new System.Windows.Forms.Padding(4);
-            this.searchbox.Name = "searchbox";
-            this.searchbox.Size = new System.Drawing.Size(381, 20);
-            this.searchbox.TabIndex = 2;
-            this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(408, 135);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 43);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 89;
-            this.pictureBox2.TabStop = false;
-            // 
-            // cashierpicturebox
-            // 
-            this.cashierpicturebox.ImageRotate = 0F;
-            this.cashierpicturebox.Location = new System.Drawing.Point(793, 131);
-            this.cashierpicturebox.Name = "cashierpicturebox";
-            this.cashierpicturebox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.cashierpicturebox.Size = new System.Drawing.Size(138, 111);
-            this.cashierpicturebox.TabIndex = 91;
-            this.cashierpicturebox.TabStop = false;
-            // 
-            // demopicturebox
-            // 
-            this.demopicturebox.ImageRotate = 0F;
-            this.demopicturebox.Location = new System.Drawing.Point(794, 129);
-            this.demopicturebox.Name = "demopicturebox";
-            this.demopicturebox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.demopicturebox.Size = new System.Drawing.Size(138, 111);
-            this.demopicturebox.TabIndex = 92;
-            this.demopicturebox.TabStop = false;
-            // 
-            // informationEmployee
-            // 
-            this.informationEmployee.AllowUserToAddRows = false;
-            this.informationEmployee.AllowUserToDeleteRows = false;
-            this.informationEmployee.AllowUserToResizeColumns = false;
-            this.informationEmployee.AllowUserToResizeRows = false;
-            this.informationEmployee.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.informationEmployee.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.informationEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.informationEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.UserName,
-            this.Role});
-            this.informationEmployee.Location = new System.Drawing.Point(22, 179);
-            this.informationEmployee.Name = "informationEmployee";
-            this.informationEmployee.RowHeadersVisible = false;
-            this.informationEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.informationEmployee.Size = new System.Drawing.Size(385, 366);
-            this.informationEmployee.TabIndex = 93;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // UserName
-            // 
-            this.UserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.UserName.HeaderText = "User Name";
-            this.UserName.Name = "UserName";
-            this.UserName.ReadOnly = true;
-            // 
-            // Role
-            // 
-            this.Role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Role.HeaderText = "Role";
-            this.Role.Name = "Role";
-            this.Role.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(11, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Search";
             // 
             // staffinformation
             // 
@@ -832,10 +848,24 @@
             this.Size = new System.Drawing.Size(1100, 570);
             this.staffinformationPanel.ResumeLayout(false);
             this.staffinformationPanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.demopicturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashierpicturebox)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaleManPicturebox)).EndInit();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
             this.panel29.ResumeLayout(false);
@@ -863,25 +893,13 @@
             this.panel7.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SaleManPicturebox)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cashierpicturebox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.demopicturebox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.informationEmployee)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informationEmployeeDataGrid)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -905,9 +923,8 @@
         private System.Windows.Forms.TextBox aboutAddressTxt;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label invalidaddresslb;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dobtime;
         private System.Windows.Forms.Label dobLb;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label5;
@@ -926,7 +943,6 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label invemaillb;
         private System.Windows.Forms.Label invalidDatelb;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Label genderLb;
@@ -948,9 +964,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox cashierpicturebox;
         private Guna.UI2.WinForms.Guna2CirclePictureBox demopicturebox;
-        private System.Windows.Forms.DataGridView informationEmployee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Role;
+        private System.Windows.Forms.DataGridView informationEmployeeDataGrid;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label1;
     }
 }

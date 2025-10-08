@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tarminationForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tarminationpnl = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.deginepnl = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.warningMassage = new System.Windows.Forms.Panel();
+            this.adminPermission = new System.Windows.Forms.Label();
+            this.notFoundlb = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,26 +46,22 @@
             this.picturepnl = new System.Windows.Forms.Panel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.warningMassage = new System.Windows.Forms.Panel();
-            this.deginepnl = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.notFoundlb = new System.Windows.Forms.Label();
-            this.adminPermission = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.refreshbtn = new System.Windows.Forms.Button();
             this.tarminationpnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.deginepnl.SuspendLayout();
+            this.warningMassage.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TarminationEmployee)).BeginInit();
             this.picturepnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.warningMassage.SuspendLayout();
-            this.deginepnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tarminationpnl
             // 
+            this.tarminationpnl.Controls.Add(this.refreshbtn);
             this.tarminationpnl.Controls.Add(this.pictureBox2);
             this.tarminationpnl.Controls.Add(this.deginepnl);
             this.tarminationpnl.Controls.Add(this.warningMassage);
@@ -74,6 +76,71 @@
             this.tarminationpnl.Size = new System.Drawing.Size(1100, 600);
             this.tarminationpnl.TabIndex = 0;
             this.tarminationpnl.Paint += new System.Windows.Forms.PaintEventHandler(this.tarminationpnl_Paint);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(773, 181);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(51, 37);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 90;
+            this.pictureBox2.TabStop = false;
+            // 
+            // deginepnl
+            // 
+            this.deginepnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.deginepnl.Controls.Add(this.label11);
+            this.deginepnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.deginepnl.Location = new System.Drawing.Point(0, 140);
+            this.deginepnl.Name = "deginepnl";
+            this.deginepnl.Size = new System.Drawing.Size(1100, 28);
+            this.deginepnl.TabIndex = 48;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(3, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(167, 20);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Tarminated Employees ";
+            // 
+            // warningMassage
+            // 
+            this.warningMassage.BackColor = System.Drawing.Color.IndianRed;
+            this.warningMassage.Controls.Add(this.adminPermission);
+            this.warningMassage.Controls.Add(this.notFoundlb);
+            this.warningMassage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.warningMassage.Location = new System.Drawing.Point(0, 116);
+            this.warningMassage.Name = "warningMassage";
+            this.warningMassage.Size = new System.Drawing.Size(1100, 24);
+            this.warningMassage.TabIndex = 47;
+            // 
+            // adminPermission
+            // 
+            this.adminPermission.AutoSize = true;
+            this.adminPermission.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPermission.ForeColor = System.Drawing.Color.White;
+            this.adminPermission.Location = new System.Drawing.Point(364, 1);
+            this.adminPermission.Name = "adminPermission";
+            this.adminPermission.Size = new System.Drawing.Size(413, 20);
+            this.adminPermission.TabIndex = 16;
+            this.adminPermission.Text = "You Can not Change This You need Permission From Admin";
+            // 
+            // notFoundlb
+            // 
+            this.notFoundlb.AutoSize = true;
+            this.notFoundlb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notFoundlb.ForeColor = System.Drawing.Color.White;
+            this.notFoundlb.Location = new System.Drawing.Point(494, 3);
+            this.notFoundlb.Name = "notFoundlb";
+            this.notFoundlb.Size = new System.Drawing.Size(154, 20);
+            this.notFoundlb.TabIndex = 15;
+            this.notFoundlb.Text = "Employee Not Found";
             // 
             // panel1
             // 
@@ -181,70 +248,18 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // warningMassage
+            // refreshbtn
             // 
-            this.warningMassage.BackColor = System.Drawing.Color.IndianRed;
-            this.warningMassage.Controls.Add(this.adminPermission);
-            this.warningMassage.Controls.Add(this.notFoundlb);
-            this.warningMassage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.warningMassage.Location = new System.Drawing.Point(0, 116);
-            this.warningMassage.Name = "warningMassage";
-            this.warningMassage.Size = new System.Drawing.Size(1100, 24);
-            this.warningMassage.TabIndex = 47;
-            // 
-            // deginepnl
-            // 
-            this.deginepnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.deginepnl.Controls.Add(this.label11);
-            this.deginepnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.deginepnl.Location = new System.Drawing.Point(0, 140);
-            this.deginepnl.Name = "deginepnl";
-            this.deginepnl.Size = new System.Drawing.Size(1100, 28);
-            this.deginepnl.TabIndex = 48;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(3, 3);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(167, 20);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Tarminated Employees ";
-            // 
-            // notFoundlb
-            // 
-            this.notFoundlb.AutoSize = true;
-            this.notFoundlb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notFoundlb.ForeColor = System.Drawing.Color.White;
-            this.notFoundlb.Location = new System.Drawing.Point(494, 3);
-            this.notFoundlb.Name = "notFoundlb";
-            this.notFoundlb.Size = new System.Drawing.Size(154, 20);
-            this.notFoundlb.TabIndex = 15;
-            this.notFoundlb.Text = "Employee Not Found";
-            // 
-            // adminPermission
-            // 
-            this.adminPermission.AutoSize = true;
-            this.adminPermission.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminPermission.ForeColor = System.Drawing.Color.White;
-            this.adminPermission.Location = new System.Drawing.Point(364, 1);
-            this.adminPermission.Name = "adminPermission";
-            this.adminPermission.Size = new System.Drawing.Size(413, 20);
-            this.adminPermission.TabIndex = 16;
-            this.adminPermission.Text = "You Can not Change This You need Permission From Admin";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(773, 181);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 90;
-            this.pictureBox2.TabStop = false;
+            this.refreshbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.refreshbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshbtn.ForeColor = System.Drawing.Color.White;
+            this.refreshbtn.Location = new System.Drawing.Point(617, 520);
+            this.refreshbtn.Name = "refreshbtn";
+            this.refreshbtn.Size = new System.Drawing.Size(196, 38);
+            this.refreshbtn.TabIndex = 91;
+            this.refreshbtn.Text = "Refresh";
+            this.refreshbtn.UseVisualStyleBackColor = false;
+            this.refreshbtn.Click += new System.EventHandler(this.refreshbtn_Click);
             // 
             // tarminationForm
             // 
@@ -254,6 +269,11 @@
             this.Name = "tarminationForm";
             this.Size = new System.Drawing.Size(1100, 600);
             this.tarminationpnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.deginepnl.ResumeLayout(false);
+            this.deginepnl.PerformLayout();
+            this.warningMassage.ResumeLayout(false);
+            this.warningMassage.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -262,11 +282,6 @@
             this.picturepnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.warningMassage.ResumeLayout(false);
-            this.warningMassage.PerformLayout();
-            this.deginepnl.ResumeLayout(false);
-            this.deginepnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,5 +304,6 @@
         private System.Windows.Forms.Label notFoundlb;
         private System.Windows.Forms.Label adminPermission;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button refreshbtn;
     }
 }

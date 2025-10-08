@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
     public partial class productAdd : UserControl
     {
         public int counter = 0;
+        public string connectionString = "Data Source=DESKTOP-FGUJCMU\\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;TrustServerCertificate=True";
         public productAdd()
         {
             InitializeComponent();
@@ -26,11 +28,34 @@ namespace App.UI_Forms.Manager.User_Control_Form
 
             string converter = counter.ToString();
             quantitytxt.Text = converter;
-            
-            // Add the KeyPress event handler
-            quantitytxt.KeyPress += new KeyPressEventHandler(quantitytxt_KeyPress);
-        }
 
+            quantitytxt.KeyPress += new KeyPressEventHandler(quantitytxt_KeyPress);
+           loadDatabase();
+        }
+        public void loadDatabase()
+        {
+            try
+            {
+                string inactiveEmployees = "SELECT * FROM Product";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    using (SqlDataAdapter sda2 = new SqlDataAdapter(inactiveEmployees, connection))
+                    {
+                        DataTable dt2 = new DataTable();
+                        sda2.Fill(dt2);
+
+                        if (productAddDatabase != null)
+                            productAddDatabase.DataSource = dt2;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: " + ex.Message);
+            }
+
+        }
         private void stacklevelbtn1_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -74,6 +99,11 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 counter = 0;
                 quantitytxt.Text = "";
             }
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

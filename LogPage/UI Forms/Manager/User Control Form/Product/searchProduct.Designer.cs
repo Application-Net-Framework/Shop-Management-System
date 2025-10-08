@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.searchPnl = new System.Windows.Forms.Panel();
+            this.deletebtn = new System.Windows.Forms.Button();
             this.productShowData = new System.Windows.Forms.DataGridView();
             this.stacklevelbtn2 = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.productSearchBox = new System.Windows.Forms.TextBox();
-            this.deletebtn = new System.Windows.Forms.Button();
             this.searchPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productShowData)).BeginInit();
             this.panel18.SuspendLayout();
@@ -54,6 +54,18 @@
             this.searchPnl.Name = "searchPnl";
             this.searchPnl.Size = new System.Drawing.Size(1000, 438);
             this.searchPnl.TabIndex = 86;
+            // 
+            // deletebtn
+            // 
+            this.deletebtn.BackColor = System.Drawing.Color.IndianRed;
+            this.deletebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletebtn.ForeColor = System.Drawing.Color.White;
+            this.deletebtn.Location = new System.Drawing.Point(113, 347);
+            this.deletebtn.Name = "deletebtn";
+            this.deletebtn.Size = new System.Drawing.Size(72, 38);
+            this.deletebtn.TabIndex = 86;
+            this.deletebtn.Text = "delete";
+            this.deletebtn.UseVisualStyleBackColor = false;
             // 
             // productShowData
             // 
@@ -80,7 +92,7 @@
             // 
             this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.panel18.Controls.Add(this.label8);
-            this.panel18.Location = new System.Drawing.Point(220, 8);
+            this.panel18.Location = new System.Drawing.Point(259, 14);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(151, 29);
             this.panel18.TabIndex = 80;
@@ -100,7 +112,7 @@
             // 
             this.panel17.BackColor = System.Drawing.Color.White;
             this.panel17.Controls.Add(this.productSearchBox);
-            this.panel17.Location = new System.Drawing.Point(370, 8);
+            this.panel17.Location = new System.Drawing.Point(409, 14);
             this.panel17.Margin = new System.Windows.Forms.Padding(4);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(328, 29);
@@ -116,18 +128,6 @@
             this.productSearchBox.Name = "productSearchBox";
             this.productSearchBox.Size = new System.Drawing.Size(320, 20);
             this.productSearchBox.TabIndex = 2;
-            // 
-            // deletebtn
-            // 
-            this.deletebtn.BackColor = System.Drawing.Color.IndianRed;
-            this.deletebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deletebtn.ForeColor = System.Drawing.Color.White;
-            this.deletebtn.Location = new System.Drawing.Point(113, 347);
-            this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(72, 38);
-            this.deletebtn.TabIndex = 86;
-            this.deletebtn.Text = "delete";
-            this.deletebtn.UseVisualStyleBackColor = false;
             // 
             // searchProduct
             // 

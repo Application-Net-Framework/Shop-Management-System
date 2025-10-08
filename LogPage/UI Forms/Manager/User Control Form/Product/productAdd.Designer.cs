@@ -290,10 +290,10 @@
             this.quantitytxt.BackColor = System.Drawing.Color.White;
             this.quantitytxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.quantitytxt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantitytxt.Location = new System.Drawing.Point(9, 4);
+            this.quantitytxt.Location = new System.Drawing.Point(16, 4);
             this.quantitytxt.Margin = new System.Windows.Forms.Padding(4);
             this.quantitytxt.Name = "quantitytxt";
-            this.quantitytxt.Size = new System.Drawing.Size(44, 20);
+            this.quantitytxt.Size = new System.Drawing.Size(31, 20);
             this.quantitytxt.TabIndex = 2;
             this.quantitytxt.TextChanged += new System.EventHandler(this.quantitytxt_TextChanged);
             // 

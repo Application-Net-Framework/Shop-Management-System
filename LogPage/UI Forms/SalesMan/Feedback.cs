@@ -21,11 +21,11 @@ namespace App.UI_Forms.SalesMan
 
         private void SearchCustomer()
         {
-            string searchMobile = searchMobileTxt.Text.Trim();
-            if (string.IsNullOrEmpty(searchMobile))
+            string searchPhone = searchMobileTxt.Text.Trim();
+            if (string.IsNullOrEmpty(searchPhone))
             { MessageBox.Show("Please enter a mobile number."); return; }
             SqlConnection con = new SqlConnection(connectionString);
-            string query = "SELECT CustomerID, Name, Mobile FROM Customer WHERE Mobile LIKE '" + searchMobile + "%'";
+            string query = "SELECT CustomerID, Name, Phone FROM Customer WHERE Mobile LIKE '" + searchPhone + "%'";
             SqlCommand cmd = new SqlCommand(query, con);
             try
             {

@@ -206,9 +206,9 @@ namespace App.UI_Forms.SalesMan
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT CustomerID, Name, Mobile,  MembershipType " +
+                string query = "SELECT CustomerID, Name, Phone,  MembershipType " +
                                "FROM Customer " +
-                               "WHERE Mobile LIKE '%" + customerSearchTxt.Text + "%' " +
+                               "WHERE Phone LIKE '%" + customerSearchTxt.Text + "%' " +
                                "   OR Name LIKE '%" + customerSearchTxt.Text + "%'";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -227,7 +227,7 @@ namespace App.UI_Forms.SalesMan
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT CustomerID, Name, Mobile,  MembershipType " +
+                string query = "SELECT CustomerID, Name, Phone,  MembershipType " +
                                "FROM Customer " +
                                "ORDER BY Name ASC";
 
@@ -251,7 +251,7 @@ namespace App.UI_Forms.SalesMan
         {
             cIdTxt.Text = customerGrid.Rows[e.RowIndex].Cells["CustomerID"].Value.ToString();
             cNameTxt.Text = customerGrid.Rows[e.RowIndex].Cells["Name"].Value.ToString();
-            cMobileTxt.Text = customerGrid.Rows[e.RowIndex].Cells["Mobile"].Value.ToString();
+            cMobileTxt.Text = customerGrid.Rows[e.RowIndex].Cells["Phone"].Value.ToString();
         }
 
         private void addCustomerBtn_Click(object sender, EventArgs e)

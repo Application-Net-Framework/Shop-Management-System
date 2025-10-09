@@ -89,5 +89,12 @@ namespace App.UI_Forms.SalesMan
         { SearchByName(nameTxt.Text); }
         private void stockBtn_Click(object sender, EventArgs e)
         { LoadAllProducts(); }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            LogPage login = new LogPage();
+            login.Show();
+            this.Close();
+        }
     }
 }

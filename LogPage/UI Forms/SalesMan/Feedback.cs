@@ -205,5 +205,12 @@ namespace App.UI_Forms.SalesMan
             }
             catch (SqlException ex) { MessageBox.Show("Error while updating response: " + ex.Message); }
         }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            LogPage login = new LogPage();
+            login.Show();
+            this.Close();
+        }
     }
 }

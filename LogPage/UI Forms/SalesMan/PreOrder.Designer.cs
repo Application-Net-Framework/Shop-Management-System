@@ -46,9 +46,15 @@
             this.feedbackBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cIdTxt = new System.Windows.Forms.TextBox();
+            this.cNameTxt = new System.Windows.Forms.TextBox();
+            this.cMobileTxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.preferedDateTxt = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.nameLbl = new System.Windows.Forms.Label();
             this.addCustomerLbl = new System.Windows.Forms.Label();
             this.addCustomerBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -63,12 +69,6 @@
             this.sProductBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.listBtn = new System.Windows.Forms.Button();
-            this.nameLbl = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cMobileTxt = new System.Windows.Forms.TextBox();
-            this.cNameTxt = new System.Windows.Forms.TextBox();
-            this.cIdTxt = new System.Windows.Forms.TextBox();
             this.customerListBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -278,6 +278,7 @@
             this.logoutBtn.TabIndex = 8;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // panel2
             // 
@@ -300,6 +301,47 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(306, 213);
             this.panel2.TabIndex = 23;
+            // 
+            // cIdTxt
+            // 
+            this.cIdTxt.Location = new System.Drawing.Point(132, 22);
+            this.cIdTxt.Name = "cIdTxt";
+            this.cIdTxt.Size = new System.Drawing.Size(165, 20);
+            this.cIdTxt.TabIndex = 35;
+            // 
+            // cNameTxt
+            // 
+            this.cNameTxt.Location = new System.Drawing.Point(134, 48);
+            this.cNameTxt.Name = "cNameTxt";
+            this.cNameTxt.Size = new System.Drawing.Size(165, 20);
+            this.cNameTxt.TabIndex = 34;
+            // 
+            // cMobileTxt
+            // 
+            this.cMobileTxt.Location = new System.Drawing.Point(134, 75);
+            this.cMobileTxt.Name = "cMobileTxt";
+            this.cMobileTxt.Size = new System.Drawing.Size(165, 20);
+            this.cMobileTxt.TabIndex = 33;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(10, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 16);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Customer ID";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 16);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Product ID";
             // 
             // label4
             // 
@@ -328,6 +370,16 @@
             this.label1.Size = new System.Drawing.Size(104, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "Prefered Date";
+            // 
+            // nameLbl
+            // 
+            this.nameLbl.AutoSize = true;
+            this.nameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLbl.Location = new System.Drawing.Point(7, 134);
+            this.nameLbl.Name = "nameLbl";
+            this.nameLbl.Size = new System.Drawing.Size(105, 16);
+            this.nameLbl.TabIndex = 0;
+            this.nameLbl.Text = "Product Name";
             // 
             // addCustomerLbl
             // 
@@ -498,57 +550,6 @@
             this.listBtn.Text = "Full List";
             this.listBtn.UseVisualStyleBackColor = false;
             this.listBtn.Click += new System.EventHandler(this.listBtn_Click);
-            // 
-            // nameLbl
-            // 
-            this.nameLbl.AutoSize = true;
-            this.nameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLbl.Location = new System.Drawing.Point(7, 134);
-            this.nameLbl.Name = "nameLbl";
-            this.nameLbl.Size = new System.Drawing.Size(105, 16);
-            this.nameLbl.TabIndex = 0;
-            this.nameLbl.Text = "Product Name";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 105);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 16);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Product ID";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 16);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Customer ID";
-            // 
-            // cMobileTxt
-            // 
-            this.cMobileTxt.Location = new System.Drawing.Point(134, 75);
-            this.cMobileTxt.Name = "cMobileTxt";
-            this.cMobileTxt.Size = new System.Drawing.Size(165, 20);
-            this.cMobileTxt.TabIndex = 33;
-            // 
-            // cNameTxt
-            // 
-            this.cNameTxt.Location = new System.Drawing.Point(134, 48);
-            this.cNameTxt.Name = "cNameTxt";
-            this.cNameTxt.Size = new System.Drawing.Size(165, 20);
-            this.cNameTxt.TabIndex = 34;
-            // 
-            // cIdTxt
-            // 
-            this.cIdTxt.Location = new System.Drawing.Point(132, 22);
-            this.cIdTxt.Name = "cIdTxt";
-            this.cIdTxt.Size = new System.Drawing.Size(165, 20);
-            this.cIdTxt.TabIndex = 35;
             // 
             // customerListBtn
             // 

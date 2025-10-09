@@ -30,10 +30,11 @@ namespace App.UI_Forms.Manager.User_Control_Form
         {
             InitializeComponent();
             
-           // loadDatabase();
+            loadDatabase();
             
             cashierEmpLb.Text = totalcashier.ToString();
             salemanLb.Text = totalsalesman.ToString();
+
             totalpricelb.Text = totalPrice.ToString();
             totalsalelb.Text = totalSales.ToString();
 
@@ -44,15 +45,24 @@ namespace App.UI_Forms.Manager.User_Control_Form
             cashierSalary.Text = netIncomeCashier.ToString();
 
             chart1.Titles.Add("Employee Ratio");
-            chart1.Series["S1"].Points.AddXY("Cashier", "33");
-            chart1.Series["S1"].Points.AddXY("Saleman", "33");
+            chart1.Series["S1"].Points.AddXY("Cashier", totalcashier.ToString());
+            chart1.Series["S1"].Points[0].Color = Color.Green;
+
+            chart1.Series["S1"].Points.AddXY("Saleman", totalsalesman.ToString());
+            chart1.Series["S1"].Points[1].Color = Color.Purple;
 
             chart2.Titles.Add("Cost of a shop");           
-            chart2.Series["S2"].Points.AddXY("Total Price", "33");
-            chart2.Series["S2"].Points.AddXY("Total Sale", "33");
-            chart2.Series["S2"].Points.AddXY("Sales Man Salary", "33");
-            chart2.Series["S2"].Points.AddXY("Cashier Salary", "33");
+            chart2.Series["S2"].Points.AddXY("   Price", totalPrice.ToString());
+            chart2.Series["S2"].Points[0].Color = Color.FromArgb(67, 129, 101);
 
+            chart2.Series["S2"].Points.AddXY("   Sale", totalSales.ToString());
+            chart2.Series["S2"].Points[1].Color = Color.FromArgb(255, 181, 76);
+
+            chart2.Series["S2"].Points.AddXY("Sales Man Salary", netIncomeSalesman.ToString());
+            chart2.Series["S2"].Points[2].Color = Color.FromArgb(81, 14, 126);
+
+            chart2.Series["S2"].Points.AddXY("Cashier Salary", netIncomeCashier.ToString());
+            chart2.Series["S2"].Points[3].Color = Color.FromArgb(54, 87, 61);
         }
 
         public void loadDatabase()
@@ -62,8 +72,8 @@ namespace App.UI_Forms.Manager.User_Control_Form
  
                 using(SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-                    string TotalPrice = "SELECT SUM(ProductPrice * BuyQuantity) FROM Product";
-                    string TotalSales = "SELECT SUM(ProductPrice * SaleQuantity) AS TotalSales FROM Product";
+                    string TotalPrice = "SELECT SUM(Price * BuyQuantity) FROM Product";
+                    string TotalSales = "SELECT SUM(Price * SaleQuantity) FROM Product";
                     string TotalCashier = "SELECT COUNT(*) FROM Employee WHERE Role = 'Cashier'";
                     string TotalSalesman = "SELECT COUNT(*) FROM Employee WHERE Role = 'Salesman'";
 

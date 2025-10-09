@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using App.Configuration;
 
 namespace App.UI_Forms.SalesMan
+
 {
     public partial class CustomerManagement : Form
     {

@@ -18,27 +18,41 @@ namespace App.UI_Forms.Manager
         public double totalsale;
         public int totalcashier;
         public int totalsaleman;
+        public double totalProfit;
 
         string ConnectionString = "Data Source=DESKTOP-FGUJCMU\\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;TrustServerCertificate=True";
         public activity()
         {
             InitializeComponent();
             
-            // loadDatabase();
+            loadDatabase();
+            string tk = "Tk";
+            totalpricelb.Text = totalprice.ToString()+tk;
+            totalsalelb.Text = totalsale.ToString()+tk;
 
-            totalpricelb.Text = totalprice.ToString();
-            totalsalelb.Text = totalsale.ToString();
             cashierEmpLb.Text = totalcashier.ToString();
             salemanLb.Text = totalsaleman.ToString();
 
+            totalProfit = totalprice - totalsale;
+            profitlb.Text = totalProfit.ToString() +tk;
+
             chart1.Titles.Add("Cost of A Shop");
-            chart1.Series["S1"].Points.AddXY("Total Price","33");
-            chart1.Series["S1"].Points.AddXY("Total Sale", "33");
-            chart1.Series["S1"].Points.AddXY("Total Cost", "33");
+            chart1.Series["S1"].Points.AddXY("  Price", totalprice.ToString());
+            chart1.Series["S1"].Points[0].Color = Color.SeaGreen;
+
+            chart1.Series["S1"].Points.AddXY("  Sale", totalsale.ToString());
+            chart1.Series["S1"].Points[1].Color = Color.DarkOrange;
+
+            chart1.Series["S1"].Points.AddXY("  Profit", totalProfit.ToString());
+            chart1.Series["S1"].Points[2].Color = Color.MediumOrchid;
 
             employeChart.Titles.Add("Employee Ratio");
-            employeChart.Series["EMP"].Points.AddXY("Cashier", "33");
-            employeChart.Series["EMP"].Points.AddXY("Salesman", "33");
+            
+            employeChart.Series["EMP"].Points.AddXY("Cashier", totalcashier.ToString());
+            employeChart.Series["EMP"].Points[0].Color = Color.Green;
+
+            employeChart.Series["EMP"].Points.AddXY("Salesman", totalsaleman.ToString());
+            employeChart.Series["EMP"].Points[1].Color = Color.Purple;
         }
         public void loadDatabase()
         {
@@ -48,8 +62,8 @@ namespace App.UI_Forms.Manager
                 {
 
                     string totalSum = "SELECT SUM([Product Price]) AS TotalPrice, SUM([Product Sale Price]) AS TotalSale FROM [Daily Activity]";
-                    string totalCashier = "SELECT COUNT(*) AS TotalCashier FROM [Daily Activity] WHERE Role = 'Cashier'";
-                    string totalSaleman = "SELECT COUNT(*) AS TotalSaleman FROM [Daily Activity] WHERE Role = 'Salesman'";
+                    string totalCashier = "SELECT COUNT(*) AS TotalCashier FROM Employee WHERE Role = 'Cashier'";
+                    string totalSaleman = "SELECT COUNT(*) AS TotalSaleman FROM Employee WHERE Role = 'Salesman'";
 
 
                     connection.Open();

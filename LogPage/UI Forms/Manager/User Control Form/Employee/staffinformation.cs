@@ -370,6 +370,18 @@ namespace App.UI_Forms.Manager.User_Control_Form
             }
         }
 
-      
+        private void dobtime_ValueChanged(object sender, EventArgs e)
+        {
+            int age = CalculateAge(dobtime.Value);
+            if (age < 0 && age >= 10){
+                invalidDatelb.Visible = true;
+                agelb.Text = "0";
+            }
+            else
+            {
+                invalidDatelb.Visible = false;
+                agelb.Text = age.ToString();
+            }
+        }
     }
 }

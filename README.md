@@ -102,8 +102,8 @@ The system streamlines and automates grocery shop operations, providing role-bas
 |------|----|------|
 | Siam Hossain | 24-56637-1 | Manager |
 | Sumaiya Akter Roshni | 23-5327-3 | Admin |
-| Md Arif Mahmud Oyion | 24-56305-1 | Cashier |
-| Hacin Mijbahur Rahman | 23-55589-3 | Salesman |
+| Md Arif Mahmud Oyion | 24-56305-1 | Salesman  |
+| Hacin Mijbahur Rahman | 23-55589-3 | Cashier |
 
 ## Screenshots
 ![Screenshot 1](path/to/screenshot1.png)

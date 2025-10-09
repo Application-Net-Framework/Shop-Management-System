@@ -102,30 +102,6 @@ namespace App
             welcomemsg.Location = new Point(centerX, welcomemsg.Location.Y);
         }
 
-        protected override void OnResize(EventArgs e)
-        {
-            base.OnResize(e);
-            if (IsHandleCreated)
-            {
-                this.BeginInvoke(new Action(() =>
-                {
-                    CenterWelcomeMessage();
-                }));
-            }
-        }
-
-        protected override void OnSizeChanged(EventArgs e)
-        {
-            base.OnSizeChanged(e);
-            if (IsHandleCreated)
-            {
-                this.BeginInvoke(new Action(() =>
-                {
-                    CenterWelcomeMessage();
-                }));
-            }
-        }
-
         private void dashboardtimer_Tick(object sender, EventArgs e)
         {
             if (dashboardExpnd == false)
@@ -245,13 +221,6 @@ namespace App
                 }
             }
             CenterWelcomeMessage();
-        }
-
-      
-
-        private void menubtn_Click(object sender, EventArgs e)
-        {
-            featureContainertimer.Start();
         }
 
         private void btnmenu_Click(object sender, EventArgs e)
@@ -396,11 +365,6 @@ namespace App
             activity1.Visible = true;
         }
 
-        private void crossbtn_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void logoutbtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -414,16 +378,11 @@ namespace App
                 this.Close();
             }
         }
-
         private void pnltop_Paint(object sender, PaintEventArgs e) { }
         private void pnltop_MouseDown(object sender, MouseEventArgs e) { }
         private void welcomemsg_Click(object sender, EventArgs e) { }
-        private void minimizebtn_Click_1(object sender, EventArgs e) { }
-        private void minimizebtn_Click(object sender, EventArgs e) { }
         private void featureContainer_Paint(object sender, PaintEventArgs e) { }
         private void settingsContainer_Paint(object sender, PaintEventArgs e) { }
-        private void featureload_Paint(object sender, PaintEventArgs e) { }
-
      
     }
 }

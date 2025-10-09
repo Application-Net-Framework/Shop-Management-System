@@ -59,6 +59,11 @@ namespace App.UI_Forms.Manager.User_Control_Form
             informationEmployeeDataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             informationEmployeeDataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
 
+            updatebtn.MouseEnter += updatebtn_MouseEnter;
+            updatebtn.MouseLeave += updatebtn_MouseLeave;
+
+            tarminationbtn.MouseEnter += tarminationbtn_MouseEnter;
+            tarminationbtn.MouseLeave += tarminationbtn_MouseLeave;
             fun1.Visible = false;
             fun2.Visible = false;
         }
@@ -93,7 +98,9 @@ namespace App.UI_Forms.Manager.User_Control_Form
             InitializeComponent();
 
             LoadUI();
-           
+            ClearFormFields();
+
+
 
         }
 
@@ -262,7 +269,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
             gender = "";
             qulification = "";
             
-            usrIdlbl.Text = "0";
+            usrIdlbl.Text = "";
             titleShow.Text = "";
             aboutTxtboxName.Text = "";
             aboutPhoneTxt.Text = "";
@@ -270,9 +277,9 @@ namespace App.UI_Forms.Manager.User_Control_Form
             aboutAddressTxt.Text = "";
             genderLb.Text = "";
             QulifiShow.Text = "";
-            agelb.Text = "0";
+            agelb.Text = "";
             
-            // Reset to default picture
+            
             SaleManPicturebox.Visible = false;
             cashierpicturebox.Visible = false;
             demopicturebox.Visible = true;
@@ -289,8 +296,28 @@ namespace App.UI_Forms.Manager.User_Control_Form
             dobtime.Value = dob;
             agelb.Text = age.ToString();
         }
-        private void aboutTxtboxName_TextChanged(object sender, EventArgs e) { }
-        private void aboutPhoneTxt_TextChanged(object sender, EventArgs e) { }
+        private void aboutTxtboxName_TextChanged(object sender, EventArgs e) {
+           string Text = aboutTxtboxName.Text;
+            if (string.IsNullOrWhiteSpace(Text) || Text.Any(char.IsDigit))
+              {
+                invalidUsernamelb.Visible = true;
+              }
+              else
+              {
+                invalidUsernamelb.Visible = false;
+            }
+        }
+        private void aboutPhoneTxt_TextChanged(object sender, EventArgs e) {
+            string Text = aboutPhoneTxt.Text;
+            if (string.IsNullOrWhiteSpace(Text) || !Text.All(char.IsDigit) || Text.Length < 10)
+            {
+                invalidphonelb.Visible = true;
+            }
+            else
+            {
+                invalidphonelb.Visible = false;
+            }
+        }
         private void aboutAddressTxt_TextChanged(object sender, EventArgs e) { }
         public void DataGridviewDesign()
         {
@@ -382,6 +409,16 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 invalidDatelb.Visible = false;
                 agelb.Text = age.ToString();
             }
+        }
+
+        private void clearbtn_Click(object sender, EventArgs e)
+        {
+            ClearFormFields();
+        }
+
+        private void aboutEmailTxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

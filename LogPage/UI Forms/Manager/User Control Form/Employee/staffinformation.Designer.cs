@@ -96,6 +96,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.clearbtn = new System.Windows.Forms.Button();
             this.staffinformationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fun2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fun1)).BeginInit();
@@ -134,6 +135,7 @@
             // staffinformationPanel
             // 
             this.staffinformationPanel.Controls.Add(this.fun2);
+            this.staffinformationPanel.Controls.Add(this.clearbtn);
             this.staffinformationPanel.Controls.Add(this.fun1);
             this.staffinformationPanel.Controls.Add(this.panel9);
             this.staffinformationPanel.Controls.Add(this.informationEmployeeDataGrid);
@@ -180,18 +182,18 @@
             // fun2
             // 
             this.fun2.Image = ((System.Drawing.Image)(resources.GetObject("fun2.Image")));
-            this.fun2.Location = new System.Drawing.Point(130, 250);
+            this.fun2.Location = new System.Drawing.Point(85, 250);
             this.fun2.Name = "fun2";
-            this.fun2.Size = new System.Drawing.Size(202, 181);
+            this.fun2.Size = new System.Drawing.Size(286, 223);
             this.fun2.TabIndex = 96;
             this.fun2.TabStop = false;
             // 
             // fun1
             // 
             this.fun1.Image = ((System.Drawing.Image)(resources.GetObject("fun1.Image")));
-            this.fun1.Location = new System.Drawing.Point(162, 292);
+            this.fun1.Location = new System.Drawing.Point(85, 250);
             this.fun1.Name = "fun1";
-            this.fun1.Size = new System.Drawing.Size(146, 114);
+            this.fun1.Size = new System.Drawing.Size(286, 223);
             this.fun1.TabIndex = 95;
             this.fun1.TabStop = false;
             // 
@@ -379,7 +381,7 @@
             this.tarminationbtn.BackColor = System.Drawing.Color.IndianRed;
             this.tarminationbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tarminationbtn.ForeColor = System.Drawing.Color.White;
-            this.tarminationbtn.Location = new System.Drawing.Point(779, 522);
+            this.tarminationbtn.Location = new System.Drawing.Point(691, 522);
             this.tarminationbtn.Name = "tarminationbtn";
             this.tarminationbtn.Size = new System.Drawing.Size(126, 38);
             this.tarminationbtn.TabIndex = 85;
@@ -392,7 +394,7 @@
             this.updatebtn.BackColor = System.Drawing.Color.IndianRed;
             this.updatebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updatebtn.ForeColor = System.Drawing.Color.White;
-            this.updatebtn.Location = new System.Drawing.Point(564, 522);
+            this.updatebtn.Location = new System.Drawing.Point(535, 522);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.Size = new System.Drawing.Size(126, 38);
             this.updatebtn.TabIndex = 84;
@@ -458,9 +460,9 @@
             this.titleShow.ForeColor = System.Drawing.Color.Black;
             this.titleShow.Location = new System.Drawing.Point(19, 5);
             this.titleShow.Name = "titleShow";
-            this.titleShow.Size = new System.Drawing.Size(71, 20);
+            this.titleShow.Size = new System.Drawing.Size(79, 20);
             this.titleShow.TabIndex = 51;
-            this.titleShow.Text = "Manager";
+            this.titleShow.Text = "Title Show";
             // 
             // panel20
             // 
@@ -496,7 +498,7 @@
             // 
             this.panel28.BackColor = System.Drawing.Color.White;
             this.panel28.Controls.Add(this.usrIdlbl);
-            this.panel28.Location = new System.Drawing.Point(625, 199);
+            this.panel28.Location = new System.Drawing.Point(624, 200);
             this.panel28.Margin = new System.Windows.Forms.Padding(4);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(124, 29);
@@ -508,17 +510,17 @@
             this.usrIdlbl.BackColor = System.Drawing.Color.White;
             this.usrIdlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrIdlbl.ForeColor = System.Drawing.Color.Black;
-            this.usrIdlbl.Location = new System.Drawing.Point(8, 5);
+            this.usrIdlbl.Location = new System.Drawing.Point(26, 5);
             this.usrIdlbl.Name = "usrIdlbl";
-            this.usrIdlbl.Size = new System.Drawing.Size(97, 20);
+            this.usrIdlbl.Size = new System.Drawing.Size(59, 20);
             this.usrIdlbl.TabIndex = 51;
-            this.usrIdlbl.Text = "IdShowPanel";
+            this.usrIdlbl.Text = "IdShow";
             // 
             // panel29
             // 
             this.panel29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.panel29.Controls.Add(this.label14);
-            this.panel29.Location = new System.Drawing.Point(509, 199);
+            this.panel29.Location = new System.Drawing.Point(508, 200);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(116, 29);
             this.panel29.TabIndex = 77;
@@ -688,6 +690,7 @@
             this.aboutEmailTxt.ReadOnly = true;
             this.aboutEmailTxt.Size = new System.Drawing.Size(311, 20);
             this.aboutEmailTxt.TabIndex = 2;
+            this.aboutEmailTxt.TextChanged += new System.EventHandler(this.aboutEmailTxt_TextChanged);
             // 
             // panel5
             // 
@@ -864,6 +867,19 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // clearbtn
+            // 
+            this.clearbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.clearbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearbtn.ForeColor = System.Drawing.Color.White;
+            this.clearbtn.Location = new System.Drawing.Point(854, 522);
+            this.clearbtn.Name = "clearbtn";
+            this.clearbtn.Size = new System.Drawing.Size(126, 38);
+            this.clearbtn.TabIndex = 97;
+            this.clearbtn.Text = "Clear";
+            this.clearbtn.UseVisualStyleBackColor = false;
+            this.clearbtn.Click += new System.EventHandler(this.clearbtn_Click);
+            // 
             // staffinformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -996,5 +1012,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox fun1;
         private System.Windows.Forms.PictureBox fun2;
+        private System.Windows.Forms.Button clearbtn;
     }
 }

@@ -363,7 +363,7 @@
             // 
             // dashboardtimer
             // 
-            this.dashboardtimer.Interval = 10;
+            this.dashboardtimer.Interval = 5;
             this.dashboardtimer.Tick += new System.EventHandler(this.dashboardtimer_Tick);
             // 
             // settingsContainer
@@ -380,7 +380,7 @@
             // 
             // settingstime
             // 
-            this.settingstime.Interval = 10;
+            this.settingstime.Interval = 5;
             this.settingstime.Tick += new System.EventHandler(this.settingstime_Tick);
             // 
             // membersContainer
@@ -481,12 +481,12 @@
             // 
             // membertimer
             // 
-            this.membertimer.Interval = 10;
+            this.membertimer.Interval = 5;
             this.membertimer.Tick += new System.EventHandler(this.membertimer_Tick);
             // 
             // producttimer
             // 
-            this.producttimer.Interval = 10;
+            this.producttimer.Interval = 5;
             this.producttimer.Tick += new System.EventHandler(this.producttimer_Tick);
             // 
             // featureContainer
@@ -531,7 +531,7 @@
             // 
             // featureContainertimer
             // 
-            this.featureContainertimer.Interval = 10;
+            this.featureContainertimer.Interval = 5;
             this.featureContainertimer.Tick += new System.EventHandler(this.featureContainertimer_Tick);
             // 
             // pnltop
@@ -566,7 +566,6 @@
             this.fullscreenbtn.Name = "fullscreenbtn";
             this.fullscreenbtn.Size = new System.Drawing.Size(32, 34);
             this.fullscreenbtn.TabIndex = 22;
-            this.fullscreenbtn.Text = "button4";
             this.fullscreenbtn.UseVisualStyleBackColor = true;
             // 
             // crossbtn
@@ -576,8 +575,8 @@
             this.crossbtn.Name = "crossbtn";
             this.crossbtn.Size = new System.Drawing.Size(29, 34);
             this.crossbtn.TabIndex = 21;
-            this.crossbtn.Text = "button4";
             this.crossbtn.UseVisualStyleBackColor = true;
+            this.crossbtn.Click += new System.EventHandler(this.crossbtn_Click_2);
             // 
             // welcomemsg
             // 
@@ -652,6 +651,7 @@
             // report1
             // 
             this.report1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.report1.ForeColor = System.Drawing.Color.White;
             this.report1.Location = new System.Drawing.Point(0, 0);
             this.report1.Name = "report1";
             this.report1.Size = new System.Drawing.Size(1088, 573);

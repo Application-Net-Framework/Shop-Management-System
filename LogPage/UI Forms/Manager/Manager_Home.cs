@@ -15,21 +15,13 @@ namespace App
 {
     public partial class Manager_Home : Form
     {
-        private const int WM_NCLBUTTONDOWN = 0xA1;
-        private const int HT_CAPTION = 0x2;
-
         [DllImport("user32.dll")]
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
-        
+
         private activity homeManagerControl;
         private about aboutControl;
-        private report reportControl;
-        private discountform discountControl;
-        private productform productControl;
-        private stackLevelform stackLevelControl;
-        private dailyactivityform dailyActivityControl;
 
         bool dashboardExpnd = false;
         bool settingsExpnd = false;
@@ -40,25 +32,16 @@ namespace App
         public Manager_Home()
         {
             InitializeComponent();
-            
-            
+
             this.Size = new Size(1200, 600);
             this.ClientSize = new Size(1200, 600);
-
-           
             this.StartPosition = FormStartPosition.CenterScreen;
-            
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            
-   
+
             SetupWindowControls();
-
-       
             CenterWelcomeMessage();
+            HideAllControls();
 
-  
             homeManagerControl = new activity();
             aboutControl = new about();
 
@@ -68,41 +51,38 @@ namespace App
             homeManagerControl.Visible = true;
             aboutControl.Visible = false;
         }
-      
+
         private void SetupWindowControls()
         {
-            // Set up cross button
             crossbtn.Text = "X";
             crossbtn.ForeColor = Color.Red;
-            crossbtn.FlatStyle = FlatStyle.Flat;
-            crossbtn.FlatAppearance.BorderSize = 0;
-            crossbtn.Anchor = AnchorStyles.Right | AnchorStyles.Top;
-            crossbtn.Click += crossbtn_Click;
-            
-            // Disable minimize button
+         
             minimizebtn.Visible = false;
             minimizebtn.Enabled = false;
-            
-            // Disable fullscreen button
+
             fullscreenbtn.Visible = false;
             fullscreenbtn.Enabled = false;
         }
 
+        private void crossbtn_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void HideAllControls()
+        {
+            foreach (Control control in featurePanel.Controls)
+            {
+                control.Visible = false;
+            }
+        }
+
         private void Manager_Home_Load(object sender, EventArgs e)
         {
-            // Initialize the UI when the manager home form loads
-            IsMdiContainer = true;  // Ensure this form can host MDI child forms
-            
-            // Force the form to be centered on screen
+            IsMdiContainer = true;
             this.CenterToScreen();
-            
-            // Prevent the form from being moved after loading
-            this.ControlBox = false; // Hide the control box completely
-            
-            // Center the welcome message on form load
+            this.ControlBox = false;
             CenterWelcomeMessage();
-            
-            // Make sure feature container has correct initial state
+
             if (featureExpnd)
             {
                 featureContainer.Width = 165;
@@ -111,50 +91,35 @@ namespace App
             {
                 featureContainer.Width = 60;
             }
-            
-            // Apply all visual settings after load
+
             this.Update();
         }
 
-        // Method to center the welcome message in the top panel
         private void CenterWelcomeMessage()
         {
-            // Calculate the center point of the top panel
             int centerX = (pnltop.Width - welcomemsg.Width) / 2;
-            
-            // Ensure we don't position it off-screen
             if (centerX < 0) centerX = 0;
-            
-            // Set the welcome message location
             welcomemsg.Location = new Point(centerX, welcomemsg.Location.Y);
         }
 
-        // Override the resize event to keep welcome message centered
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            
-            // Apply after base resize to ensure accurate measurements
-            if (IsHandleCreated) // Prevent issues during initialization
+            if (IsHandleCreated)
             {
-                // Use BeginInvoke to ensure UI is ready for measurement
-                this.BeginInvoke(new Action(() => 
+                this.BeginInvoke(new Action(() =>
                 {
                     CenterWelcomeMessage();
                 }));
             }
         }
 
-        // Override the SizeChanged event to recenter welcome message when form size changes
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
-            
-            // Apply after base resize to ensure accurate measurements
-            if (IsHandleCreated) // Prevent issues during initialization
+            if (IsHandleCreated)
             {
-                // Use BeginInvoke to ensure UI is ready for measurement
-                this.BeginInvoke(new Action(() => 
+                this.BeginInvoke(new Action(() =>
                 {
                     CenterWelcomeMessage();
                 }));
@@ -163,10 +128,10 @@ namespace App
 
         private void dashboardtimer_Tick(object sender, EventArgs e)
         {
-            if(dashboardExpnd == false)
+            if (dashboardExpnd == false)
             {
                 dashboardContainer.Height += 5;
-                if(dashboardContainer.Height >= 145)
+                if (dashboardContainer.Height >= 145)
                 {
                     dashboardExpnd = true;
                     dashboardtimer.Stop();
@@ -175,14 +140,14 @@ namespace App
             else
             {
                 dashboardContainer.Height -= 5;
-                if(dashboardContainer.Height <= 45)
+                if (dashboardContainer.Height <= 45)
                 {
                     dashboardExpnd = false;
                     dashboardtimer.Stop();
                 }
             }
         }
-        
+
         private void settingstime_Tick(object sender, EventArgs e)
         {
             if (settingsExpnd == false)
@@ -204,7 +169,7 @@ namespace App
                 }
             }
         }
-        
+
         private void membertimer_Tick(object sender, EventArgs e)
         {
             if (memberExpnd == false)
@@ -226,7 +191,7 @@ namespace App
                 }
             }
         }
-        
+
         private void producttimer_Tick(object sender, EventArgs e)
         {
             if (productExpnd == false)
@@ -248,7 +213,7 @@ namespace App
                 }
             }
         }
-        
+
         private void featureContainertimer_Tick(object sender, EventArgs e)
         {
             if (featureExpnd == false)
@@ -259,7 +224,7 @@ namespace App
                     featureExpnd = true;
                     featureContainertimer.Stop();
 
-                    this.BeginInvoke(new Action(() => 
+                    this.BeginInvoke(new Action(() =>
                     {
                         CenterWelcomeMessage();
                     }));
@@ -272,10 +237,8 @@ namespace App
                 {
                     featureExpnd = false;
                     featureContainertimer.Stop();
-                    
                     CloseAllPanels();
-                    
-                    this.BeginInvoke(new Action(() => 
+                    this.BeginInvoke(new Action(() =>
                     {
                         CenterWelcomeMessage();
                     }));
@@ -283,67 +246,42 @@ namespace App
             }
             CenterWelcomeMessage();
         }
-        private void HideAllControls()
-        {
-            foreach (Control control in featurePanel.Controls)
-            {
-                control.Visible = false;
-            }
-        }
+
+      
 
         private void menubtn_Click(object sender, EventArgs e)
         {
             featureContainertimer.Start();
         }
+
         private void btnmenu_Click(object sender, EventArgs e)
         {
             featureContainertimer.Start();
         }
 
-        private void featureContainer_Paint(object sender, PaintEventArgs e)
-        {
-            // Custom painting for the feature container if needed
-        }
-
-        private void settingsContainer_Paint(object sender, PaintEventArgs e)
-        {
-            // Custom painting for the settings container if needed
-        }
-
-        // For Designer compatibility
-        private void featureload_Paint(object sender, PaintEventArgs e)
-        {
-            // This empty handler is required by the Designer
-        }
-
-        // Helper method to close all panels
         private void CloseAllPanels()
         {
-            // Close dashboard if it's open
             if (dashboardExpnd)
             {
                 dashboardContainer.Height = 49;
                 dashboardExpnd = false;
                 dashboardtimer.Stop();
             }
-            
-            // Close settings if it's open
+
             if (settingsExpnd)
             {
                 settingsContainer.Height = 40;
                 settingsExpnd = false;
                 settingstime.Stop();
             }
-            
-            // Close members if it's open
+
             if (memberExpnd)
             {
                 membersContainer.Height = 40;
                 memberExpnd = false;
                 membertimer.Stop();
             }
-            
-            // Close products if it's open
+
             if (productExpnd)
             {
                 productContainer.Height = 40;
@@ -352,99 +290,61 @@ namespace App
             }
         }
 
-        // Helper method to expand the menu if it's collapsed
         private void EnsureMenuExpanded()
         {
             if (!featureExpnd)
             {
-                // Expand the menu first
                 featureContainer.Width = 165;
                 featureExpnd = true;
-                
-                // Re-center welcome message after the feature container expands
                 CenterWelcomeMessage();
             }
         }
 
         private void dashbtn_Click(object sender, EventArgs e)
         {
-            // First ensure the menu is expanded
             EnsureMenuExpanded();
-            
-            // If dashboard is already open, just close it
             if (dashboardExpnd)
             {
                 dashboardtimer.Start();
                 return;
             }
-            
-            // Close all panels first
             CloseAllPanels();
-            
-            // Now open dashboard
             dashboardtimer.Start();
         }
-        
+
         private void memberbtn_Click(object sender, EventArgs e)
         {
-            // First ensure the menu is expanded
             EnsureMenuExpanded();
-            
-            // If members is already open, just close it
             if (memberExpnd)
             {
                 membertimer.Start();
                 return;
             }
-            
-            // Close all panels first
             CloseAllPanels();
-            
-            // Now open members
             membertimer.Start();
-        }
-        private void crossbtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void probtn_Click(object sender, EventArgs e)
         {
-            // First ensure the menu is expanded
             EnsureMenuExpanded();
-            
-            // If products is already open, just close it
             if (productExpnd)
             {
                 producttimer.Start();
                 return;
             }
-            
-            // Close all panels first
             CloseAllPanels();
-            
-            // Now open products
             producttimer.Start();
-
-            
         }
 
         private void settingsbtn_Click(object sender, EventArgs e)
         {
-            
             EnsureMenuExpanded();
-            
-            // If settings is already open, just close it
             if (settingsExpnd)
             {
                 settingstime.Start();
                 return;
             }
-            
-            // Close all panels first
             CloseAllPanels();
-            
-            // Now open settings
             settingstime.Start();
         }
 
@@ -453,14 +353,13 @@ namespace App
             HideAllControls();
             report1.Visible = true;
         }
-        
+
         private void discountbtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
             discountform1.Visible = true;
         }
 
-        //stack level button
         private void productbtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
@@ -471,15 +370,12 @@ namespace App
         {
             HideAllControls();
             staffinformationManager.Visible = true;
-
         }
 
-        // Tarmination Button
         private void button2_Click(object sender, EventArgs e)
         {
             HideAllControls();
             managerTarmination.Visible = true;
-
         }
 
         private void registerbtn_Click(object sender, EventArgs e)
@@ -488,13 +384,12 @@ namespace App
             newRegistrationEmployeesManager.Visible = true;
         }
 
-        //ABOUT BUTTON
         private void aboutbtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
             aboutControl.Visible = true;
         }
-        
+
         private void activitybtn_Click(object sender, EventArgs e)
         {
             HideAllControls();
@@ -506,45 +401,29 @@ namespace App
             this.Close();
         }
 
-    
-
         private void logoutbtn_Click(object sender, EventArgs e)
         {
             this.Close();
             DialogResult result = MessageBox.Show("Are you sure you want to Logout?",
-                                                      "Confirm",
-                                                      MessageBoxButtons.YesNo,
-                                                      MessageBoxIcon.Question);
+                                                  "Confirm",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 this.Close();
-
             }
         }
 
-        // Empty method implementations to fix designer references
-        private void pnltop_Paint(object sender, PaintEventArgs e)
-        {
-            // nothing
-        }
-        
-        private void pnltop_MouseDown(object sender, MouseEventArgs e)
-        {
-            //nothing
-        }
-        private void welcomemsg_Click(object sender, EventArgs e)
-        {
-            //nothing
-        }
-        private void minimizebtn_Click_1(object sender, EventArgs e)
-        {
-            //nothing
-        }
-        private void minimizebtn_Click(object sender, EventArgs e)
-        {
-            //nothing
-        }
+        private void pnltop_Paint(object sender, PaintEventArgs e) { }
+        private void pnltop_MouseDown(object sender, MouseEventArgs e) { }
+        private void welcomemsg_Click(object sender, EventArgs e) { }
+        private void minimizebtn_Click_1(object sender, EventArgs e) { }
+        private void minimizebtn_Click(object sender, EventArgs e) { }
+        private void featureContainer_Paint(object sender, PaintEventArgs e) { }
+        private void settingsContainer_Paint(object sender, PaintEventArgs e) { }
+        private void featureload_Paint(object sender, PaintEventArgs e) { }
 
+     
     }
 }

@@ -59,6 +59,8 @@ namespace App.UI_Forms.Manager.User_Control_Form
             informationEmployeeDataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             informationEmployeeDataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
 
+            fun1.Visible = false;
+            fun2.Visible = false;
         }
         private int CalculateAge(DateTime birthDate)
         {
@@ -140,7 +142,14 @@ namespace App.UI_Forms.Manager.User_Control_Form
         }
 
         private void staffinformationPanel_Paint(object sender, PaintEventArgs e) { }
-
+        private void updatebtn_MouseEnter(object sender, EventArgs e)
+        {
+            fun1.Visible = true;
+        }
+        private void updatebtn_MouseLeave(object sender, EventArgs e)
+        {
+            fun1.Visible = false;
+        }
         private void updatebtn_Click(object sender, EventArgs e)
         {
             try
@@ -188,7 +197,14 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 MessageBox.Show("Error updating employee: " + ex.Message);
             }
         }
-
+        private void tarminationbtn_MouseEnter(object sender, EventArgs e)
+        {
+            fun2.Visible = true;
+        }
+        private void tarminationbtn_MouseLeave(object sender, EventArgs e)
+        {
+            fun2.Visible = false;
+        }
         private void tarminationbtn_Click(object sender, EventArgs e)
         {
             try

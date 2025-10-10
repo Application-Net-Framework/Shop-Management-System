@@ -18,77 +18,42 @@ namespace App.UI_Forms.SalesMan
         String connectionString = GlobalConfig.ConnectionString;
         private void InsertPreOrder()
         {
-            // Validate Product ID
+            
             if (!int.TryParse(pIdTxt.Text.Trim(), out int productId) || productId <= 0)
-            {
-                MessageBox.Show("Enter a valid Product ID (positive integer).");
-                return;
-            }
+            {   MessageBox.Show("Enter a valid Product ID (positive integer)."); return; }
 
-            // Validate Product Name
             string productName = pNameTxt.Text.Trim();
             if (string.IsNullOrEmpty(productName))
-            {
-                MessageBox.Show("Enter product name.");
-                return;
-            }
+            { MessageBox.Show("Enter product name."); return;}
 
-            // Validate Quantity
             if (!int.TryParse(pQuantityTxt.Text.Trim(), out int quantity) || quantity <= 0)
-            {
-                MessageBox.Show("Enter a valid quantity (positive integer).");
-                return;
-            }
+            { MessageBox.Show("Enter a valid quantity (positive integer)."); return; }
 
-            // Validate Customer ID
             if (!int.TryParse(cIdTxt.Text.Trim(), out int customerId) || customerId <= 0)
-            {
-                MessageBox.Show("Enter a valid Customer ID (positive integer).");
-                return;
-            }
+            { MessageBox.Show("Enter a valid Customer ID (positive integer).");return;}
 
-            // Validate Customer Name
             string customerName = cNameTxt.Text.Trim();
             if (string.IsNullOrEmpty(customerName))
-            {
-                MessageBox.Show("Enter customer name.");
-                return;
-            }
-
-            // Validate Customer Mobile
+            { MessageBox.Show("Enter customer name.");return;}
+            
             string mobile = cMobileTxt.Text.Trim();
-            if (string.IsNullOrEmpty(mobile))
-            {
-                MessageBox.Show("Enter customer mobile.");
-                return;
-            }
+            if (string.IsNullOrEmpty(mobile))  {MessageBox.Show("Enter customer mobile.");  return;  }
             if (mobile.Length < 11 || !mobile.All(char.IsDigit))
-            {
-                MessageBox.Show("Mobile number must be at least 11 digits and numeric.");
-                return;
-            }
-
-            // Validate Preferred Date
+            {  MessageBox.Show("Mobile number must be at least 11 digits and numeric."); return;}
+            
             DateTime preferredDate = preferedDateTxt.Value.Date;
             if (preferredDate < DateTime.Today)
-            {
-                MessageBox.Show("Preferred date cannot be before today.");
-                return;
-            }
-
-            // Build SQL (non-parameterized as requested)
+            {MessageBox.Show("Preferred date cannot be before today.");return;}
             string sql = "INSERT INTO PreOrder (PreOrderProductID, ProductName, Quantity, CustomerID, CustomerName, CustomerMobile, PreferredDate) " +
                          "VALUES (" + productId + ", '" + productName + "', " + quantity + ", " + customerId + ", '" + customerName + "', '" + mobile + "', '" + preferredDate.ToString("yyyy-MM-dd") + "')";
 
             try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    SqlCommand cmd = new SqlCommand(sql, con);
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                }
-                MessageBox.Show("Pre-order submitted successfully.");
+                 SqlConnection con = new SqlConnection(connectionString);
+                 SqlCommand cmd = new SqlCommand(sql, con);
+                 con.Open();
+                 cmd.ExecuteNonQuery();
+                 MessageBox.Show("Pre-order submitted successfully.");
             }
             catch (SqlException ex)
             {
@@ -176,9 +141,7 @@ namespace App.UI_Forms.SalesMan
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
-            }
-
-            // show result in same grid
+            }           
             productGrid.DataSource = dt;
 
         }
@@ -195,12 +158,8 @@ namespace App.UI_Forms.SalesMan
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
             }
-
-            // Bind the result to productGrid
             productGrid.DataSource = dt;
-
         }
-
         private void searchBtn_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -215,13 +174,8 @@ namespace App.UI_Forms.SalesMan
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
             }
-
-            // show result in same grid
-            customerGrid.DataSource = dt;
-
-
+             customerGrid.DataSource = dt;
         }
-
         private void customerListBtn_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -235,25 +189,20 @@ namespace App.UI_Forms.SalesMan
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
             }
-
-            // Bind to customerGrid
             customerGrid.DataSource = dt;
         }
-
         private void productGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             pIdTxt.Text = productGrid.Rows[e.RowIndex].Cells["PreOrderProductID"].Value.ToString();
             pNameTxt.Text = productGrid.Rows[e.RowIndex].Cells["ProductName"].Value.ToString();
             pQuantityTxt.Text= productGrid.Rows[e.RowIndex].Cells["StockQuantity"].Value.ToString();
         }
-
         private void customerGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             cIdTxt.Text = customerGrid.Rows[e.RowIndex].Cells["CustomerID"].Value.ToString();
             cNameTxt.Text = customerGrid.Rows[e.RowIndex].Cells["Name"].Value.ToString();
             cMobileTxt.Text = customerGrid.Rows[e.RowIndex].Cells["Phone"].Value.ToString();
         }
-
         private void addCustomerBtn_Click(object sender, EventArgs e)
         {
             CustomerManagement CM = new CustomerManagement();

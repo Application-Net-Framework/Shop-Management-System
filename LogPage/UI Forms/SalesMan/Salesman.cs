@@ -20,7 +20,6 @@ namespace App
         public Salesman()
         {   InitializeComponent();
         }
-
         private void LoadLowStockProducts()
         {
             string query = @"SELECT ProductID, ProductName, Stock 

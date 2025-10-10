@@ -46,6 +46,7 @@
             this.supplyRequestBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.welcomeLbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lowStockGrid)).BeginInit();
@@ -193,7 +194,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(660, 177);
+            this.label2.Location = new System.Drawing.Point(660, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(181, 25);
             this.label2.TabIndex = 2;
@@ -244,7 +245,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(283, 177);
+            this.label3.Location = new System.Drawing.Point(283, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(190, 25);
             this.label3.TabIndex = 16;
@@ -262,12 +263,26 @@
             this.welcomeLbl.Size = new System.Drawing.Size(0, 25);
             this.welcomeLbl.TabIndex = 17;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(662, 187);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(169, 15);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "List of products under 5 units";
+            // 
             // Salesman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.welcomeLbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.supplyRequestBtn);
@@ -311,5 +326,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button preOrderBtn;
         private System.Windows.Forms.Label welcomeLbl;
+        private System.Windows.Forms.Label label4;
     }
 }

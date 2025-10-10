@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newRegistrationEmployees));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.registrationNewEmployeePanel = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.managerAmountlb = new System.Windows.Forms.Label();
@@ -55,6 +55,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.totallb = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.registrationNewEmployeePanel.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -69,10 +73,14 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // registrationNewEmployeePanel
             // 
+            this.registrationNewEmployeePanel.Controls.Add(this.panel19);
+            this.registrationNewEmployeePanel.Controls.Add(this.panel20);
             this.registrationNewEmployeePanel.Controls.Add(this.panel8);
             this.registrationNewEmployeePanel.Controls.Add(this.panel5);
             this.registrationNewEmployeePanel.Controls.Add(this.panel6);
@@ -88,6 +96,7 @@
             this.registrationNewEmployeePanel.Name = "registrationNewEmployeePanel";
             this.registrationNewEmployeePanel.Size = new System.Drawing.Size(1100, 600);
             this.registrationNewEmployeePanel.TabIndex = 0;
+            this.registrationNewEmployeePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.registrationNewEmployeePanel_Paint);
             // 
             // panel8
             // 
@@ -138,7 +147,7 @@
             this.panel5.Controls.Add(this.salemanLb);
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(716, 312);
+            this.panel5.Location = new System.Drawing.Point(716, 326);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(141, 91);
             this.panel5.TabIndex = 97;
@@ -189,7 +198,7 @@
             this.panel6.Controls.Add(this.cashierEmpLb);
             this.panel6.Controls.Add(this.pictureBox3);
             this.panel6.Controls.Add(this.label7);
-            this.panel6.Location = new System.Drawing.Point(716, 200);
+            this.panel6.Location = new System.Drawing.Point(716, 227);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(141, 91);
             this.panel6.TabIndex = 96;
@@ -289,10 +298,10 @@
             this.NewEmployee.RowHeadersVisible = false;
             this.NewEmployee.RowHeadersWidth = 51;
             this.NewEmployee.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.NewEmployee.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.NewEmployee.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.NewEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.NewEmployee.Size = new System.Drawing.Size(603, 280);
             this.NewEmployee.TabIndex = 92;
@@ -351,6 +360,48 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.White;
+            this.panel19.Controls.Add(this.totallb);
+            this.panel19.Location = new System.Drawing.Point(772, 193);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(85, 30);
+            this.panel19.TabIndex = 100;
+            // 
+            // totallb
+            // 
+            this.totallb.AutoSize = true;
+            this.totallb.BackColor = System.Drawing.Color.White;
+            this.totallb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totallb.ForeColor = System.Drawing.Color.Black;
+            this.totallb.Location = new System.Drawing.Point(29, 5);
+            this.totallb.Name = "totallb";
+            this.totallb.Size = new System.Drawing.Size(27, 20);
+            this.totallb.TabIndex = 51;
+            this.totallb.Text = "tlb";
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel20.Controls.Add(this.label1);
+            this.panel20.Location = new System.Drawing.Point(716, 193);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(60, 30);
+            this.panel20.TabIndex = 99;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(5, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Total";
+            // 
             // newRegistrationEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +429,10 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -409,5 +464,9 @@
         private System.Windows.Forms.Label cashierEmpLb;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Label totallb;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Label label1;
     }
 }

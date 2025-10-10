@@ -18,7 +18,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public string totalSalesman;
         public string totalNewEmployee;
 
-        public string connectionString = "Data Source=DESKTOP-FGUJCMU\\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;TrustServerCertificate=True";
+        public string connectionString = "Data Source=DESKTOP-FGUJCMU\\SQLEXPRESS;Initial Catalog=GoribArShop;Integrated Security=True;TrustServerCertificate=True";
         public newRegistrationEmployees()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
             cashierEmpLb.Text = totalCashier;
             managerAmountlb.Text = totalManager;
             salemanLb.Text = totalSalesman;
-            // totalNewEmployeelb.Text = totalNewEmployee;
+            totallb.Text = totalNewEmployee;
 
         }
         public void DataGridviewDesign()
@@ -42,9 +42,9 @@ namespace App.UI_Forms.Manager.User_Control_Form
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string ManagerCounter = "SELECT COUNT(*) FROM EMPLOYEE WHERE ROLE = 'Manager'";
-                    string CashierCounter = "SELECT COUNT(*) FROM EMPLOYEE WHERE ROLE = 'Cashier'";
-                    string SalesmanCounter = "SELECT COUNT(*) FROM EMPLOYEE WHERE ROLE = 'SalesMan'";
+                    string ManagerCounter = "SELECT COUNT(*) FROM EMPLOYEES WHERE ROLE = 'Manager' AND PHONENUMBER IS NULL";
+                    string CashierCounter = "SELECT COUNT(*) FROM EMPLOYEES WHERE ROLE = 'Cashier' AND PHONENUMBER IS NULL";
+                    string SalesmanCounter = "SELECT COUNT(*) FROM EMPLOYEES WHERE ROLE = 'SalesMan' AND PHONENUMBER IS NULL";
 
                     connection.Open();
                     SqlCommand commandManager = new SqlCommand(ManagerCounter, connection);
@@ -89,7 +89,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 {
                     conn.Open();
 
-                    string query = "SELECT * FROM EMPLOYEE WHERE PHONENUMBER IS NULL OR EMAIL IS NULL";
+                    string query = "SELECT UserID,Email,UserName,Role,Gender FROM EMPLOYEES WHERE PhoneNumber IS NULL";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -127,7 +127,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 {
                     conn.Open();
 
-                    string query = "SELECT * FROM Employee WHERE AccountStatus = 'active' AND (CAST(userID AS NVARCHAR) LIKE @Search OR userName LIKE @Search)";
+                    string query = "SELECT * FROM Employees WHERE AccountStatus = 'active' AND (CAST(userID AS NVARCHAR) LIKE @Search OR userName LIKE @Search)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -159,6 +159,11 @@ namespace App.UI_Forms.Manager.User_Control_Form
         {
             LoadDatabse();
             LoadMemberCount();
+        }
+
+        private void registrationNewEmployeePanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

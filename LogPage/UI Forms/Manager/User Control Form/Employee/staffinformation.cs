@@ -278,8 +278,8 @@ namespace App.UI_Forms.Manager.User_Control_Form
             genderLb.Text = "";
             QulifiShow.Text = "";
             agelb.Text = "";
-            
-            
+
+            LoadUI();
             SaleManPicturebox.Visible = false;
             cashierpicturebox.Visible = false;
             demopicturebox.Visible = true;

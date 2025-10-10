@@ -21,11 +21,11 @@ namespace App.UI_Forms.SalesMan
 
         private void SearchCustomer()
         {
-            string searchMobile = searchMobileTxt.Text.Trim();
-            if (string.IsNullOrEmpty(searchMobile))
+            string searchPhone = searchMobileTxt.Text.Trim();
+            if (string.IsNullOrEmpty(searchPhone))
             { MessageBox.Show("Please enter a mobile number."); return; }
             SqlConnection con = new SqlConnection(connectionString);
-            string query = "SELECT CustomerID, Name, Mobile FROM Customer WHERE Mobile LIKE '" + searchMobile + "%'";
+            string query = "SELECT CustomerID, Name, Phone FROM Customer WHERE Mobile LIKE '" + searchPhone + "%'";
             SqlCommand cmd = new SqlCommand(query, con);
             try
             {
@@ -204,6 +204,13 @@ namespace App.UI_Forms.SalesMan
                 else { MessageBox.Show("No matching feedback record found."); }
             }
             catch (SqlException ex) { MessageBox.Show("Error while updating response: " + ex.Message); }
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            LogPage login = new LogPage();
+            login.Show();
+            this.Close();
         }
     }
 }

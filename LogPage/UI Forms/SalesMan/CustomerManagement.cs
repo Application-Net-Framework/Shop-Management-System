@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using App.Configuration;
 
 namespace App.UI_Forms.SalesMan
+
 {
     public partial class CustomerManagement : Form
     {
@@ -33,7 +34,7 @@ namespace App.UI_Forms.SalesMan
             {
                 SqlConnection con = new SqlConnection(connectionString);
                 con.Open();                
-                string checkMobileQuery = $"SELECT COUNT(*) FROM Customer WHERE Mobile = '{mobile}'";
+                string checkMobileQuery = $"SELECT COUNT(*) FROM Customer WHERE Phone = '{mobile}'";
                 SqlCommand checkMobileCmd = new SqlCommand(checkMobileQuery, con);
                 int mobileCount = (int)checkMobileCmd.ExecuteScalar();
                 if (mobileCount > 0) { MessageBox.Show("This mobile number is already registered."); return; }
@@ -45,7 +46,7 @@ namespace App.UI_Forms.SalesMan
                     if (emailCount > 0)
                     { MessageBox.Show("This email already exists with a mobile number."); return;}
                 }
-                string query = $"INSERT INTO Customer (Name, Mobile, Email, MembershipType) " +
+                string query = $"INSERT INTO Customer (Name, Phone, Email, MembershipType) " +
                                $"VALUES ('{name}', '{mobile}', '{(string.IsNullOrEmpty(email) ? "NULL" : email)}', '{status}')";
                 SqlCommand cmd = new SqlCommand(query, con);
                 int rows = cmd.ExecuteNonQuery();
@@ -61,7 +62,7 @@ namespace App.UI_Forms.SalesMan
             {
                 SqlConnection con = new SqlConnection(connectionString);                
                 con.Open();
-                string query = "SELECT CustomerID, Name, Mobile, Email, MembershipType FROM Customer ORDER BY CustomerID DESC";
+                string query = "SELECT CustomerID, Name, Phone, Email, MembershipType FROM Customer ORDER BY CustomerID DESC";
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -129,7 +130,7 @@ namespace App.UI_Forms.SalesMan
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {  idTxt.Text = dataGridView1.CurrentRow.Cells["CustomerID"].Value.ToString();
             nameTxt.Text = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
-            mobileTxt.Text = dataGridView1.CurrentRow.Cells["Mobile"].Value.ToString();
+            mobileTxt.Text = dataGridView1.CurrentRow.Cells["Phone"].Value.ToString();
             emailTxt.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
             statusTxt.Text = dataGridView1.CurrentRow.Cells["MembershipType"].Value.ToString();
         }
@@ -149,12 +150,12 @@ namespace App.UI_Forms.SalesMan
 
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string checkQuery = $"SELECT COUNT(*) FROM Customer WHERE (Mobile='{mobile}' OR Email='{email}') AND CustomerID<>{customerId}";
+            string checkQuery = $"SELECT COUNT(*) FROM Customer WHERE (Phone='{mobile}' OR Email='{email}') AND CustomerID<>{customerId}";
             SqlCommand checkCmd = new SqlCommand(checkQuery, con);
             int count = Convert.ToInt32(checkCmd.ExecuteScalar());
             if (count > 0)
             {MessageBox.Show("Another customer already exists with this mobile or email."); con.Close(); return;}
-            string updateQuery = $"UPDATE Customer SET Name='{name}', Mobile='{mobile}', Email='{email}', MembershipType='{status}' WHERE CustomerID={customerId}";
+            string updateQuery = $"UPDATE Customer SET Name='{name}', Phone='{mobile}', Email='{email}', MembershipType='{status}' WHERE CustomerID={customerId}";
             SqlCommand updateCmd = new SqlCommand(updateQuery, con);
             int rows = updateCmd.ExecuteNonQuery();
 

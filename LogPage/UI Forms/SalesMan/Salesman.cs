@@ -23,9 +23,9 @@ namespace App
 
         private void LoadLowStockProducts()
         {
-            string query = @"SELECT ProductID, ProductName, Quantity 
-                           FROM Stock 
-                           WHERE Quantity < 5";
+            string query = @"SELECT ProductID, ProductName, Stock 
+                           FROM Product 
+                           WHERE Stock < 5";
             SqlConnection con = new SqlConnection(connectionString);
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
@@ -38,7 +38,7 @@ namespace App
         {
             string query = @"SELECT SR.RequestID, SR.ProductID, S.ProductName, SR.RequestedQuantity, SR.RequestDate
             FROM SupplierRequest SR
-            INNER JOIN dbo.Stock S ON SR.ProductID = S.ProductID
+            INNER JOIN dbo.Product S ON SR.ProductID = S.ProductID
             ORDER BY SR.RequestDate DESC";
             SqlConnection con = new SqlConnection(connectionString);
             SqlDataAdapter da = new SqlDataAdapter(query, con);

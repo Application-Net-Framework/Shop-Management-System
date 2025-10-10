@@ -21,8 +21,8 @@ namespace App
           //  Application.Run(new Manager_Home());
             // Application.Run(new Registration_Admin());
             // Application.Run(new Login_Admin());
-             Application.Run(new Salesman());
-            // Application.Run(new App.LogPage());
+            // Application.Run(new Salesman());
+             Application.Run(new App.LogPage());
         }
     }
 }

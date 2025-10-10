@@ -100,7 +100,11 @@ namespace App.UI_Forms.SalesMan
             this.Hide();
         }
         private void logoutBtn_Click(object sender, EventArgs e)
-        {   LogPage login = new LogPage();
+        {
+            LogPage login = new LogPage();
+            login.StartPosition = FormStartPosition.Manual;
+            login.Location = this.Location;
+            login.Size = this.Size;
             login.Show();
             this.Close();
         }

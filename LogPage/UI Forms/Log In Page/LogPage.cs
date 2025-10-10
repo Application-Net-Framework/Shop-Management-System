@@ -1,4 +1,6 @@
-﻿using System;
+﻿using App.Configuration;
+using App.UI_Forms.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +12,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.HtmlControls;
 using System.Windows.Forms;
-using App.UI_Forms.Admin;
 
 namespace App
 {    public partial class LogPage : Form
@@ -19,81 +20,82 @@ namespace App
         {
             InitializeComponent();
         }
+        //Arif
+        String connectionString = GlobalConfig.ConnectionString;
 
-        string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
-        
+        // string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
         private void login()
         {
             string email = emailTxt.Text.Trim();
             string password = passTxt.Text.Trim();
+
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
-            { MessageBox.Show("Please enter both Email and Password."); return; }
-
-            
-            using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = @"SELECT UserID, UserName, Role 
-                                 FROM Employees 
-                                 WHERE Email = @Email AND Password = @Password";
+                MessageBox.Show("Please enter both Email and Password.");
+                return;
+            }
 
-                using (SqlCommand cmd = new SqlCommand(query, con))
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+
+            string query = "SELECT UserID, UserName, Role FROM Employees WHERE Email = '" + email + "' AND Password = '" + password + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adp.Fill(ds);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                DataTable dt = ds.Tables[0];
+                DataRow row = dt.Rows[0];
+
+                int userId = Convert.ToInt32(row["UserID"]);
+                string userName = row["UserName"].ToString();
+                string role = row["Role"].ToString();
+
+                MessageBox.Show("Login Successful! Welcome " + userName);
+
+                Form nextForm = null;
+
+                if (role == "Admin")
                 {
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Password", password);
-
-                    try
-                    {
-                        con.Open();
-                        SqlDataReader reader = cmd.ExecuteReader();
-
-                        if (reader.Read())
-                        {
-                            int userId = Convert.ToInt32(reader["UserID"]);
-                            string userName = reader["UserName"].ToString();
-                            string role = reader["Role"].ToString();
-
-                            MessageBox.Show("Login Successful! Welcome " + userName);
-                                                        
-                            Form nextForm = null;
-                            if (role == "Admin")  { nextForm = new App.UI_Forms.Admin.Admin_Main_Home(); }
-                            
-                            else if (role == "Manager")
-                            nextForm = new Manager_Home();
-                            // nextForm = new Manager_Home(userId, userName);
-                            // else if (role == "Cashier")
-                            // {
-                            //     nextForm = new Cashier();
-                            //nextForm = new Cashier(userId, userName);
-                            //}
-                            else if (role == "Salesman")
-                                nextForm = new Salesman();
-                            //nextForm = new Salesman(userId, userName);
-                            else
-                            {
-                                MessageBox.Show("Role not recognized. Contact admin.");
-                                return;
-                            }
-
-                            nextForm.StartPosition = FormStartPosition.Manual;
-                            nextForm.Location = this.Location;
-                            nextForm.Size = this.Size;
-
-                            nextForm.Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid Email or Password.");
-                        }
-                        reader.Close();
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show("Database error: " + ex.Message);
-                    }
+                    nextForm = new App.UI_Forms.Admin.Admin_Main_Home();
                 }
+                else if (role == "Manager")
+                {
+                    nextForm = new Manager_Home();
+                }
+              /*  else if (role == "Cashier")
+                {
+                    nextForm = new Cashier();
+                }
+              */
+                else if (role == "Salesman")
+                {
+                    nextForm = new Salesman();
+                }
+                else
+                {
+                    MessageBox.Show("Role not recognized. Contact admin.");
+                    con.Close();
+                    return;
+                }
+
+                con.Close();
+
+                nextForm.StartPosition = FormStartPosition.Manual;
+                nextForm.Location = this.Location;
+                nextForm.Size = this.Size;
+
+                nextForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Email or Password.");
+                con.Close();
             }
         }
 
@@ -106,6 +108,9 @@ namespace App
         private void registerBtn_Click(object sender, EventArgs e)
         {
             Registration homeForm = new Registration();
+            homeForm.StartPosition = FormStartPosition.Manual;
+            homeForm.Location = this.Location;
+            homeForm.Size = this.Size;
             homeForm.Show();
             this.Hide();
         }
@@ -114,53 +119,21 @@ namespace App
         {
 
             ForgetPass homeForm = new ForgetPass();
+            homeForm.StartPosition = FormStartPosition.Manual;
+            homeForm.Location = this.Location;
+            homeForm.Size = this.Size;
             homeForm.Show();
             this.Hide();
         }
 
-        private void uNameTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uNameBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void passBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void passTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void messageTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void welcomeTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void uNameTxt_TextChanged(object sender, EventArgs e){  }
+        private void uNameBtn_Click(object sender, EventArgs e) {  }
+        private void textBox1_TextChanged(object sender, EventArgs e) {  }
+        private void textBox1_TextChanged_1(object sender, EventArgs e)  {  }
+        private void panel1_Paint(object sender, PaintEventArgs e) { }   
+        private void passBtn_Click(object sender, EventArgs e)  {  }
+        private void passTxt_TextChanged(object sender, EventArgs e) { }
+        private void messageTxt_TextChanged(object sender, EventArgs e) { }
+        private void welcomeTxt_TextChanged(object sender, EventArgs e) { }
     }
 }

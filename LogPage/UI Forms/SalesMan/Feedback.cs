@@ -25,7 +25,7 @@ namespace App.UI_Forms.SalesMan
             if (string.IsNullOrEmpty(searchPhone))
             { MessageBox.Show("Please enter a mobile number."); return; }
             SqlConnection con = new SqlConnection(connectionString);
-            string query = "SELECT CustomerID, Name, Phone FROM Customer WHERE Mobile LIKE '" + searchPhone + "%'";
+            string query = "SELECT CustomerID, Name, Phone FROM Customer WHERE Phone LIKE '" + searchPhone + "%'";
             SqlCommand cmd = new SqlCommand(query, con);
             try
             {
@@ -165,7 +165,7 @@ namespace App.UI_Forms.SalesMan
         {
             idTxt.Text = dataGridView1.CurrentRow.Cells["CustomerID"].Value.ToString();
             nameTxt.Text = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
-            mobileTxt.Text = dataGridView1.CurrentRow.Cells["Mobile"].Value.ToString();
+            mobileTxt.Text = dataGridView1.CurrentRow.Cells["Phone"].Value.ToString();
         }
 
         private void feedbackDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)

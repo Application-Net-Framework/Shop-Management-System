@@ -169,6 +169,7 @@ namespace App.UI_Forms.Cashier
             {
                 DataGridViewRow row = dgvRecentOrders_home.Rows[e.RowIndex];
                 orderid = Convert.ToInt32(row.Cells["OrderID"].Value);
+                txtOrderId.Text = " " + orderid.ToString() + " ";
             }
             else
             {

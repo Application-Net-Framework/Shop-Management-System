@@ -20,6 +20,7 @@ namespace App
     {
         int RowID = -1;
         static int orderid = -1;
+        private string cashierName;
         readonly string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         //string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         public mainCashier()
@@ -36,6 +37,26 @@ namespace App
             //pnlHome.Visible = true;
             ucPnl_Home1.Visible = true;
         }
+        public mainCashier(string name)
+        {
+            InitializeComponent();
+            cashierName = name;
+            PanleVisible();
+            ucPnl_Home1.Visible = true;
+        }
+
+        private void PositionLabels()
+        {
+            // Center lblWelcome horizontally in pnlWelcome
+            lblWelcome.Left = (pnlWelcome.Width - lblWelcome.Width) / 2;
+            lblWelcome.Top = (pnlWelcome.Height - lblWelcome.Height) / 2;
+
+            // Place lblTimer at the right edge with small padding
+            lblTimer.Left = pnlWelcome.Width - lblTimer.Width - 10;
+            lblTimer.Top = (pnlWelcome.Height - lblTimer.Height) / 2;
+        }
+
+
 
         private void Cashier_Load(object sender, EventArgs e)
         {
@@ -45,7 +66,18 @@ namespace App
                 (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                 (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             //totalPriceAfterDiscount();
-            lblTimer.Text = DateTime.Now.ToString("dddd, MMM dd yyyy HH:mm:ss");
+            //lblTimer.Text = DateTime.Now.ToString("dddd, MMM dd yyyy HH:mm:ss");
+            //lblTimer.Text = DateTime.Now.ToString("dddd, MMM dd yyyy hh:mm:ss tt");
+            //PositionLabels();
+            lblWelcome.Text = "Welcome, " + cashierName + "!";
+            Timer timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += (s, ev) =>
+            {
+                lblTimer.Text = DateTime.Now.ToString("dddd, MMM dd yyyy hh:mm:ss tt");
+                PositionLabels(); // Recenter after text width changes
+            };
+            timer.Start();
         }
         private void PanleVisible()
         {
@@ -66,7 +98,6 @@ namespace App
             switch (panelName)
             {
                 case "Home":
-                    lblWelcome.Location = new Point(361, 5);
                     pnlWelcome.Size = new Size(904, 32);
                     this.ClientSize = new Size(952, 602);
 
@@ -77,7 +108,6 @@ namespace App
                     break;
 
                 case "Product":
-                    lblWelcome.Location = new Point(481, 5);
                     pnlWelcome.Size = new Size(1140, 32);
                     this.ClientSize = new Size(1183, 602);
                     ucPnl_Product1.clear();
@@ -89,7 +119,6 @@ namespace App
                     break;
 
                 case "Orders":
-                    lblWelcome.Location = new Point(361, 5);
                     pnlWelcome.Size = new Size(904, 32);
                     this.ClientSize = new Size(952, 602);
                     ucPnl_Order1.RefreshData();
@@ -98,14 +127,11 @@ namespace App
                     ucPnl_Order1.Visible = true;
                     break;
 
-                case "Profile":
-                    lblWelcome.Location = new Point(361, 5);
-                    pnlWelcome.Size = new Size(904, 32);
-                    this.ClientSize = new Size(952, 602);
-                    PanleVisible();
-                    pnlProfile.Visible = false;
-                    ucPnl_Home1.Visible = true;
-                    ucPnl_Order1.Visible= true;
+                case "Logout":
+                    this.Hide();
+                    LogPage loginForm = new LogPage();
+                    loginForm.ShowDialog();
+                    this.Close();
                     break;
             }
         }
@@ -124,9 +150,9 @@ namespace App
             ShowPanel("Orders");
         }
 
-        private void btnProfile_Click(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-            ShowPanel("Profile");
+            ShowPanel("Logout");
         }
 
         private void btnProduct_MouseMove(object sender, MouseEventArgs e)
@@ -165,17 +191,9 @@ namespace App
             btnOrder.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
-        private void btnProfile_MouseLeave(object sender, EventArgs e)
+        private void pnlWelcome_Resize(object sender, EventArgs e)
         {
-            btnProfile.BackColor = Color.FromArgb(255, 255, 255);
-            btnProfile.ForeColor = Color.FromArgb(0, 0, 0);
+            PositionLabels();
         }
-
-        private void btnProfile_MouseMove(object sender, MouseEventArgs e)
-        {
-            btnProfile.BackColor = Color.FromArgb(25, 112, 255);
-            btnProfile.ForeColor = Color.FromArgb(255, 255, 255);
-        }
-
     }
 }

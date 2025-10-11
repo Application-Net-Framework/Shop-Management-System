@@ -16,6 +16,7 @@ using System.Windows.Forms;
 namespace App
 {    public partial class LogPage : Form
     {
+
         public LogPage()
         {
             InitializeComponent();
@@ -67,11 +68,12 @@ namespace App
                 {
                     nextForm = new Manager_Home();
                 }
-              /*  else if (role == "Cashier")
+                else if (role == "Cashier")
                 {
-                    nextForm = new Cashier();
+                    nextForm = new mainCashier();
+                    mainCashier cashierForm = new mainCashier(userName);
                 }
-              */
+              
                 else if (role == "Salesman")
                 {
                     nextForm = new Salesman();

@@ -71,6 +71,8 @@ namespace App.UI_Forms.Cashier
             dgvOrderDetails_order.DataSource = null; // clear details grid
             dgvOrderDetails_order.Visible = false; // clear details grid
             lblProductDetails_order.Visible = false;
+            lblOrderId.Visible = false;
+            txtOrderId.Visible = false;
             txtSearch_order.Clear();
             orderid = -1;
         }
@@ -97,6 +99,9 @@ namespace App.UI_Forms.Cashier
                 dgvOrderDetails_order.Visible = true;
                 lblProductDetails_order.Visible = true;
                 orderid = orderId;
+                txtOrderId.Text = " "+orderid.ToString()+ " ";
+                lblOrderId.Visible = true;
+                txtOrderId.Visible = true;
             }
             else
             {

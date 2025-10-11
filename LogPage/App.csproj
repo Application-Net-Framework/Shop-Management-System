@@ -131,6 +131,12 @@
     <Compile Include="UI Forms\Application Starting Logo\SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Forms\Cashier\Tools.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Cashier\Tools.Designer.cs">
+      <DependentUpon>Tools.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Forms\GlobalConfig.cs" />
     <Compile Include="UI Forms\Cashier\ucPnl_Home.cs">
       <SubType>UserControl</SubType>
@@ -273,11 +279,6 @@
     <Compile Include="UI Forms\SalesMan\Salesman.Designer.cs">
       <DependentUpon>Salesman.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cashier_Return.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Cashier_Return.resx</DependentUpon>
-    </Compile>
     <Compile Include="UI Forms\Forget Password\ChangePassConfirm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Cashier\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Cashier\Tools.resx">
+      <DependentUpon>Tools.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Cashier\ucPnl_Home.resx">
       <DependentUpon>ucPnl_Home.cs</DependentUpon>
@@ -472,11 +476,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Admin\Registration_Admin.resx">
       <DependentUpon>Registration_Admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cashier_Return.resx">
-      <DependentUpon>Cashier_Return.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Cashier_Return.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\Cashier\Cashier.resx">
       <DependentUpon>Cashier.cs</DependentUpon>

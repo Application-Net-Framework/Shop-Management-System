@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -64,7 +65,8 @@
             this.lblDiscount = new System.Windows.Forms.Label();
             this.lblNetAmount = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlProductDetails_product = new System.Windows.Forms.Panel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnlCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
@@ -602,13 +604,18 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // panel1
+            // pnlProductDetails_product
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(556, 524);
-            this.panel1.TabIndex = 10;
+            this.pnlProductDetails_product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.pnlProductDetails_product.Location = new System.Drawing.Point(0, 0);
+            this.pnlProductDetails_product.Name = "pnlProductDetails_product";
+            this.pnlProductDetails_product.Size = new System.Drawing.Size(556, 524);
+            this.pnlProductDetails_product.TabIndex = 10;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 10;
+            this.guna2Elipse1.TargetControl = this.pnlProductDetails_product;
             // 
             // ucPnl_Product
             // 
@@ -622,7 +629,7 @@
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlProductDetails_product);
             this.Name = "ucPnl_Product";
             this.Size = new System.Drawing.Size(917, 524);
             this.Load += new System.EventHandler(this.ucPnl_Product_Load);
@@ -669,6 +676,7 @@
         private System.Windows.Forms.Label lblDiscount;
         private System.Windows.Forms.Label lblNetAmount;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlProductDetails_product;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

@@ -1,4 +1,4 @@
-﻿using App.Configuration;
+﻿//using App.Configuration;
 using App.UI_Forms.Admin;
 using App.UI_Forms.SalesMan;
 using System;
@@ -22,11 +22,8 @@ namespace App
         {
             InitializeComponent();
         }
-        //Arif
-        String connectionString = GlobalConfig.ConnectionString;
-
-
-        // string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+       
+        string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";               
 
         private void login()
         {

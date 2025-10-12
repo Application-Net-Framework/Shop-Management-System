@@ -30,16 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.sidePnl = new System.Windows.Forms.Panel();
-            this.Profile = new System.Windows.Forms.Button();
-            this.preOrderBtn = new System.Windows.Forms.Button();
-            this.cManagementBtn = new System.Windows.Forms.Button();
-            this.pQueryBtn = new System.Windows.Forms.Button();
-            this.feedbackBtn = new System.Windows.Forms.Button();
-            this.logoutBtn = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lowStockGrid = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.supplierRequestBtn = new System.Windows.Forms.Button();
@@ -49,8 +42,14 @@
             this.welcomeLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Profile = new System.Windows.Forms.Button();
+            this.preOrderBtn = new System.Windows.Forms.Button();
+            this.cManagementBtn = new System.Windows.Forms.Button();
+            this.pQueryBtn = new System.Windows.Forms.Button();
+            this.feedbackBtn = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.sidePnl.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lowStockGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierRequestGrid)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +68,151 @@
             this.sidePnl.Name = "sidePnl";
             this.sidePnl.Size = new System.Drawing.Size(154, 561);
             this.sidePnl.TabIndex = 0;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Azure;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(432, 143);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(227, 32);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "SALESMAN HOME ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lowStockGrid
+            // 
+            this.lowStockGrid.BackgroundColor = System.Drawing.Color.Azure;
+            this.lowStockGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lowStockGrid.GridColor = System.Drawing.Color.BurlyWood;
+            this.lowStockGrid.Location = new System.Drawing.Point(587, 289);
+            this.lowStockGrid.Name = "lowStockGrid";
+            this.lowStockGrid.RowHeadersWidth = 82;
+            this.lowStockGrid.Size = new System.Drawing.Size(339, 205);
+            this.lowStockGrid.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(663, 232);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(181, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Low Stock Product";
+            // 
+            // supplierRequestBtn
+            // 
+            this.supplierRequestBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.supplierRequestBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supplierRequestBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.supplierRequestBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.supplierRequestBtn.Location = new System.Drawing.Point(643, 500);
+            this.supplierRequestBtn.Name = "supplierRequestBtn";
+            this.supplierRequestBtn.Size = new System.Drawing.Size(212, 37);
+            this.supplierRequestBtn.TabIndex = 13;
+            this.supplierRequestBtn.Text = "Recommend for Supply";
+            this.supplierRequestBtn.UseVisualStyleBackColor = false;
+            this.supplierRequestBtn.Click += new System.EventHandler(this.supplierRequestBtn_Click_1);
+            // 
+            // supplierRequestGrid
+            // 
+            this.supplierRequestGrid.BackgroundColor = System.Drawing.Color.Azure;
+            this.supplierRequestGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.supplierRequestGrid.GridColor = System.Drawing.Color.BurlyWood;
+            this.supplierRequestGrid.Location = new System.Drawing.Point(212, 289);
+            this.supplierRequestGrid.Name = "supplierRequestGrid";
+            this.supplierRequestGrid.RowHeadersWidth = 82;
+            this.supplierRequestGrid.Size = new System.Drawing.Size(339, 205);
+            this.supplierRequestGrid.TabIndex = 14;
+            // 
+            // supplyRequestBtn
+            // 
+            this.supplyRequestBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.supplyRequestBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supplyRequestBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.supplyRequestBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.supplyRequestBtn.Location = new System.Drawing.Point(298, 500);
+            this.supplyRequestBtn.Name = "supplyRequestBtn";
+            this.supplyRequestBtn.Size = new System.Drawing.Size(152, 37);
+            this.supplyRequestBtn.TabIndex = 15;
+            this.supplyRequestBtn.Text = "See Supply Request";
+            this.supplyRequestBtn.UseVisualStyleBackColor = false;
+            this.supplyRequestBtn.Click += new System.EventHandler(this.supplyRequestBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(293, 245);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(190, 25);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Requested Products";
+            // 
+            // welcomeLbl
+            // 
+            this.welcomeLbl.AutoSize = true;
+            this.welcomeLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.welcomeLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.welcomeLbl.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.welcomeLbl.Location = new System.Drawing.Point(225, 84);
+            this.welcomeLbl.Name = "welcomeLbl";
+            this.welcomeLbl.Size = new System.Drawing.Size(0, 25);
+            this.welcomeLbl.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(665, 270);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(169, 15);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "List of products under 5 units";
+            // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLabel.Location = new System.Drawing.Point(446, 187);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(25, 24);
+            this.welcomeLabel.TabIndex = 20;
+            this.welcomeLabel.Text = ":::";
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::App.Properties.Resources.WhatsApp_Image_2025_10_11_at_21_09_19_11811b36;
+            this.panel2.Location = new System.Drawing.Point(153, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(832, 140);
+            this.panel2.TabIndex = 21;
             // 
             // Profile
             // 
@@ -160,158 +304,14 @@
             this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // imageList2
-            // 
-            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Azure;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(291, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "SALESMAN HOME ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Azure;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(153, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(832, 53);
-            this.panel1.TabIndex = 2;
-            // 
-            // lowStockGrid
-            // 
-            this.lowStockGrid.BackgroundColor = System.Drawing.Color.Azure;
-            this.lowStockGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lowStockGrid.GridColor = System.Drawing.Color.BurlyWood;
-            this.lowStockGrid.Location = new System.Drawing.Point(582, 204);
-            this.lowStockGrid.Name = "lowStockGrid";
-            this.lowStockGrid.RowHeadersWidth = 82;
-            this.lowStockGrid.Size = new System.Drawing.Size(339, 205);
-            this.lowStockGrid.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(660, 149);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Low Stock Product";
-            // 
-            // supplierRequestBtn
-            // 
-            this.supplierRequestBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.supplierRequestBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplierRequestBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.supplierRequestBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.supplierRequestBtn.Location = new System.Drawing.Point(643, 411);
-            this.supplierRequestBtn.Name = "supplierRequestBtn";
-            this.supplierRequestBtn.Size = new System.Drawing.Size(212, 37);
-            this.supplierRequestBtn.TabIndex = 13;
-            this.supplierRequestBtn.Text = "Recommend for Supply";
-            this.supplierRequestBtn.UseVisualStyleBackColor = false;
-            this.supplierRequestBtn.Click += new System.EventHandler(this.supplierRequestBtn_Click_1);
-            // 
-            // supplierRequestGrid
-            // 
-            this.supplierRequestGrid.BackgroundColor = System.Drawing.Color.Azure;
-            this.supplierRequestGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.supplierRequestGrid.GridColor = System.Drawing.Color.BurlyWood;
-            this.supplierRequestGrid.Location = new System.Drawing.Point(217, 204);
-            this.supplierRequestGrid.Name = "supplierRequestGrid";
-            this.supplierRequestGrid.RowHeadersWidth = 82;
-            this.supplierRequestGrid.Size = new System.Drawing.Size(339, 205);
-            this.supplierRequestGrid.TabIndex = 14;
-            // 
-            // supplyRequestBtn
-            // 
-            this.supplyRequestBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.supplyRequestBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplyRequestBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.supplyRequestBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.supplyRequestBtn.Location = new System.Drawing.Point(300, 415);
-            this.supplyRequestBtn.Name = "supplyRequestBtn";
-            this.supplyRequestBtn.Size = new System.Drawing.Size(152, 37);
-            this.supplyRequestBtn.TabIndex = 15;
-            this.supplyRequestBtn.Text = "See Supply Request";
-            this.supplyRequestBtn.UseVisualStyleBackColor = false;
-            this.supplyRequestBtn.Click += new System.EventHandler(this.supplyRequestBtn_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(283, 149);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 25);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Requested Products";
-            // 
-            // welcomeLbl
-            // 
-            this.welcomeLbl.AutoSize = true;
-            this.welcomeLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.welcomeLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.welcomeLbl.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.welcomeLbl.Location = new System.Drawing.Point(225, 84);
-            this.welcomeLbl.Name = "welcomeLbl";
-            this.welcomeLbl.Size = new System.Drawing.Size(0, 25);
-            this.welcomeLbl.TabIndex = 17;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(662, 187);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 15);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "List of products under 5 units";
-            // 
-            // welcomeLabel
-            // 
-            this.welcomeLabel.AutoSize = true;
-            this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeLabel.Location = new System.Drawing.Point(471, 72);
-            this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(25, 24);
-            this.welcomeLabel.TabIndex = 20;
-            this.welcomeLabel.Text = ":::";
-            // 
             // Salesman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.welcomeLbl);
@@ -321,7 +321,6 @@
             this.Controls.Add(this.supplierRequestBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lowStockGrid);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidePnl);
             this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
@@ -330,8 +329,6 @@
             this.Text = "Salesman";
             this.Load += new System.EventHandler(this.Cashier_Home_Load);
             this.sidePnl.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lowStockGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierRequestGrid)).EndInit();
             this.ResumeLayout(false);
@@ -349,7 +346,6 @@
         private System.Windows.Forms.Button cManagementBtn;
         private System.Windows.Forms.Button pQueryBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView lowStockGrid;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button supplierRequestBtn;
@@ -361,5 +357,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Button Profile;
+        private System.Windows.Forms.Panel panel2;
     }
 }

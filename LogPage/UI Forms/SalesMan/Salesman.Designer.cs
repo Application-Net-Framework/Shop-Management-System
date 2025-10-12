@@ -66,7 +66,7 @@
             this.sidePnl.Controls.Add(this.logoutBtn);
             this.sidePnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePnl.Location = new System.Drawing.Point(0, 0);
-            this.sidePnl.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.sidePnl.Margin = new System.Windows.Forms.Padding(6);
             this.sidePnl.Name = "sidePnl";
             this.sidePnl.Size = new System.Drawing.Size(308, 1017);
             this.sidePnl.TabIndex = 0;
@@ -79,7 +79,7 @@
             this.Profile.Image = global::App.Properties.Resources.user;
             this.Profile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Profile.Location = new System.Drawing.Point(24, 360);
-            this.Profile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Profile.Margin = new System.Windows.Forms.Padding(6);
             this.Profile.Name = "Profile";
             this.Profile.Size = new System.Drawing.Size(270, 71);
             this.Profile.TabIndex = 23;
@@ -95,7 +95,7 @@
             this.preOrderBtn.Image = global::App.Properties.Resources.cart;
             this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.preOrderBtn.Location = new System.Drawing.Point(24, 279);
-            this.preOrderBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.preOrderBtn.Margin = new System.Windows.Forms.Padding(6);
             this.preOrderBtn.Name = "preOrderBtn";
             this.preOrderBtn.Size = new System.Drawing.Size(270, 71);
             this.preOrderBtn.TabIndex = 22;
@@ -111,7 +111,7 @@
             this.cManagementBtn.Image = global::App.Properties.Resources.user1;
             this.cManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cManagementBtn.Location = new System.Drawing.Point(24, 196);
-            this.cManagementBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cManagementBtn.Margin = new System.Windows.Forms.Padding(6);
             this.cManagementBtn.Name = "cManagementBtn";
             this.cManagementBtn.Size = new System.Drawing.Size(270, 71);
             this.cManagementBtn.TabIndex = 12;
@@ -127,7 +127,7 @@
             this.pQueryBtn.Image = global::App.Properties.Resources.product1;
             this.pQueryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.pQueryBtn.Location = new System.Drawing.Point(24, 113);
-            this.pQueryBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pQueryBtn.Margin = new System.Windows.Forms.Padding(6);
             this.pQueryBtn.Name = "pQueryBtn";
             this.pQueryBtn.Size = new System.Drawing.Size(270, 71);
             this.pQueryBtn.TabIndex = 11;
@@ -143,7 +143,7 @@
             this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
             this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.feedbackBtn.Location = new System.Drawing.Point(24, 31);
-            this.feedbackBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.feedbackBtn.Margin = new System.Windows.Forms.Padding(6);
             this.feedbackBtn.Name = "feedbackBtn";
             this.feedbackBtn.Size = new System.Drawing.Size(270, 71);
             this.feedbackBtn.TabIndex = 10;
@@ -159,7 +159,7 @@
             this.logoutBtn.Image = global::App.Properties.Resources.logout;
             this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutBtn.Location = new System.Drawing.Point(24, 908);
-            this.logoutBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.logoutBtn.Margin = new System.Windows.Forms.Padding(6);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(270, 71);
             this.logoutBtn.TabIndex = 8;
@@ -199,7 +199,7 @@
             this.panel1.BackColor = System.Drawing.Color.Azure;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(306, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1664, 102);
             this.panel1.TabIndex = 2;
@@ -210,7 +210,7 @@
             this.lowStockGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lowStockGrid.GridColor = System.Drawing.Color.BurlyWood;
             this.lowStockGrid.Location = new System.Drawing.Point(1164, 392);
-            this.lowStockGrid.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lowStockGrid.Margin = new System.Windows.Forms.Padding(6);
             this.lowStockGrid.Name = "lowStockGrid";
             this.lowStockGrid.RowHeadersWidth = 82;
             this.lowStockGrid.Size = new System.Drawing.Size(678, 394);
@@ -237,7 +237,7 @@
             this.supplierRequestBtn.ForeColor = System.Drawing.Color.Transparent;
             this.supplierRequestBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.supplierRequestBtn.Location = new System.Drawing.Point(1286, 790);
-            this.supplierRequestBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.supplierRequestBtn.Margin = new System.Windows.Forms.Padding(6);
             this.supplierRequestBtn.Name = "supplierRequestBtn";
             this.supplierRequestBtn.Size = new System.Drawing.Size(424, 71);
             this.supplierRequestBtn.TabIndex = 13;
@@ -251,7 +251,7 @@
             this.supplierRequestGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.supplierRequestGrid.GridColor = System.Drawing.Color.BurlyWood;
             this.supplierRequestGrid.Location = new System.Drawing.Point(434, 392);
-            this.supplierRequestGrid.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.supplierRequestGrid.Margin = new System.Windows.Forms.Padding(6);
             this.supplierRequestGrid.Name = "supplierRequestGrid";
             this.supplierRequestGrid.RowHeadersWidth = 82;
             this.supplierRequestGrid.Size = new System.Drawing.Size(678, 394);
@@ -264,7 +264,7 @@
             this.supplyRequestBtn.ForeColor = System.Drawing.Color.Transparent;
             this.supplyRequestBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.supplyRequestBtn.Location = new System.Drawing.Point(600, 798);
-            this.supplyRequestBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.supplyRequestBtn.Margin = new System.Windows.Forms.Padding(6);
             this.supplyRequestBtn.Name = "supplyRequestBtn";
             this.supplyRequestBtn.Size = new System.Drawing.Size(304, 71);
             this.supplyRequestBtn.TabIndex = 15;
@@ -341,10 +341,11 @@
             this.Controls.Add(this.lowStockGrid);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidePnl);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximumSize = new System.Drawing.Size(1974, 1088);
             this.MinimumSize = new System.Drawing.Size(1974, 1088);
             this.Name = "Salesman";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salesman";
             this.Load += new System.EventHandler(this.Cashier_Home_Load);
             this.sidePnl.ResumeLayout(false);

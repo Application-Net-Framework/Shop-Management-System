@@ -134,7 +134,7 @@ namespace App.UI_Forms.SalesMan
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT PreOrderProductID, ProductName, Category, Description, UnitPrice, StockQuantity " +
+                string query = "SELECT PreOrderProductID, ProductName, Category, Description, UnitPriceDescription " +
                                "FROM PreOrderProduct " +
                                "WHERE ProductName LIKE '%" + pSearchTxt.Text + "%'";
 
@@ -151,7 +151,7 @@ namespace App.UI_Forms.SalesMan
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT PreOrderProductID, ProductName, Category, Description, UnitPrice, StockQuantity " +
+                string query = "SELECT PreOrderProductID, ProductName, Category, Description, UnitPrice " +
                                "FROM PreOrderProduct ORDER BY ProductName ASC";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -195,7 +195,7 @@ namespace App.UI_Forms.SalesMan
         {
             pIdTxt.Text = productGrid.Rows[e.RowIndex].Cells["PreOrderProductID"].Value.ToString();
             pNameTxt.Text = productGrid.Rows[e.RowIndex].Cells["ProductName"].Value.ToString();
-            pQuantityTxt.Text= productGrid.Rows[e.RowIndex].Cells["StockQuantity"].Value.ToString();
+            
         }
         private void customerGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -45,6 +45,7 @@
             // 
             this.logBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.logBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logBtn.ForeColor = System.Drawing.Color.White;
             this.logBtn.Location = new System.Drawing.Point(195, 258);
@@ -59,6 +60,7 @@
             // 
             this.registerBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerBtn.ForeColor = System.Drawing.Color.White;
             this.registerBtn.Location = new System.Drawing.Point(140, 328);
@@ -113,7 +115,7 @@
             this.panel1.Controls.Add(this.emailTxt);
             this.panel1.Controls.Add(this.logBtn);
             this.panel1.Controls.Add(this.passTxt);
-            this.panel1.Location = new System.Drawing.Point(502, 175);
+            this.panel1.Location = new System.Drawing.Point(251, 72);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(497, 392);
             this.panel1.TabIndex = 10;
@@ -154,10 +156,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.ClientSize = new System.Drawing.Size(973, 548);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(1200, 600);
-            this.MinimumSize = new System.Drawing.Size(1200, 600);
             this.Name = "LogPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogPage";

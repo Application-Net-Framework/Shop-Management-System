@@ -22,9 +22,10 @@ namespace App
         public LogPage()
         {
             InitializeComponent();
-            this.Size = new Size(1200, 600);
-            this.ClientSize = new Size(1200, 600);
-            this.StartPosition = FormStartPosition.CenterScreen;
+            //this.MaximizeBox = false;
+            //this.Size = new Size(1200, 600);
+            //this.ClientSize = new Size(1200, 600);
+            //this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
        

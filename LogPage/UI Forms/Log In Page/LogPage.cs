@@ -21,6 +21,10 @@ namespace App
         public LogPage()
         {
             InitializeComponent();
+            this.Size = new Size(1200, 600);
+            this.ClientSize = new Size(1200, 600);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         //Arif
         String connectionString = GlobalConfig.ConnectionString;
@@ -141,5 +145,10 @@ namespace App
         private void passTxt_TextChanged(object sender, EventArgs e) { }
         private void messageTxt_TextChanged(object sender, EventArgs e) { }
         private void welcomeTxt_TextChanged(object sender, EventArgs e) { }
+
+        private void LogPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

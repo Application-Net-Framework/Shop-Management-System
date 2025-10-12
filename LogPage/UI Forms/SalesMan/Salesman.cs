@@ -60,9 +60,7 @@ namespace App
         private void homeBtn_Click(object sender, EventArgs e)
         {
             Salesman h = new Salesman();
-            h.StartPosition = FormStartPosition.Manual;
-            h.Location = this.Location;
-            h.Size = this.Size;
+          
             h.Show();
             this.Hide();
         }
@@ -73,9 +71,7 @@ namespace App
             Session.EmployeeName = null;
 
             LogPage login = new LogPage();
-            login.StartPosition = FormStartPosition.Manual;
-            login.Location = this.Location;
-            login.Size = this.Size;
+           
             login.Show();
             this.Close();
         }
@@ -89,26 +85,20 @@ namespace App
         private void label1_Click(object sender, EventArgs e) { }
         private void feedbackBtn_Click(object sender, EventArgs e)
         {   Feedback f = new Feedback();
-            f.StartPosition = FormStartPosition.Manual;
-            f.Location = this.Location;
-            f.Size = this.Size;
+           
             f.Show();
             this.Hide();
         }
         private void pQueryBtn_Click(object sender, EventArgs e)
         {   ProductQuery PQ = new ProductQuery();
-            PQ.StartPosition = FormStartPosition.Manual;
-            PQ.Location = this.Location;
-            PQ.Size = this.Size;
+            
             PQ.Show();
             this.Hide();
         }
 
         private void cManagementBtn_Click(object sender, EventArgs e)
         {   CustomerManagement CM = new CustomerManagement();
-            CM.StartPosition = FormStartPosition.Manual;
-            CM.Location = this.Location;
-            CM.Size = this.Size;
+           
             CM.Show();
             this.Hide();
         }
@@ -135,9 +125,7 @@ namespace App
         private void supplyRequestBtn_Click(object sender, EventArgs e) { LoadSupplierRequests(); }
         private void preOrderBtn_Click(object sender, EventArgs e)
         {   PreOrder PO = new PreOrder();
-            PO.StartPosition = FormStartPosition.Manual;
-            PO.Location = this.Location;
-            PO.Size = this.Size;
+          
             PO.Show();
             this.Hide();
         }
@@ -145,9 +133,7 @@ namespace App
         private void Profile_Click(object sender, EventArgs e)
         {
             Profile profileForm = new Profile();
-            profileForm.StartPosition = FormStartPosition.Manual;
-            profileForm.Location = this.Location;
-            profileForm.Size = this.Size;
+            
             profileForm.Show();
             this.Hide();
 

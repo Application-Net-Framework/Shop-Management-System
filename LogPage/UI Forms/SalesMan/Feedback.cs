@@ -108,30 +108,21 @@ namespace App.UI_Forms.SalesMan
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
-            Salesman S = new Salesman ();
-            S.StartPosition = FormStartPosition.Manual;
-            S.Location = this.Location;
-            S.Size = this.Size;
+            Salesman S = new Salesman();            
             S.Show();
             this.Hide();
         }
 
         private void pQueryBtn_Click(object sender, EventArgs e)
         {
-            ProductQuery PQ = new ProductQuery();
-            PQ.StartPosition = FormStartPosition.Manual;
-            PQ.Location = this.Location;
-            PQ.Size = this.Size;
+            ProductQuery PQ = new ProductQuery();           
             PQ.Show();
             this.Hide();
         }
 
         private void cManagementBtn_Click(object sender, EventArgs e)
         {
-            CustomerManagement CM = new CustomerManagement();
-            CM.StartPosition = FormStartPosition.Manual;
-            CM.Location = this.Location;
-            CM.Size = this.Size;
+            CustomerManagement CM = new CustomerManagement();           
             CM.Show();
             this.Hide();
         }
@@ -141,10 +132,7 @@ namespace App.UI_Forms.SalesMan
 
         private void preOrderBtn_Click(object sender, EventArgs e)
         {
-            PreOrder PO = new PreOrder();
-            PO.StartPosition = FormStartPosition.Manual;
-            PO.Location = this.Location;
-            PO.Size = this.Size;
+            PreOrder PO = new PreOrder();         
             PO.Show();
             this.Hide();
         }
@@ -154,10 +142,7 @@ namespace App.UI_Forms.SalesMan
 
         private void addCustomerBtn_Click(object sender, EventArgs e)
         {
-            CustomerManagement CM = new CustomerManagement();
-            CM.StartPosition = FormStartPosition.Manual;
-            CM.Location = this.Location;
-            CM.Size = this.Size;
+            CustomerManagement CM = new CustomerManagement();           
             CM.Show();
             this.Hide();
         }
@@ -209,10 +194,10 @@ namespace App.UI_Forms.SalesMan
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
+            Session.EmployeeId = 0;
+            Session.EmployeeName = null;
             LogPage login = new LogPage();
-            login.StartPosition = FormStartPosition.Manual;
-            login.Location = this.Location;
-            login.Size = this.Size;
+            
             login.Show();
             this.Close();
         }

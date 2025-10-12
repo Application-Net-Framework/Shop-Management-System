@@ -52,36 +52,28 @@ namespace App.UI_Forms.SalesMan
         private void homeBtn_Click(object sender, EventArgs e)
         {
             Salesman S = new Salesman();
-            S.StartPosition = FormStartPosition.Manual;
-            S.Location = this.Location;
-            S.Size = this.Size;
+          
             S.Show();
             this.Hide();
         }
         private void feedbackBtn_Click(object sender, EventArgs e)
         {
             Feedback f = new Feedback();
-            f.StartPosition = FormStartPosition.Manual;
-            f.Location = this.Location;
-            f.Size = this.Size;
+           
             f.Show();
             this.Hide();
         }
         private void cManagementBtn_Click(object sender, EventArgs e)
         {
             CustomerManagement CM = new CustomerManagement();
-            CM.StartPosition = FormStartPosition.Manual;
-            CM.Location = this.Location;
-            CM.Size = this.Size;
+           
             CM.Show();
             this.Hide();
         }
         private void preOrderBtn_Click(object sender, EventArgs e)
         {
             PreOrder PO = new PreOrder();
-            PO.StartPosition = FormStartPosition.Manual;
-            PO.Location = this.Location;
-            PO.Size = this.Size;
+           
             PO.Show();
             this.Hide();
         }
@@ -92,10 +84,10 @@ namespace App.UI_Forms.SalesMan
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
+            Session.EmployeeId = 0;
+            Session.EmployeeName = null;
             LogPage login = new LogPage();
-            login.StartPosition = FormStartPosition.Manual;
-            login.Location = this.Location;
-            login.Size = this.Size;
+           
             login.Show();
             this.Close();
         }

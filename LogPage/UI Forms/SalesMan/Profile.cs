@@ -120,9 +120,7 @@ namespace App.UI_Forms.SalesMan
         private void backBtn_Click(object sender, EventArgs e)
         {
             Salesman s = new Salesman();
-            s.StartPosition = FormStartPosition.Manual;
-            s.Location = this.Location;
-            s.Size = this.Size;
+           
             s.Show();
             this.Hide();
         }

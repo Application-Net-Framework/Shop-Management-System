@@ -59,9 +59,8 @@
             this.sidePnl.Controls.Add(this.logoutBtn);
             this.sidePnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePnl.Location = new System.Drawing.Point(0, 0);
-            this.sidePnl.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.sidePnl.Name = "sidePnl";
-            this.sidePnl.Size = new System.Drawing.Size(308, 1017);
+            this.sidePnl.Size = new System.Drawing.Size(154, 561);
             this.sidePnl.TabIndex = 2;
             // 
             // preOrderBtn
@@ -71,10 +70,9 @@
             this.preOrderBtn.ForeColor = System.Drawing.Color.Transparent;
             this.preOrderBtn.Image = global::App.Properties.Resources.cart;
             this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.preOrderBtn.Location = new System.Drawing.Point(24, 279);
-            this.preOrderBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.preOrderBtn.Location = new System.Drawing.Point(12, 145);
             this.preOrderBtn.Name = "preOrderBtn";
-            this.preOrderBtn.Size = new System.Drawing.Size(270, 71);
+            this.preOrderBtn.Size = new System.Drawing.Size(135, 37);
             this.preOrderBtn.TabIndex = 22;
             this.preOrderBtn.Text = "Pre-Order";
             this.preOrderBtn.UseVisualStyleBackColor = false;
@@ -87,10 +85,9 @@
             this.cManagementBtn.ForeColor = System.Drawing.Color.Transparent;
             this.cManagementBtn.Image = global::App.Properties.Resources.user1;
             this.cManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cManagementBtn.Location = new System.Drawing.Point(24, 196);
-            this.cManagementBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cManagementBtn.Location = new System.Drawing.Point(12, 102);
             this.cManagementBtn.Name = "cManagementBtn";
-            this.cManagementBtn.Size = new System.Drawing.Size(270, 71);
+            this.cManagementBtn.Size = new System.Drawing.Size(135, 37);
             this.cManagementBtn.TabIndex = 12;
             this.cManagementBtn.Text = "CUSTOMER";
             this.cManagementBtn.UseVisualStyleBackColor = false;
@@ -103,10 +100,9 @@
             this.homeBtn.ForeColor = System.Drawing.Color.Transparent;
             this.homeBtn.Image = global::App.Properties.Resources.home1;
             this.homeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.homeBtn.Location = new System.Drawing.Point(24, 31);
-            this.homeBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.homeBtn.Location = new System.Drawing.Point(12, 16);
             this.homeBtn.Name = "homeBtn";
-            this.homeBtn.Size = new System.Drawing.Size(270, 71);
+            this.homeBtn.Size = new System.Drawing.Size(135, 37);
             this.homeBtn.TabIndex = 0;
             this.homeBtn.Text = "Home";
             this.homeBtn.UseVisualStyleBackColor = false;
@@ -119,10 +115,9 @@
             this.feedbackBtn.ForeColor = System.Drawing.Color.Transparent;
             this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
             this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.feedbackBtn.Location = new System.Drawing.Point(24, 113);
-            this.feedbackBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.feedbackBtn.Location = new System.Drawing.Point(12, 59);
             this.feedbackBtn.Name = "feedbackBtn";
-            this.feedbackBtn.Size = new System.Drawing.Size(270, 71);
+            this.feedbackBtn.Size = new System.Drawing.Size(135, 37);
             this.feedbackBtn.TabIndex = 10;
             this.feedbackBtn.Text = "FEEDBACK";
             this.feedbackBtn.UseVisualStyleBackColor = false;
@@ -135,10 +130,9 @@
             this.logoutBtn.ForeColor = System.Drawing.Color.Transparent;
             this.logoutBtn.Image = global::App.Properties.Resources.logout;
             this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutBtn.Location = new System.Drawing.Point(24, 908);
-            this.logoutBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.logoutBtn.Location = new System.Drawing.Point(12, 472);
             this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(270, 71);
+            this.logoutBtn.Size = new System.Drawing.Size(135, 37);
             this.logoutBtn.TabIndex = 8;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = false;
@@ -148,10 +142,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Azure;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(306, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Location = new System.Drawing.Point(153, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1658, 102);
+            this.panel1.Size = new System.Drawing.Size(829, 53);
             this.panel1.TabIndex = 5;
             // 
             // label1
@@ -161,10 +154,9 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(490, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(245, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(422, 65);
+            this.label1.Size = new System.Drawing.Size(213, 32);
             this.label1.TabIndex = 13;
             this.label1.Text = "PRODUCT QUERY";
             // 
@@ -174,20 +166,18 @@
             this.label3.BackColor = System.Drawing.Color.Azure;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(34, 63);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(17, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(286, 36);
+            this.label3.Size = new System.Drawing.Size(144, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Search Product Name ";
             // 
             // nameTxt
             // 
             this.nameTxt.BackColor = System.Drawing.Color.White;
-            this.nameTxt.Location = new System.Drawing.Point(40, 106);
-            this.nameTxt.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nameTxt.Location = new System.Drawing.Point(20, 55);
             this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(536, 31);
+            this.nameTxt.Size = new System.Drawing.Size(270, 20);
             this.nameTxt.TabIndex = 8;
             // 
             // searchBtn
@@ -195,10 +185,9 @@
             this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.searchBtn.Location = new System.Drawing.Point(614, 102);
-            this.searchBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.searchBtn.Location = new System.Drawing.Point(307, 53);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(172, 44);
+            this.searchBtn.Size = new System.Drawing.Size(86, 23);
             this.searchBtn.TabIndex = 17;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = false;
@@ -208,11 +197,10 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 217);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridView1.Location = new System.Drawing.Point(20, 113);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(1480, 493);
+            this.dataGridView1.Size = new System.Drawing.Size(740, 256);
             this.dataGridView1.TabIndex = 19;
             // 
             // stockBtn
@@ -220,10 +208,9 @@
             this.stockBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.stockBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stockBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.stockBtn.Location = new System.Drawing.Point(642, 772);
-            this.stockBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.stockBtn.Location = new System.Drawing.Point(321, 401);
             this.stockBtn.Name = "stockBtn";
-            this.stockBtn.Size = new System.Drawing.Size(242, 44);
+            this.stockBtn.Size = new System.Drawing.Size(121, 23);
             this.stockBtn.TabIndex = 20;
             this.stockBtn.Text = "View Stock";
             this.stockBtn.UseVisualStyleBackColor = false;
@@ -235,10 +222,9 @@
             this.label2.BackColor = System.Drawing.Color.Azure;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(34, 179);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(17, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 36);
+            this.label2.Size = new System.Drawing.Size(103, 17);
             this.label2.TabIndex = 21;
             this.label2.Text = "Product Details";
             // 
@@ -251,24 +237,22 @@
             this.panel2.Controls.Add(this.stockBtn);
             this.panel2.Controls.Add(this.searchBtn);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(344, 136);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Location = new System.Drawing.Point(172, 71);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1578, 856);
+            this.panel2.Size = new System.Drawing.Size(789, 445);
             this.panel2.TabIndex = 22;
             // 
             // ProductQuery
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(1948, 1017);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidePnl);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.MaximumSize = new System.Drawing.Size(1974, 1088);
-            this.MinimumSize = new System.Drawing.Size(1974, 1088);
+            this.MaximumSize = new System.Drawing.Size(1000, 600);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "ProductQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductQuery";

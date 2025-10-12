@@ -91,10 +91,7 @@ namespace App
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LogPage logPage = new LogPage();
-            logPage.StartPosition = FormStartPosition.Manual;
-            logPage.Location = this.Location;
-            logPage.Size = this.Size;
+            LogPage logPage = new LogPage();          
             logPage.Show();
             this.Hide();
         }

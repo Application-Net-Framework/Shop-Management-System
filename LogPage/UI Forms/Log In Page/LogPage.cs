@@ -90,11 +90,6 @@ namespace App
                 }
 
                 con.Close();
-
-                nextForm.StartPosition = FormStartPosition.Manual;
-                nextForm.Location = this.Location;
-                nextForm.Size = this.Size;
-
                 nextForm.Show();
                 this.Hide();
             }
@@ -113,10 +108,7 @@ namespace App
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            Registration homeForm = new Registration();
-            homeForm.StartPosition = FormStartPosition.Manual;
-            homeForm.Location = this.Location;
-            homeForm.Size = this.Size;
+            Registration homeForm = new Registration();           
             homeForm.Show();
             this.Hide();
         }
@@ -124,10 +116,7 @@ namespace App
         private void fPassBtn_Click(object sender, EventArgs e)
         {
 
-            ForgetPass homeForm = new ForgetPass();
-            homeForm.StartPosition = FormStartPosition.Manual;
-            homeForm.Location = this.Location;
-            homeForm.Size = this.Size;
+            ForgetPass homeForm = new ForgetPass();           
             homeForm.Show();
             this.Hide();
         }

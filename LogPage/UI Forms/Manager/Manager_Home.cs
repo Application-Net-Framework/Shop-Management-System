@@ -383,16 +383,16 @@ namespace App
 
             if (result == DialogResult.Yes)
             {
-                
+                // Create a new instance of the login form
                 LogPage loginForm = new LogPage();
                 
-               
-            
+                // Set the position and size to match current form
+                loginForm.StartPosition = FormStartPosition.Manual;
+                loginForm.Location = this.Location;
+                loginForm.Size = this.Size;
                 
-                
+                // Show the login form and hide this form
                 loginForm.Show();
-                
-            
                 this.Hide();
                 this.Close();
             }

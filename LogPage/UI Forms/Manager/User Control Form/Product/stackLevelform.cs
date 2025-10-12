@@ -75,6 +75,15 @@ namespace App.UI_Forms.Manager
                         lowStack = lowStockTable.Rows.Count.ToString();
                     }
                 }
+                employeChart.Titles.Clear();
+                employeChart.Series["Stack"].Points.Clear();
+
+                employeChart.Titles.Add("Stack Level");
+                employeChart.Series["Stack"].Points.AddXY("  Low Stack", lowStack.ToString());
+                employeChart.Series["Stack"].Points[0].Color = Color.LightGreen;
+
+                employeChart.Series["Stack"].Points.AddXY("  High Stack", highStack.ToString());
+                employeChart.Series["Stack"].Points[1].Color = Color.LightCoral;
             }
             catch (Exception ex)
             {

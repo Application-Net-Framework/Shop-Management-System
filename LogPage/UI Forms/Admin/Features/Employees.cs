@@ -15,6 +15,7 @@ namespace App.UI_Forms.Admin
         {
             InitializeComponent();
         }
+        string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -38,7 +39,7 @@ namespace App.UI_Forms.Admin
                 MessageBox.Show("Please select a row first:");
             else
             {
-                string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+                
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
                 string query = "DELETE FROM Employees WHERE UserID=" + txtID.Text + "";
@@ -51,7 +52,7 @@ namespace App.UI_Forms.Admin
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+           
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             string query = "UPDATE Employees " +
@@ -68,7 +69,7 @@ namespace App.UI_Forms.Admin
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+           
             SqlConnection conne = new SqlConnection(connectionString);
             conne.Open();
             string quarry = "SELECT * FROM Employees";
@@ -86,7 +87,6 @@ namespace App.UI_Forms.Admin
 
         private void show()
         {
-            string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
             SqlConnection conne = new SqlConnection(connectionString);
             conne.Open();
             string quarry = "SELECT * FROM Employees";
@@ -118,7 +118,7 @@ namespace App.UI_Forms.Admin
             
             //string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
-            string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+            
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

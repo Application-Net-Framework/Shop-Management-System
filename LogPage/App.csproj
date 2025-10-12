@@ -137,7 +137,6 @@
     <Compile Include="UI Forms\Cashier\Tools.Designer.cs">
       <DependentUpon>Tools.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\GlobalConfig.cs" />
     <Compile Include="UI Forms\Cashier\ucPnl_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -556,6 +555,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2025-10-11 at 21.09.19_11811b36.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

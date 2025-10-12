@@ -1,5 +1,5 @@
-﻿using App.Configuration;
-using App.Configuration;
+﻿//using App.Configuration;
+//using App.Configuration;
 using App.UI_Forms.Admin;
 using App.UI_Forms.SalesMan;
 using System;
@@ -21,20 +21,13 @@ namespace App
     {
         private int employeeId;
         private string employeeName;
-        String connectionString = GlobalConfig.ConnectionString;
+        string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         public Salesman()
-        {
-            InitializeComponent();
-            employeeId = Session.EmployeeId;
-            employeeName = Session.EmployeeName;
-
-        }
-       
-
-      
+        {   
+            InitializeComponent();            
+        }     
         private void LoadLowStockProducts()
-        {
-            string query = @"SELECT ProductID, ProductName, Stock 
+        {   string query = @"SELECT ProductID, ProductName, Stock 
                            FROM Product 
                            WHERE Stock < 5";
             SqlConnection con = new SqlConnection(connectionString);
@@ -44,10 +37,8 @@ namespace App
             lowStockGrid.DataSource = dt;
             if (dt.Rows.Count > 0) { MessageBox.Show("Some products are low in stock!", "Low Stock Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
         }
-
         private void LoadSupplierRequests()
-        {
-            string query = @"SELECT SR.RequestID, SR.ProductID, S.ProductName, SR.RequestedQuantity, SR.RequestDate
+        {   string query = @"SELECT SR.RequestID, SR.ProductID, S.ProductName, SR.RequestedQuantity, SR.RequestDate
             FROM SupplierRequest SR
             INNER JOIN dbo.Product S ON SR.ProductID = S.ProductID
             ORDER BY SR.RequestDate DESC";
@@ -58,63 +49,42 @@ namespace App
             supplierRequestGrid.DataSource = dt;
         }
         private void homeBtn_Click(object sender, EventArgs e)
-        {
-            Salesman h = new Salesman();
-            h.StartPosition = FormStartPosition.Manual;
-            h.Location = this.Location;
-            h.Size = this.Size;
+        {   Salesman h = new Salesman();          
             h.Show();
             this.Hide();
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
-        {
-            Session.EmployeeId = 0;
+        {   Session.EmployeeId = 0;
             Session.EmployeeName = null;
-
-            LogPage login = new LogPage();
-            login.StartPosition = FormStartPosition.Manual;
-            login.Location = this.Location;
-            login.Size = this.Size;
+            LogPage login = new LogPage();           
             login.Show();
             this.Close();
         }
-
-        private void Cashier_Home_Load(object sender, EventArgs e)   
+        private void Cashier_Home_Load(object sender, EventArgs e)
         {
-            welcomeLabel.Text = "Welcome, " + employeeName;
+            welcomeLabel.Text = "Welcome, " + Session.EmployeeName;
             LoadLowStockProducts();
         }
         private void headerPnl_Paint(object sender, PaintEventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }
         private void feedbackBtn_Click(object sender, EventArgs e)
-        {   Feedback f = new Feedback();
-            f.StartPosition = FormStartPosition.Manual;
-            f.Location = this.Location;
-            f.Size = this.Size;
+        {   Feedback f = new Feedback();           
             f.Show();
             this.Hide();
         }
         private void pQueryBtn_Click(object sender, EventArgs e)
-        {   ProductQuery PQ = new ProductQuery();
-            PQ.StartPosition = FormStartPosition.Manual;
-            PQ.Location = this.Location;
-            PQ.Size = this.Size;
+        {   ProductQuery PQ = new ProductQuery();            
             PQ.Show();
             this.Hide();
         }
-
         private void cManagementBtn_Click(object sender, EventArgs e)
-        {   CustomerManagement CM = new CustomerManagement();
-            CM.StartPosition = FormStartPosition.Manual;
-            CM.Location = this.Location;
-            CM.Size = this.Size;
+        {   CustomerManagement CM = new CustomerManagement();           
             CM.Show();
             this.Hide();
         }
         private void supplierRequestBtn_Click_1(object sender, EventArgs e)
-        {
-            if (lowStockGrid.Rows.Count < 2) { MessageBox.Show("No low-stock products to request.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information); return;}
+        {   if (lowStockGrid.Rows.Count < 2) { MessageBox.Show("No low-stock products to request.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information); return;}
 
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
@@ -134,23 +104,15 @@ namespace App
 
         private void supplyRequestBtn_Click(object sender, EventArgs e) { LoadSupplierRequests(); }
         private void preOrderBtn_Click(object sender, EventArgs e)
-        {   PreOrder PO = new PreOrder();
-            PO.StartPosition = FormStartPosition.Manual;
-            PO.Location = this.Location;
-            PO.Size = this.Size;
+        {   PreOrder PO = new PreOrder();          
             PO.Show();
             this.Hide();
         }
 
         private void Profile_Click(object sender, EventArgs e)
-        {
-            Profile profileForm = new Profile();
-            profileForm.StartPosition = FormStartPosition.Manual;
-            profileForm.Location = this.Location;
-            profileForm.Size = this.Size;
+        {   Profile profileForm = new Profile();            
             profileForm.Show();
             this.Hide();
-
         }
     }
 }

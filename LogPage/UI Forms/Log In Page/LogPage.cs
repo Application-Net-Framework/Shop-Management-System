@@ -1,4 +1,4 @@
-﻿using App.Configuration;
+﻿//using App.Configuration;
 using App.UI_Forms.Admin;
 using App.UI_Forms.SalesMan;
 using System;
@@ -26,11 +26,8 @@ namespace App
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
-        //Arif
-        String connectionString = GlobalConfig.ConnectionString;
-
-
-        // string connectionString = @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+       
+        string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";               
 
         private void login()
         {
@@ -94,11 +91,6 @@ namespace App
                 }
 
                 con.Close();
-
-                nextForm.StartPosition = FormStartPosition.Manual;
-                nextForm.Location = this.Location;
-                nextForm.Size = this.Size;
-
                 nextForm.Show();
                 this.Hide();
             }
@@ -117,10 +109,7 @@ namespace App
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            Registration homeForm = new Registration();
-            homeForm.StartPosition = FormStartPosition.Manual;
-            homeForm.Location = this.Location;
-            homeForm.Size = this.Size;
+            Registration homeForm = new Registration();           
             homeForm.Show();
             this.Hide();
         }
@@ -128,10 +117,7 @@ namespace App
         private void fPassBtn_Click(object sender, EventArgs e)
         {
 
-            ForgetPass homeForm = new ForgetPass();
-            homeForm.StartPosition = FormStartPosition.Manual;
-            homeForm.Location = this.Location;
-            homeForm.Size = this.Size;
+            ForgetPass homeForm = new ForgetPass();           
             homeForm.Show();
             this.Hide();
         }

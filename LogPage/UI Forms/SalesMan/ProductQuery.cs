@@ -8,21 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using App.Configuration;
+//using App.Configuration;
 
 namespace App.UI_Forms.SalesMan
 {
     public partial class ProductQuery : Form
     {
-        String connectionString = GlobalConfig.ConnectionString;
+        string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         public ProductQuery()
         { InitializeComponent(); }
 
         private void SearchByName(string productName)
         {
             try
-            {
-                SqlConnection conn = new SqlConnection(connectionString);
+            {   SqlConnection conn = new SqlConnection(connectionString);
                 string query = "SELECT ProductID, ProductName, CategoryName, Price, Stock, ExpiryDate FROM Product " +
                                "WHERE ProductName LIKE '%" + productName + "%'";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
@@ -30,14 +29,12 @@ namespace App.UI_Forms.SalesMan
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
             }
-            catch (Exception ex)
-            { MessageBox.Show("Error: " + ex.Message, "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex) { MessageBox.Show("Error: " + ex.Message, "Search Failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void LoadAllProducts()
         {
             try
-            {
-                SqlConnection conn = new SqlConnection(connectionString);
+            {   SqlConnection conn = new SqlConnection(connectionString);
                 string query = "SELECT ProductID, ProductName, CategoryName, Price, Stock, ExpiryDate, Description FROM Product";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
@@ -50,38 +47,22 @@ namespace App.UI_Forms.SalesMan
         private void ProductQuery_Load(object sender, EventArgs e) { }
         private void pQueryBtn_Click(object sender, EventArgs e) { }
         private void homeBtn_Click(object sender, EventArgs e)
-        {
-            Salesman S = new Salesman();
-            S.StartPosition = FormStartPosition.Manual;
-            S.Location = this.Location;
-            S.Size = this.Size;
+        {   Salesman S = new Salesman();          
             S.Show();
             this.Hide();
         }
         private void feedbackBtn_Click(object sender, EventArgs e)
-        {
-            Feedback f = new Feedback();
-            f.StartPosition = FormStartPosition.Manual;
-            f.Location = this.Location;
-            f.Size = this.Size;
+        {   Feedback f = new Feedback();           
             f.Show();
             this.Hide();
         }
         private void cManagementBtn_Click(object sender, EventArgs e)
-        {
-            CustomerManagement CM = new CustomerManagement();
-            CM.StartPosition = FormStartPosition.Manual;
-            CM.Location = this.Location;
-            CM.Size = this.Size;
+        {   CustomerManagement CM = new CustomerManagement();           
             CM.Show();
             this.Hide();
         }
         private void preOrderBtn_Click(object sender, EventArgs e)
-        {
-            PreOrder PO = new PreOrder();
-            PO.StartPosition = FormStartPosition.Manual;
-            PO.Location = this.Location;
-            PO.Size = this.Size;
+        {   PreOrder PO = new PreOrder();           
             PO.Show();
             this.Hide();
         }
@@ -91,11 +72,9 @@ namespace App.UI_Forms.SalesMan
         { LoadAllProducts(); }
 
         private void logoutBtn_Click(object sender, EventArgs e)
-        {
-            LogPage login = new LogPage();
-            login.StartPosition = FormStartPosition.Manual;
-            login.Location = this.Location;
-            login.Size = this.Size;
+        {   Session.EmployeeId = 0;
+            Session.EmployeeName = null;
+            LogPage login = new LogPage();           
             login.Show();
             this.Close();
         }

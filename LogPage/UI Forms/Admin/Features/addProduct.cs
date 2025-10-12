@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using App.Configuration; 
+//using App.Configuration; 
 
 namespace App.UI_Forms.Admin.Features
 {
@@ -16,9 +16,9 @@ namespace App.UI_Forms.Admin.Features
     {
         
         public string ProductName, Price, CategoryName, Stock;
-        
-        
-        private readonly string connectionString = GlobalConfig.ConnectionString;
+
+
+        string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
 
         public addProduct()
         {

@@ -1,5 +1,6 @@
 ﻿//using App.Configuration;
 using App.UI_Forms.Admin;
+using App.UI_Forms.Manager;
 using App.UI_Forms.SalesMan;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,10 @@ namespace App
         public LogPage()
         {
             InitializeComponent();
+            this.Size = new Size(1200, 600);
+            this.ClientSize = new Size(1200, 600);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
        
         string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";               
@@ -65,6 +70,7 @@ namespace App
                 else if (role == "Manager")
                 {
                     nextForm = new Manager_Home(userId);
+                    
                 }
                 else if (role == "Cashier")
                 {
@@ -127,5 +133,10 @@ namespace App
         private void passTxt_TextChanged(object sender, EventArgs e) { }
         private void messageTxt_TextChanged(object sender, EventArgs e) { }
         private void welcomeTxt_TextChanged(object sender, EventArgs e) { }
+
+        private void LogPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

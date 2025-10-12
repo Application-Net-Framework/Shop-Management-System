@@ -26,7 +26,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public tarminationForm()
         {
             InitializeComponent();
-            LoadDatabase();
+            //LoadDatabase();
             warningMassage.Visible = true;
 
             notFoundlb.Visible = false;

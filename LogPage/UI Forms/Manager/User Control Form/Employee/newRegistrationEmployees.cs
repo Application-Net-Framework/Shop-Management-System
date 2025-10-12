@@ -22,8 +22,8 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public newRegistrationEmployees()
         {
             InitializeComponent();
-            LoadDatabse();
-            LoadMemberCount();
+           // LoadDatabse();
+          //  LoadMemberCount();
 
             cashierEmpLb.Text = totalCashier;
             managerAmountlb.Text = totalManager;

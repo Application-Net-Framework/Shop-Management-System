@@ -22,6 +22,8 @@ namespace App
 
         private activity homeManagerControl;
         private about aboutControl;
+        
+        private int currentUserId;
 
         bool dashboardExpnd = false;
         bool settingsExpnd = false;
@@ -32,24 +34,31 @@ namespace App
         public Manager_Home(int UserId)
         {
             InitializeComponent();
+            
+          
+            this.currentUserId = UserId;
+            aboutControl = new about(currentUserId);
 
-            this.Size = new Size(1200, 600);
-            this.ClientSize = new Size(1200, 600);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
             SetupWindowControls();
             CenterWelcomeMessage();
             HideAllControls();
-
+          
             homeManagerControl = new activity();
-            aboutControl = new about();
 
-            featurePanel.Controls.Add(homeManagerControl);
-            featurePanel.Controls.Add(aboutControl);
+
+            if (!featurePanel.Controls.Contains(homeManagerControl))
+                featurePanel.Controls.Add(homeManagerControl);
+                
+            if (!featurePanel.Controls.Contains(aboutControl))
+                featurePanel.Controls.Add(aboutControl);
 
             homeManagerControl.Visible = true;
             aboutControl.Visible = false;
+            
+           
+            homeManagerControl.Dock = DockStyle.Fill;
+            aboutControl.Dock = DockStyle.Fill;
         }
 
         private void SetupWindowControls()
@@ -367,14 +376,24 @@ namespace App
 
         private void logoutbtn_Click(object sender, EventArgs e)
         {
-            this.Close();
             DialogResult result = MessageBox.Show("Are you sure you want to Logout?",
-                                                  "Confirm",
-                                                  MessageBoxButtons.YesNo,
-                                                  MessageBoxIcon.Question);
+                                                "Confirm",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
+                
+                LogPage loginForm = new LogPage();
+                
+               
+            
+                
+                
+                loginForm.Show();
+                
+            
+                this.Hide();
                 this.Close();
             }
         }

@@ -97,8 +97,8 @@ namespace App.UI_Forms.Manager.User_Control_Form
         {
             InitializeComponent();
 
-            LoadUI();
-            ClearFormFields();
+          //  LoadUI();
+           // ClearFormFields();
 
 
 

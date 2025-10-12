@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -37,7 +36,10 @@ namespace App.UI_Forms.Manager
         {
 
         }
+        private void show1_Click(object sender, EventArgs e)
+        {
 
+        }
         public string connectionString = "Data Source=GSM\\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
 
         public string UserName;
@@ -48,14 +50,13 @@ namespace App.UI_Forms.Manager
         public string PreviousPassword;
         public string Gender;
         public string Qualification;
-        public DateTime DateOfBirt;
+        public DateTime DOB;
         public int Age;
         public int UserID;
 
-        public about()
+        private int userId;
+        public void UIRefreash()
         {
-            InitializeComponent();
-
             invalidUsernamelb.Visible = false;
             invalidphonelb.Visible = false;
             invemaillb.Visible = false;
@@ -65,27 +66,99 @@ namespace App.UI_Forms.Manager
             invalidaddresslb.Visible = false;
             dobLb.Visible = false;
 
+            show1.Visible = false;
+            show2.Visible = false;
+            show3.Visible = false;
+            newPasswordpanel.Visible = false;
+
+
             aboutNewPass.Text = "";
             aboutRePass.Text = "";
             aboutPrePass.Text = "";
+        }
+        public about(int userId)
+        {
+            InitializeComponent();
+            this.userId = userId;
 
-            //LoadUserData();
+
+            UIRefreash();
+            LoadUserDataById(userId);
 
             QulifiShow.Text = Qualification;
             genderLb.Text = Gender;
-            agelb.Text = Age.ToString();    
+            agelb.Text = Age.ToString();
+        }
+        private void passwordChangelb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            newPasswordpanel.Visible = true;
+            passwordChangelb.Visible = false;
+        }
 
+        private void back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            newPasswordpanel.Visible = false;
+            passwordChangelb.Visible = true;
+        }
+        private void Hidelb_Click(object sender, EventArgs e)
+        {
+            aboutPrePass.UseSystemPasswordChar = false;
+            Showlb.Visible = true;
+            Hidelb.Visible = false;
 
         }
 
-        private void LoadUserData()
+        private void Showlb_Click(object sender, EventArgs e)
+        {
+            aboutPrePass.UseSystemPasswordChar = true;
+            Showlb.Visible = false;
+            Hidelb.Visible = true;
+        }
+
+        private void hide2_Click(object sender, EventArgs e)
+        {
+            aboutNewPass.UseSystemPasswordChar = false;
+            show2.Visible = true;
+            hide2.Visible = false;
+        }
+
+        private void show2_Click(object sender, EventArgs e)
+        {
+            aboutNewPass.UseSystemPasswordChar = true;
+            show2.Visible = false;
+            hide2.Visible = true;
+        }
+
+        private void hide3_Click(object sender, EventArgs e)
+        {
+            aboutRePass.UseSystemPasswordChar = false;
+            show3.Visible = true;
+            hide3.Visible = false;
+        }
+
+        private void show3_Click(object sender, EventArgs e)
+        {
+            aboutRePass.UseSystemPasswordChar = true;
+            show3.Visible = false;
+            hide3.Visible = true;
+        }
+
+        public about()
+        {
+            InitializeComponent();
+        }
+
+        
+        private void LoadUserDataById(int userId)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string selectQuery = "SELECT UserID, UserName, PhoneNumber, Email, DateOfBirt, Address, Gender, Password, Qulification FROM Employee";
+                    string selectQuery = "SELECT UserID, UserName, PhoneNumber, Email, DOB, Address, Gender, Password, Qualification FROM Employees WHERE UserID = @UserID";
+
                     SqlCommand cmd = new SqlCommand(selectQuery, conn);
+                    cmd.Parameters.AddWithValue("@UserID", userId);
 
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -95,15 +168,18 @@ namespace App.UI_Forms.Manager
                         UserName = reader["UserName"].ToString();
                         PhoneNumber = reader["PhoneNumber"].ToString();
                         Email = reader["Email"].ToString();
-                        DateOfBirt = Convert.ToDateTime(reader["DateOfBirt"]);
+                        DOB = Convert.ToDateTime(reader["DOB"]);
                         Address = reader["Address"].ToString();
                         Gender = reader["Gender"].ToString();
                         Password = reader["Password"].ToString();
-                        Qualification = reader["Qulification"].ToString();
+                        Qualification = reader["Qualification"].ToString();
                         UserID = Convert.ToInt32(reader["UserID"]);
 
-                        
                         PopulateFormControls();
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found with ID: " + userId, "User Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -112,12 +188,13 @@ namespace App.UI_Forms.Manager
                 MessageBox.Show($"Error loading user data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
         private bool IsDataChanged()
         {
             return UserName != aboutTxtboxName.Text ||
                    PhoneNumber != aboutPhoneTxt.Text ||
                    Email != aboutEmailTxt.Text ||
-                   DateOfBirt != dateTimePicker1.Value ||
+                   DOB != dateTimePicker1.Value ||
                    Address != aboutAddressTxt.Text ||
                    Gender != genderLb.Text ||
                    Qualification != QulifiShow.Text ||
@@ -130,18 +207,19 @@ namespace App.UI_Forms.Manager
             aboutRePass.Text = "";
             aboutPrePass.Text = "";
 
-            Age = calculateAge(DateOfBirt);
+            Age = calculateAge(DOB);
             agelb.Text = Age.ToString();
-            
-           // LoadUserData();
+            LoadUserDataById(userId);
+           
         }
+        
         private void PopulateFormControls()
         {
             if (aboutTxtboxName != null) aboutTxtboxName.Text = UserName;
             if (aboutPhoneTxt != null) aboutPhoneTxt.Text = PhoneNumber;
             if (aboutEmailTxt != null) aboutEmailTxt.Text = Email;
             if (aboutAddressTxt != null) aboutAddressTxt.Text = Address;
-            if (dateTimePicker1 != null) dateTimePicker1.Value = DateOfBirt;
+            if (dateTimePicker1 != null) dateTimePicker1.Value = DOB;
             if(UserID!=0) usrIdlbl.Text = UserID.ToString();
         }
 
@@ -151,31 +229,31 @@ namespace App.UI_Forms.Manager
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string updateQuery = @"UPDATE Employee SET 
-                                         UserName = @UserName,
-                                         PhoneNumber = @PhoneNumber,
-                                         Email = @Email,
-                                         DateOfBirt = @DateOfBirt,
-                                         Address = @Address,
-                                         Gender = @Gender,
-                                         Password = @Password,
-                                         Qulification = @Qulification
-                                         WHERE UserID = @UserID";
-
+                    string updateQuery = @"UPDATE Employees SET 
+                         UserName = @UserName,
+                         PhoneNumber = @PhoneNumber,
+                         Email = @Email,
+                         DOB = @DOB,
+                         Address = @Address,
+                         Gender = @Gender,
+                         Password = @Password,
+                         Qualification = @Qualification
+                         WHERE UserID = @UserID";
 
                     SqlCommand cmd = new SqlCommand(updateQuery, conn);
                     cmd.Parameters.AddWithValue("@UserID", UserID);
                     cmd.Parameters.AddWithValue("@UserName", UserName);
                     cmd.Parameters.AddWithValue("@PhoneNumber", aboutPhoneTxt.Text);
                     cmd.Parameters.AddWithValue("@Email", aboutEmailTxt.Text);
-                    cmd.Parameters.AddWithValue("@DateOfBirt", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@DOB", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@Address", aboutAddressTxt.Text);
                     cmd.Parameters.AddWithValue("@Gender", Gender);
                     cmd.Parameters.AddWithValue("@Password", Password);
-                    cmd.Parameters.AddWithValue("@Qulification", Qualification);
+                    cmd.Parameters.AddWithValue("@Qualification", Qualification); 
 
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
+                    UIRefreash();
                     return rowsAffected > 0;
                 }
             }
@@ -202,7 +280,7 @@ namespace App.UI_Forms.Manager
         private void aboutPhoneTxt_TextChanged(object sender, EventArgs e)
         {
             double input;
-            if (!double.TryParse(aboutPhoneTxt.Text, out input))
+            if (!double.TryParse(aboutPhoneTxt.Text, out input) || aboutPhoneTxt.TextLength!=11)
             {
                 invalidphonelb.Visible = true;
             }
@@ -232,7 +310,9 @@ namespace App.UI_Forms.Manager
 
         private void aboutPrePass_TextChanged(object sender, EventArgs e)
         {
-            
+            aboutPrePass.UseSystemPasswordChar = true;
+            Showlb.Visible = false;
+            Hidelb.Visible = true;
             if (!string.IsNullOrEmpty(aboutPrePass.Text))
             {
                 if (aboutPrePass.Text != Password)
@@ -248,7 +328,8 @@ namespace App.UI_Forms.Manager
 
         private void aboutNewPass_TextChanged(object sender, EventArgs e)
         {
-          
+            aboutNewPass.UseSystemPasswordChar = true;
+            hide2.Visible = true;
             if (!string.IsNullOrEmpty(aboutNewPass.Text))
             {
                 if (aboutNewPass.Text==Password)
@@ -264,7 +345,8 @@ namespace App.UI_Forms.Manager
 
         private void aboutRePass_TextChanged(object sender, EventArgs e)
         {
-            if(aboutNewPass.Text != aboutRePass.Text)
+            aboutRePass.UseSystemPasswordChar = true;
+            if (aboutNewPass.Text != aboutRePass.Text)
             {
                 invalidretypelb.Visible = true;
             }
@@ -278,7 +360,7 @@ namespace App.UI_Forms.Manager
         {
             DateTime dob = dateTimePicker1.Value;
             int age = calculateAge(dob);
-            if(age < 18 && age > 100)
+            if(age < 18 || age > 100)
             {
                 dobLb.Visible = true;
             }
@@ -349,7 +431,7 @@ namespace App.UI_Forms.Manager
 
                                 PhoneNumber = aboutPhoneTxt.Text;
                                 Email = aboutEmailTxt.Text;
-                                DateOfBirt = dateTimePicker1.Value;
+                                DOB = dateTimePicker1.Value;
                                 Address = aboutAddressTxt.Text;
                                 UserName = aboutTxtboxName.Text;
 
@@ -358,14 +440,15 @@ namespace App.UI_Forms.Manager
                                     Password = aboutNewPass.Text;
                                 }
 
-                              //  SaveUserData();
+                                SaveUserData(); // Enabling the save operation
                                 refreashData();
-
                             }
                         }
                     }
                 }
             }
         }
+
+
     }
 }

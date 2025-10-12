@@ -1,5 +1,6 @@
 ﻿//using App.Configuration;
 using App.UI_Forms.Admin;
+using App.UI_Forms.Manager;
 using App.UI_Forms.SalesMan;
 using System;
 using System.Collections.Generic;
@@ -69,6 +70,7 @@ namespace App
                 else if (role == "Manager")
                 {
                     nextForm = new Manager_Home(userId);
+                    
                 }
                 else if (role == "Cashier")
                 {

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -48,13 +47,16 @@ namespace App.UI_Forms.Manager
         public string PreviousPassword;
         public string Gender;
         public string Qualification;
-        public DateTime DateOfBirt;
+        public DateTime DOB;
         public int Age;
         public int UserID;
 
-        public about()
+        private int userId;
+
+        public about(int userId)
         {
             InitializeComponent();
+            this.userId = userId;
 
             invalidUsernamelb.Visible = false;
             invalidphonelb.Visible = false;
@@ -69,13 +71,76 @@ namespace App.UI_Forms.Manager
             aboutRePass.Text = "";
             aboutPrePass.Text = "";
 
-            //LoadUserData();
+            LoadUserDataById(userId);
+
+            QulifiShow.Text = Qualification;
+            genderLb.Text = Gender;
+            agelb.Text = Age.ToString();
+        }
+
+        public about()
+        {
+            InitializeComponent();
+            
+            invalidUsernamelb.Visible = false;
+            invalidphonelb.Visible = false;
+            invemaillb.Visible = false;
+            invalidpasswodlb.Visible = false;
+            invalidretypelb.Visible = false;
+            invalidpreviouspasslb.Visible = false;
+            invalidaddresslb.Visible = false;
+            dobLb.Visible = false;
+
+            aboutNewPass.Text = "";
+            aboutRePass.Text = "";
+            aboutPrePass.Text = "";
+
+            LoadUserData();
 
             QulifiShow.Text = Qualification;
             genderLb.Text = Gender;
             agelb.Text = Age.ToString();    
+        }
 
+        // New method to load user data by specific ID
+        private void LoadUserDataById(int userId)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string selectQuery = "SELECT UserID, UserName, PhoneNumber, Email, DOB, Address, Gender, Password, Qualification FROM Employees WHERE UserID = @UserID";
 
+                    SqlCommand cmd = new SqlCommand(selectQuery, conn);
+                    cmd.Parameters.AddWithValue("@UserID", userId);
+
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    
+                    if (reader.Read())
+                    {
+                        UserName = reader["UserName"].ToString();
+                        PhoneNumber = reader["PhoneNumber"].ToString();
+                        Email = reader["Email"].ToString();
+                        DOB = Convert.ToDateTime(reader["DOB"]);
+                        Address = reader["Address"].ToString();
+                        Gender = reader["Gender"].ToString();
+                        Password = reader["Password"].ToString();
+                        Qualification = reader["Qualification"].ToString();
+                        UserID = Convert.ToInt32(reader["UserID"]);
+
+                        PopulateFormControls();
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found with ID: " + userId, "User Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading user data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LoadUserData()
@@ -84,7 +149,8 @@ namespace App.UI_Forms.Manager
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string selectQuery = "SELECT UserID, UserName, PhoneNumber, Email, DateOfBirt, Address, Gender, Password, Qulification FROM Employee";
+                    string selectQuery = "SELECT UserID, UserName, PhoneNumber, Email, DOB, Address, Gender, Password, Qualification FROM Employees";
+
                     SqlCommand cmd = new SqlCommand(selectQuery, conn);
 
                     conn.Open();
@@ -95,14 +161,13 @@ namespace App.UI_Forms.Manager
                         UserName = reader["UserName"].ToString();
                         PhoneNumber = reader["PhoneNumber"].ToString();
                         Email = reader["Email"].ToString();
-                        DateOfBirt = Convert.ToDateTime(reader["DateOfBirt"]);
+                        DOB = Convert.ToDateTime(reader["DOB"]);
                         Address = reader["Address"].ToString();
                         Gender = reader["Gender"].ToString();
                         Password = reader["Password"].ToString();
-                        Qualification = reader["Qulification"].ToString();
+                        Qualification = reader["Qualification"].ToString();
                         UserID = Convert.ToInt32(reader["UserID"]);
 
-                        
                         PopulateFormControls();
                     }
                 }
@@ -112,12 +177,13 @@ namespace App.UI_Forms.Manager
                 MessageBox.Show($"Error loading user data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
         private bool IsDataChanged()
         {
             return UserName != aboutTxtboxName.Text ||
                    PhoneNumber != aboutPhoneTxt.Text ||
                    Email != aboutEmailTxt.Text ||
-                   DateOfBirt != dateTimePicker1.Value ||
+                   DOB != dateTimePicker1.Value ||
                    Address != aboutAddressTxt.Text ||
                    Gender != genderLb.Text ||
                    Qualification != QulifiShow.Text ||
@@ -130,18 +196,27 @@ namespace App.UI_Forms.Manager
             aboutRePass.Text = "";
             aboutPrePass.Text = "";
 
-            Age = calculateAge(DateOfBirt);
+            Age = calculateAge(DOB);
             agelb.Text = Age.ToString();
             
-           // LoadUserData();
+            // Determine which load method to use based on whether we have a userId
+            if (userId > 0)
+            {
+                LoadUserDataById(userId);
+            }
+            else
+            {
+                LoadUserData();
+            }
         }
+        
         private void PopulateFormControls()
         {
             if (aboutTxtboxName != null) aboutTxtboxName.Text = UserName;
             if (aboutPhoneTxt != null) aboutPhoneTxt.Text = PhoneNumber;
             if (aboutEmailTxt != null) aboutEmailTxt.Text = Email;
             if (aboutAddressTxt != null) aboutAddressTxt.Text = Address;
-            if (dateTimePicker1 != null) dateTimePicker1.Value = DateOfBirt;
+            if (dateTimePicker1 != null) dateTimePicker1.Value = DOB;
             if(UserID!=0) usrIdlbl.Text = UserID.ToString();
         }
 
@@ -151,28 +226,27 @@ namespace App.UI_Forms.Manager
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string updateQuery = @"UPDATE Employee SET 
-                                         UserName = @UserName,
-                                         PhoneNumber = @PhoneNumber,
-                                         Email = @Email,
-                                         DateOfBirt = @DateOfBirt,
-                                         Address = @Address,
-                                         Gender = @Gender,
-                                         Password = @Password,
-                                         Qulification = @Qulification
-                                         WHERE UserID = @UserID";
-
+                    string updateQuery = @"UPDATE Employees SET 
+                         UserName = @UserName,
+                         PhoneNumber = @PhoneNumber,
+                         Email = @Email,
+                         DOB = @DOB,
+                         Address = @Address,
+                         Gender = @Gender,
+                         Password = @Password,
+                         Qualification = @Qualification
+                         WHERE UserID = @UserID";
 
                     SqlCommand cmd = new SqlCommand(updateQuery, conn);
                     cmd.Parameters.AddWithValue("@UserID", UserID);
                     cmd.Parameters.AddWithValue("@UserName", UserName);
                     cmd.Parameters.AddWithValue("@PhoneNumber", aboutPhoneTxt.Text);
                     cmd.Parameters.AddWithValue("@Email", aboutEmailTxt.Text);
-                    cmd.Parameters.AddWithValue("@DateOfBirt", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@DOB", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@Address", aboutAddressTxt.Text);
                     cmd.Parameters.AddWithValue("@Gender", Gender);
                     cmd.Parameters.AddWithValue("@Password", Password);
-                    cmd.Parameters.AddWithValue("@Qulification", Qualification);
+                    cmd.Parameters.AddWithValue("@Qualification", Qualification); 
 
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
@@ -349,7 +423,7 @@ namespace App.UI_Forms.Manager
 
                                 PhoneNumber = aboutPhoneTxt.Text;
                                 Email = aboutEmailTxt.Text;
-                                DateOfBirt = dateTimePicker1.Value;
+                                DOB = dateTimePicker1.Value;
                                 Address = aboutAddressTxt.Text;
                                 UserName = aboutTxtboxName.Text;
 
@@ -358,9 +432,8 @@ namespace App.UI_Forms.Manager
                                     Password = aboutNewPass.Text;
                                 }
 
-                              //  SaveUserData();
+                                SaveUserData(); // Enabling the save operation
                                 refreashData();
-
                             }
                         }
                     }

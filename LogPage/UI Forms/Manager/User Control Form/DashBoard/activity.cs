@@ -20,7 +20,7 @@ namespace App.UI_Forms.Manager
         public int totalsaleman;
         public double totalProfit;
 
-        string ConnectionString = "Data Source=GSM\\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
+        string ConnectionString = "Data Source=GSM\\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public activity()
         {
             InitializeComponent();
@@ -61,9 +61,11 @@ namespace App.UI_Forms.Manager
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
 
-                    string totalSum = "SELECT SUM(Price) AS TotalPrice, SUM(SalePrice) AS TotalSale FROM Product";
-                    string totalCashier = "SELECT COUNT(*) AS TotalCashier FROM Employees WHERE Role = 'Cashier'";
-                    string totalSaleman = "SELECT COUNT(*) AS TotalSaleman FROM Employees WHERE Role = 'Salesman'";
+                    string totalSum = "SELECT SUM(Price) AS TotalPrice FROM Product";
+                    string totalSale = "SELECT SUM(TotalAmount) AS TotalCustomerAmount FROM Orders";
+                    string totalCashier = "SELECT COUNT(*) AS TotalCashier FROM Employees WHERE LOWER(Role) = 'cashier'";
+                    string totalSaleman = "SELECT COUNT(*) AS TotalSaleman FROM Employees WHERE LOWER(Role) = 'salesman'";
+
 
 
                     connection.Open();
@@ -74,8 +76,7 @@ namespace App.UI_Forms.Manager
                     SqlDataReader readerSum = commandSum.ExecuteReader();
                     if (readerSum.Read())
                     {
-                        totalprice = readerSum.IsDBNull(0) ? 0 : readerSum.GetDouble(0);
-                        totalsale = readerSum.IsDBNull(1) ? 0 : readerSum.GetDouble(1);
+                        totalprice = readerSum.IsDBNull(0) ?  0 :  readerSum.GetDouble(0);
                     }
                     readerSum.Close();
 
@@ -92,7 +93,14 @@ namespace App.UI_Forms.Manager
                         totalsaleman = readerSaleman.IsDBNull(0) ? 0 : readerSaleman.GetInt32(0);
                     }
                     readerSaleman.Close();
-
+                   
+                    SqlDataAdapter adapter = new SqlDataAdapter(commandSum);
+                    SqlCommand commandSale = new SqlCommand(totalSale, connection);
+                    SqlDataReader readerSale = commandSale.ExecuteReader();
+                    if (readerSale.Read())
+                    {
+                        totalsale = readerSale.IsDBNull(0) ? 0 : readerSale.GetDouble(0);
+                    }
                 }
             }
             catch (Exception ex)

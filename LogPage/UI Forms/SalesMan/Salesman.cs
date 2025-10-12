@@ -21,7 +21,7 @@ namespace App
     {
         private int employeeId;
         private string employeeName;
-        String connectionString = GlobalConfig.ConnectionString;
+        string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         public Salesman()
         {
             InitializeComponent();

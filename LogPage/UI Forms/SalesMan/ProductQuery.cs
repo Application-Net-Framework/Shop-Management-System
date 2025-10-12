@@ -14,7 +14,7 @@ namespace App.UI_Forms.SalesMan
 {
     public partial class ProductQuery : Form
     {
-        String connectionString = GlobalConfig.ConnectionString;
+        string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         public ProductQuery()
         { InitializeComponent(); }
 

@@ -18,7 +18,7 @@ namespace App
         {
             InitializeComponent();
         }
-        string connectionString= @"Data Source=DESKTOP-HRPRSI4\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+        string connectionString= @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         private void SaveEmployee()
         {   string userId = idTxt.Text.Trim();            
             string email = emailTxt.Text.Trim();

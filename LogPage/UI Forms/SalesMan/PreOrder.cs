@@ -15,7 +15,7 @@ namespace App.UI_Forms.SalesMan
     public partial class PreOrder : Form
     {
         public PreOrder() { InitializeComponent(); }
-        String connectionString = GlobalConfig.ConnectionString;
+        string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         private void InsertPreOrder()
         {
             

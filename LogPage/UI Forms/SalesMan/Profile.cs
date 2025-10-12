@@ -11,7 +11,7 @@ namespace App.UI_Forms.SalesMan
     {
         int uId;
         string uName;
-        String connectionString = GlobalConfig.ConnectionString;
+        string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
 
         public Profile()
         {

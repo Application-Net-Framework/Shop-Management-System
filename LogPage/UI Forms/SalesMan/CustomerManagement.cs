@@ -16,7 +16,7 @@ namespace App.UI_Forms.SalesMan
     public partial class CustomerManagement : Form
     {
         public CustomerManagement() { InitializeComponent(); }
-        String connectionString = GlobalConfig.ConnectionString;
+        string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         private void AddCustomer()
         {   string name = nameTxt.Text.Trim();
             string mobile = mobileTxt.Text.Trim();

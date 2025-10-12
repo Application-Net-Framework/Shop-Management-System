@@ -18,19 +18,15 @@ namespace App.UI_Forms.SalesMan
             InitializeComponent();
             uId = Session.EmployeeId;
             uName = Session.EmployeeName;
-        }
-
-       
+        }     
 
         private void LoadEmployeeProfile(int userId)
-        {
-            SqlConnection con = new SqlConnection(connectionString);
+        {   SqlConnection con = new SqlConnection(connectionString);
             string query = "SELECT UserName, Email, PhoneNumber, JoiningDate, Role, Gender, Password, Qualification, Address, Religion, DOB FROM Employees WHERE UserID = " + userId;
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-
             if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0];
@@ -44,24 +40,16 @@ namespace App.UI_Forms.SalesMan
                 religionTxt.Text = row["Religion"].ToString();
                 
                 if (row["DOB"] != DBNull.Value && DateTime.TryParse(row["DOB"].ToString(), out DateTime dob))
-                {
-                    dobTxt.Text = dob.ToString("yyyy-MM-dd");
-                }
+                {  dobTxt.Text = dob.ToString("yyyy-MM-dd"); }
                 else
-                {
-                    dobTxt.Text = "";
-                }
+                { dobTxt.Text = ""; }
             }
             else
-            {
-                MessageBox.Show("No record found for this employee.");
-            }
+            {MessageBox.Show("No record found for this employee."); }
         }
 
         private void Profile_Load(object sender, EventArgs e)
-        {
-            LoadEmployeeProfile(uId);
-        }
+        { LoadEmployeeProfile(uId); }
 
         private void update_Click(object sender, EventArgs e)
         {       if (string.IsNullOrWhiteSpace(userNameTxt.Text) ||
@@ -73,23 +61,11 @@ namespace App.UI_Forms.SalesMan
                 string.IsNullOrWhiteSpace(addressTxt.Text) ||
                 string.IsNullOrWhiteSpace(religionTxt.Text) ||
                 string.IsNullOrWhiteSpace(dobTxt.Text))
-            {
-                MessageBox.Show("All fields must be filled before updating the profile.",
-                                "Validation Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-                return;
-            }
+            { MessageBox.Show("All fields must be filled before updating the profile.","Validation Error",MessageBoxButtons.OK, MessageBoxIcon.Warning); return;}
 
             DateTime dob;
             if (!DateTime.TryParse(dobTxt.Text.Trim(), out dob))
-            {
-                MessageBox.Show("Invalid Date format. Use YYYY-MM-DD.",
-                                "Input Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-                return;
-            }
+            { MessageBox.Show("Invalid Date format. Use YYYY-MM-DD.","Input Error",MessageBoxButtons.OK, MessageBoxIcon.Warning);return;}
 
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
@@ -109,18 +85,14 @@ namespace App.UI_Forms.SalesMan
             SqlCommand cmd = new SqlCommand(query, con);
             int rows = cmd.ExecuteNonQuery();
 
-            if (rows > 0)
-                MessageBox.Show("Profile updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show("Update failed. Please check again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (rows > 0) MessageBox.Show("Profile updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("Update failed. Please check again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             con.Close();
         }
 
         private void backBtn_Click(object sender, EventArgs e)
-        {
-            Salesman s = new Salesman();
-           
+        {   Salesman s = new Salesman();           
             s.Show();
             this.Hide();
         }

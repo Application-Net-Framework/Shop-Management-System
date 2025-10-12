@@ -113,8 +113,7 @@ namespace App.UI_Forms.SalesMan
             MessageBox.Show(benefits, "Membership Benefits", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void preOrderBtn_Click(object sender, EventArgs e)
-        {
-            PreOrder PO = new PreOrder();           
+        {   PreOrder PO = new PreOrder();           
             PO.Show();
             this.Hide();
         }
@@ -154,7 +153,6 @@ namespace App.UI_Forms.SalesMan
             else {  MessageBox.Show("Failed to update customer."); }
             con.Close();
         }
-
         private void updateBtn_Click(object sender, EventArgs e){ UpdateCustomer();}
     }
 }

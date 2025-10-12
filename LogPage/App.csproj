@@ -137,7 +137,6 @@
     <Compile Include="UI Forms\Cashier\Tools.Designer.cs">
       <DependentUpon>Tools.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI Forms\GlobalConfig.cs" />
     <Compile Include="UI Forms\Cashier\ucPnl_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>

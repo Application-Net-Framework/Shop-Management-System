@@ -75,8 +75,7 @@ namespace App.UI_Forms.SalesMan
 
             SqlCommand cmd = new SqlCommand(query, con);
             try
-            {
-                con.Open();
+            {   con.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Feedback submitted successfully!");
                 idTxt.Clear();
@@ -93,8 +92,7 @@ namespace App.UI_Forms.SalesMan
         private void LoadAllFeedbacks()
         {
             try
-            {
-                SqlConnection con = new SqlConnection(connectionString);
+            {   SqlConnection con = new SqlConnection(connectionString);
                 string query = "SELECT FeedbackID, CustomerID, Name, Mobile, FeedbackType, Subject, Details, Response, FeedbackDate FROM Feedback ORDER BY FeedbackDate DESC";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
@@ -107,61 +105,45 @@ namespace App.UI_Forms.SalesMan
         }
 
         private void homeBtn_Click(object sender, EventArgs e)
-        {
-            Salesman S = new Salesman();            
+        {   Salesman S = new Salesman();            
             S.Show();
             this.Hide();
         }
-
         private void pQueryBtn_Click(object sender, EventArgs e)
-        {
-            ProductQuery PQ = new ProductQuery();           
+        {   ProductQuery PQ = new ProductQuery();           
             PQ.Show();
             this.Hide();
         }
-
         private void cManagementBtn_Click(object sender, EventArgs e)
-        {
-            CustomerManagement CM = new CustomerManagement();           
+        {   CustomerManagement CM = new CustomerManagement();           
             CM.Show();
             this.Hide();
         }
-
         private void submitBtn_Click(object sender, EventArgs e) { InsertFeedback(); }
         private void feedbackRecordBtn_Click(object sender, EventArgs e) { LoadAllFeedbacks(); }
-
         private void preOrderBtn_Click(object sender, EventArgs e)
-        {
-            PreOrder PO = new PreOrder();         
+        {   PreOrder PO = new PreOrder();         
             PO.Show();
             this.Hide();
         }
-
         private void searchBtn_Click(object sender, EventArgs e) { SearchCustomer(); }
         private void panel3_Paint(object sender, PaintEventArgs e) { }
-
         private void addCustomerBtn_Click(object sender, EventArgs e)
-        {
-            CustomerManagement CM = new CustomerManagement();           
+        {   CustomerManagement CM = new CustomerManagement();           
             CM.Show();
             this.Hide();
         }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            idTxt.Text = dataGridView1.CurrentRow.Cells["CustomerID"].Value.ToString();
+        {   idTxt.Text = dataGridView1.CurrentRow.Cells["CustomerID"].Value.ToString();
             nameTxt.Text = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
             mobileTxt.Text = dataGridView1.CurrentRow.Cells["Phone"].Value.ToString();
         }
-
         private void feedbackDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            fIdTxt.Text = feedbackDataGridView.CurrentRow.Cells["FeedbackID"].Value.ToString();
+        {   fIdTxt.Text = feedbackDataGridView.CurrentRow.Cells["FeedbackID"].Value.ToString();
             cIdTxt.Text = feedbackDataGridView.CurrentRow.Cells["CustomerID"].Value.ToString();
             mTxt.Text = feedbackDataGridView.CurrentRow.Cells["Mobile"].Value.ToString();
             nTxt.Text = feedbackDataGridView.CurrentRow.Cells["Name"].Value.ToString();
         }
-
         private void repsonseBtn_Click(object sender, EventArgs e)
         {
             string feedbackId = fIdTxt.Text.Trim();
@@ -176,28 +158,22 @@ namespace App.UI_Forms.SalesMan
             if (string.IsNullOrEmpty(name)) { MessageBox.Show("Customer Name is required."); return; }
             if (string.IsNullOrEmpty(mobile)) { MessageBox.Show("Customer Mobile is required."); return; }
             if (string.IsNullOrEmpty(response)) { MessageBox.Show("Please enter a Response & Solution."); return; }
-
             SqlConnection con = new SqlConnection(connectionString);
             string query = "UPDATE Feedback SET Response = '" + response + "' " +
                            "WHERE FeedbackID = " + feedbackId + " AND CustomerID = " + customerId;
-
             SqlCommand cmd = new SqlCommand(query, con);
             try
-            {
-                con.Open();
+            {   con.Open();
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0) { MessageBox.Show("Response updated successfully!"); responseTxt.Clear(); }
                 else { MessageBox.Show("No matching feedback record found."); }
             }
             catch (SqlException ex) { MessageBox.Show("Error while updating response: " + ex.Message); }
         }
-
         private void logoutBtn_Click(object sender, EventArgs e)
-        {
-            Session.EmployeeId = 0;
+        {   Session.EmployeeId = 0;
             Session.EmployeeName = null;
-            LogPage login = new LogPage();
-            
+            LogPage login = new LogPage();            
             login.Show();
             this.Close();
         }

@@ -36,7 +36,10 @@ namespace App.UI_Forms.Manager
         {
 
         }
+        private void show1_Click(object sender, EventArgs e)
+        {
 
+        }
         public string connectionString = "Data Source=GSM\\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
 
         public string UserName;
@@ -52,12 +55,8 @@ namespace App.UI_Forms.Manager
         public int UserID;
 
         private int userId;
-
-        public about(int userId)
+        public void UIRefreash()
         {
-            InitializeComponent();
-            this.userId = userId;
-
             invalidUsernamelb.Visible = false;
             invalidphonelb.Visible = false;
             invemaillb.Visible = false;
@@ -68,44 +67,88 @@ namespace App.UI_Forms.Manager
             dobLb.Visible = false;
 
             show1.Visible = false;
+            show2.Visible = false;
+            show3.Visible = false;
+            newPasswordpanel.Visible = false;
 
 
             aboutNewPass.Text = "";
             aboutRePass.Text = "";
             aboutPrePass.Text = "";
+        }
+        public about(int userId)
+        {
+            InitializeComponent();
+            this.userId = userId;
 
+
+            UIRefreash();
             LoadUserDataById(userId);
 
             QulifiShow.Text = Qualification;
             genderLb.Text = Gender;
             agelb.Text = Age.ToString();
         }
+        private void passwordChangelb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            newPasswordpanel.Visible = true;
+            passwordChangelb.Visible = false;
+        }
+
+        private void back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            newPasswordpanel.Visible = false;
+            passwordChangelb.Visible = true;
+        }
+        private void Hidelb_Click(object sender, EventArgs e)
+        {
+            aboutPrePass.UseSystemPasswordChar = false;
+            Showlb.Visible = true;
+            Hidelb.Visible = false;
+
+        }
+
+        private void Showlb_Click(object sender, EventArgs e)
+        {
+            aboutPrePass.UseSystemPasswordChar = true;
+            Showlb.Visible = false;
+            Hidelb.Visible = true;
+        }
+
+        private void hide2_Click(object sender, EventArgs e)
+        {
+            aboutNewPass.UseSystemPasswordChar = false;
+            show2.Visible = true;
+            hide2.Visible = false;
+        }
+
+        private void show2_Click(object sender, EventArgs e)
+        {
+            aboutNewPass.UseSystemPasswordChar = true;
+            show2.Visible = false;
+            hide2.Visible = true;
+        }
+
+        private void hide3_Click(object sender, EventArgs e)
+        {
+            aboutRePass.UseSystemPasswordChar = false;
+            show3.Visible = true;
+            hide3.Visible = false;
+        }
+
+        private void show3_Click(object sender, EventArgs e)
+        {
+            aboutRePass.UseSystemPasswordChar = true;
+            show3.Visible = false;
+            hide3.Visible = true;
+        }
 
         public about()
         {
             InitializeComponent();
-            
-            invalidUsernamelb.Visible = false;
-            invalidphonelb.Visible = false;
-            invemaillb.Visible = false;
-            invalidpasswodlb.Visible = false;
-            invalidretypelb.Visible = false;
-            invalidpreviouspasslb.Visible = false;
-            invalidaddresslb.Visible = false;
-            dobLb.Visible = false;
-
-            aboutNewPass.Text = "";
-            aboutRePass.Text = "";
-            aboutPrePass.Text = "";
-
-            LoadUserData();
-
-            QulifiShow.Text = Qualification;
-            genderLb.Text = Gender;
-            agelb.Text = Age.ToString();    
         }
 
-        // New method to load user data by specific ID
+        
         private void LoadUserDataById(int userId)
         {
             try
@@ -145,41 +188,6 @@ namespace App.UI_Forms.Manager
                 MessageBox.Show($"Error loading user data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void LoadUserData()
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string selectQuery = "SELECT UserID, UserName, PhoneNumber, Email, DOB, Address, Gender, Password, Qualification FROM Employees";
-
-                    SqlCommand cmd = new SqlCommand(selectQuery, conn);
-
-                    conn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    
-                    if (reader.Read())
-                    {
-                        UserName = reader["UserName"].ToString();
-                        PhoneNumber = reader["PhoneNumber"].ToString();
-                        Email = reader["Email"].ToString();
-                        DOB = Convert.ToDateTime(reader["DOB"]);
-                        Address = reader["Address"].ToString();
-                        Gender = reader["Gender"].ToString();
-                        Password = reader["Password"].ToString();
-                        Qualification = reader["Qualification"].ToString();
-                        UserID = Convert.ToInt32(reader["UserID"]);
-
-                        PopulateFormControls();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading user data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         
         private bool IsDataChanged()
         {
@@ -201,16 +209,8 @@ namespace App.UI_Forms.Manager
 
             Age = calculateAge(DOB);
             agelb.Text = Age.ToString();
-            
-            // Determine which load method to use based on whether we have a userId
-            if (userId > 0)
-            {
-                LoadUserDataById(userId);
-            }
-            else
-            {
-                LoadUserData();
-            }
+            LoadUserDataById(userId);
+           
         }
         
         private void PopulateFormControls()
@@ -253,6 +253,7 @@ namespace App.UI_Forms.Manager
 
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
+                    UIRefreash();
                     return rowsAffected > 0;
                 }
             }
@@ -279,7 +280,7 @@ namespace App.UI_Forms.Manager
         private void aboutPhoneTxt_TextChanged(object sender, EventArgs e)
         {
             double input;
-            if (!double.TryParse(aboutPhoneTxt.Text, out input))
+            if (!double.TryParse(aboutPhoneTxt.Text, out input) || aboutPhoneTxt.TextLength!=11)
             {
                 invalidphonelb.Visible = true;
             }
@@ -309,7 +310,9 @@ namespace App.UI_Forms.Manager
 
         private void aboutPrePass_TextChanged(object sender, EventArgs e)
         {
-            
+            aboutPrePass.UseSystemPasswordChar = true;
+            Showlb.Visible = false;
+            Hidelb.Visible = true;
             if (!string.IsNullOrEmpty(aboutPrePass.Text))
             {
                 if (aboutPrePass.Text != Password)
@@ -325,7 +328,8 @@ namespace App.UI_Forms.Manager
 
         private void aboutNewPass_TextChanged(object sender, EventArgs e)
         {
-          
+            aboutNewPass.UseSystemPasswordChar = true;
+            hide2.Visible = true;
             if (!string.IsNullOrEmpty(aboutNewPass.Text))
             {
                 if (aboutNewPass.Text==Password)
@@ -341,7 +345,8 @@ namespace App.UI_Forms.Manager
 
         private void aboutRePass_TextChanged(object sender, EventArgs e)
         {
-            if(aboutNewPass.Text != aboutRePass.Text)
+            aboutRePass.UseSystemPasswordChar = true;
+            if (aboutNewPass.Text != aboutRePass.Text)
             {
                 invalidretypelb.Visible = true;
             }
@@ -355,7 +360,7 @@ namespace App.UI_Forms.Manager
         {
             DateTime dob = dateTimePicker1.Value;
             int age = calculateAge(dob);
-            if(age < 18 && age > 100)
+            if(age < 18 || age > 100)
             {
                 dobLb.Visible = true;
             }
@@ -444,24 +449,6 @@ namespace App.UI_Forms.Manager
             }
         }
 
-        private void show1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void Hidelb_Click(object sender, EventArgs e)
-        {
-            aboutPrePass.UseSystemPasswordChar = false;
-            Showlb.Visible = true;
-            Hidelb.Visible = false;
-
-        }
-
-        private void Showlb_Click(object sender, EventArgs e)
-        {
-            aboutPrePass.UseSystemPasswordChar = true;
-            Showlb.Visible = false;
-            Hidelb.Visible = true;
-        }
     }
 }

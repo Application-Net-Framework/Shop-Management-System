@@ -17,7 +17,8 @@ namespace App.UI_Forms.Cashier
         int RowID = -1;
         static int orderid = -1;
 
-        readonly string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+        readonly string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True";
+        //readonly string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         //string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         public ucPnl_Product()
         {
@@ -159,7 +160,7 @@ namespace App.UI_Forms.Cashier
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            string query = "SELECT DISTINCT CateogoryName FROM Product;";
+            string query = "SELECT DISTINCT CategoryName FROM Product;";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -168,7 +169,7 @@ namespace App.UI_Forms.Cashier
 
             while (reader.Read())
             {
-                cmbCategory.Items.Add(reader["CateogoryName"].ToString());
+                cmbCategory.Items.Add(reader["CategoryName"].ToString());
             }
 
             reader.Close();
@@ -180,7 +181,7 @@ namespace App.UI_Forms.Cashier
 
         private void show() // refresh product list grid
         {
-            string query = "select ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate from Product;";
+            string query = "select ProductID, ProductName, CategoryName, Stock, Price, Description, ExpiryDate from Product;";
             dgvProduct.DataSource = ExecuteQuery(query);
             dgvProduct.AutoGenerateColumns = true;
         }
@@ -311,6 +312,9 @@ namespace App.UI_Forms.Cashier
 
         private void dgvProduct_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (e.RowIndex == -1) {
+                return; // ignore header row
+            }
             txtProductID.Text = dgvProduct.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
             txtProName.Text = dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString().Trim();
             txtCategory.Text = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString().Trim();
@@ -500,12 +504,12 @@ namespace App.UI_Forms.Cashier
 
             if (cmbCategory.SelectedItem.ToString() == "All")
             {
-                query = "SELECT ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate FROM Product;";
+                query = "SELECT ProductID, ProductName, CategoryName, Stock, Price, Description, ExpiryDate FROM Product;";
             }
             else
             {
-                query = "SELECT ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate " +
-                            "FROM Product WHERE CateogoryName = '" + cmbCategory.SelectedItem.ToString() + "'";
+                query = "SELECT ProductID, ProductName, CategoryName, Stock, Price, Description, ExpiryDate " +
+                            "FROM Product WHERE CategoryName = '" + cmbCategory.SelectedItem.ToString() + "'";
             }
 
             dgvProduct.DataSource = ExecuteQuery(query);
@@ -516,8 +520,8 @@ namespace App.UI_Forms.Cashier
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string searchText = "%" + txtSearch.Text + "%";
-            string query = "SELECT ProductID, ProductName, CateogoryName, Stock, Price, Description, ExpiryDate " +
-                           "FROM Product WHERE ProductName LIKE '" + searchText + "' OR CateogoryName LIKE '" + searchText + "' OR ProductID LIKE '" + searchText + "';";
+            string query = "SELECT ProductID, ProductName, CategoryName, Stock, Price, Description, ExpiryDate " +
+                           "FROM Product WHERE ProductName LIKE '" + searchText + "' OR CategoryName LIKE '" + searchText + "' OR ProductID LIKE '" + searchText + "';";
 
             dgvProduct.DataSource = ExecuteQuery(query);
             clear();

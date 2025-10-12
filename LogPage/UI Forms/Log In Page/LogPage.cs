@@ -71,8 +71,9 @@ namespace App
                 }
                 else if (role == "Cashier")
                 {
-                    nextForm = new mainCashier();
-                    mainCashier cashierForm = new mainCashier(userName);
+                    nextForm = new mainCashier(userName);
+                    //mainCashier cashierForm = new mainCashier(userName);
+                    mainCashier cashier = new mainCashier(userName);
                 }
               
                 else if (role == "Salesman")

@@ -21,22 +21,22 @@ namespace App
         int RowID = -1;
         static int orderid = -1;
         private string cashierName;
-        readonly string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
+        //readonly string connectionString = @"Data Source=DESKTOP-897BHIU\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
         //string connectionString = @"Data Source=HACIN\SQLEXPRESS;Initial Catalog=GSMSdb;Integrated Security=True";
-        public mainCashier()
-        {
-            InitializeComponent();
-            PanleVisible();
-            //show();
-            //CartView();
-            //clear();
-            //clearCart();
-            //LoadCategories();
-            //LoadDashboardCards();
-            //cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
-            //pnlHome.Visible = true;
-            ucPnl_Home1.Visible = true;
-        }
+        //public mainCashier()
+        //{
+        //    InitializeComponent();
+        //    PanleVisible();
+        //    //show();
+        //    //CartView();
+        //    //clear();
+        //    //clearCart();
+        //    //LoadCategories();
+        //    //LoadDashboardCards();
+        //    //cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
+        //    //pnlHome.Visible = true;
+        //    ucPnl_Home1.Visible = true;
+        //}
         public mainCashier(string name)
         {
             InitializeComponent();
@@ -195,5 +195,6 @@ namespace App
         {
             PositionLabels();
         }
+
     }
 }

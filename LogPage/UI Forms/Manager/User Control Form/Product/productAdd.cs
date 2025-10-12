@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms.Suite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace App.UI_Forms.Manager.User_Control_Form
 {
@@ -101,9 +103,70 @@ namespace App.UI_Forms.Manager.User_Control_Form
             }
         }
 
-        private void addbtn_Click(object sender, EventArgs e)
-        {
+       
+            private void addbtn_Click(object sender, EventArgs e){
+            try
+            {
+                
+                string name = productNametxt.Text;
+                string category = catagoryNametxt.Text;        
+                int stock = counter;                        
+                string description = descriptiontxt.Text;
+                decimal price;
 
+                
+                if (!decimal.TryParse(pricetxt.Text, out price))
+                {
+                    MessageBox.Show("Please enter a valid price.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DateTime expiry = expiredate.Value;
+
+                
+                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(category) || stock <= 0)
+                {
+                    MessageBox.Show("Please fill all required fields correctly.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string query = "INSERT INTO Product (ProductName, CategoryName, Stock, Price, Description, ExpiryDate) " +
+                                   "VALUES (@name, @category, @stock, @price, @desc, @expiry)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@name", name);
+                        cmd.Parameters.AddWithValue("@category", category);
+                        cmd.Parameters.AddWithValue("@stock", stock);
+                        cmd.Parameters.AddWithValue("@price", price);
+                        cmd.Parameters.AddWithValue("@desc", description);
+                        cmd.Parameters.AddWithValue("@expiry", expiry);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                productNametxt.Clear();
+               
+                descriptiontxt.Clear();
+                pricetxt.Clear();
+                counter = 0;
+                quantitytxt.Text = "0";
+
+              
+                loadDatabase();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding product: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
-}
+    }
+

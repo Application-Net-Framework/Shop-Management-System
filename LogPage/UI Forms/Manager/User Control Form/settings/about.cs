@@ -67,6 +67,9 @@ namespace App.UI_Forms.Manager
             invalidaddresslb.Visible = false;
             dobLb.Visible = false;
 
+            show1.Visible = false;
+
+
             aboutNewPass.Text = "";
             aboutRePass.Text = "";
             aboutPrePass.Text = "";
@@ -439,6 +442,26 @@ namespace App.UI_Forms.Manager
                     }
                 }
             }
+        }
+
+        private void show1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Hidelb_Click(object sender, EventArgs e)
+        {
+            aboutPrePass.UseSystemPasswordChar = false;
+            Showlb.Visible = true;
+            Hidelb.Visible = false;
+
+        }
+
+        private void Showlb_Click(object sender, EventArgs e)
+        {
+            aboutPrePass.UseSystemPasswordChar = true;
+            Showlb.Visible = false;
+            Hidelb.Visible = true;
         }
     }
 }

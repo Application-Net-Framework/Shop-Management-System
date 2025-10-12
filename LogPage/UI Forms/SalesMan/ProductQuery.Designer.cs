@@ -270,6 +270,7 @@
             this.MaximumSize = new System.Drawing.Size(1974, 1088);
             this.MinimumSize = new System.Drawing.Size(1974, 1088);
             this.Name = "ProductQuery";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductQuery";
             this.Load += new System.EventHandler(this.ProductQuery_Load);
             this.sidePnl.ResumeLayout(false);

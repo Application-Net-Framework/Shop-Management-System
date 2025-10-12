@@ -10,18 +10,17 @@ namespace App.UI_Forms.SalesMan
     public partial class Profile : Form
     {
         int uId;
+        string uName;
         String connectionString = GlobalConfig.ConnectionString;
 
         public Profile()
         {
             InitializeComponent();
+            uId = Session.EmployeeId;
+            uName = Session.EmployeeName;
         }
 
-        public Profile(int employeeId)
-        {
-            InitializeComponent(); 
-            uId = employeeId;
-        }
+       
 
         private void LoadEmployeeProfile(int userId)
         {
@@ -120,7 +119,7 @@ namespace App.UI_Forms.SalesMan
 
         private void backBtn_Click(object sender, EventArgs e)
         {
-            Salesman s = new Salesman(uId, userNameTxt.Text);
+            Salesman s = new Salesman();
             s.StartPosition = FormStartPosition.Manual;
             s.Location = this.Location;
             s.Size = this.Size;

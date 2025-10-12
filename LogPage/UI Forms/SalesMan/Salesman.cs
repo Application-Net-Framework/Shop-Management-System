@@ -25,14 +25,11 @@ namespace App
         public Salesman()
         {
             InitializeComponent();
-            
+            employeeId = Session.EmployeeId;
+            employeeName = Session.EmployeeName;
+
         }
-        public Salesman(int userId, string userName)
-        {
-            InitializeComponent();
-            employeeId = userId;
-            employeeName = userName;
-        }
+       
 
       
         private void LoadLowStockProducts()
@@ -62,7 +59,7 @@ namespace App
         }
         private void homeBtn_Click(object sender, EventArgs e)
         {
-            Salesman h = new Salesman(employeeId, employeeName);
+            Salesman h = new Salesman();
             h.StartPosition = FormStartPosition.Manual;
             h.Location = this.Location;
             h.Size = this.Size;
@@ -72,6 +69,9 @@ namespace App
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
+            Session.EmployeeId = 0;
+            Session.EmployeeName = null;
+
             LogPage login = new LogPage();
             login.StartPosition = FormStartPosition.Manual;
             login.Location = this.Location;
@@ -144,7 +144,7 @@ namespace App
 
         private void Profile_Click(object sender, EventArgs e)
         {
-            Profile profileForm = new Profile(employeeId);
+            Profile profileForm = new Profile();
             profileForm.StartPosition = FormStartPosition.Manual;
             profileForm.Location = this.Location;
             profileForm.Size = this.Size;

@@ -347,6 +347,7 @@
     <Compile Include="UI Forms\Cashier\Cashier.Designer.cs">
       <DependentUpon>Cashier.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Forms\SalesMan\Session.cs" />
     <EmbeddedResource Include="UI Forms\Admin\Admin_Home.resx">
       <DependentUpon>Admin_Home.cs</DependentUpon>
     </EmbeddedResource>

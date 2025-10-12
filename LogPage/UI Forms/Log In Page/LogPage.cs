@@ -77,8 +77,9 @@ namespace App
               
                 else if (role == "Salesman")
                 {
-                    nextForm = new Salesman(userId, userName);
-                   
+                    nextForm = new Salesman();
+                    Session.EmployeeId = userId;
+                    Session.EmployeeName = userName;
                 }
                 else
                 {

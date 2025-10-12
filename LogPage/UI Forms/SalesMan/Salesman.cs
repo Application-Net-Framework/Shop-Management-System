@@ -23,9 +23,8 @@ namespace App
         private string employeeName;
         string connectionString = @"Data Source=GSM\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         public Salesman()
-        {   InitializeComponent();
-            employeeId = Session.EmployeeId;
-            employeeName = Session.EmployeeName;
+        {   
+            InitializeComponent();            
         }     
         private void LoadLowStockProducts()
         {   string query = @"SELECT ProductID, ProductName, Stock 
@@ -62,8 +61,9 @@ namespace App
             login.Show();
             this.Close();
         }
-        private void Cashier_Home_Load(object sender, EventArgs e)   
-        {   welcomeLabel.Text = "Welcome, " + employeeName;
+        private void Cashier_Home_Load(object sender, EventArgs e)
+        {
+            welcomeLabel.Text = "Welcome, " + Session.EmployeeName;
             LoadLowStockProducts();
         }
         private void headerPnl_Paint(object sender, PaintEventArgs e) { }

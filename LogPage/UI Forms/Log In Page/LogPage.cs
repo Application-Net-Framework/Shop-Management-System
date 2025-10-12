@@ -1,5 +1,6 @@
 ﻿using App.Configuration;
 using App.UI_Forms.Admin;
+using App.UI_Forms.SalesMan;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,6 +78,7 @@ namespace App
                 else if (role == "Salesman")
                 {
                     nextForm = new Salesman(userId, userName);
+                   
                 }
                 else
                 {

@@ -48,6 +48,7 @@
             this.welcomeLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
+            this.Profile = new System.Windows.Forms.Button();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lowStockGrid)).BeginInit();
@@ -57,6 +58,7 @@
             // sidePnl
             // 
             this.sidePnl.BackColor = System.Drawing.Color.Azure;
+            this.sidePnl.Controls.Add(this.Profile);
             this.sidePnl.Controls.Add(this.preOrderBtn);
             this.sidePnl.Controls.Add(this.cManagementBtn);
             this.sidePnl.Controls.Add(this.pQueryBtn);
@@ -287,6 +289,21 @@
             this.welcomeLabel.TabIndex = 20;
             this.welcomeLabel.Text = ":::";
             // 
+            // Profile
+            // 
+            this.Profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.Profile.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Profile.ForeColor = System.Drawing.Color.Transparent;
+            this.Profile.Image = global::App.Properties.Resources.user;
+            this.Profile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Profile.Location = new System.Drawing.Point(12, 187);
+            this.Profile.Name = "Profile";
+            this.Profile.Size = new System.Drawing.Size(135, 37);
+            this.Profile.TabIndex = 23;
+            this.Profile.Text = "Profile";
+            this.Profile.UseVisualStyleBackColor = false;
+            this.Profile.Click += new System.EventHandler(this.Profile_Click);
+            // 
             // Salesman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,5 +357,6 @@
         private System.Windows.Forms.Label welcomeLbl;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.Button Profile;
     }
 }

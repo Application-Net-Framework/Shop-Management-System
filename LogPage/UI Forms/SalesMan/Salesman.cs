@@ -141,5 +141,16 @@ namespace App
             PO.Show();
             this.Hide();
         }
+
+        private void Profile_Click(object sender, EventArgs e)
+        {
+            Profile profileForm = new Profile(employeeId);
+            profileForm.StartPosition = FormStartPosition.Manual;
+            profileForm.Location = this.Location;
+            profileForm.Size = this.Size;
+            profileForm.Show();
+            this.Hide();
+
+        }
     }
 }

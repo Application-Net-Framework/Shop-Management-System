@@ -273,6 +273,12 @@
     <Compile Include="UI Forms\SalesMan\ProductQuery.Designer.cs">
       <DependentUpon>ProductQuery.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Forms\SalesMan\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\SalesMan\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Forms\SalesMan\Salesman.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -436,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\SalesMan\ProductQuery.resx">
       <DependentUpon>ProductQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\SalesMan\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Forms\SalesMan\Salesman.resx">
       <DependentUpon>Salesman.cs</DependentUpon>

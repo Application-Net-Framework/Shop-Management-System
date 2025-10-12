@@ -25,7 +25,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public int netIncomeSalesman;
         public int netIncomeCashier;
 
-        public string ConnectionString = "Data Source=DESKTOP-FGUJCMU\\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;TrustServerCertificate=True";
+        public string ConnectionString = "Data Source=GSM\\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         public report()
         {
             InitializeComponent();

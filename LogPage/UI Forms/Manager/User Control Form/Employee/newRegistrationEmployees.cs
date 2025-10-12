@@ -18,7 +18,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public string totalSalesman;
         public string totalNewEmployee;
 
-        public string connectionString = "Data Source=DESKTOP-FGUJCMU\\SQLEXPRESS;Initial Catalog=GoribArShop;Integrated Security=True;TrustServerCertificate=True";
+        public string connectionString = "Data Source=GSM\\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         public newRegistrationEmployees()
         {
             InitializeComponent();

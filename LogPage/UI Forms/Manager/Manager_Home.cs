@@ -29,7 +29,7 @@ namespace App
         bool productExpnd = false;
         bool featureExpnd = false;
 
-        public Manager_Home()
+        public Manager_Home(int UserId)
         {
             InitializeComponent();
 

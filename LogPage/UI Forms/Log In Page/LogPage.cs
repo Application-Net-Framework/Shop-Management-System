@@ -67,7 +67,7 @@ namespace App
                 }
                 else if (role == "Manager")
                 {
-                    nextForm = new Manager_Home();
+                    nextForm = new Manager_Home(userId);
                 }
                 else if (role == "Cashier")
                 {

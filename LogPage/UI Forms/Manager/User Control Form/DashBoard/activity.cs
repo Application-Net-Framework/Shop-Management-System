@@ -20,7 +20,7 @@ namespace App.UI_Forms.Manager
         public int totalsaleman;
         public double totalProfit;
 
-        string ConnectionString = "Data Source=DESKTOP-FGUJCMU\\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;TrustServerCertificate=True";
+        string ConnectionString = "Data Source=GSM\\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         public activity()
         {
             InitializeComponent();
@@ -61,9 +61,9 @@ namespace App.UI_Forms.Manager
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
 
-                    string totalSum = "SELECT SUM([Product Price]) AS TotalPrice, SUM([Product Sale Price]) AS TotalSale FROM [Daily Activity]";
-                    string totalCashier = "SELECT COUNT(*) AS TotalCashier FROM Employee WHERE Role = 'Cashier'";
-                    string totalSaleman = "SELECT COUNT(*) AS TotalSaleman FROM Employee WHERE Role = 'Salesman'";
+                    string totalSum = "SELECT SUM(Price) AS TotalPrice, SUM(SalePrice) AS TotalSale FROM Product";
+                    string totalCashier = "SELECT COUNT(*) AS TotalCashier FROM Employees WHERE Role = 'Cashier'";
+                    string totalSaleman = "SELECT COUNT(*) AS TotalSaleman FROM Employees WHERE Role = 'Salesman'";
 
 
                     connection.Open();

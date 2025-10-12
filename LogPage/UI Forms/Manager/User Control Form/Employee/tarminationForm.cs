@@ -15,7 +15,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
 {
     public partial class tarminationForm : UserControl
     {
-        public string connectionString = "Data Source=DESKTOP-FGUJCMU\\SQLEXPRESS;Initial Catalog=GSMSDb;Integrated Security=True;TrustServerCertificate=True";
+        public string connectionString = "Data Source=GSM\\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         public int selectedUserId = 0;
         public string selectedUserName = "";
         

@@ -86,7 +86,7 @@ namespace App.UI_Forms.Cashier
                 DataGridViewRow row = dgvOrders_order.Rows[e.RowIndex];
 
 
-                // ------- Order Details (products) -------
+                //Order Details (products)
                 int orderId = Convert.ToInt32(row.Cells["OrderID"].Value);
 
                 string detailQuery = @"

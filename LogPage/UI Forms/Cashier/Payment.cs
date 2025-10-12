@@ -317,52 +317,6 @@ namespace App.UI_Forms.Cashier
 
                         }
                     }
-                    //    object phoneValue;
-
-                    //if (string.IsNullOrWhiteSpace(txtCusPhone.Text))
-                    //{
-                    //    phoneValue = DBNull.Value;
-                    //}
-                    //else
-                    //{
-                    //    phoneValue = txtCusPhone.Text.Trim();
-                    //}
-
-                    //// 1️. Insert Customer
-                    //string insertCustomerQuery = "INSERT INTO Customer (Name, Phone) VALUES ('" + txtCusName.Text.Trim() + "', "+phoneValue+");" + 
-                    //                             "SELECT SCOPE_IDENTITY(); ";
-
-
-
-                    //SqlCommand cmdCustomer = new SqlCommand(insertCustomerQuery, conn);
-
-                    //int customerId = Convert.ToInt32(cmdCustomer.ExecuteScalar());
-
-
-
-                    // 1️⃣ Check if customer already exists by phone
-                    //string checkCustomerQuery = "SELECT CustomerID FROM Customer WHERE Phone = '" + phoneValue+"'";
-                    //SqlCommand cmdCheck = new SqlCommand(checkCustomerQuery, conn);
-                    //object result = cmdCheck.ExecuteScalar();
-
-                    //if (result != null) // customer already exists
-                    //{
-                    //    customerId = Convert.ToInt32(result);
-                    //    if (!string.IsNullOrWhiteSpace(txtCusName.Text))
-                    //    {
-                    //        // Update name if provided
-                    //        string updateCustomerNameQuery = "UPDATE Customer SET Name = '" + txtCusName.Text.Trim() + "' WHERE CustomerID = " + customerId;
-                    //        ExecuteNonQuery(updateCustomerNameQuery);
-                    //    }
-                    //}
-                    //else // insert new customer
-                    //{
-                    //    string insertCustomerQuery = "INSERT INTO Customer (Name, Phone) VALUES ('" + txtCusName.Text.Trim() + "', '" + phoneValue + "');" +
-                    //                                 "SELECT SCOPE_IDENTITY();";
-                    //    SqlCommand cmdCustomer = new SqlCommand(insertCustomerQuery, conn);
-                    //    customerId = Convert.ToInt32(cmdCustomer.ExecuteScalar());
-
-                    //}
 
                     // 2️. Insert Order
                     string insertOrderQuery =

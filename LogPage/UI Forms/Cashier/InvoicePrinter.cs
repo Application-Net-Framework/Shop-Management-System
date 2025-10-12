@@ -18,7 +18,6 @@ public class InvoicePrinter
     private decimal _discountPrct;
     private decimal _total;
 
-    private string _connectionString = "your_connection_here";
 
     public InvoicePrinter(int orderId)
     {

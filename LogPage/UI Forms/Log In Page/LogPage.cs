@@ -76,7 +76,7 @@ namespace App
               
                 else if (role == "Salesman")
                 {
-                    nextForm = new Salesman();
+                    nextForm = new Salesman(userId, userName);
                 }
                 else
                 {

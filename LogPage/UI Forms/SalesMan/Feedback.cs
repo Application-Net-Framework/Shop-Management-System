@@ -1,4 +1,6 @@
-﻿using System;
+﻿using App.Configuration;
+using App.UI_Forms.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using App.Configuration;
 
 namespace App.UI_Forms.SalesMan
 {
@@ -107,7 +108,7 @@ namespace App.UI_Forms.SalesMan
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
-            Salesman S = new Salesman();
+            Salesman S = new Salesman ();
             S.StartPosition = FormStartPosition.Manual;
             S.Location = this.Location;
             S.Size = this.Size;

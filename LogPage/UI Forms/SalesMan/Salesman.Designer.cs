@@ -47,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.welcomeLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.welcomeLabel = new System.Windows.Forms.Label();
             this.sidePnl.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lowStockGrid)).BeginInit();
@@ -276,12 +277,23 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "List of products under 5 units";
             // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLabel.Location = new System.Drawing.Point(471, 72);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(25, 24);
+            this.welcomeLabel.TabIndex = 20;
+            this.welcomeLabel.Text = ":::";
+            // 
             // Salesman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.welcomeLbl);
             this.Controls.Add(this.label3);
@@ -327,5 +339,6 @@
         private System.Windows.Forms.Button preOrderBtn;
         private System.Windows.Forms.Label welcomeLbl;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label welcomeLabel;
     }
 }

@@ -1,4 +1,6 @@
 ﻿using App.Configuration;
+using App.Configuration;
+using App.UI_Forms.Admin;
 using App.UI_Forms.SalesMan;
 using System;
 using System.Collections.Generic;
@@ -9,17 +11,30 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
-using App.Configuration;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace App
 {
     public partial class Salesman : Form
     {
+        private int employeeId;
+        private string employeeName;
         String connectionString = GlobalConfig.ConnectionString;
         public Salesman()
-        {   InitializeComponent();
+        {
+            InitializeComponent();
+            
         }
+        public Salesman(int userId, string userName)
+        {
+            InitializeComponent();
+            employeeId = userId;
+            employeeName = userName;
+        }
+
+      
         private void LoadLowStockProducts()
         {
             string query = @"SELECT ProductID, ProductName, Stock 
@@ -46,7 +61,11 @@ namespace App
             supplierRequestGrid.DataSource = dt;
         }
         private void homeBtn_Click(object sender, EventArgs e)
-        {   Salesman h = new Salesman();
+        {
+            Salesman h = new Salesman(employeeId, employeeName);
+            h.StartPosition = FormStartPosition.Manual;
+            h.Location = this.Location;
+            h.Size = this.Size;
             h.Show();
             this.Hide();
         }
@@ -61,7 +80,11 @@ namespace App
             this.Close();
         }
 
-        private void Cashier_Home_Load(object sender, EventArgs e)   {LoadLowStockProducts(); }
+        private void Cashier_Home_Load(object sender, EventArgs e)   
+        {
+            welcomeLabel.Text = "Welcome, " + employeeName;
+            LoadLowStockProducts();
+        }
         private void headerPnl_Paint(object sender, PaintEventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }
         private void feedbackBtn_Click(object sender, EventArgs e)

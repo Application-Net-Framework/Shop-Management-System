@@ -145,7 +145,8 @@ namespace App.UI_Forms.SalesMan
             int count = Convert.ToInt32(checkCmd.ExecuteScalar());
             if (count > 0)
             {MessageBox.Show("Another customer already exists with this mobile or email."); con.Close(); return;}
-            string updateQuery = $"UPDATE Customer SET Name='{name}', Phone='{mobile}', Email='{email}', MembershipType='{status}' WHERE CustomerID={customerId}";
+            string updateQuery = $"UPDATE Customer SET Name='{name}', Phone='{mobile}', Email='{email}', " +
+                $"MembershipType='{status}' WHERE CustomerID={customerId}";
             SqlCommand updateCmd = new SqlCommand(updateQuery, con);
             int rows = updateCmd.ExecuteNonQuery();
 

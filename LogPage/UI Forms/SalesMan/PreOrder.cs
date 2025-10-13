@@ -87,32 +87,32 @@ namespace App.UI_Forms.SalesMan
         private void sProductBtn_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {   string query = "SELECT PreOrderProductID, ProductName, Category, Description, UnitPriceDescription " +
+            SqlConnection conn = new SqlConnection(connectionString);
+               string query = "SELECT PreOrderProductID, ProductName, Category, Description, UnitPriceDescription " +
                                "FROM PreOrderProduct " +
                                "WHERE ProductName LIKE '%" + pSearchTxt.Text + "%'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
-            }
+            
             productGrid.DataSource = dt;
         }
         private void listBtn_Click(object sender, EventArgs e)
         {   DataTable dt = new DataTable();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+            SqlConnection conn = new SqlConnection(connectionString);
+            
                 string query = "SELECT PreOrderProductID, ProductName, Category, Description, UnitPrice " +
                                "FROM PreOrderProduct ORDER BY ProductName ASC";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
-            }
+            
             productGrid.DataSource = dt;
         }
         private void searchBtn_Click(object sender, EventArgs e)
         {   DataTable dt = new DataTable();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+            SqlConnection conn = new SqlConnection(connectionString);
+            
                 string query = "SELECT CustomerID, Name, Phone,  MembershipType " +
                                "FROM Customer " +
                                "WHERE Phone LIKE '%" + customerSearchTxt.Text + "%' " +
@@ -120,20 +120,20 @@ namespace App.UI_Forms.SalesMan
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
-            }
+            
             customerGrid.DataSource = dt;
         }
         private void customerListBtn_Click(object sender, EventArgs e)
         {   DataTable dt = new DataTable();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+            SqlConnection conn = new SqlConnection(connectionString);
+            
                 string query = "SELECT CustomerID, Name, Phone,  MembershipType " +
                                "FROM Customer " +
                                "ORDER BY Name ASC";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
-            }
+            
             customerGrid.DataSource = dt;
         }
         private void productGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)

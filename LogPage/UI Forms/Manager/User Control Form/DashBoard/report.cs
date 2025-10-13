@@ -32,7 +32,6 @@ namespace App.UI_Forms.Manager.User_Control_Form
             
             loadDatabase();
             
-            // Set UI labels with proper formatting
             cashierEmpLb.Text = totalcashier.ToString();
             salemanLb.Text = totalsalesman.ToString();
 

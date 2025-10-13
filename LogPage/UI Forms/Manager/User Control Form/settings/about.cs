@@ -440,7 +440,7 @@ namespace App.UI_Forms.Manager
                                     Password = aboutNewPass.Text;
                                 }
 
-                                SaveUserData(); // Enabling the save operation
+                                SaveUserData(); 
                                 refreashData();
                             }
                         }

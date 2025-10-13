@@ -177,7 +177,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                     return;
                 }
 
-                // Confirm deletion with the user
+                
                 DialogResult result = MessageBox.Show($"Are you sure you want to delete discount '{discountCode}'?", 
                     "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 
@@ -200,9 +200,9 @@ namespace App.UI_Forms.Manager.User_Control_Form
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show($"Discount code '{discountCode}' has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Refresh the data grid
+                            
                             LoadDatabase();
-                            // Clear the selection
+                           
                             discountId = null;
                             discountCode = null;
                             Refreash();
@@ -244,9 +244,9 @@ namespace App.UI_Forms.Manager.User_Control_Form
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show($"Discount code '{discountCode}' has been deactivated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Refresh the data grid
+                            
                             LoadDatabase();
-                            // Clear the selection
+                            
                             discountId = null;
                             discountCode = null;
                             Refreash();
@@ -294,7 +294,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
             {
                 DataGridViewRow row = discountDataTable.Rows[e.RowIndex];
                 
-                // Store the selected discount's information
+               
                 discountId = row.Cells["DiscountID"].Value.ToString();
                 discountCode = row.Cells["DiscountCode"].Value.ToString();
                 

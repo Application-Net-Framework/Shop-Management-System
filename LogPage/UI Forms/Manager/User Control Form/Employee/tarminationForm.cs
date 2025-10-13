@@ -78,7 +78,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                     return;
                 }
 
-                // Confirm reactivation
+                
                 DialogResult result = MessageBox.Show($"Are you sure you want to reactivate employee '{selectedUserName}'?\n\nThis will change their account status back to active.", 
                     "Confirm Reactivation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -87,7 +87,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                     using (SqlConnection conn = new SqlConnection(connectionString))
                     {
                         conn.Open();
-                        // Change account status from deactive to active
+                        
                         string query = "UPDATE Employees SET AccountStatus = 'active' WHERE userID = @userID";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -99,11 +99,11 @@ namespace App.UI_Forms.Manager.User_Control_Form
                             {
                                 MessageBox.Show($"Employee '{selectedUserName}' reactivated successfully! Account status changed to active.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 
-                                // Clear selection
+                                
                                 selectedUserId = 0;
                                 selectedUserName = "";
                                 
-                                // Refresh the grid to remove reactivated employee from terminated list
+                                
                                 LoadDatabase();
                             }
                             else
@@ -127,7 +127,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
 
         private void TarminationEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Handle selection of terminated employee for reactivation
+            
             if (e.RowIndex >= 0)
             {
                 try
@@ -136,9 +136,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                     
                     selectedUserId = Convert.ToInt32(row.Cells["userID"].Value);
                     selectedUserName = row.Cells["UserName"].Value?.ToString() ?? "";
-                    
-                    // Optional: Show selection feedback
-                    MessageBox.Show($"Selected employee: {selectedUserName} (ID: {selectedUserId})\nClick 'Undo' to reactivate this employee.", "Employee Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 catch (Exception ex)
                 {

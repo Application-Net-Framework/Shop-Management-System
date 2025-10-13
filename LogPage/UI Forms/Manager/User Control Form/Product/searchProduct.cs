@@ -122,14 +122,14 @@ namespace App.UI_Forms.Manager.User_Control_Form
         {
             try
             {
-                // If search box is empty, reload all products
+                
                 if (string.IsNullOrWhiteSpace(searchText))
                 {
                     loadDatabase();
                     return;
                 }
 
-                // Match the correct column names from the Product table
+                
                 string searchQuery = "SELECT * FROM Product WHERE ProductName LIKE @SearchText OR CategoryName LIKE @SearchText OR Description LIKE @SearchText";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -142,7 +142,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                         adapter.Fill(dt);
                         
                         productSearch.DataSource = dt;
-                        // Do NOT call loadDatabase() here as it would override search results
+                        
                     }
                 }
             }

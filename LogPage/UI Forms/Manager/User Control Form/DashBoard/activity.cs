@@ -33,27 +33,26 @@ namespace App.UI_Forms.Manager
             cashierEmpLb.Text = totalcashier.ToString();
             salemanLb.Text = totalsaleman.ToString();
 
-            totalProfit = totalprice - totalsale;
+            totalProfit = totalprice + totalsale;
             profitlb.Text = totalProfit.ToString() + tk;
 
             chart1.Titles.Add("Cost of A Shop");
             chart1.Series["S1"].Points.AddXY("  Price", totalprice);
-            chart1.Series["S1"].Points[0].Color = Color.SeaGreen;
+            chart1.Series["S1"].Points[0].Color = Color.FromArgb(67, 129, 101); 
 
             chart1.Series["S1"].Points.AddXY("  Sale", totalsale);
-            chart1.Series["S1"].Points[1].Color = Color.DarkOrange;
+            chart1.Series["S1"].Points[1].Color = Color.FromArgb(255, 181, 76);
 
             chart1.Series["S1"].Points.AddXY("  Profit", totalProfit);
-            chart1.Series["S1"].Points[2].Color = Color.MediumOrchid;
+            chart1.Series["S1"].Points[2].Color = Color.FromArgb(202, 127, 220);
 
             employeChart.Titles.Add("Employee Ratio");
             
-            // Pass the numeric values directly instead of converting to string first
             employeChart.Series["EMP"].Points.AddXY("Cashier", totalcashier);
-            employeChart.Series["EMP"].Points[0].Color = Color.Green;
+            employeChart.Series["EMP"].Points[0].Color = Color.FromArgb(54, 87, 61);
 
             employeChart.Series["EMP"].Points.AddXY("Salesman", totalsaleman);
-            employeChart.Series["EMP"].Points[1].Color = Color.Purple;
+            employeChart.Series["EMP"].Points[1].Color = Color.FromArgb(81, 14, 126);
         }
         public void loadDatabase()
         {

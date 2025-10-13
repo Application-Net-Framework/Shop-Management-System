@@ -244,7 +244,10 @@ namespace App.UI_Forms.Admin
         
         private void button8_Click(object sender, EventArgs e)
         {
-            this.Close();
+            LogPage l = new LogPage();
+            l.Show();
+            this.Hide();
+
         }
 
         

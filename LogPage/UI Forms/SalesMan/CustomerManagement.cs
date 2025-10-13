@@ -157,3 +157,10 @@ namespace App.UI_Forms.SalesMan
         private void updateBtn_Click(object sender, EventArgs e){ UpdateCustomer();}
     }
 }
+/*
+SqlConnection conn = new SqlConnection(connectionString); 
+conn.Open(); 
+string query = "delete from Product where ProductID=" + txtid.Text + ""; 
+SqlCommand cmd = new SqlCommand(query, conn); 
+cmd.ExecuteNonQuery(); show(); clear(); 
+*/

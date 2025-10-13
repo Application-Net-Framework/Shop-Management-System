@@ -49,7 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.instructionBtn = new System.Windows.Forms.Button();
             this.sidePnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lowStockGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierRequestGrid)).BeginInit();
@@ -58,7 +57,6 @@
             // sidePnl
             // 
             this.sidePnl.BackColor = System.Drawing.Color.Azure;
-            this.sidePnl.Controls.Add(this.instructionBtn);
             this.sidePnl.Controls.Add(this.Profile);
             this.sidePnl.Controls.Add(this.preOrderBtn);
             this.sidePnl.Controls.Add(this.cManagementBtn);
@@ -67,7 +65,7 @@
             this.sidePnl.Controls.Add(this.logoutBtn);
             this.sidePnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePnl.Location = new System.Drawing.Point(0, 0);
-            this.sidePnl.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.sidePnl.Margin = new System.Windows.Forms.Padding(6);
             this.sidePnl.Name = "sidePnl";
             this.sidePnl.Size = new System.Drawing.Size(308, 1017);
             this.sidePnl.TabIndex = 0;
@@ -80,7 +78,7 @@
             this.Profile.Image = global::App.Properties.Resources.user;
             this.Profile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Profile.Location = new System.Drawing.Point(24, 360);
-            this.Profile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Profile.Margin = new System.Windows.Forms.Padding(6);
             this.Profile.Name = "Profile";
             this.Profile.Size = new System.Drawing.Size(270, 71);
             this.Profile.TabIndex = 23;
@@ -96,7 +94,7 @@
             this.preOrderBtn.Image = global::App.Properties.Resources.cart;
             this.preOrderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.preOrderBtn.Location = new System.Drawing.Point(24, 279);
-            this.preOrderBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.preOrderBtn.Margin = new System.Windows.Forms.Padding(6);
             this.preOrderBtn.Name = "preOrderBtn";
             this.preOrderBtn.Size = new System.Drawing.Size(270, 71);
             this.preOrderBtn.TabIndex = 22;
@@ -112,7 +110,7 @@
             this.cManagementBtn.Image = global::App.Properties.Resources.user1;
             this.cManagementBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cManagementBtn.Location = new System.Drawing.Point(24, 196);
-            this.cManagementBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cManagementBtn.Margin = new System.Windows.Forms.Padding(6);
             this.cManagementBtn.Name = "cManagementBtn";
             this.cManagementBtn.Size = new System.Drawing.Size(270, 71);
             this.cManagementBtn.TabIndex = 12;
@@ -128,7 +126,7 @@
             this.pQueryBtn.Image = global::App.Properties.Resources.product1;
             this.pQueryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.pQueryBtn.Location = new System.Drawing.Point(24, 113);
-            this.pQueryBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pQueryBtn.Margin = new System.Windows.Forms.Padding(6);
             this.pQueryBtn.Name = "pQueryBtn";
             this.pQueryBtn.Size = new System.Drawing.Size(270, 71);
             this.pQueryBtn.TabIndex = 11;
@@ -144,7 +142,7 @@
             this.feedbackBtn.Image = global::App.Properties.Resources.feedback;
             this.feedbackBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.feedbackBtn.Location = new System.Drawing.Point(24, 31);
-            this.feedbackBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.feedbackBtn.Margin = new System.Windows.Forms.Padding(6);
             this.feedbackBtn.Name = "feedbackBtn";
             this.feedbackBtn.Size = new System.Drawing.Size(270, 71);
             this.feedbackBtn.TabIndex = 10;
@@ -160,7 +158,7 @@
             this.logoutBtn.Image = global::App.Properties.Resources.logout;
             this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutBtn.Location = new System.Drawing.Point(24, 908);
-            this.logoutBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.logoutBtn.Margin = new System.Windows.Forms.Padding(6);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(270, 71);
             this.logoutBtn.TabIndex = 8;
@@ -187,7 +185,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(864, 275);
+            this.label1.Location = new System.Drawing.Point(858, 276);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(456, 65);
@@ -200,8 +198,8 @@
             this.lowStockGrid.BackgroundColor = System.Drawing.Color.Azure;
             this.lowStockGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lowStockGrid.GridColor = System.Drawing.Color.BurlyWood;
-            this.lowStockGrid.Location = new System.Drawing.Point(1174, 556);
-            this.lowStockGrid.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lowStockGrid.Location = new System.Drawing.Point(1159, 527);
+            this.lowStockGrid.Margin = new System.Windows.Forms.Padding(6);
             this.lowStockGrid.Name = "lowStockGrid";
             this.lowStockGrid.RowHeadersWidth = 82;
             this.lowStockGrid.Size = new System.Drawing.Size(678, 394);
@@ -214,7 +212,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(1326, 446);
+            this.label2.Location = new System.Drawing.Point(1311, 417);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(352, 51);
@@ -227,8 +225,8 @@
             this.supplierRequestBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supplierRequestBtn.ForeColor = System.Drawing.Color.Transparent;
             this.supplierRequestBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.supplierRequestBtn.Location = new System.Drawing.Point(1286, 962);
-            this.supplierRequestBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.supplierRequestBtn.Location = new System.Drawing.Point(1271, 933);
+            this.supplierRequestBtn.Margin = new System.Windows.Forms.Padding(6);
             this.supplierRequestBtn.Name = "supplierRequestBtn";
             this.supplierRequestBtn.Size = new System.Drawing.Size(424, 71);
             this.supplierRequestBtn.TabIndex = 13;
@@ -241,8 +239,8 @@
             this.supplierRequestGrid.BackgroundColor = System.Drawing.Color.Azure;
             this.supplierRequestGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.supplierRequestGrid.GridColor = System.Drawing.Color.BurlyWood;
-            this.supplierRequestGrid.Location = new System.Drawing.Point(424, 556);
-            this.supplierRequestGrid.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.supplierRequestGrid.Location = new System.Drawing.Point(409, 527);
+            this.supplierRequestGrid.Margin = new System.Windows.Forms.Padding(6);
             this.supplierRequestGrid.Name = "supplierRequestGrid";
             this.supplierRequestGrid.RowHeadersWidth = 82;
             this.supplierRequestGrid.Size = new System.Drawing.Size(678, 394);
@@ -254,8 +252,8 @@
             this.supplyRequestBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supplyRequestBtn.ForeColor = System.Drawing.Color.Transparent;
             this.supplyRequestBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.supplyRequestBtn.Location = new System.Drawing.Point(596, 962);
-            this.supplyRequestBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.supplyRequestBtn.Location = new System.Drawing.Point(581, 933);
+            this.supplyRequestBtn.Margin = new System.Windows.Forms.Padding(6);
             this.supplyRequestBtn.Name = "supplyRequestBtn";
             this.supplyRequestBtn.Size = new System.Drawing.Size(304, 71);
             this.supplyRequestBtn.TabIndex = 15;
@@ -270,7 +268,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(586, 471);
+            this.label3.Location = new System.Drawing.Point(571, 442);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(380, 51);
@@ -284,7 +282,7 @@
             this.welcomeLbl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.welcomeLbl.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.welcomeLbl.Location = new System.Drawing.Point(450, 162);
+            this.welcomeLbl.Location = new System.Drawing.Point(444, 163);
             this.welcomeLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.welcomeLbl.Name = "welcomeLbl";
             this.welcomeLbl.Size = new System.Drawing.Size(0, 51);
@@ -297,7 +295,7 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(1330, 519);
+            this.label4.Location = new System.Drawing.Point(1315, 490);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(353, 32);
@@ -308,7 +306,7 @@
             // 
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeLabel.Location = new System.Drawing.Point(892, 360);
+            this.welcomeLabel.Location = new System.Drawing.Point(886, 361);
             this.welcomeLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.welcomeLabel.Name = "welcomeLabel";
             this.welcomeLabel.Size = new System.Drawing.Size(52, 44);
@@ -319,25 +317,10 @@
             // 
             this.panel2.BackgroundImage = global::App.Properties.Resources.WhatsApp_Image_2025_10_11_at_21_09_19_11811b36;
             this.panel2.Location = new System.Drawing.Point(306, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1664, 269);
+            this.panel2.Size = new System.Drawing.Size(1664, 156);
             this.panel2.TabIndex = 21;
-            // 
-            // instructionBtn
-            // 
-            this.instructionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.instructionBtn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instructionBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.instructionBtn.Image = global::App.Properties.Resources.user;
-            this.instructionBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.instructionBtn.Location = new System.Drawing.Point(24, 443);
-            this.instructionBtn.Margin = new System.Windows.Forms.Padding(6);
-            this.instructionBtn.Name = "instructionBtn";
-            this.instructionBtn.Size = new System.Drawing.Size(270, 71);
-            this.instructionBtn.TabIndex = 24;
-            this.instructionBtn.Text = "Instruction";
-            this.instructionBtn.UseVisualStyleBackColor = false;
             // 
             // Salesman
             // 
@@ -357,7 +340,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lowStockGrid);
             this.Controls.Add(this.sidePnl);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximumSize = new System.Drawing.Size(1974, 1088);
             this.MinimumSize = new System.Drawing.Size(1974, 1088);
             this.Name = "Salesman";
@@ -394,6 +377,5 @@
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Button Profile;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button instructionBtn;
     }
 }

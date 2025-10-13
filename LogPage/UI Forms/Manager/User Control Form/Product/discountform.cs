@@ -17,7 +17,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
         
         public string discountId;
         public string discountCode;
-        public string discountPercentage;
+        public string DiscountPercentage;
         public DateTime startDate;
         public DateTime endDate;
         public string MaxValue;
@@ -72,10 +72,10 @@ namespace App.UI_Forms.Manager.User_Control_Form
             try
             {
                 discountCode = discountcodetxt.Text;
-                discountPercentage = percentagetxt.Text;
+                DiscountPercentage = percentagetxt.Text;
                 startDate = startdate.Value;
                 endDate = enddate.Value;
-                if (!int.TryParse(discountPercentage, out int percentageValue))
+                if (!int.TryParse(DiscountPercentage, out int percentageValue))
                 {
                     MessageBox.Show("Please enter a valid number for discount percentage.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -90,13 +90,13 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string insertQuery = "INSERT INTO Discounts (DiscountCode, StartDate, EndDate, DiscountStatus, DiscountPercent) " +
-                                         "VALUES (@DiscountCode, @StartDate, @EndDate, 'Active', @DiscountPercent)";
+                    string insertQuery = "INSERT INTO Discounts (DiscountCode, StartDate, EndDate, DiscountStatus, DiscountPercentage) " +
+                                         "VALUES (@DiscountCode, @StartDate, @EndDate, 'Active', @DiscountPercentage)";
                     
                     using (SqlCommand command = new SqlCommand(insertQuery, connection))
                     {
                         command.Parameters.AddWithValue("@DiscountCode", discountCode);
-                        command.Parameters.AddWithValue("@DiscountPercent", discountPercentage);
+                        command.Parameters.AddWithValue("@DiscountPercentage", DiscountPercentage);
                         command.Parameters.AddWithValue("@StartDate", startDate);
                         command.Parameters.AddWithValue("@EndDate", endDate);
                         
@@ -301,10 +301,10 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 discountIdtxt.Text = discountId;
                 discountcodetxt.Text = discountCode;
                           
-                if (row.Cells["DiscountPercent"].Value != null)
+                if (row.Cells["DiscountPercentage"].Value != null)
                 {
-                    discountPercentage = row.Cells["DiscountPercent"].Value.ToString();
-                    percentagetxt.Text = discountPercentage;
+                    DiscountPercentage = row.Cells["DiscountPercentage"].Value.ToString();
+                    percentagetxt.Text = DiscountPercentage;
                 }
                 
                 if (row.Cells["StartDate"].Value != DBNull.Value)

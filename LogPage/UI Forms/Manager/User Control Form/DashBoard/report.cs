@@ -72,10 +72,12 @@ namespace App.UI_Forms.Manager.User_Control_Form
  
                 using(SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-                    string TotalPrice = "SELECT SUM(Price * BuyQuantity) FROM Product";
-                    string TotalSales = "SELECT SUM(Price * SaleQuantity) FROM Product";
-                    string TotalCashier = "SELECT COUNT(*) FROM Employee WHERE Role = 'Cashier'";
-                    string TotalSalesman = "SELECT COUNT(*) FROM Employee WHERE Role = 'Salesman'";
+                    string TotalPrice = "SELECT SUM(Price * Stock) AS TotalPrice FROM Product";
+                    string TotalSales = "SELECT SUM(Price * SaleQuantity) AS TotalSales FROM Product";
+
+                    string TotalCashier = "SELECT COUNT(*) AS TotalCashier FROM Employees WHERE Role = 'Cashier'";
+                    string TotalSalesman = "SELECT COUNT(*) AS TotalSalesman FROM Employees WHERE Role = 'Salesman'";
+
 
                     connection.Open();
                     SqlCommand cmdTotalPrice = new SqlCommand(TotalPrice, connection);

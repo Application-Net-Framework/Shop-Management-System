@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(discountform));
             this.discountPanel = new System.Windows.Forms.Panel();
             this.deletebtn = new System.Windows.Forms.Button();
@@ -60,6 +60,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Clearbtn = new System.Windows.Forms.Button();
             this.discountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.discountDataTable)).BeginInit();
             this.panel11.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // discountPanel
             // 
+            this.discountPanel.Controls.Add(this.Clearbtn);
             this.discountPanel.Controls.Add(this.deletebtn);
             this.discountPanel.Controls.Add(this.discountDataTable);
             this.discountPanel.Controls.Add(this.deactivebtn);
@@ -122,16 +124,16 @@
             this.discountDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.discountDataTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.discountDataTable.GridColor = System.Drawing.Color.Black;
-            this.discountDataTable.Location = new System.Drawing.Point(524, 183);
+            this.discountDataTable.Location = new System.Drawing.Point(522, 183);
             this.discountDataTable.Name = "discountDataTable";
             this.discountDataTable.RowHeadersVisible = false;
             this.discountDataTable.RowHeadersWidth = 51;
             this.discountDataTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.discountDataTable.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.discountDataTable.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.discountDataTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.discountDataTable.Size = new System.Drawing.Size(482, 318);
             this.discountDataTable.TabIndex = 56;
@@ -168,7 +170,7 @@
             this.addbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.addbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addbtn.ForeColor = System.Drawing.Color.White;
-            this.addbtn.Location = new System.Drawing.Point(154, 519);
+            this.addbtn.Location = new System.Drawing.Point(87, 519);
             this.addbtn.Name = "addbtn";
             this.addbtn.Size = new System.Drawing.Size(126, 38);
             this.addbtn.TabIndex = 52;
@@ -265,11 +267,12 @@
             this.percentagetxt.BackColor = System.Drawing.Color.White;
             this.percentagetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.percentagetxt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentagetxt.Location = new System.Drawing.Point(0, 10);
+            this.percentagetxt.Location = new System.Drawing.Point(30, 10);
             this.percentagetxt.Margin = new System.Windows.Forms.Padding(4);
             this.percentagetxt.Name = "percentagetxt";
-            this.percentagetxt.Size = new System.Drawing.Size(256, 20);
+            this.percentagetxt.Size = new System.Drawing.Size(200, 20);
             this.percentagetxt.TabIndex = 2;
+            this.percentagetxt.TextChanged += new System.EventHandler(this.percentagetxt_TextChanged);
             // 
             // panel6
             // 
@@ -306,10 +309,10 @@
             this.discountcodetxt.BackColor = System.Drawing.Color.White;
             this.discountcodetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.discountcodetxt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountcodetxt.Location = new System.Drawing.Point(4, 9);
+            this.discountcodetxt.Location = new System.Drawing.Point(30, 9);
             this.discountcodetxt.Margin = new System.Windows.Forms.Padding(4);
             this.discountcodetxt.Name = "discountcodetxt";
-            this.discountcodetxt.Size = new System.Drawing.Size(252, 20);
+            this.discountcodetxt.Size = new System.Drawing.Size(200, 20);
             this.discountcodetxt.TabIndex = 2;
             // 
             // panel4
@@ -347,10 +350,11 @@
             this.discountIdtxt.BackColor = System.Drawing.Color.White;
             this.discountIdtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.discountIdtxt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountIdtxt.Location = new System.Drawing.Point(4, 9);
+            this.discountIdtxt.Location = new System.Drawing.Point(30, 9);
             this.discountIdtxt.Margin = new System.Windows.Forms.Padding(4);
             this.discountIdtxt.Name = "discountIdtxt";
-            this.discountIdtxt.Size = new System.Drawing.Size(252, 20);
+            this.discountIdtxt.ReadOnly = true;
+            this.discountIdtxt.Size = new System.Drawing.Size(200, 20);
             this.discountIdtxt.TabIndex = 2;
             // 
             // panel9
@@ -412,6 +416,19 @@
             this.pictureBox1.Size = new System.Drawing.Size(403, 100);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // Clearbtn
+            // 
+            this.Clearbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.Clearbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Clearbtn.ForeColor = System.Drawing.Color.White;
+            this.Clearbtn.Location = new System.Drawing.Point(249, 519);
+            this.Clearbtn.Name = "Clearbtn";
+            this.Clearbtn.Size = new System.Drawing.Size(126, 38);
+            this.Clearbtn.TabIndex = 58;
+            this.Clearbtn.Text = "Clear";
+            this.Clearbtn.UseVisualStyleBackColor = false;
+            this.Clearbtn.Click += new System.EventHandler(this.Clearbtn_Click);
             // 
             // discountform
             // 
@@ -480,5 +497,6 @@
         private System.Windows.Forms.DateTimePicker startdate;
         private System.Windows.Forms.DataGridView discountDataTable;
         private System.Windows.Forms.Button deletebtn;
+        private System.Windows.Forms.Button Clearbtn;
     }
 }

@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(stackLevelform));
             this.stackLevelPanel = new System.Windows.Forms.Panel();
             this.StackLevelchartpnl = new System.Windows.Forms.Panel();
+            this.HighStack = new System.Windows.Forms.DataGridView();
+            this.LowStack = new System.Windows.Forms.DataGridView();
+            this.searchProductManager = new App.UI_Forms.Manager.User_Control_Form.searchProduct();
+            this.productAddManager = new App.UI_Forms.Manager.User_Control_Form.productAdd();
             this.refreashbtn = new System.Windows.Forms.Button();
             this.addproductpnlbtn = new System.Windows.Forms.Button();
             this.serchpnlbtn = new System.Windows.Forms.Button();
@@ -42,10 +48,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.searchProductManager = new App.UI_Forms.Manager.User_Control_Form.searchProduct();
-            this.productAddManager = new App.UI_Forms.Manager.User_Control_Form.productAdd();
             this.stackLevelPanel.SuspendLayout();
             this.StackLevelchartpnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HighStack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LowStack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeChart)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -65,6 +71,8 @@
             // 
             // StackLevelchartpnl
             // 
+            this.StackLevelchartpnl.Controls.Add(this.HighStack);
+            this.StackLevelchartpnl.Controls.Add(this.LowStack);
             this.StackLevelchartpnl.Controls.Add(this.searchProductManager);
             this.StackLevelchartpnl.Controls.Add(this.productAddManager);
             this.StackLevelchartpnl.Controls.Add(this.refreashbtn);
@@ -76,6 +84,69 @@
             this.StackLevelchartpnl.Name = "StackLevelchartpnl";
             this.StackLevelchartpnl.Size = new System.Drawing.Size(1200, 438);
             this.StackLevelchartpnl.TabIndex = 86;
+            // 
+            // HighStack
+            // 
+            this.HighStack.AllowUserToResizeRows = false;
+            this.HighStack.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.HighStack.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.HighStack.BackgroundColor = System.Drawing.Color.DimGray;
+            this.HighStack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.HighStack.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.HighStack.GridColor = System.Drawing.Color.Black;
+            this.HighStack.Location = new System.Drawing.Point(26, 42);
+            this.HighStack.Name = "HighStack";
+            this.HighStack.RowHeadersVisible = false;
+            this.HighStack.RowHeadersWidth = 51;
+            this.HighStack.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
+            this.HighStack.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.HighStack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.HighStack.Size = new System.Drawing.Size(260, 267);
+            this.HighStack.TabIndex = 92;
+            this.HighStack.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HighStack_CellContentClick);
+            // 
+            // LowStack
+            // 
+            this.LowStack.AllowUserToResizeRows = false;
+            this.LowStack.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.LowStack.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.LowStack.BackgroundColor = System.Drawing.Color.DimGray;
+            this.LowStack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LowStack.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.LowStack.GridColor = System.Drawing.Color.Black;
+            this.LowStack.Location = new System.Drawing.Point(832, 42);
+            this.LowStack.Name = "LowStack";
+            this.LowStack.RowHeadersVisible = false;
+            this.LowStack.RowHeadersWidth = 51;
+            this.LowStack.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.LowStack.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.LowStack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.LowStack.Size = new System.Drawing.Size(250, 267);
+            this.LowStack.TabIndex = 91;
+            this.LowStack.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LowStack_CellContentClick);
+            // 
+            // searchProductManager
+            // 
+            this.searchProductManager.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchProductManager.Location = new System.Drawing.Point(0, 0);
+            this.searchProductManager.Name = "searchProductManager";
+            this.searchProductManager.Size = new System.Drawing.Size(1200, 438);
+            this.searchProductManager.TabIndex = 88;
+            this.searchProductManager.Load += new System.EventHandler(this.searchProductManager_Load);
+            // 
+            // productAddManager
+            // 
+            this.productAddManager.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productAddManager.Location = new System.Drawing.Point(0, 0);
+            this.productAddManager.Name = "productAddManager";
+            this.productAddManager.Size = new System.Drawing.Size(1200, 438);
+            this.productAddManager.TabIndex = 87;
             // 
             // refreashbtn
             // 
@@ -123,15 +194,15 @@
             this.employeChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.employeChart.Legends.Add(legend1);
-            this.employeChart.Location = new System.Drawing.Point(316, 42);
+            this.employeChart.Location = new System.Drawing.Point(330, 42);
             this.employeChart.Margin = new System.Windows.Forms.Padding(2);
             this.employeChart.Name = "employeChart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
-            series1.Name = "EMP";
+            series1.Name = "Stack";
             this.employeChart.Series.Add(series1);
-            this.employeChart.Size = new System.Drawing.Size(478, 267);
+            this.employeChart.Size = new System.Drawing.Size(453, 267);
             this.employeChart.TabIndex = 7;
             this.employeChart.Text = "EmployeesChart";
             this.employeChart.Click += new System.EventHandler(this.employeChart_Click);
@@ -176,23 +247,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // searchProductManager
-            // 
-            this.searchProductManager.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchProductManager.Location = new System.Drawing.Point(0, 0);
-            this.searchProductManager.Name = "searchProductManager";
-            this.searchProductManager.Size = new System.Drawing.Size(1200, 438);
-            this.searchProductManager.TabIndex = 88;
-            this.searchProductManager.Load += new System.EventHandler(this.searchProductManager_Load);
-            // 
-            // productAddManager
-            // 
-            this.productAddManager.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productAddManager.Location = new System.Drawing.Point(0, 0);
-            this.productAddManager.Name = "productAddManager";
-            this.productAddManager.Size = new System.Drawing.Size(1200, 438);
-            this.productAddManager.TabIndex = 87;
-            // 
             // stackLevelform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +256,8 @@
             this.Size = new System.Drawing.Size(1200, 600);
             this.stackLevelPanel.ResumeLayout(false);
             this.StackLevelchartpnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.HighStack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LowStack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeChart)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -225,5 +281,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private User_Control_Form.searchProduct searchProductManager;
         private User_Control_Form.productAdd productAddManager;
+        private System.Windows.Forms.DataGridView HighStack;
+        private System.Windows.Forms.DataGridView LowStack;
     }
 }

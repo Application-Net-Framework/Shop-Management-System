@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.staffinformationPanel = new System.Windows.Forms.Panel();
             this.fun2 = new System.Windows.Forms.PictureBox();
+            this.clearbtn = new System.Windows.Forms.Button();
             this.fun1 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -96,7 +97,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.clearbtn = new System.Windows.Forms.Button();
             this.staffinformationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fun2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fun1)).BeginInit();
@@ -187,6 +187,19 @@
             this.fun2.Size = new System.Drawing.Size(286, 223);
             this.fun2.TabIndex = 96;
             this.fun2.TabStop = false;
+            // 
+            // clearbtn
+            // 
+            this.clearbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.clearbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearbtn.ForeColor = System.Drawing.Color.White;
+            this.clearbtn.Location = new System.Drawing.Point(854, 522);
+            this.clearbtn.Name = "clearbtn";
+            this.clearbtn.Size = new System.Drawing.Size(126, 38);
+            this.clearbtn.TabIndex = 97;
+            this.clearbtn.Text = "Clear";
+            this.clearbtn.UseVisualStyleBackColor = false;
+            this.clearbtn.Click += new System.EventHandler(this.clearbtn_Click);
             // 
             // fun1
             // 
@@ -416,7 +429,8 @@
             // 
             this.genderLb.AutoSize = true;
             this.genderLb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderLb.Location = new System.Drawing.Point(5, 5);
+            this.genderLb.ForeColor = System.Drawing.Color.Black;
+            this.genderLb.Location = new System.Drawing.Point(10, 4);
             this.genderLb.Name = "genderLb";
             this.genderLb.Size = new System.Drawing.Size(95, 20);
             this.genderLb.TabIndex = 51;
@@ -436,7 +450,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(16, 6);
+            this.label9.Location = new System.Drawing.Point(16, 5);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 20);
             this.label9.TabIndex = 1;
@@ -866,19 +880,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(403, 100);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // clearbtn
-            // 
-            this.clearbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.clearbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearbtn.ForeColor = System.Drawing.Color.White;
-            this.clearbtn.Location = new System.Drawing.Point(854, 522);
-            this.clearbtn.Name = "clearbtn";
-            this.clearbtn.Size = new System.Drawing.Size(126, 38);
-            this.clearbtn.TabIndex = 97;
-            this.clearbtn.Text = "Clear";
-            this.clearbtn.UseVisualStyleBackColor = false;
-            this.clearbtn.Click += new System.EventHandler(this.clearbtn_Click);
             // 
             // staffinformation
             // 

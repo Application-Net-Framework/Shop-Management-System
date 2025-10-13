@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,44 +13,92 @@ namespace App.UI_Forms.Manager
 {
     public partial class stackLevelform : UserControl
     {
+        public string highStack;
+        public string lowStack;
+        public string connectionString = "Data Source=GSM\\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
+        
         public stackLevelform()
         {
             InitializeComponent();
             StackLevelchartpnl.Visible = true;
             searchProductManager.Visible = false;
             productAddManager.Visible = false;
-
+            loadDatabase(); 
         }
 
         private void addproductpnlbtn_Click(object sender, EventArgs e)
         {
             productAddManager.Visible = true;
+            HighStack.Visible = false;
+            LowStack.Visible = false;
         }
 
         private void serchpnlbtn_Click(object sender, EventArgs e)
         {
             searchProductManager.Visible = true;
+            HighStack.Visible = false;
+            LowStack.Visible = false;
         }
 
         private void refreashbtn_Click(object sender, EventArgs e)
         {
-            //loaddatabase();
+            loadDatabase();
+            HighStack.Visible = true;
+            LowStack.Visible = true;
         }
+        
         public void loadDatabase()
         {
+            try
+            {
+                
+                DataTable highStockTable = new DataTable();
+                string highStockQuery = "SELECT ProductID, ProductName, Stock FROM Product WHERE Stock > 100";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(highStockQuery, conn))
+                    {
+                        adapter.Fill(highStockTable);
+                        HighStack.DataSource = highStockTable;
+                        highStack = highStockTable.Rows.Count.ToString();
+                    }
+                }
 
+                DataTable lowStockTable = new DataTable();
+                string lowStockQuery = "SELECT ProductID, ProductName, Stock FROM Product WHERE Stock < 50";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(lowStockQuery, conn))
+                    {
+                        adapter.Fill(lowStockTable);
+                        LowStack.DataSource = lowStockTable;
+                        lowStack = lowStockTable.Rows.Count.ToString();
+                    }
+                }
+                employeChart.Titles.Clear();
+                employeChart.Series["Stack"].Points.Clear();
+
+                employeChart.Titles.Add("Stack Level");
+                employeChart.Series["Stack"].Points.AddXY("  Low Stack", lowStack.ToString());
+                employeChart.Series["Stack"].Points[0].Color = Color.LightGreen;
+
+                employeChart.Series["Stack"].Points.AddXY("  High Stack", highStack.ToString());
+                employeChart.Series["Stack"].Points[1].Color = Color.LightCoral;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
+            }
         }
 
         private void stacklevelbtn1_Click(object sender, EventArgs e)
         {
             StackLevelchartpnl.Visible = true;
-           
         }
 
         private void stacklevelbtn2_Click(object sender, EventArgs e)
         {
             StackLevelchartpnl.Visible = true;
-       
         }
 
         private void addproductpnl_Paint(object sender, PaintEventArgs e)
@@ -65,6 +114,16 @@ namespace App.UI_Forms.Manager
         private void searchProductManager_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private void HighStack_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void LowStack_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

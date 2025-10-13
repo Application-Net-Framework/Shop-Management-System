@@ -20,13 +20,53 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public string discountPercentage;
         public DateTime startDate;
         public DateTime endDate;
+        public string MaxValue;
+        public void updateDatabaseExpireDiscount()
+        {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
+                    int currentYear = DateTime.Now.Year;
+
+                    string query = "UPDATE Discounts " +
+                                   "SET DiscountStatus = 'Expired' " +
+                                   "WHERE YEAR(EndDate) < @CurrentYear OR YEAR(EndDate) = Year(StartDate)";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CurrentYear", currentYear);
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                    }
+                }
+            
+        }
+        public void GetMaxValue()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT ISNULL(MAX(DiscountID), 0) FROM Discounts";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    MaxValue = command.ExecuteScalar().ToString();
+                }
+            }
+            discountIdtxt.Text = (int.Parse(MaxValue) + 1).ToString();
+        }
         public discountform()
         {
             InitializeComponent();
             LoadDatabase();
+            updateDatabaseExpireDiscount();
+            GetMaxValue();
         }
-        
+        public void Refreash()
+        {
+            discountcodetxt.Clear();
+            percentagetxt.Clear();
+        }
         private void addbtn_Click(object sender, EventArgs e)
         {
             try
@@ -35,17 +75,28 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 discountPercentage = percentagetxt.Text;
                 startDate = startdate.Value;
                 endDate = enddate.Value;
+                if (!int.TryParse(discountPercentage, out int percentageValue))
+                {
+                    MessageBox.Show("Please enter a valid number for discount percentage.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (percentageValue < 5 || percentageValue > 90)
+                {
+                    MessageBox.Show("Discount percentage must be between 5% and 90%.", "Invalid Discount", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string insertQuery = "INSERT INTO Discounts (DiscountCode, Percentage, StartDate, EndDate, DiscountStatus) " +
-                                         "VALUES (@DiscountCode, @Percentage, @StartDate, @EndDate, 'Active')";
+                    string insertQuery = "INSERT INTO Discounts (DiscountCode, StartDate, EndDate, DiscountStatus, DiscountPercent) " +
+                                         "VALUES (@DiscountCode, @StartDate, @EndDate, 'Active', @DiscountPercent)";
                     
                     using (SqlCommand command = new SqlCommand(insertQuery, connection))
                     {
                         command.Parameters.AddWithValue("@DiscountCode", discountCode);
-                        command.Parameters.AddWithValue("@Percentage", discountPercentage);
+                        command.Parameters.AddWithValue("@DiscountPercent", discountPercentage);
                         command.Parameters.AddWithValue("@StartDate", startDate);
                         command.Parameters.AddWithValue("@EndDate", endDate);
                         
@@ -56,10 +107,8 @@ namespace App.UI_Forms.Manager.User_Control_Form
                             MessageBox.Show($"Discount code '{discountCode}' has been added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             
                             LoadDatabase();
-                            
-                            discountIdtxt.Clear();
-                            discountcodetxt.Clear();
-                            percentagetxt.Clear();
+
+                            Refreash();
                         }
                         else
                         {
@@ -98,14 +147,12 @@ namespace App.UI_Forms.Manager.User_Control_Form
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show($"Discount code '{discountCode}' has been activated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Refresh the data grid
+                          
                             LoadDatabase();
-                            // Clear the selection
+                           
                             discountId = null;
                             discountCode = null;
-                            discountIdtxt.Clear();
-                            discountcodetxt.Clear();
-                            percentagetxt.Clear();
+                            Refreash();
                         }
                         else
                         {
@@ -158,9 +205,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                             // Clear the selection
                             discountId = null;
                             discountCode = null;
-                            discountIdtxt.Clear();
-                            discountcodetxt.Clear();
-                            percentagetxt.Clear();
+                            Refreash();
                         }
                         else
                         {
@@ -204,9 +249,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                             // Clear the selection
                             discountId = null;
                             discountCode = null;
-                            discountIdtxt.Clear();
-                            discountcodetxt.Clear();
-                            percentagetxt.Clear();
+                            Refreash();
                         }
                         else
                         {
@@ -256,12 +299,12 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 discountCode = row.Cells["DiscountCode"].Value.ToString();
                 
                 discountIdtxt.Text = discountId;
+                discountcodetxt.Text = discountCode;
                           
-                if (row.Cells["Percentage"].Value != null)
+                if (row.Cells["DiscountPercent"].Value != null)
                 {
-                    discountPercentage = row.Cells["Percentage"].Value.ToString();
-                    
-                    percentagetxt.Text = discountPercentage.ToString();
+                    discountPercentage = row.Cells["DiscountPercent"].Value.ToString();
+                    percentagetxt.Text = discountPercentage;
                 }
                 
                 if (row.Cells["StartDate"].Value != DBNull.Value)
@@ -276,6 +319,15 @@ namespace App.UI_Forms.Manager.User_Control_Form
                     enddate.Value = endDate;
                 }
             }
+        }
+
+        private void Clearbtn_Click(object sender, EventArgs e)
+        {
+            Refreash();
+        }
+
+        private void percentagetxt_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

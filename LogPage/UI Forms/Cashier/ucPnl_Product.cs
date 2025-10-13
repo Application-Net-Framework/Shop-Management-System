@@ -28,6 +28,7 @@ namespace App.UI_Forms.Cashier
             clear();
             clearCart();
             LoadCategories();
+            LoadDisount();
             totalPriceAfterDiscount();
 
             cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged_1;
@@ -178,6 +179,27 @@ namespace App.UI_Forms.Cashier
             cmbCategory.SelectedIndex = 0; // default to "All"
         }
 
+        private void LoadDisount()
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            string query = "SELECT DISTINCT DiscountCode FROM Discounts WHERE DiscountStatus = 'Active';";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            cmbDiscount_product.Items.Clear();
+            cmbDiscount_product.Items.Add("0"); // optional: show all products
+
+            while (reader.Read())
+            {
+                cmbDiscount_product.Items.Add(reader["DiscountCode"].ToString());
+            }
+
+            reader.Close();
+
+
+            cmbDiscount_product.SelectedIndex = 0;
+        }
 
         private void show() // refresh product list grid
         {
@@ -250,6 +272,7 @@ namespace App.UI_Forms.Cashier
                     MessageBox.Show("Discount cannot be greater than 100%.",
                         "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtDiscount.Clear();
+                    cmbDiscount_product.SelectedIndex = 0;
                     discount = 0;
                 }
                 decimal netAmm = totalPrice - (discount / 100) * totalPrice;
@@ -280,25 +303,13 @@ namespace App.UI_Forms.Cashier
             txtCategory.Clear();
             txtUnitePrice.Clear();
             nudQuantity.Value = 1;
+            RowID = -1;
         }
         public void clearSearch()
         {
             txtSearch.Clear();
             cmbCategory.SelectedIndex = 0;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -457,6 +468,8 @@ namespace App.UI_Forms.Cashier
         {
             clearCart();
             clearSearch();
+            if (cmbDiscount_product.Items.Count > 0)
+                cmbDiscount_product.SelectedIndex = 0;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -532,19 +545,9 @@ namespace App.UI_Forms.Cashier
             totalPriceAfterDiscount();
         }
 
-        private void lblNetAmm_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblNetAmm_TextChanged(object sender, EventArgs e)
         {
             totalPriceAfterDiscount();
-        }
-
-        private void txtDiscount_Click(object sender, EventArgs e)
-        {
-            txtDiscount.SelectAll();
         }
 
         private void btnPay_Click(object sender, EventArgs e)
@@ -575,6 +578,29 @@ namespace App.UI_Forms.Cashier
         {
             this.ClientSize = new Size(952, 602);
             totalPriceAfterDiscount();
+        }
+
+        private void cmbDiscount_product_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDiscount_product.SelectedItem.ToString() == "0")
+            {
+                txtDiscount.Text = "0";
+                return;
+            }
+            string selectedCode = cmbDiscount_product.SelectedItem.ToString();
+            string query = "SELECT DiscountPercent FROM Discounts WHERE DiscountCode = '" + selectedCode + "' AND DiscountStatus = 'Active';";
+            DataTable dt = ExecuteQuery(query);
+            if (dt.Rows.Count > 0)
+            {
+                txtDiscount.Text = dt.Rows[0]["DiscountPercent"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Selected discount code is not valid or inactive.", "Discount Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbDiscount_product.SelectedIndex = 0; // reset to "0"
+                txtDiscount.Text = "0";
+            }
+
         }
     }
 }

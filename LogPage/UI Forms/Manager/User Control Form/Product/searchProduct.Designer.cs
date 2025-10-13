@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchPnl = new System.Windows.Forms.Panel();
+            this.productSearch = new System.Windows.Forms.DataGridView();
             this.deletebtn = new System.Windows.Forms.Button();
-            this.productShowData = new System.Windows.Forms.DataGridView();
             this.stacklevelbtn2 = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.productSearchBox = new System.Windows.Forms.TextBox();
             this.searchPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productShowData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productSearch)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchPnl
             // 
+            this.searchPnl.Controls.Add(this.productSearch);
             this.searchPnl.Controls.Add(this.deletebtn);
-            this.searchPnl.Controls.Add(this.productShowData);
             this.searchPnl.Controls.Add(this.stacklevelbtn2);
             this.searchPnl.Controls.Add(this.panel18);
             this.searchPnl.Controls.Add(this.panel17);
@@ -54,6 +55,29 @@
             this.searchPnl.Name = "searchPnl";
             this.searchPnl.Size = new System.Drawing.Size(1000, 438);
             this.searchPnl.TabIndex = 86;
+            // 
+            // productSearch
+            // 
+            this.productSearch.AllowUserToResizeRows = false;
+            this.productSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.productSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.productSearch.BackgroundColor = System.Drawing.Color.DimGray;
+            this.productSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productSearch.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.productSearch.GridColor = System.Drawing.Color.Black;
+            this.productSearch.Location = new System.Drawing.Point(39, 58);
+            this.productSearch.Name = "productSearch";
+            this.productSearch.RowHeadersVisible = false;
+            this.productSearch.RowHeadersWidth = 51;
+            this.productSearch.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.productSearch.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.productSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.productSearch.Size = new System.Drawing.Size(912, 263);
+            this.productSearch.TabIndex = 90;
+            this.productSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productSearch_CellContentClick);
             // 
             // deletebtn
             // 
@@ -66,14 +90,7 @@
             this.deletebtn.TabIndex = 86;
             this.deletebtn.Text = "delete";
             this.deletebtn.UseVisualStyleBackColor = false;
-            // 
-            // productShowData
-            // 
-            this.productShowData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productShowData.Location = new System.Drawing.Point(37, 56);
-            this.productShowData.Name = "productShowData";
-            this.productShowData.Size = new System.Drawing.Size(825, 267);
-            this.productShowData.TabIndex = 85;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // stacklevelbtn2
             // 
@@ -123,11 +140,12 @@
             this.productSearchBox.BackColor = System.Drawing.Color.White;
             this.productSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.productSearchBox.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productSearchBox.Location = new System.Drawing.Point(4, 4);
+            this.productSearchBox.Location = new System.Drawing.Point(8, 4);
             this.productSearchBox.Margin = new System.Windows.Forms.Padding(4);
             this.productSearchBox.Name = "productSearchBox";
-            this.productSearchBox.Size = new System.Drawing.Size(320, 20);
+            this.productSearchBox.Size = new System.Drawing.Size(305, 20);
             this.productSearchBox.TabIndex = 2;
+            this.productSearchBox.TextChanged += new System.EventHandler(this.productSearchBox_TextChanged);
             // 
             // searchProduct
             // 
@@ -137,7 +155,7 @@
             this.Name = "searchProduct";
             this.Size = new System.Drawing.Size(1000, 438);
             this.searchPnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productShowData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productSearch)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel17.ResumeLayout(false);
@@ -149,12 +167,12 @@
         #endregion
 
         private System.Windows.Forms.Panel searchPnl;
-        private System.Windows.Forms.DataGridView productShowData;
         private System.Windows.Forms.Button stacklevelbtn2;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.TextBox productSearchBox;
         private System.Windows.Forms.Button deletebtn;
+        private System.Windows.Forms.DataGridView productSearch;
     }
 }

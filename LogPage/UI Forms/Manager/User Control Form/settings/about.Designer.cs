@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(about));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel30 = new System.Windows.Forms.Panel();
+            this.Showlb = new System.Windows.Forms.Label();
             this.panel28 = new System.Windows.Forms.Panel();
             this.usrIdlbl = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
@@ -88,6 +90,7 @@
             this.invalidpasswodlb = new System.Windows.Forms.Label();
             this.invalidpreviouspasslb = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.Hidelb = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -95,11 +98,21 @@
             this.invemaillb = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.show1 = new System.Windows.Forms.Button();
             this.pictureAndLogo = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.hide2 = new System.Windows.Forms.Label();
+            this.show2 = new System.Windows.Forms.Label();
+            this.panel32 = new System.Windows.Forms.Panel();
+            this.hide3 = new System.Windows.Forms.Label();
+            this.show3 = new System.Windows.Forms.Label();
+            this.passwordChangelb = new System.Windows.Forms.LinkLabel();
+            this.newPasswordpanel = new System.Windows.Forms.Panel();
+            this.back = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel30.SuspendLayout();
             this.panel28.SuspendLayout();
             this.panel29.SuspendLayout();
             this.panel26.SuspendLayout();
@@ -129,7 +142,9 @@
             this.panel16.SuspendLayout();
             this.pictureAndLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.panel31.SuspendLayout();
+            this.panel32.SuspendLayout();
+            this.newPasswordpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -146,13 +161,14 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.newPasswordpanel);
+            this.panel2.Controls.Add(this.passwordChangelb);
+            this.panel2.Controls.Add(this.panel25);
+            this.panel2.Controls.Add(this.panel24);
             this.panel2.Controls.Add(this.panel28);
             this.panel2.Controls.Add(this.panel29);
             this.panel2.Controls.Add(this.panel26);
             this.panel2.Controls.Add(this.panel27);
-            this.panel2.Controls.Add(this.panel24);
-            this.panel2.Controls.Add(this.panel25);
-            this.panel2.Controls.Add(this.panel23);
             this.panel2.Controls.Add(this.panel21);
             this.panel2.Controls.Add(this.panel22);
             this.panel2.Controls.Add(this.panel19);
@@ -164,7 +180,6 @@
             this.panel2.Controls.Add(this.dobLb);
             this.panel2.Controls.Add(this.panel12);
             this.panel2.Controls.Add(this.panel10);
-            this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel3);
@@ -172,13 +187,9 @@
             this.panel2.Controls.Add(this.editbtn);
             this.panel2.Controls.Add(this.invalidUsernamelb);
             this.panel2.Controls.Add(this.panel7);
-            this.panel2.Controls.Add(this.invalidretypelb);
             this.panel2.Controls.Add(this.invalidphonelb);
-            this.panel2.Controls.Add(this.panel15);
             this.panel2.Controls.Add(this.panel9);
-            this.panel2.Controls.Add(this.invalidpasswodlb);
             this.panel2.Controls.Add(this.invalidpreviouspasslb);
-            this.panel2.Controls.Add(this.panel13);
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Controls.Add(this.invemaillb);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -189,12 +200,35 @@
             this.panel2.TabIndex = 37;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // panel30
+            // 
+            this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel30.Controls.Add(this.Hidelb);
+            this.panel30.Controls.Add(this.Showlb);
+            this.panel30.Location = new System.Drawing.Point(285, 0);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(35, 37);
+            this.panel30.TabIndex = 62;
+            // 
+            // Showlb
+            // 
+            this.Showlb.AutoSize = true;
+            this.Showlb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Showlb.ForeColor = System.Drawing.Color.White;
+            this.Showlb.Image = ((System.Drawing.Image)(resources.GetObject("Showlb.Image")));
+            this.Showlb.Location = new System.Drawing.Point(3, 8);
+            this.Showlb.Name = "Showlb";
+            this.Showlb.Size = new System.Drawing.Size(29, 20);
+            this.Showlb.TabIndex = 1;
+            this.Showlb.Text = "     ";
+            this.Showlb.Click += new System.EventHandler(this.Showlb_Click);
+            // 
             // panel28
             // 
             this.panel28.BackColor = System.Drawing.Color.White;
             this.panel28.Controls.Add(this.usrIdlbl);
             this.panel28.Location = new System.Drawing.Point(131, 28);
-            this.panel28.Margin = new System.Windows.Forms.Padding(4);
+            this.panel28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(354, 37);
             this.panel28.TabIndex = 59;
@@ -236,7 +270,7 @@
             this.panel26.BackColor = System.Drawing.Color.White;
             this.panel26.Controls.Add(this.agelb);
             this.panel26.Location = new System.Drawing.Point(404, 267);
-            this.panel26.Margin = new System.Windows.Forms.Padding(4);
+            this.panel26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(81, 37);
             this.panel26.TabIndex = 57;
@@ -277,8 +311,8 @@
             // 
             this.panel24.BackColor = System.Drawing.Color.White;
             this.panel24.Controls.Add(this.QulifiShow);
-            this.panel24.Location = new System.Drawing.Point(659, 259);
-            this.panel24.Margin = new System.Windows.Forms.Padding(4);
+            this.panel24.Location = new System.Drawing.Point(659, 65);
+            this.panel24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(225, 37);
             this.panel24.TabIndex = 55;
@@ -300,7 +334,7 @@
             // 
             this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.panel25.Controls.Add(this.label10);
-            this.panel25.Location = new System.Drawing.Point(547, 259);
+            this.panel25.Location = new System.Drawing.Point(547, 65);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(112, 37);
             this.panel25.TabIndex = 54;
@@ -319,9 +353,10 @@
             // panel23
             // 
             this.panel23.BackColor = System.Drawing.Color.White;
+            this.panel23.Controls.Add(this.panel32);
             this.panel23.Controls.Add(this.aboutRePass);
-            this.panel23.Location = new System.Drawing.Point(698, 199);
-            this.panel23.Margin = new System.Windows.Forms.Padding(4);
+            this.panel23.Location = new System.Drawing.Point(154, 70);
+            this.panel23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(319, 37);
             this.panel23.TabIndex = 53;
@@ -331,10 +366,10 @@
             this.aboutRePass.BackColor = System.Drawing.Color.White;
             this.aboutRePass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.aboutRePass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutRePass.Location = new System.Drawing.Point(4, 9);
-            this.aboutRePass.Margin = new System.Windows.Forms.Padding(4);
+            this.aboutRePass.Location = new System.Drawing.Point(7, 9);
+            this.aboutRePass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aboutRePass.Name = "aboutRePass";
-            this.aboutRePass.Size = new System.Drawing.Size(311, 20);
+            this.aboutRePass.Size = new System.Drawing.Size(271, 20);
             this.aboutRePass.TabIndex = 2;
             this.aboutRePass.TextChanged += new System.EventHandler(this.aboutRePass_TextChanged);
             // 
@@ -343,7 +378,7 @@
             this.panel21.BackColor = System.Drawing.Color.White;
             this.panel21.Controls.Add(this.genderLb);
             this.panel21.Location = new System.Drawing.Point(908, 19);
-            this.panel21.Margin = new System.Windows.Forms.Padding(4);
+            this.panel21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(110, 37);
             this.panel21.TabIndex = 52;
@@ -384,7 +419,7 @@
             this.panel19.BackColor = System.Drawing.Color.White;
             this.panel19.Controls.Add(this.label6);
             this.panel19.Location = new System.Drawing.Point(659, 18);
-            this.panel19.Margin = new System.Windows.Forms.Padding(4);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(117, 37);
             this.panel19.TabIndex = 50;
@@ -426,7 +461,7 @@
             this.panel17.BackColor = System.Drawing.Color.White;
             this.panel17.Controls.Add(this.aboutAddressTxt);
             this.panel17.Location = new System.Drawing.Point(166, 321);
-            this.panel17.Margin = new System.Windows.Forms.Padding(4);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(319, 37);
             this.panel17.TabIndex = 48;
@@ -436,10 +471,10 @@
             this.aboutAddressTxt.BackColor = System.Drawing.Color.White;
             this.aboutAddressTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.aboutAddressTxt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutAddressTxt.Location = new System.Drawing.Point(4, 9);
-            this.aboutAddressTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.aboutAddressTxt.Location = new System.Drawing.Point(8, 9);
+            this.aboutAddressTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aboutAddressTxt.Name = "aboutAddressTxt";
-            this.aboutAddressTxt.Size = new System.Drawing.Size(311, 20);
+            this.aboutAddressTxt.Size = new System.Drawing.Size(308, 20);
             this.aboutAddressTxt.TabIndex = 2;
             this.aboutAddressTxt.TextChanged += new System.EventHandler(this.aboutAddressTxt_TextChanged);
             // 
@@ -478,7 +513,7 @@
             this.panel14.BackColor = System.Drawing.Color.White;
             this.panel14.Controls.Add(this.dateTimePicker1);
             this.panel14.Location = new System.Drawing.Point(144, 266);
-            this.panel14.Margin = new System.Windows.Forms.Padding(4);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(201, 38);
             this.panel14.TabIndex = 45;
@@ -524,9 +559,10 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Controls.Add(this.panel30);
             this.panel10.Controls.Add(this.aboutPrePass);
-            this.panel10.Location = new System.Drawing.Point(698, 79);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4);
+            this.panel10.Location = new System.Drawing.Point(698, 122);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(319, 37);
             this.panel10.TabIndex = 41;
@@ -536,10 +572,10 @@
             this.aboutPrePass.BackColor = System.Drawing.Color.White;
             this.aboutPrePass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.aboutPrePass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutPrePass.Location = new System.Drawing.Point(4, 9);
-            this.aboutPrePass.Margin = new System.Windows.Forms.Padding(4);
+            this.aboutPrePass.Location = new System.Drawing.Point(5, 7);
+            this.aboutPrePass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aboutPrePass.Name = "aboutPrePass";
-            this.aboutPrePass.Size = new System.Drawing.Size(311, 20);
+            this.aboutPrePass.Size = new System.Drawing.Size(274, 20);
             this.aboutPrePass.TabIndex = 2;
             this.aboutPrePass.TextChanged += new System.EventHandler(this.aboutPrePass_TextChanged);
             // 
@@ -547,8 +583,8 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.Controls.Add(this.aboutNewPass);
-            this.panel8.Location = new System.Drawing.Point(698, 134);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Location = new System.Drawing.Point(154, 5);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(319, 37);
             this.panel8.TabIndex = 40;
@@ -558,10 +594,10 @@
             this.aboutNewPass.BackColor = System.Drawing.Color.White;
             this.aboutNewPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.aboutNewPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutNewPass.Location = new System.Drawing.Point(4, 9);
-            this.aboutNewPass.Margin = new System.Windows.Forms.Padding(4);
+            this.aboutNewPass.Location = new System.Drawing.Point(6, 9);
+            this.aboutNewPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aboutNewPass.Name = "aboutNewPass";
-            this.aboutNewPass.Size = new System.Drawing.Size(311, 20);
+            this.aboutNewPass.Size = new System.Drawing.Size(272, 20);
             this.aboutNewPass.TabIndex = 2;
             this.aboutNewPass.TextChanged += new System.EventHandler(this.aboutNewPass_TextChanged);
             // 
@@ -570,7 +606,7 @@
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.aboutEmailTxt);
             this.panel6.Location = new System.Drawing.Point(166, 210);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(319, 37);
             this.panel6.TabIndex = 39;
@@ -580,10 +616,10 @@
             this.aboutEmailTxt.BackColor = System.Drawing.Color.White;
             this.aboutEmailTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.aboutEmailTxt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutEmailTxt.Location = new System.Drawing.Point(4, 9);
-            this.aboutEmailTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.aboutEmailTxt.Location = new System.Drawing.Point(6, 9);
+            this.aboutEmailTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aboutEmailTxt.Name = "aboutEmailTxt";
-            this.aboutEmailTxt.Size = new System.Drawing.Size(311, 20);
+            this.aboutEmailTxt.Size = new System.Drawing.Size(308, 20);
             this.aboutEmailTxt.TabIndex = 2;
             this.aboutEmailTxt.TextChanged += new System.EventHandler(this.aboutEmailTxt_TextChanged);
             // 
@@ -592,7 +628,7 @@
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.aboutPhoneTxt);
             this.panel5.Location = new System.Drawing.Point(166, 155);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(319, 37);
             this.panel5.TabIndex = 38;
@@ -602,10 +638,10 @@
             this.aboutPhoneTxt.BackColor = System.Drawing.Color.White;
             this.aboutPhoneTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.aboutPhoneTxt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutPhoneTxt.Location = new System.Drawing.Point(4, 9);
-            this.aboutPhoneTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.aboutPhoneTxt.Location = new System.Drawing.Point(8, 9);
+            this.aboutPhoneTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aboutPhoneTxt.Name = "aboutPhoneTxt";
-            this.aboutPhoneTxt.Size = new System.Drawing.Size(311, 20);
+            this.aboutPhoneTxt.Size = new System.Drawing.Size(308, 20);
             this.aboutPhoneTxt.TabIndex = 2;
             this.aboutPhoneTxt.TextChanged += new System.EventHandler(this.aboutPhoneTxt_TextChanged);
             // 
@@ -614,7 +650,7 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.aboutTxtboxName);
             this.panel3.Location = new System.Drawing.Point(164, 94);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(319, 37);
             this.panel3.TabIndex = 37;
@@ -624,10 +660,10 @@
             this.aboutTxtboxName.BackColor = System.Drawing.Color.White;
             this.aboutTxtboxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.aboutTxtboxName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutTxtboxName.Location = new System.Drawing.Point(4, 9);
-            this.aboutTxtboxName.Margin = new System.Windows.Forms.Padding(4);
+            this.aboutTxtboxName.Location = new System.Drawing.Point(9, 9);
+            this.aboutTxtboxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.aboutTxtboxName.Name = "aboutTxtboxName";
-            this.aboutTxtboxName.Size = new System.Drawing.Size(311, 20);
+            this.aboutTxtboxName.Size = new System.Drawing.Size(306, 20);
             this.aboutTxtboxName.TabIndex = 2;
             this.aboutTxtboxName.TextChanged += new System.EventHandler(this.aboutTxtboxName_TextChanged);
             // 
@@ -656,9 +692,9 @@
             this.editbtn.BackColor = System.Drawing.Color.IndianRed;
             this.editbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editbtn.ForeColor = System.Drawing.Color.White;
-            this.editbtn.Location = new System.Drawing.Point(891, 258);
+            this.editbtn.Location = new System.Drawing.Point(891, 65);
             this.editbtn.Name = "editbtn";
-            this.editbtn.Size = new System.Drawing.Size(126, 38);
+            this.editbtn.Size = new System.Drawing.Size(124, 38);
             this.editbtn.TabIndex = 36;
             this.editbtn.Text = "edit";
             this.editbtn.UseVisualStyleBackColor = false;
@@ -699,7 +735,7 @@
             // 
             this.invalidretypelb.AutoSize = true;
             this.invalidretypelb.ForeColor = System.Drawing.Color.IndianRed;
-            this.invalidretypelb.Location = new System.Drawing.Point(544, 238);
+            this.invalidretypelb.Location = new System.Drawing.Point(0, 109);
             this.invalidretypelb.Name = "invalidretypelb";
             this.invalidretypelb.Size = new System.Drawing.Size(132, 13);
             this.invalidretypelb.TabIndex = 31;
@@ -719,7 +755,7 @@
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.panel15.Controls.Add(this.label17);
-            this.panel15.Location = new System.Drawing.Point(547, 199);
+            this.panel15.Location = new System.Drawing.Point(3, 70);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(151, 37);
             this.panel15.TabIndex = 29;
@@ -739,7 +775,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.panel9.Controls.Add(this.label8);
-            this.panel9.Location = new System.Drawing.Point(547, 79);
+            this.panel9.Location = new System.Drawing.Point(547, 122);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(151, 37);
             this.panel9.TabIndex = 20;
@@ -759,7 +795,7 @@
             // 
             this.invalidpasswodlb.AutoSize = true;
             this.invalidpasswodlb.ForeColor = System.Drawing.Color.IndianRed;
-            this.invalidpasswodlb.Location = new System.Drawing.Point(547, 174);
+            this.invalidpasswodlb.Location = new System.Drawing.Point(3, 45);
             this.invalidpasswodlb.Name = "invalidpasswodlb";
             this.invalidpasswodlb.Size = new System.Drawing.Size(96, 13);
             this.invalidpasswodlb.TabIndex = 28;
@@ -769,7 +805,7 @@
             // 
             this.invalidpreviouspasslb.AutoSize = true;
             this.invalidpreviouspasslb.ForeColor = System.Drawing.Color.IndianRed;
-            this.invalidpreviouspasslb.Location = new System.Drawing.Point(547, 118);
+            this.invalidpreviouspasslb.Location = new System.Drawing.Point(547, 161);
             this.invalidpreviouspasslb.Name = "invalidpreviouspasslb";
             this.invalidpreviouspasslb.Size = new System.Drawing.Size(88, 13);
             this.invalidpreviouspasslb.TabIndex = 22;
@@ -779,10 +815,23 @@
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.panel13.Controls.Add(this.label15);
-            this.panel13.Location = new System.Drawing.Point(547, 134);
+            this.panel13.Location = new System.Drawing.Point(3, 5);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(151, 37);
             this.panel13.TabIndex = 26;
+            // 
+            // Hidelb
+            // 
+            this.Hidelb.AutoSize = true;
+            this.Hidelb.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hidelb.ForeColor = System.Drawing.Color.White;
+            this.Hidelb.Image = ((System.Drawing.Image)(resources.GetObject("Hidelb.Image")));
+            this.Hidelb.Location = new System.Drawing.Point(3, 8);
+            this.Hidelb.Name = "Hidelb";
+            this.Hidelb.Size = new System.Drawing.Size(29, 20);
+            this.Hidelb.TabIndex = 2;
+            this.Hidelb.Text = "     ";
+            this.Hidelb.Click += new System.EventHandler(this.Hidelb_Click);
             // 
             // label15
             // 
@@ -840,6 +889,7 @@
             // 
             this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
             this.panel16.Controls.Add(this.label11);
+            this.panel16.Controls.Add(this.show1);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 158);
             this.panel16.Name = "panel16";
@@ -857,11 +907,23 @@
             this.label11.TabIndex = 13;
             this.label11.Text = "Shop Manager Informations";
             // 
+            // show1
+            // 
+            this.show1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.show1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("show1.BackgroundImage")));
+            this.show1.Location = new System.Drawing.Point(1106, 6);
+            this.show1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.show1.Name = "show1";
+            this.show1.Size = new System.Drawing.Size(28, 27);
+            this.show1.TabIndex = 61;
+            this.show1.Text = "S";
+            this.show1.UseVisualStyleBackColor = false;
+            this.show1.Click += new System.EventHandler(this.show1_Click);
+            // 
             // pictureAndLogo
             // 
             this.pictureAndLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(228)))), ((int)(((byte)(155)))));
             this.pictureAndLogo.Controls.Add(this.pictureBox5);
-            this.pictureAndLogo.Controls.Add(this.guna2CirclePictureBox1);
             this.pictureAndLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureAndLogo.Location = new System.Drawing.Point(0, 0);
             this.pictureAndLogo.Name = "pictureAndLogo";
@@ -877,17 +939,116 @@
             this.pictureBox5.TabIndex = 33;
             this.pictureBox5.TabStop = false;
             // 
-            // guna2CirclePictureBox1
+            // panel31
             // 
-            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(781, 9);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(181, 143);
-            this.guna2CirclePictureBox1.TabIndex = 12;
-            this.guna2CirclePictureBox1.TabStop = false;
-            this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
+            this.panel31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel31.Controls.Add(this.hide2);
+            this.panel31.Controls.Add(this.show2);
+            this.panel31.Location = new System.Drawing.Point(438, 5);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(35, 37);
+            this.panel31.TabIndex = 63;
+            // 
+            // hide2
+            // 
+            this.hide2.AutoSize = true;
+            this.hide2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hide2.ForeColor = System.Drawing.Color.White;
+            this.hide2.Image = ((System.Drawing.Image)(resources.GetObject("hide2.Image")));
+            this.hide2.Location = new System.Drawing.Point(3, 8);
+            this.hide2.Name = "hide2";
+            this.hide2.Size = new System.Drawing.Size(29, 20);
+            this.hide2.TabIndex = 2;
+            this.hide2.Text = "     ";
+            this.hide2.Click += new System.EventHandler(this.hide2_Click);
+            // 
+            // show2
+            // 
+            this.show2.AutoSize = true;
+            this.show2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.show2.ForeColor = System.Drawing.Color.White;
+            this.show2.Image = ((System.Drawing.Image)(resources.GetObject("show2.Image")));
+            this.show2.Location = new System.Drawing.Point(3, 8);
+            this.show2.Name = "show2";
+            this.show2.Size = new System.Drawing.Size(29, 20);
+            this.show2.TabIndex = 1;
+            this.show2.Text = "     ";
+            this.show2.Click += new System.EventHandler(this.show2_Click);
+            // 
+            // panel32
+            // 
+            this.panel32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel32.Controls.Add(this.hide3);
+            this.panel32.Controls.Add(this.show3);
+            this.panel32.Location = new System.Drawing.Point(285, 0);
+            this.panel32.Name = "panel32";
+            this.panel32.Size = new System.Drawing.Size(35, 37);
+            this.panel32.TabIndex = 64;
+            // 
+            // hide3
+            // 
+            this.hide3.AutoSize = true;
+            this.hide3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hide3.ForeColor = System.Drawing.Color.White;
+            this.hide3.Image = ((System.Drawing.Image)(resources.GetObject("hide3.Image")));
+            this.hide3.Location = new System.Drawing.Point(3, 8);
+            this.hide3.Name = "hide3";
+            this.hide3.Size = new System.Drawing.Size(29, 20);
+            this.hide3.TabIndex = 2;
+            this.hide3.Text = "     ";
+            this.hide3.Click += new System.EventHandler(this.hide3_Click);
+            // 
+            // show3
+            // 
+            this.show3.AutoSize = true;
+            this.show3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.show3.ForeColor = System.Drawing.Color.White;
+            this.show3.Image = ((System.Drawing.Image)(resources.GetObject("show3.Image")));
+            this.show3.Location = new System.Drawing.Point(3, 8);
+            this.show3.Name = "show3";
+            this.show3.Size = new System.Drawing.Size(29, 20);
+            this.show3.TabIndex = 1;
+            this.show3.Text = "     ";
+            this.show3.Click += new System.EventHandler(this.show3_Click);
+            // 
+            // passwordChangelb
+            // 
+            this.passwordChangelb.AutoSize = true;
+            this.passwordChangelb.LinkColor = System.Drawing.Color.Red;
+            this.passwordChangelb.Location = new System.Drawing.Point(741, 173);
+            this.passwordChangelb.Name = "passwordChangelb";
+            this.passwordChangelb.Size = new System.Drawing.Size(93, 13);
+            this.passwordChangelb.TabIndex = 64;
+            this.passwordChangelb.TabStop = true;
+            this.passwordChangelb.Text = "Password Change";
+            this.passwordChangelb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.passwordChangelb_LinkClicked);
+            // 
+            // newPasswordpanel
+            // 
+            this.newPasswordpanel.Controls.Add(this.back);
+            this.newPasswordpanel.Controls.Add(this.panel13);
+            this.newPasswordpanel.Controls.Add(this.invalidpasswodlb);
+            this.newPasswordpanel.Controls.Add(this.panel31);
+            this.newPasswordpanel.Controls.Add(this.panel15);
+            this.newPasswordpanel.Controls.Add(this.invalidretypelb);
+            this.newPasswordpanel.Controls.Add(this.panel8);
+            this.newPasswordpanel.Controls.Add(this.panel23);
+            this.newPasswordpanel.Location = new System.Drawing.Point(547, 189);
+            this.newPasswordpanel.Name = "newPasswordpanel";
+            this.newPasswordpanel.Size = new System.Drawing.Size(493, 147);
+            this.newPasswordpanel.TabIndex = 65;
+            // 
+            // back
+            // 
+            this.back.AutoSize = true;
+            this.back.LinkColor = System.Drawing.Color.Red;
+            this.back.Location = new System.Drawing.Point(407, 132);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(67, 13);
+            this.back.TabIndex = 65;
+            this.back.TabStop = true;
+            this.back.Text = " Not Change";
+            this.back.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.back_LinkClicked);
             // 
             // about
             // 
@@ -899,6 +1060,8 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel30.ResumeLayout(false);
+            this.panel30.PerformLayout();
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
             this.panel29.ResumeLayout(false);
@@ -954,7 +1117,12 @@
             this.panel16.PerformLayout();
             this.pictureAndLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.panel31.ResumeLayout(false);
+            this.panel31.PerformLayout();
+            this.panel32.ResumeLayout(false);
+            this.panel32.PerformLayout();
+            this.newPasswordpanel.ResumeLayout(false);
+            this.newPasswordpanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -976,7 +1144,6 @@
         private System.Windows.Forms.Label invalidUsernamelb;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label userNamelb;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel pictureAndLogo;
@@ -1030,5 +1197,18 @@
         private System.Windows.Forms.Label usrIdlbl;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.Label Hidelb;
+        private System.Windows.Forms.Label Showlb;
+        private System.Windows.Forms.Button show1;
+        private System.Windows.Forms.Panel panel32;
+        private System.Windows.Forms.Label show3;
+        private System.Windows.Forms.Panel panel31;
+        private System.Windows.Forms.Label show2;
+        private System.Windows.Forms.Label hide2;
+        private System.Windows.Forms.Label hide3;
+        private System.Windows.Forms.Panel newPasswordpanel;
+        private System.Windows.Forms.LinkLabel passwordChangelb;
+        private System.Windows.Forms.LinkLabel back;
     }
 }

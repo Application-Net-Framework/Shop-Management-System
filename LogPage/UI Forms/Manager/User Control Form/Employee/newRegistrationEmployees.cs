@@ -22,8 +22,8 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public newRegistrationEmployees()
         {
             InitializeComponent();
-           // LoadDatabse();
-          //  LoadMemberCount();
+            LoadDatabse();
+            LoadMemberCount();
 
             cashierEmpLb.Text = totalCashier;
             managerAmountlb.Text = totalManager;
@@ -127,7 +127,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 {
                     conn.Open();
 
-                    string query = "SELECT * FROM Employees WHERE AccountStatus = 'active' AND (CAST(userID AS NVARCHAR) LIKE @Search OR userName LIKE @Search)";
+                    string query = "SELECT UserID,UserName,Role,Gender,Religion,DOB FROM Employees WHERE AccountStatus = 'active' AND (CAST(userID AS NVARCHAR) LIKE @Search OR userName LIKE @Search)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {

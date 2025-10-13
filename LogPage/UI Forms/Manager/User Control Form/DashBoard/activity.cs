@@ -27,31 +27,32 @@ namespace App.UI_Forms.Manager
             
             loadDatabase();
             string tk = "Tk";
-            totalpricelb.Text = totalprice.ToString()+tk;
-            totalsalelb.Text = totalsale.ToString()+tk;
+            totalpricelb.Text = totalprice.ToString() + tk;
+            totalsalelb.Text = totalsale.ToString() + tk;
 
             cashierEmpLb.Text = totalcashier.ToString();
             salemanLb.Text = totalsaleman.ToString();
 
             totalProfit = totalprice - totalsale;
-            profitlb.Text = totalProfit.ToString() +tk;
+            profitlb.Text = totalProfit.ToString() + tk;
 
             chart1.Titles.Add("Cost of A Shop");
-            chart1.Series["S1"].Points.AddXY("  Price", totalprice.ToString());
+            chart1.Series["S1"].Points.AddXY("  Price", totalprice);
             chart1.Series["S1"].Points[0].Color = Color.SeaGreen;
 
-            chart1.Series["S1"].Points.AddXY("  Sale", totalsale.ToString());
+            chart1.Series["S1"].Points.AddXY("  Sale", totalsale);
             chart1.Series["S1"].Points[1].Color = Color.DarkOrange;
 
-            chart1.Series["S1"].Points.AddXY("  Profit", totalProfit.ToString());
+            chart1.Series["S1"].Points.AddXY("  Profit", totalProfit);
             chart1.Series["S1"].Points[2].Color = Color.MediumOrchid;
 
             employeChart.Titles.Add("Employee Ratio");
             
-            employeChart.Series["EMP"].Points.AddXY("Cashier", totalcashier.ToString());
+            // Pass the numeric values directly instead of converting to string first
+            employeChart.Series["EMP"].Points.AddXY("Cashier", totalcashier);
             employeChart.Series["EMP"].Points[0].Color = Color.Green;
 
-            employeChart.Series["EMP"].Points.AddXY("Salesman", totalsaleman.ToString());
+            employeChart.Series["EMP"].Points.AddXY("Salesman", totalsaleman);
             employeChart.Series["EMP"].Points[1].Color = Color.Purple;
         }
         public void loadDatabase()
@@ -60,52 +61,33 @@ namespace App.UI_Forms.Manager
             {
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-
                     string totalSum = "SELECT SUM(Price) AS TotalPrice FROM Product";
                     string totalSale = "SELECT SUM(TotalAmount) AS TotalCustomerAmount FROM Orders";
                     string totalCashier = "SELECT COUNT(*) AS TotalCashier FROM Employees WHERE LOWER(Role) = 'cashier'";
                     string totalSaleman = "SELECT COUNT(*) AS TotalSaleman FROM Employees WHERE LOWER(Role) = 'salesman'";
 
-
-
                     connection.Open();
+
                     SqlCommand commandSum = new SqlCommand(totalSum, connection);
+                    object priceResult = commandSum.ExecuteScalar();
+                    totalprice = priceResult == null || priceResult == DBNull.Value ? 0 : Convert.ToDouble(priceResult);
+
                     SqlCommand commandCashier = new SqlCommand(totalCashier, connection);
+                    object cashierResult = commandCashier.ExecuteScalar();
+                    totalcashier = cashierResult == null || cashierResult == DBNull.Value ? 0 : Convert.ToInt32(cashierResult);
+
                     SqlCommand commandSaleman = new SqlCommand(totalSaleman, connection);
+                    object salemanResult = commandSaleman.ExecuteScalar();
+                    totalsaleman = salemanResult == null || salemanResult == DBNull.Value ? 0 : Convert.ToInt32(salemanResult);
 
-                    SqlDataReader readerSum = commandSum.ExecuteReader();
-                    if (readerSum.Read())
-                    {
-                        totalprice = readerSum.IsDBNull(0) ?  0 :  readerSum.GetDouble(0);
-                    }
-                    readerSum.Close();
-
-                    SqlDataReader readerCashier = commandCashier.ExecuteReader();
-                    if (readerCashier.Read())
-                    {
-                        totalcashier = readerCashier.IsDBNull(0) ? 0 : readerCashier.GetInt32(0);
-                    }
-                    readerCashier.Close();
-                    
-                    SqlDataReader readerSaleman = commandSaleman.ExecuteReader();
-                    if (readerSaleman.Read())
-                    {
-                        totalsaleman = readerSaleman.IsDBNull(0) ? 0 : readerSaleman.GetInt32(0);
-                    }
-                    readerSaleman.Close();
-                   
-                    SqlDataAdapter adapter = new SqlDataAdapter(commandSum);
                     SqlCommand commandSale = new SqlCommand(totalSale, connection);
-                    SqlDataReader readerSale = commandSale.ExecuteReader();
-                    if (readerSale.Read())
-                    {
-                        totalsale = readerSale.IsDBNull(0) ? 0 : readerSale.GetDouble(0);
-                    }
+                    object saleResult = commandSale.ExecuteScalar();
+                    totalsale = saleResult == null || saleResult == DBNull.Value ? 0 : Convert.ToDouble(saleResult);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error loading activity data: " + ex.Message);
             }
         }
         private void totalpricelb_Click(object sender, EventArgs e)

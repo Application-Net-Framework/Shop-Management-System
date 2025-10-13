@@ -41,6 +41,7 @@
             this.passBtn = new System.Windows.Forms.Label();
             this.confirmBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.emailOrMobileLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailOrMobileLbl.AutoSize = true;
             this.emailOrMobileLbl.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailOrMobileLbl.Location = new System.Drawing.Point(18, 72);
+            this.emailOrMobileLbl.Location = new System.Drawing.Point(16, 71);
             this.emailOrMobileLbl.Name = "emailOrMobileLbl";
             this.emailOrMobileLbl.Size = new System.Drawing.Size(156, 15);
             this.emailOrMobileLbl.TabIndex = 0;
@@ -60,7 +61,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(137, 20);
+            this.label1.Location = new System.Drawing.Point(194, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 24);
             this.label1.TabIndex = 1;
@@ -71,7 +72,7 @@
             this.dobLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dobLbl.AutoSize = true;
             this.dobLbl.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dobLbl.Location = new System.Drawing.Point(18, 98);
+            this.dobLbl.Location = new System.Drawing.Point(16, 97);
             this.dobLbl.Name = "dobLbl";
             this.dobLbl.Size = new System.Drawing.Size(39, 15);
             this.dobLbl.TabIndex = 4;
@@ -80,7 +81,7 @@
             // mobileTxt
             // 
             this.mobileTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mobileTxt.Location = new System.Drawing.Point(227, 67);
+            this.mobileTxt.Location = new System.Drawing.Point(225, 66);
             this.mobileTxt.Name = "mobileTxt";
             this.mobileTxt.Size = new System.Drawing.Size(200, 20);
             this.mobileTxt.TabIndex = 6;
@@ -88,7 +89,7 @@
             // dobTxt
             // 
             this.dobTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dobTxt.Location = new System.Drawing.Point(227, 93);
+            this.dobTxt.Location = new System.Drawing.Point(225, 92);
             this.dobTxt.Name = "dobTxt";
             this.dobTxt.Size = new System.Drawing.Size(200, 20);
             this.dobTxt.TabIndex = 9;
@@ -96,7 +97,7 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(18, 193);
+            this.button1.Location = new System.Drawing.Point(16, 192);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 23);
             this.button1.TabIndex = 42;
@@ -107,7 +108,7 @@
             // checkPassTxt
             // 
             this.checkPassTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkPassTxt.Location = new System.Drawing.Point(227, 145);
+            this.checkPassTxt.Location = new System.Drawing.Point(225, 144);
             this.checkPassTxt.Name = "checkPassTxt";
             this.checkPassTxt.Size = new System.Drawing.Size(200, 20);
             this.checkPassTxt.TabIndex = 41;
@@ -115,7 +116,7 @@
             // passTxt
             // 
             this.passTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passTxt.Location = new System.Drawing.Point(227, 119);
+            this.passTxt.Location = new System.Drawing.Point(225, 118);
             this.passTxt.Name = "passTxt";
             this.passTxt.Size = new System.Drawing.Size(200, 20);
             this.passTxt.TabIndex = 40;
@@ -125,7 +126,7 @@
             this.rePassLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rePassLbl.AutoSize = true;
             this.rePassLbl.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rePassLbl.Location = new System.Drawing.Point(18, 150);
+            this.rePassLbl.Location = new System.Drawing.Point(16, 149);
             this.rePassLbl.Name = "rePassLbl";
             this.rePassLbl.Size = new System.Drawing.Size(116, 15);
             this.rePassLbl.TabIndex = 39;
@@ -136,7 +137,7 @@
             this.passBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passBtn.AutoSize = true;
             this.passBtn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passBtn.Location = new System.Drawing.Point(18, 124);
+            this.passBtn.Location = new System.Drawing.Point(16, 123);
             this.passBtn.Name = "passBtn";
             this.passBtn.Size = new System.Drawing.Size(122, 15);
             this.passBtn.TabIndex = 38;
@@ -145,7 +146,7 @@
             // confirmBtn
             // 
             this.confirmBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.confirmBtn.Location = new System.Drawing.Point(209, 193);
+            this.confirmBtn.Location = new System.Drawing.Point(207, 192);
             this.confirmBtn.Name = "confirmBtn";
             this.confirmBtn.Size = new System.Drawing.Size(124, 23);
             this.confirmBtn.TabIndex = 37;
@@ -169,15 +170,30 @@
             this.panel1.Controls.Add(this.confirmBtn);
             this.panel1.Location = new System.Drawing.Point(246, 149);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 234);
+            this.panel1.Size = new System.Drawing.Size(548, 234);
             this.panel1.TabIndex = 43;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
+            this.label2.Location = new System.Drawing.Point(281, 386);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(481, 15);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Mobile and date of birth must match your existing information before resetting pa" +
+    "ssword.";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // ForgetPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(1000, 600);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
@@ -188,6 +204,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -205,5 +222,6 @@
         private System.Windows.Forms.Label passBtn;
         private System.Windows.Forms.Button confirmBtn;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -26,7 +26,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public tarminationForm()
         {
             InitializeComponent();
-            //LoadDatabase();
+            LoadDatabase();
             warningMassage.Visible = true;
 
             notFoundlb.Visible = false;
@@ -44,7 +44,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
         {
             try
             {
-                string inactiveEmployees = "SELECT * FROM Employee WHERE AccountStatus = 'deactive'";
+                string inactiveEmployees = "SELECT * FROM Employees WHERE AccountStatus = 'deactive'";
                     
                 using(SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -88,7 +88,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                     {
                         conn.Open();
                         // Change account status from deactive to active
-                        string query = "UPDATE Employee SET AccountStatus = 'active' WHERE userID = @userID";
+                        string query = "UPDATE Employees SET AccountStatus = 'active' WHERE userID = @userID";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {

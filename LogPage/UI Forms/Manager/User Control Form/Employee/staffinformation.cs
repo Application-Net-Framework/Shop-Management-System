@@ -19,10 +19,16 @@ namespace App.UI_Forms.Manager.User_Control_Form
         public string qulification;
         public string address;
         public string title;
+
         public string gender;
+
         public int userId;
         public DateTime dob;
         public int age;
+        private void aboutEmailTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         public string connectionString = "Data Source=GSM\\SQLEXPRESS;Initial Catalog=GSM;Integrated Security=True;TrustServerCertificate=True";
         public void LoadUI()
@@ -93,12 +99,95 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 demopicturebox.Visible = true;
             }
         }
+        private void dobtime_ValueChanged(object sender, EventArgs e)
+        {
+            int age = CalculateAge(dobtime.Value);
+            if (age < 0 && age >= 10)
+            {
+                invalidDatelb.Visible = true;
+                agelb.Text = "0";
+            }
+            else
+            {
+                invalidDatelb.Visible = false;
+                agelb.Text = age.ToString();
+            }
+        }
+        private void ClearFormFields()
+        {
+            userId = 0;
+            username = "";
+            title = "";
+            phonenum = "";
+            email = "";
+            address = "";
+            gender = "";
+            qulification = "";
+
+            usrIdlbl.Text = "";
+            titleShow.Text = "";
+            aboutTxtboxName.Text = "";
+            aboutPhoneTxt.Text = "";
+            aboutEmailTxt.Text = "";
+            aboutAddressTxt.Text = "";
+           genderLb.Text = ""; 
+            QulifiShow.Text = "";
+            agelb.Text = "";
+            
+
+            LoadUI();
+            SaleManPicturebox.Visible = false;
+            cashierpicturebox.Visible = false;
+            demopicturebox.Visible = true;
+        }
+        public void loadTextBoxInformation()
+        {
+            titleShow.Text = title;
+            usrIdlbl.Text = userId.ToString();
+            aboutTxtboxName.Text = username;
+            aboutPhoneTxt.Text = phonenum;
+            aboutEmailTxt.Text = email;
+            aboutAddressTxt.Text = address;
+            dobtime.Value = dob;
+            agelb.Text = age.ToString();
+            genderLb.Text = gender;
+        }
+
+        private void clearbtn_Click(object sender, EventArgs e)
+        {
+            ClearFormFields();
+        }
+        private void aboutTxtboxName_TextChanged(object sender, EventArgs e)
+        {
+            string Text = aboutTxtboxName.Text;
+            if (string.IsNullOrWhiteSpace(Text) || Text.Any(char.IsDigit))
+            {
+                invalidUsernamelb.Visible = true;
+            }
+            else
+            {
+                invalidUsernamelb.Visible = false;
+            }
+        }
+        private void aboutPhoneTxt_TextChanged(object sender, EventArgs e)
+        {
+            string Text = aboutPhoneTxt.Text;
+            if (string.IsNullOrWhiteSpace(Text) || !Text.All(char.IsDigit) || Text.Length < 10)
+            {
+                invalidphonelb.Visible = true;
+            }
+            else
+            {
+                invalidphonelb.Visible = false;
+            }
+        }
+
         public staffinformation()
         {
             InitializeComponent();
 
-          //  LoadUI();
-           // ClearFormFields();
+           LoadUI();
+           ClearFormFields();
 
 
 
@@ -121,7 +210,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                     {
                         conn.Open();
                         
-                        string query = "SELECT userID, userName, Role FROM Employee WHERE AccountStatus = 'active' AND (CAST(userID AS NVARCHAR) LIKE @Search OR userName LIKE @Search)";
+                        string query = "SELECT userID, userName, Role FROM Employees WHERE AccountStatus = 'active' AND (CAST(userID AS NVARCHAR) LIKE @Search OR userName LIKE @Search) AND ROLE = 'Cashier' OR ROLE = 'Salesman'";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
@@ -171,10 +260,10 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = @"UPDATE Employee SET 
+                    string query = @"UPDATE Employees SET 
                                    userName = @userName,
                                    PhoneNumber = @PhoneNumber,
-                                   DateOfBirt = @DateOfBirt
+                                   DOB = @dob
                                    WHERE userID = @userID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -184,7 +273,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                         cmd.Parameters.AddWithValue("@PhoneNumber", aboutPhoneTxt.Text);
                         cmd.Parameters.AddWithValue("@Email", aboutEmailTxt.Text);
                         cmd.Parameters.AddWithValue("@Address", aboutAddressTxt.Text);
-                        cmd.Parameters.AddWithValue("@DateOfBirt", dobtime.Value);
+                        cmd.Parameters.AddWithValue("@DOB", dobtime.Value);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -230,7 +319,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                     using (SqlConnection conn = new SqlConnection(connectionString))
                     {
                         conn.Open(); 
-                        string query = "UPDATE Employee SET AccountStatus = 'deactive' WHERE userID = @userID";
+                        string query = "UPDATE Employees SET AccountStatus = 'deactive' WHERE userID = @userID";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
@@ -258,66 +347,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
             }
         }
 
-        private void ClearFormFields()
-        {
-            userId = 0;
-            username = "";
-            title = "";
-            phonenum = "";
-            email = "";
-            address = "";
-            gender = "";
-            qulification = "";
-            
-            usrIdlbl.Text = "";
-            titleShow.Text = "";
-            aboutTxtboxName.Text = "";
-            aboutPhoneTxt.Text = "";
-            aboutEmailTxt.Text = "";
-            aboutAddressTxt.Text = "";
-            genderLb.Text = "";
-            QulifiShow.Text = "";
-            agelb.Text = "";
 
-            LoadUI();
-            SaleManPicturebox.Visible = false;
-            cashierpicturebox.Visible = false;
-            demopicturebox.Visible = true;
-        }
-
-        public void loadTextBoxInformation()
-        {
-            titleShow.Text = title;
-            usrIdlbl.Text = userId.ToString();
-            aboutTxtboxName.Text = username;
-            aboutPhoneTxt.Text = phonenum;
-            aboutEmailTxt.Text = email;
-            aboutAddressTxt.Text = address;
-            dobtime.Value = dob;
-            agelb.Text = age.ToString();
-        }
-        private void aboutTxtboxName_TextChanged(object sender, EventArgs e) {
-           string Text = aboutTxtboxName.Text;
-            if (string.IsNullOrWhiteSpace(Text) || Text.Any(char.IsDigit))
-              {
-                invalidUsernamelb.Visible = true;
-              }
-              else
-              {
-                invalidUsernamelb.Visible = false;
-            }
-        }
-        private void aboutPhoneTxt_TextChanged(object sender, EventArgs e) {
-            string Text = aboutPhoneTxt.Text;
-            if (string.IsNullOrWhiteSpace(Text) || !Text.All(char.IsDigit) || Text.Length < 10)
-            {
-                invalidphonelb.Visible = true;
-            }
-            else
-            {
-                invalidphonelb.Visible = false;
-            }
-        }
         private void aboutAddressTxt_TextChanged(object sender, EventArgs e) { }
         public void DataGridviewDesign()
         {
@@ -352,7 +382,7 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT userID, userName, Role, PhoneNumber, Email, Qulification, Address, Gender, DateOfBirt FROM Employee WHERE userID = @UserId AND AccountStatus = 'active'";
+                    string query = "SELECT userID, userName, Role, PhoneNumber, Email, Qualification, Address, Gender, DOB FROM Employees WHERE userID = @UserId AND AccountStatus = 'active'";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@UserId", selectedUserId);
@@ -366,13 +396,16 @@ namespace App.UI_Forms.Manager.User_Control_Form
                                 title = reader["Role"]?.ToString() ?? "";
                                 phonenum = reader["PhoneNumber"]?.ToString() ?? "";
                                 email = reader["Email"]?.ToString() ?? "";
-                                qulification = reader["Qulification"]?.ToString() ?? "";
+                                qulification = reader["Qualification"]?.ToString() ?? "";
                                 address = reader["Address"]?.ToString() ?? "";
+
                                 gender = reader["Gender"]?.ToString() ?? "";
-                                
-                                if (reader["DateOfBirt"] != DBNull.Value)
+                                genderLb.Text = gender;
+
+
+                                if (reader["DOB"] != DBNull.Value)
                                 {
-                                    dob = Convert.ToDateTime(reader["DateOfBirt"]);
+                                    dob = Convert.ToDateTime(reader["DOB"]);
                                     age = CalculateAge(dob);
                                 }
                                 else
@@ -383,8 +416,8 @@ namespace App.UI_Forms.Manager.User_Control_Form
   
                                 loadTextBoxInformation();
                                 imageLoader();
-                  
-                                genderLb.Text = gender;
+          
+                        
                                 QulifiShow.Text = qulification;
                             }
                         }
@@ -396,29 +429,6 @@ namespace App.UI_Forms.Manager.User_Control_Form
                 MessageBox.Show("Error loading employee details: " + ex.Message);
             }
         }
-
-        private void dobtime_ValueChanged(object sender, EventArgs e)
-        {
-            int age = CalculateAge(dobtime.Value);
-            if (age < 0 && age >= 10){
-                invalidDatelb.Visible = true;
-                agelb.Text = "0";
-            }
-            else
-            {
-                invalidDatelb.Visible = false;
-                agelb.Text = age.ToString();
-            }
-        }
-
-        private void clearbtn_Click(object sender, EventArgs e)
-        {
-            ClearFormFields();
-        }
-
-        private void aboutEmailTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
